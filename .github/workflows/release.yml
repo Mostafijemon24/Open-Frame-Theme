@@ -4,12 +4,18 @@ name: Release
 #
 # Runs when a version tag (for example v1.0.0) is pushed, or when started by
 # hand from the Actions tab ("Run workflow"). A manual run releases the version
-# found in style.css and creates the matching tag on the selected commit.
+# found in style.css and creates the matching tag on the selected commit. Tick
+# "replace" to publish that version again in place of an existing release.
 on:
   push:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      replace:
+        description: 'Replace the existing release and tag of this version'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,6 +33,7 @@ jobs:
       - name: Work out the version and tag
         env:
           GH_TOKEN: ${{ github.token }}
+          REPLACE: ${{ inputs.replace }}
         run: |
           VERSION="$(sed -n 's/^Version:[[:space:]]*//p' style.css | head -n 1)"
           TAG="v$VERSION"
@@ -39,8 +46,13 @@ jobs:
             exit 1
           fi
           if gh release view "$TAG" > /dev/null 2>&1; then
-            echo "Release $TAG already exists. Bump the version before releasing again." >&2
-            exit 1
+            if [ "$REPLACE" = "true" ]; then
+              echo "Replacing the existing release $TAG."
+              gh release delete "$TAG" --cleanup-tag --yes
+            else
+              echo "Release $TAG already exists. Bump the version, or run again with \"replace\" ticked." >&2
+              exit 1
+            fi
           fi
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "TAG=$TAG" >> "$GITHUB_ENV"
