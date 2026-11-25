@@ -1,8 +1,10 @@
+<p align="center">
+  <img src="docs/images/banner.png" alt="Open Frame: a flexible frame for every website" width="100%">
+</p>
+
 # Open Frame
 
 A lightweight, accessibility-minded **multipurpose WordPress theme** built on a token-driven design system. Open Frame is controlled entirely from the Customizer, bundles its fonts locally, needs **no plugin** and makes **no remote requests**.
-
-![Open Frame home page](screenshot.png)
 
 | | |
 | --- | --- |
@@ -12,27 +14,237 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 | **Text domain** | `open-frame` |
 | **Author** | [Mostafij Emon](https://github.com/Mostafijemon24) |
 
-## Documentation
+**[Read the full documentation →](docs/README.md)** · 24 chapters with numbered, annotated screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
 
-**[Read the full documentation →](docs/README.md)** — installation, quick start, every Customizer option, menus and the mega menu, templates, patterns, child themes and a developer reference, with screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
+## Contents
+
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Installation](#installation)
+- [Quick start](#quick-start)
+- [Customization](#customization)
+  - [Layout](#layout) · [Global Colors](#global-colors) · [Typography](#typography) · [Header Builder](#header-builder) · [Footer Builder](#footer-builder)
+- [Home page and patterns](#home-page-and-patterns)
+- [Menus and the mega menu](#menus-and-the-mega-menu)
+- [Widget areas](#widget-areas)
+- [Development](#development)
+- [License](#license)
+
+## Screenshots
+
+**Home page** (Landing Page template with the bundled patterns)
+
+![Home page](docs/images/home-desktop.png)
+
+**Blog**, in the grid style with a sidebar
+
+![Blog grid](docs/images/blog-grid.png)
+
+**Single post**
+
+![Single post](docs/images/single-post.png)
+
+**Phone**, with the menu closed and open
+
+![Phone views](docs/images/mobile.png)
 
 ## Features
 
-- **Design system** — colors, typography, spacing, radius and elevation as CSS custom properties; change a color once and the whole site follows, including the block editor palette.
-- **Customizer** — global colors, fonts, font size, line height, heading weight, container and content widths, section spacing. Every option has a visible effect.
+- **Design system** — colors, typography, spacing, radius and elevation as CSS custom properties. Change a color once and the whole site follows, including the block editor palette.
+- **Customizer** — 39 settings in five sections. Every setting has a visible effect and most preview instantly.
 - **Header builder** — five layouts, background and text colors, sticky and transparent modes, optional search, hide-title option.
 - **Footer builder** — one to four widget columns (empty ones are skipped), footer colors, custom copyright text.
-- **Navigation** — keyboard-friendly dropdowns, mobile menu, and a multi-column **mega menu** (add the class `of-mega` to a top-level menu item).
-- **Layouts** — right sidebar, left sidebar, no sidebar and full width, set separately for the blog, posts and pages; blog as a list or a 2–4 column grid.
-- **Templates** — Full Width and **Landing Page** (blank canvas for block-built pages).
+- **Navigation** — keyboard-friendly dropdowns, a mobile menu, and a multi-column **mega menu** without a plugin.
+- **Layouts** — right sidebar, left sidebar, no sidebar and full width, set separately for the blog, posts and pages. Blog as a list or a 2 to 4 column grid.
+- **Templates** — Full Width and **Landing Page** (a blank canvas for block-built pages).
 - **Block editor** — six patterns, five block styles, shared palette, font sizes and spacing scale through `theme.json`.
 - **Built in** — translation-ready, RTL-friendly, reduced-motion aware, usable without JavaScript, child-theme friendly.
 
 ## Installation
 
-Download `open-frame-<version>.zip` from the [latest release](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/latest), then in WordPress go to **Appearance → Themes → Add Theme → Upload Theme**, upload the ZIP, **Install** and **Activate**.
+1. Download `open-frame-<version>.zip` from the [latest release](../../releases/latest).
+2. In WordPress go to **Appearance → Themes → Add Theme → Upload Theme**.
+3. Upload the ZIP, click **Install**, then **Activate**.
 
 > Download the release ZIP rather than GitHub's "Source code" archive: the release package contains only the files the theme needs.
+
+![The Themes screen with Open Frame active](docs/images/admin-themes.png)
+
+## Quick start
+
+| Step | Where | What to do |
+| --- | --- | --- |
+| 1 | Customize → Site Identity | Upload a logo, set the site title and tagline |
+| 2 | Appearance → Menus | Create a menu and assign it to **Primary Menu** |
+| 3 | Pages → Add New | Create a home page with the **Landing Page** template and the **Landing page** pattern |
+| 4 | Settings → Reading | Choose that page as the **Homepage** and another page as the **Posts page** |
+| 5 | Appearance → Widgets | Add blocks to the sidebars and the footer columns |
+| 6 | Customize → Open Frame Options | Pick colors, fonts, the header layout and the footer columns |
+
+## Customization
+
+All theme settings live under **Appearance → Customize → Open Frame Options**. The red numbers on each screenshot match the rows of the table below it.
+
+![The Customizer home screen](docs/images/customizer-root.png)
+
+| # | Section | Used for |
+| --- | --- | --- |
+| 1 | **Open Frame Options** | All theme settings: layout, colors, typography, header and footer |
+| 2 | Site Identity | Logo, site title, tagline and site icon |
+| 3 | Colors | WordPress background color |
+| 4 | Background Image | An optional image behind the whole page |
+| 5 | Menus | Create menus and assign them to locations |
+| 6 | Widgets | Edit the sidebar and footer widget areas |
+| 7 | Homepage Settings | Choose a static home page and the posts page |
+| 8 | Additional CSS | Your own CSS |
+| 9 | Publish | Saves your changes and makes them live |
+
+![The Open Frame Options panel](docs/images/customizer-panel.png)
+
+### Layout
+
+![Layout settings](docs/images/customizer-layout.png)
+
+| # | Setting | Default | Range / choices | What it does |
+| --- | --- | --- | --- | --- |
+| 1 | Site layout | Full width | Full width, Boxed | Full-window site, or the whole site in a centered box |
+| 2 | Container width | 1200 px | 800 to 1600 | Maximum width of the header, footer and sidebar layouts |
+| 3 | Content width | 960 px | 600 to 1400 | Width of the *No sidebar* column and of blocks on the Landing Page template |
+| 4 | Section spacing | 64 px | 16 to 160 | Space above and below the main content area |
+| 5 | Blog listing style | List | List, Grid | Image beside the text, or cards in columns |
+| 6 | Grid columns | 2 | 2 to 4 | Columns of the Grid style (shown only for Grid) |
+| 7 | Excerpt length | 30 words | 5 to 80 | Length of post summaries |
+| 8 | Blog / archive layout | Right sidebar | 4 layouts | Layout of the blog, archives and search |
+| 9 | Single post layout | Right sidebar | 4 layouts | Layout of single posts |
+| 10 | Default page layout | No sidebar | 4 layouts | Layout of pages with the default template |
+
+![The four layouts](docs/images/layouts.png)
+
+### Global Colors
+
+![Global Colors settings](docs/images/customizer-colors.png)
+
+| # | Setting | Default | Used for |
+| --- | --- | --- | --- |
+| 1 | Primary | `#3f4cd6` | Buttons, active menu items, highlights, focus outline |
+| 2 | Primary (hover) | `#2b36b8` | Buttons on hover |
+| 3 | Secondary | `#14b8a6` | The *Secondary* color in the editor palette |
+| 4 | Accent | `#f5a623` | Highlighted text, and the *Accent* palette color |
+| 5 | Headings | `#0f172a` | Headings and post titles |
+| 6 | Body text | `#334155` | Paragraphs, summaries, form labels |
+| 7 | Links | `#3f4cd6` | Links in content |
+| 8 | Link hover | `#2b36b8` | Links on hover and focus |
+| 9 | Borders | `#e2e8f0` | Card, table and divider lines |
+| 10 | Page background | `#f8fafc` | The page behind the content cards |
+| 11 | Surfaces | `#ffffff` | Cards, dropdown menus and form fields |
+
+A new primary color, a dark header and serif headings, set entirely in the Customizer:
+
+![A recolored home page](docs/images/custom-colors.png)
+
+### Typography
+
+![Typography settings](docs/images/customizer-typography.png)
+
+| # | Setting | Default | Range / choices | What it does |
+| --- | --- | --- | --- | --- |
+| 1 | Body font | Hanken Grotesk | Hanken Grotesk, System UI, Serif, Monospace | Font for text |
+| 2 | Heading font | Hanken Grotesk | Same four choices | Font for headings |
+| 3 | Base font size | 16 px | 14 to 22 | Size of body text |
+| 4 | Body line height | 160 % | 120 to 200 | Space between lines |
+| 5 | Heading weight | 700 | 400 to 900 | Thickness of all headings |
+
+### Header Builder
+
+![Header Builder settings](docs/images/customizer-header.png)
+
+| # | Setting | Default | What it does |
+| --- | --- | --- | --- |
+| 1 | Header layout | Logo left, menu right | One of the five arrangements below |
+| 2 | Header background | `#ffffff` | Background of the header bar and the mobile menu panel |
+| 3 | Header text color | *(empty)* | Color of the site title, tagline and menu links |
+| 4 | Show site title and tagline | On | Hide the text when the logo already contains the name |
+| 5 | Sticky header | Off | Keeps the header at the top while scrolling |
+| 6 | Transparent header on front page | Off | Removes the header background on the front page |
+| 7 | Show search in header | Off | Adds a search form to the header |
+
+![The five header layouts, numbered](docs/images/header-layouts.png)
+
+| # | Layout |
+| --- | --- |
+| 1 | Logo left, menu right (default) |
+| 2 | Logo left, menu centered |
+| 3 | Centered logo, menu below |
+| 4 | Logo & menu left (shown with the search form) |
+| 5 | Logo right, menu left |
+
+### Footer Builder
+
+![Footer Builder settings](docs/images/customizer-footer.png)
+
+| # | Setting | Default | What it does |
+| --- | --- | --- | --- |
+| 1 | Show footer widget area | On | Shows or hides the widget columns |
+| 2 | Footer columns | 4 columns | Maximum number of widget columns (1 to 4) |
+| 3 | Footer background | `#0f172a` | Background color of the footer |
+| 4 | Footer text color | `#cbd5e1` | Color of footer text |
+| 5 | Footer heading and link color | `#ffffff` | Color of footer headings and links |
+| 6 | Copyright text | *(empty)* | Custom text for the copyright bar; basic HTML allowed |
+
+![The default footer](docs/images/footer.png)
+
+## Home page and patterns
+
+1. Create a page and choose the **Landing Page** template (markers 1 and 2).
+
+   ![Choosing the Landing Page template](docs/images/editor-template.png)
+
+2. Open the inserter (1), the **Patterns** tab (2) and the **Open Frame** category (3), then click a pattern (4).
+
+   ![Open Frame patterns in the block inserter](docs/images/editor-patterns.png)
+
+3. Set the page as the homepage under **Settings → Reading**.
+
+| Pattern | Description |
+| --- | --- |
+| Hero | Centered headline, text and two buttons |
+| Hero with illustration | Two columns with a headline, buttons and an illustration |
+| Feature cards | A section heading and three cards |
+| Latest posts grid | A section heading and the three most recent posts |
+| Call to action | A dark full-width band with a headline and a button |
+| Landing page | All of the above combined into a complete home page |
+
+## Menus and the mega menu
+
+Two menu locations: **Primary Menu** (header) and **Footer Menu** (copyright bar).
+
+To turn a dropdown into a mega menu, enable **CSS Classes** in **Screen Options** and add the class `of-mega` to a top-level item:
+
+![A menu item set up as a mega menu](docs/images/admin-menus-mega.png)
+
+| # | What it is |
+| --- | --- |
+| 1 | The top-level item that becomes the mega menu |
+| 2 | The **CSS Classes** field with `of-mega` |
+| 3 | A direct sub-item: it becomes a **column heading** |
+| 4 | An item nested below it: it becomes a **link** in that column |
+| 5 | **Save Menu** |
+
+![The mega menu on the site](docs/images/anatomy-mega.png)
+
+## Widget areas
+
+![The Widgets screen](docs/images/admin-widgets.png)
+
+| # | Widget area | Appears on |
+| --- | --- | --- |
+| 1 | Main Sidebar | Pages and single posts that use a sidebar layout |
+| 2 | Blog Sidebar | The blog, archives and search results |
+| 3 to 6 | Footer 1 to Footer 4 | The footer columns, from left to right |
+| 7 | **+** | Adds a block to the selected area |
+| 8 | Update | Saves your widgets |
+
+Empty areas are never shown.
 
 ## Development
 
@@ -70,13 +282,9 @@ bash bin/build-zip.sh
 npm install marked && node bin/build-docs.js
 ```
 
-**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry and push to `main`. Then either push a tag such as `v1.0.1`, or open **Actions → Release → Run workflow**. The [release workflow](.github/workflows/release.yml) builds the ZIP, creates the tag when needed and publishes the GitHub release.
+**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry and push to `main`. Then either push a tag such as `v1.0.2`, or open **Actions → Release → Run workflow**. The [release workflow](.github/workflows/release.yml) builds the ZIP, creates the tag when needed and publishes the GitHub release.
 
-Architecture notes and the test report for each release are in [`docs/dev/`](docs/dev/).
-
-## Changelog
-
-See the `== Changelog ==` section of [`readme.txt`](readme.txt).
+Architecture notes and the test report are in [`docs/dev/`](docs/dev/). The changelog is in [`readme.txt`](readme.txt).
 
 ## License
 
