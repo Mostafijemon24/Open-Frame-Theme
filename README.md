@@ -1,57 +1,83 @@
 # Open Frame
 
-An original, lightweight, accessibility-first **multipurpose WordPress theme** built on a token-driven design system. Open Frame ships with a comprehensive Customizer, header and footer builders, an accessible navigation system with a native (plugin-free) mega menu, and complete template coverage for blog, archive, search, single, page and 404 views. It works fully on its own and requires **no plugin**.
+A lightweight, accessibility-minded **multipurpose WordPress theme** built on a token-driven design system. Open Frame is controlled entirely from the Customizer, bundles its fonts locally, needs **no plugin** and makes **no remote requests**.
 
-- **Author:** Mostafij Emon — <https://mostafijemon.live/>
-- **License:** GNU General Public License v2 or later (GPL-2.0-or-later)
-- **Text domain:** `open-frame`
-- **Requires WordPress:** 6.4+ · **Requires PHP:** 7.4+
+![Open Frame home page](screenshot.png)
+
+| | |
+| --- | --- |
+| **Version** | 1.0.0 |
+| **Requires** | WordPress 6.4+, PHP 7.4+ (tested up to WordPress 7.1) |
+| **License** | GPL-2.0-or-later |
+| **Text domain** | `open-frame` |
+| **Author** | [Mostafij Emon](https://mostafijemon.live/) |
+
+## Documentation
+
+**[Read the full documentation →](docs/README.md)** — installation, quick start, every Customizer option, menus and the mega menu, templates, patterns, child themes and a developer reference, with screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
 
 ## Features
 
-- Token-driven design system (color, typography, spacing, radius, elevation).
-- Comprehensive Customizer: global colors, typography, layout, header and footer builders — every control has a real effect.
-- Accessible, keyboard-friendly navigation: desktop dropdowns, nested menus, a native multi-column **mega menu** (add the `of-mega` CSS class to a top-level menu item), and a reliable mobile menu with correct ARIA.
-- Header builder with multiple layouts, sticky and optional transparent modes.
-- Footer builder with 1–4 responsive widget columns; empty columns are hidden.
-- Right/left/no-sidebar and full-width layouts.
-- Block editor (Gutenberg) support via `theme.json`, shared palette, editor styles, `alignwide`/`alignfull`, and proper float containment.
-- Translation-ready, RTL-friendly, reduced-motion aware.
-- No remote requests, no tracking, no bundled third-party assets.
+- **Design system** — colors, typography, spacing, radius and elevation as CSS custom properties; change a color once and the whole site follows, including the block editor palette.
+- **Customizer** — global colors, fonts, font size, line height, heading weight, container and content widths, section spacing. Every option has a visible effect.
+- **Header builder** — five layouts, background and text colors, sticky and transparent modes, optional search, hide-title option.
+- **Footer builder** — one to four widget columns (empty ones are skipped), footer colors, custom copyright text.
+- **Navigation** — keyboard-friendly dropdowns, mobile menu, and a multi-column **mega menu** (add the class `of-mega` to a top-level menu item).
+- **Layouts** — right sidebar, left sidebar, no sidebar and full width, set separately for the blog, posts and pages; blog as a list or a 2–4 column grid.
+- **Templates** — Full Width and **Landing Page** (blank canvas for block-built pages).
+- **Block editor** — six patterns, five block styles, shared palette, font sizes and spacing scale through `theme.json`.
+- **Built in** — translation-ready, RTL-friendly, reduced-motion aware, usable without JavaScript, child-theme friendly.
 
 ## Installation
 
-1. Download/clone this repository, or build a ZIP (see below).
-2. In WordPress admin: **Appearance → Themes → Add New → Upload Theme**, upload the ZIP, **Install** then **Activate**.
-3. Visit **Appearance → Customize** to configure colors, typography, header and footer.
+Download `open-frame-<version>.zip` from the [latest release](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/latest), then in WordPress go to **Appearance → Themes → Add Theme → Upload Theme**, upload the ZIP, **Install** and **Activate**.
 
-### Creating a mega menu
-
-In **Appearance → Menus**, open **Screen Options** and enable **CSS Classes**. Add the class `of-mega` to a top-level menu item that has sub-items. Its direct children become columns; items nested beneath them list as links. Other items keep the standard dropdown.
+> Download the release ZIP rather than GitHub's "Source code" archive: the release package contains only the files the theme needs.
 
 ## Development
 
-- Source of truth for styling tokens: the `:root` custom properties in `style.css`.
-- PHP follows the WordPress Coding Standards. Lint with:
-  ```
-  phpcs --standard=open-frame-phpcs.xml.dist .
-  ```
-  (the ruleset is maintained alongside releases). All PHP targets PHP 7.4+.
-- `docs/` contains development-only notes and a compliance matrix; it is excluded from the distributable theme ZIP.
-
-## Building a release ZIP
-
-The installable theme excludes development files (`docs/`, `.git*`, PHPCS config, OS metadata):
-
 ```
-rsync -a --exclude 'docs' --exclude '.git*' --exclude '.DS_Store' ./ /tmp/open-frame/open-frame/
-cd /tmp/open-frame && zip -rqX open-frame.zip open-frame
+open-frame/
+├── style.css, theme.json, functions.php   Theme entry points
+├── inc/                                    Setup, Customizer, header/footer builders, template tags
+├── page-templates/, template-parts/        Templates
+├── patterns/                               Block patterns
+├── assets/                                 CSS, JS, fonts, images
+├── languages/                              Translation template
+├── docs/                                   User documentation (not shipped in the ZIP)
+└── bin/                                    Build scripts (not shipped in the ZIP)
 ```
+
+**Coding standards.** PHP follows the WordPress Coding Standards and is checked for PHP 7.4+ compatibility:
+
+```bash
+composer global require squizlabs/php_codesniffer wp-coding-standards/wpcs phpcompatibility/phpcompatibility-wp dealerdirect/phpcodesniffer-composer-installer
+```
+
+```bash
+phpcs
+```
+
+**Build the installable ZIP** (everything in [`.distignore`](.distignore) is left out):
+
+```bash
+bash bin/build-zip.sh
+```
+
+**Rebuild the HTML documentation** after editing `docs/README.md`:
+
+```bash
+npm install marked && node bin/build-docs.js
+```
+
+**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry, then push a tag such as `v1.0.1`. The [release workflow](.github/workflows/release.yml) builds the ZIP and publishes the GitHub release.
+
+Architecture notes and the test report for each release are in [`docs/dev/`](docs/dev/).
 
 ## Changelog
 
-See the `== Changelog ==` section of [`readme.txt`](readme.txt) for the full, versioned history.
+See the `== Changelog ==` section of [`readme.txt`](readme.txt).
 
 ## License
 
-Open Frame is free software distributed under the terms of the GNU GPL v2 or later. See [`LICENSE`](LICENSE).
+Open Frame is free software distributed under the GNU General Public License v2 or later. See [`LICENSE`](LICENSE). The bundled fonts (Hanken Grotesk, JetBrains Mono) are licensed under the SIL Open Font License 1.1; details are in [`readme.txt`](readme.txt).

@@ -49,7 +49,6 @@ function open_frame_defaults() {
 		'open_frame_container_width'     => 1200,
 		'open_frame_content_width'       => 960,
 		'open_frame_section_spacing'     => 64,
-		'open_frame_default_layout'      => 'right-sidebar',
 		'open_frame_blog_style'          => 'list',
 		'open_frame_blog_columns'        => 2,
 		'open_frame_excerpt_length'      => 30,
@@ -62,7 +61,7 @@ function open_frame_defaults() {
 		'open_frame_color_secondary'     => '#14b8a6',
 		'open_frame_color_accent'        => '#f5a623',
 		'open_frame_color_heading'       => '#0f172a',
-		'open_frame_color_text'          => '#0f172a',
+		'open_frame_color_text'          => '#334155',
 		'open_frame_color_link'          => '#3f4cd6',
 		'open_frame_color_link_hover'    => '#2b36b8',
 		'open_frame_color_border'        => '#e2e8f0',
@@ -77,6 +76,8 @@ function open_frame_defaults() {
 
 		'open_frame_header_layout'       => 'logo-left-menu-right',
 		'open_frame_header_bg'           => '#ffffff',
+		'open_frame_header_text'         => '',
+		'open_frame_show_site_title'     => true,
 		'open_frame_sticky_header'       => false,
 		'open_frame_transparent_header'  => false,
 		'open_frame_header_search'       => false,
@@ -84,9 +85,34 @@ function open_frame_defaults() {
 		'open_frame_footer_layout'       => '4-col',
 		'open_frame_footer_bg'           => '#0f172a',
 		'open_frame_footer_text'         => '#cbd5e1',
+		'open_frame_footer_heading'      => '#ffffff',
 		'open_frame_footer_visible'      => true,
 		'open_frame_copyright_text'      => '',
 	);
+}
+
+/**
+ * Read a theme mod, falling back to the theme default for that setting.
+ *
+ * Keeps the frontend, the dynamic CSS and the Customizer controls in sync:
+ * every reader resolves the same default from open_frame_defaults().
+ *
+ * @param string $key Theme mod name.
+ * @return mixed
+ */
+function open_frame_get_mod( $key ) {
+	$defaults = open_frame_defaults();
+
+	return get_theme_mod( $key, isset( $defaults[ $key ] ) ? $defaults[ $key ] : false );
+}
+
+/**
+ * Whether the blog listing uses the grid style (Customizer active callback).
+ *
+ * @return bool
+ */
+function open_frame_is_blog_grid() {
+	return 'grid' === open_frame_get_mod( 'open_frame_blog_style' );
 }
 
 /**
@@ -141,9 +167,9 @@ function open_frame_customize_register( $wp_customize ) {
 	);
 
 	$ranges = array(
-		'open_frame_container_width' => array( __( 'Container width (px)', 'open-frame' ), 800, 1600 ),
-		'open_frame_content_width'   => array( __( 'Content width (px)', 'open-frame' ), 600, 1400 ),
-		'open_frame_section_spacing' => array( __( 'Section spacing (px)', 'open-frame' ), 16, 160 ),
+		'open_frame_container_width' => array( __( 'Container width (px)', 'open-frame' ), 800, 1600, __( 'Maximum width of the header, footer and sidebar layouts.', 'open-frame' ) ),
+		'open_frame_content_width'   => array( __( 'Content width (px)', 'open-frame' ), 600, 1400, __( 'Maximum width of the content column in the No sidebar layout and of blocks on the Landing Page template.', 'open-frame' ) ),
+		'open_frame_section_spacing' => array( __( 'Section spacing (px)', 'open-frame' ), 16, 160, __( 'Vertical space above and below the main content area.', 'open-frame' ) ),
 	);
 	foreach ( $ranges as $id => $range ) {
 		$wp_customize->add_setting(
@@ -158,6 +184,7 @@ function open_frame_customize_register( $wp_customize ) {
 			$id,
 			array(
 				'label'       => $range[0],
+				'description' => $range[3],
 				'section'     => 'open_frame_layout',
 				'type'        => 'number',
 				'input_attrs' => array(
@@ -202,11 +229,12 @@ function open_frame_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'open_frame_blog_columns',
 		array(
-			'label'       => __( 'Grid columns', 'open-frame' ),
-			'description' => __( 'Applies when the blog listing style is Grid.', 'open-frame' ),
-			'section'     => 'open_frame_layout',
-			'type'        => 'number',
-			'input_attrs' => array(
+			'label'           => __( 'Grid columns', 'open-frame' ),
+			'description'     => __( 'Applies when the blog listing style is Grid.', 'open-frame' ),
+			'section'         => 'open_frame_layout',
+			'type'            => 'number',
+			'active_callback' => 'open_frame_is_blog_grid',
+			'input_attrs'     => array(
 				'min'  => 2,
 				'max'  => 4,
 				'step' => 1,
@@ -239,8 +267,8 @@ function open_frame_customize_register( $wp_customize ) {
 	$layout_choices  = array(
 		'right-sidebar' => __( 'Right sidebar', 'open-frame' ),
 		'left-sidebar'  => __( 'Left sidebar', 'open-frame' ),
-		'no-sidebar'    => __( 'No sidebar', 'open-frame' ),
-		'full-width'    => __( 'Full width', 'open-frame' ),
+		'no-sidebar'    => __( 'No sidebar (content width)', 'open-frame' ),
+		'full-width'    => __( 'Full width (container width)', 'open-frame' ),
 	);
 	$layout_settings = array(
 		'open_frame_blog_layout'   => __( 'Blog / archive layout', 'open-frame' ),
@@ -324,10 +352,11 @@ function open_frame_customize_register( $wp_customize ) {
 		$font_labels[ $key ] = $data['label'];
 	}
 
-	foreach ( array(
+	$font_settings = array(
 		'open_frame_body_font'    => __( 'Body font', 'open-frame' ),
 		'open_frame_heading_font' => __( 'Heading font', 'open-frame' ),
-	) as $id => $label ) {
+	);
+	foreach ( $font_settings as $id => $label ) {
 		$wp_customize->add_setting(
 			$id,
 			array(
@@ -350,7 +379,7 @@ function open_frame_customize_register( $wp_customize ) {
 	$type_numbers = array(
 		'open_frame_base_font_size'   => array( __( 'Base font size (px)', 'open-frame' ), 14, 22, 1 ),
 		'open_frame_body_line_height' => array( __( 'Body line height (%)', 'open-frame' ), 120, 200, 5 ),
-		'open_frame_heading_weight'   => array( __( 'Heading weight', 'open-frame' ), 400, 800, 100 ),
+		'open_frame_heading_weight'   => array( __( 'Heading weight', 'open-frame' ), 400, 900, 100 ),
 	);
 	foreach ( $type_numbers as $id => $range ) {
 		$wp_customize->add_setting(
@@ -397,5 +426,11 @@ function open_frame_customize_preview_js() {
 		OPEN_FRAME_VERSION,
 		true
 	);
+
+	$stacks = array();
+	foreach ( open_frame_font_choices() as $key => $font ) {
+		$stacks[ $key ] = $font['stack'];
+	}
+	wp_localize_script( 'open-frame-customize-preview', 'openFramePreview', array( 'fonts' => $stacks ) );
 }
 add_action( 'customize_preview_init', 'open_frame_customize_preview_js' );

@@ -62,12 +62,45 @@ function open_frame_customize_header( $wp_customize, $defaults ) {
 		)
 	);
 
-	$toggles = array(
-		'open_frame_sticky_header'      => __( 'Sticky header', 'open-frame' ),
-		'open_frame_transparent_header' => __( 'Transparent header on front page', 'open-frame' ),
-		'open_frame_header_search'      => __( 'Show search in header', 'open-frame' ),
+	$wp_customize->add_setting(
+		'open_frame_header_text',
+		array(
+			'default'           => $defaults['open_frame_header_text'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
+		)
 	);
-	foreach ( $toggles as $id => $label ) {
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'open_frame_header_text',
+			array(
+				'label'       => __( 'Header text color', 'open-frame' ),
+				'description' => __( 'Site title, tagline and menu links. Leave empty to use the theme defaults.', 'open-frame' ),
+				'section'     => 'open_frame_header',
+			)
+		)
+	);
+
+	$toggles = array(
+		'open_frame_show_site_title'    => array(
+			__( 'Show site title and tagline', 'open-frame' ),
+			__( 'When unchecked the text stays available to screen readers and search engines. Useful when your logo already contains the site name.', 'open-frame' ),
+		),
+		'open_frame_sticky_header'      => array(
+			__( 'Sticky header', 'open-frame' ),
+			__( 'Keeps the header visible at the top of the screen while scrolling.', 'open-frame' ),
+		),
+		'open_frame_transparent_header' => array(
+			__( 'Transparent header on front page', 'open-frame' ),
+			__( 'Removes the header background on the front page. With the Landing Page template the header overlays the first block.', 'open-frame' ),
+		),
+		'open_frame_header_search'      => array(
+			__( 'Show search in header', 'open-frame' ),
+			'',
+		),
+	);
+	foreach ( $toggles as $id => $toggle ) {
 		$wp_customize->add_setting(
 			$id,
 			array(
@@ -79,12 +112,45 @@ function open_frame_customize_header( $wp_customize, $defaults ) {
 		$wp_customize->add_control(
 			$id,
 			array(
-				'label'   => $label,
-				'section' => 'open_frame_header',
-				'type'    => 'checkbox',
+				'label'       => $toggle[0],
+				'description' => $toggle[1],
+				'section'     => 'open_frame_header',
+				'type'        => 'checkbox',
 			)
 		);
 	}
+}
+
+/**
+ * CSS classes for the site header element.
+ *
+ * @return string[]
+ */
+function open_frame_header_classes() {
+	$layout = open_frame_get_mod( 'open_frame_header_layout' );
+	if ( ! array_key_exists( $layout, open_frame_header_layouts() ) ) {
+		$layout = 'logo-left-menu-right';
+	}
+
+	$classes = array( 'site-header', 'header-layout-' . $layout );
+
+	if ( open_frame_get_mod( 'open_frame_sticky_header' ) ) {
+		$classes[] = 'is-sticky';
+	}
+	if ( open_frame_has_transparent_header() ) {
+		$classes[] = 'is-transparent';
+	}
+
+	return $classes;
+}
+
+/**
+ * Whether the transparent header applies to the current view.
+ *
+ * @return bool
+ */
+function open_frame_has_transparent_header() {
+	return open_frame_get_mod( 'open_frame_transparent_header' ) && is_front_page();
 }
 
 /**
@@ -108,11 +174,18 @@ function open_frame_header_layouts() {
  * @return void
  */
 function open_frame_site_branding() {
+	$text_class = 'site-branding-text';
+	if ( ! open_frame_get_mod( 'open_frame_show_site_title' ) ) {
+		// Hidden visually only: the site name stays available to assistive technology.
+		$text_class .= ' screen-reader-text';
+	}
+
 	echo '<div class="site-branding">';
 	if ( has_custom_logo() ) {
 		the_custom_logo();
 	}
 
+	echo '<div class="' . esc_attr( $text_class ) . '">';
 	if ( is_front_page() && is_home() ) {
 		printf( '<h1 class="site-title"><a href="%1$s" rel="home">%2$s</a></h1>', esc_url( home_url( '/' ) ), esc_html( get_bloginfo( 'name' ) ) );
 	} else {
@@ -123,6 +196,7 @@ function open_frame_site_branding() {
 	if ( $description || is_customize_preview() ) {
 		printf( '<p class="site-description">%s</p>', esc_html( $description ) );
 	}
+	echo '</div>';
 	echo '</div>';
 }
 
@@ -146,7 +220,7 @@ function open_frame_primary_nav() {
 	}
 
 	echo '<nav id="site-navigation" class="main-navigation" aria-label="' . esc_attr__( 'Primary', 'open-frame' ) . '">';
-	echo '<button class="menu-toggle of-plain" aria-controls="primary-menu" aria-expanded="false">';
+	echo '<button type="button" class="menu-toggle of-plain" aria-controls="primary-menu" aria-expanded="false">';
 	echo '<span class="menu-toggle-bar" aria-hidden="true"></span>';
 	echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'open-frame' ) . '</span>';
 	echo '</button>';
@@ -168,7 +242,7 @@ function open_frame_primary_nav() {
  * @return void
  */
 function open_frame_header_search() {
-	if ( ! get_theme_mod( 'open_frame_header_search', false ) ) {
+	if ( ! open_frame_get_mod( 'open_frame_header_search' ) ) {
 		return;
 	}
 	echo '<div class="header-search">';

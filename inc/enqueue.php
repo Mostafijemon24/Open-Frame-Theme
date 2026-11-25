@@ -2,9 +2,9 @@
 /**
  * Asset loading.
  *
- * Fonts are loaded locally (no remote font requests) when the bundled
- * woff2 files are present in assets/fonts/. Until those files are added
- * the theme falls back to the system font stack — see assets/fonts/README.txt.
+ * The bundled web fonts are declared in theme.json (settings.typography
+ * .fontFamilies[].fontFace), so WordPress prints their @font-face rules on the
+ * frontend and in the block editor. No remote font requests are made.
  *
  * @package Open_Frame
  */
@@ -21,12 +21,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 function open_frame_enqueue_assets() {
 	$version = OPEN_FRAME_VERSION;
 
-	// Local fonts stylesheet, only if the font files actually exist.
-	if ( file_exists( OPEN_FRAME_DIR . '/assets/fonts/fonts.css' ) && open_frame_has_local_fonts() ) {
-		wp_enqueue_style( 'open-frame-fonts', OPEN_FRAME_URI . '/assets/fonts/fonts.css', array(), $version );
-	}
+	// Always load the parent stylesheet so child themes inherit the design system.
+	wp_enqueue_style( 'open-frame-style', OPEN_FRAME_URI . '/style.css', array(), $version );
 
-	wp_enqueue_style( 'open-frame-style', get_stylesheet_uri(), array(), $version );
+	if ( is_child_theme() ) {
+		wp_enqueue_style(
+			'open-frame-child-style',
+			get_stylesheet_uri(),
+			array( 'open-frame-style' ),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
 
 	wp_enqueue_script(
 		'open-frame-navigation',
@@ -43,27 +48,14 @@ function open_frame_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'open_frame_enqueue_assets' );
 
 /**
- * Whether bundled local font files are present.
+ * Flag JavaScript support as early as possible.
  *
- * @return bool
- */
-function open_frame_has_local_fonts() {
-	$dir = OPEN_FRAME_DIR . '/assets/fonts';
-	if ( ! is_dir( $dir ) ) {
-		return false;
-	}
-	$fonts = glob( $dir . '/*.woff2' );
-	return ! empty( $fonts );
-}
-
-/**
- * Enqueue block editor assets so the editor matches the frontend.
+ * Swaps the `no-js` class on the root element for `js` so the stylesheet can
+ * offer a usable, fully expanded menu when scripts are unavailable.
  *
  * @return void
  */
-function open_frame_editor_assets() {
-	if ( open_frame_has_local_fonts() && file_exists( OPEN_FRAME_DIR . '/assets/fonts/fonts.css' ) ) {
-		add_editor_style( 'assets/fonts/fonts.css' );
-	}
+function open_frame_javascript_detection() {
+	wp_print_inline_script_tag( "document.documentElement.className = document.documentElement.className.replace( /\\bno-js\\b/, 'js' );" );
 }
-add_action( 'after_setup_theme', 'open_frame_editor_assets', 20 );
+add_action( 'wp_head', 'open_frame_javascript_detection', 0 );

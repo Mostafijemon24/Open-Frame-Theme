@@ -12,7 +12,7 @@
 	<div class="entry-card-body">
 		<header class="entry-header">
 			<?php
-			if ( is_sticky() && ! is_paged() ) {
+			if ( is_sticky() && is_home() && ! is_paged() ) {
 				echo '<span class="sticky-badge">' . esc_html__( 'Featured', 'open-frame' ) . '</span>';
 			}
 			$open_frame_cats = get_the_category();

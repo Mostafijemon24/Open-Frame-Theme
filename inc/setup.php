@@ -61,9 +61,8 @@ function open_frame_setup() {
 
 	register_nav_menus(
 		array(
-			'primary'   => __( 'Primary Menu', 'open-frame' ),
-			'secondary' => __( 'Secondary Menu', 'open-frame' ),
-			'footer'    => __( 'Footer Menu', 'open-frame' ),
+			'primary' => __( 'Primary Menu', 'open-frame' ),
+			'footer'  => __( 'Footer Menu', 'open-frame' ),
 		)
 	);
 
@@ -74,12 +73,15 @@ function open_frame_setup() {
 add_action( 'after_setup_theme', 'open_frame_setup' );
 
 /**
- * Set the content width in pixels.
+ * Set the content width in pixels, following the Customizer content width.
  *
  * @return void
  */
 function open_frame_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'open_frame_content_width', 960 );
+	$width = open_frame_clamp( open_frame_get_mod( 'open_frame_content_width' ), 600, 1400 );
+
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Core global.
+	$GLOBALS['content_width'] = apply_filters( 'open_frame_content_width', $width );
 }
 add_action( 'after_setup_theme', 'open_frame_content_width', 0 );
 

@@ -1,0 +1,13 @@
+# Files and folders left out of the installable theme ZIP (bin/build-zip.sh).
+.git
+.github
+.gitignore
+.distignore
+.DS_Store
+README.md
+phpcs.xml.dist
+bin
+docs
+dist
+node_modules
+vendor

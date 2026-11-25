@@ -17,5 +17,6 @@ vendor/
 *.sql
 wp-config.php
 
-# Release artifacts (built outside the repo)
+# Release artifacts (built by bin/build-zip.sh)
 *.zip
+dist/

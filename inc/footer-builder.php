@@ -53,10 +53,11 @@ function open_frame_customize_footer( $wp_customize, $defaults ) {
 	$wp_customize->add_control(
 		'open_frame_footer_layout',
 		array(
-			'label'   => __( 'Footer columns', 'open-frame' ),
-			'section' => 'open_frame_footer',
-			'type'    => 'select',
-			'choices' => array(
+			'label'       => __( 'Footer columns', 'open-frame' ),
+			'description' => __( 'Maximum number of widget columns. Add widgets to the Footer 1-4 areas; empty areas are skipped.', 'open-frame' ),
+			'section'     => 'open_frame_footer',
+			'type'        => 'select',
+			'choices'     => array(
 				'1-col' => __( '1 column', 'open-frame' ),
 				'2-col' => __( '2 columns', 'open-frame' ),
 				'3-col' => __( '3 columns', 'open-frame' ),
@@ -104,6 +105,25 @@ function open_frame_customize_footer( $wp_customize, $defaults ) {
 	);
 
 	$wp_customize->add_setting(
+		'open_frame_footer_heading',
+		array(
+			'default'           => $defaults['open_frame_footer_heading'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'open_frame_footer_heading',
+			array(
+				'label'   => __( 'Footer heading and link color', 'open-frame' ),
+				'section' => 'open_frame_footer',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'open_frame_copyright_text',
 		array(
 			'default'           => $defaults['open_frame_copyright_text'],
@@ -115,7 +135,7 @@ function open_frame_customize_footer( $wp_customize, $defaults ) {
 		'open_frame_copyright_text',
 		array(
 			'label'       => __( 'Copyright text', 'open-frame' ),
-			'description' => __( 'Leave blank for the default site name and year.', 'open-frame' ),
+			'description' => __( 'Leave blank for the default site name and year. Basic HTML such as links is allowed.', 'open-frame' ),
 			'section'     => 'open_frame_footer',
 			'type'        => 'textarea',
 		)
@@ -143,18 +163,22 @@ function open_frame_active_footer_columns() {
  * @return void
  */
 function open_frame_footer_widgets() {
-	if ( ! get_theme_mod( 'open_frame_footer_visible', true ) ) {
-		return;
-	}
-	if ( 0 === open_frame_active_footer_columns() ) {
+	if ( ! open_frame_get_mod( 'open_frame_footer_visible' ) ) {
 		return;
 	}
 
-	$layout = get_theme_mod( 'open_frame_footer_layout', '4-col' );
-	$max    = (int) substr( $layout, 0, 1 );
-	$max    = $max > 0 ? $max : 4;
+	$active = open_frame_active_footer_columns();
+	if ( 0 === $active ) {
+		return;
+	}
 
-	echo '<div class="footer-widgets footer-widgets--' . esc_attr( $layout ) . '">';
+	$max = open_frame_clamp( (int) substr( (string) open_frame_get_mod( 'open_frame_footer_layout' ), 0, 1 ), 1, 4 );
+
+	// Size the grid to the columns that will actually render, so two populated
+	// areas in a four-column layout share the row instead of leaving it half empty.
+	$columns = min( $max, $active );
+
+	echo '<div class="footer-widgets footer-widgets--' . esc_attr( $columns ) . '-col">';
 	echo '<div class="of-container footer-widgets-inner">';
 	$shown = 0;
 	for ( $i = 1; $i <= 4 && $shown < $max; $i++ ) {
@@ -174,7 +198,7 @@ function open_frame_footer_widgets() {
  * @return void
  */
 function open_frame_footer_copyright() {
-	$custom = get_theme_mod( 'open_frame_copyright_text', '' );
+	$custom = open_frame_get_mod( 'open_frame_copyright_text' );
 
 	echo '<div class="site-info"><div class="of-container site-info-inner">';
 	if ( ! empty( $custom ) ) {
@@ -182,7 +206,7 @@ function open_frame_footer_copyright() {
 	} else {
 		printf(
 			'<div class="copyright">&copy; %1$s %2$s. %3$s</div>',
-			esc_html( gmdate( 'Y' ) ),
+			esc_html( wp_date( 'Y' ) ),
 			esc_html( get_bloginfo( 'name' ) ),
 			esc_html__( 'All rights reserved.', 'open-frame' )
 		);

@@ -84,32 +84,51 @@ endif;
 
 if ( ! function_exists( 'open_frame_entry_footer' ) ) :
 	/**
-	 * Print categories and tags.
+	 * Print the entry footer: categories, tags and the edit link.
+	 *
+	 * Nothing is printed when there is nothing to show, so custom post types
+	 * and pages never end with an empty bordered footer.
 	 *
 	 * @return void
 	 */
 	function open_frame_entry_footer() {
-		if ( 'post' !== get_post_type() ) {
+		$items = array();
+
+		if ( 'post' === get_post_type() ) {
+			$categories_list = get_the_category_list( esc_html__( ', ', 'open-frame' ) );
+			if ( $categories_list ) {
+				$items[] = sprintf(
+					'<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+					esc_html__( 'Categories', 'open-frame' ),
+					$categories_list
+				);
+			}
+
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'open-frame' ) );
+			if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+				$items[] = sprintf(
+					'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+					esc_html__( 'Tags', 'open-frame' ),
+					$tags_list
+				);
+			}
+		}
+
+		$edit_link = get_edit_post_link();
+		if ( $edit_link ) {
+			$items[] = sprintf(
+				'<span class="edit-link"><a href="%1$s">%2$s<span class="screen-reader-text"> %3$s</span></a></span>',
+				esc_url( $edit_link ),
+				esc_html__( 'Edit', 'open-frame' ),
+				esc_html( get_the_title() )
+			);
+		}
+
+		if ( empty( $items ) ) {
 			return;
 		}
 
-		$categories_list = get_the_category_list( esc_html__( ', ', 'open-frame' ) );
-		if ( $categories_list ) {
-			printf(
-				'<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				esc_html__( 'Categories', 'open-frame' ),
-				wp_kses_post( $categories_list )
-			);
-		}
-
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'open-frame' ) );
-		if ( $tags_list ) {
-			printf(
-				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				esc_html__( 'Tags', 'open-frame' ),
-				wp_kses_post( $tags_list )
-			);
-		}
+		echo '<footer class="entry-footer">' . wp_kses_post( implode( '', $items ) ) . '</footer>';
 	}
 endif;
 
@@ -161,8 +180,9 @@ if ( ! function_exists( 'open_frame_comment' ) ) :
 					<span class="comment-author vcard"><?php echo get_avatar( $comment, 48 ); ?><b class="fn"><?php comment_author_link(); ?></b></span>
 					<span class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-							<time datetime="<?php comment_time( 'c' ); ?>"><?php printf( '%1$s', esc_html( get_comment_date() ) ); ?></time>
+							<time datetime="<?php comment_time( 'c' ); ?>"><?php echo esc_html( get_comment_date() ); ?></time>
 						</a>
+						<?php edit_comment_link( esc_html__( 'Edit', 'open-frame' ), '<span class="edit-link">', '</span>' ); ?>
 					</span>
 				</footer>
 				<?php if ( '0' === $comment->comment_approved ) : ?>

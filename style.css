@@ -1,32 +1,33 @@
 /*
 Theme Name: Open Frame
-Theme URI:
+Theme URI: https://github.com/Mostafijemon24/Open-Frame-Theme
 Author: Mostafij Emon
 Author URI: https://mostafijemon.live/
-Description: Open Frame is an original, lightweight, accessibility-first multipurpose WordPress theme. A token-driven design system, a comprehensive Customizer, header & footer builders, and clean template coverage make it a flexible foundation for business, blog, portfolio and shop sites. Works fully on its own; an optional free Starter Sites companion plugin adds demo imports.
-Version: 0.6.0
+Description: Open Frame is a lightweight, accessibility-minded multipurpose theme for business sites, blogs and portfolios. A token-driven design system keeps colors, typography and spacing consistent, and everything is controlled from the Customizer: global colors, fonts, layout widths, five header layouts with sticky and transparent modes, and a footer with up to four widget columns. It includes a keyboard-friendly navigation with an optional multi-column mega menu, sidebar and full-width layouts, a Landing Page template with ready-made block patterns, and full block editor support. Fonts are bundled locally, no plugins are required and no remote requests are made.
+Version: 1.0.0
 Requires at least: 6.4
-Tested up to: 6.7
+Tested up to: 7.1
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: open-frame
-Tags: blog, portfolio, news, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, left-sidebar, right-sidebar, two-columns, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-styles, wide-blocks
+Tags: blog, portfolio, news, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
 
-Open Frame is free software. You can redistribute it and/or modify it under the
+Open Frame WordPress Theme, (C) 2026 Mostafij Emon
+Open Frame is distributed under the terms of the GNU GPL.
+
+Open Frame is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
 Foundation, either version 2 of the License, or (at your option) any later version.
 
-Open Frame ships no third-party font binaries. It references the following
-optional web fonts by name only; when they are not installed the theme falls
-back to system fonts. To self-host them, drop the files in per
-assets/fonts/README.txt (both are licensed under SIL OFL 1.1):
-- Hanken Grotesk (SIL OFL 1.1)
-- JetBrains Mono (SIL OFL 1.1)
+Open Frame bundles two typefaces, both licensed under the SIL Open Font
+License 1.1 (see readme.txt and assets/fonts/ for the full license texts):
+- Hanken Grotesk
+- JetBrains Mono
 */
 
 /* ==========================================================================
-   Studio Framework design tokens  (single source of truth)
+   Design tokens (single source of truth)
    Customizer settings override a subset of these at runtime via inline CSS.
    ========================================================================== */
 :root {
@@ -69,14 +70,14 @@ assets/fonts/README.txt (both are licensed under SIL OFL 1.1):
 	--of-color-secondary: var(--of-secondary-500);
 	--of-color-accent: var(--of-accent-500);
 	--of-color-heading: var(--of-slate-900);
-	--of-color-text: var(--of-slate-900);
+	--of-color-text: var(--of-slate-700);
 	--of-color-muted: var(--of-slate-500);
 	--of-color-link: var(--of-primary-600);
 	--of-color-link-hover: var(--of-primary-700);
 	--of-color-border: var(--of-slate-200);
 	--of-color-bg: var(--of-slate-50);
 	--of-color-surface: var(--of-white);
-	--of-color-focus: var(--of-primary-600);
+	--of-color-focus: var(--of-color-primary);
 
 	/* Typography */
 	--of-font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", roboto, helvetica, arial, sans-serif;
@@ -99,6 +100,7 @@ assets/fonts/README.txt (both are licensed under SIL OFL 1.1):
 	--of-fw-semibold: 600;
 	--of-fw-bold: 700;
 	--of-fw-extrabold: 800;
+	--of-fw-heading: 700; /* Customizer: Typography → Heading weight */
 
 	--of-lh-tight: 1.15;
 	--of-lh-heading: 1.2;
@@ -117,6 +119,7 @@ assets/fonts/README.txt (both are licensed under SIL OFL 1.1):
 	/* Section rhythm (Customizer-overridable) */
 	--of-section-spacing: clamp(2.5rem, 1.5rem + 4vw, 4rem);
 	--of-content-padding: 1.5rem;
+	--of-card-padding: clamp(1.5rem, 1rem + 3vw, 3rem);
 
 	/* Radii */
 	--of-radius-sm: 6px;
@@ -166,11 +169,13 @@ body {
 }
 
 img,
+video { max-width: 100%; height: auto; }
+
+/* Embedded frames keep the height their markup asks for. */
 svg,
-video,
 iframe,
 embed,
-object { max-width: 100%; height: auto; }
+object { max-width: 100%; }
 
 img { border: 0; }
 
@@ -194,16 +199,16 @@ h1, h2, h3, h4, h5, h6 {
 	color: var(--of-color-heading);
 	line-height: var(--of-lh-heading);
 	margin: 0 0 var(--of-space-4);
-	font-weight: var(--of-fw-bold);
+	font-weight: var(--of-fw-heading);
 	letter-spacing: -0.01em;
 }
 
-h1 { font-size: var(--of-fs-h1); font-weight: var(--of-fw-extrabold); letter-spacing: -0.02em; }
+h1 { font-size: var(--of-fs-h1); letter-spacing: -0.02em; }
 h2 { font-size: var(--of-fs-h2); }
 h3 { font-size: var(--of-fs-h3); }
-h4 { font-size: var(--of-fs-h4); font-weight: var(--of-fw-semibold); }
-h5 { font-size: var(--of-fs-h5); font-weight: var(--of-fw-semibold); }
-h6 { font-size: var(--of-fs-h6); font-weight: var(--of-fw-semibold); }
+h4 { font-size: var(--of-fs-h4); }
+h5 { font-size: var(--of-fs-h5); }
+h6 { font-size: var(--of-fs-h6); }
 
 p { margin: 0 0 var(--of-space-4); }
 
@@ -234,6 +239,9 @@ pre {
 	border-radius: var(--of-radius-sm);
 }
 
+dt { font-weight: var(--of-fw-semibold); color: var(--of-color-heading); }
+dd { margin: 0 0 var(--of-space-3); margin-inline-start: var(--of-space-5); }
+
 hr { border: 0; border-top: 1px solid var(--of-color-border); margin: var(--of-space-6) 0; }
 
 table { border-collapse: collapse; width: 100%; margin: 0 0 var(--of-space-5); }
@@ -261,20 +269,22 @@ th { background: var(--of-slate-100); font-weight: var(--of-fw-semibold); }
 	align-items: start;
 }
 
-.of-layout--has-sidebar { grid-template-columns: minmax(0, 1fr); }
-
 @media (min-width: 1024px) {
-	.of-layout--right-sidebar { grid-template-columns: minmax(0, 1fr) 320px; }
-	.of-layout--left-sidebar { grid-template-columns: 320px minmax(0, 1fr); }
+	.of-layout--right-sidebar.of-layout--has-sidebar { grid-template-columns: minmax(0, 1fr) 320px; }
+	.of-layout--left-sidebar.of-layout--has-sidebar { grid-template-columns: 320px minmax(0, 1fr); }
 	.of-layout--left-sidebar .of-primary { order: 2; }
 	.of-layout--left-sidebar .of-sidebar { order: 1; }
 }
 
 .of-primary { min-width: 0; }
 
-.layout-contained .of-primary > .hentry,
-.layout-contained .page-header,
-.layout-narrow .site-main { max-width: var(--of-content-width); margin-inline: auto; }
+/* "No sidebar" centers the content at the content width; "Full width" lets it
+   use the whole container. */
+.of-layout--no-sidebar .of-primary {
+	width: 100%;
+	max-width: var(--of-content-width);
+	margin-inline: auto;
+}
 
 /* ==========================================================================
    Accessibility helpers
@@ -411,7 +421,22 @@ textarea { resize: vertical; min-height: 7rem; }
 /* ==========================================================================
    Skip link
    ========================================================================== */
-.site { position: relative; }
+/* Column layout that keeps the footer at the bottom of the window on short pages. */
+.site {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-content { flex: 1 0 auto; }
+
+/* Leave room for the WordPress toolbar so short pages do not scroll. */
+.admin-bar .site { min-height: calc(100vh - 32px); }
+
+@media (max-width: 782px) {
+	.admin-bar .site { min-height: calc(100vh - 46px); }
+}
 
 /* ==========================================================================
    Reduced motion
@@ -456,8 +481,9 @@ textarea { resize: vertical; min-height: 7rem; }
    Site header
    ========================================================================== */
 .site-header {
-	background-color: var(--of-color-surface);
+	background-color: var(--of-header-bg, var(--of-color-surface));
 	border-bottom: 1px solid var(--of-color-border);
+	color: var(--of-header-text, var(--of-slate-700));
 }
 
 .site-header.is-sticky {
@@ -465,6 +491,51 @@ textarea { resize: vertical; min-height: 7rem; }
 	top: 0;
 	z-index: 1000;
 }
+
+/* Keep a sticky header below the WordPress toolbar for logged-in users. */
+.admin-bar .site-header.is-sticky { top: 32px; }
+
+@media (max-width: 782px) {
+	.admin-bar .site-header.is-sticky { top: 46px; }
+}
+
+/* Below 600px the toolbar scrolls away with the page. */
+@media (max-width: 600px) {
+	.admin-bar .site-header.is-sticky { top: 0; }
+}
+
+/* Transparent header (Customizer → Header Builder, front page only). */
+.site-header.is-transparent {
+	background-color: transparent;
+	border-bottom-color: transparent;
+	transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* A transparent sticky header turns solid once the page scrolls (set by
+   navigation.js), and stays solid when scripts are unavailable. */
+.site-header.is-transparent.is-stuck,
+.no-js .site-header.is-transparent.is-sticky {
+	background-color: var(--of-header-bg, var(--of-color-surface));
+	border-bottom-color: var(--of-color-border);
+	box-shadow: var(--of-shadow-sm);
+}
+
+/* On the Landing Page template the transparent header floats over the first
+   block: header and content share one grid cell, so no height is hard-coded. */
+.page-template-landing.has-transparent-header .site {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: 1fr auto;
+}
+
+.page-template-landing.has-transparent-header .site-header {
+	grid-area: 1 / 1;
+	align-self: start;
+	z-index: 1000;
+}
+
+.page-template-landing.has-transparent-header .site-content { grid-area: 1 / 1; }
+.page-template-landing.has-transparent-header .site-footer { grid-row: 2; }
 
 .site-header-inner {
 	display: flex;
@@ -474,22 +545,56 @@ textarea { resize: vertical; min-height: 7rem; }
 	flex-wrap: wrap;
 }
 
-.site-branding { display: flex; align-items: center; gap: var(--of-space-3); flex: 0 0 auto; }
-.site-branding .custom-logo { display: block; height: auto; }
-.site-title { margin: 0; font-size: var(--of-fs-h4); font-weight: var(--of-fw-extrabold); letter-spacing: -0.01em; }
-.site-title a { color: var(--of-color-heading); text-decoration: none; }
-.site-description { margin: 0; font-size: var(--of-fs-small); color: var(--of-color-muted); }
+.site-branding {
+	display: flex;
+	align-items: center;
+	gap: var(--of-space-3);
+	flex: 0 1 auto;
+	min-width: 0;
+}
 
-.header-search { flex: 0 0 auto; margin-inline-start: auto; }
+.site-branding .custom-logo-link { display: block; flex: 0 0 auto; }
+.site-branding .custom-logo { display: block; width: auto; max-width: 100%; max-height: 3.5rem; }
+.site-branding-text { min-width: 0; }
+
+.site-title {
+	margin: 0;
+	font-family: var(--of-font-heading);
+	font-size: var(--of-fs-h4);
+	font-weight: var(--of-fw-extrabold);
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+}
+
+.site-title a { color: var(--of-header-text, var(--of-color-heading)); text-decoration: none; }
+
+.site-description {
+	margin: 0;
+	font-size: var(--of-fs-small);
+	line-height: 1.4;
+	color: var(--of-header-text, var(--of-color-muted));
+}
+
+.header-search { flex: 0 1 17rem; }
 .header-search .search-form { display: flex; gap: var(--of-space-2); }
+.header-search .search-field { min-width: 0; }
 
 /* Header layout variants */
-.header-layout-logo-left-menu-right .main-navigation { margin-inline-start: auto; }
+.header-layout-logo-left-menu-right .main-navigation,
+.header-layout-logo-left-menu-right .site-branding + .header-search,
+.header-layout-logo-left-menu-center .site-branding + .header-search,
+.header-layout-logo-left-menu-left .header-search { margin-inline-start: auto; }
+
 .header-layout-logo-left-menu-center .main-navigation { margin-inline: auto; }
+
 .header-layout-logo-center-menu-below .site-header-inner { flex-direction: column; text-align: center; }
-.header-layout-logo-center-menu-below .site-branding { margin-inline: auto; }
+.header-layout-logo-center-menu-below .site-branding { flex-direction: column; }
+.header-layout-logo-center-menu-below .main-navigation > ul { justify-content: center; }
+.header-layout-logo-center-menu-below .header-search { flex-basis: auto; width: min(100%, 22rem); }
+
 .header-layout-logo-right-menu-left .site-branding { order: 2; margin-inline-start: auto; }
-.header-layout-logo-right-menu-left .main-navigation { order: 1; }
+.header-layout-logo-right-menu-left .main-navigation,
+.header-layout-logo-right-menu-left .header-search { order: 1; }
 
 /* ==========================================================================
    Navigation
@@ -528,20 +633,10 @@ textarea { resize: vertical; min-height: 7rem; }
 	font-size: var(--of-fs-body);
 	font-weight: var(--of-fw-medium);
 	line-height: 1.2;
-	color: var(--of-slate-700);
+	color: var(--of-header-text, var(--of-slate-700));
 	text-decoration: none;
 	border-radius: var(--of-radius-sm);
 	transition: color 0.15s ease, background-color 0.15s ease;
-}
-
-.main-navigation a:hover,
-.main-navigation a:focus-visible,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-ancestor > a,
-.main-navigation .current-menu-parent > a {
-	color: var(--of-color-primary);
-	background: var(--of-primary-100);
 }
 
 /* Submenu toggle rendered as a subtle, inline, vertically centered caret. */
@@ -555,15 +650,10 @@ textarea { resize: vertical; min-height: 7rem; }
 	padding: 0;
 	background: transparent;
 	border: none;
-	color: var(--of-color-muted);
+	color: var(--of-header-text, var(--of-color-muted));
 	cursor: pointer;
 	border-radius: var(--of-radius-sm);
 	transition: color 0.15s ease, background-color 0.15s ease;
-}
-.of-submenu-toggle:hover,
-.of-submenu-toggle:focus-visible {
-	color: var(--of-color-primary);
-	background: var(--of-primary-100);
 }
 
 .of-submenu-icon {
@@ -575,14 +665,10 @@ textarea { resize: vertical; min-height: 7rem; }
 	transition: transform 0.15s ease;
 }
 
-/* Rotate caret when the submenu is open. */
-.main-navigation li:hover > .of-submenu-toggle .of-submenu-icon,
-.main-navigation li:focus-within > .of-submenu-toggle .of-submenu-icon,
-.main-navigation .submenu-open > .of-submenu-toggle .of-submenu-icon {
-	transform: rotate(180deg);
-}
+/* Rotate the caret while its submenu is open. */
+.main-navigation .submenu-open > .of-submenu-toggle .of-submenu-icon { transform: rotate(180deg); }
 
-/* Dropdown panel. */
+/* Dropdown panel (hidden until opened). */
 .main-navigation .sub-menu {
 	position: absolute;
 	top: 100%;
@@ -601,20 +687,9 @@ textarea { resize: vertical; min-height: 7rem; }
 	z-index: 50;
 }
 
-/* Invisible bridge so the dropdown does not close in the gap below the item. */
-.main-navigation .sub-menu::before {
-	content: "";
-	position: absolute;
-	top: -6px;
-	inset-inline: 0;
-	height: 6px;
-}
-
 .main-navigation .sub-menu li { width: 100%; }
 .main-navigation .sub-menu > li > a { flex: 1 1 auto; }
 
-.main-navigation li:hover > .sub-menu,
-.main-navigation li:focus-within > .sub-menu,
 .main-navigation .submenu-open > .sub-menu { display: flex; }
 
 /* Nested (2nd-level and deeper) submenus expand inline within the dropdown,
@@ -633,56 +708,100 @@ textarea { resize: vertical; min-height: 7rem; }
 	border-inline-start: 2px solid var(--of-color-border);
 }
 
+/* Desktop: dropdowns also open on hover, and sit on the surface color. */
+@media (min-width: 1024px) {
+	.main-navigation li:hover > .sub-menu { display: flex; }
+	.main-navigation li:hover > .of-submenu-toggle .of-submenu-icon { transform: rotate(180deg); }
+
+	/* Without JavaScript, keyboard focus opens the dropdown instead. */
+	.no-js .main-navigation li:focus-within > .sub-menu { display: flex; }
+
+	.main-navigation .sub-menu a { color: var(--of-color-text); }
+	.main-navigation .sub-menu .of-submenu-toggle { color: var(--of-color-muted); }
+
+	/* Invisible bridge so the dropdown does not close in the gap below the item. */
+	.main-navigation > ul > li > .sub-menu::before {
+		content: "";
+		position: absolute;
+		top: -6px;
+		inset-inline: 0;
+		height: 6px;
+	}
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-ancestor > a,
+.main-navigation .current-menu-parent > a,
+.of-submenu-toggle:hover,
+.of-submenu-toggle:focus-visible {
+	color: var(--of-color-primary);
+	background: var(--of-primary-100);
+}
+
 /* ---------------------------------------------------------------------------
    Native mega menu. Add the CSS class "of-mega" to a top-level menu item in
    Appearance → Menus (enable "CSS Classes" via Screen Options). The item's
    direct children become columns; their nested links are shown as a list.
    No plugin required; ordinary items keep normal dropdown behavior.
    --------------------------------------------------------------------------- */
-.main-navigation > ul > li.of-mega { position: static; }
+@media (min-width: 1024px) {
+	.main-navigation > ul > li.of-mega { position: static; }
 
-.main-navigation > ul > li.of-mega > .sub-menu {
-	inset-inline: 0;
-	width: auto;
-	min-width: 0;
-	max-width: 100%;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: var(--of-space-5);
-	padding: var(--of-space-5);
-}
+	/* Where supported, the panel spans the whole header container instead of
+	   just the menu, with a taller hover bridge across the header padding. */
+	.site-header-inner:has(.of-mega) { position: relative; }
+	.main-navigation:has(.of-mega) { position: static; }
+	.main-navigation:has(.of-mega) > ul > li.of-mega > .sub-menu { inset-inline: var(--of-content-padding); }
+	.main-navigation:has(.of-mega) > ul > li.of-mega > .sub-menu::before { top: -1.5rem; height: 1.5rem; }
 
-/* Columns. */
-.main-navigation > ul > li.of-mega > .sub-menu > li {
-	display: block;
-	flex: 1 1 180px;
-	min-width: 150px;
-	max-width: 100%;
-}
+	.main-navigation > ul > li.of-mega > .sub-menu {
+		inset-inline: 0;
+		width: auto;
+		min-width: 0;
+		max-width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--of-space-5);
+		padding: var(--of-space-5);
+	}
 
-/* Column heading. */
-.main-navigation > ul > li.of-mega > .sub-menu > li > a {
-	display: flex;
-	width: 100%;
-	font-weight: var(--of-fw-bold);
-	color: var(--of-color-heading);
-	border-bottom: 1px solid var(--of-color-border);
-	border-radius: 0;
-	margin-bottom: var(--of-space-1);
-}
+	/* Columns. */
+	.main-navigation > ul > li.of-mega > .sub-menu > li {
+		display: block;
+		flex: 1 1 180px;
+		min-width: 150px;
+		max-width: 100%;
+	}
 
-/* Nested lists inside a mega menu are shown statically as link lists. */
-.main-navigation > ul > li.of-mega .sub-menu .sub-menu {
-	display: flex;
-	position: static;
-	margin: 0;
-	padding: 0;
-	border: none;
+	/* Column heading. */
+	.main-navigation > ul > li.of-mega > .sub-menu > li > a {
+		display: flex;
+		width: 100%;
+		font-weight: var(--of-fw-bold);
+		color: var(--of-color-heading);
+		border-bottom: 1px solid var(--of-color-border);
+		border-radius: 0;
+		margin-bottom: var(--of-space-1);
+	}
+
+	/* Nested lists inside a mega menu are shown statically as link lists. */
+	.main-navigation > ul > li.of-mega .sub-menu .sub-menu {
+		display: flex;
+		position: static;
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	.main-navigation > ul > li.of-mega .sub-menu .of-submenu-toggle { display: none; }
 }
-.main-navigation > ul > li.of-mega .of-submenu-toggle { display: none; }
 
 /* Mobile menu toggle (hamburger) — hidden on desktop. */
 .menu-toggle { display: none; }
+
 .menu-toggle-bar,
 .menu-toggle-bar::before,
 .menu-toggle-bar::after {
@@ -692,6 +811,7 @@ textarea { resize: vertical; min-height: 7rem; }
 	background: currentColor;
 	position: relative;
 }
+
 .menu-toggle-bar::before,
 .menu-toggle-bar::after { content: ""; position: absolute; left: 0; }
 .menu-toggle-bar::before { top: -7px; }
@@ -703,6 +823,8 @@ textarea { resize: vertical; min-height: 7rem; }
 		align-items: center;
 		justify-content: center;
 		gap: var(--of-space-2);
+		min-width: 2.875rem;
+		min-height: 2.875rem;
 		background: var(--of-primary-100);
 		color: var(--of-color-primary);
 		border: none;
@@ -714,12 +836,20 @@ textarea { resize: vertical; min-height: 7rem; }
 	/* The header bar is the positioning context for the expanded menu panel. */
 	.site-header-inner { position: relative; }
 
-	/* Keep the navigation (and therefore the toggle) on the header row instead
-	   of forcing it onto a full-width second row. Its horizontal placement is
-	   inherited from the active header layout — e.g. logo-left-menu-right applies
-	   margin-inline-start:auto, pushing the toggle to the end — so the mobile
-	   header follows the saved Customizer configuration rather than a hardcoded
-	   side. Static positioning lets the panel below anchor to .site-header-inner. */
+	/* Reserve room for the toggle so a long site title or tagline wraps inside
+	   the branding instead of pushing the toggle onto a second row. */
+	.site-branding { max-width: calc(100% - 4.75rem); }
+	.header-layout-logo-center-menu-below .site-branding { max-width: 100%; }
+
+	/* The search form takes its own full-width row below the logo and toggle. */
+	.site-header .header-search { order: 3; flex: 1 1 100%; width: auto; margin-inline-start: 0; }
+
+	/* Keep the navigation (and therefore the toggle) on the header row. Its
+	   horizontal placement is inherited from the active header layout — e.g.
+	   logo-left-menu-right applies margin-inline-start:auto, pushing the toggle
+	   to the end — so the mobile header follows the saved Customizer
+	   configuration. Static positioning lets the panel below anchor to
+	   .site-header-inner. */
 	.main-navigation { position: static; }
 
 	/* The expanded menu is a full-width panel dropped below the header bar, so
@@ -737,10 +867,12 @@ textarea { resize: vertical; min-height: 7rem; }
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		padding: var(--of-space-3);
-		background: var(--of-color-surface);
+		background: var(--of-header-bg, var(--of-color-surface));
 		border-top: 1px solid var(--of-color-border);
 		box-shadow: var(--of-shadow-lg);
+		text-align: start;
 	}
+
 	.main-navigation.is-open > ul { display: flex; }
 
 	.main-navigation li { display: block; }
@@ -748,12 +880,11 @@ textarea { resize: vertical; min-height: 7rem; }
 	/* Reserve space for the caret toggle so it never overlaps the label. */
 	.main-navigation > ul .menu-item-has-children > a { padding-inline-end: 3rem; }
 
-	.main-navigation a { padding: var(--of-space-3); }
+	.main-navigation a { display: flex; padding: var(--of-space-3); }
 
 	/* Submenus collapse by default; expand only when toggled. */
 	.main-navigation .sub-menu {
 		position: static;
-		display: none;
 		min-width: 0;
 		box-shadow: none;
 		border: none;
@@ -762,7 +893,8 @@ textarea { resize: vertical; min-height: 7rem; }
 		padding-inline-start: var(--of-space-4);
 		background: transparent;
 	}
-	.main-navigation .submenu-open > .sub-menu { display: flex; }
+
+	.main-navigation .sub-menu .sub-menu { border-inline-start: 2px solid var(--of-color-border); }
 
 	/* Larger, easier-to-tap caret toggle positioned at the row's end. */
 	.of-submenu-toggle {
@@ -774,10 +906,22 @@ textarea { resize: vertical; min-height: 7rem; }
 		margin: 0;
 	}
 
-	/* Mega menu stacks into a single column on small screens. */
-	.main-navigation > ul > li.of-mega > .sub-menu { flex-direction: column; gap: 0; padding: 0; padding-inline-start: var(--of-space-4); }
-	.main-navigation > ul > li.of-mega .of-submenu-toggle { display: inline-flex; }
-	.main-navigation > ul > li.of-mega > .sub-menu > li > a { border-bottom: none; }
+	/* Without JavaScript the toggle cannot work, so show the whole menu. */
+	.no-js .menu-toggle,
+	.no-js .of-submenu-toggle { display: none; }
+
+	.no-js .main-navigation { flex: 1 1 100%; }
+
+	.no-js .main-navigation > ul {
+		display: flex;
+		position: static;
+		max-height: none;
+		padding: 0;
+		border-top: 0;
+		box-shadow: none;
+	}
+
+	.no-js .main-navigation .sub-menu { display: flex; }
 }
 
 /* ==========================================================================
@@ -832,6 +976,13 @@ textarea { resize: vertical; min-height: 7rem; }
 	width: fit-content;
 }
 
+.entry-search .entry-card-body { width: 100%; }
+
+/* Badge and category share a row; title and meta each take a full row. */
+.entry-card .entry-header { display: flex; flex-wrap: wrap; align-items: center; gap: var(--of-space-2) var(--of-space-3); }
+.entry-card .entry-title,
+.entry-card .entry-meta { flex: 1 1 100%; }
+
 .entry-title { margin: 0; font-size: var(--of-fs-h3); }
 .entry-title a { color: var(--of-color-heading); text-decoration: none; }
 .entry-title a:hover { color: var(--of-color-primary); }
@@ -847,10 +998,16 @@ textarea { resize: vertical; min-height: 7rem; }
 
 .entry-summary { color: var(--of-slate-700); }
 .read-more { font-weight: var(--of-fw-semibold); text-decoration: none; display: inline-flex; gap: var(--of-space-2); }
+.read-more:hover,
+.read-more:focus { text-decoration: underline; }
+.entry-card .entry-footer { margin-top: auto; }
+.entry-card-body { flex: 1 1 auto; min-width: 0; }
 
 /* Single / page */
-.entry-single { background: var(--of-color-surface); border: 1px solid var(--of-color-border); border-radius: var(--of-radius-lg); padding: clamp(1.5rem, 1rem + 3vw, 3rem); box-shadow: var(--of-shadow-sm); }
+.entry-single { background: var(--of-color-surface); border: 1px solid var(--of-color-border); border-radius: var(--of-radius-lg); padding: var(--of-card-padding); box-shadow: var(--of-shadow-sm); }
+.entry-single .entry-header { margin-bottom: var(--of-space-5); }
 .entry-single .entry-title { font-size: var(--of-fs-h1); }
+.entry-single .entry-meta { margin-top: var(--of-space-3); }
 .entry-single .post-thumbnail { margin: var(--of-space-5) 0; border-radius: var(--of-radius-md); overflow: hidden; }
 /* Contain floated media (e.g. alignleft/alignright thumbnails) so they never
    stick out past the card, and so following content clears them correctly.
@@ -872,7 +1029,8 @@ textarea { resize: vertical; min-height: 7rem; }
 
 /* WordPress core float-clearing helper (e.g. <br class="clear">). */
 .clear { clear: both; }
-.entry-single .entry-footer { margin-top: var(--of-space-5); padding-top: var(--of-space-4); border-top: 1px solid var(--of-color-border); display: flex; flex-wrap: wrap; gap: var(--of-space-4); font-size: var(--of-fs-small); }
+.entry-single .entry-footer { clear: both; margin-top: var(--of-space-5); padding-top: var(--of-space-4); border-top: 1px solid var(--of-color-border); display: flex; flex-wrap: wrap; gap: var(--of-space-2) var(--of-space-4); font-size: var(--of-fs-small); }
+.entry-single .entry-footer .edit-link { margin-inline-start: auto; }
 
 .page-header { margin-bottom: var(--of-space-6); }
 .page-title { font-size: var(--of-fs-h1); }
@@ -882,7 +1040,8 @@ textarea { resize: vertical; min-height: 7rem; }
    ========================================================================== */
 .pagination .nav-links,
 .comments-pagination .nav-links { display: flex; flex-wrap: wrap; gap: var(--of-space-2); margin-top: var(--of-space-6); }
-.pagination .page-numbers {
+.pagination .page-numbers,
+.comments-pagination .page-numbers {
 	display: inline-flex;
 	min-width: 2.5rem;
 	height: 2.5rem;
@@ -895,7 +1054,12 @@ textarea { resize: vertical; min-height: 7rem; }
 	text-decoration: none;
 	color: var(--of-slate-700);
 }
-.pagination .page-numbers.current { background: var(--of-color-primary); color: var(--of-white); border-color: var(--of-color-primary); }
+.pagination a.page-numbers:hover,
+.comments-pagination a.page-numbers:hover { background: var(--of-primary-100); color: var(--of-color-primary); }
+.pagination .page-numbers.current,
+.comments-pagination .page-numbers.current { background: var(--of-color-primary); color: var(--of-white); border-color: var(--of-color-primary); }
+.pagination .page-numbers.dots,
+.comments-pagination .page-numbers.dots { border-color: transparent; background: transparent; }
 
 .post-navigation { margin-top: var(--of-space-6); display: grid; gap: var(--of-space-4); }
 .post-navigation .nav-links { display: flex; justify-content: space-between; gap: var(--of-space-4); flex-wrap: wrap; }
@@ -914,7 +1078,11 @@ textarea { resize: vertical; min-height: 7rem; }
 	border-radius: var(--of-radius-lg);
 	padding: var(--of-space-5);
 }
-.widget-title { font-size: var(--of-fs-h5); margin-bottom: var(--of-space-3); }
+/* Classic widget titles and the heading blocks used by block widgets. */
+.widget-title,
+.widget :where(h1, h2, h3, h4, h5, h6) { font-size: var(--of-fs-h5); margin-top: 0; margin-bottom: var(--of-space-3); }
+.widget > :last-child { margin-bottom: 0; }
+.widget select { max-width: 100%; }
 .widget ul { list-style: none; padding: 0; margin: 0; }
 .widget ul li { padding-block: var(--of-space-2); border-bottom: 1px solid var(--of-color-border); }
 .widget ul li:last-child { border-bottom: 0; }
@@ -922,27 +1090,47 @@ textarea { resize: vertical; min-height: 7rem; }
 /* ==========================================================================
    Footer
    ========================================================================== */
-.site-footer { background: var(--of-slate-900); color: var(--of-slate-300); margin-top: var(--of-space-8); }
-.footer-widgets { padding-block: var(--of-space-7); }
-.footer-widgets-inner { display: grid; gap: var(--of-space-6); }
-.footer-widgets--2-col .footer-widgets-inner { grid-template-columns: repeat(2, 1fr); }
-.footer-widgets--3-col .footer-widgets-inner { grid-template-columns: repeat(3, 1fr); }
-.footer-widgets--4-col .footer-widgets-inner { grid-template-columns: repeat(4, 1fr); }
-
-@media (max-width: 767px) {
-	.footer-widgets--2-col .footer-widgets-inner,
-	.footer-widgets--3-col .footer-widgets-inner,
-	.footer-widgets--4-col .footer-widgets-inner { grid-template-columns: 1fr; }
+.site-footer {
+	background-color: var(--of-footer-bg, var(--of-slate-900));
+	color: var(--of-footer-text, var(--of-slate-300));
+	margin-top: var(--of-space-8);
 }
 
-.site-footer .widget-title { color: var(--of-white); }
-.site-footer a { color: var(--of-white); }
-.site-footer .widget ul li { border-color: rgba(255, 255, 255, 0.12); }
+.footer-widgets { padding-block: var(--of-space-7); }
+.footer-widgets-inner { display: grid; gap: var(--of-space-6); grid-template-columns: minmax(0, 1fr); }
+.footer-column { min-width: 0; }
 
-.site-info { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-block: var(--of-space-5); }
+@media (min-width: 768px) {
+	.footer-widgets--2-col .footer-widgets-inner,
+	.footer-widgets--3-col .footer-widgets-inner,
+	.footer-widgets--4-col .footer-widgets-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+	.footer-widgets--3-col .footer-widgets-inner { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.footer-widgets--4-col .footer-widgets-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* Headings and links follow the "Footer heading and link color" setting. */
+.site-footer :where(h1, h2, h3, h4, h5, h6),
+.site-footer .widget-title,
+.site-footer a { color: var(--of-footer-heading, var(--of-white)); }
+
+.site-footer a:hover,
+.site-footer a:focus { color: var(--of-footer-heading, var(--of-white)); text-decoration-thickness: 2px; }
+
+.site-footer label,
+.site-footer .wp-block-latest-posts__post-date,
+.site-footer .wp-block-latest-comments__comment-meta { color: inherit; }
+
+.site-footer .widget ul li { border-color: rgba(148, 163, 184, 0.25); }
+
+.site-info { border-top: 1px solid rgba(148, 163, 184, 0.25); padding-block: var(--of-space-5); }
 .site-info-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--of-space-4); flex-wrap: wrap; font-size: var(--of-fs-small); }
-.footer-menu { list-style: none; display: flex; gap: var(--of-space-4); margin: 0; padding: 0; }
+.footer-menu { list-style: none; display: flex; flex-wrap: wrap; gap: var(--of-space-2) var(--of-space-4); margin: 0; padding: 0; }
 .footer-menu a { text-decoration: none; }
+.footer-menu a:hover,
+.footer-menu a:focus { text-decoration: underline; }
 
 /* ==========================================================================
    Comments
@@ -952,12 +1140,19 @@ textarea { resize: vertical; min-height: 7rem; }
 .comment-list ol.children { list-style: none; padding-inline-start: var(--of-space-5); }
 .comment-body { padding-block: var(--of-space-4); border-bottom: 1px solid var(--of-color-border); }
 .comment-meta { display: flex; align-items: center; gap: var(--of-space-3); margin-bottom: var(--of-space-2); font-size: var(--of-fs-small); }
+.comment-meta { flex-wrap: wrap; }
 .comment-author img { border-radius: var(--of-radius-pill); vertical-align: middle; margin-inline-end: var(--of-space-2); }
+.comment-metadata { display: inline-flex; flex-wrap: wrap; gap: var(--of-space-3); color: var(--of-color-muted); }
+.comment-metadata a { color: var(--of-color-muted); }
+.comment-awaiting-moderation { font-size: var(--of-fs-small); font-weight: var(--of-fw-medium); color: #b45309; }
+.comment-list .reply { margin-top: var(--of-space-2); font-size: var(--of-fs-small); font-weight: var(--of-fw-semibold); }
+.comments-title,
+.comment-reply-title { font-size: var(--of-fs-h3); }
 
 /* ==========================================================================
    404 / narrow content
    ========================================================================== */
-.layout-narrow { max-width: var(--of-container-narrow); margin-inline: auto; }
+.of-narrow { max-width: var(--of-container-narrow); margin-inline: auto; }
 .error-404 { text-align: center; background: var(--of-color-surface); border: 1px solid var(--of-color-border); border-radius: var(--of-radius-lg); padding: var(--of-space-8) var(--of-space-5); }
 .error-404 .search-form { max-width: 420px; margin-inline: auto; margin-top: var(--of-space-4); display: flex; gap: var(--of-space-2); }
 
@@ -982,6 +1177,46 @@ textarea { resize: vertical; min-height: 7rem; }
 	margin-right: calc(50% - 50vw);
 }
 .entry-content > .alignfull > img { width: 100%; }
+
+/* Next to a sidebar the content column is off-center, so a full-width block
+   stretches to the edges of the content card instead of the viewport. */
+.of-layout--has-sidebar .entry-content > .alignfull {
+	width: auto;
+	max-width: none;
+	margin-inline: calc(-1 * var(--of-card-padding));
+}
+
+/* ---------------------------------------------------------------------------
+   Landing Page template: a blank canvas for block-built pages. Blocks are
+   centered at the content width, "Wide" blocks use the container width and
+   "Full width" blocks span the viewport edge to edge.
+   --------------------------------------------------------------------------- */
+.of-canvas .entry-content > * {
+	width: auto;
+	max-width: min(var(--of-content-width), calc(100% - 2 * var(--of-content-padding)));
+	margin-inline: auto;
+}
+
+.of-canvas .entry-content > .alignwide { max-width: min(var(--of-container-wide), calc(100% - 2 * var(--of-content-padding))); }
+
+.of-canvas .entry-content > .alignfull {
+	width: auto;
+	max-width: none;
+	margin-inline: 0;
+}
+
+.of-canvas .entry-content > .alignleft { margin-inline-start: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); }
+.of-canvas .entry-content > .alignright { margin-inline-end: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); }
+
+.of-canvas .entry-content > * + * { margin-top: var(--of-space-6); }
+.of-canvas .entry-content > .alignfull + .alignfull { margin-top: 0; }
+.of-canvas .entry-content > :first-child:not(.alignfull) { margin-top: var(--of-section-spacing); }
+.of-canvas .entry-content > :last-child:not(.alignfull) { margin-bottom: var(--of-section-spacing); }
+
+/* Full-width sections keep their inner content off the screen edges. */
+.of-canvas .entry-content > .alignfull.wp-block-group { padding-inline: var(--of-content-padding); }
+
+.page-template-landing .site-footer { margin-top: 0; }
 
 /* Headings & paragraphs */
 .entry-content :where(h1, h2, h3, h4, h5, h6) { margin-top: var(--of-space-6); }
@@ -1027,6 +1262,7 @@ textarea { resize: vertical; min-height: 7rem; }
 /* Columns, group, media-text */
 .wp-block-columns { gap: var(--of-space-5); }
 .wp-block-group.has-background { padding: var(--of-space-5); border-radius: var(--of-radius-lg); }
+.wp-block-group.alignfull.has-background { border-radius: 0; }
 .wp-block-media-text { gap: var(--of-space-5); }
 
 /* Gallery & images */
@@ -1073,8 +1309,62 @@ textarea { resize: vertical; min-height: 7rem; }
 	border-radius: var(--of-radius-lg);
 }
 
+/* Card style for the Group block. */
+.wp-block-group.is-style-open-frame-card {
+	height: 100%;
+	background: var(--of-color-surface);
+	border: 1px solid var(--of-color-border);
+	border-radius: var(--of-radius-lg);
+	box-shadow: var(--of-shadow-sm);
+	padding: var(--of-space-5);
+}
+.wp-block-group.is-style-open-frame-card > :first-child { margin-top: 0; }
+.wp-block-group.is-style-open-frame-card > :last-child { margin-bottom: 0; }
+
+/* Eyebrow style for the Paragraph block: a small label above a heading. */
+p.is-style-open-frame-eyebrow {
+	margin-bottom: var(--of-space-2);
+	font-family: var(--of-font-mono);
+	font-size: 0.78rem;
+	font-weight: var(--of-fw-semibold);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--of-color-primary);
+}
+
+/* Blocks with a custom text color pass it on to their headings. */
+.has-text-color :where(h1, h2, h3, h4, h5, h6) { color: inherit; }
+
 /* Latest posts / comments / categories blocks */
-.wp-block-latest-posts.is-grid { gap: var(--of-space-5); }
+/* The grid is laid out here (instead of the core column widths) so cards
+   always share equal columns and wrap cleanly on small screens. */
+ul.wp-block-latest-posts__list.wp-block-latest-posts.is-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+	gap: var(--of-space-5);
+	padding: 0;
+}
+.wp-block-latest-posts__list.wp-block-latest-posts.is-grid li {
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	gap: var(--of-space-2);
+	margin: 0;
+	background: var(--of-color-surface);
+	border: 1px solid var(--of-color-border);
+	border-radius: var(--of-radius-lg);
+	box-shadow: var(--of-shadow-sm);
+	overflow: hidden;
+	padding-bottom: var(--of-space-5);
+}
+.wp-block-latest-posts.is-grid li > * { margin-inline: var(--of-space-5); }
+.wp-block-latest-posts.is-grid li > :first-child:not(.wp-block-latest-posts__featured-image) { margin-top: var(--of-space-5); }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__featured-image { margin: 0 0 var(--of-space-2); }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__featured-image a { display: block; }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__featured-image img { display: block; width: 100%; max-width: none; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 0; }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__post-title { font-family: var(--of-font-heading); font-size: var(--of-fs-h4); font-weight: var(--of-fw-heading); line-height: var(--of-lh-heading); color: var(--of-color-heading); text-decoration: none; }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__post-title:hover { color: var(--of-color-primary); }
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__post-excerpt { margin-top: 0; margin-bottom: 0; }
 .wp-block-latest-posts__post-date,
 .wp-block-latest-comments__comment-meta { color: var(--of-color-muted); font-size: var(--of-fs-small); }
 

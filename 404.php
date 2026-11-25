@@ -8,7 +8,7 @@
 get_header();
 ?>
 <div class="of-container of-content-area">
-	<main id="main" class="site-main of-primary layout-narrow">
+	<main id="main" class="site-main of-primary of-narrow">
 		<section class="error-404 not-found">
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'This page could not be found', 'open-frame' ); ?></h1>

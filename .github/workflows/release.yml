@@ -1,0 +1,59 @@
+name: Release
+
+# Builds the installable theme ZIP and publishes a GitHub release whenever a
+# version tag (for example v1.0.0) is pushed.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the tagged commit
+        uses: actions/checkout@v4
+
+      - name: Lint PHP
+        run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: Check that the tag matches the theme version
+        run: |
+          VERSION="$(sed -n 's/^Version:[[:space:]]*//p' style.css | head -n 1)"
+          if [ "v$VERSION" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match style.css version $VERSION" >&2
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Build the theme ZIP
+        run: |
+          bash bin/build-zip.sh
+          cp dist/open-frame.zip "dist/open-frame-$VERSION.zip"
+          ( cd dist && sha256sum "open-frame-$VERSION.zip" > "open-frame-$VERSION.zip.sha256" )
+
+      - name: Collect the release notes from readme.txt
+        run: |
+          {
+            echo "## Open Frame $VERSION"
+            echo
+            awk -v ver="= $VERSION =" '$0 == ver { found = 1; next } found && /^= .* =$/ { exit } found { print }' readme.txt
+            echo
+            echo "**Install:** download \`open-frame-$VERSION.zip\` below and upload it under *Appearance → Themes → Add Theme → Upload Theme*."
+            echo
+            echo "**Documentation:** [docs/README.md](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_REF_NAME}/docs/README.md)"
+          } > release-notes.md
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "dist/open-frame-$VERSION.zip" \
+            "dist/open-frame-$VERSION.zip.sha256" \
+            --title "Open Frame v$VERSION" \
+            --notes-file release-notes.md \
+            --verify-tag

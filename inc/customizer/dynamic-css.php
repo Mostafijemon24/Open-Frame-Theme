@@ -4,6 +4,8 @@
  *
  * Output as an inline stylesheet attached to the main theme stylesheet so it
  * loads with correct ordering and benefits from the same cache-busting version.
+ * Only values that differ from the stylesheet defaults are printed, so the
+ * tokens in style.css stay the single source of truth.
  *
  * @package Open_Frame
  */
@@ -13,75 +15,120 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Map of color settings to the CSS custom property each one controls.
+ *
+ * @return array<string,string>
+ */
+function open_frame_color_variables() {
+	return array(
+		'open_frame_color_primary'       => '--of-color-primary',
+		'open_frame_color_primary_hover' => '--of-color-primary-hover',
+		'open_frame_color_secondary'     => '--of-color-secondary',
+		'open_frame_color_accent'        => '--of-color-accent',
+		'open_frame_color_heading'       => '--of-color-heading',
+		'open_frame_color_text'          => '--of-color-text',
+		'open_frame_color_link'          => '--of-color-link',
+		'open_frame_color_link_hover'    => '--of-color-link-hover',
+		'open_frame_color_border'        => '--of-color-border',
+		'open_frame_color_bg'            => '--of-color-bg',
+		'open_frame_color_surface'       => '--of-color-surface',
+	);
+}
+
+/**
  * Build the dynamic CSS string from theme mods.
  *
  * @return string
  */
 function open_frame_build_dynamic_css() {
-	$d     = open_frame_defaults();
-	$fonts = open_frame_font_choices();
-	$mod   = function ( $key ) use ( $d ) {
-		return get_theme_mod( $key, isset( $d[ $key ] ) ? $d[ $key ] : '' );
-	};
+	$defaults = open_frame_defaults();
+	$fonts    = open_frame_font_choices();
+	$vars     = array();
 
-	$body_font    = $fonts[ open_frame_sanitize_font_choice( $mod( 'open_frame_body_font' ) ) ]['stack'];
-	$heading_font = $fonts[ open_frame_sanitize_font_choice( $mod( 'open_frame_heading_font' ) ) ]['stack'];
+	// Global colors.
+	foreach ( open_frame_color_variables() as $key => $property ) {
+		$value = sanitize_hex_color( open_frame_get_mod( $key ) );
+		if ( $value && strtolower( $value ) !== strtolower( $defaults[ $key ] ) ) {
+			$vars[ $property ] = $value;
+		}
+	}
 
-	$base_size   = open_frame_clamp( $mod( 'open_frame_base_font_size' ), 14, 22 );
-	$line_height = open_frame_clamp( $mod( 'open_frame_body_line_height' ), 120, 200 ) / 100;
-	$h_weight    = open_frame_clamp( $mod( 'open_frame_heading_weight' ), 400, 800 );
+	// Tints derived from the primary color (hover backgrounds, focus ring).
+	if ( isset( $vars['--of-color-primary'] ) ) {
+		$rgb                      = open_frame_hex_to_rgb( $vars['--of-color-primary'] );
+		$vars['--of-primary-100'] = open_frame_tint( $vars['--of-color-primary'], 0.88 );
+		$vars['--of-focus-ring']  = sprintf( '0 0 0 3px rgba(%d,%d,%d,0.35)', $rgb[0], $rgb[1], $rgb[2] );
+	}
 
-	$container = open_frame_clamp( $mod( 'open_frame_container_width' ), 800, 1600 );
-	$content   = open_frame_clamp( $mod( 'open_frame_content_width' ), 600, 1400 );
-	$section   = open_frame_clamp( $mod( 'open_frame_section_spacing' ), 16, 160 );
+	// Typography.
+	$body_font    = open_frame_sanitize_font_choice( open_frame_get_mod( 'open_frame_body_font' ) );
+	$heading_font = open_frame_sanitize_font_choice( open_frame_get_mod( 'open_frame_heading_font' ) );
+	if ( $body_font !== $defaults['open_frame_body_font'] ) {
+		$vars['--of-font-body'] = $fonts[ $body_font ]['stack'];
+	}
+	if ( $heading_font !== $defaults['open_frame_heading_font'] ) {
+		$vars['--of-font-heading'] = $fonts[ $heading_font ]['stack'];
+	}
 
-	$vars = array(
-		'--of-color-primary'       => sanitize_hex_color( $mod( 'open_frame_color_primary' ) ),
-		'--of-color-primary-hover' => sanitize_hex_color( $mod( 'open_frame_color_primary_hover' ) ),
-		'--of-color-secondary'     => sanitize_hex_color( $mod( 'open_frame_color_secondary' ) ),
-		'--of-color-accent'        => sanitize_hex_color( $mod( 'open_frame_color_accent' ) ),
-		'--of-color-heading'       => sanitize_hex_color( $mod( 'open_frame_color_heading' ) ),
-		'--of-color-text'          => sanitize_hex_color( $mod( 'open_frame_color_text' ) ),
-		'--of-color-link'          => sanitize_hex_color( $mod( 'open_frame_color_link' ) ),
-		'--of-color-link-hover'    => sanitize_hex_color( $mod( 'open_frame_color_link_hover' ) ),
-		'--of-color-border'        => sanitize_hex_color( $mod( 'open_frame_color_border' ) ),
-		'--of-color-bg'            => sanitize_hex_color( $mod( 'open_frame_color_bg' ) ),
-		'--of-color-surface'       => sanitize_hex_color( $mod( 'open_frame_color_surface' ) ),
-		'--of-color-focus'         => sanitize_hex_color( $mod( 'open_frame_color_primary' ) ),
-		'--of-font-body'           => $body_font,
-		'--of-font-heading'        => $heading_font,
-		'--of-fs-body'             => $base_size . 'px',
-		'--of-lh-body'             => (string) $line_height,
-		'--of-fw-bold'             => (string) $h_weight,
-		'--of-container-wide'      => $container . 'px',
-		'--of-content-width'       => $content . 'px',
-		'--of-section-spacing'     => $section . 'px',
+	$base_size = open_frame_clamp( open_frame_get_mod( 'open_frame_base_font_size' ), 14, 22 );
+	if ( $base_size !== $defaults['open_frame_base_font_size'] ) {
+		// Expressed in rem so the visitor's browser font-size preference still applies.
+		$vars['--of-fs-body'] = ( $base_size / 16 ) . 'rem';
+	}
+
+	$line_height = open_frame_clamp( open_frame_get_mod( 'open_frame_body_line_height' ), 120, 200 );
+	if ( $line_height !== $defaults['open_frame_body_line_height'] ) {
+		$vars['--of-lh-body'] = (string) ( $line_height / 100 );
+	}
+
+	$heading_weight = open_frame_clamp( open_frame_get_mod( 'open_frame_heading_weight' ), 400, 900 );
+	if ( $heading_weight !== $defaults['open_frame_heading_weight'] ) {
+		$vars['--of-fw-heading'] = (string) $heading_weight;
+	}
+
+	// Layout.
+	$container = open_frame_clamp( open_frame_get_mod( 'open_frame_container_width' ), 800, 1600 );
+	if ( $container !== $defaults['open_frame_container_width'] ) {
+		$vars['--of-container-wide']            = $container . 'px';
+		$vars['--wp--style--global--wide-size'] = $container . 'px';
+	}
+
+	$content = open_frame_clamp( open_frame_get_mod( 'open_frame_content_width' ), 600, 1400 );
+	if ( $content !== $defaults['open_frame_content_width'] ) {
+		$vars['--of-content-width']                = $content . 'px';
+		$vars['--wp--style--global--content-size'] = $content . 'px';
+	}
+
+	$section = open_frame_clamp( open_frame_get_mod( 'open_frame_section_spacing' ), 16, 160 );
+	if ( $section !== $defaults['open_frame_section_spacing'] ) {
+		$vars['--of-section-spacing'] = $section . 'px';
+	}
+
+	// Header and footer colors are always printed so the controls stay truthful
+	// even when the global surface color has been changed.
+	$chrome = array(
+		'open_frame_header_bg'      => '--of-header-bg',
+		'open_frame_header_text'    => '--of-header-text',
+		'open_frame_footer_bg'      => '--of-footer-bg',
+		'open_frame_footer_text'    => '--of-footer-text',
+		'open_frame_footer_heading' => '--of-footer-heading',
 	);
+	foreach ( $chrome as $key => $property ) {
+		$value = sanitize_hex_color( open_frame_get_mod( $key ) );
+		if ( $value ) {
+			$vars[ $property ] = $value;
+		}
+	}
+
+	if ( empty( $vars ) ) {
+		return '';
+	}
 
 	$css = ':root{';
 	foreach ( $vars as $name => $value ) {
-		if ( '' === $value || null === $value ) {
-			continue;
-		}
 		$css .= $name . ':' . $value . ';';
 	}
 	$css .= '}';
-
-	// Header background.
-	$header_bg = sanitize_hex_color( $mod( 'open_frame_header_bg' ) );
-	if ( $header_bg ) {
-		$css .= '.site-header{background-color:' . $header_bg . ';}';
-	}
-
-	// Footer colors.
-	$footer_bg   = sanitize_hex_color( $mod( 'open_frame_footer_bg' ) );
-	$footer_text = sanitize_hex_color( $mod( 'open_frame_footer_text' ) );
-	if ( $footer_bg ) {
-		$css .= '.site-footer{background-color:' . $footer_bg . ';}';
-	}
-	if ( $footer_text ) {
-		$css .= '.site-footer{color:' . $footer_text . ';}';
-	}
 
 	return $css;
 }
@@ -93,6 +140,8 @@ function open_frame_build_dynamic_css() {
  */
 function open_frame_output_dynamic_css() {
 	$css = open_frame_build_dynamic_css();
-	wp_add_inline_style( 'open-frame-style', wp_strip_all_tags( $css ) );
+	if ( '' !== $css ) {
+		wp_add_inline_style( 'open-frame-style', wp_strip_all_tags( $css ) );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'open_frame_output_dynamic_css', 20 );

@@ -35,7 +35,5 @@
 		?>
 	</div>
 
-	<footer class="entry-footer">
-		<?php open_frame_entry_footer(); ?>
-	</footer>
+	<?php open_frame_entry_footer(); ?>
 </article>

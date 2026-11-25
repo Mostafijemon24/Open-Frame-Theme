@@ -30,7 +30,8 @@ class Open_Frame_Walker_Nav_Menu extends Walker_Nav_Menu {
 		parent::start_el( $output, $item, $depth, $args, $id );
 
 		if ( $has_children ) {
-			$label  = __( 'Submenu', 'open-frame' );
+			/* translators: %s: parent menu item title. */
+			$label  = sprintf( __( 'Submenu for %s', 'open-frame' ), wp_strip_all_tags( $item->title ) );
 			$button = sprintf(
 				'<button type="button" class="of-submenu-toggle of-plain" aria-expanded="false"><span class="screen-reader-text">%s</span><span class="of-submenu-icon" aria-hidden="true"></span></button>',
 				esc_html( $label )

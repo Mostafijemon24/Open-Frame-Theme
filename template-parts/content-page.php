@@ -25,4 +25,6 @@
 		);
 		?>
 	</div>
+
+	<?php open_frame_entry_footer(); ?>
 </article>
