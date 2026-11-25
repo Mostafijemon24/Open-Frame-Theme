@@ -1,6 +1,8 @@
 # Open Frame 1.0.0 — Test Report
 
-Everything below was run against the packaged theme (`dist/open-frame.zip`) or the source tree it is built from. "Automated" means a scripted headless-Chromium (Playwright) check that asserts on the rendered page: computed styles, element positions, ARIA state and console output.
+Everything below was run against the packaged theme (`dist/open-frame.zip`) or the source tree it is built from. "Automated" means a scripted headless-Chromium (Playwright) check that asserts on the rendered page: computed styles, element positions, ARIA state and console output. The final run totalled 1,995 checks with no failures.
+
+An independent code review was carried out before release; its twelve findings were fixed and each has a regression check in the last suite below.
 
 ## Environment
 
@@ -24,21 +26,22 @@ Not covered by this run, and worth a manual pass before or during review: real a
 | PHPCS, `PHPCompatibilityWP`, `testVersion 7.4-` | **0 errors, 0 warnings** |
 | `php -l` on every PHP file | Clean |
 | `wp_get_theme()->errors()` | None |
-| Package contents | 52 files, 388 KB; no hidden, development or documentation files |
+| Package contents | 52 files, 391 KB; no hidden, development or documentation files |
 | Remote requests made by the theme | None (every request the theme triggers is same-origin) |
-| Translation template | All 166 gettext calls present in `languages/open-frame.pot`, plus theme, template and pattern header strings |
+| Translation template | All 168 gettext calls present in `languages/open-frame.pot`, plus theme, template and pattern header strings |
 
 ## Automated browser tests
 
 | Suite | Checks | Result |
 | --- | --- | --- |
-| **Pages.** Every public URL of the unit-test site (93 URLs: posts, pages, archives, search, 404, attachment) at two to six widths: HTTP status, no horizontal overflow, no JavaScript errors, no unexpected external requests, `main` landmark and skip link, one `h1` | 1,500 | Pass |
+| **Pages.** Every public URL of the unit-test site (95 URLs: posts, pages, archives, search, 404, attachment) at two to six widths: HTTP status, no horizontal overflow, no JavaScript errors, no unexpected external requests, `main` landmark and skip link, one `h1` | 1,524 | Pass |
 | **Layouts and header.** Right, left, none and full-width layouts; empty-sidebar fallback; page, post and blog settings; 404; page templates; wide and full blocks next to a sidebar; Landing Page block widths on desktop and phone; iframe height; five header layouts with and without search at four widths; no-menu fallback; hidden title; header colors; sticky header with and without the admin toolbar; transparent header scope | 202 | Pass |
-| **Navigation, settings and footer.** Hover, toggle button, keyboard (Tab, Enter, Escape, focus return), outside click, focus-out, nested submenus, mega menu, mobile menu at three widths, no-JavaScript fallback; every color, font, size and width setting reaches the page; derived tints; out-of-range and malicious values are clamped or ignored; blog options; boxed layout; footer columns, colors and copyright sanitizing; search escaping; edit links; skip link; RTL | 132 | Pass |
+| **Navigation, settings and footer.** Hover, toggle button, keyboard (Tab, Enter, Escape, focus return), outside click, focus-out, nested submenus, mega menu, mobile menu at three widths, no-JavaScript fallback; every color, font, size and width setting reaches the page; derived tints; out-of-range and malicious values are clamped or ignored; blog options; boxed layout; footer columns, colors and copyright sanitizing; search escaping; edit links; skip link; RTL | 133 | Pass |
 | **Customizer screen and block editor.** 39 controls registered; live preview of colors, fonts, numbers, header and footer colors; refresh settings; conditional control; six patterns pass block validation; five block styles; both page templates offered; bundled font and editor styles applied in the editor canvas; no console errors | 23 | Pass |
 | **Landing Page with transparent and sticky header** (overlay, solid on scroll, mobile panel) and the demo home page | 19 | Pass |
 | **Round trips.** Customizer publish (values saved, numbers clamped, booleans, HTML sanitized, rendered on the frontend); comment form and moderation notice; threaded reply; password-protected post; focus outline | 17 | Pass |
 | **WordPress 6.4.15.** Ten views at two widths, font loading, menus, landing patterns | 34 | Pass |
+| **Review regressions.** Dropdowns stay inside the viewport at three widths and in RTL; block presets, button color and constrained widths on both WordPress versions; Latest Posts excerpt length; plugin and block buttons keep their own styles; body text color on excerpts, labels and pagination; Landing Page floats in LTR and RTL; reply form placement; mobile menu closes after use; touch at desktop width; wide blocks with and without a sidebar; hidden site title on focus; outline buttons | 43 | Pass |
 | **Child theme.** Parent stylesheet, then child stylesheet; child rules win | manual | Pass |
 
 PHP error log after the full run: **0 notices, warnings or errors** from the theme.

@@ -13,9 +13,19 @@
 	}
 
 	var root = document.documentElement;
+	var settings = window.openFramePreview || {};
+	var defaults = settings.defaults || {};
 
 	function cssVar( name, value ) {
 		root.style.setProperty( name, value );
+	}
+
+	// Block presets are declared on body by WordPress up to 6.5 and on the root
+	// element from 6.6; setting them on body works for both.
+	function blockVar( name, value ) {
+		if ( document.body ) {
+			document.body.style.setProperty( name, value );
+		}
 	}
 
 	// Site title & description.
@@ -92,6 +102,11 @@
 			value.bind( function ( to ) {
 				var rgb;
 
+				// An emptied field falls back to the theme default, exactly as
+				// the saved page does. Header text has no default: it is cleared.
+				if ( ! to ) {
+					to = defaults[ setting ] || '';
+				}
 				if ( ! to ) {
 					clearVar( colorMap[ setting ] );
 					return;
@@ -101,7 +116,7 @@
 
 				// Block palette colors follow the same settings.
 				if ( presetMap[ setting ] ) {
-					cssVar( '--wp--preset--color--' + presetMap[ setting ], to );
+					blockVar( '--wp--preset--color--' + presetMap[ setting ], to );
 				}
 
 				// Keep the derived tints in step with the primary color.
@@ -135,25 +150,28 @@
 	wp.customize( 'open_frame_container_width', function ( value ) {
 		value.bind( function ( to ) {
 			cssVar( '--of-container-wide', parseInt( to, 10 ) + 'px' );
-			cssVar( '--wp--style--global--wide-size', parseInt( to, 10 ) + 'px' );
+			blockVar( '--wp--style--global--wide-size', parseInt( to, 10 ) + 'px' );
 		} );
 	} );
 
 	wp.customize( 'open_frame_content_width', function ( value ) {
 		value.bind( function ( to ) {
 			cssVar( '--of-content-width', parseInt( to, 10 ) + 'px' );
-			cssVar( '--wp--style--global--content-size', parseInt( to, 10 ) + 'px' );
+			blockVar( '--wp--style--global--content-size', parseInt( to, 10 ) + 'px' );
 		} );
 	} );
 
 	wp.customize( 'open_frame_section_spacing', function ( value ) {
 		value.bind( function ( to ) {
-			cssVar( '--of-section-spacing', parseInt( to, 10 ) + 'px' );
+			var size = parseInt( to, 10 );
+
+			// The default keeps the fluid value from style.css, as the saved page does.
+			cssVar( '--of-section-spacing', size === parseInt( defaults.open_frame_section_spacing, 10 ) ? 'clamp(2.5rem, 1.5rem + 4vw, 4rem)' : size + 'px' );
 		} );
 	} );
 
 	// Font family choices (stacks are passed from PHP so both stay in sync).
-	var fontStacks = ( window.openFramePreview && window.openFramePreview.fonts ) || {};
+	var fontStacks = settings.fonts || {};
 
 	wp.customize( 'open_frame_body_font', function ( value ) {
 		value.bind( function ( to ) {

@@ -160,7 +160,7 @@ function open_frame_excerpt_length( $length ) {
 	}
 	return open_frame_clamp( open_frame_get_mod( 'open_frame_excerpt_length' ), 5, 80 );
 }
-add_filter( 'excerpt_length', 'open_frame_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'open_frame_excerpt_length' );
 
 /**
  * CSS classes for the posts listing container based on Customizer settings.

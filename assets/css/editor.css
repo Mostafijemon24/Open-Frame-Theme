@@ -61,11 +61,11 @@ samp { font-family: var(--of-font-mono); font-size: 0.9em; }
 	font-weight: 600;
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link {
-	background: transparent;
-	color: var(--of-color-primary);
-	border: 1.5px solid var(--of-color-primary);
-}
+.wp-block-button.is-style-outline > .wp-block-button__link { border: 1.5px solid currentColor; }
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background) { background: transparent; }
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color) { color: var(--of-color-primary); }
+
+mark { padding: 0 0.2em; border-radius: 2px; background-color: #f5a623; color: #0f172a; }
 
 .wp-block-button.is-style-open-frame-soft .wp-block-button__link {
 	background: var(--of-primary-100);

@@ -175,7 +175,7 @@ if ( ! function_exists( 'open_frame_comment' ) ) :
 		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 		?>
 		<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( 'comment-item' ); ?>>
-			<article class="comment-body">
+			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 				<footer class="comment-meta">
 					<span class="comment-author vcard"><?php echo get_avatar( $comment, 48 ); ?><b class="fn"><?php comment_author_link(); ?></b></span>
 					<span class="comment-metadata">
@@ -195,6 +195,7 @@ if ( ! function_exists( 'open_frame_comment' ) ) :
 						array_merge(
 							$args,
 							array(
+								'add_below' => 'div-comment',
 								'depth'     => $depth,
 								'max_depth' => $args['max_depth'],
 							)

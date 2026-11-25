@@ -45,11 +45,22 @@ function open_frame_build_dynamic_css() {
 	$fonts    = open_frame_font_choices();
 	$vars     = array();
 
+	/*
+	 * Block editor presets (palette colors, layout sizes). WordPress declares
+	 * these on `body` up to 6.5 and on `:root` from 6.6, so they are printed in
+	 * a `body` rule, which takes effect on every supported version.
+	 */
+	$block_vars = array();
+	$presets    = array_flip( open_frame_palette_settings() );
+
 	// Global colors.
 	foreach ( open_frame_color_variables() as $key => $property ) {
 		$value = sanitize_hex_color( open_frame_get_mod( $key ) );
 		if ( $value && strtolower( $value ) !== strtolower( $defaults[ $key ] ) ) {
 			$vars[ $property ] = $value;
+			if ( isset( $presets[ $key ] ) ) {
+				$block_vars[ '--wp--preset--color--' . $presets[ $key ] ] = $value;
+			}
 		}
 	}
 
@@ -89,14 +100,14 @@ function open_frame_build_dynamic_css() {
 	// Layout.
 	$container = open_frame_clamp( open_frame_get_mod( 'open_frame_container_width' ), 800, 1600 );
 	if ( $container !== $defaults['open_frame_container_width'] ) {
-		$vars['--of-container-wide']            = $container . 'px';
-		$vars['--wp--style--global--wide-size'] = $container . 'px';
+		$vars['--of-container-wide']                  = $container . 'px';
+		$block_vars['--wp--style--global--wide-size'] = $container . 'px';
 	}
 
 	$content = open_frame_clamp( open_frame_get_mod( 'open_frame_content_width' ), 600, 1400 );
 	if ( $content !== $defaults['open_frame_content_width'] ) {
-		$vars['--of-content-width']                = $content . 'px';
-		$vars['--wp--style--global--content-size'] = $content . 'px';
+		$vars['--of-content-width']                      = $content . 'px';
+		$block_vars['--wp--style--global--content-size'] = $content . 'px';
 	}
 
 	$section = open_frame_clamp( open_frame_get_mod( 'open_frame_section_spacing' ), 16, 160 );
@@ -120,15 +131,23 @@ function open_frame_build_dynamic_css() {
 		}
 	}
 
-	if ( empty( $vars ) ) {
-		return '';
+	$css = '';
+
+	if ( ! empty( $vars ) ) {
+		$css .= ':root{';
+		foreach ( $vars as $name => $value ) {
+			$css .= $name . ':' . $value . ';';
+		}
+		$css .= '}';
 	}
 
-	$css = ':root{';
-	foreach ( $vars as $name => $value ) {
-		$css .= $name . ':' . $value . ';';
+	if ( ! empty( $block_vars ) ) {
+		$css .= 'body{';
+		foreach ( $block_vars as $name => $value ) {
+			$css .= $name . ':' . $value . ';';
+		}
+		$css .= '}';
 	}
-	$css .= '}';
 
 	return $css;
 }

@@ -108,7 +108,7 @@ All theme settings are under **Appearance → Customize → Open Frame Options**
 | Site layout | Full width | **Full width** lets the header and footer span the window. **Boxed** places the whole site in a centered box with a shadow |
 | Container width | 1200 px | Maximum width of the header, footer and sidebar layouts (800 to 1600) |
 | Content width | 960 px | Width of the content column in the *No sidebar* layout, and of default blocks on the Landing Page template (600 to 1400) |
-| Section spacing | 64 px | Space above and below the main content area (16 to 160) |
+| Section spacing | 64 px | Space above and below the main content area (16 to 160). The default shrinks automatically on small screens |
 | Blog listing style | List | **List** shows the image beside the text. **Grid** shows cards in columns |
 | Grid columns | 2 | Number of columns for the Grid style (2 to 4). Shown only when the style is Grid |
 | Excerpt length | 30 words | Length of post summaries in listings (5 to 80) |
@@ -134,8 +134,8 @@ The four layout choices are:
 | --- | --- | --- |
 | Primary | `#3f4cd6` | Buttons, active menu items, highlights, focus outline |
 | Primary (hover) | `#2b36b8` | Button hover state |
-| Secondary | `#14b8a6` | Secondary palette color for blocks |
-| Accent | `#f5a623` | Accent palette color for blocks |
+| Secondary | `#14b8a6` | The *Secondary* color offered to blocks in the editor palette |
+| Accent | `#f5a623` | Highlighted text, and the *Accent* color in the editor palette |
 | Headings | `#0f172a` | All headings and post titles |
 | Body text | `#334155` | Paragraph text |
 | Links | `#3f4cd6` | Links in content |
@@ -226,7 +226,9 @@ Drag a menu item slightly to the right, under another item, to make it a sub-ite
 
 - **Mouse:** hover the parent item, or click the arrow.
 - **Keyboard:** press <kbd>Tab</kbd> to reach the arrow button and <kbd>Enter</kbd> or <kbd>Space</kbd> to open it. <kbd>Esc</kbd> closes the menu and returns focus to the button.
-- **Touch:** tap the arrow.
+- **Touch:** tap the arrow to open, tap it again to close.
+
+A dropdown that would run off the edge of the screen opens toward the other side automatically.
 
 ### Mega menu
 
@@ -243,7 +245,7 @@ A mega menu shows the sub-items of one menu item as columns in a wide panel. No 
 
 ### Mobile menu
 
-Below 1024 px the menu opens as a full-width panel under the header. Sub-menus (including mega menus) become collapsible lists that open with their arrow buttons.
+Below 1024 px the menu opens as a full-width panel under the header. Sub-menus (including mega menus) become collapsible lists that open with their arrow buttons. The panel closes when a link is followed, when <kbd>Esc</kbd> is pressed or when focus moves out of the menu.
 
 ![The home page and the open menu on a phone](images/mobile.png)
 
@@ -275,8 +277,8 @@ Choose a template in the page editor under **Template**.
 
 Wide and full-width blocks inside the standard card:
 
-- In the **No sidebar** and **Full width** layouts, a *Full width* block stretches across the whole window.
-- Next to a sidebar, a *Full width* block stretches to the edges of the content card, so it never runs under the sidebar.
+- In the **No sidebar** and **Full width** layouts, a *Wide width* block grows out of the card up to the container width, and a *Full width* block stretches across the whole window.
+- Next to a sidebar, a *Full width* block stretches to the edges of the content card and a *Wide width* block reaches halfway into its padding, so neither runs under the sidebar.
 
 Other templates included with the theme:
 
@@ -479,7 +481,7 @@ open-frame/
 ## 14. Privacy and performance
 
 - **No remote requests.** Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.
-- **Small footprint.** One stylesheet, one small script for the menu (about 4 KB, no jQuery) and the font files the page uses.
+- **Small footprint.** One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.
 - **No stored personal data.** The theme itself stores and sends no visitor data.
 
 ## 15. Troubleshooting and FAQ

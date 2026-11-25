@@ -172,7 +172,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <div class="table-wrap"><table><thead><tr><th>Setting</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>Site layout</td><td>Full width</td><td><strong>Full width</strong> lets the header and footer span the window. <strong>Boxed</strong> places the whole site in a centered box with a shadow</td></tr>
 <tr><td>Container width</td><td>1200 px</td><td>Maximum width of the header, footer and sidebar layouts (800 to 1600)</td></tr>
 <tr><td>Content width</td><td>960 px</td><td>Width of the content column in the <em>No sidebar</em> layout, and of default blocks on the Landing Page template (600 to 1400)</td></tr>
-<tr><td>Section spacing</td><td>64 px</td><td>Space above and below the main content area (16 to 160)</td></tr>
+<tr><td>Section spacing</td><td>64 px</td><td>Space above and below the main content area (16 to 160). The default shrinks automatically on small screens</td></tr>
 <tr><td>Blog listing style</td><td>List</td><td><strong>List</strong> shows the image beside the text. <strong>Grid</strong> shows cards in columns</td></tr>
 <tr><td>Grid columns</td><td>2</td><td>Number of columns for the Grid style (2 to 4). Shown only when the style is Grid</td></tr>
 <tr><td>Excerpt length</td><td>30 words</td><td>Length of post summaries in listings (5 to 80)</td></tr>
@@ -191,8 +191,8 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <figure><a href="images/customizer-colors.png"><img src="images/customizer-colors.png" alt="Global Colors" loading="lazy"></a><figcaption>Global Colors</figcaption></figure>
 <div class="table-wrap"><table><thead><tr><th>Setting</th><th>Default</th><th>Used for</th></tr></thead><tbody><tr><td>Primary</td><td><code>#3f4cd6</code></td><td>Buttons, active menu items, highlights, focus outline</td></tr>
 <tr><td>Primary (hover)</td><td><code>#2b36b8</code></td><td>Button hover state</td></tr>
-<tr><td>Secondary</td><td><code>#14b8a6</code></td><td>Secondary palette color for blocks</td></tr>
-<tr><td>Accent</td><td><code>#f5a623</code></td><td>Accent palette color for blocks</td></tr>
+<tr><td>Secondary</td><td><code>#14b8a6</code></td><td>The <em>Secondary</em> color offered to blocks in the editor palette</td></tr>
+<tr><td>Accent</td><td><code>#f5a623</code></td><td>Highlighted text, and the <em>Accent</em> color in the editor palette</td></tr>
 <tr><td>Headings</td><td><code>#0f172a</code></td><td>All headings and post titles</td></tr>
 <tr><td>Body text</td><td><code>#334155</code></td><td>Paragraph text</td></tr>
 <tr><td>Links</td><td><code>#3f4cd6</code></td><td>Links in content</td></tr>
@@ -252,8 +252,9 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <ul>
 <li><strong>Mouse:</strong> hover the parent item, or click the arrow.</li>
 <li><strong>Keyboard:</strong> press <kbd>Tab</kbd> to reach the arrow button and <kbd>Enter</kbd> or <kbd>Space</kbd> to open it. <kbd>Esc</kbd> closes the menu and returns focus to the button.</li>
-<li><strong>Touch:</strong> tap the arrow.</li>
+<li><strong>Touch:</strong> tap the arrow to open, tap it again to close.</li>
 </ul>
+<p>A dropdown that would run off the edge of the screen opens toward the other side automatically.</p>
 <h3 id="mega-menu">Mega menu</h3>
 <p>A mega menu shows the sub-items of one menu item as columns in a wide panel. No plugin is needed.</p>
 <ol>
@@ -265,7 +266,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <figure><a href="images/admin-menus-mega.png"><img src="images/admin-menus-mega.png" alt="Adding the of-mega class to a menu item" loading="lazy"></a><figcaption>Adding the of-mega class to a menu item</figcaption></figure>
 <figure><a href="images/mega-menu.png"><img src="images/mega-menu.png" alt="The resulting mega menu" loading="lazy"></a><figcaption>The resulting mega menu</figcaption></figure>
 <h3 id="mobile-menu">Mobile menu</h3>
-<p>Below 1024 px the menu opens as a full-width panel under the header. Sub-menus (including mega menus) become collapsible lists that open with their arrow buttons.</p>
+<p>Below 1024 px the menu opens as a full-width panel under the header. Sub-menus (including mega menus) become collapsible lists that open with their arrow buttons. The panel closes when a link is followed, when <kbd>Esc</kbd> is pressed or when focus moves out of the menu.</p>
 <figure><a href="images/mobile.png"><img src="images/mobile.png" alt="The home page and the open menu on a phone" loading="lazy"></a><figcaption>The home page and the open menu on a phone</figcaption></figure>
 <h2 id="7-widget-areas">7. Widget areas</h2>
 <p>Add blocks to widget areas under <strong>Appearance → Widgets</strong>.</p>
@@ -282,8 +283,8 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <figure><a href="images/page-default.png"><img src="images/page-default.png" alt="A page using the default template" loading="lazy"></a><figcaption>A page using the default template</figcaption></figure>
 <p>Wide and full-width blocks inside the standard card:</p>
 <ul>
-<li>In the <strong>No sidebar</strong> and <strong>Full width</strong> layouts, a <em>Full width</em> block stretches across the whole window.</li>
-<li>Next to a sidebar, a <em>Full width</em> block stretches to the edges of the content card, so it never runs under the sidebar.</li>
+<li>In the <strong>No sidebar</strong> and <strong>Full width</strong> layouts, a <em>Wide width</em> block grows out of the card up to the container width, and a <em>Full width</em> block stretches across the whole window.</li>
+<li>Next to a sidebar, a <em>Full width</em> block stretches to the edges of the content card and a <em>Wide width</em> block reaches halfway into its padding, so neither runs under the sidebar.</li>
 </ul>
 <p>Other templates included with the theme:</p>
 <figure><a href="images/search.png"><img src="images/search.png" alt="Search results" loading="lazy"></a><figcaption>Search results</figcaption></figure>
@@ -424,7 +425,7 @@ add_filter(
 <h2 id="14-privacy-and-performance">14. Privacy and performance</h2>
 <ul>
 <li><strong>No remote requests.</strong> Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.</li>
-<li><strong>Small footprint.</strong> One stylesheet, one small script for the menu (about 4 KB, no jQuery) and the font files the page uses.</li>
+<li><strong>Small footprint.</strong> One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.</li>
 <li><strong>No stored personal data.</strong> The theme itself stores and sends no visitor data.</li>
 </ul>
 <h2 id="15-troubleshooting-and-faq">15. Troubleshooting and FAQ</h2>

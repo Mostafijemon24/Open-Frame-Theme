@@ -104,10 +104,11 @@ function open_frame_palette_settings() {
 }
 
 /**
- * Keep the block editor color palette in step with the Customizer colors.
+ * Keep the block editor palette and layout sizes in step with the Customizer.
  *
  * Blocks that use a palette color (for example a "Primary" background) follow
- * the Global Colors chosen in the Customizer, on the frontend and in the editor.
+ * the Global Colors, and the editor canvas uses the chosen content and
+ * container widths.
  *
  * @param WP_Theme_JSON_Data $theme_json Theme data from theme.json.
  * @return WP_Theme_JSON_Data
@@ -122,8 +123,8 @@ function open_frame_filter_theme_json( $theme_json ) {
 		$palette = $data['settings']['color']['palette'];
 	}
 
-	if ( empty( $palette ) || ! is_array( $palette ) ) {
-		return $theme_json;
+	if ( ! is_array( $palette ) ) {
+		$palette = array();
 	}
 
 	$defaults = open_frame_defaults();
@@ -143,18 +144,30 @@ function open_frame_filter_theme_json( $theme_json ) {
 		}
 	}
 
-	if ( ! $changed ) {
+	$new_settings = array();
+
+	if ( $changed ) {
+		$new_settings['color'] = array( 'palette' => array_values( $palette ) );
+	}
+
+	// Layout sizes follow the Customizer widths (used by the editor canvas).
+	$content = open_frame_clamp( open_frame_get_mod( 'open_frame_content_width' ), 600, 1400 );
+	$wide    = open_frame_clamp( open_frame_get_mod( 'open_frame_container_width' ), 800, 1600 );
+	if ( $content !== $defaults['open_frame_content_width'] || $wide !== $defaults['open_frame_container_width'] ) {
+		$new_settings['layout'] = array(
+			'contentSize' => $content . 'px',
+			'wideSize'    => $wide . 'px',
+		);
+	}
+
+	if ( empty( $new_settings ) ) {
 		return $theme_json;
 	}
 
 	return $theme_json->update_with(
 		array(
 			'version'  => WP_Theme_JSON::LATEST_SCHEMA,
-			'settings' => array(
-				'color' => array(
-					'palette' => array_values( $palette ),
-				),
-			),
+			'settings' => $new_settings,
 		)
 	);
 }

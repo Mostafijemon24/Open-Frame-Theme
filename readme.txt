@@ -77,7 +77,7 @@ The full documentation, with screenshots, is available at https://github.com/Mos
 * New: six block patterns (Hero, Hero with illustration, Feature cards, Latest posts grid, Call to action, Landing page) and the Card (Group) and Eyebrow (Paragraph) block styles.
 * New: Hanken Grotesk and JetBrains Mono are now bundled as local variable fonts and registered through theme.json. Previously the fonts were only referenced by name, so the "Hanken Grotesk" choice fell back to the system font.
 * New: "Header text color", "Show site title and tagline" and "Footer heading and link color" Customizer options, so dark headers and light footers stay readable.
-* New: the block editor color palette follows the Customizer Global Colors.
+* New: the block editor color palette and content widths follow the Customizer settings.
 * Fix: the "Default page layout" option showed "No sidebar" in the Customizer while pages actually rendered with a sidebar. Every setting now reads its default from one place.
 * Fix: the "Content width" option had no effect. It now sets the width of the No sidebar layout, the Landing Page blocks and the block editor content size.
 * Fix: "No sidebar" and "Full width" layouts rendered identically. No sidebar now centers the content at the content width; Full width uses the container.
@@ -97,13 +97,20 @@ The full documentation, with screenshots, is available at https://github.com/Mos
 * Fix: single posts of custom post types ended with an empty bordered footer.
 * Fix: the parent stylesheet was not loaded when a child theme was active.
 * Fix: editor styles were not applied reliably because the selectors were written for the editor wrapper. They are now plain selectors that WordPress scopes itself.
+* Fix: a dropdown at the edge of the screen could run outside the viewport. It now opens toward the other side.
+* Fix: the mobile menu stayed open after following a link to a section of the same page, and submenus could get stuck open on touch screens at desktop widths.
+* Fix: "Wide width" blocks had no effect inside the content card. They now grow to the container width when there is no sidebar.
+* Fix: the comment reply form opened below the whole thread instead of under the comment being answered.
+* Fix: the excerpt length option overrode the Latest Posts block's own excerpt length.
+* Fix: a menu location with an empty menu displayed a menu button with nothing to open.
+* Fix: the generic button style no longer overrides buttons that belong to WordPress blocks or plugins.
 * Change: Customizer colors and numbers are printed only when they differ from the stylesheet defaults, and the base font size is output in rem so the visitor's browser setting is respected.
 * Change: hover tints and the focus ring are derived from the chosen primary color.
 * Change: the default body text color is #334155, matching the editor palette. Headings keep #0f172a.
 * Change: the mega menu panel spans the header container, and the menu remains usable without JavaScript.
 * Change: page templates moved from `templates/` to `page-templates/`.
 * Accessibility: the skip link targets the main content, submenu buttons name their parent item ("Submenu for Services"), the menu button is at least 44 px, and comment moderation text meets AA contrast.
-* i18n: regenerated languages/open-frame.pot (167 strings).
+* i18n: regenerated languages/open-frame.pot (168 strings).
 * Tested with WordPress 6.4 and 7.1, PHP 8.3; PHPCompatibilityWP reports no issues for PHP 7.4+.
 
 = 0.6.0 =

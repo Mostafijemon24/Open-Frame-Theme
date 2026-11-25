@@ -169,7 +169,7 @@ function open_frame_customize_register( $wp_customize ) {
 	$ranges = array(
 		'open_frame_container_width' => array( __( 'Container width (px)', 'open-frame' ), 800, 1600, __( 'Maximum width of the header, footer and sidebar layouts.', 'open-frame' ) ),
 		'open_frame_content_width'   => array( __( 'Content width (px)', 'open-frame' ), 600, 1400, __( 'Maximum width of the content column in the No sidebar layout and of blocks on the Landing Page template.', 'open-frame' ) ),
-		'open_frame_section_spacing' => array( __( 'Section spacing (px)', 'open-frame' ), 16, 160, __( 'Vertical space above and below the main content area.', 'open-frame' ) ),
+		'open_frame_section_spacing' => array( __( 'Section spacing (px)', 'open-frame' ), 16, 160, __( 'Vertical space above and below the main content area. The default (64) shrinks automatically on small screens.', 'open-frame' ) ),
 	);
 	foreach ( $ranges as $id => $range ) {
 		$wp_customize->add_setting(
@@ -304,7 +304,7 @@ function open_frame_customize_register( $wp_customize ) {
 		)
 	);
 
-	$colors = array(
+	$colors      = array(
 		'open_frame_color_primary'       => __( 'Primary', 'open-frame' ),
 		'open_frame_color_primary_hover' => __( 'Primary (hover)', 'open-frame' ),
 		'open_frame_color_secondary'     => __( 'Secondary', 'open-frame' ),
@@ -316,6 +316,10 @@ function open_frame_customize_register( $wp_customize ) {
 		'open_frame_color_border'        => __( 'Borders', 'open-frame' ),
 		'open_frame_color_bg'            => __( 'Page background', 'open-frame' ),
 		'open_frame_color_surface'       => __( 'Surfaces', 'open-frame' ),
+	);
+	$color_notes = array(
+		'open_frame_color_secondary' => __( 'Offered to blocks as the "Secondary" color in the editor palette.', 'open-frame' ),
+		'open_frame_color_accent'    => __( 'Highlighted text, and the "Accent" color in the editor palette.', 'open-frame' ),
 	);
 	foreach ( $colors as $id => $label ) {
 		$wp_customize->add_setting(
@@ -331,8 +335,9 @@ function open_frame_customize_register( $wp_customize ) {
 				$wp_customize,
 				$id,
 				array(
-					'label'   => $label,
-					'section' => 'open_frame_colors',
+					'label'       => $label,
+					'description' => isset( $color_notes[ $id ] ) ? $color_notes[ $id ] : '',
+					'section'     => 'open_frame_colors',
 				)
 			)
 		);
@@ -431,6 +436,13 @@ function open_frame_customize_preview_js() {
 	foreach ( open_frame_font_choices() as $key => $font ) {
 		$stacks[ $key ] = $font['stack'];
 	}
-	wp_localize_script( 'open-frame-customize-preview', 'openFramePreview', array( 'fonts' => $stacks ) );
+	wp_localize_script(
+		'open-frame-customize-preview',
+		'openFramePreview',
+		array(
+			'fonts'    => $stacks,
+			'defaults' => open_frame_defaults(),
+		)
+	);
 }
 add_action( 'customize_preview_init', 'open_frame_customize_preview_js' );

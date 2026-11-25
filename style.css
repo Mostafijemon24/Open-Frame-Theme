@@ -235,9 +235,13 @@ pre {
 
 :not(pre) > code {
 	padding: 0.15em 0.4em;
+	color: var(--of-slate-900);
 	background: var(--of-slate-100);
 	border-radius: var(--of-radius-sm);
 }
+
+/* Highlighted text uses the Accent color. */
+mark { padding: 0 0.2em; border-radius: 2px; background-color: var(--of-color-accent); color: var(--of-slate-900); }
 
 dt { font-weight: var(--of-fw-semibold); color: var(--of-color-heading); }
 dd { margin: 0 0 var(--of-space-3); margin-inline-start: var(--of-space-5); }
@@ -246,7 +250,7 @@ hr { border: 0; border-top: 1px solid var(--of-color-border); margin: var(--of-s
 
 table { border-collapse: collapse; width: 100%; margin: 0 0 var(--of-space-5); }
 th, td { padding: var(--of-space-3); border: 1px solid var(--of-color-border); text-align: start; }
-th { background: var(--of-slate-100); font-weight: var(--of-fw-semibold); }
+th { background: var(--of-slate-100); color: var(--of-slate-900); font-weight: var(--of-fw-semibold); }
 
 /* ==========================================================================
    Layout primitives
@@ -302,7 +306,8 @@ th { background: var(--of-slate-100); font-weight: var(--of-fw-semibold); }
 	word-wrap: normal !important;
 }
 
-.screen-reader-text:focus {
+.screen-reader-text:focus,
+.site-branding-text.screen-reader-text:focus-within {
 	background-color: var(--of-color-surface);
 	border-radius: var(--of-radius-sm);
 	box-shadow: var(--of-focus-ring);
@@ -333,11 +338,10 @@ th { background: var(--of-slate-100); font-weight: var(--of-fw-semibold); }
 /* ==========================================================================
    Buttons & forms
    ========================================================================== */
+/* Generic controls are styled with zero specificity (:where), so buttons that
+   belong to WordPress blocks or plugins keep their own styles. */
 .of-button,
-button:not(.of-plain),
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
+:where(button:not(.of-plain), input[type="submit"], input[type="button"], input[type="reset"]),
 .wp-block-button__link {
 	display: inline-flex;
 	align-items: center;
@@ -358,8 +362,7 @@ input[type="reset"],
 }
 
 .of-button:hover,
-button:not(.of-plain):hover,
-input[type="submit"]:hover,
+:where(button:not(.of-plain), input[type="submit"], input[type="button"], input[type="reset"]):hover,
 .wp-block-button__link:hover {
 	background: var(--of-color-primary-hover);
 	color: var(--of-white);
@@ -378,14 +381,14 @@ input[type="submit"]:hover,
 
 .of-button--ghost { background: transparent; color: var(--of-slate-700); }
 
-button[disabled],
+:where(button:not(.of-plain))[disabled],
 .of-button[aria-disabled="true"] {
 	background: var(--of-slate-100);
 	color: var(--of-slate-400);
 	cursor: not-allowed;
 }
 
-label { font-weight: var(--of-fw-semibold); color: var(--of-slate-700); }
+label { font-weight: var(--of-fw-semibold); color: var(--of-color-text); }
 
 input[type="text"],
 input[type="email"],
@@ -708,10 +711,22 @@ textarea { resize: vertical; min-height: 7rem; }
 	border-inline-start: 2px solid var(--of-color-border);
 }
 
-/* Desktop: dropdowns also open on hover, and sit on the surface color. */
-@media (min-width: 1024px) {
+/* Desktop with a mouse: dropdowns also open on hover. Touch screens use the
+   toggle button, so a tapped item never gets stuck open. */
+@media (min-width: 1024px) and (hover: hover) {
 	.main-navigation li:hover > .sub-menu { display: flex; }
 	.main-navigation li:hover > .of-submenu-toggle .of-submenu-icon { transform: rotate(180deg); }
+}
+
+/* Desktop: dropdowns sit on the surface color and stay inside the viewport. */
+@media (min-width: 1024px) {
+	/* navigation.js adds this class when a dropdown would leave the viewport.
+	   The last item of an end-aligned menu gets the same treatment up front. */
+	.main-navigation > ul > li.of-submenu-end > .sub-menu,
+	.header-layout-logo-left-menu-right .main-navigation > ul > li:last-child:not(.of-mega) > .sub-menu {
+		inset-inline-start: auto;
+		inset-inline-end: 0;
+	}
 
 	/* Without JavaScript, keyboard focus opens the dropdown instead. */
 	.no-js .main-navigation li:focus-within > .sub-menu { display: flex; }
@@ -755,7 +770,7 @@ textarea { resize: vertical; min-height: 7rem; }
 	.site-header-inner:has(.of-mega) { position: relative; }
 	.main-navigation:has(.of-mega) { position: static; }
 	.main-navigation:has(.of-mega) > ul > li.of-mega > .sub-menu { inset-inline: var(--of-content-padding); }
-	.main-navigation:has(.of-mega) > ul > li.of-mega > .sub-menu::before { top: -1.5rem; height: 1.5rem; }
+	.main-navigation:has(.of-mega) > ul > li.of-mega > .sub-menu::before { top: calc(-1 * var(--of-mega-gap, 1.5rem)); height: var(--of-mega-gap, 1.5rem); }
 
 	.main-navigation > ul > li.of-mega > .sub-menu {
 		inset-inline: 0;
@@ -996,7 +1011,6 @@ textarea { resize: vertical; min-height: 7rem; }
 }
 .entry-meta a { color: var(--of-color-muted); }
 
-.entry-summary { color: var(--of-slate-700); }
 .read-more { font-weight: var(--of-fw-semibold); text-decoration: none; display: inline-flex; gap: var(--of-space-2); }
 .read-more:hover,
 .read-more:focus { text-decoration: underline; }
@@ -1052,7 +1066,7 @@ textarea { resize: vertical; min-height: 7rem; }
 	border-radius: var(--of-radius-sm);
 	background: var(--of-color-surface);
 	text-decoration: none;
-	color: var(--of-slate-700);
+	color: var(--of-color-text);
 }
 .pagination a.page-numbers:hover,
 .comments-pagination a.page-numbers:hover { background: var(--of-primary-100); color: var(--of-color-primary); }
@@ -1165,10 +1179,13 @@ textarea { resize: vertical; min-height: 7rem; }
    Gutenberg / block editor content
    ========================================================================== */
 
-/* Wide and full alignment inside flowing content. */
+/* Wide and full alignment inside flowing content. Without a sidebar a wide
+   block grows out of the content card up to the container width. */
 .entry-content > .alignwide {
-	max-width: var(--of-container-wide);
-	margin-inline: auto;
+	--of-wide: calc(min(var(--of-container-wide), 100vw) - 2 * var(--of-content-padding));
+	width: var(--of-wide);
+	max-width: none;
+	margin-inline: calc(50% - var(--of-wide) / 2);
 }
 .entry-content > .alignfull {
 	width: 100vw;
@@ -1186,6 +1203,13 @@ textarea { resize: vertical; min-height: 7rem; }
 	margin-inline: calc(-1 * var(--of-card-padding));
 }
 
+/* A wide block next to a sidebar reaches halfway into the card padding. */
+.of-layout--has-sidebar .entry-content > .alignwide {
+	width: auto;
+	max-width: none;
+	margin-inline: calc(-0.5 * var(--of-card-padding));
+}
+
 /* ---------------------------------------------------------------------------
    Landing Page template: a blank canvas for block-built pages. Blocks are
    centered at the content width, "Wide" blocks use the container width and
@@ -1197,7 +1221,7 @@ textarea { resize: vertical; min-height: 7rem; }
 	margin-inline: auto;
 }
 
-.of-canvas .entry-content > .alignwide { max-width: min(var(--of-container-wide), calc(100% - 2 * var(--of-content-padding))); }
+.of-canvas .entry-content > .alignwide { width: auto; max-width: min(var(--of-container-wide), calc(100% - 2 * var(--of-content-padding))); margin-inline: auto; }
 
 .of-canvas .entry-content > .alignfull {
 	width: auto;
@@ -1205,8 +1229,9 @@ textarea { resize: vertical; min-height: 7rem; }
 	margin-inline: 0;
 }
 
-.of-canvas .entry-content > .alignleft { margin-inline-start: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); }
-.of-canvas .entry-content > .alignright { margin-inline-end: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); }
+/* Floats are physical (left/right) in WordPress, so their offsets are too. */
+.of-canvas .entry-content > .alignleft { margin-left: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); margin-right: var(--of-space-5); }
+.of-canvas .entry-content > .alignright { margin-right: max(var(--of-content-padding), calc(50% - var(--of-content-width) / 2)); margin-left: var(--of-space-5); }
 
 .of-canvas .entry-content > * + * { margin-top: var(--of-space-6); }
 .of-canvas .entry-content > .alignfull + .alignfull { margin-top: 0; }
@@ -1225,11 +1250,9 @@ textarea { resize: vertical; min-height: 7rem; }
 .entry-content p.has-drop-cap:first-letter { font-weight: var(--of-fw-extrabold); }
 
 /* Buttons block */
-.wp-block-button.is-style-outline .wp-block-button__link {
-	background: transparent;
-	color: var(--of-color-primary);
-	border: 1.5px solid var(--of-color-primary);
-}
+.wp-block-button.is-style-outline > .wp-block-button__link { border: 1.5px solid currentColor; }
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background) { background: transparent; }
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color) { color: var(--of-color-primary); }
 .wp-block-buttons { gap: var(--of-space-3); }
 
 /* Quote & pullquote */
