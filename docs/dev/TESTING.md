@@ -1,4 +1,4 @@
-# Open Frame 1.0.0 — Test Report
+# Open Frame 1.0.1 — Test Report
 
 Everything below was run against the packaged theme (`dist/open-frame.zip`) or the source tree it is built from. "Automated" means a scripted headless-Chromium (Playwright) check that asserts on the rendered page: computed styles, element positions, ARIA state and console output. The final run totalled 1,995 checks with no failures.
 

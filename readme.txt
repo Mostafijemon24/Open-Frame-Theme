@@ -4,7 +4,7 @@ Contributors: mostafijemon
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, portfolio, news, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
@@ -71,6 +71,9 @@ It applies to the front page only. To make the header float over the content, th
 The full documentation, with screenshots, is available at https://github.com/Mostafijemon24/Open-Frame-Theme/tree/main/docs
 
 == Changelog ==
+
+= 1.0.1 =
+* Change: the Author URI in the theme header now points to the author's GitHub profile (https://github.com/Mostafijemon24). No functional changes.
 
 = 1.0.0 =
 * New: Landing Page template, a blank canvas for block-built pages where default, wide and full-width blocks use the content width, the container width and the full window.

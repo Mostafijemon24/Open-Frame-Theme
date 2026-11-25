@@ -6,11 +6,11 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 
 | | |
 | --- | --- |
-| **Version** | 1.0.0 |
+| **Version** | 1.0.1 |
 | **Requires** | WordPress 6.4+, PHP 7.4+ (tested up to WordPress 7.1) |
 | **License** | GPL-2.0-or-later |
 | **Text domain** | `open-frame` |
-| **Author** | [Mostafij Emon](https://mostafijemon.live/) |
+| **Author** | [Mostafij Emon](https://github.com/Mostafijemon24) |
 
 ## Documentation
 

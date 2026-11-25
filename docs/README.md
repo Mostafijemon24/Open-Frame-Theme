@@ -1,6 +1,6 @@
 # Open Frame — Theme Documentation
 
-**Version 1.0.0** · Requires WordPress 6.4+ and PHP 7.4+ · Tested up to WordPress 7.1 · GPL-2.0-or-later
+**Version 1.0.1** · Requires WordPress 6.4+ and PHP 7.4+ · Tested up to WordPress 7.1 · GPL-2.0-or-later
 
 Open Frame is a lightweight, accessibility-minded multipurpose WordPress theme for business sites, blogs and portfolios. Everything is controlled from the Customizer, no plugin is required, and the fonts are bundled so the theme never calls a remote server.
 
@@ -529,4 +529,4 @@ See the `== Changelog ==` section of [`readme.txt`](../readme.txt) for the full 
 ### Support
 
 - Source code and issue tracker: <https://github.com/Mostafijemon24/Open-Frame-Theme>
-- Author: [Mostafij Emon](https://mostafijemon.live/)
+- Author: [Mostafij Emon](https://github.com/Mostafijemon24)
