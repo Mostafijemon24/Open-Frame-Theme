@@ -70,7 +70,7 @@ bash bin/build-zip.sh
 npm install marked && node bin/build-docs.js
 ```
 
-**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry, then push a tag such as `v1.0.1`. The [release workflow](.github/workflows/release.yml) builds the ZIP and publishes the GitHub release.
+**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry and push to `main`. Then either push a tag such as `v1.0.1`, or open **Actions → Release → Run workflow**. The [release workflow](.github/workflows/release.yml) builds the ZIP, creates the tag when needed and publishes the GitHub release.
 
 Architecture notes and the test report for each release are in [`docs/dev/`](docs/dev/).
 

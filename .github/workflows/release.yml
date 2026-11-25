@@ -1,11 +1,15 @@
 name: Release
 
-# Builds the installable theme ZIP and publishes a GitHub release whenever a
-# version tag (for example v1.0.0) is pushed.
+# Builds the installable theme ZIP and publishes a GitHub release.
+#
+# Runs when a version tag (for example v1.0.0) is pushed, or when started by
+# hand from the Actions tab ("Run workflow"). A manual run releases the version
+# found in style.css and creates the matching tag on the selected commit.
 on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,20 +18,32 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the tagged commit
+      - name: Check out the code
         uses: actions/checkout@v4
 
       - name: Lint PHP
         run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l > /dev/null
 
-      - name: Check that the tag matches the theme version
+      - name: Work out the version and tag
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="$(sed -n 's/^Version:[[:space:]]*//p' style.css | head -n 1)"
-          if [ "v$VERSION" != "$GITHUB_REF_NAME" ]; then
+          TAG="v$VERSION"
+          if [ "$GITHUB_REF_TYPE" = "tag" ] && [ "$GITHUB_REF_NAME" != "$TAG" ]; then
             echo "Tag $GITHUB_REF_NAME does not match style.css version $VERSION" >&2
             exit 1
           fi
+          if ! grep -q "^Stable tag: $VERSION$" readme.txt; then
+            echo "readme.txt Stable tag does not match style.css version $VERSION" >&2
+            exit 1
+          fi
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "Release $TAG already exists. Bump the version before releasing again." >&2
+            exit 1
+          fi
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
 
       - name: Build the theme ZIP
         run: |
@@ -44,16 +60,16 @@ jobs:
             echo
             echo "**Install:** download \`open-frame-$VERSION.zip\` below and upload it under *Appearance → Themes → Add Theme → Upload Theme*."
             echo
-            echo "**Documentation:** [docs/README.md](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_REF_NAME}/docs/README.md)"
+            echo "**Documentation:** [docs/README.md](https://github.com/${GITHUB_REPOSITORY}/blob/${TAG}/docs/README.md)"
           } > release-notes.md
 
       - name: Publish the release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" \
+          gh release create "$TAG" \
             "dist/open-frame-$VERSION.zip" \
             "dist/open-frame-$VERSION.zip.sha256" \
+            --target "$GITHUB_SHA" \
             --title "Open Frame v$VERSION" \
-            --notes-file release-notes.md \
-            --verify-tag
+            --notes-file release-notes.md
