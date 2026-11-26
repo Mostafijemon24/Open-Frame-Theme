@@ -16,6 +16,8 @@
 use OpenFrame\StarterSites\Cloud\Catalog;
 use OpenFrame\StarterSites\Cloud\CatalogValidator;
 use OpenFrame\StarterSites\Cloud\Client;
+use OpenFrame\StarterSites\Cloud\Manifest;
+use OpenFrame\StarterSites\Cloud\Signature;
 use OpenFrame\StarterSites\Config;
 use OpenFrame\StarterSites\History\Log;
 use OpenFrame\StarterSites\Requirements\Checker;
@@ -49,7 +51,7 @@ $GLOBALS['ofss_calls'] = array();
 add_filter(
 	'pre_http_request',
 	function ( $pre, $args, $url ) {
-		if ( false === strpos( $url, '/catalog.json' ) ) {
+		if ( false === strpos( $url, '/catalog.json' ) && false === strpos( $url, '/manifest.json' ) ) {
 			return $pre;
 		}
 		$GLOBALS['ofss_calls'][] = $args['headers'];
@@ -80,8 +82,35 @@ function ofss_answers( ...$answers ) {
 $config    = new Config();
 $base      = $config->api_base();
 $validator = new CatalogValidator( $config );
-$raw       = json_decode( str_replace( '{{BASE}}', $base, file_get_contents( dirname( __DIR__ ) . '/fixtures/cloud/v1/catalog.json' ) ), true );
-$good_site = $raw['sites'][0];
+
+// The library built for the test site (tests/env/setup.sh): the ten planned
+// sites plus "Reference", which has a package. Most checks use the ten.
+$built          = json_decode( file_get_contents( OFT_LIBRARY . '/v1/catalog.json' ), true );
+$full           = json_decode( $built['signed'], true );
+$raw            = $full;
+$raw['sites']   = array_values( array_filter( $full['sites'], fn( $s ) => 'reference' !== $s['id'] ) );
+$raw_reference  = array_values( array_filter( $full['sites'], fn( $s ) => 'reference' === $s['id'] ) )[0];
+$good_site      = $raw['sites'][0];
+
+/** Sign a document with the development key of the test library, as tools/lib.mjs does. */
+function ofss_sign( $document, $secret = null ) {
+	if ( null === $secret ) {
+		$pem    = file_get_contents( dirname( OFT_LIBRARY ) . '/dev.key' );
+		$seed   = substr( base64_decode( preg_replace( '/-----[^-]+-----|\s/', '', $pem ) ), -32 );
+		$secret = sodium_crypto_sign_secretkey( sodium_crypto_sign_seed_keypair( $seed ) );
+	}
+	$signed = wp_json_encode( $document, JSON_UNESCAPED_SLASHES );
+	return array(
+		'signed'     => $signed,
+		'signatures' => array(
+			array(
+				'alg' => 'ed25519',
+				'key' => substr( hash( 'sha256', sodium_crypto_sign_publickey_from_secretkey( $secret ) ), 0, 8 ),
+				'sig' => base64_encode( sodium_crypto_sign_detached( $signed, $secret ) ),
+			),
+		),
+	);
+}
 
 /* ---------------------------------------------------------------------- */
 ofss_section( 'Configuration' );
@@ -164,9 +193,60 @@ $available_site   = $validator->validate( array( 'format' => 1, 'sites' => array
 ofss_check( 'an available site with a proper manifest is accepted', 'available' === $available_site['status'] && 64 === strlen( $available_site['manifest']['sha256'] ) );
 
 /* ---------------------------------------------------------------------- */
+ofss_section( 'Signatures' );
+
+$signature = new Signature( $config );
+$envelope  = ofss_sign( $raw );
+$stranger  = sodium_crypto_sign_secretkey( sodium_crypto_sign_keypair() );
+
+ofss_check( 'the library built by the tools carries a signature the plugin accepts', is_string( $signature->open( $built ) ) );
+ofss_check( 'a catalog signed with the library key opens', $signature->open( $envelope ) === $envelope['signed'] );
+
+$refused = function ( $candidate ) use ( $signature ) {
+	$result = $signature->open( $candidate );
+	return is_wp_error( $result ) && 'ofss_bad_signature' === $result->get_error_code();
+};
+
+$changed           = $envelope;
+$changed['signed'] = str_replace( 'Business', 'Busyness', $changed['signed'] );
+ofss_check( 'a catalog changed after signing is refused', $refused( $changed ) );
+ofss_check( 'one changed character is enough', $refused( array_merge( $envelope, array( 'signed' => $envelope['signed'] . ' ' ) ) ) );
+ofss_check( 'a catalog without an envelope is refused', $refused( $raw ) );
+ofss_check( 'a catalog signed by an unknown key is refused', $refused( ofss_sign( $raw, $stranger ) ) );
+
+$mislabeled                         = ofss_sign( $raw, $stranger );
+$mislabeled['signatures'][0]['key'] = $envelope['signatures'][0]['key'];
+ofss_check( 'an unknown key that claims the ID of the library key is refused', $refused( $mislabeled ) );
+
+foreach ( array(
+	'no signatures'            => array_merge( $envelope, array( 'signatures' => array() ) ),
+	'signatures that is text'  => array_merge( $envelope, array( 'signatures' => 'none' ) ),
+	'an algorithm of "none"'   => array_merge( $envelope, array( 'signatures' => array( array_merge( $envelope['signatures'][0], array( 'alg' => 'none' ) ) ) ) ),
+	'a signature that is not base64' => array_merge( $envelope, array( 'signatures' => array( array_merge( $envelope['signatures'][0], array( 'sig' => '!!!not base64!!!' ) ) ) ) ),
+	'a signature of the wrong length' => array_merge( $envelope, array( 'signatures' => array( array_merge( $envelope['signatures'][0], array( 'sig' => base64_encode( 'short' ) ) ) ) ) ),
+	'a signed part that is not text' => array_merge( $envelope, array( 'signed' => $raw ) ),
+	'nothing at all'           => null,
+) as $label => $candidate ) {
+	ofss_check( "an envelope with $label is refused", $refused( $candidate ) );
+}
+
+$both                 = $envelope;
+$both['signatures'][] = ofss_sign( $raw, $stranger )['signatures'][0];
+$both['signatures']   = array_reverse( $both['signatures'] );
+ofss_check( 'with two signatures, one from a known key is enough (key replacement)', is_string( $signature->open( $both ) ) );
+
+$keyless = new class() extends Config {
+	public function public_keys() {
+		return array();
+	}
+};
+ofss_check( 'without any public key nothing is accepted', is_wp_error( ( new Signature( $keyless ) )->open( $envelope ) ) );
+ofss_check( 'development keys are only honoured for a local library', array_keys( $config->public_keys() ) === array( $envelope['signatures'][0]['key'] ) && 'local' === wp_get_environment_type() );
+
+/* ---------------------------------------------------------------------- */
 ofss_section( 'Catalog download and caching' );
 
-$body  = wp_json_encode( $raw );
+$body  = wp_json_encode( ofss_sign( $raw ) );
 $store = new Catalog( new Client( $config ), $config );
 
 delete_option( Catalog::OPTION );
@@ -210,8 +290,25 @@ $none = $store->get();
 ofss_check( 'without a saved copy a failing library is an error', is_wp_error( $none ) && 'ofss_server_error' === $none->get_error_code() );
 ofss_check( 'the error is written for a person', false === stripos( $none->get_error_message(), 'curl' ) && strlen( $none->get_error_message() ) > 20 );
 
-ofss_answers( array( 'code' => 200, 'body' => '{"format":1,"sites":"x"}' ) );
-ofss_check( 'a wrong-shaped answer is an error and is not saved', is_wp_error( $store->get() ) && false === get_option( Catalog::OPTION ) );
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( ofss_sign( array( 'format' => 1, 'sites' => 'x' ) ) ) ) );
+ofss_check( 'a correctly signed answer of the wrong shape is an error and is not saved', is_wp_error( $store->get() ) && false === get_option( Catalog::OPTION ) );
+
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( $raw ) ) );
+$unsigned = $store->get();
+ofss_check( 'an unsigned catalog is an error and is not saved', is_wp_error( $unsigned ) && 'ofss_bad_signature' === $unsigned->get_error_code() && false === get_option( Catalog::OPTION ) );
+
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( ofss_sign( $raw, $stranger ) ) ) );
+ofss_check( 'a catalog signed by someone else is an error and is not saved', is_wp_error( $store->get() ) && false === get_option( Catalog::OPTION ) );
+
+ofss_answers( array( 'code' => 200, 'body' => $body, 'headers' => array( 'etag' => '"good"' ) ) );
+$store->get();
+$forged                = $raw;
+$forged['sites']       = array( $raw['sites'][0] );
+$forged['sites'][0]['name'] = 'Forged';
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( ofss_sign( $forged, $stranger ) ), 'headers' => array( 'etag' => '"forged"' ) ) );
+$kept = $store->get( true );
+ofss_check( 'a forged catalog never replaces the saved one', ! is_wp_error( $kept ) && true === $kept['stale'] && 10 === count( $kept['catalog']['sites'] ) && 'Business' === $kept['catalog']['sites'][0]['name'] && 'ofss_bad_signature' === $kept['error']->get_error_code() );
+delete_option( Catalog::OPTION );
 
 $seen_agent = '';
 $agent_spy  = function ( $pre, $args ) use ( &$seen_agent ) {
@@ -227,6 +324,74 @@ ofss_check( 'requests name the plugin and do not include the site address', 0 ==
 ofss_check( 'a site can be found by ID', 'business' === $store->find( 'business' )['id'] );
 $missing = $store->find( 'no-such-site' );
 ofss_check( 'an unknown site is a 404', is_wp_error( $missing ) && 404 === $missing->get_error_data()['status'] );
+
+/* ---------------------------------------------------------------------- */
+ofss_section( 'Manifests' );
+
+$manifests     = new Manifest( new Client( $config ), $config );
+$reference     = $validator->validate( array( 'format' => 1, 'sites' => array( $raw_reference ) ) )['sites'][0];
+$manifest_body = file_get_contents( OFT_LIBRARY . '/v1/sites/reference/1.0.0/manifest.json' );
+
+ofss_answers( array( 'code' => 200, 'body' => $manifest_body ) );
+$manifest = $manifests->fetch( $reference );
+ofss_check( 'the manifest named by the catalog is accepted', ! is_wp_error( $manifest ) && 'reference' === $manifest['id'] && 64 === strlen( $manifest['package']['sha256'] ) && $manifest['package']['bytes'] > 0 );
+ofss_check( 'it lists pages, files, media and the widgets the package uses', 2 === count( $manifest['pages'] ) && isset( $manifest['files']['content/pages/home.json'] ) && 1 === count( $manifest['media'] ) && 'image/png' === $manifest['media'][0]['mime'] && in_array( 'heading', $manifest['widgets'], true ) );
+ofss_check( 'exactly one page is the front page', 1 === count( array_filter( $manifest['pages'], fn( $p ) => $p['front_page'] ) ) );
+
+ofss_answers( array( 'code' => 200, 'body' => str_replace( '"Reference"', '"Changed"', $manifest_body ) ) );
+$result = $manifests->fetch( $reference );
+ofss_check( 'a manifest that differs from the one the catalog names is refused', is_wp_error( $result ) && 'ofss_bad_manifest' === $result->get_error_code() );
+
+ofss_answers( array( 'code' => 200, 'body' => $manifest_body . "\n" ) );
+ofss_check( 'even one added byte is refused', is_wp_error( $manifests->fetch( $reference ) ) );
+
+// Past the checksum, the content still has to be sound. Each case is a manifest
+// the catalog "names" (its checksum matches), so only the content check can stop it.
+$decoded   = json_decode( $manifest_body, true );
+$manifest_cases = array(
+	'for another site'                      => function ( &$m ) { $m['id'] = 'business'; },
+	'for another version'                   => function ( &$m ) { $m['version'] = '9.9.9'; },
+	'whose package is on a foreign host'    => function ( &$m ) { $m['package']['url'] = 'https://evil.example/package.zip'; },
+	'whose package has no checksum'         => function ( &$m ) { unset( $m['package']['sha256'] ); },
+	'whose package has a size of zero'      => function ( &$m ) { $m['package']['bytes'] = 0; },
+	'with a file path that climbs out'      => function ( &$m ) { $m['files']['../../wp-config.json'] = array( 'sha256' => str_repeat( 'a', 64 ), 'bytes' => 1 ); },
+	'with a PHP file'                       => function ( &$m ) { $m['files']['content/evil.php'] = array( 'sha256' => str_repeat( 'a', 64 ), 'bytes' => 1 ); },
+	'with an image on a foreign host'       => function ( &$m ) { $m['media'][0]['url'] = 'https://evil.example/hero.png'; },
+	'with an image of a type that is not allowed' => function ( &$m ) { $m['media'][0]['mime'] = 'image/svg+xml'; },
+	'with a page identity that is not one'  => function ( &$m ) { $m['pages'][0]['uid'] = '../x'; },
+);
+foreach ( $manifest_cases as $label => $mutate ) {
+	$altered = $decoded;
+	$mutate( $altered );
+	$altered_body = wp_json_encode( $altered );
+	$site         = $reference;
+	$site['manifest']['sha256'] = hash( 'sha256', $altered_body );
+	ofss_answers( array( 'code' => 200, 'body' => $altered_body ) );
+	$result = $manifests->fetch( $site );
+	ofss_check( "a manifest $label is refused", is_wp_error( $result ) && 'ofss_bad_manifest' === $result->get_error_code() );
+}
+
+$altered           = $decoded;
+$altered['format'] = 99;
+$altered_body      = wp_json_encode( $altered );
+$site              = $reference;
+$site['manifest']['sha256'] = hash( 'sha256', $altered_body );
+ofss_answers( array( 'code' => 200, 'body' => $altered_body ) );
+$result = $manifests->fetch( $site );
+ofss_check( 'a manifest in a newer format asks for a plugin update', is_wp_error( $result ) && 'ofss_newer_package' === $result->get_error_code() );
+
+$site                    = $reference;
+$site['manifest']['url'] = 'https://evil.example/manifest.json';
+ofss_answers( array( 'code' => 200, 'body' => $manifest_body ) );
+$result = $manifests->fetch( $site );
+ofss_check( 'a manifest address on a foreign host is never requested', is_wp_error( $result ) && 'ofss_foreign_url' === $result->get_error_code() && 0 === count( $GLOBALS['ofss_calls'] ) );
+
+$result = $manifests->fetch( $validator->validate( $raw )['sites'][0] );
+ofss_check( 'a site that is not out yet has no manifest to fetch', is_wp_error( $result ) && 'ofss_no_manifest' === $result->get_error_code() );
+
+ofss_answers( array( 'code' => 503 ) );
+$result = $manifests->fetch( $reference );
+ofss_check( 'a failing library is tried three times for a manifest too', is_wp_error( $result ) && 3 === count( $GLOBALS['ofss_calls'] ) );
 
 /* ---------------------------------------------------------------------- */
 ofss_section( 'Requirement checks' );

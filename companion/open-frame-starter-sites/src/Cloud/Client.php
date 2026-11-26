@@ -46,9 +46,6 @@ class Client {
 	/**
 	 * Fetch a JSON document from the library.
 	 *
-	 * Temporary failures (no connection, HTTP 429 and 5xx) are tried again
-	 * after a short pause.
-	 *
 	 * @param string $path Path below the API base, for example "/catalog.json".
 	 * @param string $etag ETag of the copy already held, to allow a "not modified" answer.
 	 * @return array|WP_Error {
@@ -58,7 +55,42 @@ class Client {
 	 * }
 	 */
 	public function get_json( $path, $etag = '' ) {
-		$url     = $this->config->api_base() . '/' . ltrim( $path, '/' );
+		$response = $this->get( $this->config->api_base() . '/' . ltrim( $path, '/' ), $etag );
+		if ( is_wp_error( $response ) || $response['not_modified'] ) {
+			return $response;
+		}
+
+		$data = json_decode( $response['body'], true );
+		if ( ! is_array( $data ) ) {
+			return new WP_Error( 'ofss_bad_response', __( 'The starter site library sent an answer that could not be read.', 'open-frame-starter-sites' ) );
+		}
+
+		return array(
+			'not_modified' => false,
+			'data'         => $data,
+			'etag'         => $response['etag'],
+		);
+	}
+
+	/**
+	 * Fetch a small text document from one of the library's hosts.
+	 *
+	 * Temporary failures (no connection, HTTP 429 and 5xx) are tried again
+	 * after a short pause.
+	 *
+	 * @param string $url  Full address. Refused unless it is on the library's hosts.
+	 * @param string $etag ETag of the copy already held.
+	 * @return array|WP_Error {
+	 *     @type bool   $not_modified True when the held copy is still current.
+	 *     @type string $body         Response body (absent when not modified).
+	 *     @type string $etag         ETag of the response.
+	 * }
+	 */
+	public function get( $url, $etag = '' ) {
+		if ( 0 !== strpos( $url, $this->config->api_base() . '/' ) && ! $this->config->is_allowed_url( $url ) ) {
+			return new WP_Error( 'ofss_foreign_url', __( 'The starter site library pointed to an address that is not its own, so it was not used.', 'open-frame-starter-sites' ) );
+		}
+
 		$headers = array( 'Accept' => 'application/json' );
 		if ( '' !== $etag ) {
 			$headers['If-None-Match'] = $etag;
@@ -110,14 +142,13 @@ class Client {
 			}
 
 			$body = wp_remote_retrieve_body( $response );
-			$data = json_decode( $body, true );
-			if ( ! is_array( $data ) || strlen( $body ) >= self::MAX_BYTES ) {
+			if ( ! is_string( $body ) || '' === $body || strlen( $body ) >= self::MAX_BYTES ) {
 				return new WP_Error( 'ofss_bad_response', __( 'The starter site library sent an answer that could not be read.', 'open-frame-starter-sites' ) );
 			}
 
 			return array(
 				'not_modified' => false,
-				'data'         => $data,
+				'body'         => $body,
 				'etag'         => (string) wp_remote_retrieve_header( $response, 'etag' ),
 			);
 		}

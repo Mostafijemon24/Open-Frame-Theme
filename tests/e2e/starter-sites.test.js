@@ -303,6 +303,31 @@ test( 'answers that are not a catalog are refused with a clear message', async (
 	state( 'ofss:forget' );
 } );
 
+test( 'a list that is not signed by the library is not used', async () => {
+	for ( const mode of [ 'unsigned', 'bad-signature', 'foreign-key' ] ) {
+		state( 'ofss:forget' );
+		cloud( mode );
+		await page.goto( SCREEN );
+		const alert = page.getByRole( 'alert' ).filter( { hasText: 'The designs could not be loaded' } );
+		await alert.waitFor( { timeout: 30000 } );
+		assert.match( await alert.textContent(), /could not be verified, so it was not used/, mode );
+		assert.equal( await cards().count(), 0, mode );
+	}
+
+	// With a good list already saved, a forged one changes nothing on screen.
+	state( 'ofss:forget' );
+	cloud( 'ok' );
+	await open();
+	cloud( 'bad-signature' );
+	await page.getByRole( 'button', { name: 'Check for new designs' } ).click();
+	const notice = page.locator( '.ofss-notice', { hasText: 'Showing the list saved earlier' } );
+	await notice.waitFor( { timeout: 30000 } );
+	assert.match( await notice.textContent(), /could not be verified/ );
+	assert.equal( await cards().count(), 10 );
+	assert.equal( ( await names() )[ 0 ], 'Business', 'the changed name from the forged list is not shown' );
+	state( 'ofss:forget' );
+} );
+
 test( 'entries that break the rules are left out, and markup is shown as text', async () => {
 	state( 'ofss:forget' );
 	cloud( 'partial' );
@@ -331,10 +356,11 @@ test( 'a design that is out but needs a newer plugin says so', async () => {
 	cloud( 'available' );
 	await open();
 
-	const card = cards().filter( { hasText: 'Business' } ).first();
+	assert.equal( await cards().count(), 11 );
+	const card = cards().filter( { hasText: 'Reference' } ).first();
 	assert.equal( await card.locator( '.ofss-badge--soon' ).count(), 0 );
 
-	await details( 'Business' );
+	await details( 'Reference' );
 	assert.match( await dialog().locator( '.ofss-details__state' ).textContent(), /needs a newer version of the Open Frame Starter Sites plugin/ );
 	const row = requirement( 'Open Frame Starter Sites plugin' );
 	assert.ok( await row.evaluate( ( element ) => element.classList.contains( 'ofss-check--fail' ) ) );

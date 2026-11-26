@@ -1,0 +1,60 @@
+{
+	"id": "portfolio",
+	"order": 4,
+	"name": "Portfolio",
+	"summary": "A personal site for designers and freelancers: selected work, services, a resume and notes.",
+	"category": "creative",
+	"tags": [
+		"personal",
+		"designer",
+		"freelancer",
+		"resume"
+	],
+	"tier": "free",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#f3efe8",
+		"#c2410c",
+		"#1c1917"
+	],
+	"pages": [
+		"Home",
+		"About",
+		"Work",
+		"Project Details",
+		"Services",
+		"Service Details",
+		"Resume",
+		"Notes",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": ""
+}

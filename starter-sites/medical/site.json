@@ -1,0 +1,61 @@
+{
+	"id": "medical",
+	"order": 9,
+	"name": "Medical",
+	"summary": "A calm, trustworthy site for clinics: departments, doctors, patient information and appointments.",
+	"category": "health",
+	"tags": [
+		"clinic",
+		"doctor",
+		"healthcare",
+		"dentist"
+	],
+	"tier": "free",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#0e6e6e",
+		"#bfe9e4",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"About",
+		"Departments",
+		"Service Details",
+		"Doctors",
+		"Doctor Profile",
+		"Book an Appointment",
+		"Patient Information",
+		"Blog",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": ""
+}

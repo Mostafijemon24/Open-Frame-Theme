@@ -1,0 +1,72 @@
+{
+	"id": "saas",
+	"order": 3,
+	"name": "SaaS",
+	"summary": "A product site for software companies: features, pricing, integrations, customers and a demo request.",
+	"category": "technology",
+	"tags": [
+		"software",
+		"app",
+		"startup",
+		"technology",
+		"ai"
+	],
+	"tier": "pro",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#2a1f6b",
+		"#7c5cff",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"Features",
+		"Feature Details",
+		"Pricing",
+		"Integrations",
+		"Customers",
+		"About",
+		"Blog",
+		"Single Post",
+		"Contact",
+		"Privacy",
+		"Terms",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

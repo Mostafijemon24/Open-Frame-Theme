@@ -1,0 +1,17 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Home",
+				"url": "ofss://page/home"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			}
+		]
+	}
+]

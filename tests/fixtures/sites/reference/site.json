@@ -1,0 +1,51 @@
+{
+	"id": "reference",
+	"order": 1,
+	"name": "Reference",
+	"summary": "A two-page site used by the tests of the library tools and the importer.",
+	"category": "business",
+	"tags": [
+		"test"
+	],
+	"tier": "free",
+	"status": "available",
+	"version": "1.0.0",
+	"pages": [
+		"Home",
+		"About"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"heading",
+				"image",
+				"text-editor"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": ""
+}

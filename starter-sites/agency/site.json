@@ -1,0 +1,69 @@
+{
+	"id": "agency",
+	"order": 2,
+	"name": "Creative Agency",
+	"summary": "A bold studio site built around case studies, with services, careers and a journal.",
+	"category": "creative",
+	"tags": [
+		"agency",
+		"marketing",
+		"branding",
+		"studio"
+	],
+	"tier": "pro",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#111111",
+		"#c6f432",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"Studio",
+		"Services",
+		"Service Details",
+		"Work",
+		"Case Study",
+		"Careers",
+		"Journal",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

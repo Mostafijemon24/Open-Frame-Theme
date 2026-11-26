@@ -35,6 +35,15 @@ class Config {
 	const DEFAULT_ASSET_HOSTS = array( 'api.buildbetters.com', 'cdn.buildbetters.com' );
 
 	/**
+	 * Public keys of the library, by key ID (see tools/library.mjs keygen).
+	 *
+	 * The catalog must be signed with the private half of one of these. Empty
+	 * until the library is published: until then no catalog from the default
+	 * library is accepted.
+	 */
+	const PUBLIC_KEYS = array();
+
+	/**
 	 * How long a downloaded catalog counts as fresh, in seconds.
 	 */
 	const CATALOG_TTL = 12 * HOUR_IN_SECONDS;
@@ -78,6 +87,23 @@ class Config {
 		}
 
 		return self::DEFAULT_API_BASE;
+	}
+
+	/**
+	 * Public keys a catalog may be signed with: key ID => raw key in base64.
+	 *
+	 * While developing against a local library (see api_base()), `OFSS_PUBLIC_KEYS`
+	 * in wp-config.php supplies the keys of that library. On a live site the
+	 * keys that ship with the plugin cannot be replaced.
+	 *
+	 * @return array<string,string>
+	 */
+	public function public_keys() {
+		if ( defined( 'OFSS_PUBLIC_KEYS' ) && is_array( OFSS_PUBLIC_KEYS ) && self::DEFAULT_API_BASE !== $this->api_base() && in_array( wp_get_environment_type(), array( 'local', 'development' ), true ) ) {
+			return array_filter( OFSS_PUBLIC_KEYS, 'is_string' );
+		}
+
+		return self::PUBLIC_KEYS;
 	}
 
 	/**

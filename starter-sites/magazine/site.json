@@ -1,0 +1,66 @@
+{
+	"id": "magazine",
+	"order": 10,
+	"name": "Magazine",
+	"summary": "An editorial front page with category, article and author layouts for blogs and publications.",
+	"category": "publishing",
+	"tags": [
+		"blog",
+		"news",
+		"editorial",
+		"publication"
+	],
+	"tier": "pro",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#ffffff",
+		"#d7263d",
+		"#111111"
+	],
+	"pages": [
+		"Front Page",
+		"Category",
+		"Single Article",
+		"Author",
+		"About",
+		"Subscribe",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

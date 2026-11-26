@@ -1,0 +1,70 @@
+{
+	"id": "real-estate",
+	"order": 7,
+	"name": "Real Estate",
+	"summary": "A site for agencies and agents: listings, property pages, agent profiles and services.",
+	"category": "property",
+	"tags": [
+		"property",
+		"agents",
+		"listings",
+		"homes"
+	],
+	"tier": "pro",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#26323d",
+		"#c9a26b",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"Listings",
+		"Property Details",
+		"Agents",
+		"Agent Profile",
+		"Services",
+		"Service Details",
+		"About",
+		"Blog",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

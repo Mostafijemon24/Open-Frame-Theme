@@ -1,0 +1,59 @@
+{
+	"id": "restaurant",
+	"order": 6,
+	"name": "Restaurant",
+	"summary": "A warm site for restaurants and cafes: the menu, reservations, private events and a gallery.",
+	"category": "food",
+	"tags": [
+		"cafe",
+		"food",
+		"menu",
+		"reservations"
+	],
+	"tier": "free",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#1e3a2f",
+		"#e0b25c",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"Our Story",
+		"Menu",
+		"Reservations",
+		"Private Events",
+		"Gallery",
+		"Journal",
+		"Single Post",
+		"Contact and Location",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": ""
+}

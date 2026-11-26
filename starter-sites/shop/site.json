@@ -1,0 +1,80 @@
+{
+	"id": "shop",
+	"order": 5,
+	"name": "Shop",
+	"summary": "An online store with a lookbook, shipping information and a journal, built on WooCommerce.",
+	"category": "shop",
+	"tags": [
+		"store",
+		"e-commerce",
+		"products",
+		"woocommerce"
+	],
+	"tier": "pro",
+	"status": "coming_soon",
+	"version": "1.0.0",
+	"colors": [
+		"#efe6da",
+		"#1f2937",
+		"#1f2937"
+	],
+	"pages": [
+		"Home",
+		"Shop",
+		"Product",
+		"Cart",
+		"Checkout",
+		"My Account",
+		"About",
+		"Lookbook",
+		"Shipping and Returns",
+		"Journal",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "1.0.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			},
+			{
+				"slug": "woocommerce",
+				"name": "WooCommerce",
+				"file": "woocommerce/woocommerce.php",
+				"version": "10.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		]
+	},
+	"editable": {
+		"404": "elementor",
+		"shop": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

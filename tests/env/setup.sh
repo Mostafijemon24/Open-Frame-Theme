@@ -6,7 +6,7 @@
 #   bash tests/env/setup.sh stop       stop the server
 #
 # Uses PHP's built-in web server and SQLite, so it needs only PHP (with the
-# sqlite3 and zip extensions), curl and unzip. Settings, all optional:
+# sqlite3, sodium and zip extensions), Node.js, curl and unzip. Settings, all optional:
 #
 #   OFT_DIR         where the site is built   (default: $TMPDIR/open-frame-wp-test)
 #   OFT_PORT        port                      (default: 8890)
@@ -99,6 +99,21 @@ sed -e "s#{SQLITE_IMPLEMENTATION_FOLDER_PATH}#$SQLITE#" \
 ln -sfn "$ROOT" "$WP/wp-content/themes/open-frame"
 ln -sfn "$ROOT/companion/open-frame-starter-sites" "$WP/wp-content/plugins/open-frame-starter-sites"
 
+# The mock starter site library: the real build of the planned sites plus the
+# reference package, signed with a development key made for this test site.
+LIBRARY="$DIR/library"
+if [ ! -s "$DIR/dev.key" ]; then
+	node "$ROOT/tools/library.mjs" keygen --out "$DIR/dev.key" > "$DIR/dev.key.txt"
+fi
+DEV_KEY_ID="$(sed -n 's/^Key ID:[[:space:]]*//p' "$DIR/dev.key.txt")"
+DEV_PUBLIC_KEY="$(sed -n 's/^Public key:[[:space:]]*//p' "$DIR/dev.key.txt")"
+rm -rf "$LIBRARY" "$DIR/library-sources"
+mkdir -p "$DIR/library-sources"
+cp -r "$ROOT/starter-sites/." "$DIR/library-sources"
+cp -r "$ROOT/tests/fixtures/sites/reference" "$DIR/library-sources/reference"
+node "$ROOT/tools/library.mjs" build --sources "$DIR/library-sources" --out "$LIBRARY" \
+	--api "http://localhost:$CLOUD_PORT/v1" --cdn "http://localhost:$CLOUD_PORT/v1" --key "$DIR/dev.key"
+
 # WordPress.org is reached through a proxy when the environment sets one
 # (WordPress does not read the HTTPS_PROXY variable by itself).
 PROXY_CONFIG=""
@@ -135,6 +150,8 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', true );
 define( 'WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,downloads.wordpress.org' );
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 define( 'OFSS_API_BASE', 'http://localhost:$CLOUD_PORT/v1' );
+define( 'OFSS_PUBLIC_KEYS', array( '$DEV_KEY_ID' => '$DEV_PUBLIC_KEY' ) );
+define( 'OFT_LIBRARY', '$LIBRARY' );
 $PROXY_CONFIG
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );

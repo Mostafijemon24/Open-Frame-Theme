@@ -82,7 +82,7 @@ class Catalog {
 			);
 		}
 
-		$catalog = is_wp_error( $response ) ? $response : ( new CatalogValidator( $this->config ) )->validate( $response['data'] ?? null );
+		$catalog = is_wp_error( $response ) ? $response : $this->read( $response['data'] ?? null );
 
 		if ( is_wp_error( $catalog ) ) {
 			if ( ! $saved ) {
@@ -110,6 +110,21 @@ class Catalog {
 			'fetched_at' => $fresh['fetched_at'],
 			'stale'      => false,
 		);
+	}
+
+	/**
+	 * Verify the signature of a downloaded catalog, then validate what it says.
+	 *
+	 * @param mixed $envelope Decoded response.
+	 * @return array|WP_Error Normalized catalog.
+	 */
+	private function read( $envelope ) {
+		$signed = ( new Signature( $this->config ) )->open( $envelope );
+		if ( is_wp_error( $signed ) ) {
+			return $signed;
+		}
+
+		return ( new CatalogValidator( $this->config ) )->validate( json_decode( $signed, true ) );
 	}
 
 	/**
