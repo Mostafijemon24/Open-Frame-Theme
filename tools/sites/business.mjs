@@ -418,7 +418,7 @@ pages.contact = {
 				column( { width: 54, spacing: 20, more: { width_tablet: percent( 100 ) } }, [
 					heading( 'Reach us directly' ),
 					text( '<p>The quickest way to start is an email with a few lines about your company and the decision in front of you. If you prefer to talk, call the office and ask for any partner.</p>' ),
-					list( [ { text: 'hello@example.com', icon: 'envelope', url: 'mailto:hello@example.com' }, { text: '+1 (555) 010-0142', icon: 'phone', url: 'tel:+15550100142' }, { text: '48 Quay Street, Floor 6, Portside', icon: 'location-dot' }, { text: 'Monday to Friday, 8:30 to 18:00', icon: 'clock' } ], { color: C.ink, iconColor: C.brand, more: { space_between: px( 16 ) } } ),
+					list( [ { text: 'hello@example.com', icon: 'envelope', url: 'mailto:hello@example.com' }, { text: '+1 (555) 010-0142', icon: 'phone', url: 'tel:+15550100142' }, { text: '48 Quay Street, Floor 6, Portside', icon: 'map-marker-alt' }, { text: 'Monday to Friday, 8:30 to 18:00', icon: 'clock' } ], { color: C.ink, iconColor: C.brand, more: { space_between: px( 16 ) } } ),
 				] ),
 				column( { width: 46, more: { width_tablet: percent( 100 ) } }, [
 					card( [

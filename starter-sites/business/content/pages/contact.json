@@ -327,7 +327,7 @@
 													"_id": "00001dd",
 													"text": "48 Quay Street, Floor 6, Portside",
 													"selected_icon": {
-														"value": "fas fa-location-dot",
+														"value": "fas fa-map-marker-alt",
 														"library": "fa-solid"
 													}
 												},

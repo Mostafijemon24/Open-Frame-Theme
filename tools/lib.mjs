@@ -4,7 +4,7 @@
  * Output (one tree, uploaded as it is):
  *
  *   v1/catalog.json                              signed list of sites
- *   v1/previews/<site>/<file>                    preview images
+ *   v1/previews/<site>/<name>.<hash>.<ext>       preview images, named after their content
  *   v1/sites/<site>/<version>/manifest.json      what a package contains, with hashes
  *   v1/sites/<site>/<version>/package.zip        JSON only
  *   v1/sites/<site>/<version>/media/<sha256>.<ext>
@@ -18,6 +18,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
+import { fileURLToPath } from 'node:url';
 
 export const FORMAT = 1;
 export const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -41,6 +42,14 @@ const PRICE = /^\d+(\.\d{1,2})?$/;
 const MEDIA_TYPES = { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.avif': 'image/avif', '.gif': 'image/gif' };
 
 export const sha256 = ( data ) => crypto.createHash( 'sha256' ).update( data ).digest( 'hex' );
+
+/**
+ * The icons Elementor can draw: the names of Font Awesome Free 5.15, which
+ * Elementor carries, by library. An icon under any other name (one from Font
+ * Awesome 6, for instance) is silently left out of the page.
+ */
+const ICONS = JSON.parse( fs.readFileSync( path.join( path.dirname( fileURLToPath( import.meta.url ) ), 'icons.json' ), 'utf8' ) );
+const ICON_PREFIXES = { 'fa-solid': 'fas', 'fa-regular': 'far', 'fa-brands': 'fab' };
 
 const readJson = ( file ) => JSON.parse( fs.readFileSync( file, 'utf8' ) );
 const json = ( value ) => JSON.stringify( value, null, '\t' ) + '\n';
@@ -238,6 +247,22 @@ function widgetsIn( elements, found = new Set() ) {
 	return found;
 }
 
+/** Icons in an Elementor element tree that Elementor does not have, as "library: value". */
+function unknownIcons( value, found = new Set() ) {
+	if ( Array.isArray( value ) ) {
+		value.forEach( ( item ) => unknownIcons( item, found ) );
+	} else if ( value && typeof value === 'object' ) {
+		if ( typeof value.library === 'string' && typeof value.value === 'string' && value.library in ICONS ) {
+			const [ prefix, name = '' ] = value.value.split( ' ' );
+			if ( prefix !== ICON_PREFIXES[ value.library ] || ! ICONS[ value.library ].includes( name.replace( /^fa-/, '' ) ) ) {
+				found.add( `${ value.library }: ${ value.value }` );
+			}
+		}
+		Object.values( value ).forEach( ( item ) => unknownIcons( item, found ) );
+	}
+	return found;
+}
+
 /* -------------------------------------------------------------------------
    Validation
    ---------------------------------------------------------------------- */
@@ -397,6 +422,9 @@ export function collectPackage( site ) {
 			pages.push( { uid, title: String( document.title || '' ), ...( document.front_page ? { front_page: true } : {} ) } );
 		}
 		widgetsIn( document.elementor && document.elementor.content, widgets );
+		for ( const icon of unknownIcons( document.elementor && document.elementor.content ) ) {
+			problems.push( `${ name }: Elementor has no icon "${ icon }" (it carries Font Awesome 5; see tools/icons.json)` );
+		}
 	}
 
 	// Nothing in a package may point at the place it was authored, run script, or reference something that is not there.
@@ -492,8 +520,18 @@ export function buildLibrary( { sources, out, apiUrl, cdnUrl, privateKeys, gener
 		}
 		ids.add( site.id );
 
-		const previews = filesBelow( path.join( site.dir, 'preview' ) ).filter( ( file ) => /^[a-z0-9-]+\.(png|webp)$/.test( file ) );
-		const screenshots = ( site.screenshots || [] ).filter( ( shot ) => previews.includes( shot.file ) ).map( ( shot ) => ( { title: shot.title, url: `${ cdnUrl }/previews/${ site.id }/${ shot.file }` } ) );
+		// A preview is published under a name that contains its checksum: files other
+		// than the catalog are cached for a year, so a changed picture needs a new address.
+		const previews = Object.fromEntries(
+			filesBelow( path.join( site.dir, 'preview' ) )
+				.filter( ( file ) => /^[a-z0-9-]+\.(png|webp)$/.test( file ) )
+				.map( ( file ) => {
+					const data = fs.readFileSync( path.join( site.dir, 'preview', file ) );
+					const extension = path.extname( file );
+					return [ file, { data, path: `previews/${ site.id }/${ file.slice( 0, -extension.length ) }.${ sha256( data ).slice( 0, 12 ) }${ extension }` } ];
+				} )
+		);
+		const screenshots = ( site.screenshots || [] ).filter( ( shot ) => previews[ shot.file ] ).map( ( shot ) => ( { title: shot.title, url: `${ cdnUrl }/${ previews[ shot.file ].path }` } ) );
 
 		const entry = {
 			id: site.id,
@@ -504,7 +542,7 @@ export function buildLibrary( { sources, out, apiUrl, cdnUrl, privateKeys, gener
 			tier: site.tier,
 			status: site.status,
 			version: site.version,
-			preview: { thumbnail: `${ cdnUrl }/previews/${ site.id }/thumbnail.png`, screenshots, demo_url: site.demo_url || '' },
+			preview: { thumbnail: previews[ 'thumbnail.png' ] ? `${ cdnUrl }/${ previews[ 'thumbnail.png' ].path }` : '', screenshots, demo_url: site.demo_url || '' },
 			pages: site.pages,
 			requires: { format: FORMAT, wordpress: site.requires.wordpress, php: site.requires.php, theme: site.requires.theme, importer: site.requires.importer, plugins: site.requires.plugins },
 			editable: site.editable || {},
@@ -551,7 +589,7 @@ export function buildLibrary( { sources, out, apiUrl, cdnUrl, privateKeys, gener
 			continue;
 		}
 
-		previews.forEach( ( file ) => write( `previews/${ site.id }/${ file }`, fs.readFileSync( path.join( site.dir, 'preview', file ) ) ) );
+		Object.values( previews ).forEach( ( preview ) => write( preview.path, preview.data ) );
 		entries.push( entry );
 	}
 
@@ -609,9 +647,11 @@ export function verifyLibrary( out, publicKeys, { apiUrl, cdnUrl } ) {
 	}
 
 	for ( const site of catalog.sites ) {
-		const thumbnail = local( site.preview.thumbnail );
-		if ( thumbnail && ! fs.existsSync( thumbnail ) ) {
-			problems.push( `${ site.preview.thumbnail }: missing` );
+		for ( const url of [ site.preview.thumbnail, ...( site.preview.screenshots || [] ).map( ( shot ) => shot.url ) ] ) {
+			const file = local( url );
+			if ( file && ! fs.existsSync( file ) ) {
+				problems.push( `${ url }: missing` );
+			}
 		}
 		if ( ! site.manifest ) {
 			continue;
@@ -626,4 +666,219 @@ export function verifyLibrary( out, publicKeys, { apiUrl, cdnUrl } ) {
 	}
 
 	return problems;
+}
+
+/* -------------------------------------------------------------------------
+   Publishing
+   ---------------------------------------------------------------------- */
+
+/** Files of a built library in upload order: everything versioned first, the catalog last. */
+export function uploadOrder( out ) {
+	const files = filesBelow( path.join( out, 'v1' ) ).map( ( file ) => 'v1/' + file ).sort();
+	return [ ...files.filter( ( file ) => file !== 'v1/catalog.json' ), 'v1/catalog.json' ];
+}
+
+/** Run `task` for every item, at most `limit` at a time, and return the results in order. */
+export async function pool( items, limit, task ) {
+	const results = new Array( items.length );
+	let next = 0;
+	const worker = async () => {
+		while ( next < items.length ) {
+			const index = next++;
+			results[ index ] = await task( items[ index ], index );
+		}
+	};
+	await Promise.all( Array.from( { length: Math.min( limit, items.length ) }, worker ) );
+	return results;
+}
+
+/**
+ * Compare a built library with the one that is live, before anything is uploaded.
+ *
+ * Everything but the catalog is published once and cached for a year, so a
+ * file that is already live must be byte for byte the file that was built.
+ * A design that changed without a new version number shows up here as a
+ * conflict, and nothing is uploaded.
+ *
+ * @param {string}   out       Folder with the built library.
+ * @param {string}   live      Address the library is served from, ending in /v1.
+ * @param {Function} [fetcher] fetch(), replaceable in tests.
+ * @return {Promise<{ upload: string[], skip: string[], conflicts: string[] }>} Paths below `out`; the catalog is always the last upload.
+ */
+export async function planPublish( out, live, fetcher = fetch ) {
+	const base = live.replace( /\/v1\/?$/, '' );
+	const files = uploadOrder( out );
+	const plan = { upload: [], skip: [], conflicts: [] };
+
+	const states = await pool( files.slice( 0, -1 ), 8, async ( file ) => {
+		let response;
+		for ( let attempt = 1; ; attempt++ ) {
+			try {
+				response = await fetcher( `${ base }/${ file }`, { redirect: 'error' } );
+				if ( response.status === 200 || response.status === 404 ) {
+					break;
+				}
+				throw new Error( `HTTP ${ response.status }` );
+			} catch ( error ) {
+				if ( attempt === 3 ) {
+					throw new Error( `Could not ask ${ base } about ${ file }: ${ error.message }. Nothing was uploaded.` );
+				}
+				await new Promise( ( resolve ) => setTimeout( resolve, attempt * 1000 ) );
+			}
+		}
+		if ( response.status === 404 ) {
+			return 'upload';
+		}
+		return sha256( Buffer.from( await response.arrayBuffer() ) ) === sha256( fs.readFileSync( path.join( out, file ) ) ) ? 'skip' : 'conflict';
+	} );
+
+	files.slice( 0, -1 ).forEach( ( file, index ) => plan[ states[ index ] === 'conflict' ? 'conflicts' : states[ index ] ].push( file ) );
+	plan.upload.push( 'v1/catalog.json' );
+	return plan;
+}
+
+/**
+ * Check the library that is live the way a user's site would: download the
+ * catalog, check its signature, then download every file it leads to and
+ * compare it with its checksum.
+ *
+ * @param {string}   apiUrl     Address of the API, ending in /v1.
+ * @param {Object}   publicKeys Public keys by key ID.
+ * @param {Function} [fetcher]  fetch(), replaceable in tests.
+ * @return {Promise<{ problems: string[], files: number, sites: number, generated: string }>}
+ */
+export async function verifyLive( apiUrl, publicKeys, fetcher = fetch ) {
+	const problems = [];
+	let files = 0;
+	const get = async ( url ) => {
+		files++;
+		try {
+			const response = await fetcher( url, { redirect: 'error' } );
+			if ( response.status !== 200 ) {
+				problems.push( `${ url }: HTTP ${ response.status }` );
+				return null;
+			}
+			return Buffer.from( await response.arrayBuffer() );
+		} catch ( error ) {
+			problems.push( `${ url }: ${ error.message }` );
+			return null;
+		}
+	};
+	const check = async ( url, expected, bytes ) => {
+		const data = await get( url );
+		if ( data && ( sha256( data ) !== expected || ( bytes !== undefined && data.length !== bytes ) ) ) {
+			problems.push( `${ url }: does not match its checksum` );
+			return null;
+		}
+		return data;
+	};
+
+	const body = await get( `${ apiUrl.replace( /\/$/, '' ) }/catalog.json` );
+	if ( ! body ) {
+		return { problems, files, sites: 0, generated: '' };
+	}
+	let catalog;
+	try {
+		catalog = openEnvelope( JSON.parse( body.toString( 'utf8' ) ), publicKeys );
+	} catch ( error ) {
+		return { problems: [ 'catalog.json: ' + error.message ], files, sites: 0, generated: '' };
+	}
+
+	await pool( catalog.sites, 2, async ( site ) => {
+		await pool( [ site.preview.thumbnail, ...( site.preview.screenshots || [] ).map( ( shot ) => shot.url ) ], 4, get );
+		if ( ! site.manifest ) {
+			return;
+		}
+		const manifestBody = await check( site.manifest.url, site.manifest.sha256 );
+		if ( ! manifestBody ) {
+			return;
+		}
+		const manifest = JSON.parse( manifestBody.toString( 'utf8' ) );
+		await pool( [ manifest.package, ...manifest.media, ...manifest.fonts ], 4, ( item ) => check( item.url, item.sha256, item.bytes ) );
+	} );
+
+	return { problems, files, sites: catalog.sites.length, generated: catalog.generated };
+}
+
+/** Say in words which designs a list of conflicting files belongs to. */
+export function explainConflicts( conflicts ) {
+	const versions = new Set();
+	const others = [];
+	for ( const file of conflicts ) {
+		const match = file.match( /^v1\/sites\/([^/]+)\/([^/]+)\// );
+		if ( match ) {
+			versions.add( `${ match[ 1 ] } ${ match[ 2 ] } is already published with different content. A published version never changes: raise "version" in starter-sites/${ match[ 1 ] }/site.json.` );
+		} else {
+			others.push( `${ file } is already published with different content.` );
+		}
+	}
+	return [ ...versions, ...others ];
+}
+
+/* -------------------------------------------------------------------------
+   Licence overview
+   ---------------------------------------------------------------------- */
+
+/**
+ * One page that says, for every design, what its pictures and fonts are and
+ * under which licence they are passed on. Made from the same records the
+ * packages are built from, so it cannot say something the packages do not.
+ *
+ * @param {string} sources Folder with the site folders.
+ * @return {string} Markdown.
+ */
+export function licenceOverview( sources ) {
+	const { sites } = loadSources( sources );
+	const count = ( list ) => {
+		const totals = new Map();
+		list.forEach( ( item ) => totals.set( item, ( totals.get( item ) || 0 ) + 1 ) );
+		return [ ...totals ].sort( ( a, b ) => b[ 1 ] - a[ 1 ] || a[ 0 ].localeCompare( b[ 0 ] ) );
+	};
+	const optional = ( file ) => ( fs.existsSync( file ) ? readJson( file ) : [] );
+
+	const rows = [];
+	const sections = [];
+	let photographs = 0;
+	let drawings = 0;
+
+	for ( const site of sites.sort( ( a, b ) => ( a.order ?? 100 ) - ( b.order ?? 100 ) || a.id.localeCompare( b.id ) ) ) {
+		const media = optional( path.join( site.dir, 'media/index.json' ) );
+		const records = optional( path.join( site.dir, 'photos.json' ) );
+		const fonts = optional( path.join( site.dir, 'fonts/index.json' ) );
+		const photographed = media.filter( ( item ) => records.some( ( record ) => record.uid === item.uid ) );
+		const drawn = media.filter( ( item ) => ! photographed.includes( item ) );
+		const families = count( fonts.map( ( font ) => `${ font.family } (${ font.licence.split( '. ' )[ 0 ] })` ) ).map( ( [ name ] ) => name );
+		photographs += photographed.length;
+		drawings += drawn.length;
+
+		rows.push( `| ${ site.name } | ${ site.tier === 'pro' ? 'Elementor Pro' : 'Free' } | ${ site.version } | ${ photographed.length } | ${ drawn.length } | ${ families.join( ', ' ) || 'the theme\'s own font' } |` );
+
+		const lines = [ `## ${ site.name }`, '' ];
+		if ( photographed.length ) {
+			const licences = count( photographed.map( ( item ) => records.find( ( record ) => record.uid === item.uid ).licence ) ).map( ( [ licence, number ] ) => `${ number } × ${ licence }` );
+			lines.push( `- Photographs: ${ photographed.length }, from Wikimedia Commons (${ licences.join( '; ' ) }). Photographer and source of each: [CREDITS.md](${ site.folder }/CREDITS.md).` );
+		}
+		if ( drawn.length ) {
+			lines.push( `- Drawn pictures: ${ drawn.length } (${ count( drawn.map( ( item ) => item.licence ) ).map( ( [ licence ] ) => licence ).join( '; ' ) })` );
+		}
+		lines.push( fonts.length ? `- Fonts packaged with the design: ${ count( fonts.map( ( font ) => `${ font.family }: ${ font.licence }` ) ).map( ( [ line ] ) => line ).join( '; ' ) }` : '- Fonts: none packaged; the design uses the font of the Open Frame theme.' );
+		lines.push( `- Full statement: [LICENSES.md](${ site.folder }/LICENSES.md).`, '' );
+		sections.push( lines.join( '\n' ) );
+	}
+
+	return [
+		'# Licences of the starter site library',
+		'',
+		'<!-- Written by `node tools/library.mjs licences`. Do not edit by hand; the tools tests fail when this page and the designs disagree. -->',
+		'',
+		`The library holds ${ sites.length } designs with ${ photographs } photographs and ${ drawings } drawn pictures. The pages, texts and settings of every design were written for this project and are part of this repository, which is licensed under the GNU General Public License, version 2 or later, like the theme and the plugin. Photographs are accepted only when Wikimedia Commons records them as CC0 or public domain, drawn pictures were made for this project and are released as their design's statement says, and fonts are accepted only under the SIL Open Font License. All of these can be passed on with GPL software. No design contains code.`,
+		'',
+		'The texts, names, prices and figures of all designs are invented sample content. A photograph that shows a recognisable person stands for an invented person and is meant to be replaced; each design\'s statement names those pictures.',
+		'',
+		'| Design | Tier | Version | Photographs | Drawn pictures | Fonts in the package |',
+		'| --- | --- | --- | --- | --- | --- |',
+		...rows,
+		'',
+		...sections,
+	].join( '\n' );
 }

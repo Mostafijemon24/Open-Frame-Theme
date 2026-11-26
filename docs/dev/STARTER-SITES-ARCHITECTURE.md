@@ -316,6 +316,8 @@ Worker  api.<domain>               CDN  cdn.<domain>  (R2 custom domain)
 
 **As built in Phase 5:** one Worker serves both host names (it is simpler to run than a Worker plus a public bucket domain, and can be split later without changing any address). The working manual is [LIBRARY.md](LIBRARY.md).
 
+**As built in Phase 8:** "never modified" is enforced, not only promised. Before uploading, the publish tool downloads what is live and compares it with the build: unchanged files are skipped, and a version whose content changed stops the publication before the first upload. Preview pictures are PNG and carry their checksum in their name (`previews/{slug}/thumbnail.{hash}.png`), because they too are cached for a year. After uploading, the live library is downloaded and checked file by file. The whole sequence, and the import of every design on a clean site, can be rehearsed on one machine with the real Worker code (`tests/library/rehearsal.sh`). The catalog is not purged from the edge cache after a publication; it is cached for five minutes.
+
 Addresses: the library will be served from `api.buildbetters.com` (catalog and manifests) and `cdn.buildbetters.com` (packages, media, previews); both are the plugin's defaults and its only allowed hosts. What is still needed from the owner for Phase 5: a Cloudflare **API token** limited to Workers and R2 for that account, entered through the secure credential form (not a password, and never in chat or in the repository), stored as a GitHub secret for the publish workflow. Until then development runs against the local mock in `tests/fixtures/cloud`, which answers like the real API and can be told to fail in specific ways.
 
 ---

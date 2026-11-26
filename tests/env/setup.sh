@@ -18,6 +18,16 @@
 #                          the Theme Builder checks. Elementor Pro is not downloaded and
 #                          is never part of this repository.
 #
+# For a rehearsal of the real library (tests/library/rehearsal.sh):
+#
+#   OFT_LIBRARY_BASE  address of a library that is already running, ending in /v1;
+#                     the mock library is then neither built nor started
+#   OFT_LIBRARY_KEY   its public key, as "<key id>=<public key>"
+#   OFT_PACKAGES      folder with open-frame.zip and open-frame-starter-sites.zip: the
+#                     theme and the plugin are installed from them, as a user would
+#                     get them, instead of being linked to the working copy
+#   OFT_FIXTURES=no   leave the site as WordPress installs it (no test content)
+#
 # The site lives outside the repository on purpose: the theme folder is
 # linked into it, and a site inside the theme would be scanned as theme files.
 #
@@ -95,26 +105,41 @@ sed -e "s#{SQLITE_IMPLEMENTATION_FOLDER_PATH}#$SQLITE#" \
 	-e "s#{SQLITE_PLUGIN}#sqlite-database-integration/load.php#" \
 	"$SQLITE/db.copy" > "$WP/wp-content/db.php"
 
-# The theme and the companion plugin under test are the working copy.
-ln -sfn "$ROOT" "$WP/wp-content/themes/open-frame"
-ln -sfn "$ROOT/companion/open-frame-starter-sites" "$WP/wp-content/plugins/open-frame-starter-sites"
-
-# The mock starter site library: the real build of the planned sites plus the
-# reference package, signed with a development key made for this test site.
-LIBRARY="$DIR/library"
-if [ ! -s "$DIR/dev.key" ]; then
-	node "$ROOT/tools/library.mjs" keygen --out "$DIR/dev.key" > "$DIR/dev.key.txt"
+if [ -n "${OFT_PACKAGES:-}" ]; then
+	# The theme and the plugin as they are shipped.
+	rm -rf "$WP/wp-content/themes/open-frame" "$WP/wp-content/plugins/open-frame-starter-sites"
+	unzip -q "$OFT_PACKAGES/open-frame.zip" -d "$WP/wp-content/themes"
+	unzip -q "$OFT_PACKAGES/open-frame-starter-sites.zip" -d "$WP/wp-content/plugins"
+else
+	# The theme and the companion plugin under test are the working copy.
+	ln -sfn "$ROOT" "$WP/wp-content/themes/open-frame"
+	ln -sfn "$ROOT/companion/open-frame-starter-sites" "$WP/wp-content/plugins/open-frame-starter-sites"
 fi
-DEV_KEY_ID="$(sed -n 's/^Key ID:[[:space:]]*//p' "$DIR/dev.key.txt")"
-DEV_PUBLIC_KEY="$(sed -n 's/^Public key:[[:space:]]*//p' "$DIR/dev.key.txt")"
-rm -rf "$LIBRARY" "$DIR/library-sources"
-mkdir -p "$DIR/library-sources"
-cp -r "$ROOT/starter-sites/." "$DIR/library-sources"
-cp -r "$ROOT/tests/fixtures/sites/reference" "$DIR/library-sources/reference"
-cp -r "$ROOT/tests/fixtures/sites/reference-pro" "$DIR/library-sources/reference-pro"
-cp -r "$ROOT/tests/fixtures/sites/reference-shop" "$DIR/library-sources/reference-shop"
-node "$ROOT/tools/library.mjs" build --sources "$DIR/library-sources" --out "$LIBRARY" \
-	--api "http://localhost:$CLOUD_PORT/v1" --cdn "http://localhost:$CLOUD_PORT/v1" --key "$DIR/dev.key"
+
+LIBRARY="$DIR/library"
+if [ -n "${OFT_LIBRARY_BASE:-}" ]; then
+	# A library that runs somewhere else (see tests/library/rehearsal.sh).
+	LIBRARY_BASE="${OFT_LIBRARY_BASE%/}"
+	DEV_KEY_ID="${OFT_LIBRARY_KEY%%=*}"
+	DEV_PUBLIC_KEY="${OFT_LIBRARY_KEY#*=}"
+else
+	# The mock starter site library: the real build of the planned sites plus the
+	# reference package, signed with a development key made for this test site.
+	LIBRARY_BASE="http://localhost:$CLOUD_PORT/v1"
+	if [ ! -s "$DIR/dev.key" ]; then
+		node "$ROOT/tools/library.mjs" keygen --out "$DIR/dev.key" > "$DIR/dev.key.txt"
+	fi
+	DEV_KEY_ID="$(sed -n 's/^Key ID:[[:space:]]*//p' "$DIR/dev.key.txt")"
+	DEV_PUBLIC_KEY="$(sed -n 's/^Public key:[[:space:]]*//p' "$DIR/dev.key.txt")"
+	rm -rf "$LIBRARY" "$DIR/library-sources"
+	mkdir -p "$DIR/library-sources"
+	cp -r "$ROOT/starter-sites/." "$DIR/library-sources"
+	cp -r "$ROOT/tests/fixtures/sites/reference" "$DIR/library-sources/reference"
+	cp -r "$ROOT/tests/fixtures/sites/reference-pro" "$DIR/library-sources/reference-pro"
+	cp -r "$ROOT/tests/fixtures/sites/reference-shop" "$DIR/library-sources/reference-shop"
+	node "$ROOT/tools/library.mjs" build --sources "$DIR/library-sources" --out "$LIBRARY" \
+		--api "$LIBRARY_BASE" --cdn "$LIBRARY_BASE" --key "$DIR/dev.key"
+fi
 
 # WordPress.org is reached through a proxy when the environment sets one
 # (WordPress does not read the HTTPS_PROXY variable by itself).
@@ -151,7 +176,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'WP_HTTP_BLOCK_EXTERNAL', true );
 define( 'WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,downloads.wordpress.org' );
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
-define( 'OFSS_API_BASE', 'http://localhost:$CLOUD_PORT/v1' );
+define( 'OFSS_API_BASE', '$LIBRARY_BASE' );
 define( 'OFSS_PUBLIC_KEYS', array( '$DEV_KEY_ID' => '$DEV_PUBLIC_KEY' ) );
 define( 'OFT_LIBRARY', '$LIBRARY' );
 $PROXY_CONFIG
@@ -165,20 +190,24 @@ mkdir -p "$WP/wp-content/mu-plugins"
 cp "$ROOT/tests/env/mu-plugin.php" "$WP/wp-content/mu-plugins/open-frame-test.php"
 
 php "$ROOT/tests/env/run.php" "$WP" "$ROOT/tests/env/install.php"
-php "$ROOT/tests/env/run.php" "$WP" "$ROOT/tests/env/fixtures.php"
+if [ "${OFT_FIXTURES:-yes}" != "no" ]; then
+	php "$ROOT/tests/env/run.php" "$WP" "$ROOT/tests/env/fixtures.php"
+fi
 
 stop_server
 nohup php -S "localhost:$PORT" -t "$WP" > "$DIR/server.log" 2>&1 < /dev/null &
 echo $! > "$PIDFILE"
 
-# The mock starter site library (tests/fixtures/cloud).
-echo ok > "$DIR/cloud-mode"
-OFT_CLOUD_STATE="$DIR" nohup php -S "localhost:$CLOUD_PORT" "$ROOT/tests/fixtures/cloud/router.php" > "$DIR/cloud.log" 2>&1 < /dev/null &
-echo $! > "$CLOUD_PIDFILE"
+if [ -z "${OFT_LIBRARY_BASE:-}" ]; then
+	# The mock starter site library (tests/fixtures/cloud).
+	echo ok > "$DIR/cloud-mode"
+	OFT_CLOUD_STATE="$DIR" nohup php -S "localhost:$CLOUD_PORT" "$ROOT/tests/fixtures/cloud/router.php" > "$DIR/cloud.log" 2>&1 < /dev/null &
+	echo $! > "$CLOUD_PIDFILE"
+fi
 sleep 1
 
 echo
 echo "Site:  http://localhost:$PORT   (admin / password)"
-echo "Mock library: http://localhost:$CLOUD_PORT/v1/catalog.json"
+echo "Library: $LIBRARY_BASE/catalog.json"
 echo "Files: $WP"
 echo "Run the checks with:  OFT_DIR=$DIR OFT_PORT=$PORT node --test --test-concurrency=1 tests/e2e/*.test.js"

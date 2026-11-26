@@ -78,9 +78,25 @@ jobs:
             exit 1
           fi
 
+      - name: Make sure the bucket exists
+        run: npx --yes wrangler@4 r2 bucket create "$BUCKET" || echo "Not created; it probably exists already. The upload below fails if it does not."
+
       - name: Deploy the Worker
         working-directory: cloud/worker
         run: npx --yes wrangler@4 deploy $WRANGLER_ENV
 
-      - name: Upload, catalog last
-        run: node tools/library.mjs publish --out dist/library --bucket "$BUCKET"
+      # Files that are already live are skipped. A design that changed without a
+      # new version number stops the job here, before anything is uploaded.
+      - name: Upload what is new, catalog last
+        run: node tools/library.mjs publish --out dist/library --bucket "$BUCKET" --live "$API_URL"
+
+      - name: Download what is live and check every file
+        run: |
+          # The new catalog can take a moment to be the one that is served.
+          for attempt in 1 2 3 4 5 6; do
+            if node tools/library.mjs check-live --api "$API_URL" --public "$(node tools/library.mjs public)"; then
+              exit 0
+            fi
+            sleep 20
+          done
+          exit 1

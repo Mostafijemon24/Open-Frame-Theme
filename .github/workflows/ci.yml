@@ -63,6 +63,42 @@ jobs:
       - name: Worker
         run: node --test cloud/worker/test/*.test.mjs
 
+  rehearsal:
+    name: Library rehearsal (publish and import on a clean site)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Choose where the rehearsal is built
+        run: echo "OFT_DIR=$RUNNER_TEMP/open-frame-rehearsal" >> "$GITHUB_ENV"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: sqlite3, sodium, zip, gd, mbstring
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        working-directory: tests
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      # The Worker runs on the runner with a simulated bucket; the five designs
+      # for free Elementor are imported (Elementor Pro is not available here).
+      - name: Publish to a local Worker and import every free design on a clean site
+        run: bash tests/library/rehearsal.sh
+      - name: Keep the report and the logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: library-rehearsal
+          path: |
+            ${{ runner.temp }}/open-frame-rehearsal/report.json
+            ${{ runner.temp }}/open-frame-rehearsal/shots
+            ${{ runner.temp }}/open-frame-rehearsal/*.log
+            ${{ runner.temp }}/open-frame-rehearsal/wordpress/wp-content/debug.log
+          if-no-files-found: ignore
+
   browser:
     name: Browser checks
     runs-on: ubuntu-latest

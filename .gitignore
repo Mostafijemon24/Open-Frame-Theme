@@ -20,3 +20,6 @@ wp-config.php
 # Release artifacts (built by bin/build-zip.sh)
 *.zip
 dist/
+
+# Local state of the Worker (wrangler dev)
+.wrangler/

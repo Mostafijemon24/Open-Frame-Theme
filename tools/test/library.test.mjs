@@ -12,7 +12,7 @@ import path from 'node:path';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import Ajv from 'ajv/dist/2020.js';
-import { buildLibrary, generateKeyPair, imageSize, loadSources, openEnvelope, sha256, signDocument, validateSite, verifyLibrary, zip } from '../lib.mjs';
+import { buildLibrary, explainConflicts, generateKeyPair, imageSize, licenceOverview, loadSources, openEnvelope, planPublish, sha256, signDocument, uploadOrder, validateSite, verifyLibrary, verifyLive, zip } from '../lib.mjs';
 
 const ROOT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../..' );
 const API = 'https://api.example.test/v1';
@@ -298,6 +298,8 @@ test( 'packages that break the rules are not built', async ( t ) => {
 		'a reference to an image that is not in the package': [ ( src ) => edit( src, page, ( data ) => void ( data.elementor.content[ 0 ].elements[ 1 ].settings.image.url = 'ofss://media/missing' ) ), /ofss:\/\/media\/missing does not exist/ ],
 		'a reference to a page that is not in the package': [ ( src ) => edit( src, page, ( data ) => void ( data.elementor.content[ 0 ].elements[ 3 ].settings.link.url = 'ofss://page/pricing' ) ), /ofss:\/\/page\/pricing does not exist/ ],
 		'a widget that the site does not declare': [ ( src ) => edit( src, page, ( data ) => void ( data.elementor.content[ 0 ].elements[ 0 ].widgetType = 'html' ) ), /widget "html" is used but not listed/ ],
+		'an icon from Font Awesome 6, which Elementor does not carry': [ ( src ) => edit( src, page, ( data ) => void ( data.elementor.content[ 0 ].elements[ 3 ].settings.selected_icon = { value: 'fas fa-location-dot', library: 'fa-solid' } ) ), /home\.json: Elementor has no icon "fa-solid: fas fa-location-dot"/ ],
+		'an icon named with the prefix of another library': [ ( src ) => edit( src, page, ( data ) => void ( data.elementor.content[ 0 ].elements[ 3 ].settings.selected_icon = { value: 'fab fa-check', library: 'fa-solid' } ) ), /Elementor has no icon "fa-solid: fab fa-check"/ ],
 		'a WordPress option outside the allow-list': [ ( src ) => edit( src, 'reference/site/options.json', ( data ) => void ( data.admin_email = 'attacker@example.com' ) ), /"admin_email" may not be set by a package/ ],
 		'a site address': [ ( src ) => edit( src, 'reference/site/options.json', ( data ) => void ( data.siteurl = 'ofss://page/home' ) ), /"siteurl" may not be set by a package/ ],
 		'a theme setting that is not Open Frame\'s': [ ( src ) => edit( src, 'reference/site/theme-mods.json', ( data ) => void ( data.custom_css = 'body{}' ) ), /"custom_css" is not a theme setting of Open Frame/ ],
@@ -390,6 +392,113 @@ test( 'publishing uploads the catalog last', ( t ) => {
 	assert.match( plan.at( -1 ), /test-bucket\/v1\/catalog\.json .*max-age=300/ );
 	assert.ok( plan.slice( 0, -1 ).every( ( line ) => /immutable/.test( line ) && ! /catalog\.json/.test( line ) ), 'everything else is uploaded first and never changes' );
 	assert.ok( plan.some( ( line ) => /package\.zip .*application\/zip/.test( line ) ) );
+} );
+
+test( 'a preview picture is published under a name that changes with its content', ( t ) => {
+	const src = sources( t );
+	const first = build( t, src );
+	const before = openEnvelope( readJson( path.join( first.out, 'v1/catalog.json' ) ), publicKeys ).sites.find( ( site ) => site.id === 'reference' ).preview.thumbnail;
+	assert.match( before, new RegExp( `^${ CDN }/previews/reference/thumbnail\\.[a-f0-9]{12}\\.png$` ) );
+	assert.ok( fs.existsSync( path.join( first.out, 'v1', before.slice( CDN.length + 1 ) ) ) );
+
+	// Another picture of the right size: the address must not stay the same, or caches would keep the old one for a year.
+	fs.copyFileSync( path.join( ROOT, 'starter-sites/business/preview/thumbnail.png' ), path.join( src, 'reference/preview/thumbnail.png' ) );
+	const second = build( t, src );
+	const after = openEnvelope( readJson( path.join( second.out, 'v1/catalog.json' ) ), publicKeys ).sites.find( ( site ) => site.id === 'reference' ).preview.thumbnail;
+	assert.notEqual( after, before );
+
+	// A catalog that names a preview which is not there is not intact.
+	fs.rmSync( path.join( second.out, 'v1', after.slice( CDN.length + 1 ) ) );
+	assert.match( verifyLibrary( second.out, publicKeys, { apiUrl: API, cdnUrl: CDN } ).join( '\n' ), /thumbnail\.[a-f0-9]{12}\.png: missing/ );
+} );
+
+test( 'a published version cannot be changed: the publish plan stops before anything is uploaded', async ( t ) => {
+	const src = sources( t );
+	const first = build( t, src );
+
+	/** A stand-in for the live library: serves the files of a built tree, or nothing at all. */
+	const live = ( out ) => async ( url ) => {
+		assert.ok( url.startsWith( 'https://api.example.test/v1/' ), url );
+		const file = out && path.join( out, url.slice( 'https://api.example.test/'.length ) );
+		return file && fs.existsSync( file ) ? new Response( fs.readFileSync( file ) ) : new Response( '{}', { status: 404 } );
+	};
+
+	// Nothing is live yet: everything is uploaded, the catalog last.
+	const fresh = await planPublish( first.out, 'https://api.example.test/v1', live( null ) );
+	assert.deepEqual( fresh.upload, uploadOrder( first.out ) );
+	assert.equal( fresh.upload.at( -1 ), 'v1/catalog.json' );
+	assert.deepEqual( [ fresh.skip, fresh.conflicts ], [ [], [] ] );
+
+	// The same build again: only the catalog is sent.
+	const again = await planPublish( first.out, 'https://api.example.test/v1', live( first.out ) );
+	assert.deepEqual( again.upload, [ 'v1/catalog.json' ] );
+	assert.equal( again.skip.length, fresh.upload.length - 1 );
+
+	// The design changes but keeps its version number.
+	edit( src, 'reference/content/pages/home.json', ( data ) => void ( data.title = 'Changed after publishing' ) );
+	const changed = build( t, src );
+	const plan = await planPublish( changed.out, 'https://api.example.test/v1', live( first.out ) );
+	assert.deepEqual( plan.conflicts, [ 'v1/sites/reference/1.0.0/manifest.json', 'v1/sites/reference/1.0.0/package.zip' ] );
+	assert.deepEqual( explainConflicts( plan.conflicts ), [ 'reference 1.0.0 is already published with different content. A published version never changes: raise "version" in starter-sites/reference/site.json.' ] );
+
+	// With a new version number the same change is an addition; the old version stays as it is.
+	edit( src, 'reference/site.json', ( data ) => void ( data.version = '1.0.1' ) );
+	const raised = build( t, src );
+	const next = await planPublish( raised.out, 'https://api.example.test/v1', live( first.out ) );
+	assert.deepEqual( next.conflicts, [] );
+	assert.ok( next.upload.includes( 'v1/sites/reference/1.0.1/manifest.json' ) && next.upload.at( -1 ) === 'v1/catalog.json' );
+	assert.ok( next.skip.some( ( file ) => file.startsWith( 'v1/previews/reference/' ) ), 'unchanged previews are not sent again' );
+
+	// A library that cannot be asked is not guessed at.
+	await assert.rejects( planPublish( first.out, 'https://api.example.test/v1', async () => new Response( 'down', { status: 503 } ) ), /Could not ask .* Nothing was uploaded/ );
+} );
+
+test( 'the live library is checked the way a user\'s site reads it', async ( t ) => {
+	const { out } = build( t, sources( t ) );
+	/** Serves a built tree on both hosts of the library. */
+	const live = async ( url ) => {
+		const base = [ API, CDN ].find( ( address ) => url.startsWith( address + '/' ) );
+		const file = base && path.join( out, 'v1', url.slice( base.length + 1 ) );
+		return file && fs.existsSync( file ) ? new Response( fs.readFileSync( file ) ) : new Response( '{}', { status: 404 } );
+	};
+
+	const intact = await verifyLive( API, publicKeys, live );
+	assert.deepEqual( intact.problems, [] );
+	assert.equal( intact.sites, 2 );
+	assert.equal( intact.generated, GENERATED );
+	assert.equal( intact.files, uploadOrder( out ).length, 'every published file was downloaded' );
+
+	// Signed by someone else: nothing below the catalog is trusted or fetched.
+	const foreign = await verifyLive( API, { [ otherKey.keyId ]: otherKey.publicKey }, live );
+	assert.match( foreign.problems.join(), /No valid signature/ );
+	assert.equal( foreign.files, 1 );
+
+	// A file that was changed on the server, and one that is gone.
+	const media = uploadOrder( out ).filter( ( file ) => /\/media\//.test( file ) );
+	fs.appendFileSync( path.join( out, 'v1/sites/reference/1.0.0/package.zip' ), 'x' );
+	fs.rmSync( path.join( out, media[ 0 ] ) );
+	const damaged = await verifyLive( API, publicKeys, live );
+	assert.equal( damaged.problems.length, 2 );
+	assert.match( damaged.problems.join( '\n' ), /package\.zip: does not match its checksum/ );
+	assert.match( damaged.problems.join( '\n' ), /media\/[a-f0-9]{64}\.\w+: HTTP 404/ );
+
+	// No library at all.
+	assert.match( ( await verifyLive( API, publicKeys, async () => new Response( '', { status: 503 } ) ) ).problems.join(), /catalog\.json: HTTP 503/ );
+} );
+
+test( 'the licence overview is made from the designs and is up to date', ( t ) => {
+	const page = licenceOverview( path.join( ROOT, 'starter-sites' ) );
+	assert.equal( fs.readFileSync( path.join( ROOT, 'starter-sites/LICENSES.md' ), 'utf8' ), page, 'run: node tools/library.mjs licences' );
+	assert.match( page, /10 designs with \d+ photographs and 5 drawn pictures/ );
+	// Every design is there, and every count is the number of pictures its package has.
+	const { out } = build( t, path.join( ROOT, 'starter-sites' ) );
+	for ( const site of openEnvelope( readJson( path.join( out, 'v1/catalog.json' ) ), publicKeys ).sites ) {
+		const manifest = readJson( path.join( out, `v1/sites/${ site.id }/${ site.version }/manifest.json` ) );
+		const [ , photographs, drawn ] = page.match( new RegExp( `\\| ${ site.name } \\| [^|]+ \\| ${ site.version.replaceAll( '.', '\\.' ) } \\| (\\d+) \\| (\\d+) \\|` ) ) || assert.fail( `${ site.name } is missing` );
+		assert.equal( Number( photographs ) + Number( drawn ), manifest.media.length, site.id );
+	}
+	const fonts = page.split( '\n' ).filter( ( line ) => /^\| (?!Design|---)/.test( line ) ).flatMap( ( line ) => line.split( ' | ' ).at( -1 ).replace( / \|$/, '' ).split( ', ' ) );
+	assert.ok( fonts.length >= 10 && fonts.every( ( font ) => /\(OFL-1\.1\)$/.test( font ) || font === 'the theme\'s own font' ), 'every packaged font is under the Open Font License' );
 } );
 
 test( 'the command line builds and verifies, and refuses to overwrite a key', ( t ) => {
