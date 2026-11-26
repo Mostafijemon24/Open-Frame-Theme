@@ -82,12 +82,12 @@ class Rollback {
 
 		$posts = get_posts(
 			array(
-				'post_type'        => array( 'page', 'post', 'attachment', 'elementor_library', 'nav_menu_item', SiteParts::POST_TYPE ),
-				'post_status'      => array( 'publish', 'draft', 'private', 'pending', 'inherit', 'trash' ),
-				'numberposts'      => -1,
-				'fields'           => 'ids',
-				'meta_key'         => '_ofss_run', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- Run once, when the user asks to undo an import.
-				'meta_value'       => $state['id'], // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'post_type'   => array( 'page', 'post', 'attachment', 'elementor_library', 'nav_menu_item', SiteParts::POST_TYPE ),
+				'post_status' => array( 'publish', 'draft', 'private', 'pending', 'inherit', 'trash' ),
+				'numberposts' => -1,
+				'fields'      => 'ids',
+				'meta_key'    => '_ofss_run', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- Run once, when the user asks to undo an import.
+				'meta_value'  => $state['id'], // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			)
 		);
 		foreach ( $posts as $post_id ) {
