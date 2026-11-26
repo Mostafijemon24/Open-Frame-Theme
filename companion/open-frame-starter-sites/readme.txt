@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,9 +75,13 @@ Only when you click a button that says it will: "Install and activate", "Activat
 
 = What does the plugin store? =
 
-A copy of the list of designs, the record of the last import and a short import history (options starting with `ofss_`). They are removed when you delete the plugin. Imported pages and images are your content and stay.
+A copy of the list of designs, the record of the last import, a short import history and the list of fonts a design brought (options starting with `ofss_`), plus those font files in `wp-content/uploads/open-frame-fonts`. All of this is removed when you delete the plugin. Imported pages and images are your content and stay.
 
 == Changelog ==
+
+= 0.4.0 =
+* New: Portfolio, the second complete design: a personal site with large serif type, a staggered grid of work, a case study, services, a resume and notes. Built with the free version of Elementor.
+* New: a design can bring its own fonts. The font files are stored in your uploads folder, served by your own site and offered in Elementor's font list under "Starter site fonts". No font service is contacted. Rolling back an import removes them; deleting the plugin removes them too.
 
 = 0.3.0 =
 * New: Business, the first complete design. Ten pages, three articles, a header, a footer and a "page not found" page, built with the free version of Elementor.

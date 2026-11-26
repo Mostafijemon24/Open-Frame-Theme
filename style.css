@@ -1290,6 +1290,18 @@ body[class*="elementor-kit-"] .of-builder .entry-title { font-size: var(--of-fs-
 body[class*="elementor-kit-"] .entry-title a { color: var(--of-color-heading); }
 body[class*="elementor-kit-"] .entry-title a:hover { color: var(--of-color-primary); }
 body[class*="elementor-kit-"] .entry-meta a { color: var(--of-color-muted); }
+/* Headings written in the block editor keep the reading sizes of the theme:
+   Site Settings sizes are made for page sections and would dwarf a post title. */
+body[class*="elementor-kit-"] .entry-content > :is(h1, h2, h3, h4),
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] :is(h1, h2, h3, h4) { line-height: var(--of-lh-heading); letter-spacing: normal; }
+body[class*="elementor-kit-"] .entry-content > h1,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h1 { font-size: var(--of-fs-h1); }
+body[class*="elementor-kit-"] .entry-content > h2,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h2 { font-size: var(--of-fs-h2); }
+body[class*="elementor-kit-"] .entry-content > h3,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h3 { font-size: var(--of-fs-h3); }
+body[class*="elementor-kit-"] .entry-content > h4,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h4 { font-size: var(--of-fs-h4); }
 body[class*="elementor-kit-"] .site-footer a,
 body[class*="elementor-kit-"] .site-footer a:hover,
 body[class*="elementor-kit-"] .site-footer a:focus { color: var(--of-footer-heading, var(--of-white)); }

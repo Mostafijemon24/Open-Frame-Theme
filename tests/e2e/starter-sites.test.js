@@ -10,7 +10,9 @@
 const { test, before, after, beforeEach } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
 const { chromium } = require( 'playwright' );
-const { BASE, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
+const fs = require( 'node:fs' );
+const path = require( 'node:path' );
+const { BASE, DIR, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
 
 const SCREEN = BASE + '/wp-admin/themes.php?page=open-frame-starter-sites';
 
@@ -82,7 +84,10 @@ test( 'the screen lists the ten designs', async () => {
 
 	assert.equal( await page.locator( '.ofss-badge--free' ).count(), 5, 'five free designs' );
 	assert.equal( await page.locator( '.ofss-badge--pro' ).count(), 5, 'five designs that need Elementor Pro' );
-	assert.equal( await page.locator( '.ofss-badge--soon' ).count(), 9, 'all but Business are marked as coming soon' );
+	const built = JSON.parse( JSON.parse( fs.readFileSync( path.join( DIR, 'library/v1/catalog.json' ), 'utf8' ) ).signed ).sites.filter( ( site ) => site.id !== 'reference' );
+	const pending = built.filter( ( site ) => site.status === 'coming_soon' ).length;
+	assert.ok( pending <= 8, 'Business and Portfolio are out' );
+	assert.equal( await page.locator( '.ofss-badge--soon' ).count(), pending, 'every design that is not out yet is marked as coming soon' );
 	assert.equal( await page.getByRole( 'button', { name: /import/i } ).count(), 0, 'no import button before importing exists' );
 	assert.equal( await page.getByRole( 'button', { name: 'Import history' } ).count(), 0, 'no history section without history' );
 	assert.deepEqual( errors, [] );
@@ -170,8 +175,10 @@ test( 'the details open and close with the keyboard, and focus returns', async (
 } );
 
 test( 'the details say what a design needs and where each part is edited', async () => {
+	state( 'ofss:forget' );
+	cloud( 'soon' );
 	await open();
-	await details( 'Portfolio' );
+	await details( 'Upcoming' );
 
 	assert.match( await dialog().locator( '.ofss-details__state' ).textContent(), /on its way and cannot be imported yet/ );
 	for ( const label of [ 'WordPress', 'PHP', 'Open Frame theme', 'ZIP support on the server', 'Uploads folder can be written to', 'Elementor' ] ) {
@@ -193,6 +200,7 @@ test( 'the details say what a design needs and where each part is edited', async
 	assert.ok( ( await dialog().locator( '.ofss-editable tr' ).allTextContents() ).includes( 'Blog and archivesEdit with Elementor' ) );
 	await page.keyboard.press( 'Escape' );
 	assert.deepEqual( errors, [] );
+	state( 'ofss:forget' );
 } );
 
 test( 'a design that needs Elementor Pro points to Elementor and never installs it', async () => {

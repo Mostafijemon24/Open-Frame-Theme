@@ -1,6 +1,6 @@
 # Open Frame Starter Sites — Technical Architecture and Roadmap
 
-Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) the core of Phase 6 (import, resume and rollback) and Phase 7a (the Business design; plugin 0.3.0) are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
+Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) the core of Phase 6 (import, resume and rollback), Phase 7a (the Business design) and the first design of Phase 7b (Portfolio; plugin 0.4.0) are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
 Scope: a cloud-delivered library of 10 complete, Elementor-editable starter websites for the Open Frame theme.
 
 Contents
@@ -388,7 +388,7 @@ The import never overwrites the user's active kit. It creates a new kit for the 
 
 ### 5.5 Fonts
 
-**As built in Phase 7a:** a design may use the two typefaces that ship with the theme (Hanken Grotesk and JetBrains Mono). The theme registers them with Elementor as the group "Open Frame (bundled)", so they appear in every typography control and Elementor makes no request to Google Fonts for them. Business uses Hanken Grotesk this way and needs no font download. The plan below, for designs with a typeface of their own, is not built yet.
+**As built (Phases 7a and 7b):** a design may use the two typefaces that ship with the theme (Hanken Grotesk and JetBrains Mono), which the theme registers with Elementor as the group "Open Frame (bundled)"; Business does. Or it brings its own, as Portfolio does: `fonts/index.json` lists each file with family, weight range, style and licence; the build publishes the files by hash; the importer's `fonts` step downloads and verifies them, stores them under `uploads/open-frame-fonts/<sha256>.woff2` and records them in the option `ofss_fonts` with the run that brought them. `Fonts\Fonts` prints the `@font-face` rules (`font-display: swap`) and lists the families in Elementor under "Starter site fonts", so Elementor requests nothing from Google Fonts. Not built: `unicode-range` (several subsets of one family) and preloading.
 
 Each site has its own type pairing. Fonts are open-licence variable WOFF2 files delivered by the cloud, stored in the site's uploads folder, declared with `@font-face` and registered as an Elementor font group so they appear in every typography control. Imported sites therefore make **no** requests to Google Fonts. Fluid type uses `clamp()` in kit typography (Elementor custom units), with explicit tablet and mobile values where a clamp is not enough.
 

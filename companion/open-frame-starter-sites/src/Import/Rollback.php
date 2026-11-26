@@ -9,6 +9,7 @@ namespace OpenFrame\StarterSites\Import;
 
 use OpenFrame\StarterSites\Config;
 use OpenFrame\StarterSites\Elementor\Adapter;
+use OpenFrame\StarterSites\Fonts\Fonts;
 use OpenFrame\StarterSites\History\Log;
 use OpenFrame\StarterSites\SiteParts\SiteParts;
 use WP_Error;
@@ -127,6 +128,8 @@ class Rollback {
 		foreach ( is_wp_error( $categories ) ? array() : $categories as $category_id ) {
 			wp_delete_term( $category_id, 'category' );
 		}
+
+		( new Fonts() )->remove_run( $state['id'] );
 
 		// The other settings last: deleting a menu makes WordPress rewrite the
 		// theme's menu locations, which would undo part of the restore.

@@ -624,7 +624,6 @@ writeJson( path.join( OUT, 'site/theme-mods.json' ), {
 	open_frame_blog_style: 'grid',
 	open_frame_blog_columns: 3,
 	open_frame_blog_title: true,
-	open_frame_blog_title: true,
 	open_frame_blog_layout: 'full-width',
 	open_frame_single_layout: 'no-sidebar',
 	open_frame_page_layout: 'no-sidebar',

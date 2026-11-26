@@ -237,6 +237,8 @@ function open_frame_elementor_bridge_css() {
 	}
 
 	$primary = 'var(--e-global-color-primary,' . $colors['primary'] . ')';
+	$text    = 'var(--e-global-color-text,' . $colors['text'] . ')';
+	$heads   = 'var(--e-global-color-secondary,' . $colors['heading'] . ')';
 
 	$vars = array(
 		'--of-color-primary'       => $primary,
@@ -246,8 +248,19 @@ function open_frame_elementor_bridge_css() {
 		'--of-color-focus'         => $primary,
 		'--of-primary-100'         => 'color-mix(in srgb,' . $primary . ' 12%,#fff)',
 		'--of-focus-ring'          => '0 0 0 3px color-mix(in srgb,' . $primary . ' 35%,transparent)',
-		'--of-color-heading'       => 'var(--e-global-color-secondary,' . $colors['heading'] . ')',
-		'--of-color-text'          => 'var(--e-global-color-text,' . $colors['text'] . ')',
+		'--of-color-heading'       => $heads,
+		'--of-color-text'          => $text,
+		// The neutral greys take the tint of the text color, so quotes, tables,
+		// form fields and small print match a warm or a cool design alike.
+		'--of-color-muted'         => $text,
+		'--of-slate-900'           => $heads,
+		'--of-slate-700'           => $text,
+		'--of-slate-500'           => $text,
+		'--of-slate-400'           => 'color-mix(in srgb,' . $text . ' 55%,#fff)',
+		'--of-slate-300'           => 'color-mix(in srgb,' . $text . ' 30%,#fff)',
+		'--of-slate-200'           => 'color-mix(in srgb,' . $text . ' 16%,#fff)',
+		'--of-slate-100'           => 'color-mix(in srgb,' . $text . ' 8%,#fff)',
+		'--of-slate-50'            => 'color-mix(in srgb,' . $text . ' 4%,#fff)',
 		'--of-color-accent'        => 'var(--e-global-color-accent,' . $colors['accent'] . ')',
 		'--of-font-heading'        => 'var(--e-global-typography-primary-font-family,' . $heading . '),' . $heading,
 		'--of-font-body'           => 'var(--e-global-typography-text-font-family,' . $body . '),' . $body,

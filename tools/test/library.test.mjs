@@ -77,7 +77,7 @@ const refuses = ( t, src, expected ) => {
 test( 'the ten sites build into a signed catalog that matches the schema', ( t ) => {
 	const { out, result } = build( t, path.join( ROOT, 'starter-sites' ) );
 	assert.equal( result.sites, 10 );
-	assert.equal( result.packages, 1, 'Business is the first design with a package' );
+	assert.ok( result.packages >= 2, 'Business and Portfolio have a package' );
 
 	const envelope = readJson( path.join( out, 'v1/catalog.json' ) );
 	matches( 'envelope.schema.json', envelope );
@@ -86,7 +86,8 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 	matches( 'catalog.schema.json', catalog );
 	assert.deepEqual( catalog.sites.map( ( site ) => site.id ), [ 'business', 'agency', 'saas', 'portfolio', 'shop', 'restaurant', 'real-estate', 'education', 'medical', 'magazine' ] );
 	assert.equal( catalog.sites.filter( ( site ) => site.tier === 'free' ).length, 5 );
-	assert.deepEqual( catalog.sites.filter( ( site ) => site.status === 'available' ).map( ( site ) => site.id ), [ 'business' ] );
+	const available = catalog.sites.filter( ( site ) => site.status === 'available' ).map( ( site ) => site.id );
+	assert.ok( available.includes( 'business' ) && available.includes( 'portfolio' ) );
 	assert.ok( catalog.sites.every( ( site ) => ( site.status === 'available' ) === Boolean( site.manifest ) ) );
 
 	const business = readJson( path.join( out, 'v1/sites/business/1.0.0/manifest.json' ) );
@@ -98,6 +99,22 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 	assert.ok( business.requires.elementor.widgets.includes( 'of-nav-menu' ) );
 	assert.ok( business.package.bytes < 200 * 1024, 'the package is small' );
 	assert.equal( catalog.sites[ 0 ].preview.screenshots.length, 3 );
+
+	// Every finished design stays within the same budgets.
+	for ( const site of catalog.sites.filter( ( item ) => item.status === 'available' ) ) {
+		const manifest = readJson( path.join( out, `v1/sites/${ site.id }/${ site.version }/manifest.json` ) );
+		matches( 'manifest.schema.json', manifest );
+		assert.equal( manifest.pages.filter( ( item ) => item.front_page ).length, 1, `${ site.id }: one front page` );
+		assert.ok( manifest.media.every( ( item ) => item.bytes <= 100 * 1024 ), `${ site.id }: no image over 100 KB` );
+		assert.ok( manifest.media.reduce( ( sum, item ) => sum + item.bytes, 0 ) < 1024 * 1024, `${ site.id }: under 1 MB of images` );
+		assert.ok( manifest.fonts.reduce( ( sum, item ) => sum + item.bytes, 0 ) < 200 * 1024, `${ site.id }: under 200 KB of fonts` );
+		assert.ok( manifest.package.bytes < 200 * 1024, `${ site.id }: a small package` );
+		assert.ok( site.preview.screenshots.length >= 3, `${ site.id }: preview pictures` );
+	}
+
+	const portfolio = readJson( path.join( out, 'v1/sites/portfolio/1.0.0/manifest.json' ) );
+	assert.deepEqual( portfolio.fonts.map( ( font ) => `${ font.family } ${ font.style } ${ font.weight }` ), [ 'Fraunces normal 100 900', 'Fraunces italic 100 900', 'Instrument Sans normal 400 700' ] );
+	assert.ok( portfolio.fonts.every( ( font ) => /^OFL-1\.1/.test( font.licence ) && font.url.startsWith( CDN + '/sites/portfolio/1.0.0/fonts/' ) ) );
 	assert.ok( catalog.sites.every( ( site ) => site.preview.thumbnail.startsWith( CDN + '/previews/' ) ) );
 	assert.deepEqual( verifyLibrary( out, publicKeys, { apiUrl: API, cdnUrl: CDN } ), [] );
 

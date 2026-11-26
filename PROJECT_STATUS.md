@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**The first real design exists.** Business ("Halden Advisory": ten pages, three articles, header, footer and a "page not found" page, built with free Elementor) is imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and nine designs are still to be made.
+**Two of the ten designs exist.** Business ("Halden Advisory") and Portfolio ("Juno Vale") are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. Both need only the free version of Elementor, and they share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and eight designs are still to be made.
 
 | Phase | Status |
 | --- | --- |
@@ -17,7 +17,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | Next |
+| 7b. Nine further starter sites | **In progress: 1 of 9 done** (Portfolio, plugin 0.4.0). Next: Restaurant, Education, Medical, then the five Pro-tier designs |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -74,8 +74,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 **Planned for Phase 6 and still not built:**
 
-- Site logo, post grid and search widgets (the menu widget was built in Phase 7a).
-- Local fonts for designs with a typeface of their own: downloading the font files and registering them with Elementor. Business does not need this, it uses the theme's typeface.
+- Site logo, post grid and search widgets (the menu widget was built in Phase 7a, fonts of a design in Phase 7b).
 - Sidebar widgets and WooCommerce products in a package; Theme Builder templates for the Pro-tier designs.
 - A WP-CLI command, and a "replace the previous starter site" mode.
 - Continuing past a single image that cannot be downloaded (today the import stops and can be retried or rolled back).
@@ -93,14 +92,24 @@ Each is built with the first design that needs it, rather than against invented 
 - **Theme additions (still 1.1.0, unreleased):** the theme's two typefaces are registered with Elementor, so choosing them causes no request to Google Fonts; theme parts (site title, menu, post titles, footer links) keep their look when Elementor's Site Settings style links and headings; a "Show the title of the posts page" option; a contrast fix for the "Previous / Next" labels under a post.
 - **Found by the new tests and fixed:** the wordmark linked to `/home/` (a redirect); the Services page jumped from heading level 1 to 3; the "Previous / Next" labels under an article had a contrast of 4.4:1 on the design's background; the blog page had no visible title.
 
+### Phase 7b, part 1: the Portfolio design (plugin 0.4.0)
+
+- **The design** (`starter-sites/portfolio`, brief in `brief.md`): the fictional independent designer "Juno Vale". Home, About, Work, a case study, Services, a service page, Resume, Contact, the blog page "Notes" with three articles, plus header, footer and a "page not found" page.
+- **Nothing in common with Business:** a paper-colored page instead of white, a serif display typeface (Fraunces, with italic emphasis) with Instrument Sans for text, rust and ink instead of blue, ruled rows instead of cards, a staggered two-column grid of work, pill buttons, arrow links, and a footer built around one very large line.
+- **Fonts of a design** (`src/Fonts/Fonts.php`, new import step): a design can bring font files. They are downloaded from the library with the same size and checksum checks as images, checked to be WOFF2, stored in `uploads/open-frame-fonts`, declared with `@font-face` from the site's own address and listed in Elementor under "Starter site fonts". A rollback removes them; so does deleting the plugin. Portfolio brings three files, 112 KB together.
+- **Images:** fifteen original pictures of invented projects (coffee bags, app screens, posters, book covers, bottles), a portrait and note covers, drawn by `tools/sites/portfolio-art.mjs`. CC0, about 760 KB.
+- **Shared tooling for the next designs:** `writeSite()` and block helpers in `tools/sites/kit.mjs`, drawing helpers in `tools/sites/art.mjs`, and one browser test harness for every design (`tests/e2e/design-checks.js`); a design's own test file is now a description of the design.
+- **Theme additions (still 1.1.0, unreleased), both found by looking at Portfolio's blog:** with "Use Elementor global colors and fonts" on, the theme's neutral greys (quotes, tables, form fields, small print) now take the tint of the design's text color instead of staying blue-grey; headings written in the block editor keep the theme's reading sizes, so a subheading in an article is no longer larger than the article's title.
+- **Tests no longer depend on which designs are finished:** the mock library and the PHP checks use a made-up design "Upcoming" where they need one that is not out yet.
+
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 25 files, 0 errors, 0 warnings.
+- PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Import engine checks: 72 of 72 pass, including a rollback that is compared field by field with the site before the import, and interruptions at every one of the 16 points of an import.
-- Browser checks: 49 of 49 pass. 10 for the Business design (import, twelve addresses at nine widths, menu, links, blog, 404, axe-core, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Import engine checks: 80 of 80 pass, including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
+- Browser checks: 61 of 61 pass. 11 each for the Business and Portfolio designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -113,13 +122,15 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- One design, Business, can be imported. The other nine are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- **Business has no contact form.** Its contact page gives an email address, a telephone number and a button. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
-- The texts, names and figures of Business are invented sample content for a fictional company; the footer says so.
-- Business was looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
+- Two designs, Business and Portfolio, can be imported. The other eight are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **Neither design has a contact form.** The contact pages give an email address, a telephone number and a button. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
+- The texts, names and figures of both designs are invented sample content; each footer says so.
+- **Portfolio's fonts are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
+- Portfolio has no social media links: there are no accounts to point at, and a placeholder link would lead nowhere.
+- Both designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
 - Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
 - Site parts apply to the whole site; per-page display conditions are not built.
-- Theme 1.1.0 and plugin 0.3.0 are not tagged or released.
+- Theme 1.1.0 and plugin 0.4.0 are not tagged or released.
 - The plugin's readme names Cloudflare's privacy policy for the library; the library needs its own short privacy statement before the plugin is submitted to WordPress.org.
 - The user guide has no screenshots for the Elementor and WooCommerce chapters and no chapter for the plugin yet.
 - With the global-styles option on, Elementor's base stylesheet also loads on theme templates (about 7 KB compressed).
@@ -135,5 +146,5 @@ Each is built with the first design that needs it, rather than against invented 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b: the other four free-tier designs (Portfolio, Restaurant, Education, Medical), each with its own brief, layout and typeface, then the five Pro-tier designs.
+2. Phase 7b continues: Restaurant, Education and Medical (free tier), each with its own brief, layout and typeface, then the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine).
 3. A decision on the forms plugin, so the contact pages can carry a form.

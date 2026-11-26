@@ -11,6 +11,7 @@ use OpenFrame\StarterSites\Cloud\Catalog;
 use OpenFrame\StarterSites\Cloud\Manifest;
 use OpenFrame\StarterSites\Config;
 use OpenFrame\StarterSites\Elementor\Adapter;
+use OpenFrame\StarterSites\Fonts\Fonts;
 use OpenFrame\StarterSites\History\Log;
 use OpenFrame\StarterSites\Requirements\Checker;
 use OpenFrame\StarterSites\SiteParts\SiteParts;
@@ -35,7 +36,7 @@ class Runner {
 	/**
 	 * Steps in order. Each one is a method named step_<name>.
 	 */
-	const STEPS = array( 'preflight', 'snapshot', 'download', 'media', 'content', 'kit', 'documents', 'menus', 'settings', 'finalize' );
+	const STEPS = array( 'preflight', 'snapshot', 'download', 'media', 'fonts', 'content', 'kit', 'documents', 'menus', 'settings', 'finalize' );
 
 	/**
 	 * Plugin configuration.
@@ -247,6 +248,7 @@ class Runner {
 			'snapshot'  => __( 'Saving your current settings', 'open-frame-starter-sites' ),
 			'download'  => __( 'Downloading the design', 'open-frame-starter-sites' ),
 			'media'     => __( 'Importing images', 'open-frame-starter-sites' ),
+			'fonts'     => __( 'Importing fonts', 'open-frame-starter-sites' ),
 			'content'   => __( 'Creating pages', 'open-frame-starter-sites' ),
 			'kit'       => __( 'Setting colors and fonts', 'open-frame-starter-sites' ),
 			'documents' => __( 'Building the pages in Elementor', 'open-frame-starter-sites' ),
@@ -460,6 +462,49 @@ class Runner {
 
 		$state['media'][ $item['uid'] ] = (int) $attachment;
 		++$state['counts']['images'];
+		++$state['cursor'];
+
+		return false;
+	}
+
+	/**
+	 * Store one font file per unit of work.
+	 *
+	 * The files are kept in the uploads folder under their hash and served by
+	 * this site, so the design asks no font service for anything.
+	 *
+	 * @param array $state Run.
+	 * @return bool|WP_Error
+	 */
+	private function step_fonts( array &$state ) {
+		$item = $state['manifest']['fonts'][ $state['cursor'] ] ?? null;
+		if ( null === $item ) {
+			return true;
+		}
+
+		$fonts = new Fonts();
+		if ( ! $fonts->has( $item['sha256'] ) ) {
+			$dir = $fonts->location()['dir'];
+			if ( ! wp_mkdir_p( $dir ) ) {
+				return new WP_Error( 'ofss_fonts', __( 'The uploads folder cannot be written to. Ask your hosting company to make wp-content/uploads writable.', 'open-frame-starter-sites' ) );
+			}
+
+			// Recorded before it is downloaded, so a rollback finds the file even if this request dies.
+			$fonts->add( $item, $state['id'] );
+
+			$file    = $dir . '/' . $item['sha256'] . '.woff2';
+			$fetched = $this->package->fetch( $item, $file );
+			if ( is_wp_error( $fetched ) ) {
+				return $fetched;
+			}
+
+			// The file has to be the kind of font it claims to be.
+			if ( 'wOF2' !== file_get_contents( $file, false, null, 0, 4 ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- The first four bytes of a local file.
+				wp_delete_file( $file );
+				return new WP_Error( 'ofss_bad_font', __( 'A font of this design is not a valid font file, so the import was stopped.', 'open-frame-starter-sites' ) );
+			}
+		}
+
 		++$state['cursor'];
 
 		return false;

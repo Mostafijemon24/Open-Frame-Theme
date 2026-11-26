@@ -1,11 +1,65 @@
 # Open Frame — Test Reports
 
+- [Portfolio starter site and fonts of a design](#the-portfolio-starter-site--test-report): Phase 7b, part 1
 - [Business starter site](#the-business-starter-site--test-report): Phase 7a, the first real design
 - [Import engine](#the-import-engine--test-report): Phase 6, importing, resuming and rolling back
 - [Library tools, Worker and signatures](#the-library--test-report): Phase 5, without a live deployment
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Portfolio starter site — Test Report
+
+Phase 7b, part 1, plugin 0.4.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6 and Elementor 4.4.2 (free version only), in Chromium. Covers the Portfolio design and the new ability of a design to bring its own fonts.
+
+| Suite | Result |
+| --- | --- |
+| Portfolio, `tests/e2e/portfolio.test.js` | **11 of 11 passed** |
+| Business, `tests/e2e/business.test.js` (now on the shared checks, one check more) | **11 of 11 passed** |
+| All browser checks together | **61 of 61 passed** (11 Portfolio, 11 Business, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, `tests/php/importer.php` | **80 of 80 passed** (eight new, for fonts) |
+| Plugin PHP checks, `tests/php/starter-sites.php` | **138 of 138 passed** |
+| Library tools | **49 of 49 passed**, now with budget checks for every finished design |
+| PHPCS | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+**One set of checks for every design.** `tests/e2e/design-checks.js` holds what the Business report below lists (import, every address at nine widths, menu, links, blog, "page not found", axe-core, global styles, editor, rollback). A design's own test file only describes the design. Two checks were added for all designs:
+
+| Added | What is asserted |
+| --- | --- |
+| Typefaces | Every font file a page requests comes from the site's own address and answers 200; for a design with its own fonts they come from `uploads/open-frame-fonts`; the page has no link to Google Fonts; on every address at every width, the heading and body typefaces are actually loaded (`document.fonts.check`), not replaced by a fallback; after the rollback the font file answers 404 |
+| Reading sizes | In an article, a subheading is smaller than the article's title |
+
+**Portfolio itself:** 11 addresses (nine pages, an article, an address that does not exist) at the nine widths, 99 page views, with the same assertions as Business: status, no overflow, one `h1` and one `main`, the design's header and footer, every image loaded and with an `alt` attribute, no unresolved reference, no running text under 13 px, no script error, no request to another host. Headings in Fraunces, text in Instrument Sans. axe-core on all eleven addresses at 390 and 1440 px: no violations.
+
+**Fonts in the import engine** (`tests/php/importer.php`, with a real 11 KB font in the reference package):
+
+| Area | What is asserted |
+| --- | --- |
+| Stored | One file in `uploads/open-frame-fonts`, named by its hash and byte-identical to the library's; recorded with the run that brought it |
+| Declared | The exact `@font-face` rule, with the site's own address; Elementor lists the family in the group "Starter site fonts" |
+| Hostile data | A stored entry whose family tries to break out of the stylesheet, or whose file name points outside the folder, is ignored |
+| Rollback | File, folder, option and rule are gone; the site fingerprint (now also counting posts, categories, fonts and font files) equals the one before the import |
+| Twice | A second import stores nothing twice; rolling it back leaves the first import's font in place |
+| Interruptions | A complete import is now 19 units of work; stopped at each of the 18 points and rolled back, or continued, the result is the same as before |
+| Damaged | A font with a wrong checksum and a font on a foreign host each stop the import and leave no trace |
+
+**Contrast, measured:** headings on paper 15.3:1; text on paper 8.4:1 and on sand 7.4:1; rust on paper 5.6:1 and on sand 5.0:1; white on rust 6.4:1; text on the rust band 5.2:1; text on the footer 8.1:1.
+
+**Weight:** fifteen images, about 760 KB together, none over 100 KB; three font files, 112 KB together.
+
+**What the tests and the review found, all fixed:**
+
+1. The Work page went from heading level 1 to level 3 (axe-core).
+2. In an article, subheadings were larger than the title, because Site Settings sizes applied to post content (theme fix, with a new check).
+3. Quotes, form fields and small print in the blog stayed blue-grey on a warm design (theme fix: neutrals follow the text color).
+4. A label was squeezed onto two lines next to a wide sibling.
+5. Several sections had no space below them (a default in the shared builder).
+
+## Not covered
+
+The same as for Business: real devices, Safari and Firefox, a person using the editor, a screen reader, a slow connection, and the live library. In addition: **non-Latin text** (the fonts are Latin subsets) was not looked at.
 
 # The Business starter site — Test Report
 

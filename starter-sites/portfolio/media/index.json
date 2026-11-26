@@ -1,0 +1,92 @@
+[
+	{
+		"uid": "feature",
+		"file": "feature.jpg",
+		"alt": "Three coffee bags with a wave mark, in white, rust and green",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-tidewater",
+		"file": "work-tidewater.jpg",
+		"alt": "Tidewater Coffee Roasters: identity and packaging",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-fieldnote",
+		"file": "work-fieldnote.jpg",
+		"alt": "Fieldnote: product design for a walking journal",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-kite",
+		"file": "work-kite.jpg",
+		"alt": "Paper Kite Books: cover series and art direction",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-lumen",
+		"file": "work-lumen.jpg",
+		"alt": "Lumen Cycles: identity and retail graphics",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-atlas",
+		"file": "work-atlas.jpg",
+		"alt": "Atlas Museum of Maps: identity and wayfinding",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "work-sol",
+		"file": "work-sol.jpg",
+		"alt": "Sol Skincare: packaging system",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "portrait",
+		"file": "portrait.jpg",
+		"alt": "Illustrated portrait of Juno Vale",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "studio",
+		"file": "studio.jpg",
+		"alt": "A type specimen, colour swatches and a pencil on a desk",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "detail-marks",
+		"file": "detail-marks.jpg",
+		"alt": "Four versions of the Tidewater mark",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "detail-palette",
+		"file": "detail-palette.jpg",
+		"alt": "The Tidewater colour palette and the line “Slow roasted, by the sea”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "detail-wide",
+		"file": "detail-wide.jpg",
+		"alt": "Tidewater shop sign, bags and cups",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs)."
+	}
+]

@@ -10,6 +10,7 @@
  * "mode" file (<folder>/cloud-mode), so tests can make the library misbehave:
  *
  *   ok             the ten planned sites
+ *   soon           the same, plus a made-up design that is not out yet ("Upcoming")
  *   available      the same plus "Reference", a site that has a package
  *   newer-importer the same, but "Reference" needs a newer version of the plugin
  *   install        the same plus a site that requires a small plugin from WordPress.org
@@ -109,13 +110,16 @@ foreach ( $catalog['sites'] as $index => $site ) {
 }
 $catalog['sites'] = array_values( $catalog['sites'] );
 
-// A site that is not out yet, as the base for the altered entries below.
-$plain = null;
-foreach ( $catalog['sites'] as $site ) {
-	if ( 'portfolio' === $site['id'] ) {
-		$plain = $site;
-	}
-}
+// A free design that is not out yet. It is made up here, so the tests do not
+// depend on which of the real designs happen to be finished.
+$plain            = $reference;
+$plain['id']      = 'upcoming';
+$plain['name']    = 'Upcoming';
+$plain['summary'] = 'A design that is announced and cannot be imported yet.';
+$plain['status']  = 'coming_soon';
+$plain['tags']    = array( 'placeholder' );
+$plain['pages']   = array( 'Home', 'About', 'Work', 'Project Details', 'Services', 'Service Details', 'Resume', 'Notes', 'Single Post', 'Contact', '404' );
+unset( $plain['manifest'] );
 
 if ( 'wrong-shape' === $mode ) {
 	$catalog = array(
@@ -133,6 +137,10 @@ if ( 'available' === $mode || 'newer-importer' === $mode ) {
 		$reference['requires']['importer'] = '9.0.0';
 	}
 	array_unshift( $catalog['sites'], $reference );
+}
+
+if ( 'soon' === $mode ) {
+	array_unshift( $catalog['sites'], $plain );
 }
 
 if ( 'install' === $mode ) {

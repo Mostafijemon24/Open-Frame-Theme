@@ -19,6 +19,7 @@ use OpenFrame\StarterSites\Cloud\Client;
 use OpenFrame\StarterSites\Cloud\Manifest;
 use OpenFrame\StarterSites\Config;
 use OpenFrame\StarterSites\Elementor\Adapter;
+use OpenFrame\StarterSites\Fonts\Fonts;
 use OpenFrame\StarterSites\History\Log;
 use OpenFrame\StarterSites\Import\Package;
 use OpenFrame\StarterSites\Import\Rollback;
@@ -95,6 +96,10 @@ function ofss_fingerprint() {
 		'theme_mods'  => wp_json_encode( get_option( 'theme_mods_' . get_stylesheet() ) ),
 		'active_site' => wp_json_encode( get_option( 'ofss_active_site' ) ),
 		'uploads'     => count( (array) glob( wp_upload_dir()['basedir'] . '/open-frame-starter-sites/*', GLOB_ONLYDIR ) ),
+		'posts'       => $count( 'post', array( 'publish', 'draft' ) ),
+		'categories'  => (int) wp_count_terms( array( 'taxonomy' => 'category', 'hide_empty' => false ) ),
+		'fonts'       => wp_json_encode( get_option( 'ofss_fonts' ) ),
+		'font_files'  => count( (array) glob( wp_upload_dir()['basedir'] . '/open-frame-fonts/*' ) ) + (int) is_dir( wp_upload_dir()['basedir'] . '/open-frame-fonts' ),
 	);
 }
 
@@ -157,6 +162,16 @@ ofss_check( 'the kit that was active before still exists', 'publish' === get_pos
 
 ofss_check( 'theme settings are applied in the right types', '#2f6fed' === get_theme_mod( 'open_frame_color_primary' ) && true === get_theme_mod( 'open_frame_follow_elementor' ) && 1200 === get_theme_mod( 'open_frame_container_width' ) );
 
+$fonts     = new Fonts();
+$font      = $fonts->all()[0] ?? array();
+$font_file = $fonts->location()['dir'] . '/' . ( $font['file'] ?? 'none' );
+ofss_check( 'the font of the design is stored on the site, byte-identical to the one in the library', 1 === count( $fonts->all() ) && 'Instrument Sans' === $font['family'] && $state['id'] === $font['run'] && is_file( $font_file ) && hash_file( 'sha256', $font_file ) . '.woff2' === $font['file'] );
+ofss_check( 'it is declared with @font-face from this site\'s own address', false !== strpos( $fonts->css(), '@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url("' . content_url( '/uploads/open-frame-fonts/' . $font['file'] ) . '") format("woff2");}' ) );
+ofss_check( 'Elementor lists it as a local font, so it requests nothing from a font service', 'ofss' === ( \Elementor\Fonts::get_fonts()['Instrument Sans'] ?? '' ) && isset( \Elementor\Fonts::get_font_groups()['ofss'] ) );
+update_option( Fonts::OPTION, array_merge( $fonts->all(), array( array( 'family' => 'x";}body{display:none}', 'weight' => '400', 'style' => 'normal', 'file' => str_repeat( 'a', 64 ) . '.woff2', 'run' => 'x' ), array( 'family' => 'Fine', 'weight' => '400', 'style' => 'normal', 'file' => '../../wp-config.php', 'run' => 'x' ) ) ) );
+ofss_check( 'a stored entry that could break out of the stylesheet is ignored', 1 === count( $fonts->all() ) && false === strpos( $fonts->css(), 'display:none' ) && false === strpos( $fonts->css(), 'wp-config' ) );
+update_option( Fonts::OPTION, $fonts->all() );
+
 $locations = get_theme_mod( 'nav_menu_locations' );
 $items     = wp_get_nav_menu_items( $locations['primary'] ?? 0 );
 ofss_check( 'the menu is in the theme\'s primary location with both pages', is_array( $items ) && 2 === count( $items ) && (int) $items[0]->object_id === $home->ID && 'page' === $items[1]->object && (int) $items[1]->object_id === $about->ID );
@@ -187,6 +202,7 @@ $state = $rollback->run( $state );
 ofss_check( 'the import can be rolled back', ! is_wp_error( $state ) && 'rolled_back' === $state['status'] );
 ofss_check( 'the site is exactly as it was before the import', ofss_fingerprint() === $baseline );
 ofss_check( 'pages, image file and header are gone', null === get_post( $home->ID ) && null === get_post( $image ) && null === get_post( $part->ID ) && false === apply_filters( 'open_frame_has_location', false, 'header' ) );
+ofss_check( 'the font file, its folder and its @font-face rule are gone', ! is_file( $font_file ) && ! is_dir( dirname( $font_file ) ) && '' === $fonts->css() && false === get_option( Fonts::OPTION ) );
 ofss_check( 'the history shows the rollback', 'rolled_back' === $history->all()[0]['result'] );
 ofss_check( 'rolling back twice changes nothing', 'rolled_back' === $rollback->run( $state )['status'] && ofss_fingerprint() === $baseline );
 ofss_check( 'a run that was rolled back cannot be advanced', 'rolled_back' === $runner->advance( $state['id'] )['status'] && ofss_fingerprint() === $baseline );
@@ -208,6 +224,7 @@ ofss_check( 'the image is reused, not downloaded again', 1 === $second['counts']
 $rollback->run( $second );
 $after_second_rollback = ofss_fingerprint();
 ofss_check( 'rolling back the second import keeps the pages and image of the first', $after_second_rollback['pages'] === $once['pages'] && $after_second_rollback['attachments'] === $once['attachments'] && null !== get_post( $first['posts']['page/home'] ) );
+ofss_check( 'the font is stored once and stays with the first import', $once['fonts'] === $twice['fonts'] && $once['font_files'] === $twice['font_files'] && $after_second_rollback['fonts'] === $once['fonts'] && is_file( $font_file ) );
 
 // Clean up by hand what the first of the two imports created and changed: its
 // own rollback data was replaced when the second import started, which is the
@@ -241,6 +258,7 @@ if ( is_array( $original['theme_mods'] ) ) {
 }
 delete_option( 'ofss_active_site' );
 delete_option( 'ofss_snapshot_' . $first['id'] );
+$fonts->remove_run( $first['id'] );
 ofss_reset_run();
 ofss_check( 'the test site is clean again', ofss_fingerprint() === $baseline );
 
@@ -314,6 +332,8 @@ $damage = array(
 	'a page inside the package that was changed'  => function ( &$s ) { $s['manifest']['files']['content/pages/home.json']['sha256'] = str_repeat( 'b', 64 ); },
 	'an image that does not match its checksum'   => function ( &$s ) { $s['manifest']['media'][0]['sha256'] = str_repeat( 'c', 64 ); },
 	'an image on a foreign host'                  => function ( &$s ) { $s['manifest']['media'][0]['url'] = 'https://evil.example/hero.png'; },
+	'a font that does not match its checksum'     => function ( &$s ) { $s['manifest']['fonts'][0]['sha256'] = str_repeat( 'd', 64 ); },
+	'a font on a foreign host'                    => function ( &$s ) { $s['manifest']['fonts'][0]['url'] = 'https://evil.example/font.woff2'; },
 );
 foreach ( $damage as $label => $break ) {
 	$state = $runner->start( 'reference' );
@@ -356,8 +376,8 @@ $state = ofss_finish( ofss_runner(), ofss_runner()->start( 'reference' ) );
 ofss_check( 'a design that needs a newer plugin is not imported', 'failed' === $state['status'] && ofss_fingerprint() === $baseline );
 ofss_reset_run();
 
-ofss_cloud( 'ok' );
-$state = ofss_finish( ofss_runner(), ofss_runner()->start( 'portfolio' ) );
+ofss_cloud( 'soon' );
+$state = ofss_finish( ofss_runner(), ofss_runner()->start( 'upcoming' ) );
 ofss_check( 'a design that is not out yet is not imported', 'failed' === $state['status'] && ofss_fingerprint() === $baseline );
 ofss_reset_run();
 ofss_check( 'a design that does not exist cannot be started', is_wp_error( ofss_runner()->start( 'no-such-site' ) ) );

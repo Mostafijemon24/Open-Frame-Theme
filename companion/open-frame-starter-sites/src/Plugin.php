@@ -21,6 +21,7 @@ use OpenFrame\StarterSites\Rest\HistoryController;
 use OpenFrame\StarterSites\Rest\ImportsController;
 use OpenFrame\StarterSites\Rest\RequirementsController;
 use OpenFrame\StarterSites\Rest\SitesController;
+use OpenFrame\StarterSites\Fonts\Fonts;
 use OpenFrame\StarterSites\SiteParts\SiteParts;
 
 defined( 'ABSPATH' ) || exit;
@@ -37,6 +38,7 @@ final class Plugin {
 	 */
 	public static function boot() {
 		( new SiteParts( new Adapter() ) )->register();
+		( new Fonts() )->register();
 
 		add_action( 'rest_api_init', array( self::class, 'routes' ) );
 

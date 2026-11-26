@@ -90,8 +90,13 @@ $full           = json_decode( $built['signed'], true );
 $raw            = $full;
 $raw['sites']   = array_values( array_filter( $full['sites'], fn( $s ) => 'reference' !== $s['id'] ) );
 $raw_reference  = array_values( array_filter( $full['sites'], fn( $s ) => 'reference' === $s['id'] ) )[0];
-// A site that is not out yet: the base for the altered entries below.
-$good_site      = array_values( array_filter( $raw['sites'], fn( $s ) => 'portfolio' === $s['id'] ) )[0];
+// A site that is not out yet, made up so that the checks do not depend on which
+// real designs are finished: the base for the altered entries below.
+$good_site           = $raw_reference;
+$good_site['id']     = 'upcoming';
+$good_site['name']   = 'Upcoming';
+$good_site['status'] = 'coming_soon';
+unset( $good_site['manifest'] );
 
 /** Sign a document with the development key of the test library, as tools/lib.mjs does. */
 function ofss_sign( $document, $secret = null ) {
@@ -387,7 +392,8 @@ ofss_answers( array( 'code' => 200, 'body' => $manifest_body ) );
 $result = $manifests->fetch( $site );
 ofss_check( 'a manifest address on a foreign host is never requested', is_wp_error( $result ) && 'ofss_foreign_url' === $result->get_error_code() && 0 === count( $GLOBALS['ofss_calls'] ) );
 
-$result = $manifests->fetch( $store->find( 'portfolio' ) );
+$upcoming = $validator->validate( array_merge( $raw, array( 'sites' => array( $good_site ) ) ) )['sites'][0];
+$result   = $manifests->fetch( $upcoming );
 ofss_check( 'a site that is not out yet has no manifest to fetch', is_wp_error( $result ) && 'ofss_no_manifest' === $result->get_error_code() );
 
 ofss_answers( array( 'code' => 503 ) );
@@ -398,8 +404,7 @@ ofss_check( 'a failing library is tried three times for a manifest too', is_wp_e
 ofss_section( 'Requirement checks' );
 
 $checker  = new Checker();
-$business = $store->find( 'portfolio' );
-$check    = $checker->check( $business );
+$check    = $checker->check( $upcoming );
 ofss_check( 'a site that is not out yet is "coming soon"', 'coming_soon' === $check['state'] && false === $check['ready'] );
 ofss_check( 'the plugin version is not checked for a site that is not out yet', array() === array_filter( $check['environment'], fn( $i ) => in_array( $i['id'], array( 'importer', 'format' ), true ) ) );
 ofss_check( 'WordPress, PHP and the theme pass on the test site', array() === array_filter( $check['environment'], fn( $i ) => ! $i['ok'] ) );

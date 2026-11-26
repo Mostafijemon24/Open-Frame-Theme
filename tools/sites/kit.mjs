@@ -146,9 +146,10 @@ export function builders( id ) {
 			} );
 		},
 
-		button( text, url, { more = {} } = {} ) {
-			// A plain button uses the global brand color; a styled one carries its own.
-			const globals = more.background_color ? {} : { __globals__: { background_color: 'globals/colors?id=primary' } };
+		button( text, url, { more = {}, kit = false } = {} ) {
+			// A plain button uses the global brand color; a styled one carries its own;
+			// with `kit` it is left to the button style of Site Settings.
+			const globals = kit || more.background_color ? {} : { __globals__: { background_color: 'globals/colors?id=primary' } };
 			return widget( 'button', { text, link: link( url ), ...globals, ...more } );
 		},
 
@@ -168,7 +169,7 @@ export function builders( id ) {
 			} );
 		},
 
-		counter( number, title, { suffix = '', prefix = '', color, titleColor } = {} ) {
+		counter( number, title, { suffix = '', prefix = '', color, titleColor, weight = 700 } = {} ) {
 			return widget( 'counter', {
 				starting_number: 0,
 				ending_number: number,
@@ -180,7 +181,7 @@ export function builders( id ) {
 				...( titleColor ? { title_color: titleColor } : {} ),
 				typography_number_typography: 'custom',
 				typography_number_font_size: fluid( 'clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)' ),
-				typography_number_font_weight: '700',
+				typography_number_font_weight: String( weight ),
 				typography_title_typography: 'custom',
 				typography_title_font_size: px( 15 ),
 				typography_title_font_weight: '500',
@@ -208,4 +209,96 @@ export function widgetsOf( elements, found = new Set() ) {
 		widgetsOf( element.elements, found );
 	}
 	return found;
+}
+
+/** Block markup for the body of a blog post. */
+export const blocks = {
+	paragraph: ( html ) => `<!-- wp:paragraph -->\n<p>${ html }</p>\n<!-- /wp:paragraph -->`,
+	heading: ( title ) => `<!-- wp:heading -->\n<h2 class="wp-block-heading">${ title }</h2>\n<!-- /wp:heading -->`,
+	quote: ( html ) => `<!-- wp:quote -->\n<blockquote class="wp-block-quote"><!-- wp:paragraph -->\n<p>${ html }</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->`,
+	list: ( items ) => `<!-- wp:list -->\n<ul class="wp-block-list">${ items.map( ( item ) => `<!-- wp:list-item -->\n<li>${ item }</li>\n<!-- /wp:list-item -->` ).join( '' ) }</ul>\n<!-- /wp:list -->`,
+};
+
+/** Typography settings of one element of Elementor's Site Settings (body, h1 … h6, button). */
+export const kitTypography = ( prefix, { family, fontSize, weight, lineHeight, spacing, style, transform } ) => ( {
+	[ `${ prefix }_typography_typography` ]: 'custom',
+	[ `${ prefix }_typography_font_family` ]: family,
+	...( fontSize ? { [ `${ prefix }_typography_font_size` ]: fontSize } : {} ),
+	...( weight ? { [ `${ prefix }_typography_font_weight` ]: String( weight ) } : {} ),
+	...( style ? { [ `${ prefix }_typography_font_style` ]: style } : {} ),
+	...( transform ? { [ `${ prefix }_typography_text_transform` ]: transform } : {} ),
+	...( lineHeight ? { [ `${ prefix }_typography_line_height` ]: em( lineHeight ) } : {} ),
+	...( spacing !== undefined ? { [ `${ prefix }_typography_letter_spacing` ]: em( spacing ) } : {} ),
+} );
+
+/**
+ * Write a whole starter site to its folder.
+ *
+ * @param {Object}   design
+ * @param {string}   design.site      Folder name under starter-sites/.
+ * @param {string}   design.out       That folder.
+ * @param {Object}   design.pages     name => { title, slug?, front_page?, plain?, content }.
+ * @param {Object}   design.parts     name => { title, location, content }.
+ * @param {Object[]} design.posts     { name, title, excerpt, image, category, days, content }.
+ * @param {Object}   design.kit       Elementor Site Settings.
+ * @param {Object}   design.themeMods Theme settings.
+ * @param {Object}   design.options   Front page and posts page.
+ * @param {Object[]} design.menus     Menus.
+ * @param {Object[]} design.media     Media index.
+ * @param {Object[]} [design.fonts]   Font index.
+ * @param {Object}   design.catalog   Fields of site.json to refresh.
+ * @return {string[]} The widget types the design uses.
+ */
+export function writeSite( { site, out, pages, parts, posts = [], kit, themeMods, options, menus, media, fonts, catalog } ) {
+	for ( const dir of [ 'content', 'site' ] ) {
+		fs.rmSync( path.join( out, dir ), { recursive: true, force: true } );
+	}
+
+	const used = new Set();
+
+	for ( const [ name, def ] of Object.entries( pages ) ) {
+		const data = { uid: `${ site }:pages:${ name }`, title: def.title, slug: def.slug || name, ...( def.front_page ? { front_page: true } : {} ), template: def.plain ? 'default' : 'elementor_header_footer' };
+		if ( ! def.plain ) {
+			data.elementor = { version: '4.4.2', type: 'wp-page', page_settings: { hide_title: 'yes' }, content: def.content };
+			widgetsOf( def.content, used );
+		}
+		writeJson( path.join( out, 'content/pages', name + '.json' ), data );
+	}
+
+	for ( const [ name, def ] of Object.entries( parts ) ) {
+		widgetsOf( def.content, used );
+		writeJson( path.join( out, 'content/site-parts', name + '.json' ), { uid: `${ site }:site-parts:${ name }`, title: def.title, location: def.location, elementor: { version: '4.4.2', type: 'wp-post', page_settings: {}, content: def.content } } );
+	}
+
+	for ( const post of posts ) {
+		writeJson( path.join( out, 'content/posts', post.name + '.json' ), {
+			uid: `${ site }:posts:${ post.name }`,
+			title: post.title,
+			slug: post.name,
+			excerpt: post.excerpt,
+			featured: `ofss://media/${ post.image }`,
+			categories: [ post.category ],
+			days_ago: post.days,
+			content: post.content.join( '\n\n' ),
+		} );
+	}
+
+	writeJson( path.join( out, 'site/kit.json' ), kit );
+	writeJson( path.join( out, 'site/theme-mods.json' ), themeMods );
+	writeJson( path.join( out, 'site/options.json' ), options );
+	writeJson( path.join( out, 'site/menus.json' ), menus );
+	writeJson( path.join( out, 'media/index.json' ), media );
+	if ( fonts ) {
+		writeJson( path.join( out, 'fonts/index.json' ), fonts );
+	}
+
+	// The catalog entry keeps its hand-written fields; the generated ones are refreshed.
+	const siteFile = path.join( out, 'site.json' );
+	const entry = JSON.parse( fs.readFileSync( siteFile, 'utf8' ) );
+	const { requires = {}, ...rest } = catalog;
+	Object.assign( entry, rest, { status: 'available' } );
+	Object.assign( entry.requires, requires, { elementor: { widgets: [ ...used ].sort() } } );
+	writeJson( siteFile, entry );
+
+	return [ ...used ].sort();
 }

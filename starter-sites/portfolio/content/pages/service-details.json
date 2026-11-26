@@ -1,0 +1,1232 @@
+{
+	"uid": "portfolio:pages:service-details",
+	"title": "Brand identity",
+	"slug": "brand-identity",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "000015b",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 28,
+						"column": "28",
+						"row": "28",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 28,
+						"column": "28",
+						"row": "28",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000156",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "Service",
+							"header_size": "p",
+							"title_color": "#4A443D",
+							"typography_typography": "custom",
+							"typography_font_family": "Instrument Sans",
+							"typography_font_size": {
+								"unit": "px",
+								"size": 13,
+								"sizes": []
+							},
+							"typography_font_weight": "600",
+							"typography_text_transform": "uppercase",
+							"typography_letter_spacing": {
+								"unit": "px",
+								"size": 1.3,
+								"sizes": []
+							},
+							"typography_line_height": {
+								"unit": "em",
+								"size": 1.4,
+								"sizes": []
+							}
+						},
+						"elements": []
+					},
+					{
+						"id": "0000158",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 20,
+								"column": "20",
+								"row": "20",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 86,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000157",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Brand identity, from first question to final <em>file</em>",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "000015a",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 20,
+								"column": "20",
+								"row": "20",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 54,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000159",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>For companies that are launching, growing out of their first logo, or about to be seen by many more people.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 20,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000017b",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000017a",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 72,
+								"column": "72",
+								"row": "72",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000016c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 0,
+										"column": "0",
+										"row": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 58,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000015f",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 10,
+												"column": "10",
+												"row": "10",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "28",
+												"right": "0",
+												"bottom": "28",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#D6CBBB"
+										},
+										"elements": [
+											{
+												"id": "000015c",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Weeks 1 to 2",
+													"header_size": "p",
+													"title_color": "#A8390B",
+													"typography_typography": "custom",
+													"typography_font_family": "Instrument Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "600",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.3,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000015d",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Discovery",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+														"sizes": []
+													},
+													"typography_font_weight": "500"
+												},
+												"elements": []
+											},
+											{
+												"id": "000015e",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Interviews with you, your team and five customers. A one-page positioning statement we both sign.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000163",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 10,
+												"column": "10",
+												"row": "10",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "28",
+												"right": "0",
+												"bottom": "28",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#D6CBBB"
+										},
+										"elements": [
+											{
+												"id": "0000160",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Weeks 3 to 5",
+													"header_size": "p",
+													"title_color": "#A8390B",
+													"typography_typography": "custom",
+													"typography_font_family": "Instrument Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "600",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.3,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000161",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Directions",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+														"sizes": []
+													},
+													"typography_font_weight": "500"
+												},
+												"elements": []
+											},
+											{
+												"id": "0000162",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Two distinct routes, each shown on real things: a bag, a van, a home page. You choose one.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000167",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 10,
+												"column": "10",
+												"row": "10",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "28",
+												"right": "0",
+												"bottom": "28",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#D6CBBB"
+										},
+										"elements": [
+											{
+												"id": "0000164",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Weeks 6 to 8",
+													"header_size": "p",
+													"title_color": "#A8390B",
+													"typography_typography": "custom",
+													"typography_font_family": "Instrument Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "600",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.3,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000165",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "System",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+														"sizes": []
+													},
+													"typography_font_weight": "500"
+												},
+												"elements": []
+											},
+											{
+												"id": "0000166",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>The chosen route becomes a full identity: mark, type, colour, layout and tone of voice.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000016b",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 10,
+												"column": "10",
+												"row": "10",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "28",
+												"right": "0",
+												"bottom": "28",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#D6CBBB"
+										},
+										"elements": [
+											{
+												"id": "0000168",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Weeks 9 to 10",
+													"header_size": "p",
+													"title_color": "#A8390B",
+													"typography_typography": "custom",
+													"typography_font_family": "Instrument Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "600",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.3,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000169",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Handover",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem)",
+														"sizes": []
+													},
+													"typography_font_weight": "500"
+												},
+												"elements": []
+											},
+											{
+												"id": "000016a",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Guidelines, templates and a working session with whoever will use them.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000179",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 42,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000178",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 20,
+												"column": "20",
+												"row": "20",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "36",
+												"right": "36",
+												"bottom": "36",
+												"left": "36",
+												"isLinked": true
+											},
+											"padding_mobile": {
+												"unit": "px",
+												"top": "24",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": true
+											},
+											"background_background": "classic",
+											"background_color": "#E9E1D4",
+											"border_radius": {
+												"unit": "px",
+												"top": "6",
+												"right": "6",
+												"bottom": "6",
+												"left": "6",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000016d",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "What you receive",
+													"header_size": "p",
+													"title_color": "#4A443D",
+													"typography_typography": "custom",
+													"typography_font_family": "Instrument Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "600",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.3,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000173",
+												"elType": "widget",
+												"widgetType": "icon-list",
+												"settings": {
+													"icon_list": [
+														{
+															"_id": "000016e",
+															"text": "Positioning statement",
+															"selected_icon": {
+																"value": "fas fa-minus",
+																"library": "fa-solid"
+															}
+														},
+														{
+															"_id": "000016f",
+															"text": "Logo in every format you will need",
+															"selected_icon": {
+																"value": "fas fa-minus",
+																"library": "fa-solid"
+															}
+														},
+														{
+															"_id": "0000170",
+															"text": "Typeface licences and colour values",
+															"selected_icon": {
+																"value": "fas fa-minus",
+																"library": "fa-solid"
+															}
+														},
+														{
+															"_id": "0000171",
+															"text": "Templates for print and screen",
+															"selected_icon": {
+																"value": "fas fa-minus",
+																"library": "fa-solid"
+															}
+														},
+														{
+															"_id": "0000172",
+															"text": "A guideline that fits on a poster",
+															"selected_icon": {
+																"value": "fas fa-minus",
+																"library": "fa-solid"
+															}
+														}
+													],
+													"space_between": {
+														"unit": "px",
+														"size": 12,
+														"sizes": []
+													},
+													"icon_size": {
+														"unit": "px",
+														"size": 16,
+														"sizes": []
+													},
+													"text_indent": {
+														"unit": "px",
+														"size": 12,
+														"sizes": []
+													},
+													"text_color": "#1C1917",
+													"icon_color": "#A8390B"
+												},
+												"elements": []
+											},
+											{
+												"id": "0000176",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 6,
+														"column": "6",
+														"row": "6",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "22",
+														"right": "0",
+														"bottom": "4",
+														"left": "0",
+														"isLinked": false
+													},
+													"border_border": "solid",
+													"border_width": {
+														"unit": "px",
+														"top": "1",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": false
+													},
+													"border_color": "#C9BCA8"
+												},
+												"elements": [
+													{
+														"id": "0000174",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "From €9,000",
+															"header_size": "p",
+															"__globals__": {
+																"title_color": "globals/colors?id=secondary"
+															},
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "custom",
+																"size": "clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem)",
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "0000175",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "8 to 10 weeks, fixed fee, paid in three parts",
+															"header_size": "p",
+															"title_color": "#4A443D",
+															"typography_typography": "custom",
+															"typography_font_family": "Instrument Sans",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 15,
+																"sizes": []
+															},
+															"typography_font_weight": "400",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.45,
+																"sizes": []
+															}
+														},
+														"elements": []
+													}
+												]
+											},
+											{
+												"id": "0000177",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "Ask about availability",
+													"link": {
+														"url": "ofss://page/contact",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"align": "justify"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000182",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 24,
+						"column": "24",
+						"row": "24",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 24,
+						"column": "24",
+						"row": "24",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "128",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "90",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000017e",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000017c",
+								"elType": "widget",
+								"widgetType": "image",
+								"settings": {
+									"image": {
+										"id": "ofss://media/detail-palette",
+										"url": "ofss://media/detail-palette"
+									},
+									"image_size": "full",
+									"image_border_radius": {
+										"unit": "px",
+										"top": "6",
+										"right": "6",
+										"bottom": "6",
+										"left": "6",
+										"isLinked": true
+									},
+									"link_to": "custom",
+									"link": {
+										"url": "ofss://page/project-details",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000017d",
+								"elType": "widget",
+								"widgetType": "image",
+								"settings": {
+									"image": {
+										"id": "ofss://media/detail-marks",
+										"url": "ofss://media/detail-marks"
+									},
+									"image_size": "full",
+									"image_border_radius": {
+										"unit": "px",
+										"top": "6",
+										"right": "6",
+										"bottom": "6",
+										"left": "6",
+										"isLinked": true
+									},
+									"link_to": "custom",
+									"link": {
+										"url": "ofss://page/project-details",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000181",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "baseline",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000017f",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Identity work for Tidewater Coffee Roasters",
+									"header_size": "p",
+									"title_color": "#4A443D",
+									"typography_typography": "custom",
+									"typography_font_family": "Instrument Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 16,
+										"sizes": []
+									},
+									"typography_font_weight": "400",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000180",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "See the case study",
+									"link": {
+										"url": "ofss://page/project-details",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"background_color": "transparent",
+									"button_background_hover_color": "transparent",
+									"button_text_color": "#1C1917",
+									"hover_color": "#A8390B",
+									"selected_icon": {
+										"value": "fas fa-arrow-right",
+										"library": "fa-solid"
+									},
+									"icon_align": "row-reverse",
+									"icon_indent": {
+										"unit": "px",
+										"size": 10,
+										"sizes": []
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "1.5",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#1C1917",
+									"button_hover_border_color": "#A8390B",
+									"border_radius": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"text_padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "6",
+										"left": "0",
+										"isLinked": false
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
