@@ -58,6 +58,9 @@ const build = ( t, src, privateKeys = [ key.privateKey ] ) => {
 	return { out, result };
 };
 
+/** Add a Theme Builder template to the reference site of the sources. */
+const template = ( src, change ) => { fs.mkdirSync( path.join( src, 'reference/content/templates' ), { recursive: true } ); const data = { uid: 'reference:templates:header', title: 'Header', type: 'header', conditions: [ [ 'include', 'general' ] ], elementor: { content: [] } }; change( data ); fs.writeFileSync( path.join( src, 'reference/content/templates/header.json' ), JSON.stringify( data ) ); };
+
 /** Change a JSON file of the sources. */
 const edit = ( src, file, change ) => {
 	const full = path.join( src, file );
@@ -120,6 +123,18 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 
 	// The tools read sources only; unknown source fields (such as preview colours) do not leak into the catalog.
 	assert.ok( catalog.sites.every( ( site ) => ! ( 'colors' in site ) && ! ( 'dir' in site ) && ! ( 'order' in site ) ) );
+} );
+
+test( 'a Pro design with Theme Builder templates builds, and its templates are part of the package', ( t ) => {
+	const dir = fs.mkdtempSync( path.join( os.tmpdir(), 'ofss-pro-' ) );
+	t.after( () => fs.rmSync( dir, { recursive: true, force: true } ) );
+	fs.cpSync( path.join( ROOT, 'tests/fixtures/sites/reference-pro' ), path.join( dir, 'reference-pro' ), { recursive: true } );
+	fs.copyFileSync( path.join( ROOT, 'starter-sites/categories.json' ), path.join( dir, 'categories.json' ) );
+	const { out, result } = build( t, dir );
+	assert.equal( result.packages, 1 );
+	const manifest = readJson( path.join( out, 'v1/sites/reference-pro/1.0.0/manifest.json' ) );
+	matches( 'manifest.schema.json', manifest );
+	assert.deepEqual( Object.keys( manifest.files ).filter( ( name ) => name.startsWith( 'content/templates/' ) ), [ 'content/templates/header.json', 'content/templates/single.json' ] );
 } );
 
 test( 'a site with content becomes a package whose manifest matches the schema and every checksum', ( t ) => {
@@ -278,6 +293,9 @@ test( 'catalog entries that break the rules are not built', async ( t ) => {
 		'no preview image': [ ( src ) => fs.rmSync( path.join( src, 'reference/preview/thumbnail.png' ) ), /thumbnail\.png is missing/ ],
 		'a preview of the wrong size': [ ( src ) => fs.copyFileSync( path.join( src, 'reference/media/files/hero.png' ), path.join( src, 'reference/preview/thumbnail.png' ) ), /must be 1200 x 900/ ],
 		'"available" without content': [ ( src ) => edit( src, 'agency/site.json', ( data ) => void ( data.status = 'available' ) ), /an available site needs a content folder/ ],
+		'a Theme Builder template in a free design': [ ( src ) => template( src, () => {} ), /only a design of the Pro tier may bring Theme Builder templates/ ],
+		'a template of an unknown type': [ ( src ) => template( src, ( data ) => void ( data.type = 'popup' ) ), /type must be one of header, footer/ ],
+		'a template that does not say where it is used': [ ( src ) => template( src, ( data ) => void ( data.conditions = [] ) ), /conditions must say where the template is used/ ],
 	};
 
 	for ( const [ name, [ breakIt, message ] ] of Object.entries( cases ) ) {

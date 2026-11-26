@@ -200,6 +200,9 @@ export function writeJson( file, data ) {
 	fs.writeFileSync( file, JSON.stringify( data, null, '\t' ) + '\n' );
 }
 
+/** A menu of the design, for widgets that ask which menu to show. */
+export const menu = ( uid ) => `ofss://menu/${ uid }`;
+
 /** Widget types used in an element tree. */
 export function widgetsOf( elements, found = new Set() ) {
 	for ( const element of elements || [] ) {
@@ -238,7 +241,8 @@ export const kitTypography = ( prefix, { family, fontSize, weight, lineHeight, s
  * @param {string}   design.site      Folder name under starter-sites/.
  * @param {string}   design.out       That folder.
  * @param {Object}   design.pages     name => { title, slug?, front_page?, plain?, content }.
- * @param {Object}   design.parts     name => { title, location, content }.
+ * @param {Object}   design.parts     name => { title, location, content }. Site parts, for designs of the free tier.
+ * @param {Object}   [design.templates] name => { title, type, conditions, content }. Theme Builder templates, for designs of the Pro tier.
  * @param {Object[]} design.posts     { name, title, excerpt, image, category, days, content }.
  * @param {Object}   design.kit       Elementor Site Settings.
  * @param {Object}   design.themeMods Theme settings.
@@ -249,7 +253,7 @@ export const kitTypography = ( prefix, { family, fontSize, weight, lineHeight, s
  * @param {Object}   design.catalog   Fields of site.json to refresh.
  * @return {string[]} The widget types the design uses.
  */
-export function writeSite( { site, out, pages, parts, posts = [], kit, themeMods, options, menus, media, fonts, catalog } ) {
+export function writeSite( { site, out, pages, parts = {}, templates = {}, posts = [], kit, themeMods, options, menus, media, fonts, catalog } ) {
 	for ( const dir of [ 'content', 'site' ] ) {
 		fs.rmSync( path.join( out, dir ), { recursive: true, force: true } );
 	}
@@ -268,6 +272,11 @@ export function writeSite( { site, out, pages, parts, posts = [], kit, themeMods
 	for ( const [ name, def ] of Object.entries( parts ) ) {
 		widgetsOf( def.content, used );
 		writeJson( path.join( out, 'content/site-parts', name + '.json' ), { uid: `${ site }:site-parts:${ name }`, title: def.title, location: def.location, elementor: { version: '4.4.2', type: 'wp-post', page_settings: {}, content: def.content } } );
+	}
+
+	for ( const [ name, def ] of Object.entries( templates ) ) {
+		widgetsOf( def.content, used );
+		writeJson( path.join( out, 'content/templates', name + '.json' ), { uid: `${ site }:templates:${ name }`, title: def.title, type: def.type, conditions: def.conditions, elementor: { version: '4.4.2', type: def.type, page_settings: def.settings || {}, content: def.content } } );
 	}
 
 	for ( const post of posts ) {

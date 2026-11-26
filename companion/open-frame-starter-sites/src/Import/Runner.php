@@ -527,9 +527,13 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|posts|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
 		if ( 'posts' === $match[1] ) {
 			return $this->import_post( $state, $match[2], $data );
+		}
+
+		if ( 'templates' === $match[1] ) {
+			return $this->import_template( $state, $match[2], $data );
 		}
 
 		$is_part = 'site-parts' === $match[1];
@@ -575,6 +579,35 @@ class Runner {
 			// Links to this page should point at the site address, not at /home/.
 			$state['front'] = $key;
 		}
+		++$state['cursor'];
+
+		return false;
+	}
+
+	/**
+	 * Create one Theme Builder template of the design (without its content yet).
+	 *
+	 * Designs for Elementor Pro bring their header, footer, blog and "page
+	 * not found" layouts as templates of its Theme Builder.
+	 *
+	 * @param array  $state Run.
+	 * @param string $name  Name of the template inside the package.
+	 * @param array  $data  Template data from the package.
+	 * @return false|WP_Error
+	 */
+	private function import_template( array &$state, $name, array $data ) {
+		$uid      = $state['site'] . ':templates:' . $name;
+		$existing = $this->find( $uid );
+
+		if ( ! $existing ) {
+			$existing = $this->elementor->create_template( (string) ( $data['type'] ?? '' ), sanitize_text_field( (string) ( $data['title'] ?? $name ) ) );
+			if ( is_wp_error( $existing ) ) {
+				return $existing;
+			}
+			$this->tag( $state, $existing, $uid );
+		}
+
+		$state['posts'][ 'template/' . $name ] = (int) $existing;
 		++$state['cursor'];
 
 		return false;
@@ -700,7 +733,7 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|posts|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
 
 		// Blog posts and pages without Elementor content (the posts page) have nothing to build.
 		if ( 'posts' === $match[1] || empty( $data['elementor'] ) ) {
@@ -708,13 +741,20 @@ class Runner {
 			return false;
 		}
 
-		$post_id  = $state['posts'][ ( 'site-parts' === $match[1] ? 'site-part' : 'page' ) . '/' . $match[2] ] ?? 0;
+		$kinds    = array(
+			'pages'      => 'page',
+			'site-parts' => 'site-part',
+			'templates'  => 'template',
+		);
+		$post_id  = $state['posts'][ $kinds[ $match[1] ] . '/' . $match[2] ] ?? 0;
 		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
 
 		$elements = $resolver->resolve( (array) ( $data['elementor']['content'] ?? array() ) );
 		$settings = $resolver->resolve( (array) ( $data['elementor']['page_settings'] ?? array() ) );
 
-		$settings['template'] = get_post_meta( $post_id, '_wp_page_template', true );
+		if ( 'templates' !== $match[1] ) {
+			$settings['template'] = get_post_meta( $post_id, '_wp_page_template', true );
+		}
 
 		$saved = $this->elementor->save_document( $post_id, $elements, $settings );
 		if ( is_wp_error( $saved ) ) {
@@ -724,6 +764,18 @@ class Runner {
 		foreach ( array_unique( $resolver->unresolved ) as $reference ) {
 			/* translators: 1: page title, 2: reference inside the package. */
 			$state['warnings'][] = sprintf( __( '"%1$s": a link or image (%2$s) could not be connected.', 'open-frame-starter-sites' ), get_the_title( $post_id ), $reference );
+		}
+
+		if ( 'templates' === $match[1] ) {
+			// Where the template is used: the whole site, single posts, archives and so on.
+			$conditions = array();
+			foreach ( (array) ( $data['conditions'] ?? array() ) as $condition ) {
+				$parts = array_values( array_filter( array_map( array( $this, 'clean_scalar' ), (array) $condition ), 'is_string' ) );
+				if ( $parts && in_array( $parts[0], array( 'include', 'exclude' ), true ) ) {
+					$conditions[] = array_slice( $parts, 0, 4 );
+				}
+			}
+			$this->elementor->set_conditions( $post_id, $conditions );
 		}
 
 		update_post_meta( $post_id, '_ofss_hash', md5( (string) get_post_meta( $post_id, '_elementor_data', true ) ) );
@@ -947,7 +999,7 @@ class Runner {
 	 * @return string[] Entry names.
 	 */
 	private function documents( array $state ) {
-		$names = array_values( preg_grep( '#^content/(pages|posts|site-parts)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
+		$names = array_values( preg_grep( '#^content/(pages|posts|site-parts|templates)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
 		sort( $names );
 
 		return $names;
@@ -962,7 +1014,7 @@ class Runner {
 	private function find( $uid ) {
 		$found = get_posts(
 			array(
-				'post_type'   => array( 'page', 'post', SiteParts::POST_TYPE ),
+				'post_type'   => array( 'page', 'post', 'elementor_library', SiteParts::POST_TYPE ),
 				'post_status' => array( 'publish', 'draft', 'private', 'pending' ),
 				'numberposts' => 1,
 				'fields'      => 'ids',

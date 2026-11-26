@@ -134,6 +134,80 @@ class Adapter {
 	}
 
 	/**
+	 * Kinds of Theme Builder template a design may bring.
+	 */
+	const TEMPLATE_TYPES = array( 'header', 'footer', 'single-post', 'single-page', 'archive', 'search-results', 'error-404' );
+
+	/**
+	 * Whether Elementor Pro's Theme Builder is available.
+	 *
+	 * @return bool
+	 */
+	public function has_theme_builder() {
+		return class_exists( '\\ElementorPro\\Modules\\ThemeBuilder\\Module' );
+	}
+
+	/**
+	 * Create an empty Theme Builder template.
+	 *
+	 * @param string $type  One of TEMPLATE_TYPES.
+	 * @param string $title Title shown in the Theme Builder.
+	 * @return int|WP_Error Post ID.
+	 */
+	public function create_template( $type, $title ) {
+		if ( ! $this->has_theme_builder() || ! in_array( $type, self::TEMPLATE_TYPES, true ) ) {
+			return new WP_Error( 'ofss_template', __( 'This design needs Elementor Pro for its header, footer and blog templates.', 'open-frame-starter-sites' ) );
+		}
+
+		$document = \Elementor\Plugin::$instance->documents->create(
+			$type,
+			array(
+				'post_title'  => $title,
+				'post_status' => 'publish',
+			)
+		);
+
+		return is_wp_error( $document ) || ! $document ? new WP_Error( 'ofss_template', __( 'Elementor Pro could not create a template of this design.', 'open-frame-starter-sites' ) ) : (int) $document->get_main_id();
+	}
+
+	/**
+	 * Say where a Theme Builder template is used.
+	 *
+	 * @param int     $post_id    Template.
+	 * @param array[] $conditions Each a list such as array( 'include', 'general' ).
+	 * @return void
+	 */
+	public function set_conditions( $post_id, array $conditions ) {
+		if ( $this->has_theme_builder() ) {
+			\ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager()->save_conditions( $post_id, $conditions );
+		}
+	}
+
+	/**
+	 * Delete a Theme Builder template and forget where it was used.
+	 *
+	 * @param int $post_id Template.
+	 * @return void
+	 */
+	public function delete_template( $post_id ) {
+		wp_delete_post( $post_id, true );
+
+		if ( $this->has_theme_builder() ) {
+			\ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager()->get_cache()->regenerate();
+		}
+	}
+
+	/**
+	 * Whether a post in Elementor's library is a kit (Site Settings) rather than a template.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return bool
+	 */
+	public function is_kit( $post_id ) {
+		return 'kit' === get_post_meta( $post_id, '_elementor_template_type', true );
+	}
+
+	/**
 	 * The markup of an Elementor document, for display.
 	 *
 	 * @param int $post_id Post ID.

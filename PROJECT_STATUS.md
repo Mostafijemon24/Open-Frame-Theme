@@ -17,7 +17,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 4 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical; plugin 0.4.0). Next: the five Pro-tier designs |
+| 7b. Nine further starter sites | **In progress: 4 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical). The importer can now bring Theme Builder templates (plugin 0.5.0), which the Pro tier needs. Next: the five Pro-tier designs |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -75,7 +75,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 **Planned for Phase 6 and still not built:**
 
 - Site logo, post grid and search widgets (the menu widget was built in Phase 7a, fonts of a design in Phase 7b).
-- Sidebar widgets and WooCommerce products in a package; Theme Builder templates for the Pro-tier designs.
+- Sidebar widgets and WooCommerce products in a package.
 - A WP-CLI command, and a "replace the previous starter site" mode.
 - Continuing past a single image that cannot be downloaded (today the import stops and can be retried or rolled back).
 
@@ -127,15 +127,22 @@ Each is built with the first design that needs it, rather than against invented 
 - **Images:** thirteen original illustrations (a hero, four doctors, the building, the reception, a consulting room, a family, a heart, covers), drawn by `tools/sites/medical-art.mjs`. CC0, about 360 KB.
 - **Found by the tests and fixed:** every page was wider than the screen because a block inside the header had no width (an Elementor container is as wide as its parent unless told otherwise); icon boxes with a link also linked the bare icon, a link without a name, so cards now carry a named text link instead.
 
+### Phase 7b, groundwork for the Pro tier (plugin 0.5.0)
+
+- **Theme Builder templates in a package.** A design of the Pro tier can bring templates for Elementor Pro's Theme Builder (`content/templates/*.json`): header, footer, single post, single page, archive, search results and "page not found", each with the conditions that say where it is used. The importer creates them through Elementor Pro, gives them their content and conditions, and tags them; a rollback deletes them and rebuilds Elementor Pro's list of conditions. All of it goes through `Elementor/Adapter.php`.
+- **Rules in the library build:** only a Pro design may contain templates, the type must be a known one, and a template must say where it is used.
+- **Checked without a licence:** with Elementor Pro 4.0.4 installed and not activated, its widgets (menu, posts, form, post title and content and so on) and template types are registered, so the Pro designs can be built and tested here. What only works with an activated licence is still unknown (see "Needed from the owner").
+- **A test fixture** (`tests/fixtures/sites/reference-pro`): one page, a header template, a single-post template and a post. The importer checks for it run when Elementor Pro is active in the test site and are skipped, with a message, when it is not (as in CI).
+
 ## Verified (executed 2026-11-26)
 
 - PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Import engine checks: 80 of 80 pass, including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
+- Import engine checks: 80 of 80 pass without Elementor Pro and 92 of 92 with it (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
 - Browser checks: 94 of 94 pass. 11 for each of the five designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
-- Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
+- Library tools: 53 of 53 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
 ## Not verified
@@ -157,7 +164,7 @@ Each is built with the first design that needs it, rather than against invented 
 - All designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
 - Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
 - Site parts apply to the whole site; per-page display conditions are not built.
-- Theme 1.1.0 and plugin 0.4.0 are not tagged or released.
+- Theme 1.1.0 and plugin 0.5.0 are not tagged or released.
 - The plugin's readme names Cloudflare's privacy policy for the library; the library needs its own short privacy statement before the plugin is submitted to WordPress.org.
 - The user guide has no screenshots for the Elementor and WooCommerce chapters and no chapter for the plugin yet.
 - With the global-styles option on, Elementor's base stylesheet also loads on theme templates (about 7 KB compressed).
@@ -173,5 +180,5 @@ Each is built with the first design that needs it, rather than against invented 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b continues with the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine). They need parts of the importer that do not exist yet: Elementor Pro Theme Builder templates in a package, and for Shop, WooCommerce products.
+2. Phase 7b continues with the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine). Theme Builder templates can now be imported; Shop also needs WooCommerce products in a package, which is not built yet.
 3. A decision on the forms plugin, so the contact pages can carry a form.

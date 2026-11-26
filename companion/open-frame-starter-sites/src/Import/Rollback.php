@@ -95,8 +95,13 @@ class Rollback {
 			if ( 'attachment' === get_post_type( $post_id ) ) {
 				wp_delete_attachment( $post_id, true );
 			} elseif ( 'elementor_library' === get_post_type( $post_id ) ) {
-				if ( $this->elementor->is_ready() ) {
+				if ( ! $this->elementor->is_ready() ) {
+					continue;
+				}
+				if ( $this->elementor->is_kit( $post_id ) ) {
 					$this->elementor->delete_unused_kit( $post_id );
+				} else {
+					$this->elementor->delete_template( $post_id );
 				}
 			} else {
 				wp_delete_post( $post_id, true );

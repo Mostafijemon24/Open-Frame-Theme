@@ -1,0 +1,11 @@
+{
+	"uid": "reference-pro:posts:a-post",
+	"title": "A post shown by a template",
+	"slug": "a-post",
+	"excerpt": "An excerpt.",
+	"categories": [
+		"Reference"
+	],
+	"days_ago": 2,
+	"content": "<!-- wp:paragraph -->\n<p>The body of the post.</p>\n<!-- /wp:paragraph -->"
+}

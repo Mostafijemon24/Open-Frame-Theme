@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,9 @@ Only when you click a button that says it will: "Install and activate", "Activat
 A copy of the list of designs, the record of the last import, a short import history and the list of fonts a design brought (options starting with `ofss_`), plus those font files in `wp-content/uploads/open-frame-fonts`. All of this is removed when you delete the plugin. Imported pages and images are your content and stay.
 
 == Changelog ==
+
+= 0.5.0 =
+* New: designs for Elementor Pro can bring Theme Builder templates (header, footer, single post, archive, search results, "page not found"), each with the place it is used. A rollback removes them and their display conditions.
 
 = 0.4.0 =
 * New: Portfolio, the second complete design: a personal site with large serif type, a staggered grid of work, a case study, services, a resume and notes. Built with the free version of Elementor.

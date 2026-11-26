@@ -1,0 +1,28 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#2F6FED"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#0F2A47"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#334155"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#F5A623"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1200
+	}
+}

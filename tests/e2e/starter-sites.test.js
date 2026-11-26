@@ -84,7 +84,7 @@ test( 'the screen lists the ten designs', async () => {
 
 	assert.equal( await page.locator( '.ofss-badge--free' ).count(), 5, 'five free designs' );
 	assert.equal( await page.locator( '.ofss-badge--pro' ).count(), 5, 'five designs that need Elementor Pro' );
-	const built = JSON.parse( JSON.parse( fs.readFileSync( path.join( DIR, 'library/v1/catalog.json' ), 'utf8' ) ).signed ).sites.filter( ( site ) => site.id !== 'reference' );
+	const built = JSON.parse( JSON.parse( fs.readFileSync( path.join( DIR, 'library/v1/catalog.json' ), 'utf8' ) ).signed ).sites.filter( ( site ) => ! [ 'reference', 'reference-pro' ].includes( site.id ) );
 	const pending = built.filter( ( site ) => site.status === 'coming_soon' ).length;
 	assert.ok( pending <= 8, 'Business and Portfolio are out' );
 	assert.equal( await page.locator( '.ofss-badge--soon' ).count(), pending, 'every design that is not out yet is marked as coming soon' );

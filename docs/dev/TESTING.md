@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Theme Builder templates in a package](#theme-builder-templates--test-report): groundwork for the Pro tier
 - [Medical starter site](#the-medical-starter-site--test-report): Phase 7b, part 4; the free tier is complete
 - [Education starter site](#the-education-starter-site--test-report): Phase 7b, part 3
 - [Restaurant starter site](#the-restaurant-starter-site--test-report): Phase 7b, part 2, the first dark design
@@ -10,6 +11,35 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Theme Builder templates — Test Report
+
+Plugin 0.5.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Elementor Pro 4.0.4 (installed, **not activated with a licence**).
+
+| Suite | Result |
+| --- | --- |
+| Import engine with Elementor Pro active | **92 of 92 passed** (twelve new) |
+| Import engine without Elementor Pro | **80 of 80 passed**; the twelve are skipped with a message |
+| Plugin PHP checks | **138 of 138 passed** |
+| Library tools | **53 of 53 passed** (four new) |
+| All browser checks together (free designs, to see that nothing broke) | **94 of 94 passed** |
+| PHPCS | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+| Area | What is asserted |
+| --- | --- |
+| Import | A Pro design with a header template, a single-post template, a page and a post finishes without warnings; each template is a published entry of Elementor's library with its type and content, tagged with the run |
+| Conditions | Elementor Pro's own list shows the header for the whole site and the single template for posts |
+| Twice | A second import reuses both templates; the header appears once in the conditions |
+| Rollback | The templates are deleted, Elementor Pro's conditions are empty again, and the site fingerprint equals the one before the import |
+| Library build | A Pro design with templates builds and its templates are in the package; a template in a free design, of an unknown type, or without conditions stops the build with a message |
+
+## Not covered
+
+- **How the templates look to a visitor.** That is checked with the first real Pro design, in the browser.
+- **Elementor Pro with an activated licence.** Nothing here needed one, but a licensed site may behave differently in ways that cannot be seen from here.
+- CI has no Elementor Pro, so these twelve checks only run where it is installed.
 
 # The Medical starter site — Test Report
 

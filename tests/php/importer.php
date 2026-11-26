@@ -321,6 +321,79 @@ $rollback->run( $runner->state() );
 ofss_reset_run();
 
 /* ---------------------------------------------------------------------- */
+ofss_section( 'Theme Builder templates (needs Elementor Pro in the test site)' );
+
+if ( ! $elementor->has_theme_builder() ) {
+	echo "  --    skipped: Elementor Pro is not active. Run with \"plugin:elementor-pro=on\" to include these checks.\n";
+} else {
+	ofss_cloud( 'available-pro' );
+	delete_option( 'ofss_catalog' );
+	$state = ofss_finish( $runner, $runner->start( 'reference-pro' ) );
+	ofss_check( 'a design with templates imports', ! is_wp_error( $state ) && 'done' === $state['status'] && array() === $state['warnings'] );
+
+	$header = (int) ( $state['posts']['template/header'] ?? 0 );
+	$single = (int) ( $state['posts']['template/single'] ?? 0 );
+	ofss_check( 'the header is a published Theme Builder template of the type "header"', 'elementor_library' === get_post_type( $header ) && 'publish' === get_post_status( $header ) && 'header' === get_post_meta( $header, '_elementor_template_type', true ) );
+	ofss_check( 'the single post template has its type and its content', 'single-post' === get_post_meta( $single, '_elementor_template_type', true ) && false !== strpos( (string) get_post_meta( $single, '_elementor_data', true ), 'Reference Pro single post' ) );
+	ofss_check( 'both are tagged with the run and their identity', $state['id'] === get_post_meta( $header, '_ofss_run', true ) && 'reference-pro:templates:single' === get_post_meta( $single, '_ofss_uid', true ) );
+
+	$manager = \ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager();
+	ofss_check( 'the header is used on the whole site', array( $header ) === array_keys( $manager->get_cache()->get_by_location( 'header' ) ) && array( 'include/general' ) === $manager->get_cache()->get_by_location( 'header' )[ $header ] );
+	ofss_check( 'the single template is used for posts', array( 'include/singular/post' ) === ( $manager->get_cache()->get_by_location( 'single' )[ $single ] ?? array() ) );
+	ofss_check( 'the post of the design exists', 'publish' === get_post_status( $state['posts']['post/a-post'] ?? 0 ) );
+
+	$again = ofss_finish( $runner, $runner->start( 'reference-pro' ) );
+	ofss_check( 'importing it twice creates no second template', $header === (int) $again['posts']['template/header'] && $single === (int) $again['posts']['template/single'] && array( $header ) === array_keys( $manager->get_cache()->get_by_location( 'header' ) ) );
+
+	// Roll back the second run, then remove what the first one made (see "Importing twice").
+	$rollback->run( $again );
+	ofss_check( 'rolling back the second import keeps the templates of the first', 'publish' === get_post_status( $header ) );
+	foreach ( get_posts( array( 'post_type' => array( 'page', 'post', 'elementor_library' ), 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => '_ofss_site', 'meta_value' => 'reference-pro' ) ) as $id ) {
+		if ( 'elementor_library' === get_post_type( $id ) ) {
+			if ( $elementor->is_kit( $id ) ) {
+				update_option( 'elementor_active_kit', $original['elementor_active_kit'] );
+				$elementor->delete_unused_kit( $id );
+			} else {
+				$elementor->delete_template( $id );
+			}
+		} else {
+			wp_delete_post( $id, true );
+		}
+	}
+	foreach ( get_terms( array( 'taxonomy' => 'category', 'hide_empty' => false, 'fields' => 'ids', 'meta_key' => '_ofss_run', 'meta_value' => $state['id'] ) ) as $term ) {
+		wp_delete_term( $term, 'category' );
+	}
+	foreach ( array( 'show_on_front', 'page_on_front', 'page_for_posts', 'elementor_previous_kit' ) as $option ) {
+		if ( false === $original[ $option ] ) {
+			delete_option( $option );
+		} else {
+			update_option( $option, $original[ $option ] );
+		}
+	}
+	if ( is_array( $original['theme_mods'] ) ) {
+		update_option( 'theme_mods_' . get_stylesheet(), $original['theme_mods'] );
+	} else {
+		delete_option( 'theme_mods_' . get_stylesheet() );
+	}
+	delete_option( 'ofss_active_site' );
+	delete_option( 'ofss_snapshot_' . $state['id'] );
+	ofss_reset_run();
+	ofss_check( 'no template is left in the Theme Builder', array() === $manager->get_cache()->get_by_location( 'header' ) && array() === $manager->get_cache()->get_by_location( 'single' ) );
+	if ( ofss_fingerprint() !== $baseline ) {
+		echo '        ', wp_json_encode( array_diff_assoc( ofss_fingerprint(), $baseline ) ), ' instead of ', wp_json_encode( array_diff_assoc( $baseline, ofss_fingerprint() ) ), "\n";
+	}
+	ofss_check( 'the test site is clean again', ofss_fingerprint() === $baseline );
+
+	// A single import, rolled back by the plugin itself.
+	$state = ofss_finish( $runner, $runner->start( 'reference-pro' ) );
+	$rollback->run( $state );
+	ofss_reset_run();
+	ofss_check( 'a rollback removes the templates and their conditions', array() === $manager->get_cache()->get_by_location( 'header' ) && array() === $manager->get_cache()->get_by_location( 'single' ) && ofss_fingerprint() === $baseline );
+	ofss_cloud( 'available' );
+	delete_option( 'ofss_catalog' );
+}
+
+/* ---------------------------------------------------------------------- */
 ofss_section( 'Damaged or altered downloads' );
 
 $damage = array(

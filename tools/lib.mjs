@@ -32,6 +32,9 @@ export const THEME_MOD_PREFIX = 'open_frame_';
 
 export const LIMITS = { packageBytes: 2 * 1024 * 1024, imageBytes: 400 * 1024, previewBytes: 400 * 1024, mediaBytes: 25 * 1024 * 1024 };
 
+/** Kinds of Elementor Pro Theme Builder template a design may bring. */
+const TEMPLATE_TYPES = [ 'header', 'footer', 'single-post', 'single-page', 'archive', 'search-results', 'error-404' ];
+
 const MEDIA_TYPES = { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.avif': 'image/avif', '.gif': 'image/gif' };
 
 export const sha256 = ( data ) => crypto.createHash( 'sha256' ).update( data ).digest( 'hex' );
@@ -355,7 +358,7 @@ export function collectPackage( site ) {
 	const widgets = new Set();
 	const uids = new Set();
 	for ( const [ name, document ] of Object.entries( documents ) ) {
-		const match = name.match( /^content\/(pages|posts|site-parts|products)\/([a-z0-9-]+)\.json$/ );
+		const match = name.match( /^content\/(pages|posts|site-parts|templates|products)\/([a-z0-9-]+)\.json$/ );
 		if ( ! match ) {
 			continue;
 		}
@@ -364,6 +367,17 @@ export function collectPackage( site ) {
 			problems.push( `${ name }: uid must be "${ uid }"` );
 		}
 		uids.add( match[ 1 ] + '/' + match[ 2 ] );
+		if ( match[ 1 ] === 'templates' ) {
+			if ( ! TEMPLATE_TYPES.includes( document.type ) ) {
+				problems.push( `${ name }: type must be one of ${ TEMPLATE_TYPES.join( ', ' ) }` );
+			}
+			if ( ! Array.isArray( document.conditions ) || ! document.conditions.length || ! document.conditions.every( ( condition ) => Array.isArray( condition ) && [ 'include', 'exclude' ].includes( condition[ 0 ] ) ) ) {
+				problems.push( `${ name }: conditions must say where the template is used, for example [ [ "include", "general" ] ]` );
+			}
+			if ( site.tier !== 'pro' ) {
+				problems.push( `${ name }: only a design of the Pro tier may bring Theme Builder templates` );
+			}
+		}
 		if ( match[ 1 ] === 'pages' ) {
 			pages.push( { uid, title: String( document.title || '' ), ...( document.front_page ? { front_page: true } : {} ) } );
 		}
