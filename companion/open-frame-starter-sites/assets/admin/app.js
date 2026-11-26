@@ -168,7 +168,7 @@
 			action = plugin.url
 				? h(
 						ExternalLink,
-						{ href: plugin.url },
+						{ href: plugin.url, rel: 'noopener noreferrer' },
 						/* translators: %s: plugin name. */
 						sprintf( __( 'Get %s', 'open-frame-starter-sites' ), plugin.name )
 				  )
@@ -299,7 +299,7 @@
 							null,
 							site.summary && h( 'p', { className: 'ofss-details__summary' }, site.summary ),
 							h( 'p', { className: 'ofss-details__state ofss-details__state--' + requirements.state, role: 'status' }, STATE_MESSAGE[ requirements.state ] ),
-							site.preview.demo_url && h( 'p', null, h( ExternalLink, { href: site.preview.demo_url }, __( 'Open the live demo', 'open-frame-starter-sites' ) ) ),
+							site.preview.demo_url && h( 'p', null, h( ExternalLink, { href: site.preview.demo_url, rel: 'noopener noreferrer' }, __( 'Open the live demo', 'open-frame-starter-sites' ) ) ),
 
 							h( 'h2', null, __( 'What it needs', 'open-frame-starter-sites' ) ),
 							actionError && h( Notice, { status: 'error', onRemove: () => setActionError( '' ) }, actionError ),
