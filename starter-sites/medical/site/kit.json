@@ -1,0 +1,201 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#0B6B69"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#0F2B2D"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#3E5557"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#BFE5DE"
+		}
+	],
+	"custom_colors": [
+		{
+			"_id": "ofdeep",
+			"title": "Deep",
+			"color": "#0A3F42"
+		},
+		{
+			"_id": "ofmist",
+			"title": "Mist",
+			"color": "#E8F4F1"
+		},
+		{
+			"_id": "ofsand",
+			"title": "Sand",
+			"color": "#F6EFE6"
+		},
+		{
+			"_id": "ofline",
+			"title": "Line",
+			"color": "#D5E6E1"
+		}
+	],
+	"system_typography": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"typography_typography": "custom",
+			"typography_font_family": "Plus Jakarta Sans",
+			"typography_font_weight": "700"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"typography_typography": "custom",
+			"typography_font_family": "Plus Jakarta Sans",
+			"typography_font_weight": "600"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"typography_typography": "custom",
+			"typography_font_family": "Plus Jakarta Sans",
+			"typography_font_weight": "400"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"typography_typography": "custom",
+			"typography_font_family": "Plus Jakarta Sans",
+			"typography_font_weight": "600"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1200,
+		"sizes": []
+	},
+	"body_color": "#3E5557",
+	"body_typography_typography": "custom",
+	"body_typography_font_family": "Plus Jakarta Sans",
+	"body_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"body_typography_font_weight": "400",
+	"body_typography_line_height": {
+		"unit": "em",
+		"size": 1.7,
+		"sizes": []
+	},
+	"link_normal_color": "#0B6B69",
+	"link_hover_color": "#085352",
+	"h1_color": "#0F2B2D",
+	"h1_typography_typography": "custom",
+	"h1_typography_font_family": "Plus Jakarta Sans",
+	"h1_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.125rem, 1.3rem + 3.6vw, 3.75rem)",
+		"sizes": []
+	},
+	"h1_typography_font_weight": "700",
+	"h1_typography_line_height": {
+		"unit": "em",
+		"size": 1.1,
+		"sizes": []
+	},
+	"h1_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.025,
+		"sizes": []
+	},
+	"h2_color": "#0F2B2D",
+	"h2_typography_typography": "custom",
+	"h2_typography_font_family": "Plus Jakarta Sans",
+	"h2_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.75rem, 1.3rem + 1.8vw, 2.625rem)",
+		"sizes": []
+	},
+	"h2_typography_font_weight": "700",
+	"h2_typography_line_height": {
+		"unit": "em",
+		"size": 1.15,
+		"sizes": []
+	},
+	"h2_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.02,
+		"sizes": []
+	},
+	"h3_color": "#0F2B2D",
+	"h3_typography_typography": "custom",
+	"h3_typography_font_family": "Plus Jakarta Sans",
+	"h3_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.25rem, 1.15rem + 0.4vw, 1.4375rem)",
+		"sizes": []
+	},
+	"h3_typography_font_weight": "700",
+	"h3_typography_line_height": {
+		"unit": "em",
+		"size": 1.3,
+		"sizes": []
+	},
+	"h3_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.01,
+		"sizes": []
+	},
+	"h4_color": "#0F2B2D",
+	"h4_typography_typography": "custom",
+	"h4_typography_font_family": "Plus Jakarta Sans",
+	"h4_typography_font_size": {
+		"unit": "px",
+		"size": 18,
+		"sizes": []
+	},
+	"h4_typography_font_weight": "700",
+	"h4_typography_line_height": {
+		"unit": "em",
+		"size": 1.35,
+		"sizes": []
+	},
+	"button_typography_typography": "custom",
+	"button_typography_font_family": "Plus Jakarta Sans",
+	"button_typography_font_size": {
+		"unit": "px",
+		"size": 16,
+		"sizes": []
+	},
+	"button_typography_font_weight": "600",
+	"button_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"button_text_color": "#FFFFFF",
+	"button_background_color": "#0B6B69",
+	"button_hover_text_color": "#FFFFFF",
+	"button_hover_background_color": "#0A3F42",
+	"button_border_radius": {
+		"unit": "px",
+		"top": "12",
+		"right": "12",
+		"bottom": "12",
+		"left": "12",
+		"isLinked": true
+	},
+	"button_padding": {
+		"unit": "px",
+		"top": "15",
+		"right": "24",
+		"bottom": "15",
+		"left": "24",
+		"isLinked": false
+	}
+}

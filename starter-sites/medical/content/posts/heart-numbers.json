@@ -1,0 +1,12 @@
+{
+	"uid": "medical:posts:heart-numbers",
+	"title": "Five numbers worth knowing about your heart",
+	"slug": "heart-numbers",
+	"excerpt": "Blood pressure, resting pulse, cholesterol, blood sugar and waist size. What each one tells us, and when it is worth having them checked.",
+	"featured": "ofss://media/note-1",
+	"categories": [
+		"Heart health"
+	],
+	"days_ago": 7,
+	"content": "<!-- wp:paragraph -->\n<p>Most heart problems give years of warning, in numbers that are easy to measure. Five of them cover most of what we look at in a routine check.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Blood pressure</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Resting pulse</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Cholesterol</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Blood sugar</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Waist measurement</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Why the trend matters more than one reading</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>A single high reading on a busy morning tells us little. Three readings over a few weeks tell us a great deal. That is why we may ask you to measure at home, or to come back.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">When to have them checked</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>If you are over forty and have not had these measured in the last three years, a check is sensible. It takes twenty minutes and one blood sample. You can <a href=\"ofss://page/appointment\">book it like any other appointment</a>.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><em>This article is general information and not personal medical advice. If you are worried about your health, please make an appointment.</em></p>\n<!-- /wp:paragraph -->"
+}

@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Four of the ten designs exist.** Business ("Halden Advisory"), Portfolio ("Juno Vale"), Restaurant ("Ember & Rye") and Education ("Tandem Academy") are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. All four need only the free version of Elementor, and they share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and six designs are still to be made.
+**Five of the ten designs exist: all five that work with the free version of Elementor.** Business ("Halden Advisory"), Portfolio ("Juno Vale"), Restaurant ("Ember & Rye"), Education ("Tandem Academy") and Medical ("Linden Clinic") are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and the five designs that need Elementor Pro are still to be made.
 
 | Phase | Status |
 | --- | --- |
@@ -17,7 +17,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 3 of 9 done** (Portfolio, Restaurant and Education, plugin 0.4.0). Next: Medical, then the five Pro-tier designs |
+| 7b. Nine further starter sites | **In progress: 4 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical; plugin 0.4.0). Next: the five Pro-tier designs |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -118,6 +118,15 @@ Each is built with the first design that needs it, rather than against invented 
 - **Images:** sixteen original flat illustrations (a hero, six course tiles, the building, a group, four portraits, news covers), drawn by `tools/sites/education-art.mjs`. CC0, about 500 KB.
 - **Decided against Elementor's accordion widget.** It was tried for the questions on the Admissions page; axe-core reports ARIA attributes on its titles that do not fit their role, whichever title element is chosen. The questions are plain cards instead.
 
+### Phase 7b, part 4: the Medical design (the free tier is complete)
+
+- **The design** (`starter-sites/medical`, brief in `brief.md`): the fictional "Linden Clinic", a group practice. Home, About, Departments, a department page, Doctors, a doctor's profile, Book an Appointment, Patient Information, Contact, the blog page "Health Notes" with three articles, plus header, footer and a "page not found" page.
+- **Its own look:** a pale green page with white cards and soft, blurred shadows, icons in tinted circles, pictures with one large corner, a narrow bar with hours and telephone number above the header; Plus Jakarta Sans throughout; teal with a warm sand band.
+- **Uses two more of Elementor's free widgets:** Icon Box and Icon.
+- **Written for the subject:** the three things a patient looks for (how to book, who they will see, opening hours) come directly under the hero; an emergency notice has its own card; the sample texts make no medical claims and every article ends with a line saying it is not personal advice.
+- **Images:** thirteen original illustrations (a hero, four doctors, the building, the reception, a consulting room, a family, a heart, covers), drawn by `tools/sites/medical-art.mjs`. CC0, about 360 KB.
+- **Found by the tests and fixed:** every page was wider than the screen because a block inside the header had no width (an Elementor container is as wide as its parent unless told otherwise); icon boxes with a link also linked the bare icon, a link without a name, so cards now carry a named text link instead.
+
 ## Verified (executed 2026-11-26)
 
 - PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
@@ -125,7 +134,7 @@ Each is built with the first design that needs it, rather than against invented 
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
 - Import engine checks: 80 of 80 pass, including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
-- Browser checks: 83 of 83 pass. 11 each for the Business, Portfolio, Restaurant and Education designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Browser checks: 94 of 94 pass. 11 for each of the five designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -138,10 +147,11 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- Four designs, Business, Portfolio, Restaurant and Education, can be imported. The other six are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- **None of the designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map; Education takes applications by email and telephone and has no course catalogue with enrolment. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
+- Five designs, Business, Portfolio, Restaurant, Education and Medical, can be imported. The other five (all Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **None of the designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map; Education takes applications by email and telephone and has no course catalogue with enrolment; Medical takes appointments by telephone, email or at the desk and has no doctor directory with search. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
 - The texts, names, prices and figures of all designs are invented sample content; each footer says so.
-- **The fonts of Portfolio, Restaurant and Education are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
+- **Medical's sample texts are not medical advice** and say so; a real clinic must have its own texts checked.
+- **The fonts of Portfolio, Restaurant, Education and Medical are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
 - Portfolio has no social media links: there are no accounts to point at, and a placeholder link would lead nowhere.
 - Text over pictures (Restaurant's two pictured bands) cannot be checked for contrast by axe-core; it was calculated by hand for the brightest part of each picture (6.4:1 at worst) and depends on the veil staying dark if the picture is replaced.
 - All designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
@@ -163,5 +173,5 @@ Each is built with the first design that needs it, rather than against invented 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b continues: Medical (the last free-tier design), then the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine).
+2. Phase 7b continues with the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine). They need parts of the importer that do not exist yet: Elementor Pro Theme Builder templates in a package, and for Shop, WooCommerce products.
 3. A decision on the forms plugin, so the contact pages can carry a form.

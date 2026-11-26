@@ -1,0 +1,80 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.jpg",
+		"alt": "Illustration of a doctor in a white coat with a stethoscope",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "doctor-1",
+		"file": "doctor-1.jpg",
+		"alt": "Illustrated portrait of Dr Amara Okafor",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "doctor-2",
+		"file": "doctor-2.jpg",
+		"alt": "Illustrated portrait of Dr Daniel Mbeki",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "doctor-3",
+		"file": "doctor-3.jpg",
+		"alt": "Illustrated portrait of Dr Hanna Lindqvist",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "doctor-4",
+		"file": "doctor-4.jpg",
+		"alt": "Illustrated portrait of Dr Peter Varga",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "building",
+		"file": "building.jpg",
+		"alt": "The clinic building, with a cross above the door",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "reception",
+		"file": "reception.jpg",
+		"alt": "The reception desk and waiting area",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "room",
+		"file": "room.jpg",
+		"alt": "A consulting room with an examination couch and a monitor",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "family",
+		"file": "family.jpg",
+		"alt": "Three patients of different ages",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "cardio",
+		"file": "cardio.jpg",
+		"alt": "A heart with a heartbeat line across it",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+	}
+]

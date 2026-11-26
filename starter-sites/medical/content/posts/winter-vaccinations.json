@@ -1,0 +1,12 @@
+{
+	"uid": "medical:posts:winter-vaccinations",
+	"title": "Getting ready for winter: who is offered which vaccination",
+	"slug": "winter-vaccinations",
+	"excerpt": "Vaccination clinics run every Tuesday and Thursday afternoon from October. Who is invited, what to bring and how long it takes.",
+	"featured": "ofss://media/note-3",
+	"categories": [
+		"Clinic news"
+	],
+	"days_ago": 36,
+	"content": "<!-- wp:paragraph -->\n<p>From October, vaccination clinics run every Tuesday and Thursday afternoon. You do not need to see a doctor first; a nurse will go through a short list of questions with you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Who is invited</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Invitations follow the national recommendations for the season, which change from year to year. If you are not sure whether you are included, ask at reception or call us.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What to bring</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Your vaccination record, if you have one</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Your insurance card</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>A short-sleeved top</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p>Allow twenty minutes, including the wait afterwards. <a href=\"ofss://page/appointment\">Appointments can be made by telephone</a>.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><em>This article is general information and not personal medical advice. If you are worried about your health, please make an appointment.</em></p>\n<!-- /wp:paragraph -->"
+}

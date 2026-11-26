@@ -1,0 +1,1712 @@
+{
+	"uid": "medical:pages:doctors",
+	"title": "Doctors",
+	"slug": "doctors",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000107",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "80",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "0000106",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 68,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000103",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Doctors",
+									"header_size": "p",
+									"title_color": "#0B6B69",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.6,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000104",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The people you will see",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000105",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Four of our twenty-four. Each has a profile with their clinic days, so you can ask for them by name.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 20,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000121",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000120",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 4,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000010d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "14",
+										"right": "14",
+										"bottom": "14",
+										"left": "14",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000108",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/doctor-1",
+												"url": "ofss://media/doctor-1"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "80",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/doctor",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000010c",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "4",
+												"right": "8",
+												"bottom": "8",
+												"left": "8",
+												"isLinked": false
+											}
+										},
+										"elements": [
+											{
+												"id": "0000109",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Cardiology",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000010a",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Amara Okafor",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000010b",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Heart rhythm and blood pressure. With the clinic since 2014.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000113",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "14",
+										"right": "14",
+										"bottom": "14",
+										"left": "14",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000010e",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/doctor-2",
+												"url": "ofss://media/doctor-2"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "80",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/doctor",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000112",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "4",
+												"right": "8",
+												"bottom": "8",
+												"left": "8",
+												"isLinked": false
+											}
+										},
+										"elements": [
+											{
+												"id": "000010f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Family medicine",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000110",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Daniel Mbeki",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000111",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Long-term conditions and men's health. Speaks English and French.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000119",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "14",
+										"right": "14",
+										"bottom": "14",
+										"left": "14",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000114",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/doctor-3",
+												"url": "ofss://media/doctor-3"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "80",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/doctor",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000118",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "4",
+												"right": "8",
+												"bottom": "8",
+												"left": "8",
+												"isLinked": false
+											}
+										},
+										"elements": [
+											{
+												"id": "0000115",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Paediatrics",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000116",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Hanna Lindqvist",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000117",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Newborns to teenagers. Runs the Saturday children's clinic.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "000011f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "14",
+										"right": "14",
+										"bottom": "14",
+										"left": "14",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000011a",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/doctor-4",
+												"url": "ofss://media/doctor-4"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "80",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/doctor",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011e",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "4",
+												"right": "8",
+												"bottom": "8",
+												"left": "8",
+												"isLinked": false
+											}
+										},
+										"elements": [
+											{
+												"id": "000011b",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Orthopaedics",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000011c",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Peter Varga",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000011d",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Knees, shoulders and backs. Thirty years in practice.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000012c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "0000124",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 60,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000122",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The wider team",
+									"header_size": "p",
+									"title_color": "#0B6B69",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.6,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000123",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Not only doctors",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "000012b",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000126",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000125",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-nurse",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Nurses",
+											"description_text": "Eight nurses run the vaccination, wound and diabetes clinics, and answer the telephone in the morning.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000128",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000127",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-walking",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Physiotherapists",
+											"description_text": "Three physiotherapists share a gym on the second floor with the orthopaedic department.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000012a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000129",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-headset",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Reception",
+											"description_text": "Five people at the desk who know the appointment book better than anyone.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000134",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0A3F42"
+				},
+				"elements": [
+					{
+						"id": "0000133",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000012f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000012d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Need to see someone this week?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "000012e",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Most patients are seen within three working days. Urgent appointments are kept free every morning.</p>",
+											"text_color": "#CFE6E1",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000132",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"flex_justify_content": "flex-end",
+									"flex_justify_content_mobile": "flex-start",
+									"flex_wrap": "wrap"
+								},
+								"elements": [
+									{
+										"id": "0000130",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book an appointment",
+											"link": {
+												"url": "ofss://page/appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0A3F42",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#BFE5DE"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000131",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Call us",
+											"link": {
+												"url": "tel:+15550100191",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#FFFFFF",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#CFE6E1",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#FFFFFF",
+											"button_hover_border_color": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

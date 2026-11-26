@@ -2,7 +2,7 @@
 	"id": "medical",
 	"order": 9,
 	"name": "Medical",
-	"summary": "A calm, trustworthy site for clinics: departments, doctors, patient information and appointments.",
+	"summary": "A calm, clear site for a clinic or practice: departments, a department page, doctors with profiles, how to book, patient information and health notes.",
 	"category": "health",
 	"tags": [
 		"clinic",
@@ -11,23 +11,23 @@
 		"dentist"
 	],
 	"tier": "free",
-	"status": "coming_soon",
+	"status": "available",
 	"version": "1.0.0",
 	"colors": [
-		"#0e6e6e",
-		"#bfe9e4",
+		"#0b6b69",
+		"#bfe5de",
 		"#ffffff"
 	],
 	"pages": [
 		"Home",
 		"About",
 		"Departments",
-		"Service Details",
+		"Department Details",
 		"Doctors",
 		"Doctor Profile",
 		"Book an Appointment",
 		"Patient Information",
-		"Blog",
+		"Health Notes (blog)",
 		"Single Post",
 		"Contact",
 		"404"
@@ -37,7 +37,7 @@
 		"wordpress": "6.8",
 		"php": "7.4",
 		"theme": "1.1.0",
-		"importer": "1.0.0",
+		"importer": "0.4.0",
 		"plugins": [
 			{
 				"slug": "elementor",
@@ -47,7 +47,20 @@
 				"source": "wordpress.org",
 				"required": true
 			}
-		]
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"counter",
+				"heading",
+				"icon",
+				"icon-box",
+				"icon-list",
+				"image",
+				"of-nav-menu",
+				"text-editor"
+			]
+		}
 	},
 	"editable": {
 		"404": "elementor",
@@ -57,5 +70,19 @@
 		"blog": "theme",
 		"single": "theme"
 	},
-	"demo_url": ""
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Departments",
+			"file": "departments.png"
+		},
+		{
+			"title": "Doctor profile",
+			"file": "doctor.png"
+		},
+		{
+			"title": "Appointments",
+			"file": "appointments.png"
+		}
+	]
 }

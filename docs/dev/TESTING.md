@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Medical starter site](#the-medical-starter-site--test-report): Phase 7b, part 4; the free tier is complete
 - [Education starter site](#the-education-starter-site--test-report): Phase 7b, part 3
 - [Restaurant starter site](#the-restaurant-starter-site--test-report): Phase 7b, part 2, the first dark design
 - [Portfolio starter site and fonts of a design](#the-portfolio-starter-site--test-report): Phase 7b, part 1
@@ -9,6 +10,32 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Medical starter site — Test Report
+
+Phase 7b, part 4, plugin 0.4.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6 and Elementor 4.4.2 (free version only), in Chromium. With this design, all five free-tier designs exist.
+
+| Suite | Result |
+| --- | --- |
+| Medical, `tests/e2e/medical.test.js` | **11 of 11 passed** |
+| All browser checks together | **94 of 94 passed** (11 each for the five designs, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, plugin PHP checks, library tools | **80 of 80, 138 of 138, 49 of 49 passed** |
+| PHPCS (no PHP changed since the Restaurant report) | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+The eleven checks are the shared ones, on twelve addresses (ten pages, an article, an address that does not exist) at the nine widths: 108 page views. Headings and text in Plus Jakarta Sans, from the site's own address. axe-core on all twelve addresses at 390 and 1440 px: no violations.
+
+**Contrast, measured:** headings 15.0:1 on white and 13.3:1 on the page; text 8.0:1 on white, 7.1:1 on the page, 7.0:1 on the sand band; teal (links, labels, outline buttons) 6.3:1 on white, 5.6:1 on the page, 5.5:1 on sand; white on teal buttons 6.3:1; text on the deep bands 8.9:1 and on the footer 11.4:1; the emergency notice 12.7:1.
+
+**Found by the tests and fixed:**
+
+1. Every page was 181px wider than a 1440px screen and 47px wider than a phone: the block holding the name in the header had no width, and an Elementor container without one takes the full width of its parent.
+2. axe-core: "Links must have discernible text" on ten pages. The mark in the header was a link with no text, and Elementor's Icon Box, given a link, also links its bare icon. The mark is no longer a link (the name next to it is), and cards carry a named text link ("About cardiology", "How to book") instead of a linked icon box.
+
+## Not covered
+
+As for the other designs. In addition: **the texts were not reviewed by a medical professional.** They describe how a practice works and avoid advice, but that is the judgement of a designer, not of a doctor.
 
 # The Education starter site — Test Report
 
