@@ -394,6 +394,44 @@ if ( ! $elementor->has_theme_builder() ) {
 }
 
 /* ---------------------------------------------------------------------- */
+ofss_section( 'Products of a store (needs WooCommerce active in the test site)' );
+
+if ( ! function_exists( 'wc_get_product' ) ) {
+	echo "  --    skipped: WooCommerce is not active. Run with \"plugin:woocommerce=on\" to include these checks.\n";
+} else {
+	$store_baseline = ofss_fingerprint();
+	ofss_cloud( 'available-shop' );
+	delete_option( 'ofss_catalog' );
+	$state = ofss_finish( $runner, $runner->start( 'reference-shop' ) );
+	ofss_check( 'a design with products imports', ! is_wp_error( $state ) && 'done' === $state['status'] && array() === $state['warnings'] );
+	ofss_check( 'the summary counts the products', 2 === (int) ( $state['counts']['products'] ?? 0 ) );
+
+	$mug  = wc_get_product( (int) ( $state['posts']['product/mug'] ?? 0 ) );
+	$bowl = wc_get_product( (int) ( $state['posts']['product/bowl'] ?? 0 ) );
+	ofss_check( 'both are published simple products', $mug && $bowl && 'simple' === $mug->get_type() && 'publish' === $mug->get_status() && 'publish' === $bowl->get_status() );
+	ofss_check( 'name, address and prices are those of the package', $mug && 'Blue mug' === $mug->get_name() && 'blue-mug' === $mug->get_slug() && '18' === $mug->get_regular_price() && '14.50' === $mug->get_sale_price() && $bowl && '24' === $bowl->get_regular_price() && '' === $bowl->get_sale_price() );
+	ofss_check( 'the picture and the gallery are imported images', $mug && (int) $mug->get_image_id() === (int) $state['media']['hero'] && array( (int) $state['media']['hero'] ) === array_map( 'intval', $mug->get_gallery_image_ids() ) );
+	ofss_check( 'the featured product is marked', $mug && $mug->get_featured() && $bowl && ! $bowl->get_featured() );
+	$tableware = get_term_by( 'name', 'Tableware', 'product_cat' );
+	ofss_check( 'both are in one new category, tagged with the run', $tableware && $mug && array( $tableware->term_id ) === $mug->get_category_ids() && array( $tableware->term_id ) === $bowl->get_category_ids() && $state['id'] === get_term_meta( $tableware->term_id, '_ofss_run', true ) );
+	ofss_check( 'a link from one product to another is its address', $mug && $bowl && false !== strpos( $mug->get_description(), get_permalink( $bowl->get_id() ) ) && false === strpos( $mug->get_description(), 'ofss://' ) );
+	$home = (string) get_post_meta( (int) $state['posts']['page/home'], '_elementor_data', true );
+	ofss_check( 'links to the shop and to a product are real addresses', false === strpos( $home, 'ofss://' ) && false !== strpos( $home, wp_json_encode( wc_get_page_permalink( 'shop' ) ) ) && false !== strpos( $home, wp_json_encode( get_permalink( $mug->get_id() ) ) ) );
+	ofss_check( 'products are tagged with the run and their identity', $mug && $state['id'] === get_post_meta( $mug->get_id(), '_ofss_run', true ) && 'reference-shop:products:mug' === get_post_meta( $mug->get_id(), '_ofss_uid', true ) );
+
+	$mug_id = $mug ? $mug->get_id() : 0;
+	$rollback->run( $state );
+	ofss_reset_run();
+	ofss_check( 'a rollback removes the products and their category', array() === get_posts( array( 'post_type' => 'product', 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => '_ofss_site', 'meta_value' => 'reference-shop' ) ) && null === get_post( $mug_id ) && ! get_term_by( 'name', 'Tableware', 'product_cat' ) );
+	if ( ofss_fingerprint() !== $store_baseline ) {
+		echo '        ', wp_json_encode( array_diff_assoc( ofss_fingerprint(), $store_baseline ) ), ' instead of ', wp_json_encode( array_diff_assoc( $store_baseline, ofss_fingerprint() ) ), "\n";
+	}
+	ofss_check( 'the test site is clean again', ofss_fingerprint() === $store_baseline );
+	ofss_cloud( 'available' );
+	delete_option( 'ofss_catalog' );
+}
+
+/* ---------------------------------------------------------------------- */
 ofss_section( 'Damaged or altered downloads' );
 
 $damage = array(

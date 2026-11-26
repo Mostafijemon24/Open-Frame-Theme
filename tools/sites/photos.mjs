@@ -40,7 +40,7 @@ const sleep = ( ms ) => new Promise( ( done ) => setTimeout( done, ms ) );
 const plain = ( html ) => String( html || '' ).replace( /<[^>]+>/g, '' ).replace( /&amp;/g, '&' ).replace( /&quot;/g, '"' ).replace( /&#0?39;/g, "'" ).replace( /\s+/g, ' ' ).trim();
 
 /** A request that waits and tries again when the server asks for fewer requests. */
-async function request( url, tries = 10 ) {
+async function request( url, tries = 14 ) {
 	for ( let attempt = 1; ; attempt++ ) {
 		let status = 0;
 		let wait = 0;

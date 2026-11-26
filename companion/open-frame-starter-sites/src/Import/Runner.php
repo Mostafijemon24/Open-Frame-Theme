@@ -527,9 +527,13 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|posts|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|products|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
 		if ( 'posts' === $match[1] ) {
 			return $this->import_post( $state, $match[2], $data );
+		}
+
+		if ( 'products' === $match[1] ) {
+			return $this->import_product( $state, $match[2], $data );
 		}
 
 		if ( 'templates' === $match[1] ) {
@@ -676,6 +680,83 @@ class Runner {
 		}
 
 		$state['posts'][ 'post/' . $name ] = (int) $post_id;
+		++$state['cursor'];
+
+		return false;
+	}
+
+	/**
+	 * Create one product of the design, as a simple WooCommerce product.
+	 *
+	 * Products come after the images, so each can have its picture. The
+	 * store's own pages (shop, cart, checkout, account) are WooCommerce's.
+	 *
+	 * @param array  $state Run.
+	 * @param string $name  Name of the product inside the package.
+	 * @param array  $data  Product data from the package.
+	 * @return false|WP_Error
+	 */
+	private function import_product( array &$state, $name, array $data ) {
+		if ( ! class_exists( '\WC_Product_Simple' ) || ! function_exists( 'wc_get_product' ) ) {
+			return new WP_Error( 'ofss_no_store', __( 'This design has products, and WooCommerce is not active. Activate WooCommerce and try again.', 'open-frame-starter-sites' ) );
+		}
+
+		$uid      = $state['site'] . ':products:' . $name;
+		$existing = $this->find( $uid );
+		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
+		$product  = $existing ? wc_get_product( $existing ) : null;
+		if ( ! $product instanceof \WC_Product ) {
+			$product  = new \WC_Product_Simple();
+			$existing = 0;
+		}
+
+		$categories = array();
+		foreach ( array_slice( (array) ( $data['categories'] ?? array() ), 0, 5 ) as $category ) {
+			$category = sanitize_text_field( (string) $category );
+			$term     = term_exists( $category, 'product_cat' );
+			if ( ! $term ) {
+				$term = wp_insert_term( $category, 'product_cat' );
+				if ( ! is_wp_error( $term ) ) {
+					update_term_meta( $term['term_id'], '_ofss_run', $state['id'] );
+				}
+			}
+			if ( ! is_wp_error( $term ) && $term ) {
+				$categories[] = (int) $term['term_id'];
+			}
+		}
+
+		$gallery = array();
+		foreach ( array_slice( (array) ( $data['gallery'] ?? array() ), 0, 8 ) as $reference ) {
+			$gallery[] = $resolver->id( $reference );
+		}
+
+		$product->set_name( sanitize_text_field( (string) ( $data['title'] ?? $name ) ) );
+		$product->set_slug( sanitize_title( (string) ( $data['slug'] ?? $name ) ) );
+		$product->set_status( 'publish' );
+		$product->set_catalog_visibility( 'visible' );
+		$product->set_short_description( wp_kses_post( (string) ( $data['excerpt'] ?? '' ) ) );
+		$product->set_description( wp_kses_post( (string) $resolver->resolve( (string) ( $data['content'] ?? '' ) ) ) );
+		$product->set_regular_price( wc_format_decimal( (string) ( $data['price'] ?? '' ) ) );
+		$product->set_sale_price( isset( $data['sale_price'] ) ? wc_format_decimal( (string) $data['sale_price'] ) : '' );
+		$product->set_featured( ! empty( $data['featured'] ) );
+		$product->set_image_id( $resolver->id( $data['image'] ?? '' ) );
+		$product->set_gallery_image_ids( array_values( array_filter( $gallery ) ) );
+		if ( $categories ) {
+			$product->set_category_ids( $categories );
+		}
+
+		$post_id = (int) $product->save();
+		if ( ! $post_id ) {
+			return new WP_Error( 'ofss_content', __( 'A product of this design could not be created.', 'open-frame-starter-sites' ) );
+		}
+
+		if ( ! $existing ) {
+			$this->tag( $state, $post_id, $uid );
+			// Only designs with a store count products, so other summaries stay as they were.
+			$state['counts']['products'] = (int) ( $state['counts']['products'] ?? 0 ) + 1;
+		}
+
+		$state['posts'][ 'product/' . $name ] = $post_id;
 		++$state['cursor'];
 
 		return false;
@@ -1005,7 +1086,7 @@ class Runner {
 	 * @return string[] Entry names.
 	 */
 	private function documents( array $state ) {
-		$names = array_values( preg_grep( '#^content/(pages|posts|site-parts|templates)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
+		$names = array_values( preg_grep( '#^content/(pages|posts|products|site-parts|templates)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
 		sort( $names );
 
 		return $names;
@@ -1020,7 +1101,7 @@ class Runner {
 	private function find( $uid ) {
 		$found = get_posts(
 			array(
-				'post_type'   => array( 'page', 'post', 'elementor_library', SiteParts::POST_TYPE ),
+				'post_type'   => array( 'page', 'post', 'product', 'elementor_library', SiteParts::POST_TYPE ),
 				'post_status' => array( 'publish', 'draft', 'private', 'pending' ),
 				'numberposts' => 1,
 				'fields'      => 'ids',

@@ -88,7 +88,7 @@ $validator = new CatalogValidator( $config );
 $built          = json_decode( file_get_contents( OFT_LIBRARY . '/v1/catalog.json' ), true );
 $full           = json_decode( $built['signed'], true );
 $raw            = $full;
-$raw['sites']   = array_values( array_filter( $full['sites'], fn( $s ) => ! in_array( $s['id'], array( 'reference', 'reference-pro' ), true ) ) );
+$raw['sites']   = array_values( array_filter( $full['sites'], fn( $s ) => ! in_array( $s['id'], array( 'reference', 'reference-pro', 'reference-shop' ), true ) ) );
 $raw_reference  = array_values( array_filter( $full['sites'], fn( $s ) => 'reference' === $s['id'] ) )[0];
 // A site that is not out yet, made up so that the checks do not depend on which
 // real designs are finished: the base for the altered entries below.

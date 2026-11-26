@@ -69,6 +69,17 @@ const build = ( t, src, privateKeys = [ key.privateKey ] ) => {
 /** Add a Theme Builder template to the reference site of the sources. */
 const template = ( src, change ) => { fs.mkdirSync( path.join( src, 'reference/content/templates' ), { recursive: true } ); const data = { uid: 'reference:templates:header', title: 'Header', type: 'header', conditions: [ [ 'include', 'general' ] ], elementor: { content: [] } }; change( data ); fs.writeFileSync( path.join( src, 'reference/content/templates/header.json' ), JSON.stringify( data ) ); };
 
+/** Add a product to the reference site; with "store", the site also requires WooCommerce. */
+const product = ( src, change, store = false ) => {
+	if ( store ) {
+		edit( src, 'reference/site.json', ( data ) => void data.requires.plugins.push( { slug: 'woocommerce', name: 'WooCommerce', file: 'woocommerce/woocommerce.php', source: 'wordpress.org', required: true } ) );
+	}
+	fs.mkdirSync( path.join( src, 'reference/content/products' ), { recursive: true } );
+	const data = { uid: 'reference:products:mug', title: 'Mug', price: '18', image: 'ofss://media/hero' };
+	change( data );
+	fs.writeFileSync( path.join( src, 'reference/content/products/mug.json' ), JSON.stringify( data ) );
+};
+
 /** Change a JSON file of the sources. */
 const edit = ( src, file, change ) => {
 	const full = path.join( src, file );
@@ -140,6 +151,19 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 
 	// The tools read sources only; unknown source fields (such as preview colours) do not leak into the catalog.
 	assert.ok( catalog.sites.every( ( site ) => ! ( 'colors' in site ) && ! ( 'dir' in site ) && ! ( 'order' in site ) ) );
+} );
+
+test( 'a design with a store builds, and its products are part of the package', ( t ) => {
+	const dir = fs.mkdtempSync( path.join( os.tmpdir(), 'ofss-shop-' ) );
+	t.after( () => fs.rmSync( dir, { recursive: true, force: true } ) );
+	fs.cpSync( path.join( ROOT, 'tests/fixtures/sites/reference-shop' ), path.join( dir, 'reference-shop' ), { recursive: true } );
+	fs.copyFileSync( path.join( ROOT, 'starter-sites/categories.json' ), path.join( dir, 'categories.json' ) );
+	const { out, result } = build( t, dir );
+	assert.equal( result.packages, 1 );
+	const manifest = readJson( path.join( out, 'v1/sites/reference-shop/1.0.0/manifest.json' ) );
+	matches( 'manifest.schema.json', manifest );
+	assert.deepEqual( Object.keys( manifest.files ).filter( ( name ) => name.startsWith( 'content/products/' ) ), [ 'content/products/bowl.json', 'content/products/mug.json' ] );
+	assert.ok( manifest.requires.plugins.some( ( plugin ) => plugin.slug === 'woocommerce' && plugin.source === 'wordpress.org' ) );
 } );
 
 test( 'a Pro design with Theme Builder templates builds, and its templates are part of the package', ( t ) => {
@@ -313,6 +337,11 @@ test( 'catalog entries that break the rules are not built', async ( t ) => {
 		'a Theme Builder template in a free design': [ ( src ) => template( src, () => {} ), /only a design of the Pro tier may bring Theme Builder templates/ ],
 		'a template of an unknown type': [ ( src ) => template( src, ( data ) => void ( data.type = 'popup' ) ), /type must be one of header, footer/ ],
 		'a template that does not say where it is used': [ ( src ) => template( src, ( data ) => void ( data.conditions = [] ) ), /conditions must say where the template is used/ ],
+		'a product in a design that does not require WooCommerce': [ ( src ) => product( src, () => {} ), /a design with products must require WooCommerce/ ],
+		'a product without a usable price': [ ( src ) => product( src, ( data ) => void ( data.price = 'cheap' ), true ), /a product needs a title and a price/ ],
+		'a product without a picture': [ ( src ) => product( src, ( data ) => void delete data.image, true ), /a product needs a picture/ ],
+		'a link to the shop in a design without a store': [ ( src ) => edit( src, 'reference/site/menus.json', ( data ) => void data[ 0 ].items.push( { title: 'Shop', url: 'ofss://store/shop' } ) ), /ofss:\/\/store\/shop does not exist in this package/ ],
+		'a link to a store page that does not exist': [ ( src ) => { product( src, () => {}, true ); edit( src, 'reference/site/menus.json', ( data ) => void data[ 0 ].items.push( { title: 'Wishlist', url: 'ofss://store/wishlist' } ) ); }, /ofss:\/\/store\/wishlist does not exist in this package/ ],
 	};
 
 	for ( const [ name, [ breakIt, message ] ] of Object.entries( cases ) ) {

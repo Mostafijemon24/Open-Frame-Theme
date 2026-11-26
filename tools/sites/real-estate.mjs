@@ -12,10 +12,9 @@
  * photos.json and CREDITS.md. See brief.md in the site folder for the design decisions
  * this file implements.
  */
-import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, media, menu, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, media, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'real-estate';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -604,13 +603,7 @@ const themeMods = {
 };
 
 // The photographs, with where each came from (written by tools/sites/photos.mjs).
-const mediaIndex = JSON.parse( fs.readFileSync( path.join( OUT, 'photos.json' ), 'utf8' ) ).map( ( photo ) => ( {
-	uid: photo.uid,
-	file: photo.file,
-	alt: photo.alt,
-	licence: `${ photo.licence === 'CC0' ? 'CC0-1.0' : photo.licence }. Photograph by ${ photo.author }, from ${ photo.source }.`,
-	author: photo.author,
-} ) );
+const mediaIndex = photoIndex( OUT );
 
 const fonts = [
 	{ family: SERIF, weight: '200 800', style: 'normal', file: 'newsreader-latin.woff2', licence: 'OFL-1.1. Copyright 2020 The Newsreader Project Authors.' },

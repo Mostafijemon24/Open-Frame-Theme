@@ -169,15 +169,23 @@ Each is built with the first design that needs it, rather than against invented 
 - **Sample content is marked:** the footer says the agency, homes, prices and figures are examples; the client quote says it is a sample.
 - **Budgets:** a design with photographs may carry 360 KB per picture and 4 MB in total (here 3.1 MB); drawn designs keep 100 KB and 1 MB. The library tests also check that every photograph has a record with a free licence.
 
+### Phase 7b, groundwork for the store (plugin 0.6.0)
+
+- **Products in a package:** `content/products/<name>.json` becomes a simple WooCommerce product with its name, address, short and long description, price, sale price, picture, gallery, categories and "featured" mark. A design with products must require WooCommerce, which the Starter Sites screen installs from WordPress.org like Elementor.
+- **Links into the store:** `ofss://store/shop`, `/cart`, `/checkout` and `/account` become the addresses of WooCommerce's own pages; `ofss://product/<name>` the address of a product.
+- **Rollback** removes the products and the product categories the import created.
+- **Tests:** a "Reference Shop" fixture; twelve importer checks that run when WooCommerce is active in the test site (CI runs the importer checks a second time with it); six new library tool checks.
+- **Not built:** variable products, attributes, stock, tax and shipping settings, and Elementor Pro's shop templates. The store pages are WooCommerce's, styled by the theme.
+
 ## Verified (executed 2026-11-26)
 
 - PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings. (CI found three comment-alignment errors in the plugin in the Agency and SaaS commits, which the local check had missed; corrected in the Real Estate commit.)
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Import engine checks: 80 of 80 pass without Elementor Pro and 92 of 92 with it (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
+- Import engine checks: 80 of 80 pass without Elementor Pro and WooCommerce, 92 of 92 with Elementor Pro (twelve checks for Theme Builder templates) and 92 of 92 with WooCommerce (twelve checks for products), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
 - Browser checks: 127 of 127 pass with Elementor Pro in the test site (94 without it, where the Agency, SaaS and Real Estate files are skipped). 11 for each of the eight designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
-- Library tools: 53 of 53 pass. Worker: 10 of 10 pass.
+- Library tools: 59 of 59 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
 ## Not verified
@@ -205,7 +213,7 @@ Each is built with the first design that needs it, rather than against invented 
 - All designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
 - Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
 - Site parts apply to the whole site; per-page display conditions are not built.
-- Theme 1.1.0 and plugin 0.5.0 are not tagged or released.
+- Theme 1.1.0 and plugin 0.6.0 are not tagged or released.
 - The plugin's readme names Cloudflare's privacy policy for the library; the library needs its own short privacy statement before the plugin is submitted to WordPress.org.
 - The user guide has no screenshots for the Elementor and WooCommerce chapters and no chapter for the plugin yet.
 - With the global-styles option on, Elementor's base stylesheet also loads on theme templates (about 7 KB compressed).

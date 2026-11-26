@@ -35,6 +35,9 @@ export const LIMITS = { packageBytes: 2 * 1024 * 1024, imageBytes: 400 * 1024, p
 /** Kinds of Elementor Pro Theme Builder template a design may bring. */
 const TEMPLATE_TYPES = [ 'header', 'footer', 'single-post', 'single-page', 'archive', 'search-results', 'error-404' ];
 
+/** The pages WooCommerce owns, which a design can link to as ofss://store/<name>. */
+const STORE_PAGES = [ 'shop', 'cart', 'checkout', 'account' ];
+const PRICE = /^\d+(\.\d{1,2})?$/;
 const MEDIA_TYPES = { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.avif': 'image/avif', '.gif': 'image/gif' };
 
 export const sha256 = ( data ) => crypto.createHash( 'sha256' ).update( data ).digest( 'hex' );
@@ -353,7 +356,8 @@ export function collectPackage( site ) {
 		fonts.push( { family: item.family, weight: String( item.weight || '400' ), style: item.style || 'normal', sha256: sha256( data ), bytes: data.length, licence: item.licence, source: file } );
 	}
 
-	// Pages and site parts.
+	// Pages, site parts, templates and products.
+	const hasStore = ( ( site.requires && site.requires.plugins ) || [] ).some( ( plugin ) => plugin.slug === 'woocommerce' && plugin.source === 'wordpress.org' );
 	const pages = [];
 	const widgets = new Set();
 	const uids = new Set();
@@ -378,6 +382,17 @@ export function collectPackage( site ) {
 				problems.push( `${ name }: only a design of the Pro tier may bring Theme Builder templates` );
 			}
 		}
+		if ( match[ 1 ] === 'products' ) {
+			if ( ! hasStore ) {
+				problems.push( `${ name }: a design with products must require WooCommerce (requires.plugins)` );
+			}
+			if ( ! document.title || ! PRICE.test( String( document.price ?? '' ) ) || ( document.sale_price !== undefined && ! PRICE.test( String( document.sale_price ) ) ) ) {
+				problems.push( `${ name }: a product needs a title and a price such as "24" or "24.50"` );
+			}
+			if ( ! /^ofss:\/\/media\/[a-z0-9-]+$/.test( String( document.image || '' ) ) ) {
+				problems.push( `${ name }: a product needs a picture (image: "ofss://media/…")` );
+			}
+		}
 		if ( match[ 1 ] === 'pages' ) {
 			pages.push( { uid, title: String( document.title || '' ), ...( document.front_page ? { front_page: true } : {} ) } );
 		}
@@ -400,8 +415,8 @@ export function collectPackage( site ) {
 					problems.push( `${ name } (${ trail }): link to "${ host || url }" is not allowed; use ofss:// references` );
 				}
 			}
-			for ( const [ , kind, uid ] of value.matchAll( /ofss:\/\/(media|page|post|site-part|product|menu|term)\/([a-z0-9-]+)/g ) ) {
-				const known = kind === 'media' ? mediaUids.has( uid ) : kind === 'menu' || kind === 'term' ? true : uids.has( { page: 'pages', post: 'posts', 'site-part': 'site-parts', product: 'products' }[ kind ] + '/' + uid );
+			for ( const [ , kind, uid ] of value.matchAll( /ofss:\/\/(media|page|post|site-part|product|menu|term|store)\/([a-z0-9-]+)/g ) ) {
+				const known = kind === 'media' ? mediaUids.has( uid ) : kind === 'store' ? hasStore && STORE_PAGES.includes( uid ) : kind === 'menu' || kind === 'term' ? true : uids.has( { page: 'pages', post: 'posts', 'site-part': 'site-parts', product: 'products' }[ kind ] + '/' + uid );
 				if ( ! known ) {
 					problems.push( `${ name } (${ trail }): ofss://${ kind }/${ uid } does not exist in this package` );
 				}

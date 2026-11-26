@@ -454,7 +454,7 @@ Format version `1`. A package is a small ZIP of JSON, plus media and fonts addre
 │   ├── pages/{uid}.json        post fields, meta, template, Elementor document
 │   ├── site-parts/{uid}.json   header, footer, 404 + display conditions
 │   ├── posts/{uid}.json        blog posts (block content)
-│   └── products/{uid}.json     WooCommerce products (site 05)
+│   └── products/{uid}.json     WooCommerce products (site 05): title, slug, excerpt, content, price, sale_price, featured, image, gallery, categories
 ├── media/index.json        uid, sha256, bytes, mime, width, height, alt, licence
 ├── fonts/index.json        family, weight range, sha256, licence
 ├── LICENSES.md
@@ -495,7 +495,7 @@ Rules enforced by `tools/validate-package.mjs` at build time and again by the pl
 | Rule | Detail |
 | --- | --- |
 | File types | ZIP entries: `.json`, `.md` only. Media: `jpg`, `png`, `webp`, `avif`, `gif`. Fonts: `woff2`. No PHP, JavaScript, HTML or SVG. |
-| References | No numeric WordPress IDs and no authoring URLs. Images are `ofss://media/{uid}`, links are `ofss://page/{uid}`, menus `ofss://menu/{uid}`, terms `ofss://term/{uid}`. The importer resolves them to local IDs and URLs; an unresolved token fails validation. |
+| References | No numeric WordPress IDs and no authoring URLs. Images are `ofss://media/{uid}`, links are `ofss://page/{uid}`, products `ofss://product/{uid}`, menus `ofss://menu/{uid}`, terms `ofss://term/{uid}`, and the pages WooCommerce owns are `ofss://store/shop`, `/cart`, `/checkout` and `/account`. The importer resolves them to local IDs and URLs; an unresolved token fails validation. |
 | External URLs | Only hosts on an allow-list (for example map embeds and social profile placeholders). Everything else is rejected. |
 | Elementor content | Every widget type must be listed in `requires.elementor.widgets`. HTML widgets containing `<script>`, event-handler attributes or `javascript:` URLs are rejected. |
 | Settings | `theme-mods.json` and `options.json` may contain only allow-listed keys. `siteurl`, `home`, `admin_email`, user data, roles and active plugins can never be set by a package. |

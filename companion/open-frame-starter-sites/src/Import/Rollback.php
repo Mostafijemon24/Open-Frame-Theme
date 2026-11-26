@@ -83,7 +83,7 @@ class Rollback {
 
 		$posts = get_posts(
 			array(
-				'post_type'   => array( 'page', 'post', 'attachment', 'elementor_library', 'nav_menu_item', SiteParts::POST_TYPE ),
+				'post_type'   => array( 'page', 'post', 'product', 'attachment', 'elementor_library', 'nav_menu_item', SiteParts::POST_TYPE ),
 				'post_status' => array( 'publish', 'draft', 'private', 'pending', 'inherit', 'trash' ),
 				'numberposts' => -1,
 				'fields'      => 'ids',
@@ -123,15 +123,15 @@ class Rollback {
 
 		$categories = get_terms(
 			array(
-				'taxonomy'   => 'category',
+				// Product categories only exist while WooCommerce is active.
+				'taxonomy'   => taxonomy_exists( 'product_cat' ) ? array( 'category', 'product_cat' ) : 'category',
 				'hide_empty' => false,
-				'fields'     => 'ids',
 				'meta_key'   => '_ofss_run', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 				'meta_value' => $state['id'], // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			)
 		);
-		foreach ( is_wp_error( $categories ) ? array() : $categories as $category_id ) {
-			wp_delete_term( $category_id, 'category' );
+		foreach ( is_wp_error( $categories ) ? array() : $categories as $category ) {
+			wp_delete_term( $category->term_id, $category->taxonomy );
 		}
 
 		( new Fonts() )->remove_run( $state['id'] );

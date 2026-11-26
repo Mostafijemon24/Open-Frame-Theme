@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Products of a store](#products-of-a-store--test-report): plugin 0.6.0, groundwork for the Shop design
 - [Real Estate and the photography standard](#the-real-estate-starter-site-and-the-photography-standard--test-report): Phase 7b, part 7; the first design with real photographs
 - [SaaS starter site](#the-saas-starter-site--test-report): Phase 7b, part 6
 - [Agency starter site](#the-agency-starter-site--test-report): Phase 7b, part 5; the first design for Elementor Pro
@@ -14,6 +15,23 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Products of a store — Test Report
+
+Plugin 0.6.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and WooCommerce 11.3.1.
+
+| Suite | Result |
+| --- | --- |
+| Import engine with WooCommerce active, `tests/php/importer.php` | **92 of 92 passed** (the 80 as before and 12 for products) |
+| Import engine without WooCommerce | **80 of 80 passed**; the product checks are skipped with a message |
+| Plugin PHP checks | **138 of 138 passed** |
+| Library tools | **59 of 59 passed** (6 new) |
+| Starter Sites screen, `tests/e2e/starter-sites.test.js` | **21 of 21 passed** |
+| PHPCS, plugin | **exit code 0** |
+
+The twelve product checks import the "Reference Shop" fixture and look at the two products through WooCommerce's own functions: type and status, name, address, regular and sale price, picture and gallery, the "featured" mark, the shared category, a link from one product's description to the other, links from a page to the shop and to a product, the tags that let a rollback find them; then the plugin's rollback, after which neither products nor category exist and the test site matches its state before the import.
+
+**Not run for this change:** the browser checks of the eight designs (their code path is unchanged apart from two shared patterns; they run again with the next design), Theme Check and Plugin Check.
 
 # The Real Estate starter site and the photography standard — Test Report
 

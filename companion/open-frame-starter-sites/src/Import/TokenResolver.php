@@ -91,7 +91,7 @@ class TokenResolver {
 		}
 
 		return preg_replace_callback(
-			'#ofss://(media|page|post|site-part|product|menu)/([a-z0-9-]+)#',
+			'#ofss://(media|page|post|site-part|product|menu|store)/([a-z0-9-]+)#',
 			function ( $found ) {
 				$url = $this->url( $found[1], $found[2] );
 				if ( '' === $url ) {
@@ -131,6 +131,18 @@ class TokenResolver {
 
 		if ( 'menu' === $kind ) {
 			return (string) ( $this->menus[ $name ] ?? '' );
+		}
+
+		if ( 'store' === $kind ) {
+			// The shop, cart, checkout and account pages belong to WooCommerce, which knows where they are.
+			$pages = array(
+				'shop'     => 'shop',
+				'cart'     => 'cart',
+				'checkout' => 'checkout',
+				'account'  => 'myaccount',
+			);
+
+			return isset( $pages[ $name ] ) && function_exists( 'wc_get_page_permalink' ) ? (string) wc_get_page_permalink( $pages[ $name ] ) : '';
 		}
 
 		$id = $this->posts[ $kind . '/' . $name ] ?? 0;

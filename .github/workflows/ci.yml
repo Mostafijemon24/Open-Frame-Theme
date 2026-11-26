@@ -89,6 +89,11 @@ jobs:
         run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/starter-sites.php
       - name: Import engine checks
         run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/importer.php
+      - name: Import engine checks with a store (WooCommerce active)
+        run: |
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/env/state.php plugin:woocommerce=on
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/php/importer.php
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/env/state.php plugin:woocommerce=off
       - name: Browser checks
         # One file at a time: the files share one test site.
         run: node --test --test-concurrency=1 --test-reporter=spec tests/e2e/*.test.js

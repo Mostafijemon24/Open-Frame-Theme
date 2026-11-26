@@ -13,6 +13,7 @@
  *   soon           the same, plus a made-up design that is not out yet ("Upcoming")
  *   available      the same plus "Reference", a site that has a package
  *   available-pro  the ten sites plus "Reference Pro", a site with Theme Builder templates
+ *   available-shop the ten sites plus "Reference Shop", a site with WooCommerce products
  *   newer-importer the same, but "Reference" needs a newer version of the plugin
  *   install        the same plus a site that requires a small plugin from WordPress.org
  *   partial        the same plus entries that must be rejected
@@ -101,15 +102,19 @@ $secret = sodium_crypto_sign_secretkey( sodium_crypto_sign_seed_keypair( $seed )
 $built   = json_decode( file_get_contents( "$tree/v1/catalog.json" ), true );
 $catalog = json_decode( $built['signed'], true );
 
-// "Reference" and "Reference Pro" are only listed when a test asks for them.
-$reference     = null;
-$reference_pro = null;
+// The reference sites are only listed when a test asks for them.
+$reference      = null;
+$reference_pro  = null;
+$reference_shop = null;
 foreach ( $catalog['sites'] as $index => $site ) {
 	if ( 'reference' === $site['id'] ) {
 		$reference = $site;
 		unset( $catalog['sites'][ $index ] );
 	} elseif ( 'reference-pro' === $site['id'] ) {
 		$reference_pro = $site;
+		unset( $catalog['sites'][ $index ] );
+	} elseif ( 'reference-shop' === $site['id'] ) {
+		$reference_shop = $site;
 		unset( $catalog['sites'][ $index ] );
 	}
 }
@@ -146,6 +151,10 @@ if ( 'available' === $mode || 'newer-importer' === $mode ) {
 
 if ( 'available-pro' === $mode ) {
 	array_unshift( $catalog['sites'], $reference_pro );
+}
+
+if ( 'available-shop' === $mode ) {
+	array_unshift( $catalog['sites'], $reference_shop );
 }
 
 if ( 'soon' === $mode ) {

@@ -112,6 +112,7 @@ mkdir -p "$DIR/library-sources"
 cp -r "$ROOT/starter-sites/." "$DIR/library-sources"
 cp -r "$ROOT/tests/fixtures/sites/reference" "$DIR/library-sources/reference"
 cp -r "$ROOT/tests/fixtures/sites/reference-pro" "$DIR/library-sources/reference-pro"
+cp -r "$ROOT/tests/fixtures/sites/reference-shop" "$DIR/library-sources/reference-shop"
 node "$ROOT/tools/library.mjs" build --sources "$DIR/library-sources" --out "$LIBRARY" \
 	--api "http://localhost:$CLOUD_PORT/v1" --cdn "http://localhost:$CLOUD_PORT/v1" --key "$DIR/dev.key"
 

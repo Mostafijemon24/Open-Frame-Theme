@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,10 @@ Only when you click a button that says it will: "Install and activate", "Activat
 A copy of the list of designs, the record of the last import, a short import history and the list of fonts a design brought (options starting with `ofss_`), plus those font files in `wp-content/uploads/open-frame-fonts`. All of this is removed when you delete the plugin. Imported pages and images are your content and stay.
 
 == Changelog ==
+
+= 0.6.0 =
+* New: a design can bring products for a WooCommerce store, with prices, pictures and categories, and link to the shop, cart, checkout and account pages. A rollback removes the products and their categories.
+* New: designs are illustrated with photographs; the source and licence of each one come with the design.
 
 = 0.5.0 =
 * New: Agency, the sixth complete design and the first for Elementor Pro: case studies, services, careers, a journal and a contact form, with header, footer and blog as Theme Builder templates.

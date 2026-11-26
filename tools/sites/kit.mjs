@@ -195,6 +195,25 @@ export function builders( id ) {
 }
 
 /** Write a JSON file, creating its folder. */
+/**
+ * The media index entries of a design's photographs, read from the record that
+ * tools/sites/photos.mjs wrote (photos.json in the design's folder).
+ *
+ * @param {string} out    The design's folder.
+ * @param {Object} [alts] Alt texts by uid, where the design names what the record only describes
+ *                        (a member of staff, a dish on the menu).
+ */
+export function photoIndex( out, alts = {} ) {
+	const file = path.join( out, 'photos.json' );
+	return ( fs.existsSync( file ) ? JSON.parse( fs.readFileSync( file, 'utf8' ) ) : [] ).map( ( photo ) => ( {
+		uid: photo.uid,
+		file: photo.file,
+		alt: alts[ photo.uid ] ?? photo.alt,
+		licence: `${ photo.licence === 'CC0' ? 'CC0-1.0' : photo.licence }. Photograph by ${ photo.author }, from ${ photo.source }.`,
+		author: photo.author,
+	} ) );
+}
+
 export function writeJson( file, data ) {
 	fs.mkdirSync( path.dirname( file ), { recursive: true } );
 	fs.writeFileSync( file, JSON.stringify( data, null, '\t' ) + '\n' );

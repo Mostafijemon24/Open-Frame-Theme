@@ -1,0 +1,17 @@
+{
+	"uid": "reference-shop:products:mug",
+	"title": "Blue mug",
+	"slug": "blue-mug",
+	"excerpt": "A mug, and it is blue.",
+	"content": "<p>Holds 300 ml. See also the <a href=\"ofss://product/bowl\">bowl</a>.</p>",
+	"price": "18",
+	"sale_price": "14.50",
+	"featured": true,
+	"image": "ofss://media/hero",
+	"gallery": [
+		"ofss://media/hero"
+	],
+	"categories": [
+		"Tableware"
+	]
+}
