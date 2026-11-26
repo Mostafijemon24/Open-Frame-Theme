@@ -51,6 +51,7 @@ function open_frame_defaults() {
 		'open_frame_section_spacing'     => 64,
 		'open_frame_blog_style'          => 'list',
 		'open_frame_blog_columns'        => 2,
+		'open_frame_blog_title'          => false,
 		'open_frame_excerpt_length'      => 30,
 		'open_frame_blog_layout'         => 'right-sidebar',
 		'open_frame_single_layout'       => 'right-sidebar',
@@ -242,6 +243,25 @@ function open_frame_customize_register( $wp_customize ) {
 				'max'  => 4,
 				'step' => 1,
 			),
+		)
+	);
+
+	// Title of the posts page, when the blog is not the front page.
+	$wp_customize->add_setting(
+		'open_frame_blog_title',
+		array(
+			'default'           => $defaults['open_frame_blog_title'],
+			'sanitize_callback' => 'open_frame_sanitize_checkbox',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		'open_frame_blog_title',
+		array(
+			'label'       => __( 'Show the title of the posts page', 'open-frame' ),
+			'description' => __( 'Applies when a page other than the front page lists your posts. The title is always available to screen readers.', 'open-frame' ),
+			'section'     => 'open_frame_layout',
+			'type'        => 'checkbox',
 		)
 	);
 

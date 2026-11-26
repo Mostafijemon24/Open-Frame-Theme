@@ -1,0 +1,1331 @@
+{
+	"uid": "business:pages:project-details",
+	"title": "Harbor Freight Lines",
+	"slug": "harbor-freight-lines",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000135",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "0000134",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 66,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000131",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Projects · Logistics",
+									"header_size": "p",
+									"title_color": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000132",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Harbor Freight Lines: from nine days to four",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000133",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>A regional carrier was losing contracts to faster rivals. The answer was fewer hubs, not more trucks.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000144",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "72",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "50",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "0",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF"
+				},
+				"elements": [
+					{
+						"id": "0000136",
+						"elType": "widget",
+						"widgetType": "image",
+						"settings": {
+							"image": {
+								"id": "ofss://media/project-harbor",
+								"url": "ofss://media/project-harbor"
+							},
+							"image_size": "full",
+							"image_border_radius": {
+								"unit": "px",
+								"top": "20",
+								"right": "20",
+								"bottom": "20",
+								"left": "20",
+								"isLinked": true
+							}
+						},
+						"elements": []
+					},
+					{
+						"id": "0000143",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 4,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000139",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 4,
+										"column": "4",
+										"row": "4",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000137",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Client",
+											"header_size": "p",
+											"title_color": "#46546A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000138",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Harbor Freight Lines",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"typography_font_weight": "600"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000013c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 4,
+										"column": "4",
+										"row": "4",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000013a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Sector",
+											"header_size": "p",
+											"title_color": "#46546A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000013b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Regional logistics",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"typography_font_weight": "600"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000013f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 4,
+										"column": "4",
+										"row": "4",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000013d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Duration",
+											"header_size": "p",
+											"title_color": "#46546A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000013e",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "14 weeks",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"typography_font_weight": "600"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000142",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 4,
+										"column": "4",
+										"row": "4",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000140",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Practices",
+											"header_size": "p",
+											"title_color": "#46546A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000141",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Operations, finance",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"typography_font_weight": "600"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000014f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF"
+				},
+				"elements": [
+					{
+						"id": "000014e",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000147",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000145",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "The challenge",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000146",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Seven depots, each planning its own routes. Parcels crossed the region twice before delivery, and customers had noticed.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000014a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000148",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What we did",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000149",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Modelled a year of consignments, then tested a three-hub network with the dispatchers who would run it. The pilot ran on one corridor for a month.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000014d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000014b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What changed",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000014c",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Lead time fell from nine days to four. Two major contracts were renewed, and fuel cost per parcel dropped by 17%.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000155",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "80",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0B1F3A"
+				},
+				"elements": [
+					{
+						"id": "0000154",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 4,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000150",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 4,
+									"prefix": "",
+									"suffix": "",
+									"title": "days average lead time, from 9",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#B7C4D8",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000151",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 17,
+									"prefix": "",
+									"suffix": "%",
+									"title": "lower fuel cost per parcel",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#B7C4D8",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000152",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 3,
+									"prefix": "",
+									"suffix": "",
+									"title": "hubs instead of seven depots",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#B7C4D8",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000153",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 2,
+									"prefix": "",
+									"suffix": "",
+									"title": "major contracts renewed",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#B7C4D8",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000159",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "0000158",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 20,
+								"column": "20",
+								"row": "20",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 78,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "0000156",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "“The plan came from our own dispatchers. Halden made sure we listened to them.”",
+									"header_size": "p",
+									"title_color": "#0B1F3A",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "custom",
+										"size": "clamp(1.4rem, 1.1rem + 1.4vw, 2rem)",
+										"sizes": []
+									},
+									"typography_font_weight": "600",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.3,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000157",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p><strong>Jonas Weber</strong>, Operations Director, Harbor Freight Lines</p>",
+									"align": "center"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000160",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#2456E6"
+				},
+				"elements": [
+					{
+						"id": "000015f",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000015c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000015a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Facing something similar?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "000015b",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>The details differ, the pattern rarely does. Tell us what you are seeing.</p>",
+											"text_color": "#DCE6FF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000015e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"flex_align_items": "flex-end",
+									"width": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_align_items_mobile": "flex-start"
+								},
+								"elements": [
+									{
+										"id": "000015d",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Start a conversation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0B1F3A",
+											"hover_color": "#0B1F3A",
+											"button_background_hover_color": "#F2A93B",
+											"size": "md"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

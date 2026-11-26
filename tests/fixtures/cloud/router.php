@@ -109,6 +109,14 @@ foreach ( $catalog['sites'] as $index => $site ) {
 }
 $catalog['sites'] = array_values( $catalog['sites'] );
 
+// A site that is not out yet, as the base for the altered entries below.
+$plain = null;
+foreach ( $catalog['sites'] as $site ) {
+	if ( 'portfolio' === $site['id'] ) {
+		$plain = $site;
+	}
+}
+
 if ( 'wrong-shape' === $mode ) {
 	$catalog = array(
 		'hello' => 'world',
@@ -128,7 +136,7 @@ if ( 'available' === $mode || 'newer-importer' === $mode ) {
 }
 
 if ( 'install' === $mode ) {
-	$site                        = $catalog['sites'][0];
+	$site                        = $plain;
 	$site['id']                  = 'install-test';
 	$site['name']                = 'Install Test';
 	$site['requires']['plugins'] = array(
@@ -144,7 +152,7 @@ if ( 'install' === $mode ) {
 }
 
 if ( 'partial' === $mode ) {
-	$good = $catalog['sites'][0];
+	$good = $plain;
 
 	// A preview image on a host the plugin must not trust.
 	$foreign                         = $good;

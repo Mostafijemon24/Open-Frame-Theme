@@ -1,0 +1,191 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#2456E6"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#0B1F3A"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#46546A"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#F2A93B"
+		}
+	],
+	"custom_colors": [
+		{
+			"_id": "oftint",
+			"title": "Tint",
+			"color": "#F3F6FB"
+		},
+		{
+			"_id": "ofline",
+			"title": "Line",
+			"color": "#DCE3EE"
+		},
+		{
+			"_id": "ofwhite",
+			"title": "White",
+			"color": "#FFFFFF"
+		}
+	],
+	"system_typography": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"typography_typography": "custom",
+			"typography_font_family": "Hanken Grotesk",
+			"typography_font_weight": "700"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"typography_typography": "custom",
+			"typography_font_family": "Hanken Grotesk",
+			"typography_font_weight": "600"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"typography_typography": "custom",
+			"typography_font_family": "Hanken Grotesk",
+			"typography_font_weight": "400"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"typography_typography": "custom",
+			"typography_font_family": "Hanken Grotesk",
+			"typography_font_weight": "600"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1200,
+		"sizes": []
+	},
+	"body_color": "#46546A",
+	"body_typography_typography": "custom",
+	"body_typography_font_family": "Hanken Grotesk",
+	"body_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"body_typography_font_weight": "400",
+	"body_typography_line_height": {
+		"unit": "em",
+		"size": 1.65,
+		"sizes": []
+	},
+	"link_normal_color": "#2456E6",
+	"link_hover_color": "#1A3FB4",
+	"h1_color": "#0B1F3A",
+	"h1_typography_typography": "custom",
+	"h1_typography_font_family": "Hanken Grotesk",
+	"h1_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.25rem, 1.35rem + 3.4vw, 3.75rem)",
+		"sizes": []
+	},
+	"h1_typography_font_weight": "700",
+	"h1_typography_line_height": {
+		"unit": "em",
+		"size": 1.08,
+		"sizes": []
+	},
+	"h1_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.02,
+		"sizes": []
+	},
+	"h2_color": "#0B1F3A",
+	"h2_typography_typography": "custom",
+	"h2_typography_font_family": "Hanken Grotesk",
+	"h2_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem)",
+		"sizes": []
+	},
+	"h2_typography_font_weight": "700",
+	"h2_typography_line_height": {
+		"unit": "em",
+		"size": 1.15,
+		"sizes": []
+	},
+	"h2_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.015,
+		"sizes": []
+	},
+	"h3_color": "#0B1F3A",
+	"h3_typography_typography": "custom",
+	"h3_typography_font_family": "Hanken Grotesk",
+	"h3_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+		"sizes": []
+	},
+	"h3_typography_font_weight": "700",
+	"h3_typography_line_height": {
+		"unit": "em",
+		"size": 1.25,
+		"sizes": []
+	},
+	"h4_color": "#0B1F3A",
+	"h4_typography_typography": "custom",
+	"h4_typography_font_family": "Hanken Grotesk",
+	"h4_typography_font_size": {
+		"unit": "px",
+		"size": 18,
+		"sizes": []
+	},
+	"h4_typography_font_weight": "700",
+	"h4_typography_line_height": {
+		"unit": "em",
+		"size": 1.3,
+		"sizes": []
+	},
+	"button_typography_typography": "custom",
+	"button_typography_font_family": "Hanken Grotesk",
+	"button_typography_font_size": {
+		"unit": "px",
+		"size": 16,
+		"sizes": []
+	},
+	"button_typography_font_weight": "600",
+	"button_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"button_text_color": "#FFFFFF",
+	"button_background_color": "#2456E6",
+	"button_hover_text_color": "#FFFFFF",
+	"button_hover_background_color": "#1A3FB4",
+	"button_border_radius": {
+		"unit": "px",
+		"top": "10",
+		"right": "10",
+		"bottom": "10",
+		"left": "10",
+		"isLinked": true
+	},
+	"button_padding": {
+		"unit": "px",
+		"top": "14",
+		"right": "24",
+		"bottom": "14",
+		"left": "24",
+		"isLinked": false
+	}
+}

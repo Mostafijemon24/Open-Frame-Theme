@@ -31,6 +31,13 @@ class TokenResolver {
 	private $posts;
 
 	/**
+	 * The page that becomes the front page, as "page/<name>", or an empty string.
+	 *
+	 * @var string
+	 */
+	private $front;
+
+	/**
 	 * References that pointed at nothing.
 	 *
 	 * @var string[]
@@ -42,10 +49,12 @@ class TokenResolver {
 	 *
 	 * @param array<string,int> $media Attachment IDs by media uid.
 	 * @param array<string,int> $posts Post IDs by "<kind>/<name>".
+	 * @param string            $front The page that becomes the front page, as "page/<name>".
 	 */
-	public function __construct( array $media, array $posts ) {
+	public function __construct( array $media, array $posts, $front = '' ) {
 		$this->media = $media;
 		$this->posts = $posts;
+		$this->front = (string) $front;
 	}
 
 	/**
@@ -112,6 +121,10 @@ class TokenResolver {
 		}
 
 		$id = $this->posts[ $kind . '/' . $name ] ?? 0;
+		if ( $id && $kind . '/' . $name === $this->front ) {
+			// It is not the front page yet while links are written, so its own address would be /<slug>/.
+			return home_url( '/' );
+		}
 
 		return $id ? (string) get_permalink( $id ) : '';
 	}

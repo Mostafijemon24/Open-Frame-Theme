@@ -1,0 +1,1343 @@
+{
+	"uid": "business:pages:team",
+	"title": "Team",
+	"slug": "team",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000165",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "0000164",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 66,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000161",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Team",
+									"header_size": "p",
+									"title_color": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000162",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The people in the room",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000163",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Four partners lead every engagement personally. Behind them, a team of analysts and specialists who have worked together for years.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000183",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF"
+				},
+				"elements": [
+					{
+						"id": "0000182",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000016c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "flex-start",
+									"flex_align_items_mobile": "stretch",
+									"flex_gap": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000167",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 20,
+												"column": "20",
+												"row": "20",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 38,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000166",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/team-1",
+														"url": "ofss://media/team-1"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "16",
+														"right": "16",
+														"bottom": "16",
+														"left": "16",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000016b",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 62,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000168",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Marit Halden",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 24,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000169",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Founding partner, strategy",
+													"header_size": "p",
+													"title_color": "#2456E6",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000016a",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Twenty years advising owner-led companies. Previously ran corporate development at a listed industrial group.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000173",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "flex-start",
+									"flex_align_items_mobile": "stretch",
+									"flex_gap": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000016e",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 20,
+												"column": "20",
+												"row": "20",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 38,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000016d",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/team-2",
+														"url": "ofss://media/team-2"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "16",
+														"right": "16",
+														"bottom": "16",
+														"left": "16",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000172",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 62,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000016f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Tomas Okafor",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 24,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000170",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Partner, operations",
+													"header_size": "p",
+													"title_color": "#2456E6",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000171",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Trained as a production engineer. Has redesigned plants, warehouses and one very busy hospital laundry.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "000017a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "flex-start",
+									"flex_align_items_mobile": "stretch",
+									"flex_gap": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000175",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 20,
+												"column": "20",
+												"row": "20",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 38,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000174",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/team-3",
+														"url": "ofss://media/team-3"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "16",
+														"right": "16",
+														"bottom": "16",
+														"left": "16",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000179",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 62,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000176",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Ines Carvalho",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 24,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000177",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Partner, finance",
+													"header_size": "p",
+													"title_color": "#2456E6",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000178",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Former group controller. Believes a forecast is only useful if the sales team recognises its own numbers in it.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000181",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "flex-start",
+									"flex_align_items_mobile": "stretch",
+									"flex_gap": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000017c",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 20,
+												"column": "20",
+												"row": "20",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 38,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000017b",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/team-4",
+														"url": "ofss://media/team-4"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "16",
+														"right": "16",
+														"bottom": "16",
+														"left": "16",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000180",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 62,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000017d",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Daniel Reyes",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 24,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000017e",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Principal, technology",
+													"header_size": "p",
+													"title_color": "#2456E6",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000017f",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Fifteen years delivering systems, long enough to prefer the boring option that the team can run on Monday.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000189",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "0000188",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000186",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000184",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Join us",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000185",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>We hire a few people each year: analysts at the start of their careers and experienced specialists who want fewer clients and deeper work. If that sounds like you, write to us.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000187",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "careers@example.com",
+									"link": {
+										"url": "mailto:careers@example.com",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"background_color": "transparent",
+									"button_text_color": "#0B1F3A",
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1.5",
+										"right": "1.5",
+										"bottom": "1.5",
+										"left": "1.5",
+										"isLinked": true
+									},
+									"border_color": "#DCE3EE",
+									"hover_color": "#2456E6",
+									"button_background_hover_color": "#F3F6FB",
+									"button_hover_border_color": "#2456E6"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000190",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#2456E6"
+				},
+				"elements": [
+					{
+						"id": "000018f",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000018c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000018a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Have a decision that cannot wait?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "000018b",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Tell us where you are stuck. You will hear from a partner within one working day.</p>",
+											"text_color": "#DCE6FF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000018e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"flex_align_items": "flex-end",
+									"width": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_align_items_mobile": "flex-start"
+								},
+								"elements": [
+									{
+										"id": "000018d",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Start a conversation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0B1F3A",
+											"hover_color": "#0B1F3A",
+											"button_background_hover_color": "#F2A93B",
+											"size": "md"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

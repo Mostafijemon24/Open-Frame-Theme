@@ -1,6 +1,6 @@
 # Open Frame Starter Sites — Technical Architecture and Roadmap
 
-Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) and the core of Phase 6 (import, resume and rollback; plugin 0.2.0) are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
+Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) the core of Phase 6 (import, resume and rollback) and Phase 7a (the Business design; plugin 0.3.0) are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
 Scope: a cloud-delivered library of 10 complete, Elementor-editable starter websites for the Open Frame theme.
 
 Contents
@@ -164,7 +164,8 @@ Monorepo. **The theme stays at the repository root** so the existing release wor
 │   │   ├── brief.md                      visual direction, type pairing, layout grammar
 │   │   ├── content/                      pages/, posts/, site-parts/, products/
 │   │   ├── site/                         menus.json, widgets.json, terms.json, options.json
-│   │   ├── media.lock.json               uid, sha256, dimensions, alt, licence (binaries are not in Git)
+│   │   ├── media/index.json              uid, file, dimensions, alt, licence
+│   │   ├── media/files/                  the images themselves (see the note below)
 │   │   └── preview/                      thumbnail.webp, full-page previews
 │   └── agency/ saas/ portfolio/ shop/ restaurant/ real-estate/ education/ medical/ magazine/
 │
@@ -193,7 +194,9 @@ Monorepo. **The theme stays at the repository root** so the existing release wor
 └── PROJECT_STATUS.md                     living status file
 ```
 
-Media binaries are deliberately **not** committed (ten sites of imagery would add tens of megabytes of history). `media.lock.json` records the hash of each file, the originals live in a private R2 prefix, and the build fails if a hash does not match.
+**Changed in Phase 7a.** The plan was to keep media binaries out of Git and in a private R2 prefix. The Business design showed that this is not needed for generated artwork: its fifteen images are drawn by a script (`tools/sites/business-art.mjs`), weigh about 540 KB together and are committed under `media/files/`, so a build needs nothing but the repository. The budget is 1 MB of media per site in Git. A design that needs photographs beyond that goes back to the original plan (hashes in Git, originals in R2).
+
+Also from Phase 7a: a design is written as a generator (`tools/sites/<site>.mjs`, with shared builders in `tools/sites/kit.mjs`) that writes the JSON under `starter-sites/<site>/`. The JSON is committed and is what gets packaged; the generator exists so that a design is described once and consistently. There is no `design-tokens.json`: the generator holds the tokens and writes both `site/kit.json` and `site/theme-mods.json` from them.
 
 ---
 
@@ -363,7 +366,8 @@ The split puts the sites that gain most from Theme Builder in the Pro tier: the 
 | All content pages (home, about, services, …) | Editable in Elementor | Same |
 | Header, footer | Editable in Elementor as **Site Parts** (`of_site_part`, rendered through the theme hooks) | Theme Builder templates take priority if the user creates them |
 | 404 page | Editable in Elementor as a Site Part | Theme Builder 404 takes priority |
-| Navigation menu, site logo, post grid, search form | Widgets from the companion plugin, built on Elementor's widget API and fully styleable with Elementor controls | Pro widgets can replace them |
+| Navigation menu | The "Navigation Menu (Open Frame)" widget of the companion plugin (`of-nav-menu`): it prints the theme's primary menu, with the theme's mobile menu and keyboard support, and has Elementor controls for alignment, typography and colors | Pro's Nav Menu widget can replace it |
+| Site logo, post grid, search form | Planned widgets, not built yet. Business uses a heading for its wordmark and the theme's blog templates | Pro widgets can replace them |
 | Blog index, archives, search results, single post | Theme templates. Styled by the Customizer and the token bridge. **Not editable in Elementor.** | Editable by creating Theme Builder templates |
 | Contact, booking and appointment forms | A free forms plugin, declared as a requirement (decision in section 11) | Pro Form widget can replace it |
 | WooCommerce shop, product, cart, checkout | WooCommerce templates styled by the theme. **Not editable in Elementor.** | Editable with Pro's WooCommerce builder |
@@ -376,7 +380,7 @@ The dashboard shows this table per site as plain statements ("Header and footer:
 
 ### 5.4 Isolation from Elementor's internals
 
-All calls into Elementor go through `Elementor\Adapter`: is it active and which version, are containers enabled, which widget types are registered, create and switch a kit, create a document and save its elements and settings, render a document for display, regenerate CSS, clear caches. The adapter is the only file that needs attention when Elementor changes, and it is covered by integration tests against every version in `compat.json`.
+All calls into Elementor go through `Elementor\Adapter`: is it active and which version, are containers enabled, which widget types are registered, create and switch a kit, create a document and save its elements and settings, render a document for display, regenerate CSS, clear caches. The adapter is the only file that needs attention when Elementor changes, and it is covered by integration tests against every version in `compat.json`. One exception, by necessity: the plugin's own Elementor widgets (`src/Widgets`) extend Elementor's widget class and use its control API, the same public API every widget add-on uses.
 
 Documents are stored exactly as Elementor stores them (`_elementor_data`, `_elementor_edit_mode`, `_elementor_template_type`, `_elementor_version`, `_elementor_page_settings`, `_wp_page_template`), written through Elementor's document API rather than raw meta writes, so Elementor runs its own import hooks and migrations.
 
@@ -384,11 +388,13 @@ The import never overwrites the user's active kit. It creates a new kit for the 
 
 ### 5.5 Fonts
 
+**As built in Phase 7a:** a design may use the two typefaces that ship with the theme (Hanken Grotesk and JetBrains Mono). The theme registers them with Elementor as the group "Open Frame (bundled)", so they appear in every typography control and Elementor makes no request to Google Fonts for them. Business uses Hanken Grotesk this way and needs no font download. The plan below, for designs with a typeface of their own, is not built yet.
+
 Each site has its own type pairing. Fonts are open-licence variable WOFF2 files delivered by the cloud, stored in the site's uploads folder, declared with `@font-face` and registered as an Elementor font group so they appear in every typography control. Imported sites therefore make **no** requests to Google Fonts. Fluid type uses `clamp()` in kit typography (Elementor custom units), with explicit tablet and mobile values where a clamp is not enough.
 
 ### 5.6 Authoring the ten sites
 
-Sites are authored as data (`starter-sites/{slug}`), imported into a real WordPress with the pinned Elementor version, opened in the editor, screenshotted at nine widths and corrected until they pass. A dev-only exporter plugin writes changes made in the editor back to the sources. A site is not "done" from JSON alone; it is done when the imported result passes section 9.
+Sites are authored as data (`starter-sites/{slug}`), imported into a real WordPress with the pinned Elementor version, opened in the editor, screenshotted at nine widths and corrected until they pass. In practice (Phase 7a) the data is written by a generator script per design, `tools/sites/{slug}.mjs`; the exporter plugin that would write editor changes back to the sources is not built. A site is not "done" from JSON alone; it is done when the imported result passes section 9.
 
 The ten sites and their page sets:
 

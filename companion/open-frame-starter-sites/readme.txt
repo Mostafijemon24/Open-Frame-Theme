@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,12 @@ Only when you click a button that says it will: "Install and activate", "Activat
 A copy of the list of designs, the record of the last import and a short import history (options starting with `ofss_`). They are removed when you delete the plugin. Imported pages and images are your content and stay.
 
 == Changelog ==
+
+= 0.3.0 =
+* New: Business, the first complete design. Ten pages, three articles, a header, a footer and a "page not found" page, built with the free version of Elementor.
+* New: designs can include blog posts with their categories and featured images. Rolling back removes them again.
+* New: a "Navigation Menu (Open Frame)" widget for Elementor, so a header made with free Elementor shows your WordPress menu, including the mobile menu of the theme.
+* Fix: links to the home page of a design point at your site address instead of at /home/.
 
 = 0.2.0 =
 * New: one-click import of an available design, in small steps that survive slow servers and a closed browser.

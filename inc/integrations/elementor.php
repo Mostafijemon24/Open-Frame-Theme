@@ -151,6 +151,41 @@ function open_frame_elementor_main_close() {
 add_action( 'elementor/page_templates/header-footer/after_content', 'open_frame_elementor_main_close' );
 
 /**
+ * Offer the fonts bundled with the theme in Elementor's font list.
+ *
+ * @since 1.1.0
+ *
+ * @param array<string,string> $groups Font groups.
+ * @return array<string,string>
+ */
+function open_frame_elementor_font_groups( $groups ) {
+	$groups['open-frame'] = __( 'Open Frame (bundled)', 'open-frame' );
+
+	return $groups;
+}
+add_filter( 'elementor/fonts/groups', 'open_frame_elementor_font_groups' );
+
+/**
+ * Mark the bundled fonts as local fonts.
+ *
+ * Elementor knows both names as Google fonts and would request them from
+ * Google. They are already served from the theme folder (see theme.json), so
+ * choosing them in Elementor causes no remote request.
+ *
+ * @since 1.1.0
+ *
+ * @param array<string,string> $fonts Font name => group.
+ * @return array<string,string>
+ */
+function open_frame_elementor_fonts( $fonts ) {
+	$fonts['Hanken Grotesk'] = 'open-frame';
+	$fonts['JetBrains Mono'] = 'open-frame';
+
+	return $fonts;
+}
+add_filter( 'elementor/fonts/additional_fonts', 'open_frame_elementor_fonts' );
+
+/**
  * Whether the theme follows Elementor's global colors and fonts.
  *
  * @since 1.1.0

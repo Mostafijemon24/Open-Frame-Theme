@@ -157,6 +157,7 @@ class Runner {
 			'kit'      => 0,
 			'counts'   => array(
 				'pages'  => 0,
+				'posts'  => 0,
 				'images' => 0,
 				'reused' => 0,
 				'menus'  => 0,
@@ -481,7 +482,11 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+		if ( 'posts' === $match[1] ) {
+			return $this->import_post( $state, $match[2], $data );
+		}
+
 		$is_part = 'site-parts' === $match[1];
 		$uid     = $state['site'] . ':' . $match[1] . ':' . $match[2];
 		$key     = ( $is_part ? 'site-part' : 'page' ) . '/' . $match[2];
@@ -521,6 +526,78 @@ class Runner {
 		}
 
 		$state['posts'][ $key ] = (int) $post_id;
+		if ( ! $is_part && ! empty( $data['front_page'] ) ) {
+			// Links to this page should point at the site address, not at /home/.
+			$state['front'] = $key;
+		}
+		++$state['cursor'];
+
+		return false;
+	}
+
+	/**
+	 * Create one blog post of the design.
+	 *
+	 * Posts are ordinary block content, shown by the theme's blog templates.
+	 * They are imported after the images, so a featured image can be set.
+	 *
+	 * @param array  $state Run.
+	 * @param string $name  Name of the post inside the package.
+	 * @param array  $data  Post data from the package.
+	 * @return false|WP_Error
+	 */
+	private function import_post( array &$state, $name, array $data ) {
+		$uid      = $state['site'] . ':posts:' . $name;
+		$existing = $this->find( $uid );
+		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
+
+		$post_id = wp_insert_post(
+			array(
+				'ID'           => $existing,
+				'post_type'    => 'post',
+				'post_status'  => 'publish',
+				'post_title'   => sanitize_text_field( (string) ( $data['title'] ?? $name ) ),
+				'post_name'    => sanitize_title( (string) ( $data['slug'] ?? $name ) ),
+				'post_excerpt' => sanitize_text_field( (string) ( $data['excerpt'] ?? '' ) ),
+				'post_content' => wp_kses_post( (string) $resolver->resolve( (string) ( $data['content'] ?? '' ) ) ),
+				// Spread the sample posts over the past weeks, newest first.
+				'post_date'    => gmdate( 'Y-m-d H:i:s', time() - DAY_IN_SECONDS * max( 0, (int) ( $data['days_ago'] ?? 0 ) ) ),
+			),
+			true
+		);
+		if ( is_wp_error( $post_id ) ) {
+			return new WP_Error( 'ofss_content', __( 'A blog post of this design could not be created.', 'open-frame-starter-sites' ) );
+		}
+
+		$image = $resolver->id( $data['featured'] ?? '' );
+		if ( $image ) {
+			set_post_thumbnail( $post_id, $image );
+		}
+
+		$categories = array();
+		foreach ( array_slice( (array) ( $data['categories'] ?? array() ), 0, 5 ) as $category ) {
+			$category = sanitize_text_field( (string) $category );
+			$term     = term_exists( $category, 'category' );
+			if ( ! $term ) {
+				$term = wp_insert_term( $category, 'category' );
+				if ( ! is_wp_error( $term ) ) {
+					update_term_meta( $term['term_id'], '_ofss_run', $state['id'] );
+				}
+			}
+			if ( ! is_wp_error( $term ) && $term ) {
+				$categories[] = (int) $term['term_id'];
+			}
+		}
+		if ( $categories ) {
+			wp_set_post_categories( $post_id, $categories );
+		}
+
+		if ( ! $existing ) {
+			$this->tag( $state, $post_id, $uid );
+			++$state['counts']['posts'];
+		}
+
+		$state['posts'][ 'post/' . $name ] = (int) $post_id;
 		++$state['cursor'];
 
 		return false;
@@ -578,9 +655,16 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|site-parts)/([a-z0-9-]+)\.json$#', $name, $match );
+
+		// Blog posts and pages without Elementor content (the posts page) have nothing to build.
+		if ( 'posts' === $match[1] || empty( $data['elementor'] ) ) {
+			++$state['cursor'];
+			return false;
+		}
+
 		$post_id  = $state['posts'][ ( 'site-parts' === $match[1] ? 'site-part' : 'page' ) . '/' . $match[2] ] ?? 0;
-		$resolver = new TokenResolver( $state['media'], $state['posts'] );
+		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
 
 		$elements = $resolver->resolve( (array) ( $data['elementor']['content'] ?? array() ) );
 		$settings = $resolver->resolve( (array) ( $data['elementor']['page_settings'] ?? array() ) );
@@ -619,7 +703,7 @@ class Runner {
 			return $menus;
 		}
 
-		$resolver  = new TokenResolver( $state['media'], $state['posts'] );
+		$resolver  = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
 		$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
 
 		foreach ( $menus as $menu ) {
@@ -732,7 +816,7 @@ class Runner {
 				return $options;
 			}
 
-			$resolver = new TokenResolver( $state['media'], $state['posts'] );
+			$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
 			$front    = $resolver->id( $options['page_on_front'] ?? '' );
 			if ( 'page' === ( $options['show_on_front'] ?? '' ) && $front ) {
 				update_option( 'show_on_front', 'page' );
@@ -818,7 +902,7 @@ class Runner {
 	 * @return string[] Entry names.
 	 */
 	private function documents( array $state ) {
-		$names = array_values( preg_grep( '#^content/(pages|site-parts)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
+		$names = array_values( preg_grep( '#^content/(pages|posts|site-parts)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) );
 		sort( $names );
 
 		return $names;
@@ -833,7 +917,7 @@ class Runner {
 	private function find( $uid ) {
 		$found = get_posts(
 			array(
-				'post_type'   => array( 'page', SiteParts::POST_TYPE ),
+				'post_type'   => array( 'page', 'post', SiteParts::POST_TYPE ),
 				'post_status' => array( 'publish', 'draft', 'private', 'pending' ),
 				'numberposts' => 1,
 				'fields'      => 'ids',

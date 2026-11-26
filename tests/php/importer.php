@@ -129,7 +129,7 @@ ofss_check( 'a second import cannot start while one is unfinished', is_wp_error(
 
 $state = ofss_finish( $runner, $state );
 ofss_check( 'the import finishes', ! is_wp_error( $state ) && 'done' === $state['status'] && '' === $state['error'] );
-ofss_check( 'it reports two pages, one image and one menu, without warnings', array( 'pages' => 2, 'images' => 1, 'reused' => 0, 'menus' => 1 ) === $state['counts'] && array() === $state['warnings'] );
+ofss_check( 'it reports two pages, one image and one menu, without warnings', array( 'pages' => 2, 'posts' => 0, 'images' => 1, 'reused' => 0, 'menus' => 1 ) === $state['counts'] && array() === $state['warnings'] );
 
 $home  = get_post( $state['posts']['page/home'] );
 $about = get_post( $state['posts']['page/about'] );
@@ -169,6 +169,7 @@ ob_start();
 $rendered = apply_filters( 'open_frame_do_location', false, 'header' );
 $markup   = ob_get_clean();
 ofss_check( 'the site part renders inside a header element', true === $rendered && 0 === strpos( $markup, '<header class="of-site-part of-site-part--header">' ) && false !== strpos( $markup, 'Reference' ) );
+ofss_check( 'a link to the front page points at the site address, not at /home/', false !== strpos( $markup, 'href="' . home_url( '/' ) . '"' ) && false === strpos( $markup, '/home/' ) );
 
 ofss_check( 'the import is recorded as the active site and in the history', 'reference' === get_option( 'ofss_active_site' )['slug'] && 'success' === $history->all()[0]['result'] && $state['id'] === $history->all()[0]['id'] );
 ofss_check( 'the working folder is gone', $baseline['uploads'] === ofss_fingerprint()['uploads'] && '' === $state['dir'] );
@@ -356,7 +357,7 @@ ofss_check( 'a design that needs a newer plugin is not imported', 'failed' === $
 ofss_reset_run();
 
 ofss_cloud( 'ok' );
-$state = ofss_finish( ofss_runner(), ofss_runner()->start( 'business' ) );
+$state = ofss_finish( ofss_runner(), ofss_runner()->start( 'portfolio' ) );
 ofss_check( 'a design that is not out yet is not imported', 'failed' === $state['status'] && ofss_fingerprint() === $baseline );
 ofss_reset_run();
 ofss_check( 'a design that does not exist cannot be started', is_wp_error( ofss_runner()->start( 'no-such-site' ) ) );

@@ -82,7 +82,7 @@ test( 'the screen lists the ten designs', async () => {
 
 	assert.equal( await page.locator( '.ofss-badge--free' ).count(), 5, 'five free designs' );
 	assert.equal( await page.locator( '.ofss-badge--pro' ).count(), 5, 'five designs that need Elementor Pro' );
-	assert.equal( await page.locator( '.ofss-badge--soon' ).count(), 10, 'all marked as coming soon' );
+	assert.equal( await page.locator( '.ofss-badge--soon' ).count(), 9, 'all but Business are marked as coming soon' );
 	assert.equal( await page.getByRole( 'button', { name: /import/i } ).count(), 0, 'no import button before importing exists' );
 	assert.equal( await page.getByRole( 'button', { name: 'Import history' } ).count(), 0, 'no history section without history' );
 	assert.deepEqual( errors, [] );
@@ -171,7 +171,7 @@ test( 'the details open and close with the keyboard, and focus returns', async (
 
 test( 'the details say what a design needs and where each part is edited', async () => {
 	await open();
-	await details( 'Business' );
+	await details( 'Portfolio' );
 
 	assert.match( await dialog().locator( '.ofss-details__state' ).textContent(), /on its way and cannot be imported yet/ );
 	for ( const label of [ 'WordPress', 'PHP', 'Open Frame theme', 'ZIP support on the server', 'Uploads folder can be written to', 'Elementor' ] ) {
@@ -181,8 +181,8 @@ test( 'the details say what a design needs and where each part is edited', async
 	assert.match( await requirement( 'Elementor' ).textContent(), /Active/ );
 	assert.equal( await requirement( 'Open Frame Starter Sites plugin' ).count(), 0, 'no plugin-version check for a design that is not out yet' );
 
-	assert.equal( await dialog().locator( '.ofss-pages li' ).count(), 12 );
-	assert.equal( await dialog().getByRole( 'heading', { name: '12 pages included' } ).count(), 1 );
+	assert.equal( await dialog().locator( '.ofss-pages li' ).count(), 11 );
+	assert.equal( await dialog().getByRole( 'heading', { name: '11 pages included' } ).count(), 1 );
 
 	const editable = await dialog().locator( '.ofss-editable tr' ).allTextContents();
 	assert.ok( editable.includes( 'HeaderEdit with Elementor' ) );

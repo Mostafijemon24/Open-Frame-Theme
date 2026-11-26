@@ -74,10 +74,10 @@ const refuses = ( t, src, expected ) => {
 	} );
 };
 
-test( 'the ten planned sites build into a signed catalog that matches the schema', ( t ) => {
+test( 'the ten sites build into a signed catalog that matches the schema', ( t ) => {
 	const { out, result } = build( t, path.join( ROOT, 'starter-sites' ) );
 	assert.equal( result.sites, 10 );
-	assert.equal( result.packages, 0, 'none of them has a package yet' );
+	assert.equal( result.packages, 1, 'Business is the first design with a package' );
 
 	const envelope = readJson( path.join( out, 'v1/catalog.json' ) );
 	matches( 'envelope.schema.json', envelope );
@@ -86,7 +86,18 @@ test( 'the ten planned sites build into a signed catalog that matches the schema
 	matches( 'catalog.schema.json', catalog );
 	assert.deepEqual( catalog.sites.map( ( site ) => site.id ), [ 'business', 'agency', 'saas', 'portfolio', 'shop', 'restaurant', 'real-estate', 'education', 'medical', 'magazine' ] );
 	assert.equal( catalog.sites.filter( ( site ) => site.tier === 'free' ).length, 5 );
-	assert.ok( catalog.sites.every( ( site ) => site.status === 'coming_soon' && ! site.manifest ) );
+	assert.deepEqual( catalog.sites.filter( ( site ) => site.status === 'available' ).map( ( site ) => site.id ), [ 'business' ] );
+	assert.ok( catalog.sites.every( ( site ) => ( site.status === 'available' ) === Boolean( site.manifest ) ) );
+
+	const business = readJson( path.join( out, 'v1/sites/business/1.0.0/manifest.json' ) );
+	matches( 'manifest.schema.json', business );
+	assert.equal( business.pages.length, 10 );
+	assert.equal( business.pages.filter( ( item ) => item.front_page ).length, 1 );
+	assert.equal( business.media.length, 15 );
+	assert.ok( business.media.every( ( item ) => item.bytes < 100 * 1024 ), 'every image is under 100 KB' );
+	assert.ok( business.requires.elementor.widgets.includes( 'of-nav-menu' ) );
+	assert.ok( business.package.bytes < 200 * 1024, 'the package is small' );
+	assert.equal( catalog.sites[ 0 ].preview.screenshots.length, 3 );
 	assert.ok( catalog.sites.every( ( site ) => site.preview.thumbnail.startsWith( CDN + '/previews/' ) ) );
 	assert.deepEqual( verifyLibrary( out, publicKeys, { apiUrl: API, cdnUrl: CDN } ), [] );
 

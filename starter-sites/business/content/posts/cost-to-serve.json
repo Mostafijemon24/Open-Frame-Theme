@@ -1,0 +1,12 @@
+{
+	"uid": "business:posts:cost-to-serve",
+	"title": "Your best customer may be your least profitable",
+	"slug": "cost-to-serve",
+	"excerpt": "Revenue hides what it costs to serve an account. A simple model, built in a week, usually changes who gets the attention.",
+	"featured": "ofss://media/post-1",
+	"categories": [
+		"Finance"
+	],
+	"days_ago": 6,
+	"content": "<!-- wp:paragraph -->\n<p>Revenue hides what it costs to serve an account. A simple model, built in a week, usually changes who gets the attention.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Why it happens</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Habits form around what is easy to measure. Revenue, headcount and the number of projects under way are all visible on a dashboard; the cost of complexity is not. So it grows, quietly, until someone goes looking for it.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What to do about it</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Start small. Pick one product line, one customer segment or one week of the calendar and look at it honestly. The first pass does not need to be precise to be useful: being roughly right about where the effort goes is enough to change the conversation.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>If you would like a second pair of eyes, <a href=\"ofss://page/contact\">we are happy to talk it through</a>.</p>\n<!-- /wp:paragraph -->"
+}

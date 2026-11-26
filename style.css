@@ -1078,7 +1078,7 @@ textarea { resize: vertical; min-height: 7rem; }
 .post-navigation { margin-top: var(--of-space-6); display: grid; gap: var(--of-space-4); }
 .post-navigation .nav-links { display: flex; justify-content: space-between; gap: var(--of-space-4); flex-wrap: wrap; }
 .post-navigation a { text-decoration: none; }
-.post-navigation .nav-subtitle { display: block; font-size: var(--of-fs-small); color: var(--of-color-muted); }
+.post-navigation .nav-subtitle { display: block; font-size: var(--of-fs-small); color: var(--of-color-text); }
 .post-navigation .nav-title { font-weight: var(--of-fw-semibold); color: var(--of-color-heading); }
 
 /* ==========================================================================
@@ -1251,6 +1251,48 @@ textarea { resize: vertical; min-height: 7rem; }
 .of-location > * + * { margin-top: 0; }
 .of-builder .entry-title { font-size: var(--of-fs-h1); margin-block: var(--of-section-spacing) var(--of-space-5); }
 .of-builder-comments { padding-block: var(--of-section-spacing); }
+
+/* --------------------------------------------------------------------------
+   Elementor Site Settings and theme components. Elementor's global styles
+   target bare elements (h1 to h6, a, button) from a single class, which
+   outranks many of the theme's own rules. Its page content is meant to change;
+   the theme's navigation, post titles, meta links and footer keep their own
+   look. Each rule restates the theme's value with a selector that wins.
+   -------------------------------------------------------------------------- */
+body[class*="elementor-kit-"] .site-title a { color: var(--of-header-text, var(--of-color-heading)); }
+body[class*="elementor-kit-"] .main-navigation a { color: var(--of-header-text, var(--of-slate-700)); }
+body[class*="elementor-kit-"] .main-navigation .sub-menu a { color: var(--of-color-text); }
+body[class*="elementor-kit-"] .main-navigation a:hover,
+body[class*="elementor-kit-"] .main-navigation a:focus-visible,
+body[class*="elementor-kit-"] .main-navigation .current-menu-item > a,
+body[class*="elementor-kit-"] .main-navigation .current_page_item > a { color: var(--of-color-primary); }
+body[class*="elementor-kit-"] .of-submenu-toggle {
+	padding: 0;
+	font-size: inherit;
+	line-height: 1;
+	color: var(--of-header-text, var(--of-color-muted));
+	background: transparent;
+	border-radius: var(--of-radius-sm);
+}
+body[class*="elementor-kit-"] .menu-toggle {
+	padding: var(--of-space-3);
+	color: var(--of-color-primary);
+	background: var(--of-primary-100);
+	border-radius: var(--of-radius-sm);
+}
+body[class*="elementor-kit-"] .entry-title {
+	font-size: var(--of-fs-h3);
+	line-height: var(--of-lh-heading);
+	letter-spacing: normal;
+}
+body[class*="elementor-kit-"] .entry-single .entry-title,
+body[class*="elementor-kit-"] .of-builder .entry-title { font-size: var(--of-fs-h1); }
+body[class*="elementor-kit-"] .entry-title a { color: var(--of-color-heading); }
+body[class*="elementor-kit-"] .entry-title a:hover { color: var(--of-color-primary); }
+body[class*="elementor-kit-"] .entry-meta a { color: var(--of-color-muted); }
+body[class*="elementor-kit-"] .site-footer a,
+body[class*="elementor-kit-"] .site-footer a:hover,
+body[class*="elementor-kit-"] .site-footer a:focus { color: var(--of-footer-heading, var(--of-white)); }
 
 .page-template-landing .site-footer { margin-top: 0; }
 

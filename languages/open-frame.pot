@@ -738,3 +738,15 @@ msgstr ""
 #: patterns/page-landing.php
 msgid "A complete home page: hero, feature cards, latest posts and a call to action. Best with the Landing Page template."
 msgstr ""
+
+#: inc/customizer/customizer.php
+msgid "Show the title of the posts page"
+msgstr ""
+
+#: inc/customizer/customizer.php
+msgid "Applies when a page other than the front page lists your posts. The title is always available to screen readers."
+msgstr ""
+
+#: inc/integrations/elementor.php
+msgid "Open Frame (bundled)"
+msgstr ""

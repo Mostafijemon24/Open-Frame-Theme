@@ -115,6 +115,19 @@ class Rollback {
 			wp_delete_nav_menu( $menu_id );
 		}
 
+		$categories = get_terms(
+			array(
+				'taxonomy'   => 'category',
+				'hide_empty' => false,
+				'fields'     => 'ids',
+				'meta_key'   => '_ofss_run', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value' => $state['id'], // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+		foreach ( is_wp_error( $categories ) ? array() : $categories as $category_id ) {
+			wp_delete_term( $category_id, 'category' );
+		}
+
 		// The other settings last: deleting a menu makes WordPress rewrite the
 		// theme's menu locations, which would undo part of the restore.
 		if ( is_array( $snapshot ) ) {

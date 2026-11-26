@@ -91,6 +91,9 @@ The full documentation, with screenshots, is available at https://github.com/Mos
 * New: Elementor Pro Theme Builder support. Header, footer, single, archive and 404 templates created in the Theme Builder replace the theme's templates.
 * New: "Use Elementor global colors and fonts" option (Customize > Open Frame Options > Elementor). When on, the blog, posts, search and other theme templates follow Elementor's Site Settings. The section only appears while Elementor is active.
 * New: WooCommerce support. The shop, product, cart, checkout and account pages use the theme's colors, buttons, cards and layout; product grids adapt from two columns on phones to the number of columns set in WooCommerce.
+* New: "Show the title of the posts page" option (Customize > Open Frame Options > Layout), for a blog that is not the front page. Off by default; the title stays available to screen readers either way.
+* New: the fonts that ship with the theme (Hanken Grotesk and JetBrains Mono) can be chosen in Elementor, and are served from your own site when they are.
+* Fix: with a darker page background, the "Previous" and "Next" labels under a post no longer fall below the WCAG AA contrast ratio.
 * New for developers: `open_frame_do_location` and `open_frame_has_location` filters let a plugin replace the header, footer, single, archive or 404 output; `open_frame_is_builder_page` marks a page as laid out by a page builder.
 * Change: the header and footer markup moved to `template-parts/header/site-header.php` and `template-parts/footer/site-footer.php`, so child themes can override them. The output is unchanged.
 * The theme still needs no plugin and makes no remote requests. Nothing changes on sites that do not use Elementor or WooCommerce.

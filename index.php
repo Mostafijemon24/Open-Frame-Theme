@@ -16,7 +16,7 @@ if ( ! open_frame_do_location( 'archive' ) ) :
 
 					<?php if ( is_home() && ! is_front_page() ) : ?>
 						<header class="page-header">
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+							<h1 class="page-title<?php echo open_frame_get_mod( 'open_frame_blog_title' ) ? '' : ' screen-reader-text'; ?>"><?php single_post_title(); ?></h1>
 						</header>
 					<?php endif; ?>
 

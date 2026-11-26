@@ -13,7 +13,9 @@
  *   ofss:imported=<id>@<v>   pretend a starter site was imported in that version
  *   ofss:clear               remove everything the three above created
  *   ofss:interrupt           start an import of the reference design and stop it part-way
+ *   ofss:import=<site>       import a design completely
  *   ofss:rollback            roll back the current import, if there is one
+ *   ofss:ids                 print the IDs of imported posts, keyed by their name in the package
  *   remove-plugin:<slug>     deactivate and delete a plugin the tests installed
  *   ids                      print the IDs of the fixture pages as JSON
  *
@@ -90,6 +92,32 @@ foreach ( $open_frame_args as $open_frame_arg ) {
 			$open_frame_run = $open_frame_runner->start( 'reference' );
 			$open_frame_runner->advance( $open_frame_run['id'], 5 );
 		}
+		continue;
+	}
+
+	if ( 0 === strpos( $open_frame_arg, 'ofss:import=' ) ) {
+		$open_frame_config  = new OpenFrame\StarterSites\Config();
+		$open_frame_client  = new OpenFrame\StarterSites\Cloud\Client( $open_frame_config );
+		$open_frame_runner  = new OpenFrame\StarterSites\Import\Runner( $open_frame_config, new OpenFrame\StarterSites\Cloud\Catalog( $open_frame_client, $open_frame_config ), new OpenFrame\StarterSites\Requirements\Checker(), new OpenFrame\StarterSites\Cloud\Manifest( $open_frame_client, $open_frame_config ), new OpenFrame\StarterSites\Elementor\Adapter(), new OpenFrame\StarterSites\History\Log() );
+		$open_frame_run     = $open_frame_runner->start( substr( $open_frame_arg, 12 ) );
+		$open_frame_guard   = 400;
+		while ( ! is_wp_error( $open_frame_run ) && 'running' === $open_frame_run['status'] && $open_frame_guard-- > 0 ) {
+			$open_frame_run = $open_frame_runner->advance( $open_frame_run['id'] );
+		}
+		echo wp_json_encode(
+			is_wp_error( $open_frame_run )
+				? array( 'status' => 'error', 'error' => $open_frame_run->get_error_message() )
+				: array( 'status' => $open_frame_run['status'], 'error' => $open_frame_run['error'], 'counts' => $open_frame_run['counts'], 'warnings' => $open_frame_run['warnings'] )
+		), "\n";
+		continue;
+	}
+
+	if ( 'ofss:ids' === $open_frame_arg ) {
+		$open_frame_ids = array();
+		foreach ( get_posts( array( 'post_type' => array_values( get_post_types() ), 'post_status' => 'any', 'numberposts' => -1, 'meta_key' => '_ofss_uid' ) ) as $open_frame_post ) { // phpcs:ignore WordPress.DB.SlowDBQuery
+			$open_frame_ids[ get_post_meta( $open_frame_post->ID, '_ofss_uid', true ) ] = $open_frame_post->ID;
+		}
+		echo wp_json_encode( $open_frame_ids ), "\n";
 		continue;
 	}
 

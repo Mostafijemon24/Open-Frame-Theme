@@ -78,7 +78,7 @@ Remove `--dry-run` to upload. Taking a bad catalog back is publishing the previo
 
 ## Adding or changing a design
 
-1. Edit or add `starter-sites/<site>/`. While a design has no content, `status` is `coming_soon`.
+1. Edit or add `starter-sites/<site>/`. While a design has no content, `status` is `coming_soon`. A design is written as a generator, `tools/sites/<site>.mjs`, which writes the pages, site parts, posts, Site Settings and theme settings as JSON into that folder (`node tools/sites/business.mjs`; `business-art.mjs` draws its images, `previews.mjs` captures the preview pictures from a site that has it imported). Commit the generator and its output together.
 2. When its content is ready, set `status` to `available`, list the Elementor widgets it uses under `requires.elementor.widgets`, and raise `version` for every later change.
 3. Run the tools tests and a build; the build explains what is wrong, file by file.
 4. Publish to staging, import it on a test site, then publish to production.

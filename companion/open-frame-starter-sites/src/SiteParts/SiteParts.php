@@ -62,6 +62,8 @@ class SiteParts {
 		add_filter( 'open_frame_do_location', array( $this, 'do_location' ), 20, 2 );
 		add_action( 'save_post_' . self::POST_TYPE, array( $this, 'forget' ) );
 		add_action( 'deleted_post', array( $this, 'forget' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ), 30 );
+		add_action( 'elementor/widgets/register', array( $this, 'widgets' ) );
 	}
 
 	/**
@@ -97,6 +99,27 @@ class SiteParts {
 				'supports'            => array( 'title', 'elementor' ),
 			)
 		);
+	}
+
+	/**
+	 * Load the small stylesheet for site parts when the page shows one.
+	 *
+	 * @return void
+	 */
+	public function styles() {
+		if ( $this->part( 'header' ) || $this->part( 'footer' ) || ( is_404() && $this->part( '404' ) ) ) {
+			wp_enqueue_style( 'ofss-site-parts', OFSS_URL . 'assets/frontend/site-parts.css', array(), OFSS_VERSION );
+		}
+	}
+
+	/**
+	 * Register the plugin's Elementor widgets.
+	 *
+	 * @param \Elementor\Widgets_Manager $manager Elementor's widget manager.
+	 * @return void
+	 */
+	public function widgets( $manager ) {
+		$manager->register( new \OpenFrame\StarterSites\Widgets\NavMenu() );
 	}
 
 	/**

@@ -23,7 +23,12 @@
 						"widgetType": "heading",
 						"settings": {
 							"title": "Reference",
-							"header_size": "p"
+							"header_size": "p",
+							"link": {
+								"url": "ofss://page/home",
+								"is_external": "",
+								"nofollow": ""
+							}
 						},
 						"elements": []
 					}
