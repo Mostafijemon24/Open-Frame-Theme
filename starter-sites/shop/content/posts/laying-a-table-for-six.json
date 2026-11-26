@@ -1,0 +1,12 @@
+{
+	"uid": "shop:posts:laying-a-table-for-six",
+	"title": "Laying a table for six without buying anything",
+	"slug": "laying-a-table-for-six",
+	"excerpt": "A runner, something green down the middle, and plates that do not match. A table that looks cared for, from what is in the cupboard.",
+	"featured": "ofss://media/journal-2",
+	"categories": [
+		"Table"
+	],
+	"days_ago": 16,
+	"content": "<!-- wp:paragraph -->\n<p>A table looks cared for when one thing runs down the middle of it. A cloth runner will do, or a row of whatever is green in the garden.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What goes on it</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>A runner, or a folded tablecloth</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Greenery, laid flat rather than in a vase</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Plates of two sizes, which need not match</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>Nobody remembers the plates. They remember that someone thought about the table.</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What to leave off</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Tall flowers, which people cannot see over, and anything that has to be explained.</p>\n<!-- /wp:paragraph -->"
+}

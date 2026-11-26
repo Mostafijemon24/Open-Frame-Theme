@@ -2,7 +2,7 @@
 	"id": "shop",
 	"order": 5,
 	"name": "Shop",
-	"summary": "An online store with a lookbook, shipping information and a journal, built on WooCommerce.",
+	"summary": "A small online store built on WooCommerce: eight products, a home page with a room-wide picture, a lookbook, shipping and returns, a journal and a contact form. Header with basket, footer and journal are Theme Builder templates.",
 	"category": "shop",
 	"tags": [
 		"store",
@@ -11,12 +11,12 @@
 		"woocommerce"
 	],
 	"tier": "pro",
-	"status": "coming_soon",
+	"status": "available",
 	"version": "1.0.0",
 	"colors": [
-		"#efe6da",
-		"#1f2937",
-		"#1f2937"
+		"#f0e8db",
+		"#9a4526",
+		"#23201c"
 	],
 	"pages": [
 		"Home",
@@ -38,7 +38,7 @@
 		"wordpress": "6.8",
 		"php": "7.4",
 		"theme": "1.1.0",
-		"importer": "1.0.0",
+		"importer": "0.6.0",
 		"plugins": [
 			{
 				"slug": "elementor",
@@ -65,16 +65,50 @@
 				"source": "wordpress.org",
 				"required": true
 			}
-		]
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"form",
+				"heading",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title",
+				"woocommerce-menu-cart",
+				"woocommerce-products"
+			]
+		}
 	},
 	"editable": {
 		"404": "elementor",
-		"shop": "elementor",
+		"shop": "theme",
 		"pages": "elementor",
 		"header": "elementor",
 		"footer": "elementor",
 		"blog": "elementor",
 		"single": "elementor"
 	},
-	"demo_url": ""
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Shop",
+			"file": "store.png"
+		},
+		{
+			"title": "A product",
+			"file": "product.png"
+		},
+		{
+			"title": "Lookbook",
+			"file": "lookbook.png"
+		}
+	]
 }

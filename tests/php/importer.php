@@ -427,6 +427,7 @@ if ( ! function_exists( 'wc_get_product' ) ) {
 	ofss_check( 'the featured product is marked', $mug && $mug->get_featured() && $bowl && ! $bowl->get_featured() );
 	$tableware = get_term_by( 'name', 'Tableware', 'product_cat' );
 	ofss_check( 'both are in one new category, tagged with the run', $tableware && $mug && array( $tableware->term_id ) === $mug->get_category_ids() && array( $tableware->term_id ) === $bowl->get_category_ids() && $state['id'] === get_term_meta( $tableware->term_id, '_ofss_run', true ) );
+	ofss_check( 'a link to a product that is created later is its address too', $mug && $bowl && false !== strpos( $bowl->get_description(), get_permalink( $mug->get_id() ) ) && false === strpos( $bowl->get_description(), 'ofss://' ) );
 	ofss_check( 'a link from one product to another is its address', $mug && $bowl && false !== strpos( $mug->get_description(), get_permalink( $bowl->get_id() ) ) && false === strpos( $mug->get_description(), 'ofss://' ) );
 	$home = (string) get_post_meta( (int) $state['posts']['page/home'], '_elementor_data', true );
 	ofss_check( 'links to the shop and to a product are real addresses', false === strpos( $home, 'ofss://' ) && false !== strpos( $home, wp_json_encode( wc_get_page_permalink( 'shop' ) ) ) && false !== strpos( $home, wp_json_encode( get_permalink( $mug->get_id() ) ) ) );

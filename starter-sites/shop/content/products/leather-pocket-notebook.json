@@ -1,0 +1,13 @@
+{
+	"uid": "shop:products:leather-pocket-notebook",
+	"title": "Leather pocket notebook",
+	"slug": "leather-pocket-notebook",
+	"excerpt": "A pocket notebook in tan leather with plain pages. It darkens where you hold it.",
+	"content": "<p>Ninety-six plain pages in a soft leather cover, stitched down the spine. Small enough for a coat pocket.</p><p>The pen and the clip in the picture are not included.</p>",
+	"price": "22",
+	"image": "ofss://media/product-5",
+	"gallery": [],
+	"categories": [
+		"Paper"
+	]
+}

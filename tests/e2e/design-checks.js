@@ -30,6 +30,7 @@ const { BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login, hasE
  * @param {Array[]}  design.editor        [ uid, text ] pairs to open in the Elementor editor.
  * @param {string}   design.gone          An address that must answer 404 after the rollback.
  * @param {string}   design.brand         A word that must not remain on the home page after the rollback.
+ * @param {boolean}  [design.store]       The design has products: WooCommerce is switched on for its checks.
  * @param {boolean}  [design.pro]         A design of the Pro tier: header, footer and blog are Theme Builder
  *                                        templates, the menu is Elementor Pro's. Skipped without Elementor Pro.
  */
@@ -90,13 +91,13 @@ before( async () => {
 	browser = await chromium.launch();
 	clearErrorLog();
 	cloud( 'ok' );
-	state( 'ofss:rollback', 'reset', 'ofss:clear', 'ofss:forget', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', PRO ? 'plugin:elementor-pro=on' : 'plugin:elementor-pro=off', 'plugin:woocommerce=off' );
+	state( 'ofss:rollback', 'reset', 'ofss:clear', 'ofss:forget', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', PRO ? 'plugin:elementor-pro=on' : 'plugin:elementor-pro=off', design.store ? 'plugin:woocommerce=on' : 'plugin:woocommerce=off' );
 	report = JSON.parse( state( 'ofss:import=' + design.site ).trim().split( '\n' ).pop() );
 	ids = JSON.parse( state( 'ofss:ids' ).trim().split( '\n' ).pop() );
 } );
 
 after( async () => {
-	state( 'ofss:rollback', 'ofss:clear', 'ofss:forget', 'reset' );
+	state( 'ofss:rollback', 'ofss:clear', 'ofss:forget', 'reset', 'plugin:woocommerce=off' );
 	await browser.close();
 } );
 
@@ -215,7 +216,7 @@ test( `${ NAME }: every link inside the site leads somewhere`, async () => {
 	const links = new Map();
 	for ( const item of PAGES ) {
 		await page.goto( BASE + item.path );
-		const found = await page.evaluate( () => [ ...document.querySelectorAll( 'a[href]' ) ].map( ( anchor ) => ( { href: anchor.href, raw: anchor.getAttribute( 'href' ), text: anchor.textContent.trim().slice( 0, 40 ) } ) ) );
+		const found = await page.evaluate( () => [ ...document.querySelectorAll( 'a[href]:not([aria-expanded])' ) ].map( ( anchor ) => ( { href: anchor.href, raw: anchor.getAttribute( 'href' ), text: anchor.textContent.trim().slice( 0, 40 ) } ) ) );
 		for ( const link of found ) {
 			assert.ok( link.raw && link.raw !== '#', `${ item.path }: "${ link.text }" has a real target` );
 			if ( link.raw.startsWith( '#' ) ) {

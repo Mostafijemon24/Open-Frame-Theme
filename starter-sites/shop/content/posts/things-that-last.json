@@ -1,0 +1,12 @@
+{
+	"uid": "shop:posts:things-that-last",
+	"title": "How to tell a thing that will last",
+	"slug": "things-that-last",
+	"excerpt": "Weight, joints and whether it can be mended. Three questions to ask of a board, a basket or a chair before you buy it.",
+	"featured": "ofss://media/journal-3",
+	"categories": [
+		"Buying well"
+	],
+	"days_ago": 30,
+	"content": "<!-- wp:paragraph -->\n<p>The bread board in the picture is twenty years old and has been oiled perhaps ten times. It has lasted because it was one piece of wood to begin with.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three questions</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Is it heavier than it looks?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Can you see how it is joined?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>If it broke, could someone mend it?</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What we do about it</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>We sell very little, and we use all of it ourselves first. The <a href=\"ofss://product/oak-serving-board\">oak serving board</a> has been through a year of our own kitchen.</p>\n<!-- /wp:paragraph -->"
+}

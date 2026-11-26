@@ -1,0 +1,14 @@
+{
+	"uid": "shop:products:clay-mug",
+	"title": "Clay mug",
+	"slug": "clay-mug",
+	"excerpt": "A terracotta-coloured mug with a square handle, glazed inside and out. Holds 300 ml.",
+	"content": "<p>Thrown in small batches and glazed in one warm colour, somewhere between brick and rust. The handle is square, so two fingers fit without touching the cup.</p><p>Dishwasher safe. The slate coaster in the picture is not included.</p>",
+	"price": "18",
+	"featured": true,
+	"image": "ofss://media/product-1",
+	"gallery": [],
+	"categories": [
+		"Ceramics"
+	]
+}

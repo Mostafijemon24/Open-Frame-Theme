@@ -80,8 +80,10 @@ A copy of the list of designs, the record of the last import, a short import his
 == Changelog ==
 
 = 0.6.0 =
+* New: Shop, the tenth complete design: a small WooCommerce store with eight products, a lookbook, shipping and returns, a journal and a contact form. It needs Elementor Pro and WooCommerce.
 * New: Magazine, the ninth complete design and the fourth for Elementor Pro: a front page that follows the newest stories of each section, a ruled masthead, a calm article layout, writers, and subscription and contact forms.
 * New: a design can bring products for a WooCommerce store, with prices, pictures and categories, and link to the shop, cart, checkout and account pages. A rollback removes the products and their categories.
+* Fixed: a link in an article or a product to something the import creates later is now filled in.
 * New: a page of a design can list the posts of one of the design's categories, and link to a category.
 * New: designs are illustrated with photographs; the source and licence of each one come with the design.
 

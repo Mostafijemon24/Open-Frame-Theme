@@ -275,7 +275,7 @@ export const kitTypography = ( prefix, { family, fontSize, weight, lineHeight, s
  * @param {Object}   design.catalog   Fields of site.json to refresh.
  * @return {string[]} The widget types the design uses.
  */
-export function writeSite( { site, out, pages, parts = {}, templates = {}, posts = [], kit, themeMods, options, menus, media, fonts, catalog } ) {
+export function writeSite( { site, out, pages, parts = {}, templates = {}, posts = [], products = [], kit, themeMods, options, menus, media, fonts, catalog } ) {
 	for ( const dir of [ 'content', 'site' ] ) {
 		fs.rmSync( path.join( out, dir ), { recursive: true, force: true } );
 	}
@@ -311,6 +311,23 @@ export function writeSite( { site, out, pages, parts = {}, templates = {}, posts
 			categories: [ post.category ],
 			days_ago: post.days,
 			content: post.content.join( '\n\n' ),
+		} );
+	}
+
+	// The products of a store (WooCommerce). Prices are plain numbers; the shop's own settings give the currency.
+	for ( const product of products ) {
+		writeJson( path.join( out, 'content/products', product.name + '.json' ), {
+			uid: `${ site }:products:${ product.name }`,
+			title: product.title,
+			slug: product.name,
+			excerpt: product.excerpt,
+			content: product.content,
+			price: product.price,
+			...( product.sale ? { sale_price: product.sale } : {} ),
+			...( product.featured ? { featured: true } : {} ),
+			image: `ofss://media/${ product.image }`,
+			gallery: ( product.gallery || [] ).map( ( uid ) => `ofss://media/${ uid }` ),
+			categories: [ product.category ],
 		} );
 	}
 

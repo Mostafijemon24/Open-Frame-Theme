@@ -1,0 +1,16 @@
+[
+	{
+		"family": "Outfit",
+		"weight": "100 900",
+		"style": "normal",
+		"file": "outfit-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2021 The Outfit Project Authors."
+	},
+	{
+		"family": "Work Sans",
+		"weight": "100 900",
+		"style": "normal",
+		"file": "work-sans-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2019 The Work Sans Project Authors."
+	}
+]

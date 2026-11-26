@@ -1,0 +1,25 @@
+# Photographs of the shop starter site
+
+Written by `tools/sites/photos.mjs`; do not edit by hand. Every photograph was taken from Wikimedia Commons, which records it as CC0 or public domain: it may be copied, changed and redistributed without conditions. The licence was read from Commons on the date shown. The files here are cropped and compressed copies.
+
+CC0 and the public domain cover copyright only. Where a photograph shows a person who can be recognised, a trade mark or a private building, the people who use the design remain responsible for how they use that picture; the starter site shows them as examples to be replaced.
+
+| File | Used for | Photographer | Licence | Source | Checked |
+| --- | --- | --- | --- | --- | --- |
+| `media/files/hero.webp` | Home: hero | Breather (@breather on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:White_room_decoration_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-1.webp` | Product 1 | Artem Sapegin (@sapegin on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Artem_Sapegin_2017_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-2.webp` | Product 2 | Scott Webb (@scottwebb on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Potted_Succulent_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-3.webp` | Product 3 | Brooke Lark (@brookelark on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:A_Kiss_of_Pink_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-4.webp` | Product 4 | Eduard Militaru (@eduardmilitaru on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:NotRedBerries_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-5.webp` | Product 5 | Kelly Jean (@kellyjean on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Leather_notebook_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-6.webp` | Product 6 | Zachary Staines (@antibodies on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Gasworks_Plaza,_Newstead,_Australia_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-7.webp` | Product 7 | David van Dijk (@dvandijk on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Floor_lamp_near_a_wall_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/product-8.webp` | Product 8 | Sarah Dorweiler (@sarahdorweiler on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Minimalist_Basket_Chair_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/lookbook-1.webp` | Lookbook 1 | Charles Deluvio (@charlesdeluvio on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Lucky_Cat_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/lookbook-2.webp` | Lookbook 2 | Brooke Lark (@brookelark on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Brooke_Lark_2016_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/lookbook-3.webp` | Lookbook 3 | Kari Shea (@karishea on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Kari_Shea_2016-06-06_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/lookbook-4.webp` | Lookbook 4 | Lucas Alexander (@lucasalexander on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Bright_windowsill_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/about.webp` | About | Jared Sluyter (@jaredsluyter on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Making_pottery_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/journal-1.webp` | Journal 1 | Giulia Bertelli (@unpeusauvage on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Gardening_Supplies_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/journal-2.webp` | Journal 2 | rawpixel.com rawpixel | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Rawpixel.com_2017-04-27_(Unsplash_FWOGqSKq_Cs).jpg) | 2026-11-26 |
+| `media/files/journal-3.webp` | Journal 3 | Ben Garratt (@wstn on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Ben_Garratt_2016_(Unsplash).jpg) | 2026-11-26 |

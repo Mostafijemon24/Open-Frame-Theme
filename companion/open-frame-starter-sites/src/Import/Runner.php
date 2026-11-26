@@ -814,10 +814,30 @@ class Runner {
 			return $data;
 		}
 
-		preg_match( '#^content/(pages|posts|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
+		preg_match( '#^content/(pages|posts|products|site-parts|templates)/([a-z0-9-]+)\.json$#', $name, $match );
 
-		// Blog posts and pages without Elementor content (the posts page) have nothing to build.
-		if ( 'posts' === $match[1] || empty( $data['elementor'] ) ) {
+		// Blog posts and products have no Elementor content to build, but their texts may link to
+		// something that did not exist yet when they were created (a post to a product, for example).
+		if ( in_array( $match[1], array( 'posts', 'products' ), true ) ) {
+			$post_id = (int) ( $state['posts'][ ( 'posts' === $match[1] ? 'post' : 'product' ) . '/' . $match[2] ] ?? 0 );
+			if ( $post_id && false !== strpos( (string) ( $data['content'] ?? '' ), 'ofss://' ) ) {
+				$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
+				$content  = wp_kses_post( (string) $resolver->resolve( (string) $data['content'] ) );
+				if ( get_post_field( 'post_content', $post_id ) !== $content ) {
+					wp_update_post(
+						array(
+							'ID'           => $post_id,
+							'post_content' => $content,
+						)
+					);
+				}
+			}
+			++$state['cursor'];
+			return false;
+		}
+
+		// A page without Elementor content (the posts page) has nothing to build.
+		if ( empty( $data['elementor'] ) ) {
 			++$state['cursor'];
 			return false;
 		}

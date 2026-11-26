@@ -1,0 +1,6 @@
+{
+	"uid": "shop:pages:journal",
+	"title": "Journal",
+	"slug": "journal",
+	"template": "default"
+}

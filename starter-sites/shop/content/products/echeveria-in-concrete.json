@@ -1,0 +1,14 @@
+{
+	"uid": "shop:products:echeveria-in-concrete",
+	"title": "Echeveria in a concrete pot",
+	"slug": "echeveria-in-concrete",
+	"excerpt": "A green echeveria in a rough cast-concrete pot. Asks for a bright sill and water every other week.",
+	"content": "<p>A rosette-shaped succulent, about twelve centimetres across, in a pot we cast ourselves. The concrete is left rough on the outside and sealed inside.</p><p>Sent in a box with a paper collar, so it arrives the right way up.</p>",
+	"price": "24",
+	"featured": true,
+	"image": "ofss://media/product-2",
+	"gallery": [],
+	"categories": [
+		"Plants"
+	]
+}
