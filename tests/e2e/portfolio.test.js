@@ -43,7 +43,7 @@ runDesignChecks( {
 	editor: [
 		[ 'portfolio:pages:home', 'Brand identities and digital products' ],
 		[ 'portfolio:site-parts:header', 'Juno Vale' ],
-		[ 'portfolio:site-parts:footer', 'A fictional designer' ],
+		[ 'portfolio:site-parts:footer', 'Sample content' ],
 	],
 	gone: '/work/',
 	brand: 'Juno Vale',

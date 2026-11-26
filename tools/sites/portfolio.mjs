@@ -10,7 +10,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'portfolio';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -134,7 +134,7 @@ const projects = [
 	{ uid: 'work-kite', name: 'Paper Kite Books', year: '2024', kind: 'Cover series and art direction' },
 	{ uid: 'work-lumen', name: 'Lumen Cycles', year: '2024', kind: 'Identity and retail graphics' },
 	{ uid: 'work-atlas', name: 'Atlas Museum of Maps', year: '2023', kind: 'Identity and wayfinding' },
-	{ uid: 'work-sol', name: 'Sol Skincare', year: '2022', kind: 'Packaging system' },
+	{ uid: 'work-sol', name: 'Sol Ceramics', year: '2022', kind: 'Identity and labelling for a pottery' },
 ];
 const [ tidewater, fieldnote, kite, lumen, atlas, sol ] = projects;
 
@@ -264,7 +264,7 @@ pages.home = {
 		section( { background: C.rust, top: 112, spacing: 28 }, [
 			column( { width: 84, spacing: 28 }, [
 				heading( '“Juno asked better questions about our business than our investors did. The identity came out of the answers.”', { tag: 'p', color: C.white, size: fluid( 'clamp(1.625rem, 1.1rem + 2.2vw, 2.75rem)' ), more: { typography_font_style: 'italic', typography_line_height: em( 1.22 ) } } ),
-				fact( 'Inês Bragança, founder of Tidewater Coffee Roasters', { color: C.blush, size: 16, weight: 500 } ),
+				fact( 'Inês Bragança, founder of Tidewater Coffee Roasters. A sample quote.', { color: C.blush, size: 16, weight: 500 } ),
 			] ),
 		] ),
 	],
@@ -295,7 +295,7 @@ pages.about = {
 		section( { bottom: 64, spacing: 0 }, [ image( 'studio' ) ] ),
 		section( { top: 0, bottom: 128, spacing: 40 }, [
 			column( { width: 60, spacing: 16 }, [ label( 'Clients' ), heading( 'Some of the people I have worked with' ) ] ),
-			grid( { columns: 4, tablet: 2, spacing: 0, more: { grid_columns_grid_mobile: { unit: 'fr', size: 2, sizes: [] } } }, [ 'Tidewater', 'Fieldnote', 'Atlas Museum', 'Lumen Cycles', 'Paper Kite Books', 'Sol Skincare', 'Northgate Press', 'Harbor Studio' ].map( ( name ) =>
+			grid( { columns: 4, tablet: 2, spacing: 0, more: { grid_columns_grid_mobile: { unit: 'fr', size: 2, sizes: [] } } }, [ 'Tidewater', 'Fieldnote', 'Atlas Museum', 'Lumen Cycles', 'Paper Kite Books', 'Sol Ceramics', 'Northgate Press', 'Harbor Studio' ].map( ( name ) =>
 				ruled( [ heading( name, { tag: 'p', size: fluid( 'clamp(1.125rem, 1rem + 0.6vw, 1.5rem)' ) } ) ], { top: 22, bottom: 22 } ) ) ),
 		] ),
 	],
@@ -315,7 +315,7 @@ pages[ 'project-details' ] = {
 	title: 'Tidewater Coffee Roasters',
 	slug: 'tidewater-coffee-roasters',
 	content: [
-		pageHero( 'Case study', 'Tidewater Coffee <em>Roasters</em>', 'A new identity and packaging for a roastery on the Atlantic coast that had outgrown its market stall.' ),
+		pageHero( 'Case study', 'Tidewater Coffee <em>Roasters</em>', 'A new identity and packaging for a roastery on the Atlantic coast that had outgrown its market stall. The photographs are from the roastery; the bags are in the shops.' ),
 		section( { top: 0, bottom: 72, spacing: 0 }, [
 			grid( { columns: 4, tablet: 2, spacing: 32, more: { grid_columns_grid_mobile: { unit: 'fr', size: 2, sizes: [] } } }, [ meta( 'Client', 'Tidewater Coffee Roasters' ), meta( 'Year', '2025' ), meta( 'Role', 'Identity, packaging, art direction' ), meta( 'With', 'Ana Duarte, illustration' ) ] ),
 		] ),
@@ -323,7 +323,7 @@ pages[ 'project-details' ] = {
 		section( { top: 0, bottom: 72, spacing: 0 }, [
 			row( { spacing: 72, align: 'flex-start' }, [
 				column( { width: 50, spacing: 16 }, [ heading( 'The brief' ), text( '<p>Tidewater sold out every weekend at the market and nowhere else. Cafés liked the coffee and could not remember the name; the bags were brown paper with a rubber stamp. The founders wanted to reach shops and online customers without looking like every other speciality roaster.</p>' ) ] ),
-				column( { width: 50, spacing: 16 }, [ heading( 'The approach' ), text( '<p>I spent two days at the roastery before drawing anything. What stayed with me was the sound: the roaster sits forty metres from the sea. The mark became three lines of water, and the palette came from the building itself: kiln red, roasted black, kelp green.</p>' ) ] ),
+				column( { width: 50, spacing: 16 }, [ heading( 'The approach' ), text( '<p>I spent two days at the roastery before drawing anything. What stayed with me was the sorting table: every batch is picked over by hand, and the beans change from pale green to near black in twelve minutes. The mark became three lines of water for the sea outside, and the palette came from the roast itself: raw green, kiln red, roasted black.</p>' ) ] ),
 			] ),
 		] ),
 		section( { top: 0, bottom: 112, spacing: 24 }, [ grid( { columns: 2, tablet: 2, spacing: 24 }, [ image( 'detail-marks' ), image( 'detail-palette' ) ] ) ] ),
@@ -531,7 +531,7 @@ const parts = {
 					list( [ [ 'Work', 'work' ], [ 'Services', 'services' ], [ 'About', 'about' ] ].map( ( [ title, name ] ) => ( { text: title, url: page( name ) } ) ), { color: C.stone, more: { view: 'traditional', icon_size: px( 0 ), text_indent: px( 0 ), text_color_hover: C.paper } } ),
 					list( [ [ 'Resume', 'resume' ], [ 'Notes', 'notes' ], [ 'Contact', 'contact' ] ].map( ( [ title, name ] ) => ( { text: title, url: page( name ) } ) ), { color: C.stone, more: { view: 'traditional', icon_size: px( 0 ), text_indent: px( 0 ), text_color_hover: C.paper } } ),
 				] ),
-				ruled( [ fact( '© Juno Vale. A fictional designer, made for the Open Frame Portfolio starter site.', { color: C.stone, size: 14, weight: 400 } ) ], { top: 24, bottom: 0, color: '#3A3530' } ),
+				ruled( [ fact( 'Sample content: Juno Vale is a fictional designer made for the Open Frame Portfolio starter site. The clients, projects, figures and quote are examples to replace with your own.', { color: C.stone, size: 14, weight: 400 } ) ], { top: 24, bottom: 0, color: '#3A3530' } ),
 			] ),
 		],
 	},
@@ -618,17 +618,9 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/portfolio-art.mjs).';
-const media = [
-	{ uid: 'feature', file: 'feature.jpg', alt: 'Three coffee bags with a wave mark, in white, rust and green' },
-	...projects.map( ( project ) => ( { uid: project.uid, file: project.uid + '.jpg', alt: `${ project.name }: ${ project.kind.toLowerCase() }` } ) ),
-	{ uid: 'portrait', file: 'portrait.jpg', alt: 'Illustrated portrait of Juno Vale' },
-	{ uid: 'studio', file: 'studio.jpg', alt: 'A type specimen, colour swatches and a pencil on a desk' },
-	{ uid: 'detail-marks', file: 'detail-marks.jpg', alt: 'Four versions of the Tidewater mark' },
-	{ uid: 'detail-palette', file: 'detail-palette.jpg', alt: 'The Tidewater colour palette and the line “Slow roasted, by the sea”' },
-	{ uid: 'detail-wide', file: 'detail-wide.jpg', alt: 'Tidewater shop sign, bags and cups' },
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: '' } ) ),
-].map( ( item ) => ( { ...item, licence } ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// The portrait is named after the invented designer; article covers are decoration beside their titles.
+const media = photoIndex( OUT, { portrait: 'Portrait of Juno Vale', ...Object.fromEntries( posts.map( ( post ) => [ post.image, '' ] ) ) } );
 
 const fonts = [
 	{ family: SERIF, weight: '100 900', style: 'normal', file: 'fraunces-latin.woff2', licence: 'OFL-1.1. Copyright 2020 The Fraunces Project Authors.' },

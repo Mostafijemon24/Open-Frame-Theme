@@ -172,7 +172,7 @@
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
-									"editor": "<p>A new identity and packaging for a roastery on the Atlantic coast that had outgrown its market stall.</p>",
+									"editor": "<p>A new identity and packaging for a roastery on the Atlantic coast that had outgrown its market stall. The photographs are from the roastery; the bags are in the shops.</p>",
 									"typography_typography": "custom",
 									"typography_font_size": {
 										"unit": "px",
@@ -892,7 +892,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>I spent two days at the roastery before drawing anything. What stayed with me was the sound: the roaster sits forty metres from the sea. The mark became three lines of water, and the palette came from the building itself: kiln red, roasted black, kelp green.</p>"
+											"editor": "<p>I spent two days at the roastery before drawing anything. What stayed with me was the sorting table: every batch is picked over by hand, and the beans change from pale green to near black in twelve minutes. The mark became three lines of water for the sea outside, and the palette came from the roast itself: raw green, kiln red, roasted black.</p>"
 										},
 										"elements": []
 									}

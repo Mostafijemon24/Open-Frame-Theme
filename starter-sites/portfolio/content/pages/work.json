@@ -1340,7 +1340,7 @@
 														"elType": "widget",
 														"widgetType": "heading",
 														"settings": {
-															"title": "Sol Skincare",
+															"title": "Sol Ceramics",
 															"header_size": "h2",
 															"__globals__": {
 																"title_color": "globals/colors?id=secondary"
@@ -1397,7 +1397,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Packaging system",
+													"title": "Identity and labelling for a pottery",
 													"header_size": "p",
 													"title_color": "#4A443D",
 													"typography_typography": "custom",

@@ -35,9 +35,13 @@ In Elementor's Site Settings: Primary and Accent are rust, Secondary is ink (hea
 
 Header: the name in serif on the left, the menu on the right, no button, no border. On phones the theme's menu button takes the place of the menu. Footer: an ink band with a very large "Let's talk." that links to the contact page, the email address, two short link lists and one line of small print.
 
-## Images
+## Photographs
 
-Fifteen original pictures drawn by `tools/sites/portfolio-art.mjs`: invented projects shown as flat studio shots (coffee bags, app screens, posters, book covers, bottles), an illustrated portrait, a desk, and three typographic covers for the notes. CC0, about 760 KB together. A real person replaces them with their own work; the covers keep their proportions when replaced with photographs of the same shape.
+Fifteen photographs from Wikimedia Commons, all recorded there as CC0, listed with their sources in `CREDITS.md`. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch portfolio` prepares them.
+
+A designer's own work cannot be shown in a starter site, so each project is pictured by the client's world: green coffee being sorted, a notebook on sand, a stack of cloth-bound books, a bicycle wheel, old maps, glazed bottles. The case study follows the coffee from the sorting table to the cup and the café terrace. The portrait and the desk stand for the designer.
+
+Warm wood, paper, sand and rust run through the set, in keeping with the paper-coloured page.
 
 ## On a phone
 

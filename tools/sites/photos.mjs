@@ -74,6 +74,26 @@ async function request( url, tries = 14 ) {
 	}
 }
 
+/** The bytes at an address. A download that stalls is given up and started again. */
+async function download( url, tries = 4 ) {
+	for ( let attempt = 1; ; attempt++ ) {
+		let timer;
+		try {
+			const stalled = new Promise( ( resolve, reject ) => {
+				timer = setTimeout( () => reject( new Error( 'stalled' ) ), 120000 );
+			} );
+			return Buffer.from( await Promise.race( [ request( url ).then( ( response ) => response.arrayBuffer() ), stalled ] ) );
+		} catch ( error ) {
+			if ( attempt >= tries ) {
+				throw error;
+			}
+			process.stderr.write( `  (${ error.message }, downloading again)\n` );
+		} finally {
+			clearTimeout( timer );
+		}
+	}
+}
+
 async function api( parameters ) {
 	const url = API + '?' + new URLSearchParams( { action: 'query', format: 'json', formatversion: '2', ...parameters } );
 	await sleep( 1200 );
@@ -133,7 +153,7 @@ async function commandSearch( words, options ) {
 	const cells = [];
 	for ( const [ index, item ] of found.entries() ) {
 		try {
-			const bytes = Buffer.from( await ( await request( item.scaled_url ) ).arrayBuffer() );
+			const bytes = await download( item.scaled_url );
 			await sleep( 400 );
 			cells.push( `<figure><img src="${ dataUrl( bytes ) }"><figcaption><b>${ index + 1 }</b> ${ item.width }×${ item.height } · ${ item.licence }${ item.restrictions ? ' · ' + item.restrictions : '' }<br>${ item.author.slice( 0, 46 ) }</figcaption></figure>` );
 		} catch ( error ) {
@@ -196,7 +216,7 @@ async function commandFetch( site, only ) {
 		const needed = Math.ceil( Math.max( source.width, source.height * original.width / original.height ) );
 		const [ sized ] = needed < original.width ? await lookup( [ source.title ], needed ) : [ original ];
 		const info = { ...original, scaled_url: sized.scaled_width >= needed ? sized.scaled_url : original.original_url };
-		const bytes = Buffer.from( await ( await request( info.scaled_url ) ).arrayBuffer() );
+		const bytes = await download( info.scaled_url );
 		const [ fx, fy ] = source.focal || [ 50, 50 ];
 		const result = await page.evaluate( async ( { src, width, height, fx, fy, budget } ) => {
 			const image = new Image();
