@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [All ten designs with photographs](#all-ten-designs-with-photographs--test-report): Phase 7b complete, Phase 7c
 - [Products of a store](#products-of-a-store--test-report): plugin 0.6.0, groundwork for the Shop design
 - [Real Estate and the photography standard](#the-real-estate-starter-site-and-the-photography-standard--test-report): Phase 7b, part 7; the first design with real photographs
 - [SaaS starter site](#the-saas-starter-site--test-report): Phase 7b, part 6
@@ -15,6 +16,49 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# All ten designs with photographs — Test Report
+
+Phase 7b complete and Phase 7c, plugin 0.6.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (installed, not activated with a licence) and WooCommerce 11.3.1, in Chromium.
+
+| Suite | Result |
+| --- | --- |
+| All browser checks together | **149 of 149 passed** (11 for each of the ten designs, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine | **83 of 83** without Elementor Pro and WooCommerce, **96 of 96** with WooCommerce (13 checks for products), **95 of 95** with Elementor Pro (12 checks for Theme Builder templates) |
+| Plugin PHP checks | **138 of 138 passed** |
+| Library tools, Worker | **60 of 60** and **10 of 10 passed** |
+| PHPCS, theme and plugin | Both commands end with **exit code 0** |
+| Theme Check, Plugin Check 2.2.0 | Theme Check: **0 required, 0 warnings** (1 recommended, 1 info, as before). Plugin Check: **no errors found** |
+
+**What the browser checks cover.** Eleven checks for each of the ten designs (import, every address at nine widths, menu, links, journal or blog, "page not found", axe-core, typefaces, global styles, the Elementor editor, rollback), plus the 18 theme integrations and the 21 checks of the Starter Sites screen. Each design was also run on its own after its pictures were changed; those runs are named in the commit of each design.
+
+**What changed in the checks.**
+
+- A design with a store switches WooCommerce on for its checks and off afterwards.
+- A link that only opens a panel (the basket in the header, marked `aria-expanded`) is not followed as a link.
+- A design may mix drawn product screens with photographs: the library tests ask for a record with a free licence for every picture that is not original artwork.
+- Footers are recognised by "Sample content", which every footer now says.
+
+**Found by the checks while the designs were redone, and fixed.**
+
+| Where | What |
+| --- | --- |
+| Importer | A link from an article to a product stayed empty, because the product was created after the article. Links are now filled in once everything exists |
+| Importer | A PHP warning for products in the step that builds Elementor pages |
+| Magazine | Dates and section names under 13px; stories without a subheading; "Category: Table" where the magazine says "Table" |
+| Education | A preview picture taken from an address that does not exist (a "page not found" page); retaken |
+| Portfolio | One photograph over the size budget |
+| Library tests | Failed for SaaS after it was pushed, because five of its pictures are drawings; corrected in the next commit |
+| Six pictures | The same photograph chosen for two designs; one of each pair replaced |
+
+**Photographs.** 142 photographs in ten designs, every one recorded on Wikimedia Commons as CC0 or public domain when it was fetched; the record of each (source page, photographer, licence, date) is in the design's `photos.json` and `CREDITS.md`. They were chosen from contact sheets and looked at again as crops, at the size and shape their place needs.
+
+**Not checked.**
+
+- Whether the people who released the photographs had the right to, and whether the people shown agreed; no releases exist.
+- The owner has seen preview pictures of every design but has approved only Real Estate.
+- Ordering in the Shop: no payment or shipping is set up, so nothing beyond the basket was tried.
+- Elementor Pro with a licence; Safari, Firefox, real phones; screen readers.
 
 # Products of a store — Test Report
 

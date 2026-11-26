@@ -6,9 +6,9 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Eight of the ten designs exist, and the owner has changed the standard for their pictures.** On 2026-11-26 the owner asked for real photographs instead of drawn pictures, words written for the business shown, and a record of source and licence for every picture. Real Estate is the first design made that way and is offered as the benchmark; the seven earlier designs still use drawn pictures and are waiting for the owner's decision on the benchmark before they are redone (see "Needed from the owner").
+**All ten designs exist, each illustrated with real photographs.** On 2026-11-26 the owner asked for real photographs instead of drawn pictures, words written for the business shown, and a record of source and licence for every picture, and approved the Real Estate design as the benchmark. The seven designs made before that were then redone, and Magazine and Shop were made that way from the start.
 
-Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and Real Estate (Pro), are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and two Pro designs are still to be made (Shop, Magazine).
+Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Real Estate, Magazine and Shop (Elementor Pro; Shop also needs WooCommerce) are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token).
 
 | Phase | Status |
 | --- | --- |
@@ -19,7 +19,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and 
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 8 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS, Real Estate and Magazine are done (plugin 0.6.0). Next: Shop |
+| 7b. Nine further starter sites | **Done** (plugin 0.6.0). Free: Portfolio, Restaurant, Education, Medical. Pro: Agency, SaaS, Real Estate, Magazine, Shop |
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
@@ -185,15 +185,30 @@ Each is built with the first design that needs it, rather than against invented 
 - **A front page that follows the posts:** four Posts widgets show the newest stories of each section, and a story shown once is not shown again. The sections are bound to categories by name (`ofss://term/places`), which the importer turns into numbers.
 - **Found by the tests and fixed:** dates and section names were set smaller than 13px; stories had no subheading; a section page said "Category: Table" where the magazine says "Table".
 
+### Phase 7c: photographs for the seven earlier designs
+
+- **How it was done:** for each design the photographs were chosen from contact sheets (by helper agents working to one written brief, then checked by eye), fetched with their licences re-read, and the texts were rewritten to match: clients, dishes, courses and people are described as their pictures show them.
+- **What changed in the texts,** for example: Business's logistics client is a container terminal; Portfolio's skincare client is a pottery; Restaurant's four pictured dishes are renamed; Agency's Volt is an electricity company; every footer says the content is a sample, and every quote says it is a sample quote.
+- **Medical shows its doctors without portraits,** because the free photographs of clinicians are of real, named hospital staff.
+- **SaaS keeps five drawings:** the screens of its invented product.
+- **No photograph is used in two designs.** Six duplicates between the helpers' choices were found and replaced.
+
+### Phase 7b, part 9: the Shop design
+
+- **The design** (`starter-sites/shop`, brief in `brief.md`): the fictional shop "Sill & Shelf". Home, Lookbook, About, Shipping and Returns, a journal with three articles, Contact, and WooCommerce's shop, product, basket, checkout and account pages. Outfit with Work Sans; a soft white page with sand, sage and one terracotta.
+- **Eight products** come with the design, each named and described after its photograph; four are featured on the home page through Elementor Pro's Products widget. The header has Pro's Menu Cart.
+- **WooCommerce's own pages are styled by the theme,** not built as Elementor templates. The design's colors and typefaces reach them through the theme's "follow Elementor" option.
+- **Found by the tests and fixed in the importer:** a link from an article to a product was empty, because the product did not exist yet when the article was created; a PHP warning for products in the step that builds pages.
+
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings. (CI found three comment-alignment errors in the plugin in the Agency and SaaS commits, which the local check had missed; corrected in the Real Estate commit.)
+- PHPCS: theme and plugin, both commands end with exit code 0. (CI found three comment-alignment errors in the plugin in the Agency and SaaS commits, which the local check had missed; corrected since, and the check now reads the exit code.)
 - Theme Check on the packaged theme: 0 required, 0 warnings.
-- Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
-- Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Import engine checks: 80 of 80 pass without Elementor Pro and WooCommerce, 92 of 92 with Elementor Pro (twelve checks for Theme Builder templates) and 92 of 92 with WooCommerce (twelve checks for products), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
-- Browser checks: 127 of 127 pass with Elementor Pro in the test site (94 without it, where the Agency, SaaS and Real Estate files are skipped). 11 for each of the eight designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
-- Library tools: 59 of 59 pass. Worker: 10 of 10 pass.
+- Plugin Check 2.2.0 on the packaged plugin: no errors found.
+- Plugin PHP checks: 138 of 138 pass.
+- Import engine checks: 83 of 83 pass without Elementor Pro and WooCommerce, 96 of 96 with WooCommerce (thirteen checks for products) and 95 of 95 with Elementor Pro (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, the fonts of a design, and references to categories.
+- Browser checks: 149 of 149 pass with Elementor Pro and WooCommerce in the test site (94 without Elementor Pro, where the five Pro designs are skipped). 11 for each of the ten designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Library tools: 60 of 60 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
 ## Not verified
@@ -205,15 +220,19 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- Eight designs can be imported: Business, Portfolio, Restaurant, Education, Medical and (with Elementor Pro) Agency, SaaS and Real Estate. The other two (Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- **Seven designs do not meet the owner's new standard for pictures:** Business, Portfolio, Restaurant, Education, Medical, Agency and SaaS use drawn pictures. Their words name invented businesses and say so in the footer, but were not written around photographs.
-- **The photographs come from one source.** Only CC0 photographs on Wikimedia Commons could be searched from here. The choice is good for houses, rooms, streets, food and portraits, and thin for some trades; with an API key from the owner, Pexels could be searched too (its licence allows use in templates, but not inside a WordPress.org theme).
-- **Three Real Estate photographs show people who can be recognised.** CC0 covers copyright, not the rights of the person shown; the portraits stand for invented staff and are meant to be replaced. `LICENSES.md` of the design says so.
+- All ten designs can be imported. The five Pro designs need Elementor Pro, which the plugin does not install; Shop also needs WooCommerce, which the Starter Sites screen installs from WordPress.org.
+- **The photographs come from one source.** Only CC0 and public-domain photographs on Wikimedia Commons could be searched from here; most are pictures Unsplash released as CC0 before 2017. The choice was good for rooms, food, places and objects, thin for healthcare and for teams at work, and its neutral portraits are nearly used up. With a Pexels API key the choice would be wider (never inside the theme: its licence is not accepted there).
+- **Photographs of people.** About two dozen pictures across the designs show a person who can be recognised. CC0 covers copyright, not the rights of the person shown; they stand for invented staff and are meant to be replaced. Each design's `LICENSES.md` names them.
+- **The pictures were judged by the implementer, not by the owner,** except Real Estate, which the owner approved.
+- **Shop sells nothing until its owner sets it up.** No payment method, shipping rate or tax rule comes with the design; products are simple ones without sizes, colours or stock counts; the shipping and returns page is sample text.
+- **Shop's store pages are not Elementor templates.** Shop, product, basket, checkout and account are WooCommerce's pages styled by the theme; they cannot be rearranged in Elementor.
+- **On a device without an emoji font,** WordPress fetches the magnifier of WooCommerce's product gallery from s.w.org. For that reason the product page is not among the pages the "asks no other site for anything" check visits.
+- **Magazine's writers are not WordPress users.** Each story names its writer in its first line; the writer's page is an ordinary page.
 - **Medical shows its doctors without portraits.** Free photographs of clinicians are almost all of real, named hospital staff; an invented doctor's name under a real person's face would mislead, so each doctor has a name, a specialty and a round mark, and a clinic adds its own photographs.
 - **The pool of free, neutral portraits is small.** Three designs (Real Estate, Business, Education) use it for staff; each portrait is used in one design only, and what is left is mostly fashion photography.
 - **Real Estate has no property search, map or enquiry database.** Homes are ordinary pages; the viewing form sends an email.
 - **SaaS has no sign-up or payment, and its legal pages are sample text** that says so. "Start a free trial" leads to pricing and the demo form.
-- **Agency and SaaS were built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything they use worked that way here; a licensed site was not tested. Their forms send email through WordPress, and whether the email arrives depends on the site's mail setup.
+- **The five Pro designs were built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything they use worked that way here; a licensed site was not tested. Their forms send email through WordPress, and whether the email arrives depends on the site's mail setup.
 - **None of the free designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map; Education takes applications by email and telephone and has no course catalogue with enrolment; Medical takes appointments by telephone, email or at the desk and has no doctor directory with search. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
 - The texts, names, prices and figures of all designs are invented sample content; each footer says so.
 - **Medical's sample texts are not medical advice** and say so; a real clinic must have its own texts checked.
@@ -234,14 +253,14 @@ Each is built with the first design that needs it, rather than against invented 
 1. **A Cloudflare API token, to finish Phase 5.** A credential was entered in the secure form on 2026-11-26, but Cloudflare rejects it with "Invalid format for Authorization header": it is not an API token (an account password or the "Global API Key" give this result). What is needed: Cloudflare dashboard > My Profile > API Tokens > Create Token > the "Edit Cloudflare Workers" template, plus the permission Zone > DNS > Edit, for the account and the zone `buildbetters.com`. The token is entered in the secure form again, never in chat.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
-4. **A look at the Real Estate design, and a decision.** It is the proposed benchmark for pictures and words. If it is what the owner means, the seven earlier designs are redone the same way, then Magazine and Shop are made. If not, what should be different.
-5. **"Roofing".** The owner's message names a Roofing design as the benchmark. No Roofing design exists in this project; the ten agreed designs are Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Shop, Real Estate and Magazine. Should a Roofing design be added, replace one of the ten, or was it an example?
-6. **Optional: a Pexels API key** (free, from pexels.com/api), entered in the secure form, if the owner wants a wider choice of photographs than CC0 offers.
-7. **For Phases 7 and 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
+4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
+5. **Optional: a Pexels API key** (free, from pexels.com/api), entered in the secure form, if the owner wants a wider choice of photographs than CC0 offers, above all for portraits and healthcare.
+6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
+7. **For Phase 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. After the owner's answer on the benchmark: redo the pictures and words of the seven earlier designs to the photography standard, one commit per design.
-3. Phase 7b continues with the remaining two Pro-tier designs (Magazine, Shop), made with photographs from the start. Shop also needs WooCommerce products in a package, which is not built yet.
+2. Phase 8: package the ten designs for the library, validate them against the schemas, and publish to staging once Cloudflare can be reached.
+3. Phase 9: the designs in Safari and Firefox and on real phones; Elementor Pro with a licence; the user guide's missing chapters.
 4. A decision on the forms plugin, so the contact pages can carry a form.
