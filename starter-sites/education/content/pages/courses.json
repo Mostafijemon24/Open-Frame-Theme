@@ -1,0 +1,2773 @@
+{
+	"uid": "education:pages:courses",
+	"title": "Courses",
+	"slug": "courses",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000090",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "24",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "17",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "24",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000008f",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "72",
+								"right": "72",
+								"bottom": "72",
+								"left": "72",
+								"isLinked": true
+							},
+							"padding_tablet": {
+								"unit": "px",
+								"top": "50",
+								"right": "50",
+								"bottom": "50",
+								"left": "50",
+								"isLinked": true
+							},
+							"padding_mobile": {
+								"unit": "px",
+								"top": "28",
+								"right": "22",
+								"bottom": "28",
+								"left": "22",
+								"isLinked": false
+							},
+							"background_background": "classic",
+							"background_color": "#DCE9FF",
+							"border_radius": {
+								"unit": "px",
+								"top": "36",
+								"right": "36",
+								"bottom": "36",
+								"left": "36",
+								"isLinked": true
+							},
+							"border_radius_mobile": {
+								"unit": "px",
+								"top": "24",
+								"right": "24",
+								"bottom": "24",
+								"left": "24",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000008e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 70,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_align_items": "flex-start"
+								},
+								"elements": [
+									{
+										"id": "000008b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Courses",
+											"header_size": "p",
+											"title_color": "#16224A",
+											"typography_typography": "custom",
+											"typography_font_family": "Figtree",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 14,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.2,
+												"sizes": []
+											},
+											"_element_width": "auto",
+											"_background_background": "classic",
+											"_background_color": "#FFFFFF",
+											"_padding": {
+												"unit": "px",
+												"top": "8",
+												"right": "14",
+												"bottom": "8",
+												"left": "14",
+												"isLinked": false
+											},
+											"_border_radius": {
+												"unit": "px",
+												"top": "999",
+												"right": "999",
+												"bottom": "999",
+												"left": "999",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									},
+									{
+										"id": "000008c",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Six courses, one promise: you will make something",
+											"header_size": "h1",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000008d",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Every course ends with a project of your own. Classes run in the evening or on Saturdays, in groups of fourteen or fewer.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000c2",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000c1",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000098",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#DCE9FF",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000091",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-code",
+												"url": "ofss://media/course-code"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000094",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "0000092",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "10 weeks",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "0000093",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Beginner",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000095",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Web development fundamentals",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000096",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>HTML, CSS and JavaScript from an empty file to a site you put online yourself.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000097",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000a0",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#CFF0DF",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000099",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-data",
+												"url": "ofss://media/course-data"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000009c",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "000009a",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "8 weeks",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "000009b",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Beginner",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000009d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Data analysis with spreadsheets and SQL",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000009e",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Ask a question of a dataset and answer it with a chart your manager can read.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "000009f",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000a8",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#E7E0FF",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "00000a1",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-design",
+												"url": "ofss://media/course-design"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000a4",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "00000a2",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "10 weeks",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "00000a3",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Intermediate",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00000a5",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Interface design",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000a6",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Layout, type and colour for screens, practised on a real brief from a local company.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "00000a7",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000b0",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFE1D2",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "00000a9",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-language",
+												"url": "ofss://media/course-language"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000ac",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "00000aa",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "12 weeks",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "00000ab",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "All levels",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00000ad",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Spanish for work",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000ae",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Meetings, email and small talk. Groups of eight, taught entirely in Spanish from week three.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "00000af",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000b8",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFE9A8",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "00000b1",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-photo",
+												"url": "ofss://media/course-photo"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000b4",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "00000b2",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "4 Saturdays",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "00000b3",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Beginner",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00000b5",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Photography weekends",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000b6",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Get off automatic. Light, composition and editing, with a walk through the old town each week.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "00000b7",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000c0",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#DCE9FF",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "2",
+										"right": "2",
+										"bottom": "2",
+										"left": "2",
+										"isLinked": true
+									},
+									"border_color": "#16224A",
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 8,
+										"vertical": 8,
+										"blur": 0,
+										"spread": 0,
+										"color": "#16224A"
+									}
+								},
+								"elements": [
+									{
+										"id": "00000b9",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/course-writing",
+												"url": "ofss://media/course-writing"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000bc",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 8,
+												"column": "8",
+												"row": "8",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "00000ba",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "6 weeks",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											},
+											{
+												"id": "00000bb",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "All levels",
+													"header_size": "p",
+													"title_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_family": "Figtree",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 14,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.2,
+														"sizes": []
+													},
+													"_element_width": "auto",
+													"_background_background": "classic",
+													"_background_color": "#FFFFFF",
+													"_padding": {
+														"unit": "px",
+														"top": "8",
+														"right": "14",
+														"bottom": "8",
+														"left": "14",
+														"isLinked": false
+													},
+													"_border_radius": {
+														"unit": "px",
+														"top": "999",
+														"right": "999",
+														"bottom": "999",
+														"left": "999",
+														"isLinked": true
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00000bd",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Writing clearly at work",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000be",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Reports, proposals and difficult emails, edited line by line in a small group.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "00000bf",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Course details",
+											"link": {
+												"url": "ofss://page/course-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#16224A",
+											"hover_color": "#5B3FD6",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"button_box_shadow_box_shadow_type": "yes",
+											"button_box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 0,
+												"blur": 0,
+												"spread": 0,
+												"color": "rgba(0,0,0,0)"
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000d0",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 40,
+						"column": "40",
+						"row": "40",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000c5",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"flex_align_items": "flex-start"
+						},
+						"elements": [
+							{
+								"id": "00000c3",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Choosing",
+									"header_size": "p",
+									"title_color": "#16224A",
+									"typography_typography": "custom",
+									"typography_font_family": "Figtree",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.2,
+										"sizes": []
+									},
+									"_element_width": "auto",
+									"_background_background": "classic",
+									"_background_color": "#CFF0DF",
+									"_padding": {
+										"unit": "px",
+										"top": "8",
+										"right": "14",
+										"bottom": "8",
+										"left": "14",
+										"isLinked": false
+									},
+									"_border_radius": {
+										"unit": "px",
+										"top": "999",
+										"right": "999",
+										"bottom": "999",
+										"left": "999",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000c4",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Which one is for me?",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "00000cf",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000c8",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_tablet": {
+										"unit": "px",
+										"top": "22",
+										"right": "22",
+										"bottom": "22",
+										"left": "22",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "28",
+										"right": "22",
+										"bottom": "28",
+										"left": "22",
+										"isLinked": false
+									},
+									"background_background": "classic",
+									"background_color": "#CFF0DF",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_radius_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000c6",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "I want a new job",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000c7",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Web development, data analysis and interface design are the three that most often lead to a change of role. Each has a careers evening.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000cb",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_tablet": {
+										"unit": "px",
+										"top": "22",
+										"right": "22",
+										"bottom": "22",
+										"left": "22",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "28",
+										"right": "22",
+										"bottom": "28",
+										"left": "22",
+										"isLinked": false
+									},
+									"background_background": "classic",
+									"background_color": "#FFE1D2",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_radius_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000c9",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "I want to be better at the one I have",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000ca",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Writing clearly and Spanish for work fit around a full week and show results in the first month.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000ce",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_tablet": {
+										"unit": "px",
+										"top": "22",
+										"right": "22",
+										"bottom": "22",
+										"left": "22",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "28",
+										"right": "22",
+										"bottom": "28",
+										"left": "22",
+										"isLinked": false
+									},
+									"background_background": "classic",
+									"background_color": "#FFE9A8",
+									"border_radius": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"border_radius_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000cc",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "I want to make things",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000cd",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Photography weekends are for the pleasure of it. No homework, four Saturdays, a lot of walking.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000d8",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000d7",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "64",
+								"right": "64",
+								"bottom": "64",
+								"left": "64",
+								"isLinked": true
+							},
+							"padding_tablet": {
+								"unit": "px",
+								"top": "45",
+								"right": "45",
+								"bottom": "45",
+								"left": "45",
+								"isLinked": true
+							},
+							"padding_mobile": {
+								"unit": "px",
+								"top": "28",
+								"right": "22",
+								"bottom": "28",
+								"left": "22",
+								"isLinked": false
+							},
+							"background_background": "classic",
+							"background_color": "#FF7A59",
+							"border_radius": {
+								"unit": "px",
+								"top": "36",
+								"right": "36",
+								"bottom": "36",
+								"left": "36",
+								"isLinked": true
+							},
+							"border_radius_mobile": {
+								"unit": "px",
+								"top": "24",
+								"right": "24",
+								"bottom": "24",
+								"left": "24",
+								"isLinked": true
+							},
+							"border_border": "solid",
+							"border_width": {
+								"unit": "px",
+								"top": "2",
+								"right": "2",
+								"bottom": "2",
+								"left": "2",
+								"isLinked": true
+							},
+							"border_color": "#16224A",
+							"box_shadow_box_shadow_type": "yes",
+							"box_shadow_box_shadow": {
+								"horizontal": 10,
+								"vertical": 10,
+								"blur": 0,
+								"spread": 0,
+								"color": "#16224A"
+							}
+						},
+						"elements": [
+							{
+								"id": "00000d6",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "stretch",
+									"flex_justify_content": "space-between",
+									"flex_gap": {
+										"unit": "px",
+										"size": 40,
+										"column": "40",
+										"row": "40",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 32,
+										"column": "32",
+										"row": "32",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000d3",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 62,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00000d1",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Not sure which course fits? Come to an open day.",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "00000d2",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Sit in on a class, meet the instructors and ask every question you have. No booking, no sales talk.</p>",
+													"text_color": "#16224A",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 19,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00000d5",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"width": {
+												"unit": "%",
+												"size": 32,
+												"sizes": []
+											},
+											"width_mobile": {
+												"unit": "%",
+												"size": 100,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_align_items": "flex-start"
+										},
+										"elements": [
+											{
+												"id": "00000d4",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "See the next dates",
+													"link": {
+														"url": "ofss://page/events",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"background_color": "#16224A",
+													"button_text_color": "#FFFFFF",
+													"hover_color": "#16224A",
+													"button_background_hover_color": "#FFFFFF"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

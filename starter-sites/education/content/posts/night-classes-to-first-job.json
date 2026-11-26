@@ -1,0 +1,12 @@
+{
+	"uid": "education:posts:night-classes-to-first-job",
+	"title": "From night classes to a first job in data",
+	"slug": "night-classes-to-first-job",
+	"excerpt": "Jonas spent nine years in a warehouse office. Eight weeks of spreadsheets and SQL later, he moved to the planning team.",
+	"featured": "ofss://media/news-3",
+	"categories": [
+		"Student stories"
+	],
+	"days_ago": 30,
+	"content": "<!-- wp:paragraph -->\n<p>Jonas spent nine years in a warehouse office, keeping stock lists that nobody read. He took the data analysis course because he suspected the lists could be useful.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">One chart changed the conversation</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>For his final project he used his own company's numbers and showed which products were ordered too early. His manager asked him to present it to the planning team. Three months later he joined them.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">His advice</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Bring a question from your own job to the first class. The course makes more sense when the data is something you care about.</p>\n<!-- /wp:paragraph -->"
+}

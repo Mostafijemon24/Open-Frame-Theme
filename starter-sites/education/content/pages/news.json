@@ -1,0 +1,6 @@
+{
+	"uid": "education:pages:news",
+	"title": "News",
+	"slug": "news",
+	"template": "default"
+}

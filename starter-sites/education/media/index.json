@@ -1,0 +1,98 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.jpg",
+		"alt": "A laptop on a stack of books, with a plant and a mug",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-code",
+		"file": "course-code.jpg",
+		"alt": "Illustration for the course “Web development fundamentals”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-data",
+		"file": "course-data.jpg",
+		"alt": "Illustration for the course “Data analysis with spreadsheets and SQL”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-design",
+		"file": "course-design.jpg",
+		"alt": "Illustration for the course “Interface design”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-language",
+		"file": "course-language.jpg",
+		"alt": "Illustration for the course “Spanish for work”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-photo",
+		"file": "course-photo.jpg",
+		"alt": "Illustration for the course “Photography weekends”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "course-writing",
+		"file": "course-writing.jpg",
+		"alt": "Illustration for the course “Writing clearly at work”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "campus",
+		"file": "campus.jpg",
+		"alt": "The academy building, with trees on both sides",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "group",
+		"file": "group.jpg",
+		"alt": "Five students standing together",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "teacher-1",
+		"file": "teacher-1.jpg",
+		"alt": "Illustrated portrait of Dana Whitlock",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "teacher-2",
+		"file": "teacher-2.jpg",
+		"alt": "Illustrated portrait of Samuel Okoye",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "teacher-3",
+		"file": "teacher-3.jpg",
+		"alt": "Illustrated portrait of Lucía Fernández",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "teacher-4",
+		"file": "teacher-4.jpg",
+		"alt": "Illustrated portrait of Priya Raman",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "news-1",
+		"file": "news-1.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "news-2",
+		"file": "news-2.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	},
+	{
+		"uid": "news-3",
+		"file": "news-3.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs)."
+	}
+]

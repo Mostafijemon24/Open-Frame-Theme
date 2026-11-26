@@ -2,7 +2,7 @@
 	"id": "education",
 	"order": 8,
 	"name": "Education",
-	"summary": "A site for academies and coaching: courses, instructors, admissions and events.",
+	"summary": "A bright, friendly site for an academy or training centre: courses, a course page with syllabus and fee, instructors, admissions and fees, events and news.",
 	"category": "education",
 	"tags": [
 		"academy",
@@ -11,12 +11,12 @@
 		"coaching"
 	],
 	"tier": "free",
-	"status": "coming_soon",
+	"status": "available",
 	"version": "1.0.0",
 	"colors": [
-		"#0b4f8a",
 		"#ffcf4a",
-		"#ffffff"
+		"#5b3fd6",
+		"#16224a"
 	],
 	"pages": [
 		"Home",
@@ -26,7 +26,7 @@
 		"Admissions and Fees",
 		"Events",
 		"About",
-		"Blog",
+		"News (blog)",
 		"Single Post",
 		"Contact",
 		"404"
@@ -36,7 +36,7 @@
 		"wordpress": "6.8",
 		"php": "7.4",
 		"theme": "1.1.0",
-		"importer": "1.0.0",
+		"importer": "0.4.0",
 		"plugins": [
 			{
 				"slug": "elementor",
@@ -46,7 +46,18 @@
 				"source": "wordpress.org",
 				"required": true
 			}
-		]
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"counter",
+				"heading",
+				"icon-list",
+				"image",
+				"of-nav-menu",
+				"text-editor"
+			]
+		}
 	},
 	"editable": {
 		"404": "elementor",
@@ -56,5 +67,19 @@
 		"blog": "theme",
 		"single": "theme"
 	},
-	"demo_url": ""
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Courses",
+			"file": "courses.png"
+		},
+		{
+			"title": "Course details",
+			"file": "course.png"
+		},
+		{
+			"title": "Admissions and fees",
+			"file": "admissions.png"
+		}
+	]
 }

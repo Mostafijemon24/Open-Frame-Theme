@@ -1,0 +1,12 @@
+{
+	"uid": "education:posts:open-day-january",
+	"title": "Open day on 18 January: come and sit in on a class",
+	"slug": "open-day-january",
+	"excerpt": "The doors are open from ten until two. Try a twenty-minute lesson in any subject, meet the people who teach it and see the rooms.",
+	"featured": "ofss://media/news-1",
+	"categories": [
+		"Events"
+	],
+	"days_ago": 4,
+	"content": "<!-- wp:paragraph -->\n<p>On Saturday 18 January the doors are open from ten until two. You can try a twenty-minute lesson in any subject, meet the people who teach it and see the rooms you would be learning in.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What happens on the day</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Short lessons every half hour, in all six subjects</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Instructors and former students in the café to answer questions</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Advice on fees, instalments and employer funding</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Do I need to book?</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>No. Come when it suits you and stay as long as you like. If you already know which course you want, <a href=\"ofss://page/admissions\">the admissions page</a> explains how to apply.</p>\n<!-- /wp:paragraph -->"
+}

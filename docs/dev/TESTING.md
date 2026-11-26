@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Education starter site](#the-education-starter-site--test-report): Phase 7b, part 3
 - [Restaurant starter site](#the-restaurant-starter-site--test-report): Phase 7b, part 2, the first dark design
 - [Portfolio starter site and fonts of a design](#the-portfolio-starter-site--test-report): Phase 7b, part 1
 - [Business starter site](#the-business-starter-site--test-report): Phase 7a, the first real design
@@ -8,6 +9,34 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Education starter site — Test Report
+
+Phase 7b, part 3, plugin 0.4.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6 and Elementor 4.4.2 (free version only), in Chromium.
+
+| Suite | Result |
+| --- | --- |
+| Education, `tests/e2e/education.test.js` | **11 of 11 passed** |
+| All browser checks together | **83 of 83 passed** (11 each for Education, Restaurant, Portfolio and Business, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, plugin PHP checks, library tools | **80 of 80, 138 of 138, 49 of 49 passed** |
+| PHPCS (no PHP changed since the Restaurant report) | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+The eleven checks are the shared ones, on eleven addresses (nine pages, an article, an address that does not exist) at the nine widths: 99 page views. Headings in Bricolage Grotesque, text in Figtree, both from the site's own address. axe-core on all eleven addresses at 390 and 1440 px: no violations.
+
+**Contrast, measured:** headings on the page 14.9:1; text 9.0:1 on the page and at least 7.3:1 on every pastel panel; links and buttons (iris) 6.5:1 on the page, at least 5.3:1 on the pastels, white on iris 6.7:1; navy on the yellow hero 10.5:1 and on the coral panel 6.0:1; text on the navy panels 10.1:1.
+
+**Found and fixed while building it:**
+
+1. Elementor's accordion widget, tried for the questions on the Admissions page, fails axe-core ("Elements must only use supported ARIA attributes") with a heading and with a plain element as its title. It was replaced by plain question cards.
+2. The Events page went from heading level 1 to level 3.
+3. Arrow links inherited the outline and hard shadow that Site Settings give every button; they now switch both off explicitly.
+4. The check marks of a list were missing (an icon name from a newer icon set).
+
+## Not covered
+
+As for the other designs.
 
 # The Restaurant starter site — Test Report
 
