@@ -93,7 +93,7 @@
 						"elType": "widget",
 						"widgetType": "heading",
 						"settings": {
-							"title": "Volt: an energy drink that says what is in it",
+							"title": "Volt: an electricity company that shows where the power comes from",
 							"header_size": "h1",
 							"title_color": "#F5F3EE"
 						},
@@ -210,7 +210,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Volt Drinks",
+											"title": "Volt Energy",
 											"header_size": "p",
 											"title_color": "#F5F3EE",
 											"typography_typography": "custom",
@@ -388,7 +388,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Brand, packaging, launch",
+											"title": "Brand, campaign, launch",
 											"header_size": "p",
 											"title_color": "#F5F3EE",
 											"typography_typography": "custom",
@@ -704,7 +704,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Energy drinks all shout the same things in the same colours. Volt had a better recipe, with no sugar and half the caffeine, and a can nobody could tell apart from the others on the shelf.</p>"
+											"editor": "<p>Electricity suppliers all promise the same green leaf in the same soft colours. Volt had something better, a tariff that names the wind farm your power came from each hour, and a brand nobody could tell apart from the others on the comparison site.</p>"
 										},
 										"elements": []
 									}
@@ -761,7 +761,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>We took everything off the can except the name, a bolt and the three facts people ask about. One colour, used so consistently that the shelf does the advertising. The launch film is fifteen seconds of someone reading the label.</p>"
+											"editor": "<p>We took everything off the brand except the name, a bolt and the three facts people ask about. One violet, the colour of the sky a second before thunder, used so consistently that the bill does the advertising. The launch film is fifteen seconds of a storm and one line of type.</p>"
 										},
 										"elements": []
 									}
@@ -902,7 +902,7 @@
 											"ending_number": 9,
 											"prefix": "",
 											"suffix": "",
-											"title": "days to sell out the first run",
+											"title": "days to fill the first tariff",
 											"duration": 1200,
 											"number_color": "#0D0D0D",
 											"title_color": "#3A3A38",
@@ -967,7 +967,7 @@
 											"ending_number": 2400,
 											"prefix": "",
 											"suffix": "",
-											"title": "shops by the end of the year",
+											"title": "households a week by the end of the year",
 											"duration": 1200,
 											"number_color": "#0D0D0D",
 											"title_color": "#3A3A38",
@@ -1032,7 +1032,7 @@
 											"ending_number": 41,
 											"prefix": "",
 											"suffix": "%",
-											"title": "of buyers came back within a month",
+											"title": "of customers open the hourly report",
 											"duration": 1200,
 											"number_color": "#0D0D0D",
 											"title_color": "#3A3A38",

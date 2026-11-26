@@ -20,7 +20,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and 
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
 | 7b. Nine further starter sites | **In progress: 8 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS, Real Estate and Magazine are done (plugin 0.6.0). Next: Shop |
-| 7c. Photographs and matching words for every design | **In progress.** The owner approved the Real Estate benchmark on 2026-11-26. Redone so far: Business, Education, Portfolio, Medical, Restaurant, SaaS (its product screens stay drawn). Still with drawn pictures: Agency |
+| 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |

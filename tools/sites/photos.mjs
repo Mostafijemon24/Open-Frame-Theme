@@ -183,7 +183,15 @@ async function commandSearch( words, options ) {
 function writeCredits( site ) {
 	const home = path.join( ROOT, site );
 	const recordFile = path.join( home, 'photos.json' );
-	const kept = JSON.parse( fs.readFileSync( recordFile, 'utf8' ) ).map( ( item ) => ( { ...item, author: tidyAuthor( item.author, decodeURIComponent( item.source_url ).replace( /_/g, ' ' ) ) } ) );
+	// What a picture is for and how it is described is decided in photo-sources.json; the record follows it.
+	const wanted = new Map( JSON.parse( fs.readFileSync( path.join( home, 'photo-sources.json' ), 'utf8' ) ).map( ( item ) => [ item.uid, item ] ) );
+	const kept = JSON.parse( fs.readFileSync( recordFile, 'utf8' ) ).map( ( item ) => ( {
+		...item,
+		section: wanted.get( item.uid )?.section ?? item.section,
+		subject: wanted.get( item.uid )?.subject ?? item.subject,
+		alt: wanted.get( item.uid )?.alt ?? item.alt,
+		author: tidyAuthor( item.author, decodeURIComponent( item.source_url ).replace( /_/g, ' ' ) ),
+	} ) );
 	fs.writeFileSync( recordFile, JSON.stringify( kept, null, '\t' ) + '\n' );
 	fs.writeFileSync( path.join( home, 'CREDITS.md' ), [
 		`# Photographs of the ${ site } starter site`,
@@ -221,7 +229,15 @@ async function commandFetch( site, only ) {
 		const needed = Math.ceil( Math.max( source.width, source.height * original.width / original.height ) );
 		const [ sized ] = needed < original.width ? await lookup( [ source.title ], needed ) : [ original ];
 		const info = { ...original, scaled_url: sized.scaled_width >= needed ? sized.scaled_url : original.original_url };
-		const bytes = await download( info.scaled_url );
+		let bytes;
+		try {
+			bytes = await download( info.scaled_url );
+		} catch ( error ) {
+			// One picture that cannot be had now does not stop the others; run the command again for it.
+			console.error( `${ source.uid }: not downloaded (${ error.message })` );
+			failed++;
+			continue;
+		}
 		const [ fx, fy ] = source.focal || [ 50, 50 ];
 		const result = await page.evaluate( async ( { src, width, height, fx, fy, budget } ) => {
 			const image = new Image();

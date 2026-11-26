@@ -915,7 +915,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Packaging",
+													"title": "Campaign",
 													"header_size": "p",
 													"title_color": "#0D0D0D",
 													"typography_typography": "custom",
@@ -2863,7 +2863,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "“They argued with our brief for a week. Then they made the thing we actually needed, and it sold out in nine days.”",
+									"title": "“They argued with our brief for a week. Then they made the thing we actually needed, and the first tariff was full in nine days.”",
 									"header_size": "p",
 									"title_color": "#FFFFFF",
 									"typography_typography": "custom",
@@ -2886,7 +2886,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "Jonas Weller, founder of Volt",
+									"title": "Jonas Weller, founder of Volt. A sample quote.",
 									"header_size": "p",
 									"title_color": "#FFFFFF",
 									"typography_typography": "custom",

@@ -47,9 +47,13 @@ All of them can be changed in Theme Builder and the editor. Without Elementor Pr
 - Every page closes with the same lime band: a very large question and one button.
 - The footer repeats the name at a size that fills the width.
 
-## Images
+## Photographs
 
-Fifteen original graphics drawn by `tools/sites/agency-art.mjs`: six case-study covers, a wall made of them, the studio, four portraits and three typographic covers for the journal. CC0, about 560 KB together.
+Fifteen photographs from Wikimedia Commons, all recorded there as CC0, listed with their sources in `CREDITS.md`. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch agency` prepares them.
+
+An agency's own work cannot be shown in a starter site, so each client is pictured by its world, in one strong color against black or white: a violet lightning bolt for the electricity company, a camera drone, stage lights over a crowd, a lime-green tent under stars, a black shell chair, red cinema seats. The studio is a dark loft with a factory window, the reel a photographic studio; four portraits stand for the team.
+
+The clients are described to match their pictures: Volt is an electricity company because its picture is a storm.
 
 ## On a phone
 

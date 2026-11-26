@@ -506,7 +506,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Packaging",
+													"title": "Campaign",
 													"header_size": "p",
 													"title_color": "#0D0D0D",
 													"typography_typography": "custom",

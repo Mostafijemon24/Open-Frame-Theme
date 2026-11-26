@@ -19,7 +19,7 @@ runDesignChecks( {
 		{ path: '/services/' },
 		{ path: '/brand/' },
 		{ path: '/work/' },
-		{ path: '/volt/', h1: 'Volt: an energy drink that says what is in it' },
+		{ path: '/volt/', h1: 'Volt: an electricity company that shows where the power comes from' },
 		{ path: '/careers/' },
 		{ path: '/contact/', h1: 'Tell us what you are trying to do' },
 		{ path: '/journal/', h1: 'Journal' },
@@ -45,7 +45,7 @@ runDesignChecks( {
 	editor: [
 		[ 'agency:pages:home', 'We make brands' ],
 		[ 'agency:templates:header', 'parallel' ],
-		[ 'agency:templates:footer', 'A fictional studio' ],
+		[ 'agency:templates:footer', 'Sample content' ],
 	],
 	gone: '/work/',
 	brand: 'Parallel',

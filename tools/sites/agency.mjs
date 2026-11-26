@@ -12,7 +12,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, menu, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'agency';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -103,7 +103,7 @@ const brief = () =>
    Content
    ---------------------------------------------------------------------- */
 const cases = [
-	{ uid: 'case-volt', name: 'Volt', year: '2026', tags: [ 'Brand', 'Packaging', 'Launch' ] },
+	{ uid: 'case-volt', name: 'Volt', year: '2026', tags: [ 'Brand', 'Campaign', 'Launch' ] },
 	{ uid: 'case-orbit', name: 'Orbit', year: '2025', tags: [ 'Product', 'Design system' ] },
 	{ uid: 'case-pulse', name: 'Pulse Festival', year: '2025', tags: [ 'Identity', 'Campaign' ] },
 	{ uid: 'case-terra', name: 'Terra Outdoor', year: '2024', tags: [ 'Rebrand', 'E-commerce' ] },
@@ -235,8 +235,8 @@ pages.home = {
 
 		section( { background: C.violet, top: 112, spacing: 28 }, [
 			column( { width: 86, spacing: 28 }, [
-				heading( '“They argued with our brief for a week. Then they made the thing we actually needed, and it sold out in nine days.”', { tag: 'p', color: '#FFFFFF', size: fluid( 'clamp(1.375rem, 1rem + 2vw, 2.75rem)' ), weight: 600, more: { typography_line_height: em( 1.25 ) } } ),
-				fact( 'Jonas Weller, founder of Volt', { color: '#FFFFFF', size: 16 } ),
+				heading( '“They argued with our brief for a week. Then they made the thing we actually needed, and the first tariff was full in nine days.”', { tag: 'p', color: '#FFFFFF', size: fluid( 'clamp(1.375rem, 1rem + 2vw, 2.75rem)' ), weight: 600, more: { typography_line_height: em( 1.25 ) } } ),
+				fact( 'Jonas Weller, founder of Volt. A sample quote.', { color: '#FFFFFF', size: 16 } ),
 			] ),
 		] ),
 
@@ -349,21 +349,21 @@ pages[ 'case-study' ] = {
 	content: [
 		section( { background: C.ink, top: 112, bottom: 72, spacing: 40 }, [
 			label( 'Case study', { color: C.lime } ),
-			heading( 'Volt: an energy drink that says what is in it', { tag: 'h1', color: C.paper } ),
-			grid( { columns: 4, tablet: 2, spacing: 32, more: { grid_columns_grid_mobile: { unit: 'fr', size: 2, sizes: [] } } }, [ meta( 'Client', 'Volt Drinks' ), meta( 'Year', '2026' ), meta( 'Scope', 'Brand, packaging, launch' ), meta( 'Team', 'Six people, fourteen weeks' ) ] ),
+			heading( 'Volt: an electricity company that shows where the power comes from', { tag: 'h1', color: C.paper } ),
+			grid( { columns: 4, tablet: 2, spacing: 32, more: { grid_columns_grid_mobile: { unit: 'fr', size: 2, sizes: [] } } }, [ meta( 'Client', 'Volt Energy' ), meta( 'Year', '2026' ), meta( 'Scope', 'Brand, campaign, launch' ), meta( 'Team', 'Six people, fourteen weeks' ) ] ),
 		] ),
 		section( { background: C.ink, top: 0, bottom: 112, spacing: 0 }, [ image( 'case-volt' ) ] ),
 		section( { spacing: 0 }, [
 			row( { spacing: 72, align: 'flex-start' }, [
-				column( { width: 50, spacing: 16 }, [ heading( 'The problem' ), text( '<p>Energy drinks all shout the same things in the same colours. Volt had a better recipe, with no sugar and half the caffeine, and a can nobody could tell apart from the others on the shelf.</p>' ) ] ),
-				column( { width: 50, spacing: 16 }, [ heading( 'What we did' ), text( '<p>We took everything off the can except the name, a bolt and the three facts people ask about. One colour, used so consistently that the shelf does the advertising. The launch film is fifteen seconds of someone reading the label.</p>' ) ] ),
+				column( { width: 50, spacing: 16 }, [ heading( 'The problem' ), text( '<p>Electricity suppliers all promise the same green leaf in the same soft colours. Volt had something better, a tariff that names the wind farm your power came from each hour, and a brand nobody could tell apart from the others on the comparison site.</p>' ) ] ),
+				column( { width: 50, spacing: 16 }, [ heading( 'What we did' ), text( '<p>We took everything off the brand except the name, a bolt and the three facts people ask about. One violet, the colour of the sky a second before thunder, used so consistently that the bill does the advertising. The launch film is fifteen seconds of a storm and one line of type.</p>' ) ] ),
 			] ),
 		] ),
 		section( { top: 0, spacing: 0 }, [
 			grid( { columns: 3, tablet: 3, spacing: 32 }, [
-				[ 9, 'days to sell out the first run' ],
-				[ 2400, 'shops by the end of the year' ],
-				[ 41, 'of buyers came back within a month', { suffix: '%' } ],
+				[ 9, 'days to fill the first tariff' ],
+				[ 2400, 'households a week by the end of the year' ],
+				[ 41, 'of customers open the hourly report', { suffix: '%' } ],
 			].map( ( [ number, title, extra = {} ] ) => ruled( [ counter( number, title, { color: C.ink, titleColor: C.text, ...extra } ) ], { bottom: 0 } ) ) ),
 		] ),
 		section( { top: 0, spacing: 24 }, [ grid( { columns: 2, tablet: 2, spacing: 24 }, [ image( 'case-orbit' ), image( 'case-terra' ) ] ) ] ),
@@ -520,7 +520,7 @@ const templates = {
 					list( [ [ 'Work', 'work' ], [ 'Services', 'services' ], [ 'Studio', 'studio' ] ].map( ( [ title, name ] ) => ( { text: title, url: page( name ) } ) ), { color: C.ash, more: { view: 'traditional', icon_size: px( 0 ), text_indent: px( 0 ), text_color_hover: C.lime } } ),
 					list( [ [ 'Careers', 'careers' ], [ 'Journal', 'journal' ], [ 'Contact', 'contact' ] ].map( ( [ title, name ] ) => ( { text: title, url: page( name ) } ) ), { color: C.ash, more: { view: 'traditional', icon_size: px( 0 ), text_indent: px( 0 ), text_color_hover: C.lime } } ),
 				] ),
-				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: C.dark }, [ fact( '© Parallel. A fictional studio, made for the Open Frame Agency starter site.', { color: C.ash, size: 14, weight: 400 } ) ] ),
+				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: C.dark }, [ fact( 'Sample content: Parallel is a fictional studio made for the Open Frame Agency starter site. The clients, figures and quote are examples to replace with your own.', { color: C.ash, size: 14, weight: 400 } ) ] ),
 			] ),
 		],
 	},
@@ -649,15 +649,12 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs).';
-const mediaIndex = [
-	...cases.map( ( item ) => ( { uid: item.uid, file: item.uid + '.jpg', alt: `Cover of the ${ item.name } case study` } ) ),
-	{ uid: 'reel', file: 'reel.jpg', alt: 'Six project covers arranged as a wall' },
-	{ uid: 'studio', file: 'studio.jpg', alt: 'The studio: a long table with three screens under a large window' },
-	...team.map( ( person ) => ( { uid: person.uid, file: person.uid + '.jpg', alt: `Illustrated portrait of ${ person.name }` } ) ),
-	// Elementor Pro links these pictures to their articles, so each needs a name.
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: `Cover of the article “${ post.title }”` } ) ),
-].map( ( entry ) => ( { ...entry, licence } ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// Portraits are named after the invented people; Elementor Pro links the covers to their articles, so each is named after its article.
+const mediaIndex = photoIndex( OUT, {
+	...Object.fromEntries( team.map( ( person ) => [ person.uid, `Portrait of ${ person.name }` ] ) ),
+	...Object.fromEntries( posts.map( ( post ) => [ post.image, `Cover of the article “${ post.title }”` ] ) ),
+} );
 
 const fonts = [
 	{ family: DISPLAY, weight: '200 900', style: 'normal', file: 'unbounded-latin.woff2', licence: 'OFL-1.1. Copyright 2022 The Unbounded Project Authors.' },

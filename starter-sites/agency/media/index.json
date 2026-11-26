@@ -1,92 +1,107 @@
 [
 	{
 		"uid": "case-volt",
-		"file": "case-volt.jpg",
-		"alt": "Cover of the Volt case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-volt.webp",
+		"alt": "A violet lightning bolt crossing a dark night sky above a black horizon",
+		"licence": "CC0-1.0. Photograph by Jack Patrick (@jack_patrick on Unsplash), from Wikimedia Commons.",
+		"author": "Jack Patrick (@jack_patrick on Unsplash)"
 	},
 	{
 		"uid": "case-orbit",
-		"file": "case-orbit.jpg",
-		"alt": "Cover of the Orbit case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-orbit.webp",
+		"alt": "A black camera drone with a green status light, seen close up against a white background",
+		"licence": "CC0-1.0. Photograph by Kaleb Kendall (@kalebart on Unsplash), from Wikimedia Commons.",
+		"author": "Kaleb Kendall (@kalebart on Unsplash)"
 	},
 	{
 		"uid": "case-pulse",
-		"file": "case-pulse.jpg",
-		"alt": "Cover of the Pulse Festival case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-pulse.webp",
+		"alt": "Beams of stage light fanning through smoke above the silhouettes of a concert crowd",
+		"licence": "CC0-1.0. Photograph by Daniel Robert (@danielrobertdinu on Unsplash), from Wikimedia Commons.",
+		"author": "Daniel Robert (@danielrobertdinu on Unsplash)"
 	},
 	{
 		"uid": "case-terra",
-		"file": "case-terra.jpg",
-		"alt": "Cover of the Terra Outdoor case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-terra.webp",
+		"alt": "A tent glowing green at night under a starry sky, between dark trees and a mountain ridge",
+		"licence": "CC0-1.0. Photograph by Sayan Nath (@sayannath on Unsplash), from Wikimedia Commons.",
+		"author": "Sayan Nath (@sayannath on Unsplash)"
 	},
 	{
 		"uid": "case-nord",
-		"file": "case-nord.jpg",
-		"alt": "Cover of the Nord Furniture case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-nord.webp",
+		"alt": "A black moulded shell chair on a wire base, against a white wall on a dark floor",
+		"licence": "CC0-1.0. Photograph by Andrew Jasso (@andrewjasso on Unsplash), from Wikimedia Commons.",
+		"author": "Andrew Jasso (@andrewjasso on Unsplash)"
 	},
 	{
 		"uid": "case-kino",
-		"file": "case-kino.jpg",
-		"alt": "Cover of the Kino Fest case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "case-kino.webp",
+		"alt": "Rows of red cinema seats in darkness, with lit steps running up the middle aisle",
+		"licence": "CC0-1.0. Photograph by Felix Mooneeram (@felixmooneeram on Unsplash), from Wikimedia Commons.",
+		"author": "Felix Mooneeram (@felixmooneeram on Unsplash)"
 	},
 	{
 		"uid": "reel",
-		"file": "reel.jpg",
-		"alt": "Six project covers arranged as a wall",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "reel.webp",
+		"alt": "A photographic studio with a white backdrop, softboxes on stands and a lighting rig overhead; a photographer crouches in front",
+		"licence": "CC0-1.0. Photograph by Alexander Dummer (@4dgraphic on Unsplash), from Wikimedia Commons.",
+		"author": "Alexander Dummer (@4dgraphic on Unsplash)"
 	},
 	{
 		"uid": "studio",
-		"file": "studio.jpg",
-		"alt": "The studio: a long table with three screens under a large window",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "studio.webp",
+		"alt": "A dark loft office with concrete columns, long desks and a large window; one person works at a desk",
+		"licence": "CC0-1.0. Photograph by Jadon Barnes (@xjadonx on Unsplash), from Wikimedia Commons.",
+		"author": "Jadon Barnes (@xjadonx on Unsplash)"
 	},
 	{
 		"uid": "team-1",
-		"file": "team-1.jpg",
-		"alt": "Illustrated portrait of Noa Feldman",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "team-1.webp",
+		"alt": "Portrait of Noa Feldman",
+		"licence": "CC0-1.0. Photograph by Henri Meilhac (@henrimeilhac on Unsplash), from Wikimedia Commons.",
+		"author": "Henri Meilhac (@henrimeilhac on Unsplash)"
 	},
 	{
 		"uid": "team-2",
-		"file": "team-2.jpg",
-		"alt": "Illustrated portrait of Idris Kamara",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "team-2.webp",
+		"alt": "Portrait of Idris Kamara",
+		"licence": "CC0-1.0. Photograph by Jascha Huisman (@jaschahuisman on Unsplash), from Wikimedia Commons.",
+		"author": "Jascha Huisman (@jaschahuisman on Unsplash)"
 	},
 	{
 		"uid": "team-3",
-		"file": "team-3.jpg",
-		"alt": "Illustrated portrait of Freya Olsen",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "team-3.webp",
+		"alt": "Portrait of Freya Olsen",
+		"licence": "CC0-1.0. Photograph by Tanja Heffner (@tanjaheffner on Unsplash), from Wikimedia Commons.",
+		"author": "Tanja Heffner (@tanjaheffner on Unsplash)"
 	},
 	{
 		"uid": "team-4",
-		"file": "team-4.jpg",
-		"alt": "Illustrated portrait of Mateo Ruiz",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"file": "team-4.webp",
+		"alt": "Portrait of Mateo Ruiz",
+		"licence": "CC0-1.0. Photograph by rawpixel.com (@rawpixel on Unsplash), from Wikimedia Commons.",
+		"author": "rawpixel.com (@rawpixel on Unsplash)"
 	},
 	{
 		"uid": "journal-1",
-		"file": "journal-1.jpg",
+		"file": "journal-1.webp",
 		"alt": "Cover of the article “In praise of the half-finished brief”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Lumvox (@lumvox on Unsplash), from Wikimedia Commons.",
+		"author": "Lumvox (@lumvox on Unsplash)"
 	},
 	{
 		"uid": "journal-2",
-		"file": "journal-2.jpg",
+		"file": "journal-2.webp",
 		"alt": "Cover of the article “Why we do not pitch with finished work”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Luca Bravo (@lucabravo on Unsplash), from Wikimedia Commons.",
+		"author": "Luca Bravo (@lucabravo on Unsplash)"
 	},
 	{
 		"uid": "journal-3",
-		"file": "journal-3.jpg",
+		"file": "journal-3.webp",
 		"alt": "Cover of the article “We ship on Fridays, and other bad ideas that work”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Redd Angelo (@reddangelo16 on Unsplash), from Wikimedia Commons.",
+		"author": "Redd Angelo (@reddangelo16 on Unsplash)"
 	}
 ]
