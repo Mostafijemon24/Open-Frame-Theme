@@ -327,8 +327,74 @@
 	font-weight: 600;
 }
 
+/* Import -------------------------------------------------------------------- */
+.ofss-import {
+	margin: 20px 0 4px;
+	padding: 16px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.ofss-import h2 {
+	margin-top: 0;
+}
+
+.ofss-import .components-notice {
+	margin: 0 0 12px;
+}
+
+.ofss-import__changes {
+	margin: 0 0 12px 18px;
+	list-style: disc;
+}
+
+.ofss-import__agree {
+	display: block;
+	margin: 12px 0;
+	font-weight: 600;
+}
+
+.ofss-import__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+.ofss-import__confirm p:first-child {
+	margin-top: 0;
+}
+
+.ofss-import__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.ofss-progress {
+	height: 10px;
+	overflow: hidden;
+	background: #dcdcde;
+	border-radius: 999px;
+}
+
+.ofss-progress span {
+	display: block;
+	height: 100%;
+	background: #2271b1;
+	transition: width 0.3s ease;
+}
+
+.ofss-progress__label {
+	margin: 8px 0 0;
+	font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
-	.ofss-card {
+	.ofss-card,
+	.ofss-progress span {
 		transition: none;
 	}
 }

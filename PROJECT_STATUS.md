@@ -6,17 +6,17 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Phases 1 to 4 are done; Phase 5 is built and tested locally but not deployed.** The theme (1.1.0) works with Elementor, Elementor Pro and WooCommerce. The companion plugin (0.1.0) has a working Starter Sites screen. The library can be built, signed and verified, the Worker that serves it is written and tested, and the plugin refuses anything that is not signed. What is missing for Phase 5 is the deployment to Cloudflare, which is blocked: the credential that was entered is not a Cloudflare API token. Importing and the ten designs do not exist yet.
+**A design can now be imported, edited in Elementor and rolled back, end to end, on a test site.** What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and the ten designs do not exist yet.
 
 | Phase | Status |
 | --- | --- |
 | 1. Inspect the repository | Done |
 | 2. Architecture and roadmap | Done, approved 2026-11-26 |
 | 3. Core theme and design system | Done (theme 1.1.0) |
-| 4. Starter Sites dashboard | **Done** (plugin 0.1.0) |
-| 5. Cloud API and package delivery | **Built and tested locally. Deployment blocked** (see "Needed from the owner") |
-| 6. Import engine | Not started |
-| 7a. Business starter site | Not started |
+| 4. Starter Sites dashboard | Done |
+| 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
+| 6. Import engine | **Core done and tested** (plugin 0.2.0). Some planned parts are not built yet, listed below |
+| 7a. Business starter site | Next |
 | 7b. Nine further starter sites | Not started |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
@@ -61,13 +61,35 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 - **Workflows:** a CI job for the tools and the Worker; a manual "Publish library" workflow (not yet run).
 - **Manual:** [docs/dev/LIBRARY.md](docs/dev/LIBRARY.md).
 
+### Phase 6: the import engine (plugin 0.2.0)
+
+- **Import in small steps** (`src/Import/Runner.php`): check the site, save current settings, download and verify the package, import images one at a time, create pages, create and activate the design's Site Settings, give each page its Elementor content, create the menu, apply theme settings and the home page, finish. Each request does what fits in a time budget and saves its position, so a slow server or a closed browser leaves a run that can be continued.
+- **Verified downloads** (`Package.php`): library hosts only, size and SHA-256 checked for the package, every file inside it and every image; the ZIP is read in memory and never extracted.
+- **References** (`TokenResolver.php`): `ofss://media/…` and `ofss://page/…` become the imported attachment and page.
+- **Rollback** (`Rollback.php`): removes what the run created (tagged with its ID) and restores the settings it changed. Also works on an unfinished run.
+- **Site Parts** (`SiteParts.php`): header, footer and 404 as Elementor documents rendered through the theme's location filters; Elementor Pro's Theme Builder has priority.
+- **Elementor adapter** (`Elementor/Adapter.php`): the only file that calls Elementor.
+- **Screen:** "Import this design" with a confirmation of what will change, a progress bar with named steps, a report with links, "Roll back this import" with a second confirmation, and a banner for an import that did not finish.
+- **REST:** `POST /imports`, `POST /imports/{id}/advance`, `POST /imports/{id}/rollback`, `GET /imports/current`.
+
+**Planned for Phase 6 and not built yet:**
+
+- The small widget pack (navigation menu, site logo, post grid, search). The reference header uses a heading only; a real free-tier header needs the menu widget.
+- Local fonts: downloading a design's font files and registering them with Elementor.
+- Blog posts, categories, sidebar widgets and WooCommerce products in a package; Theme Builder templates for the Pro-tier designs.
+- A WP-CLI command, and a "replace the previous starter site" mode.
+- Continuing past a single image that cannot be downloaded (today the import stops and can be retried or rolled back).
+
+These are needed by the real designs, so they will be built with the first one (Phase 7a) rather than against invented content.
+
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 17 files, 0 errors, 0 warnings.
+- PHPCS: theme 42 files and plugin 24 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Browser checks: 37 of 37 pass (18 theme integrations including Elementor Pro, 19 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs and an axe-core accessibility scan).
+- Import engine checks: 71 of 71 pass, including a rollback that is compared field by field with the site before the import, and interruptions at every one of the 16 points of an import.
+- Browser checks: 39 of 39 pass (18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans).
 - Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -80,8 +102,10 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Known issues and limitations
 
-- Nothing can be imported yet. All ten designs are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- Theme 1.1.0 and plugin 0.1.0 are not tagged or released.
+- Only the reference package used by the tests can be imported. All ten designs are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
+- Site parts apply to the whole site; per-page display conditions are not built.
+- Theme 1.1.0 and plugin 0.2.0 are not tagged or released.
 - The plugin's readme names Cloudflare's privacy policy for the library; the library needs its own short privacy statement before the plugin is submitted to WordPress.org.
 - The user guide has no screenshots for the Elementor and WooCommerce chapters and no chapter for the plugin yet.
 - With the global-styles option on, Elementor's base stylesheet also loads on theme templates (about 7 KB compressed).
@@ -96,6 +120,6 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Next steps
 
-1. With a working token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, publish the catalog, and point a test site at the real address.
-2. Phase 6: the import engine (download and verify the package and media, import, rollback), using the reference package in `tests/fixtures/sites/reference`.
-3. Phase 7a: the first real design (Business).
+1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
+2. Phase 7a: the Business design, together with the parts of the importer it needs (menu widget, local fonts, blog posts).
+3. Then the other four free-tier designs, then the five Pro-tier designs.

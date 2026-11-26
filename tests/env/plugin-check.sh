@@ -47,4 +47,11 @@ unzip -q "$ROOT/dist/$SLUG.zip" -d "$WP/wp-content/plugins"
 
 cd "$WP"
 "${WPCLI[@]}" plugin activate plugin-check "$SLUG"
-"${WPCLI[@]}" plugin check "$SLUG" --format=table
+
+# Plugin Check exits with 0 even when it reports errors, so the report is read.
+REPORT="$("${WPCLI[@]}" plugin check "$SLUG" --format=table)"
+echo "$REPORT"
+if echo "$REPORT" | grep -qE "[[:space:]]ERROR[[:space:]]"; then
+	echo "Plugin Check reported errors." >&2
+	exit 1
+fi

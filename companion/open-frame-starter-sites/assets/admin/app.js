@@ -212,8 +212,237 @@
 		);
 	}
 
+	/**
+	 * Importing a design: confirmation, progress, the report, and undoing it.
+	 *
+	 * The server does the work in small parts; this component asks for the
+	 * next part until the run is finished or has failed.
+	 */
+	function ImportPanel( { site, run, onRun } ) {
+		const [ confirming, setConfirming ] = useState( false );
+		const [ agreed, setAgreed ] = useState( false );
+		const [ working, setWorking ] = useState( false );
+		const [ undoing, setUndoing ] = useState( false );
+		const [ askUndo, setAskUndo ] = useState( false );
+		const [ problem, setProblem ] = useState( '' );
+		const alive = useRef( true );
+		useEffect( () => () => {
+			alive.current = false;
+		}, [] );
+
+		const mine = run && run.site === site.id ? run : null;
+
+		/** Ask the server for the next part of the run until there is nothing left to do. */
+		const drive = useCallback(
+			( current ) => {
+				setWorking( true );
+				setProblem( '' );
+				const next = ( state ) => {
+					if ( ! alive.current ) {
+						return;
+					}
+					onRun( state );
+					if ( state.status !== 'running' ) {
+						setWorking( false );
+						speak(
+							state.status === 'done'
+								? /* translators: %s: starter site name. */
+								  sprintf( __( '%s was imported.', 'open-frame-starter-sites' ), state.name )
+								: state.error,
+							state.status === 'done' ? 'polite' : 'assertive'
+						);
+						return;
+					}
+					apiFetch( { path: path( '/imports/' + state.id + '/advance' ), method: 'POST' } )
+						.then( next )
+						.catch( ( error ) => {
+							if ( alive.current ) {
+								setWorking( false );
+								setProblem( messageOf( error ) );
+							}
+						} );
+				};
+				next( current );
+			},
+			[ onRun ]
+		);
+
+		const start = () => {
+			setConfirming( false );
+			setWorking( true );
+			setProblem( '' );
+			apiFetch( { path: path( '/imports' ), method: 'POST', data: { site: site.id, confirmed: true } } )
+				.then( drive )
+				.catch( ( error ) => {
+					setWorking( false );
+					setProblem( messageOf( error ) );
+				} );
+		};
+
+		const undo = () => {
+			setUndoing( true );
+			setAskUndo( false );
+			setProblem( '' );
+			apiFetch( { path: path( '/imports/' + mine.id + '/rollback' ), method: 'POST' } )
+				.then( ( state ) => {
+					onRun( state );
+					speak( __( 'The import was rolled back.', 'open-frame-starter-sites' ) );
+				} )
+				.catch( ( error ) => setProblem( messageOf( error ) ) )
+				.finally( () => setUndoing( false ) );
+		};
+
+		const error = problem && h( Notice, { status: 'error', isDismissible: false }, problem );
+
+		const undoControls = mine &&
+			( askUndo
+				? h(
+						'div',
+						{ className: 'ofss-import__confirm', role: 'group', 'aria-label': __( 'Roll back the import', 'open-frame-starter-sites' ) },
+						h( 'p', null, __( 'This removes the pages, images, menus and settings the import added and puts your earlier home page and settings back. Changes you made to the imported pages are lost.', 'open-frame-starter-sites' ) ),
+						h( Button, { variant: 'primary', isDestructive: true, onClick: undo }, __( 'Yes, roll back', 'open-frame-starter-sites' ) ),
+						h( Button, { variant: 'tertiary', onClick: () => setAskUndo( false ) }, __( 'Keep the import', 'open-frame-starter-sites' ) )
+				  )
+				: h( Button, { variant: 'secondary', isDestructive: true, isBusy: undoing, disabled: undoing || working, accessibleWhenDisabled: true, onClick: () => setAskUndo( true ) }, undoing ? __( 'Rolling back…', 'open-frame-starter-sites' ) : __( 'Roll back this import', 'open-frame-starter-sites' ) ) );
+
+		// A run in progress (also one that was interrupted earlier).
+		if ( mine && ( mine.status === 'running' || working ) ) {
+			return h(
+				'div',
+				{ className: 'ofss-import' },
+				h( 'h2', null, __( 'Importing', 'open-frame-starter-sites' ) ),
+				h(
+					'div',
+					{ className: 'ofss-progress', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': mine.percent, 'aria-label': __( 'Import progress', 'open-frame-starter-sites' ) },
+					h( 'span', { style: { width: mine.percent + '%' } } )
+				),
+				h( 'p', { className: 'ofss-progress__label', 'aria-live': 'polite' }, mine.label, ' · ', mine.percent, '%' ),
+				error,
+				! working &&
+					h(
+						'div',
+						{ className: 'ofss-import__actions' },
+						h( Button, { variant: 'primary', onClick: () => drive( mine ) }, __( 'Continue the import', 'open-frame-starter-sites' ) ),
+						undoControls
+					),
+				working && h( 'p', { className: 'ofss-check__help' }, __( 'Keep this window open. If it closes, you can continue or roll back from this screen.', 'open-frame-starter-sites' ) )
+			);
+		}
+
+		if ( mine && mine.status === 'failed' ) {
+			return h(
+				'div',
+				{ className: 'ofss-import' },
+				h( 'h2', null, __( 'The import stopped', 'open-frame-starter-sites' ) ),
+				h(
+					Notice,
+					{ status: 'error', isDismissible: false },
+					/* translators: 1: name of the step, 2: what went wrong. */
+					sprintf( __( 'While "%1$s": %2$s', 'open-frame-starter-sites' ), mine.label, mine.error )
+				),
+				error,
+				h( 'div', { className: 'ofss-import__actions' }, h( Button, { variant: 'primary', onClick: () => drive( mine ) }, __( 'Try again', 'open-frame-starter-sites' ) ), undoControls )
+			);
+		}
+
+		if ( mine && mine.status === 'done' ) {
+			const parts = [
+				/* translators: %d: number of pages. */
+				sprintf( _n( '%d page', '%d pages', mine.counts.pages, 'open-frame-starter-sites' ), mine.counts.pages ),
+				/* translators: %d: number of images. */
+				sprintf( _n( '%d image', '%d images', mine.counts.images + mine.counts.reused, 'open-frame-starter-sites' ), mine.counts.images + mine.counts.reused ),
+				/* translators: %d: number of menus. */
+				sprintf( _n( '%d menu', '%d menus', mine.counts.menus, 'open-frame-starter-sites' ), mine.counts.menus ),
+			];
+			return h(
+				'div',
+				{ className: 'ofss-import' },
+				h( 'h2', null, __( 'Imported', 'open-frame-starter-sites' ) ),
+				h(
+					Notice,
+					{ status: 'success', isDismissible: false },
+					/* translators: %s: what was imported, for example "2 pages, 1 image, 1 menu". */
+					sprintf( __( 'Your site now has this design: %s.', 'open-frame-starter-sites' ), parts.join( ', ' ) )
+				),
+				mine.warnings.length > 0 &&
+					h(
+						Notice,
+						{ status: 'warning', isDismissible: false },
+						h( 'p', null, __( 'A few things need your attention:', 'open-frame-starter-sites' ) ),
+						h( 'ul', null, mine.warnings.map( ( warning ) => h( 'li', { key: warning }, warning ) ) )
+					),
+				error,
+				h(
+					'p',
+					{ className: 'ofss-import__links' },
+					mine.links.view && h( Button, { variant: 'primary', href: mine.links.view }, __( 'View your site', 'open-frame-starter-sites' ) ),
+					mine.links.edit && h( Button, { variant: 'secondary', href: mine.links.edit }, __( 'Edit the home page with Elementor', 'open-frame-starter-sites' ) ),
+					mine.links.customize && h( Button, { variant: 'tertiary', href: mine.links.customize }, __( 'Customize', 'open-frame-starter-sites' ) )
+				),
+				undoControls
+			);
+		}
+
+		if ( site.status !== 'available' || site.requirements.state !== 'ready' ) {
+			return null;
+		}
+
+		// Another design's import is unfinished: that one has to be dealt with first.
+		if ( run && ( run.status === 'running' || run.status === 'failed' ) ) {
+			return h(
+				Notice,
+				{ status: 'warning', isDismissible: false },
+				/* translators: %s: starter site name. */
+				sprintf( __( 'An import of "%s" did not finish. Open that design to continue it or roll it back first.', 'open-frame-starter-sites' ), run.name )
+			);
+		}
+
+		if ( ! confirming ) {
+			return h(
+				'div',
+				{ className: 'ofss-import' },
+				error,
+				h( Button, { variant: 'primary', isBusy: working, disabled: working, accessibleWhenDisabled: true, onClick: () => setConfirming( true ) }, __( 'Import this design', 'open-frame-starter-sites' ) )
+			);
+		}
+
+		return h(
+			'div',
+			{ className: 'ofss-import ofss-import__confirm', role: 'group', 'aria-label': __( 'Confirm the import', 'open-frame-starter-sites' ) },
+			h( 'h2', null, __( 'Before you import', 'open-frame-starter-sites' ) ),
+			h(
+				'ul',
+				{ className: 'ofss-import__changes' },
+				h(
+					'li',
+					null,
+					/* translators: %d: number of pages. */
+					sprintf( _n( '%d page and its images are added to your site. Nothing you already have is deleted.', '%d pages and their images are added to your site. Nothing you already have is deleted.', site.pages.length, 'open-frame-starter-sites' ), site.pages.length )
+				),
+				h( 'li', null, __( 'Your home page changes to the home page of this design.', 'open-frame-starter-sites' ) ),
+				h( 'li', null, __( 'Site-wide colors and fonts (Elementor Site Settings), theme settings, the header and the menu change to those of this design.', 'open-frame-starter-sites' ) ),
+				h( 'li', null, __( 'You can undo all of it afterwards with "Roll back this import".', 'open-frame-starter-sites' ) )
+			),
+			h( 'p', null, __( 'If this site already has visitors or content you care about, make a backup first.', 'open-frame-starter-sites' ) ),
+			h(
+				'label',
+				{ className: 'ofss-import__agree' },
+				h( 'input', { type: 'checkbox', checked: agreed, onChange: ( event ) => setAgreed( event.target.checked ) } ),
+				' ',
+				__( 'I understand that my home page and site-wide settings will change.', 'open-frame-starter-sites' )
+			),
+			h(
+				'p',
+				null,
+				h( Button, { variant: 'primary', disabled: ! agreed, accessibleWhenDisabled: true, onClick: start }, __( 'Start the import', 'open-frame-starter-sites' ) ),
+				' ',
+				h( Button, { variant: 'tertiary', onClick: () => setConfirming( false ) }, __( 'Cancel', 'open-frame-starter-sites' ) )
+			)
+		);
+	}
+
 	/** Everything about one design, in a dialog. */
-	function Details( { siteId, summary, categoryName, onClose, onChanged } ) {
+	function Details( { siteId, summary, categoryName, run, onRun, onClose, onChanged } ) {
 		const [ site, setSite ] = useState( null );
 		const [ error, setError ] = useState( '' );
 		const [ actionError, setActionError ] = useState( '' );
@@ -300,6 +529,7 @@
 							site.summary && h( 'p', { className: 'ofss-details__summary' }, site.summary ),
 							h( 'p', { className: 'ofss-details__state ofss-details__state--' + requirements.state, role: 'status' }, STATE_MESSAGE[ requirements.state ] ),
 							site.preview.demo_url && h( 'p', null, h( ExternalLink, { href: site.preview.demo_url, rel: 'noopener noreferrer' }, __( 'Open the live demo', 'open-frame-starter-sites' ) ) ),
+							h( ImportPanel, { site, run, onRun } ),
 
 							h( 'h2', null, __( 'What it needs', 'open-frame-starter-sites' ) ),
 							actionError && h( Notice, { status: 'error', onRemove: () => setActionError( '' ) }, actionError ),
@@ -415,6 +645,7 @@
 		const [ tier, setTier ] = useState( '' );
 		const [ openId, setOpenId ] = useState( '' );
 		const [ view, setView ] = useState( 'sites' );
+		const [ run, setRun ] = useState( null );
 		const firstLoad = useRef( true );
 
 		const load = useCallback( ( refresh, quiet ) => {
@@ -443,8 +674,23 @@
 			if ( firstLoad.current ) {
 				firstLoad.current = false;
 				load( false );
+				// An import that was started earlier, finished or not.
+				apiFetch( { path: path( '/imports/current' ) } )
+					.then( ( result ) => setRun( result.run ) )
+					.catch( () => {} );
 			}
 		}, [ load ] );
+
+		/** A run changed: remember it and, once it has ended either way, refresh the badges. */
+		const onRun = useCallback(
+			( state ) => {
+				setRun( state );
+				if ( state.status === 'done' || state.status === 'rolled_back' ) {
+					load( false, true );
+				}
+			},
+			[ load ]
+		);
 
 		const categoryNames = useMemo( () => {
 			const names = {};
@@ -536,6 +782,17 @@
 					catalog.notice
 				),
 			error && h( Notice, { status: 'error', className: 'ofss-notice', onRemove: () => setError( '' ) }, error ),
+			run &&
+				( run.status === 'running' || run.status === 'failed' ) &&
+				! openId &&
+				h(
+					Notice,
+					{ status: 'warning', isDismissible: false, className: 'ofss-notice' },
+					/* translators: %s: starter site name. */
+					sprintf( __( 'An import of "%s" did not finish.', 'open-frame-starter-sites' ), run.name ),
+					' ',
+					h( Button, { variant: 'link', onClick: () => setOpenId( run.site ) }, __( 'Continue or roll back', 'open-frame-starter-sites' ) )
+				),
 
 			settings.hasHistory &&
 				h(
@@ -628,6 +885,8 @@
 					siteId: openSummary.id,
 					summary: openSummary,
 					categoryName: categoryNames[ openSummary.category ] || openSummary.category,
+					run,
+					onRun,
 					onClose: () => setOpenId( '' ),
 					onChanged: () => load( false, true ),
 				} )

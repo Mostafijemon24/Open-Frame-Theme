@@ -5,11 +5,11 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Browse the starter website library for the Open Frame theme, see what each design needs and get your site ready for it.
+Import complete starter websites for the Open Frame theme with one click, see what each design needs, and undo an import if you change your mind.
 
 == Description ==
 
@@ -24,7 +24,9 @@ For every design you can see:
 
 Required plugins that are available on WordPress.org can be installed and activated from the same screen with one button. Elementor Pro is a commercial plugin sold by Elementor; this plugin tells you when a design needs it and links to it, but never installs it.
 
-**This is an early version.** The designs are marked "Coming soon", and importing a design into your site is not part of version 0.1.0 yet. It will arrive in a later version.
+A design that is available can be imported from the same screen. The import adds the design's pages, images, menu, header and site-wide colors and fonts, and makes its home page your home page. Nothing you already have is deleted. Every import can be undone with "Roll back this import", which removes what was added and restores the settings that were changed. If the browser is closed while an import runs, the screen offers to continue it or roll it back.
+
+**This is an early version.** The designs in the library are still marked "Coming soon"; they become importable as they are published.
 
 The plugin needs the Open Frame theme (or a child theme of it) to be active.
 
@@ -32,8 +34,8 @@ The plugin needs the Open Frame theme (or a child theme of it) to be active.
 
 This plugin connects to the Open Frame starter site library, a service run by the author of the plugin, to download the list of available designs and their preview images.
 
-* **What it is used for:** showing the designs on the Starter Sites screen. Without it there is nothing to show.
-* **When requests are made:** when an administrator opens the Starter Sites screen and the saved list is older than 12 hours, and when they click "Check for new designs". Preview images are loaded by the administrator's browser while the screen is open. Nothing is requested on the public side of your site.
+* **What it is used for:** showing the designs on the Starter Sites screen and downloading the design you choose to import. Without it there is nothing to show or import.
+* **When requests are made:** when an administrator opens the Starter Sites screen and the saved list is older than 12 hours, when they click "Check for new designs", and when they import a design (its package and images are downloaded). Preview images are loaded by the administrator's browser while the screen is open. Nothing is requested on the public side of your site.
 * **What is sent:** the request itself, which like any web request includes the IP address of your server (for the list) or of your browser (for the images), and the name and version of this plugin. No information about your site, its address, its content or its users is sent.
 * **Where it goes:** `api.buildbetters.com` (the list) and `cdn.buildbetters.com` (images), both served through Cloudflare. Cloudflare's privacy policy: https://www.cloudflare.com/privacypolicy/ and terms: https://www.cloudflare.com/website-terms/
 
@@ -53,7 +55,15 @@ Only for the designs marked "Needs Elementor Pro". The others work with the free
 
 = Why can't I import a design? =
 
-Importing is not part of this version. The screen already shows what each design will need, so you can prepare your site.
+A design can be imported when it is no longer marked "Coming soon" and everything under "What it needs" is met. The screen shows what is missing.
+
+= What does an import change, and can I undo it? =
+
+It adds pages, images and a menu, sets the home page, and changes Elementor's Site Settings (colors and fonts), some theme settings and the header. It deletes nothing. "Roll back this import" removes what the import added and restores the earlier home page and settings. Only the most recent import can be rolled back, and changes you made to the imported pages are lost when you do. For a site with visitors, make a backup first.
+
+= Are the header and footer editable? =
+
+Yes. A design's header, footer and "page not found" page are stored as Site Parts (Appearance > Site Parts) and edited with Elementor, also with its free version. If you use Elementor Pro's Theme Builder, its templates take priority.
 
 = The list does not load. =
 
@@ -61,13 +71,19 @@ Your server has to be able to make outgoing HTTPS requests. If the library canno
 
 = Does the plugin change my site? =
 
-Only when you click a button that says it will: "Install and activate", "Activate" or "Update" next to a required plugin. Browsing changes nothing.
+Only when you click a button that says it will: "Install and activate", "Activate" or "Update" next to a required plugin, or "Start the import" after confirming what will change. Browsing changes nothing.
 
 = What does the plugin store? =
 
-A copy of the list of designs (the option `ofss_catalog`). It is removed when you delete the plugin.
+A copy of the list of designs, the record of the last import and a short import history (options starting with `ofss_`). They are removed when you delete the plugin. Imported pages and images are your content and stay.
 
 == Changelog ==
+
+= 0.2.0 =
+* New: one-click import of an available design, in small steps that survive slow servers and a closed browser.
+* New: "Roll back this import" removes what an import added and restores the settings it changed.
+* New: Site Parts. A design's header, footer and "page not found" page are edited with Elementor, including its free version.
+* New: the list of designs is only used when it carries a valid signature of the library, and every download is checked against its checksum.
 
 = 0.1.0 =
 * First version: the Starter Sites screen with search and filters, design details, requirement checks, and installation of required plugins from WordPress.org.

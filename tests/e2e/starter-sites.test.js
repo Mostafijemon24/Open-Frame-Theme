@@ -10,7 +10,7 @@
 const { test, before, after, beforeEach } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
 const { chromium } = require( 'playwright' );
-const { BASE, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, login } = require( './helpers' );
+const { BASE, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
 
 const SCREEN = BASE + '/wp-admin/themes.php?page=open-frame-starter-sites';
 
@@ -29,12 +29,15 @@ before( async () => {
 		}
 	} );
 	errors = [];
-	state( 'reset', 'ofss:clear', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', 'plugin:elementor-pro=off', 'plugin:woocommerce=off', 'remove-plugin:hello-dolly' );
+	clearErrorLog();
+	state( 'ofss:rollback', 'reset', 'ofss:clear', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', 'plugin:elementor-pro=off', 'plugin:woocommerce=off', 'remove-plugin:hello-dolly' );
 	cloud( 'ok' );
 	await login( page );
 } );
 
 after( async () => {
+	cloud( 'available' );
+	state( 'ofss:rollback' );
 	cloud( 'ok' );
 	state( 'ofss:clear', 'theme:open-frame', 'plugin:elementor-pro=off', 'remove-plugin:hello-dolly' );
 	await browser.close();
@@ -353,7 +356,7 @@ test( 'entries that break the rules are left out, and markup is shown as text', 
 
 test( 'a design that is out but needs a newer plugin says so', async () => {
 	state( 'ofss:forget' );
-	cloud( 'available' );
+	cloud( 'newer-importer' );
 	await open();
 
 	assert.equal( await cards().count(), 11 );
@@ -364,11 +367,136 @@ test( 'a design that is out but needs a newer plugin says so', async () => {
 	assert.match( await dialog().locator( '.ofss-details__state' ).textContent(), /needs a newer version of the Open Frame Starter Sites plugin/ );
 	const row = requirement( 'Open Frame Starter Sites plugin' );
 	assert.ok( await row.evaluate( ( element ) => element.classList.contains( 'ofss-check--fail' ) ) );
-	assert.match( await row.textContent(), /needs 1\.0\.0 or newer, you have 0\.1\.0/ );
+	assert.match( await row.textContent(), /needs 9\.0\.0 or newer, you have \d+\.\d+\.\d+/ );
 	assert.equal( await dialog().getByRole( 'button', { name: /import/i } ).count(), 0 );
 	await page.keyboard.press( 'Escape' );
 
 	state( 'ofss:forget' );
+	assert.deepEqual( errors, [] );
+} );
+
+test( 'a design is imported from the screen, can be edited in Elementor, and is rolled back', async () => {
+	state( 'ofss:forget' );
+	cloud( 'available' );
+	await open();
+	await details( 'Reference' );
+
+	assert.match( await dialog().locator( '.ofss-details__state' ).textContent(), /has everything this design needs/ );
+	await dialog().getByRole( 'button', { name: 'Import this design' } ).click();
+
+	// Nothing starts until the user has read what will change and agreed.
+	const confirm = dialog().getByRole( 'group', { name: 'Confirm the import' } );
+	assert.match( await confirm.textContent(), /2 pages and their images are added.*Nothing you already have is deleted.*home page changes.*Roll back/s );
+	const startButton = confirm.getByRole( 'button', { name: 'Start the import' } );
+	assert.equal( await startButton.getAttribute( 'aria-disabled' ), 'true' );
+	assert.deepEqual( await axe( page, '[role="dialog"]' ), [], 'the confirmation is accessible' );
+	await confirm.getByRole( 'checkbox' ).check();
+	await startButton.click();
+
+	await dialog().getByRole( 'heading', { name: 'Imported', exact: true } ).waitFor( { timeout: 180000 } );
+	assert.match( await dialog().locator( '.components-notice.is-success' ).textContent(), /2 pages, 1 image, 1 menu/ );
+	assert.equal( await dialog().locator( '.components-notice.is-warning' ).count(), 0, 'no warnings' );
+	assert.deepEqual( await axe( page, '[role="dialog"]' ), [], 'the report is accessible' );
+	const editLink = await dialog().getByRole( 'link', { name: 'Edit the home page with Elementor' } ).getAttribute( 'href' );
+	assert.match( editLink, /post=\d+&action=elementor/ );
+	assert.equal( await dialog().getByRole( 'link', { name: 'View your site' } ).getAttribute( 'href' ), BASE + '/' );
+
+	// What a visitor sees.
+	const visitor = await ( await browser.newContext( { viewport: { width: 1440, height: 900 } } ) ).newPage();
+	const visitorErrors = [];
+	visitor.on( 'pageerror', ( error ) => visitorErrors.push( error.message ) );
+	for ( const width of [ 360, 768, 1440 ] ) {
+		await visitor.setViewportSize( { width, height: 900 } );
+		await visitor.goto( BASE + '/' );
+		assert.equal( await visitor.evaluate( () => document.documentElement.scrollWidth - document.documentElement.clientWidth ), 0, `no overflow at ${ width }` );
+	}
+	assert.equal( await visitor.getByRole( 'heading', { name: 'A reference home page', level: 1 } ).count(), 1 );
+	assert.equal( await visitor.locator( 'main#main' ).count(), 1, 'the skip link has its target' );
+	assert.equal( await visitor.locator( 'header.of-site-part--header' ).count(), 1, 'the header of the design' );
+	assert.equal( await visitor.locator( '#masthead' ).count(), 0, 'not the theme header' );
+	assert.equal( await visitor.locator( '#colophon' ).count(), 1, 'the theme footer, because the design has none' );
+	const image = visitor.locator( '.elementor-widget-image img' );
+	assert.equal( await image.evaluate( async ( element ) => ( await element.decode(), element.naturalWidth ) ), 320, 'the image loads' );
+	assert.equal( await image.getAttribute( 'alt' ), 'A dark blue rectangle' );
+	await visitor.getByRole( 'link', { name: 'about us' } ).click();
+	await visitor.waitForURL( BASE + '/about/' );
+	assert.equal( await visitor.getByRole( 'heading', { name: 'About', level: 1 } ).count(), 1 );
+	assert.equal( ( await visitor.goto( BASE + '/?of_site_part=header' ) ).status(), 404, 'a site part has no page of its own for visitors' );
+	assert.deepEqual( visitorErrors, [] );
+	await visitor.context().close();
+
+	// The imported page and the imported header open in the Elementor editor.
+	await page.goto( BASE + editLink.replace( BASE, '' ).replace( /&amp;/g, '&' ) );
+	let frame = page.frameLocator( '#elementor-preview-iframe' );
+	await frame.locator( 'body.elementor-editor-active .elementor-edit-area h1' ).first().waitFor( { timeout: 90000 } );
+	assert.equal( await frame.locator( '.elementor-widget-image img' ).count(), 1 );
+
+	await page.goto( BASE + '/wp-admin/edit.php?post_type=of_site_part' );
+	const partId = ( await page.locator( '#the-list tr' ).first().getAttribute( 'id' ) ).replace( 'post-', '' );
+	await page.goto( `${ BASE }/wp-admin/post.php?post=${ partId }&action=elementor` );
+	frame = page.frameLocator( '#elementor-preview-iframe' );
+	await frame.locator( 'body.elementor-editor-active .elementor-edit-area' ).first().waitFor( { timeout: 90000 } );
+	assert.ok( await frame.locator( '.elementor-edit-area' ).first().textContent().then( ( text ) => text.includes( 'Reference' ) ), 'the header content is editable' );
+
+	// Back on the screen: marked as imported, listed in the history.
+	errors = [];
+	await open();
+	assert.equal( await cards().filter( { hasText: 'Reference' } ).first().locator( '.ofss-badge--imported' ).count(), 1 );
+	await page.getByRole( 'button', { name: 'Import history' } ).click();
+	assert.match( await page.getByRole( 'table', { name: 'Past imports, newest first' } ).locator( 'tbody tr' ).first().textContent(), /Reference 1\.0\.0.*Imported/ );
+	await page.getByRole( 'button', { name: 'Designs', exact: true } ).click();
+
+	// Roll back, with a second confirmation.
+	await details( 'Reference' );
+	await dialog().getByRole( 'button', { name: 'Roll back this import' } ).click();
+	assert.match( await dialog().getByRole( 'group', { name: 'Roll back the import' } ).textContent(), /removes the pages, images, menus and settings/ );
+	await dialog().getByRole( 'button', { name: 'Yes, roll back' } ).click();
+	await dialog().getByRole( 'button', { name: 'Import this design' } ).waitFor( { timeout: 60000 } );
+	await page.keyboard.press( 'Escape' );
+	await page.waitForFunction( () => ! document.querySelector( '.ofss-badge--imported' ) );
+
+	const after = await page.request.get( BASE + '/' );
+	const html = await after.text();
+	assert.ok( html.includes( 'id="masthead"' ) && ! html.includes( 'A reference home page' ) && ! html.includes( 'of-site-part' ), 'the earlier home page and theme header are back' );
+	assert.equal( ( await page.request.get( BASE + '/about/' ) ).status(), 404, 'the imported page is gone' );
+
+	state( 'ofss:rollback', 'ofss:clear' );
+	assert.deepEqual( errors, [] );
+} );
+
+test( 'an import that was interrupted can be continued or rolled back', async () => {
+	state( 'ofss:forget' );
+	cloud( 'available' );
+	state( 'ofss:interrupt' );
+
+	await open();
+	const banner = page.locator( '.ofss-notice', { hasText: 'An import of "Reference" did not finish.' } );
+	await banner.waitFor();
+	await banner.getByRole( 'button', { name: 'Continue or roll back' } ).click();
+
+	await dialog().getByRole( 'progressbar', { name: 'Import progress' } ).waitFor();
+	const progress = Number( await dialog().getByRole( 'progressbar' ).getAttribute( 'aria-valuenow' ) );
+	assert.ok( progress > 0 && progress < 100, `shows how far it got (${ progress }%)` );
+	assert.equal( await dialog().getByRole( 'button', { name: 'Import this design' } ).count(), 0, 'no second import on top of it' );
+
+	// Another design cannot be imported while this one is unfinished: there is no button for it.
+	await dialog().getByRole( 'button', { name: 'Continue the import' } ).click();
+	await dialog().getByRole( 'heading', { name: 'Imported', exact: true } ).waitFor( { timeout: 180000 } );
+	assert.match( await dialog().locator( '.components-notice.is-success' ).textContent(), /2 pages, 1 image, 1 menu/ );
+	await page.keyboard.press( 'Escape' );
+	assert.equal( await banner.count(), 0 );
+
+	// The same interruption, rolled back instead.
+	state( 'ofss:rollback', 'ofss:interrupt' );
+	await open();
+	await banner.getByRole( 'button', { name: 'Continue or roll back' } ).click();
+	await dialog().getByRole( 'button', { name: 'Roll back this import' } ).click();
+	await dialog().getByRole( 'button', { name: 'Yes, roll back' } ).click();
+	await dialog().getByRole( 'button', { name: 'Import this design' } ).waitFor( { timeout: 60000 } );
+	await page.keyboard.press( 'Escape' );
+	assert.equal( ( await page.request.get( BASE + '/about/' ) ).status(), 404 );
+
+	state( 'ofss:rollback', 'ofss:clear' );
 	assert.deepEqual( errors, [] );
 } );
 

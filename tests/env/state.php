@@ -12,6 +12,8 @@
  *   ofss:history             record one past import
  *   ofss:imported=<id>@<v>   pretend a starter site was imported in that version
  *   ofss:clear               remove everything the three above created
+ *   ofss:interrupt           start an import of the reference design and stop it part-way
+ *   ofss:rollback            roll back the current import, if there is one
  *   remove-plugin:<slug>     deactivate and delete a plugin the tests installed
  *   ids                      print the IDs of the fixture pages as JSON
  *
@@ -66,6 +68,28 @@ foreach ( $open_frame_args as $open_frame_arg ) {
 			),
 			false
 		);
+		continue;
+	}
+
+	if ( 'ofss:interrupt' === $open_frame_arg || 'ofss:rollback' === $open_frame_arg ) {
+		$open_frame_config  = new OpenFrame\StarterSites\Config();
+		$open_frame_client  = new OpenFrame\StarterSites\Cloud\Client( $open_frame_config );
+		$open_frame_adapter = new OpenFrame\StarterSites\Elementor\Adapter();
+		$open_frame_log     = new OpenFrame\StarterSites\History\Log();
+		$open_frame_runner  = new OpenFrame\StarterSites\Import\Runner( $open_frame_config, new OpenFrame\StarterSites\Cloud\Catalog( $open_frame_client, $open_frame_config ), new OpenFrame\StarterSites\Requirements\Checker(), new OpenFrame\StarterSites\Cloud\Manifest( $open_frame_client, $open_frame_config ), $open_frame_adapter, $open_frame_log );
+
+		if ( 'ofss:rollback' === $open_frame_arg ) {
+			$open_frame_run = $open_frame_runner->state();
+			if ( $open_frame_run ) {
+				delete_transient( 'ofss_import_lock' );
+				( new OpenFrame\StarterSites\Import\Rollback( $open_frame_config, $open_frame_adapter, $open_frame_log ) )->run( $open_frame_run );
+			}
+			delete_option( 'ofss_import_state' );
+		} else {
+			// As if the browser had been closed after the images were imported.
+			$open_frame_run = $open_frame_runner->start( 'reference' );
+			$open_frame_runner->advance( $open_frame_run['id'], 5 );
+		}
 		continue;
 	}
 

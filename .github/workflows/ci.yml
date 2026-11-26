@@ -87,6 +87,8 @@ jobs:
         run: bash tests/env/setup.sh
       - name: Plugin PHP checks
         run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/starter-sites.php
+      - name: Import engine checks
+        run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/importer.php
       - name: Browser checks
         # One file at a time: the files share one test site.
         run: node --test --test-concurrency=1 --test-reporter=spec tests/e2e/*.test.js

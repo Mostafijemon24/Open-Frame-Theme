@@ -11,6 +11,7 @@
  *
  *   ok             the ten planned sites
  *   available      the same plus "Reference", a site that has a package
+ *   newer-importer the same, but "Reference" needs a newer version of the plugin
  *   install        the same plus a site that requires a small plugin from WordPress.org
  *   partial        the same plus entries that must be rejected
  *   down           HTTP 503
@@ -119,7 +120,10 @@ if ( 'newer' === $mode ) {
 	$catalog['format'] = 99;
 }
 
-if ( 'available' === $mode ) {
+if ( 'available' === $mode || 'newer-importer' === $mode ) {
+	if ( 'newer-importer' === $mode ) {
+		$reference['requires']['importer'] = '9.0.0';
+	}
 	array_unshift( $catalog['sites'], $reference );
 }
 

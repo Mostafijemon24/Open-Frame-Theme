@@ -1,9 +1,37 @@
 # Open Frame — Test Reports
 
+- [Import engine](#the-import-engine--test-report): Phase 6, importing, resuming and rolling back
 - [Library tools, Worker and signatures](#the-library--test-report): Phase 5, without a live deployment
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The import engine — Test Report
+
+Phase 6, plugin 0.2.0: importing a design, resuming an interrupted import and rolling back. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6 and Elementor 4.4.2, against the reference package (two pages, one image, a header, a menu, colors and theme settings) served by the mock library. The real designs do not exist yet, so nothing larger was imported.
+
+| Suite | Result |
+| --- | --- |
+| Import engine, `tests/php/importer.php` | **71 of 71 passed** |
+| Browser checks of the Starter Sites screen | **21 of 21 passed**, two of them new: import, edit and roll back from the screen; continue or roll back an interrupted import |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** (it first reported one error and one warning; both were fixed) |
+| PHPCS, plugin, 24 files | **0 errors, 0 warnings** |
+
+| Area | What is asserted |
+| --- | --- |
+| A complete import | Both pages published under their addresses; the home page is the front page; Elementor's Full Width template; valid Elementor data with every reference resolved (the image by attachment ID and address, links by the imported page's address); page settings kept; the image in the media library with its alt text and byte-identical to the library's file; everything tagged with site, identity and run; a new kit active with the design's colors while the old kit still exists; theme settings in the right types; the menu in the theme's location with both pages; the header as a site part that the theme renders inside a `header` element; history and "active site" recorded; working folder removed; lock released |
+| Rolling back | The site is **exactly** as before: number of pages, attachments, site parts, kits, menus and menu items, front page, active kit, theme settings, recorded site and working folders all compared with the state before the import. Rolling back twice changes nothing |
+| Importing twice | No page, image, site part, menu or menu item is duplicated; the same pages are used; the image is reused, not downloaded again; rolling back the second import keeps what the first created |
+| Interruptions | A complete import takes 17 units of work. Stopped after each of the 16 possible points and rolled back, the site is always exactly as before. Stopped after each of those points and continued in a new request, the import always completes with the same result |
+| Locking | A run being worked on in another window is not worked on twice and cannot be rolled back at that moment; a lock left by a request that died expires; a second import cannot start while one is unfinished |
+| Damaged downloads | Eight cases each stop the import with a clear message and leave no trace after rollback: package with a wrong checksum, a wrong size, on a foreign host, with an unlisted file, lacking a listed file, with a changed page inside; image with a wrong checksum, on a foreign host |
+| Not ready | Missing Elementor widgets (named in the message), Elementor without containers, a design that needs a newer plugin, a design that is not out yet, an unknown design and a library that is down all stop before anything changes |
+| REST | Subscriber 403 and visitor 401 on every import route; an unconfirmed import is refused; unknown run 404; a second start is 409; an import driven entirely over REST completes and rolls back; the answer exposes neither the manifest nor local paths |
+| In the browser | Nothing starts until the user ticks the confirmation; the report shows "2 pages, 1 image, 1 menu"; a visitor sees the design's home page and header at 360, 768 and 1440 px without overflow, the image loads with its alt text, the link to About works, a site part has no page of its own (404); the imported page and the imported header open in the Elementor editor; the card shows "Imported" and the history lists the run; "Roll back" asks a second time and then restores the earlier home page and theme header; an interrupted import shows a banner with its progress and can be continued or rolled back; confirmation and report pass the axe-core scan |
+
+Found and fixed while testing: Elementor stops any request that deletes a kit with a confirmation screen (the rollback now trashes the unused kit first and refreshes Elementor's cached document); deleting a menu made WordPress rewrite the theme's menu locations after the settings had been restored (settings are now restored last); Elementor's `elementor_previous_kit` option was not part of the snapshot.
+
+Not covered: a design larger than the reference package; real server time limits and low memory; Elementor Pro templates in a package; multisite. Not built yet, although planned for this phase: see `PROJECT_STATUS.md`.
 
 # The library — Test Report
 
@@ -64,7 +92,7 @@ WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (no licence act
 
 ## Browser checks
 
-`tests/e2e/starter-sites.test.js`, 19 tests, **19 passed.**
+`tests/e2e/starter-sites.test.js`, 21 tests, **21 passed.**
 
 | Area | What is asserted |
 | --- | --- |
@@ -167,6 +195,10 @@ bash tests/env/setup.sh
 
 ```bash
 php tests/env/run.php "${OFT_DIR:-${TMPDIR:-/tmp}/open-frame-wp-test}/wordpress" tests/php/starter-sites.php
+```
+
+```bash
+php tests/env/run.php "${OFT_DIR:-${TMPDIR:-/tmp}/open-frame-wp-test}/wordpress" tests/php/importer.php
 ```
 
 ```bash
