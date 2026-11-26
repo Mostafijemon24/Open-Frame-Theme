@@ -1,0 +1,89 @@
+name: CI
+
+# Coding standards for the theme and the companion plugin, PHP syntax on the
+# oldest and newest supported PHP, PHP and browser checks against a real
+# WordPress site, and Theme Check and Plugin Check on the packages.
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Coding standards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - run: composer install --no-interaction --no-progress
+      - run: composer lint
+
+  syntax:
+    name: PHP ${{ matrix.php }} syntax
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Lint every theme PHP file
+        run: |
+          find . -name '*.php' -not -path './.git/*' -not -path './vendor/*' -not -path './tests/*' -print0 \
+            | xargs -0 -n1 php -l > /dev/null
+
+  browser:
+    name: Browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Choose where the test site is built
+        run: echo "OFT_DIR=$RUNNER_TEMP/open-frame-wp-test" >> "$GITHUB_ENV"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: sqlite3, zip, gd, mbstring
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        working-directory: tests
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build the test site
+        run: bash tests/env/setup.sh
+      - name: Plugin PHP checks
+        run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/starter-sites.php
+      - name: Browser checks
+        # One file at a time: the files share one test site.
+        run: node --test --test-concurrency=1 --test-reporter=spec tests/e2e/*.test.js
+      - name: Theme Check on the packaged theme
+        run: bash tests/env/theme-check.sh
+      - name: Plugin Check on the packaged plugin
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/wp-cli.phar" https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          OFT_WP_CLI="$RUNNER_TEMP/wp-cli.phar" bash tests/env/plugin-check.sh
+      - name: Keep the PHP error log when something fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-log
+          path: ${{ runner.temp }}/open-frame-wp-test/wordpress/wp-content/debug.log
+          if-no-files-found: ignore

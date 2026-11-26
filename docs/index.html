@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Frame — Theme Documentation</title>
+<meta name="description" content="Installation, setup and reference guide for the Open Frame WordPress theme.">
+<style>
+@font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+:root { --primary: #3f4cd6; --primary-dark: #2b36b8; --tint: #e8eafc; --heading: #0f172a; --text: #334155; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --surface: #ffffff; --code: #f1f5f9; --sidebar: 280px; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body { margin: 0; font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.65; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+a { color: var(--primary); text-underline-offset: 2px; }
+a:hover { color: var(--primary-dark); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 0.75rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 0.75rem; }
+.sidebar { position: fixed; inset: 0 auto 0 0; width: var(--sidebar); overflow-y: auto; padding: 2rem 1.5rem; background: var(--surface); border-right: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--heading); text-decoration: none; }
+.brand svg { flex: 0 0 auto; }
+.version { margin: 0 0 1.75rem; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.sidebar li { counter-increment: toc; }
+.sidebar li a { display: flex; gap: 0.6rem; padding: 0.42rem 0.7rem; border-radius: 8px; color: var(--text); font-size: 0.94rem; font-weight: 500; line-height: 1.35; text-decoration: none; }
+.sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
+.sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
+.sidebar li a.is-active::before { color: var(--primary); }
+main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
+.doc { max-width: 860px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
+h1 { margin: 0 0 1rem; font-size: clamp(2rem, 1.5rem + 2.2vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { margin: 4rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 1.75rem; }
+h3 { margin: 2.5rem 0 0.75rem; font-size: 1.25rem; }
+h4 { margin: 2rem 0 0.5rem; font-size: 1.05rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+li > p { margin-bottom: 0.5rem; }
+hr { display: none; }
+code, kbd { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.86em; }
+:not(pre) > code { padding: 0.15em 0.4em; background: var(--code); border-radius: 6px; color: var(--heading); overflow-wrap: anywhere; }
+kbd { padding: 0.15em 0.45em; background: var(--surface); border: 1px solid #cbd5e1; border-bottom-width: 2px; border-radius: 6px; color: var(--heading); }
+pre { margin: 0 0 1.5rem; padding: 1.1rem 1.25rem; overflow: auto; background: #0f172a; color: #f1f5f9; border-radius: 12px; font-size: 0.86rem; line-height: 1.6; }
+pre code { font-size: inherit; }
+blockquote { margin: 0 0 1.5rem; padding: 0.9rem 1.25rem; background: var(--tint); border-left: 4px solid var(--primary); border-radius: 10px; color: var(--heading); }
+blockquote p:last-child { margin-bottom: 0; }
+figure { margin: 1.5rem 0 2rem; }
+figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+figcaption { margin-top: 0.6rem; font-size: 0.875rem; color: var(--muted); text-align: center; }
+.table-wrap { margin: 0 0 1.5rem; overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+th, td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code); color: var(--heading); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.menu-toggle { display: none; }
+footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+@media (max-width: 900px) {
+	.sidebar { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 1.25rem; }
+	.version { margin-bottom: 1rem; }
+	.menu-toggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; font: inherit; font-weight: 600; color: var(--primary); background: var(--tint); border: 0; border-radius: 8px; cursor: pointer; }
+	.sidebar nav { display: none; margin-top: 1rem; }
+	.sidebar.is-open nav { display: block; }
+	main { margin-left: 0; padding-top: 2rem; }
+}
+@media print {
+	.sidebar { display: none; }
+	main { margin: 0; padding: 0; }
+	body { background: #fff; }
+	h2 { break-after: avoid; }
+	figure, table, pre { break-inside: avoid; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<aside class="sidebar" id="sidebar">
+	<a class="brand" href="#content">
+		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
+		Open Frame
+	</a>
+	<p class="version">Documentation · v1.1.0</p>
+	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
+	<nav id="toc" aria-label="Documentation sections">
+		<ol>
+				<li><a href="#1-requirements">Requirements</a></li>
+				<li><a href="#2-installation">Installation</a></li>
+				<li><a href="#3-quick-start">Quick start</a></li>
+				<li><a href="#4-site-anatomy">Site anatomy</a></li>
+				<li><a href="#5-the-customizer">The Customizer</a></li>
+				<li><a href="#6-site-identity-logo-title-and-icon">Site Identity: logo, title and icon</a></li>
+				<li><a href="#7-layout-settings">Layout settings</a></li>
+				<li><a href="#8-global-colors">Global Colors</a></li>
+				<li><a href="#9-typography">Typography</a></li>
+				<li><a href="#10-header-builder">Header Builder</a></li>
+				<li><a href="#11-footer-builder">Footer Builder</a></li>
+				<li><a href="#12-building-the-home-page">Building the home page</a></li>
+				<li><a href="#13-menus-and-the-mega-menu">Menus and the mega menu</a></li>
+				<li><a href="#14-widget-areas">Widget areas</a></li>
+				<li><a href="#15-page-templates">Page templates</a></li>
+				<li><a href="#16-blog-and-posts">Blog and posts</a></li>
+				<li><a href="#17-block-editor-features">Block editor features</a></li>
+				<li><a href="#18-elementor">Elementor</a></li>
+				<li><a href="#19-woocommerce">WooCommerce</a></li>
+				<li><a href="#20-fonts">Fonts</a></li>
+				<li><a href="#21-customization-recipes">Customization recipes</a></li>
+				<li><a href="#22-accessibility-rtl-and-translation">Accessibility, RTL and translation</a></li>
+				<li><a href="#23-child-themes-and-developer-reference">Child themes and developer reference</a></li>
+				<li><a href="#24-privacy-and-performance">Privacy and performance</a></li>
+				<li><a href="#25-troubleshooting-and-faq">Troubleshooting and FAQ</a></li>
+				<li><a href="#26-changelog-credits-and-support">Changelog, credits and support</a></li>
+		</ol>
+	</nav>
+</aside>
+<main id="content">
+	<article class="doc">
+<h1 id="open-frame-theme-documentation">Open Frame — Theme Documentation</h1>
+<p><strong>Version 1.1.0</strong> · Requires WordPress 6.4+ and PHP 7.4+ · Tested up to WordPress 7.1 · GPL-2.0-or-later</p>
+<figure><a href="images/banner.png"><img src="images/banner.png" alt="Open Frame: a flexible frame for every website" loading="lazy"></a><figcaption>Open Frame: a flexible frame for every website</figcaption></figure>
+<p>Open Frame is a lightweight, accessibility-minded multipurpose WordPress theme for business sites, blogs and portfolios. Everything is controlled from the Customizer, no plugin is required, and the fonts are bundled so the theme never calls a remote server.</p>
+<p><strong>How to read this guide.</strong> Many screenshots carry red numbered markers. The table under each screenshot explains every number, so you can match what you see on screen with the explanation.</p>
+<h2 id="1-requirements">1. Requirements</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Requirement</th></tr></thead><tbody><tr><td>WordPress</td><td>6.4 or newer (tested up to 7.1)</td></tr>
+<tr><td>PHP</td><td>7.4 or newer</td></tr>
+<tr><td>Plugins</td><td>None. Open Frame works on its own</td></tr>
+<tr><td>Browser support</td><td>Current versions of Chrome, Edge, Firefox and Safari</td></tr></tbody></table></div>
+<h2 id="2-installation">2. Installation</h2>
+<h3 id="from-the-wordpress-dashboard">From the WordPress dashboard</h3>
+<ol>
+<li>Go to <strong>Appearance → Themes</strong>.</li>
+<li>Click <strong>Add Theme</strong> (marker 3 below).</li>
+<li>Search for <strong>Open Frame</strong> and click <strong>Install</strong>. If you downloaded the theme as a ZIP file, choose <strong>Upload Theme</strong> and select <code>open-frame.zip</code> instead.</li>
+<li>Click <strong>Activate</strong>.</li>
+</ol>
+<figure><a href="images/admin-themes.png"><img src="images/admin-themes.png" alt="The Themes screen with Open Frame active" loading="lazy"></a><figcaption>The Themes screen with Open Frame active</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>Open Frame, the active theme</td></tr>
+<tr><td>2</td><td><strong>Customize</strong> opens the Customizer with all theme settings</td></tr>
+<tr><td>3</td><td><strong>Add Theme</strong> installs or uploads a theme</td></tr></tbody></table></div>
+<h3 id="manual-installation-sftp">Manual installation (SFTP)</h3>
+<ol>
+<li>Unzip <code>open-frame.zip</code>.</li>
+<li>Upload the <code>open-frame</code> folder to <code>wp-content/themes/</code>.</li>
+<li>Activate the theme under <strong>Appearance → Themes</strong>.</li>
+</ol>
+<figure><a href="images/admin-theme-details.png"><img src="images/admin-theme-details.png" alt="Theme details" loading="lazy"></a><figcaption>Theme details</figcaption></figure>
+<blockquote>
+<p>The theme works immediately after activation. With no menu, no widgets and no settings changed it shows a clean header with your site title, your posts, and a simple copyright bar.</p>
+</blockquote>
+<h2 id="3-quick-start">3. Quick start</h2>
+<p>Six steps take a fresh install to a finished site. Each step links to its full chapter.</p>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>Where</th><th>What to do</th><th>Chapter</th></tr></thead><tbody><tr><td>1</td><td>Customize → Site Identity</td><td>Upload a logo, set the site title and tagline</td><td><a href="#6-site-identity-logo-title-and-icon">6</a></td></tr>
+<tr><td>2</td><td>Appearance → Menus</td><td>Create a menu and assign it to <strong>Primary Menu</strong></td><td><a href="#13-menus-and-the-mega-menu">13</a></td></tr>
+<tr><td>3</td><td>Pages → Add New</td><td>Create a home page with the <strong>Landing Page</strong> template and the <strong>Landing page</strong> pattern</td><td><a href="#12-building-the-home-page">12</a></td></tr>
+<tr><td>4</td><td>Settings → Reading</td><td>Choose that page as the <strong>Homepage</strong> and another page as the <strong>Posts page</strong></td><td><a href="#12-building-the-home-page">12</a></td></tr>
+<tr><td>5</td><td>Appearance → Widgets</td><td>Add blocks to the sidebars and the footer columns</td><td><a href="#14-widget-areas">14</a></td></tr>
+<tr><td>6</td><td>Customize → Open Frame Options</td><td>Pick colors, fonts, the header layout and the footer columns</td><td><a href="#7-layout-settings">7</a> to <a href="#11-footer-builder">11</a></td></tr></tbody></table></div>
+<h2 id="4-site-anatomy">4. Site anatomy</h2>
+<p>These annotated pages show which part of the site each setting controls.</p>
+<h3 id="home-page-landing-page-template">Home page (Landing Page template)</h3>
+<figure><a href="images/anatomy-home.png"><img src="images/anatomy-home.png" alt="The home page with its sections numbered" loading="lazy"></a><figcaption>The home page with its sections numbered</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Part</th><th>Where you change it</th></tr></thead><tbody><tr><td>1</td><td>Header</td><td><a href="#10-header-builder">Header Builder</a>, <a href="#6-site-identity-logo-title-and-icon">Site Identity</a>, <a href="#13-menus-and-the-mega-menu">Menus</a></td></tr>
+<tr><td>2</td><td>Hero with illustration (pattern)</td><td>Edit the page in the block editor</td></tr>
+<tr><td>3</td><td>Feature cards (pattern)</td><td>Edit the page in the block editor</td></tr>
+<tr><td>4</td><td>Latest posts grid (pattern)</td><td>Edit the page; the posts come from your blog</td></tr>
+<tr><td>5</td><td>Call to action (pattern)</td><td>Edit the page in the block editor</td></tr>
+<tr><td>6</td><td>Footer widget columns</td><td><a href="#14-widget-areas">Widgets</a>, <a href="#11-footer-builder">Footer Builder</a></td></tr>
+<tr><td>7</td><td>Copyright bar and footer menu</td><td><a href="#11-footer-builder">Footer Builder</a>, <a href="#13-menus-and-the-mega-menu">Menus</a></td></tr></tbody></table></div>
+<h3 id="header">Header</h3>
+<figure><a href="images/anatomy-header.png"><img src="images/anatomy-header.png" alt="The header with its parts numbered" loading="lazy"></a><figcaption>The header with its parts numbered</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Part</th><th>Where you change it</th></tr></thead><tbody><tr><td>1</td><td>Site title (or your logo)</td><td>Customize → Site Identity</td></tr>
+<tr><td>2</td><td>Tagline</td><td>Customize → Site Identity</td></tr>
+<tr><td>3</td><td>Primary menu</td><td>Appearance → Menus</td></tr>
+<tr><td>4</td><td>Arrow button of a menu item with sub-items</td><td>Added automatically</td></tr>
+<tr><td>5</td><td>Search form</td><td>Header Builder → <em>Show search in header</em></td></tr></tbody></table></div>
+<h3 id="blog-page">Blog page</h3>
+<figure><a href="images/anatomy-blog.png"><img src="images/anatomy-blog.png" alt="The blog page with its parts numbered" loading="lazy"></a><figcaption>The blog page with its parts numbered</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Part</th><th>Where you change it</th></tr></thead><tbody><tr><td>1</td><td>Header</td><td>Header Builder</td></tr>
+<tr><td>2</td><td>Post card</td><td>Layout → <em>Blog listing style</em></td></tr>
+<tr><td>3</td><td>Featured image</td><td><strong>Featured image</strong> in the post editor</td></tr>
+<tr><td>4</td><td>Category label (first category of the post)</td><td>Post categories</td></tr>
+<tr><td>5</td><td>Date, author and comment link</td><td>Automatic</td></tr>
+<tr><td>6</td><td>Read more link</td><td>Automatic</td></tr>
+<tr><td>7</td><td>Blog Sidebar</td><td>Appearance → Widgets; Layout → <em>Blog / archive layout</em></td></tr>
+<tr><td>8</td><td>Post listing (List, or Grid with 2 to 4 columns)</td><td>Layout → <em>Blog listing style</em> and <em>Grid columns</em></td></tr>
+<tr><td>9</td><td>Footer widget columns</td><td>Appearance → Widgets; Footer Builder</td></tr>
+<tr><td>10</td><td>Copyright text</td><td>Footer Builder → <em>Copyright text</em></td></tr>
+<tr><td>11</td><td>Footer menu</td><td>Appearance → Menus → <strong>Footer Menu</strong></td></tr></tbody></table></div>
+<h3 id="single-post">Single post</h3>
+<figure><a href="images/anatomy-single.png"><img src="images/anatomy-single.png" alt="A single post with its parts numbered" loading="lazy"></a><figcaption>A single post with its parts numbered</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Part</th><th>Notes</th></tr></thead><tbody><tr><td>1</td><td>Post title</td><td></td></tr>
+<tr><td>2</td><td>Date, author and comment link</td><td></td></tr>
+<tr><td>3</td><td>Featured image</td><td>Shown as a 1200 × 630 crop</td></tr>
+<tr><td>4</td><td>Post content</td><td>Written in the block editor</td></tr>
+<tr><td>5</td><td>Categories and tags</td><td>An <strong>Edit</strong> link is added for logged-in editors</td></tr>
+<tr><td>6</td><td>Links to the previous and next post</td><td></td></tr>
+<tr><td>7</td><td>Comments</td><td>Replies are indented under their parent comment</td></tr>
+<tr><td>8</td><td>Comment form</td><td>Shown while comments are open</td></tr>
+<tr><td>9</td><td>Main Sidebar</td><td>Layout → <em>Single post layout</em></td></tr></tbody></table></div>
+<h2 id="5-the-customizer">5. The Customizer</h2>
+<p>Open <strong>Appearance → Customize</strong>. The preview on the right updates while you change settings on the left; nothing is saved until you click <strong>Publish</strong>.</p>
+<figure><a href="images/customizer-root.png"><img src="images/customizer-root.png" alt="The Customizer home screen" loading="lazy"></a><figcaption>The Customizer home screen</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Section</th><th>Used for</th></tr></thead><tbody><tr><td>1</td><td><strong>Open Frame Options</strong></td><td>All theme settings: layout, colors, typography, header and footer</td></tr>
+<tr><td>2</td><td>Site Identity</td><td>Logo, site title, tagline and site icon</td></tr>
+<tr><td>3</td><td>Colors</td><td>WordPress background color (see the note in <a href="#8-global-colors">Global Colors</a>)</td></tr>
+<tr><td>4</td><td>Background Image</td><td>An optional image behind the whole page</td></tr>
+<tr><td>5</td><td>Menus</td><td>Create menus and assign them to locations</td></tr>
+<tr><td>6</td><td>Widgets</td><td>Edit the sidebar and footer widget areas with a live preview</td></tr>
+<tr><td>7</td><td>Homepage Settings</td><td>Choose a static home page and the posts page</td></tr>
+<tr><td>8</td><td>Additional CSS</td><td>Your own CSS, see <a href="#21-customization-recipes">Customization recipes</a></td></tr>
+<tr><td>9</td><td>Publish</td><td>Saves your changes and makes them live</td></tr></tbody></table></div>
+<p>Use the three device buttons at the bottom of the panel to preview the site on desktop, tablet and phone widths.</p>
+<p>Click <strong>Open Frame Options</strong> to see the five theme sections:</p>
+<figure><a href="images/customizer-panel.png"><img src="images/customizer-panel.png" alt="The Open Frame Options panel" loading="lazy"></a><figcaption>The Open Frame Options panel</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Section</th><th>Chapter</th></tr></thead><tbody><tr><td>1</td><td>Layout</td><td><a href="#7-layout-settings">7</a></td></tr>
+<tr><td>2</td><td>Global Colors</td><td><a href="#8-global-colors">8</a></td></tr>
+<tr><td>3</td><td>Typography</td><td><a href="#9-typography">9</a></td></tr>
+<tr><td>4</td><td>Header Builder</td><td><a href="#10-header-builder">10</a></td></tr>
+<tr><td>5</td><td>Footer Builder</td><td><a href="#11-footer-builder">11</a></td></tr></tbody></table></div>
+<h2 id="6-site-identity-logo-title-and-icon">6. Site Identity: logo, title and icon</h2>
+<p><strong>Customize → Site Identity</strong></p>
+<figure><a href="images/customizer-identity.png"><img src="images/customizer-identity.png" alt="Site Identity settings" loading="lazy"></a><figcaption>Site Identity settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Logo</td><td>Shown in the header before the site title. Any size works; the logo is scaled to a maximum height of 56 px. About 180 × 48 px, or twice that for sharp display on high-resolution screens, is a good size</td></tr>
+<tr><td>2</td><td>Site Title</td><td>The name shown in the header, the browser tab and the default copyright line</td></tr>
+<tr><td>3</td><td>Tagline</td><td>A short line under the site title. Leave it empty to show no tagline</td></tr>
+<tr><td>4</td><td>Site Icon</td><td>The small icon in browser tabs and bookmarks (512 × 512 px recommended)</td></tr></tbody></table></div>
+<p>If your logo already contains the site name, hide the text with <strong>Header Builder → Show site title and tagline</strong>. The name stays available to screen readers and search engines.</p>
+<h2 id="7-layout-settings">7. Layout settings</h2>
+<p><strong>Customize → Open Frame Options → Layout</strong></p>
+<figure><a href="images/customizer-layout.png"><img src="images/customizer-layout.png" alt="Layout settings" loading="lazy"></a><figcaption>Layout settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Default</th><th>Range / choices</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Site layout</td><td>Full width</td><td>Full width, Boxed</td><td><strong>Full width</strong> lets the header and footer span the window. <strong>Boxed</strong> places the whole site in a centered box with a shadow</td></tr>
+<tr><td>2</td><td>Container width</td><td>1200 px</td><td>800 to 1600</td><td>Maximum width of the header, the footer and the sidebar layouts</td></tr>
+<tr><td>3</td><td>Content width</td><td>960 px</td><td>600 to 1400</td><td>Width of the content column in the <em>No sidebar</em> layout, and of default blocks on the Landing Page template</td></tr>
+<tr><td>4</td><td>Section spacing</td><td>64 px</td><td>16 to 160</td><td>Space above and below the main content area. The default shrinks automatically on small screens</td></tr>
+<tr><td>5</td><td>Blog listing style</td><td>List</td><td>List, Grid</td><td><strong>List</strong> shows the image beside the text. <strong>Grid</strong> shows cards in columns</td></tr>
+<tr><td>6</td><td>Grid columns</td><td>2</td><td>2 to 4</td><td>Number of columns for the Grid style. Shown only while the style is Grid</td></tr>
+<tr><td>7</td><td>Excerpt length</td><td>30 words</td><td>5 to 80</td><td>Length of post summaries in listings</td></tr>
+<tr><td>8</td><td>Blog / archive layout</td><td>Right sidebar</td><td>4 layouts</td><td>Layout of the blog, category, tag, author, date and search pages</td></tr>
+<tr><td>9</td><td>Single post layout</td><td>Right sidebar</td><td>4 layouts</td><td>Layout of single posts</td></tr>
+<tr><td>10</td><td>Default page layout</td><td>No sidebar</td><td>4 layouts</td><td>Layout of pages that use the default template</td></tr></tbody></table></div>
+<h3 id="the-four-layouts">The four layouts</h3>
+<figure><a href="images/layouts.png"><img src="images/layouts.png" alt="The four layouts side by side" loading="lazy"></a><figcaption>The four layouts side by side</figcaption></figure>
+<ul>
+<li><strong>Right sidebar</strong> and <strong>Left sidebar:</strong> content with a 320 px sidebar. If the sidebar has no widgets, the content is centered at the content width instead of leaving an empty column. On screens narrower than 1024 px the sidebar moves below the content.</li>
+<li><strong>No sidebar (content width):</strong> a single centered column, as wide as the <em>Content width</em> setting.</li>
+<li><strong>Full width (container width):</strong> a single column that fills the container.</li>
+</ul>
+<h3 id="boxed-site-layout">Boxed site layout</h3>
+<figure><a href="images/boxed.png"><img src="images/boxed.png" alt="The Boxed site layout" loading="lazy"></a><figcaption>The Boxed site layout</figcaption></figure>
+<p>With <strong>Boxed</strong>, the site sits in a centered box as wide as the <em>Container width</em>. The page background (set in Global Colors, or a WordPress background image) shows on both sides.</p>
+<h3 id="blog-listing-styles">Blog listing styles</h3>
+<figure><a href="images/blog-grid-3.png"><img src="images/blog-grid-3.png" alt="Grid style with three columns and the Full width layout" loading="lazy"></a><figcaption>Grid style with three columns and the Full width layout</figcaption></figure>
+<p>Grid columns reduce automatically: three and four columns become two on tablets, and every grid becomes one column on phones.</p>
+<h2 id="8-global-colors">8. Global Colors</h2>
+<p><strong>Customize → Open Frame Options → Global Colors</strong></p>
+<figure><a href="images/customizer-colors.png"><img src="images/customizer-colors.png" alt="Global Colors settings" loading="lazy"></a><figcaption>Global Colors settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Default</th><th>Used for</th></tr></thead><tbody><tr><td>1</td><td>Primary</td><td><code>#3f4cd6</code></td><td>Buttons, active menu items, highlights, the focus outline</td></tr>
+<tr><td>2</td><td>Primary (hover)</td><td><code>#2b36b8</code></td><td>Buttons on hover</td></tr>
+<tr><td>3</td><td>Secondary</td><td><code>#14b8a6</code></td><td>The <em>Secondary</em> color offered to blocks in the editor palette</td></tr>
+<tr><td>4</td><td>Accent</td><td><code>#f5a623</code></td><td>Highlighted text, and the <em>Accent</em> color in the editor palette</td></tr>
+<tr><td>5</td><td>Headings</td><td><code>#0f172a</code></td><td>All headings and post titles</td></tr>
+<tr><td>6</td><td>Body text</td><td><code>#334155</code></td><td>Paragraphs, summaries, form labels</td></tr>
+<tr><td>7</td><td>Links</td><td><code>#3f4cd6</code></td><td>Links in content</td></tr>
+<tr><td>8</td><td>Link hover</td><td><code>#2b36b8</code></td><td>Links on hover and keyboard focus</td></tr>
+<tr><td>9</td><td>Borders</td><td><code>#e2e8f0</code></td><td>Card, table and divider lines</td></tr>
+<tr><td>10</td><td>Page background</td><td><code>#f8fafc</code></td><td>The page behind the content cards</td></tr>
+<tr><td>11</td><td>Surfaces</td><td><code>#ffffff</code></td><td>Cards, dropdown menus and form fields</td></tr></tbody></table></div>
+<p>Click <strong>Select Color</strong> to open the color picker, or type a hex value. The <strong>Default</strong> button next to the picker returns a color to its original value.</p>
+<p>Changing a color updates the whole site at once, including the matching swatch in the block editor palette. Soft tints, such as the menu hover background, are calculated from the Primary color automatically.</p>
+<figure><a href="images/customizer-live-color.png"><img src="images/customizer-live-color.png" alt="Changing the primary color updates the preview instantly" loading="lazy"></a><figcaption>Changing the primary color updates the preview instantly</figcaption></figure>
+<figure><a href="images/custom-colors.png"><img src="images/custom-colors.png" alt="The same home page with a new primary color, a dark header and serif headings" loading="lazy"></a><figcaption>The same home page with a new primary color, a dark header and serif headings</figcaption></figure>
+<p><strong>Choosing readable colors.</strong> Text needs enough contrast with its background. As a rule of thumb, keep <em>Body text</em> and <em>Headings</em> dark on a light <em>Surfaces</em> color, or light on a dark one, and pick a <em>Primary</em> color that white button text is readable on.</p>
+<blockquote>
+<p>WordPress also offers its own <strong>Colors → Background Color</strong> and <strong>Background Image</strong> sections (markers 3 and 4 on the Customizer home screen). When a background color or image is set there, it takes precedence over <em>Page background</em>.</p>
+</blockquote>
+<h2 id="9-typography">9. Typography</h2>
+<p><strong>Customize → Open Frame Options → Typography</strong></p>
+<figure><a href="images/customizer-typography.png"><img src="images/customizer-typography.png" alt="Typography settings" loading="lazy"></a><figcaption>Typography settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Default</th><th>Range / choices</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Body font</td><td>Hanken Grotesk</td><td>Hanken Grotesk, System UI, Serif, Monospace</td><td>Font for text</td></tr>
+<tr><td>2</td><td>Heading font</td><td>Hanken Grotesk</td><td>Same four choices</td><td>Font for headings and post titles</td></tr>
+<tr><td>3</td><td>Base font size</td><td>16 px</td><td>14 to 22</td><td>Size of body text</td></tr>
+<tr><td>4</td><td>Body line height</td><td>160 %</td><td>120 to 200</td><td>Space between lines of body text</td></tr>
+<tr><td>5</td><td>Heading weight</td><td>700</td><td>400 to 900, in steps of 100</td><td>Thickness of all headings</td></tr></tbody></table></div>
+<p>The four font choices:</p>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>Result</th></tr></thead><tbody><tr><td>Hanken Grotesk</td><td>The bundled sans-serif font, loaded from your own site</td></tr>
+<tr><td>System UI</td><td>The visitor&#39;s system font. No font file is downloaded</td></tr>
+<tr><td>Serif</td><td>Georgia, or the system serif font</td></tr>
+<tr><td>Monospace</td><td>JetBrains Mono, the bundled monospaced font</td></tr></tbody></table></div>
+<figure><a href="images/typography-serif.png"><img src="images/typography-serif.png" alt="Serif fonts, an 18 px base size and a 175 % line height" loading="lazy"></a><figcaption>Serif fonts, an 18 px base size and a 175 % line height</figcaption></figure>
+<h2 id="10-header-builder">10. Header Builder</h2>
+<p><strong>Customize → Open Frame Options → Header Builder</strong></p>
+<figure><a href="images/customizer-header.png"><img src="images/customizer-header.png" alt="Header Builder settings" loading="lazy"></a><figcaption>Header Builder settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Header layout</td><td>Logo left, menu right</td><td>One of five arrangements, shown below</td></tr>
+<tr><td>2</td><td>Header background</td><td><code>#ffffff</code></td><td>Background color of the header bar and of the mobile menu panel</td></tr>
+<tr><td>3</td><td>Header text color</td><td><em>(empty)</em></td><td>Color of the site title, tagline and menu links. Leave empty for the theme defaults. Set a light color when you choose a dark header background</td></tr>
+<tr><td>4</td><td>Show site title and tagline</td><td>On</td><td>Turn off when your logo already contains the name. The text stays available to screen readers and search engines</td></tr>
+<tr><td>5</td><td>Sticky header</td><td>Off</td><td>Keeps the header at the top of the screen while scrolling</td></tr>
+<tr><td>6</td><td>Transparent header on front page</td><td>Off</td><td>Removes the header background on the front page. With the Landing Page template the header floats over the first block</td></tr>
+<tr><td>7</td><td>Show search in header</td><td>Off</td><td>Adds a search form to the header</td></tr></tbody></table></div>
+<h3 id="the-five-header-layouts">The five header layouts</h3>
+<figure><a href="images/header-layouts.png"><img src="images/header-layouts.png" alt="The five header layouts, numbered" loading="lazy"></a><figcaption>The five header layouts, numbered</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Layout</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Logo left, menu right</td><td>The default. Logo at the start, menu at the end</td></tr>
+<tr><td>2</td><td>Logo left, menu centered</td><td>Menu centered in the remaining space</td></tr>
+<tr><td>3</td><td>Centered logo, menu below</td><td>Logo and menu stacked and centered</td></tr>
+<tr><td>4</td><td>Logo &amp; menu left</td><td>Menu directly after the logo (shown here with the search form)</td></tr>
+<tr><td>5</td><td>Logo right, menu left</td><td>Mirrored: menu at the start, logo at the end</td></tr></tbody></table></div>
+<p>On screens narrower than 1024 px the menu collapses into a menu button. The button follows the chosen layout, so layout 5 places it on the left. The search form, when enabled, takes its own row below the logo.</p>
+<h3 id="sticky-header">Sticky header</h3>
+<figure><a href="images/header-sticky.png"><img src="images/header-sticky.png" alt="The sticky header staying on top while the page scrolls" loading="lazy"></a><figcaption>The sticky header staying on top while the page scrolls</figcaption></figure>
+<p>The header stays at the top of the window while the visitor scrolls. For logged-in users it sits just below the WordPress toolbar.</p>
+<h3 id="transparent-header">Transparent header</h3>
+<figure><a href="images/header-transparent.png"><img src="images/header-transparent.png" alt="A transparent header floating over a tinted hero" loading="lazy"></a><figcaption>A transparent header floating over a tinted hero</figcaption></figure>
+<ul>
+<li>The option applies to the <strong>front page</strong> only.</li>
+<li>On a page that uses the <strong>Landing Page</strong> template, the header floats over the first block. Give that block enough top padding so its text starts below the header; the hero patterns already do.</li>
+<li>On other front pages the header simply loses its background and border.</li>
+<li>A header that is both <strong>sticky</strong> and <strong>transparent</strong> turns solid as soon as the page is scrolled, so the menu always stays readable.</li>
+</ul>
+<h3 id="a-dark-header">A dark header</h3>
+<p>Set <em>Header background</em> to a dark color such as <code>#0f172a</code> and <em>Header text color</em> to a light color such as <code>#f8fafc</code>. The dropdown menus keep the Surfaces color, so their links stay readable, and the mobile menu panel takes the header background.</p>
+<h2 id="11-footer-builder">11. Footer Builder</h2>
+<p><strong>Customize → Open Frame Options → Footer Builder</strong></p>
+<figure><a href="images/customizer-footer.png"><img src="images/customizer-footer.png" alt="Footer Builder settings" loading="lazy"></a><figcaption>Footer Builder settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Show footer widget area</td><td>On</td><td>Shows or hides the widget columns. The copyright bar always stays</td></tr>
+<tr><td>2</td><td>Footer columns</td><td>4 columns</td><td>Maximum number of widget columns (1 to 4). Empty widget areas are skipped and the remaining columns share the row</td></tr>
+<tr><td>3</td><td>Footer background</td><td><code>#0f172a</code></td><td>Background color of the footer</td></tr>
+<tr><td>4</td><td>Footer text color</td><td><code>#cbd5e1</code></td><td>Color of footer text</td></tr>
+<tr><td>5</td><td>Footer heading and link color</td><td><code>#ffffff</code></td><td>Color of footer headings and links</td></tr>
+<tr><td>6</td><td>Copyright text</td><td><em>(empty)</em></td><td>Leave empty for &quot;© Year Site name. All rights reserved.&quot; Basic HTML such as links is allowed</td></tr></tbody></table></div>
+<figure><a href="images/footer.png"><img src="images/footer.png" alt="The default footer: four widget columns, the copyright bar and the footer menu" loading="lazy"></a><figcaption>The default footer: four widget columns, the copyright bar and the footer menu</figcaption></figure>
+<p>The footer columns are the widget areas <strong>Footer 1</strong> to <strong>Footer 4</strong> (see <a href="#14-widget-areas">Widget areas</a>). On tablets the columns become two per row, and one per row on phones.</p>
+<figure><a href="images/footer-light.png"><img src="images/footer-light.png" alt="A light footer with three columns and custom copyright text" loading="lazy"></a><figcaption>A light footer with three columns and custom copyright text</figcaption></figure>
+<p>For a light footer, choose a light <em>Footer background</em> and dark colors for <em>Footer text color</em> and <em>Footer heading and link color</em>.</p>
+<h2 id="12-building-the-home-page">12. Building the home page</h2>
+<p>Open Frame includes a <strong>Landing Page</strong> template: a blank canvas with no page title, no content card and no sidebar. It is made for pages built from blocks.</p>
+<h3 id="step-1-create-the-page-and-choose-the-template">Step 1: create the page and choose the template</h3>
+<ol>
+<li>Go to <strong>Pages → Add New</strong> and give the page a title, for example <em>Home</em>.</li>
+<li>In the settings sidebar on the right, click the <strong>Template</strong> value (marker 1) and choose <strong>Landing Page</strong> in the box that opens (marker 2).</li>
+</ol>
+<figure><a href="images/editor-template.png"><img src="images/editor-template.png" alt="Choosing the Landing Page template" loading="lazy"></a><figcaption>Choosing the Landing Page template</figcaption></figure>
+<h3 id="step-2-insert-a-pattern">Step 2: insert a pattern</h3>
+<ol>
+<li>Click the <strong>+</strong> button in the top toolbar (marker 1).</li>
+<li>Switch to the <strong>Patterns</strong> tab (marker 2).</li>
+<li>Choose the <strong>Open Frame</strong> category (marker 3).</li>
+<li>Click a pattern in the list (marker 4). <strong>Landing page</strong> inserts a complete home page; the other patterns insert one section each.</li>
+</ol>
+<figure><a href="images/editor-patterns.png"><img src="images/editor-patterns.png" alt="Open Frame patterns in the block inserter" loading="lazy"></a><figcaption>Open Frame patterns in the block inserter</figcaption></figure>
+<p>Replace the sample text with your own, then click <strong>Publish</strong>.</p>
+<figure><a href="images/editor-landing.png"><img src="images/editor-landing.png" alt="Editing the landing page in the block editor" loading="lazy"></a><figcaption>Editing the landing page in the block editor</figcaption></figure>
+<h3 id="step-3-set-it-as-the-home-page">Step 3: set it as the home page</h3>
+<p><strong>Customize → Homepage Settings</strong> (or <strong>Settings → Reading</strong>)</p>
+<figure><a href="images/customizer-homepage.png"><img src="images/customizer-homepage.png" alt="Homepage Settings" loading="lazy"></a><figcaption>Homepage Settings</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Setting</th><th>Choose</th></tr></thead><tbody><tr><td>1</td><td>Your homepage displays</td><td><strong>A static page</strong></td></tr>
+<tr><td>2</td><td>Homepage</td><td>The page you just built</td></tr>
+<tr><td>3</td><td>Posts page</td><td>An empty page, for example <em>Blog</em>, that will list your posts</td></tr></tbody></table></div>
+<h3 id="how-blocks-are-sized-on-the-landing-page-template">How blocks are sized on the Landing Page template</h3>
+<div class="table-wrap"><table><thead><tr><th>Block alignment</th><th>Width</th></tr></thead><tbody><tr><td>None (default)</td><td>Content width (960 px by default)</td></tr>
+<tr><td>Wide width</td><td>Container width (1200 px by default)</td></tr>
+<tr><td>Full width</td><td>The whole browser window</td></tr></tbody></table></div>
+<p>On phones every block keeps a comfortable side margin, and full-width blocks still reach both edges.</p>
+<figure><a href="images/home-desktop.png"><img src="images/home-desktop.png" alt="The finished home page" loading="lazy"></a><figcaption>The finished home page</figcaption></figure>
+<blockquote>
+<p><strong>Tip.</strong> The Landing Page template does not print the page title. Each page should still have one main heading, so start with a pattern that includes a Heading 1 (both hero patterns do).</p>
+</blockquote>
+<h2 id="13-menus-and-the-mega-menu">13. Menus and the mega menu</h2>
+<p>Open Frame has two menu locations.</p>
+<p><strong>Appearance → Menus → Manage Locations</strong></p>
+<figure><a href="images/admin-menu-locations.png"><img src="images/admin-menu-locations.png" alt="Menu locations" loading="lazy"></a><figcaption>Menu locations</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Location</th><th>Where it appears</th></tr></thead><tbody><tr><td>1</td><td>Primary Menu</td><td>In the header. Supports dropdowns of any depth and the mega menu</td></tr>
+<tr><td>2</td><td>Footer Menu</td><td>In the copyright bar. One level only</td></tr>
+<tr><td>3</td><td>Save Changes</td><td>Saves the assignment</td></tr></tbody></table></div>
+<p>If no Primary Menu is assigned, or the assigned menu is empty, visitors see no menu and administrators see an <strong>Add a menu</strong> link in its place.</p>
+<h3 id="dropdown-menus">Dropdown menus</h3>
+<p>On the <strong>Edit Menus</strong> tab, drag a menu item slightly to the right, under another item, to make it a sub-item. Parent items get a small arrow button.</p>
+<figure><a href="images/dropdown.png"><img src="images/dropdown.png" alt="A dropdown menu" loading="lazy"></a><figcaption>A dropdown menu</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Input</th><th>How it works</th></tr></thead><tbody><tr><td>Mouse</td><td>Hover the parent item, or click the arrow</td></tr>
+<tr><td>Keyboard</td><td>Press <kbd>Tab</kbd> to reach the arrow button and <kbd>Enter</kbd> or <kbd>Space</kbd> to open it. <kbd>Esc</kbd> closes the menu and returns focus to the button</td></tr>
+<tr><td>Touch</td><td>Tap the arrow to open, tap it again to close</td></tr></tbody></table></div>
+<p>A dropdown that would run off the edge of the screen opens toward the other side automatically.</p>
+<h3 id="mega-menu">Mega menu</h3>
+<p>A mega menu shows the sub-items of one menu item as columns in a wide panel. No plugin is needed.</p>
+<p><strong>Step 1.</strong> On the <strong>Menus</strong> screen, open <strong>Screen Options</strong> at the top right (marker 1) and tick <strong>CSS Classes</strong> (marker 2).</p>
+<figure><a href="images/admin-menus-screen-options.png"><img src="images/admin-menus-screen-options.png" alt="Enabling CSS Classes in Screen Options" loading="lazy"></a><figcaption>Enabling CSS Classes in Screen Options</figcaption></figure>
+<p><strong>Step 2.</strong> Build the menu item and type <code>of-mega</code> in its <strong>CSS Classes</strong> field.</p>
+<figure><a href="images/admin-menus-mega.png"><img src="images/admin-menus-mega.png" alt="A menu item set up as a mega menu" loading="lazy"></a><figcaption>A menu item set up as a mega menu</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>The top-level item that becomes the mega menu</td></tr>
+<tr><td>2</td><td>The <strong>CSS Classes</strong> field with <code>of-mega</code></td></tr>
+<tr><td>3</td><td>A direct sub-item: it becomes a <strong>column heading</strong></td></tr>
+<tr><td>4</td><td>An item nested below a column heading: it becomes a <strong>link</strong> in that column</td></tr>
+<tr><td>5</td><td><strong>Save Menu</strong></td></tr></tbody></table></div>
+<p><strong>The result:</strong></p>
+<figure><a href="images/anatomy-mega.png"><img src="images/anatomy-mega.png" alt="The mega menu on the site" loading="lazy"></a><figcaption>The mega menu on the site</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>The top-level item with the <code>of-mega</code> class</td></tr>
+<tr><td>2</td><td>The mega menu panel, as wide as the header container</td></tr>
+<tr><td>3</td><td>A column heading</td></tr>
+<tr><td>4</td><td>The links of a column</td></tr></tbody></table></div>
+<p>Items without the <code>of-mega</code> class keep the standard dropdown. The mega menu layout applies on screens 1024 px and wider.</p>
+<h3 id="mobile-menu">Mobile menu</h3>
+<figure><a href="images/mobile.png"><img src="images/mobile.png" alt="The home page and the open menu on a phone" loading="lazy"></a><figcaption>The home page and the open menu on a phone</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>Logo or site title and tagline</td></tr>
+<tr><td>2</td><td>Menu button. Tap to open or close the menu</td></tr>
+<tr><td>3</td><td>The menu panel, as wide as the screen</td></tr>
+<tr><td>4</td><td>Arrow button of an item with sub-items</td></tr>
+<tr><td>5</td><td>An open sub-menu</td></tr></tbody></table></div>
+<p>The panel closes when a link is followed, when <kbd>Esc</kbd> is pressed or when focus moves out of the menu. Mega menus become ordinary collapsible lists.</p>
+<h2 id="14-widget-areas">14. Widget areas</h2>
+<p><strong>Appearance → Widgets</strong></p>
+<figure><a href="images/admin-widgets.png"><img src="images/admin-widgets.png" alt="The Widgets screen with the six widget areas" loading="lazy"></a><figcaption>The Widgets screen with the six widget areas</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Widget area</th><th>Appears on</th></tr></thead><tbody><tr><td>1</td><td>Main Sidebar</td><td>Pages and single posts that use a sidebar layout</td></tr>
+<tr><td>2</td><td>Blog Sidebar</td><td>The blog, archives and search results</td></tr>
+<tr><td>3</td><td>Footer 1</td><td>First footer column</td></tr>
+<tr><td>4</td><td>Footer 2</td><td>Second footer column</td></tr>
+<tr><td>5</td><td>Footer 3</td><td>Third footer column</td></tr>
+<tr><td>6</td><td>Footer 4</td><td>Fourth footer column</td></tr>
+<tr><td>7</td><td><strong>+</strong></td><td>Adds a block to the selected widget area</td></tr>
+<tr><td>8</td><td>Update</td><td>Saves your widgets</td></tr></tbody></table></div>
+<p>How to add a widget: click a widget area to open it, click <strong>+</strong> inside it, choose a block (for example <em>Heading</em>, <em>Paragraph</em>, <em>Latest Posts</em>, <em>Categories</em> or <em>Search</em>) and click <strong>Update</strong>.</p>
+<p>Good to know:</p>
+<ul>
+<li>Start each widget with a <strong>Heading</strong> block to give it a title.</li>
+<li>Empty areas are never shown. A sidebar layout with an empty sidebar falls back to a centered column, and the footer only prints the columns that contain widgets.</li>
+<li>Sidebar widgets appear as white cards; footer widgets use the footer colors.</li>
+</ul>
+<h2 id="15-page-templates">15. Page templates</h2>
+<p>Choose a template in the page editor under <strong>Template</strong> (see <a href="#12-building-the-home-page">Building the home page</a>).</p>
+<div class="table-wrap"><table><thead><tr><th>Template</th><th>Description</th></tr></thead><tbody><tr><td>Default template</td><td>Title and content in a card. Uses the <em>Default page layout</em> from the Customizer (No sidebar by default)</td></tr>
+<tr><td>Full Width</td><td>The same card stretched to the container width, never with a sidebar</td></tr>
+<tr><td>Landing Page</td><td>Blank canvas with no title, card or sidebar</td></tr></tbody></table></div>
+<p>Wide and full-width blocks inside the standard card:</p>
+<ul>
+<li>In the <strong>No sidebar</strong> and <strong>Full width</strong> layouts, a <em>Wide width</em> block grows out of the card up to the container width, and a <em>Full width</em> block stretches across the whole window.</li>
+<li>Next to a sidebar, a <em>Full width</em> block stretches to the edges of the content card and a <em>Wide width</em> block reaches halfway into its padding, so neither runs under the sidebar.</li>
+</ul>
+<p>Other views included with the theme:</p>
+<figure><a href="images/search.png"><img src="images/search.png" alt="Search results" loading="lazy"></a><figcaption>Search results</figcaption></figure>
+<figure><a href="images/404.png"><img src="images/404.png" alt="The 404 page" loading="lazy"></a><figcaption>The 404 page</figcaption></figure>
+<h2 id="16-blog-and-posts">16. Blog and posts</h2>
+<figure><a href="images/blog-grid.png"><img src="images/blog-grid.png" alt="The blog in the Grid style with two columns" loading="lazy"></a><figcaption>The blog in the Grid style with two columns</figcaption></figure>
+<figure><a href="images/blog-list.png"><img src="images/blog-list.png" alt="The blog in the List style" loading="lazy"></a><figcaption>The blog in the List style</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Feature</th><th>How it works</th></tr></thead><tbody><tr><td>Listing style</td><td>List or Grid, with 2 to 4 columns for the grid (Layout settings 5 and 6)</td></tr>
+<tr><td>Featured images</td><td>Add one under <strong>Featured image</strong> in the post editor. Listings use a 720 × 480 px crop and single posts a 1200 × 630 px crop, so upload images at least 1200 px wide</td></tr>
+<tr><td>Category label</td><td>The first category of the post is shown above the title</td></tr>
+<tr><td>Excerpts</td><td>The summary is the post&#39;s excerpt, or the first words of the post. Set the length in Layout → <em>Excerpt length</em></td></tr>
+<tr><td>Sticky posts</td><td>A sticky post gets a highlighted border and a <strong>Featured</strong> badge on the first page of the blog</td></tr>
+<tr><td>Pagination</td><td>Numbered page links below the listing</td></tr></tbody></table></div>
+<figure><a href="images/single-post.png"><img src="images/single-post.png" alt="A single post" loading="lazy"></a><figcaption>A single post</figcaption></figure>
+<p>Comments support threaded replies. The reply form opens directly under the comment being answered, and a comment that is waiting for approval is shown to its author with a notice.</p>
+<h2 id="17-block-editor-features">17. Block editor features</h2>
+<p>The editor uses the same fonts and colors as the front of the site, so what you see while writing matches the published page.</p>
+<h3 id="patterns">Patterns</h3>
+<div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody><tr><td>Hero</td><td>Centered headline, text and two buttons</td></tr>
+<tr><td>Hero with illustration</td><td>Two columns with a headline, buttons and an illustration</td></tr>
+<tr><td>Feature cards</td><td>A section heading and three cards</td></tr>
+<tr><td>Latest posts grid</td><td>A section heading and the three most recent posts</td></tr>
+<tr><td>Call to action</td><td>A dark full-width band with a headline and a button</td></tr>
+<tr><td>Landing page</td><td>All of the above combined into a complete home page</td></tr></tbody></table></div>
+<h3 id="block-styles">Block styles</h3>
+<p>Select a block, open the <strong>Styles</strong> panel in the block sidebar and choose:</p>
+<div class="table-wrap"><table><thead><tr><th>Block</th><th>Style</th><th>Result</th></tr></thead><tbody><tr><td>Group</td><td>Card</td><td>White card with border, rounded corners and a soft shadow</td></tr>
+<tr><td>Quote</td><td>Card</td><td>The same card look for quotations</td></tr>
+<tr><td>Paragraph</td><td>Eyebrow</td><td>A small uppercase label to place above a heading</td></tr>
+<tr><td>Button</td><td>Soft</td><td>A light, tinted button</td></tr>
+<tr><td>Image</td><td>Shadow</td><td>Rounded image with a large shadow</td></tr></tbody></table></div>
+<h3 id="colors-sizes-and-spacing">Colors, sizes and spacing</h3>
+<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Values</th></tr></thead><tbody><tr><td>Palette</td><td>Primary, Primary dark, Secondary, Accent, Heading, Body text, Muted, Border, Surface, Background, Dark. The colors that have a Customizer setting follow your choice there</td></tr>
+<tr><td>Font sizes</td><td>Small, Medium, Large, Extra large, Huge, Display</td></tr>
+<tr><td>Spacing</td><td>Seven steps, from 0.5 rem to a fluid 4 to 6 rem</td></tr>
+<tr><td>Content width</td><td>The editor canvas uses your <em>Content width</em> and <em>Container width</em> settings</td></tr></tbody></table></div>
+<h2 id="18-elementor">18. Elementor</h2>
+<p>Open Frame works with the free version of Elementor and with Elementor Pro. Elementor is optional; nothing in the theme depends on it.</p>
+<h3 id="building-a-page-with-elementor">Building a page with Elementor</h3>
+<p>Create a page and choose <strong>Edit with Elementor</strong>. The content fills the full width of the window, with no page card around it, so full-width sections reach the edges of the screen. Three page layouts are available under <strong>Page Settings → Page Layout</strong> in the Elementor panel:</p>
+<div class="table-wrap"><table><thead><tr><th>Page layout</th><th>Header and footer</th><th>Page title</th><th>Use it for</th></tr></thead><tbody><tr><td><strong>Default</strong></td><td>Theme header and footer</td><td>Shown above the content. Turn on <strong>Hide Title</strong> in Elementor&#39;s page settings to remove it</td><td>Ordinary pages</td></tr>
+<tr><td><strong>Elementor Full Width</strong></td><td>Theme header and footer</td><td>Not shown</td><td>Home pages and landing pages</td></tr>
+<tr><td><strong>Elementor Canvas</strong></td><td>None</td><td>Not shown</td><td>Stand-alone pages such as &quot;coming soon&quot; or campaign pages</td></tr></tbody></table></div>
+<p>A page that uses a sidebar layout (see <a href="#7-layout-settings">Layout settings</a>) keeps its sidebar and its card, with the Elementor content inside it.</p>
+<h3 id="elementor-pro-theme-builder">Elementor Pro Theme Builder</h3>
+<p>With Elementor Pro, templates created under <strong>Templates → Theme Builder</strong> replace the matching part of the theme: Header, Footer, Single Post or Page, Archive (including the blog and search results) and 404. When a template&#39;s display conditions do not match a page, the theme&#39;s own template is used. No setting is needed.</p>
+<h3 id="using-elementors-colors-and-fonts-on-the-whole-site">Using Elementor&#39;s colors and fonts on the whole site</h3>
+<p>By default the blog, single posts, search results and the other theme templates use the colors and fonts from the Customizer, while Elementor pages use Elementor&#39;s <strong>Site Settings</strong>. To keep both in step, go to <strong>Customize → Open Frame Options → Elementor</strong> and tick <strong>Use Elementor global colors and fonts</strong>. The section is only visible while Elementor is active.</p>
+<div class="table-wrap"><table><thead><tr><th>Elementor Site Settings</th><th>Used by the theme for</th></tr></thead><tbody><tr><td>Global color <strong>Primary</strong></td><td>Buttons, links, focus outline</td></tr>
+<tr><td>Global color <strong>Secondary</strong></td><td>Headings</td></tr>
+<tr><td>Global color <strong>Text</strong></td><td>Body text</td></tr>
+<tr><td>Global color <strong>Accent</strong></td><td>Highlights</td></tr>
+<tr><td>Global font <strong>Primary</strong></td><td>Headings</td></tr>
+<tr><td>Global font <strong>Text</strong></td><td>Body text</td></tr></tbody></table></div>
+<p>While the option is on, the matching Customizer colors and fonts act only as a fallback. Fonts chosen in Elementor are loaded the way Elementor loads them; if you select a Google font there, Elementor requests it from Google (see <a href="#24-privacy-and-performance">Privacy and performance</a>).</p>
+<h2 id="19-woocommerce">19. WooCommerce</h2>
+<p>Activate WooCommerce and the store uses the theme&#39;s design; there is nothing to configure in the theme.</p>
+<div class="table-wrap"><table><thead><tr><th>Page</th><th>What the theme does</th></tr></thead><tbody><tr><td>Shop and product categories</td><td>Products are shown as cards in a grid: two per row on phones, three on tablets, and the number of columns set under <strong>Customize → WooCommerce → Product Catalog</strong> on larger screens. Cards in a row share one height. The blog sidebar is not shown</td></tr>
+<tr><td>Single product</td><td>Gallery and details side by side on wide screens, stacked on phones; zoom, lightbox and gallery slider are enabled</td></tr>
+<tr><td>Cart and checkout</td><td>Shown inside the page card at the full container width; buttons use the Primary color</td></tr>
+<tr><td>My account</td><td>Navigation styled as a list of links</td></tr></tbody></table></div>
+<p>Buttons, prices, sale badges, notices, tabs and pagination follow the colors from <a href="#8-global-colors">Global Colors</a>. Products inserted on any other page (with blocks, shortcodes or a page builder) are styled the same way.</p>
+<h2 id="20-fonts">20. Fonts</h2>
+<p>Open Frame bundles two open-source typefaces as variable fonts, loaded from your own server:</p>
+<div class="table-wrap"><table><thead><tr><th>Font</th><th>Used for</th><th>License</th></tr></thead><tbody><tr><td>Hanken Grotesk</td><td>Text and headings</td><td>SIL Open Font License 1.1</td></tr>
+<tr><td>JetBrains Mono</td><td>Code, small labels and the Monospace choice</td><td>SIL Open Font License 1.1</td></tr></tbody></table></div>
+<p>The files cover the Latin and Latin Extended character sets. The browser only downloads a font file when the page actually uses it. Choose <strong>System UI</strong> for both fonts in Typography if you prefer to load no font files at all.</p>
+<h2 id="21-customization-recipes">21. Customization recipes</h2>
+<p>Small changes that have no Customizer setting can be made with CSS under <strong>Customize → Additional CSS</strong> (marker 8 on the Customizer home screen). The theme is built on CSS variables, so most changes are one line.</p>
+<h3 id="squarer-or-rounder-corners">Squarer or rounder corners</h3>
+<pre><code class="language-css">:root {
+	--of-radius-md: 4px;   /* Buttons, fields, images */
+	--of-radius-lg: 8px;   /* Cards */
+}
+</code></pre>
+<h3 id="flat-cards-without-shadows">Flat cards without shadows</h3>
+<pre><code class="language-css">:root {
+	--of-shadow-sm: none;
+	--of-shadow-md: none;
+}
+</code></pre>
+<h3 id="a-wider-or-narrower-sidebar">A wider or narrower sidebar</h3>
+<pre><code class="language-css">@media (min-width: 1024px) {
+	.of-layout--right-sidebar.of-layout--has-sidebar { grid-template-columns: minmax(0, 1fr) 380px; }
+	.of-layout--left-sidebar.of-layout--has-sidebar { grid-template-columns: 380px minmax(0, 1fr); }
+}
+</code></pre>
+<h3 id="a-larger-logo">A larger logo</h3>
+<pre><code class="language-css">.site-branding .custom-logo { max-height: 72px; }
+</code></pre>
+<h3 id="uppercase-menu-links">Uppercase menu links</h3>
+<pre><code class="language-css">.main-navigation a { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.875rem; }
+</code></pre>
+<h3 id="hide-the-author-name-in-post-meta">Hide the author name in post meta</h3>
+<pre><code class="language-css">.entry-meta .byline { display: none; }
+</code></pre>
+<h3 id="tighter-or-looser-content-padding">Tighter or looser content padding</h3>
+<pre><code class="language-css">:root {
+	--of-content-padding: 1rem;                         /* Side margins of the container */
+	--of-card-padding: clamp(1rem, 0.5rem + 2vw, 2rem); /* Padding inside content cards */
+}
+</code></pre>
+<p>The full list of variables is in the <a href="#23-child-themes-and-developer-reference">developer reference</a>.</p>
+<h2 id="22-accessibility-rtl-and-translation">22. Accessibility, RTL and translation</h2>
+<p><strong>Accessibility</strong></p>
+<ul>
+<li>A <em>Skip to content</em> link is the first stop for keyboard users.</li>
+<li>Menus work with the keyboard and announce their open or closed state to screen readers.</li>
+<li>Every interactive element has a visible focus outline.</li>
+<li>Default colors meet WCAG AA contrast for text.</li>
+<li>Animations are reduced for visitors who ask their system for less motion.</li>
+<li>Without JavaScript the menu is shown fully expanded, so the site stays usable.</li>
+</ul>
+<p><strong>Right-to-left languages</strong></p>
+<p>The stylesheet is written with logical properties, so the layout mirrors automatically for RTL languages such as Arabic and Hebrew. No separate RTL stylesheet is needed.</p>
+<p><strong>Translation</strong></p>
+<ul>
+<li>Text domain: <code>open-frame</code></li>
+<li>Template file: <code>languages/open-frame.pot</code></li>
+</ul>
+<p>Translate the theme with a tool such as Poedit or Loco Translate, and save the files as <code>open-frame-{locale}.po</code> and <code>.mo</code> (for example <code>open-frame-de_DE.mo</code>) in <code>wp-content/languages/themes/</code>.</p>
+<h2 id="23-child-themes-and-developer-reference">23. Child themes and developer reference</h2>
+<h3 id="creating-a-child-theme">Creating a child theme</h3>
+<p>Create a folder <code>wp-content/themes/open-frame-child</code> containing <code>style.css</code>:</p>
+<pre><code class="language-css">/*
+Theme Name: Open Frame Child
+Template: open-frame
+Version: 1.0.0
+*/
+
+/* Your CSS here. */
+</code></pre>
+<p>Open Frame loads its own stylesheet first and then the child theme&#39;s <code>style.css</code> automatically. You do not need to enqueue either of them.</p>
+<h3 id="filters">Filters</h3>
+<div class="table-wrap"><table><thead><tr><th>Filter</th><th>Arguments</th><th>Purpose</th></tr></thead><tbody><tr><td><code>open_frame_layout</code></td><td><code>string $layout</code></td><td>Change the layout for the current view. Return <code>right-sidebar</code>, <code>left-sidebar</code>, <code>no-sidebar</code> or <code>full-width</code></td></tr>
+<tr><td><code>open_frame_content_width</code></td><td><code>int $width</code></td><td>Change the global <code>$content_width</code> used for embeds and images</td></tr>
+<tr><td><code>open_frame_do_location</code></td><td><code>bool $done</code>, <code>string $location</code></td><td>Replace the <code>header</code>, <code>footer</code>, <code>single</code>, <code>archive</code> or <code>404</code> output. Print your markup and return <code>true</code>; the theme then skips its own template</td></tr>
+<tr><td><code>open_frame_has_location</code></td><td><code>bool $has</code>, <code>string $location</code></td><td>Return <code>true</code> when your code will replace a location, so the theme can drop the classes that belong to its own header</td></tr>
+<tr><td><code>open_frame_is_builder_page</code></td><td><code>bool $is_builder</code>, <code>int $post_id</code></td><td>Return <code>true</code> for a page whose content is laid out by a page builder: it loses the page card and spans the full width</td></tr></tbody></table></div>
+<pre><code class="language-php">// Use the full-width layout on a custom post type.
+add_filter(
+	&#39;open_frame_layout&#39;,
+	function ( $layout ) {
+		return is_singular( &#39;project&#39; ) ? &#39;full-width&#39; : $layout;
+	}
+);
+</code></pre>
+<pre><code class="language-php">// Replace the footer on landing pages.
+add_filter( &#39;open_frame_has_location&#39;, &#39;my_has_location&#39;, 10, 2 );
+add_filter( &#39;open_frame_do_location&#39;, &#39;my_do_location&#39;, 10, 2 );
+
+function my_has_location( $has, $location ) {
+	return $has || ( &#39;footer&#39; === $location &amp;&amp; is_page_template( &#39;page-templates/landing.php&#39; ) );
+}
+
+function my_do_location( $done, $location ) {
+	if ( $done || ! my_has_location( false, $location ) ) {
+		return $done;
+	}
+	get_template_part( &#39;template-parts/footer/minimal&#39; );
+	return true;
+}
+</code></pre>
+<p>The header and footer markup live in <code>template-parts/header/site-header.php</code> and <code>template-parts/footer/site-footer.php</code>; a child theme can override either file.</p>
+<h3 id="pluggable-template-tags">Pluggable template tags</h3>
+<p>These functions are wrapped in <code>function_exists()</code> and can be replaced in a child theme: <code>open_frame_posted_on()</code>, <code>open_frame_posted_by()</code>, <code>open_frame_entry_meta()</code>, <code>open_frame_entry_footer()</code>, <code>open_frame_post_thumbnail()</code> and <code>open_frame_comment()</code>.</p>
+<h3 id="design-tokens">Design tokens</h3>
+<p>The design system is a set of CSS custom properties on <code>:root</code> in <code>style.css</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>Group</th><th>Properties</th></tr></thead><tbody><tr><td>Colors</td><td><code>--of-color-primary</code>, <code>--of-color-primary-hover</code>, <code>--of-color-secondary</code>, <code>--of-color-accent</code>, <code>--of-color-heading</code>, <code>--of-color-text</code>, <code>--of-color-muted</code>, <code>--of-color-link</code>, <code>--of-color-link-hover</code>, <code>--of-color-border</code>, <code>--of-color-bg</code>, <code>--of-color-surface</code></td></tr>
+<tr><td>Header and footer</td><td><code>--of-header-bg</code>, <code>--of-header-text</code>, <code>--of-footer-bg</code>, <code>--of-footer-text</code>, <code>--of-footer-heading</code></td></tr>
+<tr><td>Typography</td><td><code>--of-font-body</code>, <code>--of-font-heading</code>, <code>--of-font-mono</code>, <code>--of-fs-body</code>, <code>--of-fs-h1</code> to <code>--of-fs-h6</code>, <code>--of-lh-body</code>, <code>--of-fw-heading</code></td></tr>
+<tr><td>Spacing</td><td><code>--of-space-1</code> to <code>--of-space-8</code>, <code>--of-section-spacing</code>, <code>--of-content-padding</code>, <code>--of-card-padding</code></td></tr>
+<tr><td>Shape and depth</td><td><code>--of-radius-sm</code>, <code>--of-radius-md</code>, <code>--of-radius-lg</code>, <code>--of-radius-pill</code>, <code>--of-shadow-sm</code>, <code>--of-shadow-md</code>, <code>--of-shadow-lg</code></td></tr>
+<tr><td>Layout</td><td><code>--of-container-wide</code>, <code>--of-content-width</code>, <code>--of-container-narrow</code></td></tr></tbody></table></div>
+<h3 id="customizer-settings-theme-mods">Customizer settings (theme mods)</h3>
+<div class="table-wrap"><table><thead><tr><th>Setting ID</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td><code>open_frame_site_layout</code></td><td><code>full</code>, <code>boxed</code></td><td><code>full</code></td></tr>
+<tr><td><code>open_frame_container_width</code></td><td>integer</td><td><code>1200</code></td></tr>
+<tr><td><code>open_frame_content_width</code></td><td>integer</td><td><code>960</code></td></tr>
+<tr><td><code>open_frame_section_spacing</code></td><td>integer</td><td><code>64</code></td></tr>
+<tr><td><code>open_frame_blog_style</code></td><td><code>list</code>, <code>grid</code></td><td><code>list</code></td></tr>
+<tr><td><code>open_frame_blog_columns</code></td><td>integer</td><td><code>2</code></td></tr>
+<tr><td><code>open_frame_excerpt_length</code></td><td>integer</td><td><code>30</code></td></tr>
+<tr><td><code>open_frame_blog_layout</code>, <code>open_frame_single_layout</code></td><td>layout</td><td><code>right-sidebar</code></td></tr>
+<tr><td><code>open_frame_page_layout</code></td><td>layout</td><td><code>no-sidebar</code></td></tr>
+<tr><td><code>open_frame_color_*</code> (11 settings)</td><td>hex color</td><td>see <a href="#8-global-colors">Global Colors</a></td></tr>
+<tr><td><code>open_frame_body_font</code>, <code>open_frame_heading_font</code></td><td><code>hanken</code>, <code>system</code>, <code>serif</code>, <code>mono</code></td><td><code>hanken</code></td></tr>
+<tr><td><code>open_frame_base_font_size</code></td><td>integer</td><td><code>16</code></td></tr>
+<tr><td><code>open_frame_body_line_height</code></td><td>integer (percent)</td><td><code>160</code></td></tr>
+<tr><td><code>open_frame_heading_weight</code></td><td>integer</td><td><code>700</code></td></tr>
+<tr><td><code>open_frame_header_layout</code></td><td>header layout</td><td><code>logo-left-menu-right</code></td></tr>
+<tr><td><code>open_frame_header_bg</code></td><td>hex color</td><td><code>#ffffff</code></td></tr>
+<tr><td><code>open_frame_header_text</code></td><td>hex color</td><td><em>(empty)</em></td></tr>
+<tr><td><code>open_frame_show_site_title</code></td><td>boolean</td><td><code>true</code></td></tr>
+<tr><td><code>open_frame_sticky_header</code>, <code>open_frame_transparent_header</code>, <code>open_frame_header_search</code></td><td>boolean</td><td><code>false</code></td></tr>
+<tr><td><code>open_frame_footer_visible</code></td><td>boolean</td><td><code>true</code></td></tr>
+<tr><td><code>open_frame_footer_layout</code></td><td><code>1-col</code> to <code>4-col</code></td><td><code>4-col</code></td></tr>
+<tr><td><code>open_frame_footer_bg</code>, <code>open_frame_footer_text</code>, <code>open_frame_footer_heading</code></td><td>hex color</td><td><code>#0f172a</code>, <code>#cbd5e1</code>, <code>#ffffff</code></td></tr>
+<tr><td><code>open_frame_copyright_text</code></td><td>HTML</td><td><em>(empty)</em></td></tr>
+<tr><td><code>open_frame_follow_elementor</code></td><td>boolean</td><td><code>false</code></td></tr></tbody></table></div>
+<h3 id="body-classes">Body classes</h3>
+<div class="table-wrap"><table><thead><tr><th>Class</th><th>When</th></tr></thead><tbody><tr><td><code>layout-right-sidebar</code>, <code>layout-left-sidebar</code>, <code>layout-no-sidebar</code>, <code>layout-full-width</code></td><td>The layout that is actually rendered</td></tr>
+<tr><td><code>no-sidebar</code></td><td>No sidebar is displayed</td></tr>
+<tr><td><code>boxed-layout</code></td><td>Site layout is Boxed</td></tr>
+<tr><td><code>has-sticky-header</code></td><td>Sticky header is on</td></tr>
+<tr><td><code>has-transparent-header</code></td><td>Transparent header applies to this view</td></tr>
+<tr><td><code>of-builder-page</code></td><td>The page is laid out by a page builder (full width, no card)</td></tr>
+<tr><td><code>of-follow-elementor</code></td><td>The theme follows Elementor&#39;s global colors and fonts</td></tr></tbody></table></div>
+<h3 id="image-sizes">Image sizes</h3>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>Size</th><th>Used for</th></tr></thead><tbody><tr><td><code>open-frame-card</code></td><td>720 × 480, cropped</td><td>Post cards in listings</td></tr>
+<tr><td><code>open-frame-wide</code></td><td>1200 × 630, cropped</td><td>Featured image on single posts and pages</td></tr></tbody></table></div>
+<h3 id="file-structure">File structure</h3>
+<pre><code>open-frame/
+├── style.css               Theme header, design tokens and all frontend CSS
+├── theme.json              Editor palette, fonts, sizes, spacing and layout
+├── functions.php           Constants and the include loader
+├── header.php, footer.php, sidebar.php, searchform.php, comments.php
+├── index.php, single.php, page.php, archive.php, search.php, 404.php
+├── page-templates/         full-width.php, landing.php
+├── template-parts/         content.php, -single, -page, -search, -none, -builder
+│   ├── header/site-header.php   The header markup
+│   └── footer/site-footer.php   The footer markup
+├── patterns/               Block patterns (registered automatically)
+├── inc/
+│   ├── hooks.php           Replaceable locations (header, footer, content)
+│   ├── setup.php           Theme supports, menus, widget areas, image sizes
+│   ├── enqueue.php         Styles and scripts
+│   ├── template-tags.php   Post meta, thumbnail and comment output
+│   ├── template-functions.php   Layout logic, body classes, excerpts
+│   ├── header-builder.php  Header settings and output
+│   ├── footer-builder.php  Footer settings and output
+│   ├── blocks.php          Block styles, pattern category, palette sync
+│   ├── class-open-frame-walker-nav-menu.php   Menu arrow buttons
+│   ├── integrations/       elementor.php, woocommerce.php
+│   └── customizer/         customizer.php, dynamic-css.php, sanitize.php
+├── assets/
+│   ├── css/editor.css      Block editor styles
+│   ├── css/woocommerce.css Store styles, loaded only with WooCommerce
+│   ├── js/navigation.js    Menu behavior
+│   ├── js/customize-preview.js   Customizer live preview
+│   ├── fonts/              Bundled fonts and their licenses
+│   └── images/             Hero illustration
+└── languages/open-frame.pot
+</code></pre>
+<h2 id="24-privacy-and-performance">24. Privacy and performance</h2>
+<ul>
+<li><strong>No remote requests.</strong> Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.</li>
+<li><strong>Small footprint.</strong> One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.</li>
+<li><strong>No stored personal data.</strong> The theme itself stores and sends no visitor data.</li>
+<li><strong>Plugins are separate.</strong> Elementor and WooCommerce load their own files and may contact their own services (Elementor, for example, requests Google fonts when one is selected in its Site Settings). The theme adds one small stylesheet for WooCommerce, and only while WooCommerce is active.</li>
+</ul>
+<h2 id="25-troubleshooting-and-faq">25. Troubleshooting and FAQ</h2>
+<p><strong>My menu does not appear.</strong>
+Assign a menu to the <strong>Primary Menu</strong> location under <strong>Appearance → Menus → Manage Locations</strong>, and make sure the menu contains items.</p>
+<p><strong>The sidebar is missing.</strong>
+A sidebar is only shown when its widget area contains widgets and the layout for that kind of page is <em>Right sidebar</em> or <em>Left sidebar</em>. Pages use <em>No sidebar</em> by default; change <strong>Layout → Default page layout</strong>.</p>
+<p><strong>The mega menu shows a normal dropdown.</strong>
+Check that the <code>of-mega</code> class is on a <strong>top-level</strong> item, and that <strong>CSS Classes</strong> is enabled in Screen Options. The mega menu layout applies on screens 1024 px and wider.</p>
+<p><strong>The transparent header does nothing.</strong>
+It applies only to the <strong>front page</strong>. To make the header float over the content, the front page must use the <strong>Landing Page</strong> template.</p>
+<p><strong>My page title is missing.</strong>
+The Landing Page template hides the title on purpose. Use the default template for a standard page with a title.</p>
+<p><strong>My color change does not affect the page background.</strong>
+A color or image set under <strong>Customize → Colors → Background Color</strong> or <strong>Background Image</strong> takes precedence over <em>Page background</em>.</p>
+<p><strong>The &quot;Grid columns&quot; setting is not visible.</strong>
+It appears only while <em>Blog listing style</em> is set to <strong>Grid</strong>.</p>
+<p><strong>How do I change the copyright text?</strong>
+Open <strong>Customize → Open Frame Options → Footer Builder → Copyright text</strong>.</p>
+<p><strong>Does Open Frame need a plugin?</strong>
+No. Every feature described here is part of the theme.</p>
+<p><strong>Can I use a page builder?</strong>
+Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>. For other page builders, use the <strong>Landing Page</strong> or <strong>Full Width</strong> template.</p>
+<h2 id="26-changelog-credits-and-support">26. Changelog, credits and support</h2>
+<h3 id="changelog">Changelog</h3>
+<p>See the <code>== Changelog ==</code> section of <a href="../readme.txt"><code>readme.txt</code></a> for the full history.</p>
+<h3 id="credits-and-licenses">Credits and licenses</h3>
+<ul>
+<li><strong>Open Frame</strong> — © 2026 Mostafij Emon, GPL-2.0-or-later.</li>
+<li><strong>Hanken Grotesk</strong> — © 2021 The Hanken Grotesk Project Authors, SIL Open Font License 1.1.</li>
+<li><strong>JetBrains Mono</strong> — © 2020 The JetBrains Mono Project Authors, SIL Open Font License 1.1.</li>
+<li><strong>Hero illustration and screenshot artwork</strong> — original work by the theme author, GPL-2.0-or-later.</li>
+</ul>
+<h3 id="support">Support</h3>
+<ul>
+<li>Source code and issue tracker: <a href="https://github.com/Mostafijemon24/Open-Frame-Theme">https://github.com/Mostafijemon24/Open-Frame-Theme</a></li>
+<li>Author: <a href="https://github.com/Mostafijemon24">Mostafij Emon</a></li>
+</ul>
+
+	</article>
+	<footer>Open Frame 1.1.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+</main>
+<script>
+( function () {
+	var sidebar = document.getElementById( 'sidebar' );
+	var toggle = sidebar.querySelector( '.menu-toggle' );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav a' ) );
+
+	toggle.addEventListener( 'click', function () {
+		var open = sidebar.classList.toggle( 'is-open' );
+		toggle.setAttribute( 'aria-expanded', String( open ) );
+	} );
+	links.forEach( function ( link ) {
+		link.addEventListener( 'click', function () {
+			sidebar.classList.remove( 'is-open' );
+			toggle.setAttribute( 'aria-expanded', 'false' );
+		} );
+	} );
+
+	// Highlight the section currently being read.
+	if ( 'IntersectionObserver' in window ) {
+		var byId = {};
+		links.forEach( function ( link ) { byId[ link.getAttribute( 'href' ).slice( 1 ) ] = link; } );
+		var observer = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting && byId[ entry.target.id ] ) {
+					links.forEach( function ( link ) { link.classList.remove( 'is-active' ); } );
+					byId[ entry.target.id ].classList.add( 'is-active' );
+				}
+			} );
+		}, { rootMargin: '0px 0px -75% 0px' } );
+		Object.keys( byId ).forEach( function ( id ) {
+			var heading = document.getElementById( id );
+			if ( heading ) { observer.observe( heading ); }
+		} );
+	}
+}() );
+</script>
+</body>
+</html>

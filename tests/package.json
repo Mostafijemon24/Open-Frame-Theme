@@ -1,0 +1,15 @@
+{
+	"name": "open-frame-tests",
+	"private": true,
+	"description": "Browser checks for the Open Frame theme. See docs/dev/TESTING.md.",
+	"scripts": {
+		"env": "bash env/setup.sh",
+		"env:stop": "bash env/setup.sh stop",
+		"test": "node --test --test-concurrency=1 e2e/*.test.js",
+		"test:php": "php env/run.php \"${OFT_DIR:-${TMPDIR:-/tmp}/open-frame-wp-test}/wordpress\" php/starter-sites.php"
+	},
+	"devDependencies": {
+		"axe-core": "^4.10.0",
+		"playwright": "^1.50.0"
+	}
+}
