@@ -1,10 +1,60 @@
 # Open Frame — Test Reports
 
+- [Business starter site](#the-business-starter-site--test-report): Phase 7a, the first real design
 - [Import engine](#the-import-engine--test-report): Phase 6, importing, resuming and rolling back
 - [Library tools, Worker and signatures](#the-library--test-report): Phase 5, without a live deployment
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Business starter site — Test Report
+
+Phase 7a, plugin 0.3.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6 and Elementor 4.4.2 (free version only; Elementor Pro switched off), in Chromium. The design is built into the mock library from `starter-sites/business`, imported through the plugin's own importer, looked at as a visitor who is not logged in, and rolled back.
+
+| Suite | Result |
+| --- | --- |
+| Business, `tests/e2e/business.test.js` | **10 of 10 passed** |
+| All browser checks together | **49 of 49 passed** (10 Business, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, `tests/php/importer.php` | **72 of 72 passed** (one new: links to the front page) |
+| Plugin PHP checks, `tests/php/starter-sites.php` | **138 of 138 passed** |
+| Library tools | **49 of 49 passed**; the Business package is built, signed and verified in them |
+| PHPCS | Theme 42 files, plugin 25 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+| Area | What is asserted |
+| --- | --- |
+| Import | The run finishes as "done" without warnings: 10 pages, 3 articles, 15 images, 1 menu; every page and all three site parts exist |
+| Every page at every width | 12 addresses (ten pages, an article, an address that does not exist) at 360, 375, 390, 430, 768, 1024, 1280, 1440 and 1920 px: 108 page views. On each: the expected status; nothing wider than the screen; exactly one `h1` and one `main`, with the skip link's target; the header and footer of the design and not the theme's; every image loaded after scrolling the whole page; every image has an `alt` attribute; no `ofss://` reference left; headings and body in Hanken Grotesk; no running text under 13 px; no script error; **no request to any other host** |
+| Menu | On a phone: the menu button is visible and at least 44 by 44 px, the menu starts closed, opens with `aria-expanded="true"`, lists the six items, stays on the screen, closes with Escape, and marks the current page after a click. On a desktop: a row without the button; the first Tab stop is the skip link |
+| Links | Every link on the twelve addresses has a real target. Links inside the site (more than fifteen different ones) all answer 200 without a redirect; in-page links have their target; the only links that leave the site are `mailto:` and `tel:` |
+| Blog | The posts page has a visible title, shows the three articles in three columns on a desktop, each with its picture and category; an article opens with its text and subheadings |
+| "Page not found" | Status 404, the design's own page with one heading, and its button leads home |
+| Accessibility | axe-core (WCAG 2.0 and 2.1, A and AA, and best practices) on all twelve addresses at 390 and 1440 px: no violations |
+| Global styles | Elementor's four global colors carry the design's palette; a button and a heading on the home page have those colors; the theme's blog titles and text follow the same globals |
+| Editor | The home page, the header and the footer open in the Elementor editor with their content in the editable area, no unknown widget and no editor error |
+| Rollback | The theme header and the earlier home page are back, the design's pages and article categories answer 404, no imported object is left, and neither the theme nor the plugin logged a PHP error or notice during the whole run |
+
+**Contrast, measured** (WCAG 2.1 formula): white on the brand blue 5.9:1; headings on white 16.5:1; body text on white 7.7:1 and on the tinted bands 7.1:1; text on the dark bands 9.4:1; text on the blue closing band 4.7:1.
+
+**Weight:** the package (all pages, site parts, articles and settings) is under 200 KB; the fifteen images are about 540 KB together, none over 100 KB.
+
+**What the tests found, all fixed before this report:**
+
+1. The wordmark in the header linked to `/home/`, which redirects. Links to a design's front page are now written as the site address.
+2. The Services page went from heading level 1 straight to level 3.
+3. The "Previous" and "Next" labels under an article had a contrast of 4.4:1 on the design's tinted background (theme fix).
+4. The blog page had no visible title (new theme option, switched on by the design).
+5. Earlier, while building: Elementor's Site Settings restyled the theme's menu, site title and post titles; the theme now keeps its own look for those parts.
+
+## Not covered
+
+- **Real devices and other browsers.** Chromium only, at set window widths. No iPhone, Android phone, Safari or Firefox.
+- **A human reading the editor.** The editor is opened and checked for errors and unknown widgets; nobody dragged widgets around in it.
+- **A screen reader.** axe-core finds what can be found automatically, which is a part of accessibility, not all of it.
+- **A slow connection.** Nothing was measured with Lighthouse or under throttling.
+- **The live library.** The package came from the local mock library, signed with a throw-away key.
+- The design has no contact form (see `PROJECT_STATUS.md`).
 
 # The import engine — Test Report
 

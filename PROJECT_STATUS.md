@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**A design can now be imported, edited in Elementor and rolled back, end to end, on a test site.** What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and the ten designs do not exist yet.
+**The first real design exists.** Business ("Halden Advisory": ten pages, three articles, header, footer and a "page not found" page, built with free Elementor) is imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and nine designs are still to be made.
 
 | Phase | Status |
 | --- | --- |
@@ -15,9 +15,9 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 3. Core theme and design system | Done (theme 1.1.0) |
 | 4. Starter Sites dashboard | Done |
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
-| 6. Import engine | **Core done and tested** (plugin 0.2.0). Some planned parts are not built yet, listed below |
-| 7a. Business starter site | Next |
-| 7b. Nine further starter sites | Not started |
+| 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
+| 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
+| 7b. Nine further starter sites | Next |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -28,7 +28,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 2. **Elementor: two tiers.** Five starter sites work with Elementor free (Business, Portfolio, Restaurant, Education, Medical) and five require Elementor Pro (Agency, SaaS, E-commerce, Real Estate, Magazine).
 3. **Images: implementer's choice.** Original generated images by default, CC0 photographs where better, every file's licence recorded. Confirmed per site at the start of Phase 7.
 4. **Library address:** `api.buildbetters.com` (catalog, manifests) and `cdn.buildbetters.com` (packages, media, previews), on the owner's Cloudflare account.
-5. Open: the free forms plugin for the five free-tier sites (Phase 7a).
+5. Open: the free forms plugin for the five free-tier sites. Business ships without a form (see "Known issues").
 
 ## Completed
 
@@ -72,24 +72,35 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 - **Screen:** "Import this design" with a confirmation of what will change, a progress bar with named steps, a report with links, "Roll back this import" with a second confirmation, and a banner for an import that did not finish.
 - **REST:** `POST /imports`, `POST /imports/{id}/advance`, `POST /imports/{id}/rollback`, `GET /imports/current`.
 
-**Planned for Phase 6 and not built yet:**
+**Planned for Phase 6 and still not built:**
 
-- The small widget pack (navigation menu, site logo, post grid, search). The reference header uses a heading only; a real free-tier header needs the menu widget.
-- Local fonts: downloading a design's font files and registering them with Elementor.
-- Blog posts, categories, sidebar widgets and WooCommerce products in a package; Theme Builder templates for the Pro-tier designs.
+- Site logo, post grid and search widgets (the menu widget was built in Phase 7a).
+- Local fonts for designs with a typeface of their own: downloading the font files and registering them with Elementor. Business does not need this, it uses the theme's typeface.
+- Sidebar widgets and WooCommerce products in a package; Theme Builder templates for the Pro-tier designs.
 - A WP-CLI command, and a "replace the previous starter site" mode.
 - Continuing past a single image that cannot be downloaded (today the import stops and can be retried or rolled back).
 
-These are needed by the real designs, so they will be built with the first one (Phase 7a) rather than against invented content.
+Each is built with the first design that needs it, rather than against invented content.
+
+### Phase 7a: the Business design (plugin 0.3.0)
+
+- **The design** (`starter-sites/business`, brief in `brief.md`): the fictional advisory firm "Halden". Home, About, Services, a service page, Projects, a case study, Team, Pricing, Contact, the blog page "Insights" with three articles, plus header, footer and a "page not found" page. One typeface (Hanken Grotesk, served by the theme), one brand color, fluid heading sizes, numbered service cards, white and tinted bands.
+- **Free Elementor only:** containers, grid and seven classic widgets (heading, text editor, button, image, icon list, counter, divider) plus the plugin's menu widget. No custom CSS, so every part can be edited in the editor.
+- **Global styles:** headings and plain buttons point at Elementor's global colors; the theme follows the same globals, so one change in Site Settings restyles pages and blog together.
+- **Images:** fifteen original abstract pictures drawn by a script (`tools/sites/business-art.mjs`), CC0, about 540 KB in total, each under 100 KB. Four real preview pictures replace the "coming soon" placeholders.
+- **Written as a generator** (`tools/sites/business.mjs` on the shared builders in `tools/sites/kit.mjs`), which writes the JSON that is packaged. The next designs reuse the builders, not the layout.
+- **Importer additions the design needed:** blog posts with categories and featured images (removed again by a rollback); the "Navigation Menu (Open Frame)" Elementor widget, so a free-tier header shows the WordPress menu with the theme's mobile menu; links to a design's home page now point at the site address instead of `/home/`.
+- **Theme additions (still 1.1.0, unreleased):** the theme's two typefaces are registered with Elementor, so choosing them causes no request to Google Fonts; theme parts (site title, menu, post titles, footer links) keep their look when Elementor's Site Settings style links and headings; a "Show the title of the posts page" option; a contrast fix for the "Previous / Next" labels under a post.
+- **Found by the new tests and fixed:** the wordmark linked to `/home/` (a redirect); the Services page jumped from heading level 1 to 3; the "Previous / Next" labels under an article had a contrast of 4.4:1 on the design's background; the blog page had no visible title.
 
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 24 files, 0 errors, 0 warnings.
+- PHPCS: theme 42 files and plugin 25 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
-- Import engine checks: 71 of 71 pass, including a rollback that is compared field by field with the site before the import, and interruptions at every one of the 16 points of an import.
-- Browser checks: 39 of 39 pass (18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans).
+- Import engine checks: 72 of 72 pass, including a rollback that is compared field by field with the site before the import, and interruptions at every one of the 16 points of an import.
+- Browser checks: 49 of 49 pass. 10 for the Business design (import, twelve addresses at nine widths, menu, links, blog, 404, axe-core, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -102,10 +113,13 @@ These are needed by the real designs, so they will be built with the first one (
 
 ## Known issues and limitations
 
-- Only the reference package used by the tests can be imported. All ten designs are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- One design, Business, can be imported. The other nine are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **Business has no contact form.** Its contact page gives an email address, a telephone number and a button. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
+- The texts, names and figures of Business are invented sample content for a fictional company; the footer says so.
+- Business was looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
 - Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
 - Site parts apply to the whole site; per-page display conditions are not built.
-- Theme 1.1.0 and plugin 0.2.0 are not tagged or released.
+- Theme 1.1.0 and plugin 0.3.0 are not tagged or released.
 - The plugin's readme names Cloudflare's privacy policy for the library; the library needs its own short privacy statement before the plugin is submitted to WordPress.org.
 - The user guide has no screenshots for the Elementor and WooCommerce chapters and no chapter for the plugin yet.
 - With the global-styles option on, Elementor's base stylesheet also loads on theme templates (about 7 KB compressed).
@@ -121,5 +135,5 @@ These are needed by the real designs, so they will be built with the first one (
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7a: the Business design, together with the parts of the importer it needs (menu widget, local fonts, blog posts).
-3. Then the other four free-tier designs, then the five Pro-tier designs.
+2. Phase 7b: the other four free-tier designs (Portfolio, Restaurant, Education, Medical), each with its own brief, layout and typeface, then the five Pro-tier designs.
+3. A decision on the forms plugin, so the contact pages can carry a form.
