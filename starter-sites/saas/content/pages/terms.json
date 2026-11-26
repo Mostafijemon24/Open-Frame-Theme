@@ -1,0 +1,847 @@
+{
+	"uid": "saas:pages:terms",
+	"title": "Terms",
+	"slug": "terms",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "00001af",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 16,
+						"column": "16",
+						"row": "16",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 16,
+						"column": "16",
+						"row": "16",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "39",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00001ae",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 70,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"flex_align_items": "flex-start"
+						},
+						"elements": [
+							{
+								"id": "00001ab",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Legal",
+									"header_size": "p",
+									"title_color": "#C81E5B",
+									"typography_typography": "custom",
+									"typography_font_family": "DM Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									},
+									"_element_width": "auto",
+									"_background_background": "classic",
+									"_background_color": "#FFE3EC",
+									"_padding": {
+										"unit": "px",
+										"top": "7",
+										"right": "14",
+										"bottom": "7",
+										"left": "14",
+										"isLinked": false
+									},
+									"_border_radius": {
+										"unit": "px",
+										"top": "999",
+										"right": "999",
+										"bottom": "999",
+										"left": "999",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							},
+							{
+								"id": "00001ac",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Terms of service",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00001ad",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Last updated on 1 November 2026. This is sample text for a fictional company, not legal advice.",
+									"header_size": "p",
+									"title_color": "#4A5165",
+									"typography_typography": "custom",
+									"typography_font_family": "DM Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 16,
+										"sizes": []
+									},
+									"typography_font_weight": "500",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00001ce",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00001cd",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00001b9",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00001b8",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "28",
+												"right": "28",
+												"bottom": "28",
+												"left": "28",
+												"isLinked": true
+											},
+											"padding_mobile": {
+												"unit": "px",
+												"top": "24",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": true
+											},
+											"background_background": "classic",
+											"background_color": "#F5F6FA",
+											"border_radius": {
+												"unit": "px",
+												"top": "20",
+												"right": "20",
+												"bottom": "20",
+												"left": "20",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001b0",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "On this page",
+													"header_size": "p",
+													"title_color": "#0E1320",
+													"typography_typography": "custom",
+													"typography_font_family": "DM Sans",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.45,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "00001b7",
+												"elType": "widget",
+												"widgetType": "icon-list",
+												"settings": {
+													"icon_list": [
+														{
+															"_id": "00001b1",
+															"text": "The service",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#the-service",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														},
+														{
+															"_id": "00001b2",
+															"text": "Your account",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#your-account",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														},
+														{
+															"_id": "00001b3",
+															"text": "Paying",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#paying",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														},
+														{
+															"_id": "00001b4",
+															"text": "Your content",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#your-content",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														},
+														{
+															"_id": "00001b5",
+															"text": "Ending",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#ending",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														},
+														{
+															"_id": "00001b6",
+															"text": "Changes",
+															"selected_icon": {
+																"value": "fas fa-check",
+																"library": "fa-solid"
+															},
+															"link": {
+																"url": "#changes",
+																"is_external": "",
+																"nofollow": "",
+																"custom_attributes": ""
+															}
+														}
+													],
+													"space_between": {
+														"unit": "px",
+														"size": 8,
+														"sizes": []
+													},
+													"icon_size": {
+														"unit": "px",
+														"size": 0,
+														"sizes": []
+													},
+													"text_indent": {
+														"unit": "px",
+														"size": 0,
+														"sizes": []
+													},
+													"text_color": "#4A5165",
+													"view": "traditional",
+													"text_color_hover": "#C81E5B"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "00001cc",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 36,
+										"column": "36",
+										"row": "36",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 70,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00001bc",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001ba",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "The service",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "the-service"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001bb",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Loop is software that reads and organises customer feedback you connect to it. We work to keep it available and will tell you in advance about planned interruptions.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00001bf",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001bd",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Your account",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "your-account"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001be",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>You are responsible for who has access to your account and for having the right to connect the feedback you connect.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00001c2",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001c0",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Paying",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "paying"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001c1",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Plans are billed monthly or yearly in advance. You can cancel at any time; the plan runs to the end of the period you paid for.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00001c5",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001c3",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Your content",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "your-content"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001c4",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Everything you connect remains yours. You give us permission to process it only to provide the service to you.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00001c8",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001c6",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Ending",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "ending"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001c7",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>You may close your account whenever you like. We may suspend an account that is used to break the law or to harm the service, and will say why.</p>"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "00001cb",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "00001c9",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Changes",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem)",
+														"sizes": []
+													},
+													"_element_id": "changes"
+												},
+												"elements": []
+											},
+											{
+												"id": "00001ca",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>If these terms change in a way that matters, we write to the account owner thirty days before the change takes effect.</p>"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

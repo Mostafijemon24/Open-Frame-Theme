@@ -24,6 +24,9 @@ for ( const shot of shots ) {
 	const [ file, url ] = shot.split( '=' );
 	await page.goto( base + url, { waitUntil: 'networkidle' } );
 	await page.screenshot( { path: path.join( out, file + '.png' ) } );
-	console.log( `${ file }.png ${ Math.round( fs.statSync( path.join( out, file + '.png' ) ).size / 1024 ) } KB` );
+	const kilobytes = Math.round( fs.statSync( path.join( out, file + '.png' ) ).size / 1024 );
+	// The library accepts previews of up to 400 KB. A page with a large gradient can exceed that
+	// as a full-colour PNG; reduce it to 256 colours with an image tool before committing.
+	console.log( `${ file }.png ${ kilobytes } KB${ kilobytes > 400 ? ' (over the 400 KB limit: reduce its colours)' : '' }` );
 }
 await browser.close();

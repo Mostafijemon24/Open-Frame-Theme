@@ -1,0 +1,12 @@
+{
+	"uid": "saas:posts:closing-the-loop",
+	"title": "Closing the loop: telling customers what happened to their idea",
+	"slug": "closing-the-loop",
+	"excerpt": "People forgive a no. They do not forgive silence. A simple routine for answering every request, eventually.",
+	"featured": "ofss://media/blog-3",
+	"categories": [
+		"Product"
+	],
+	"days_ago": 33,
+	"content": "<!-- wp:paragraph -->\n<p>People forgive a no. They do not forgive silence. Most feedback tools are good at collecting requests and bad at the second half: telling the person what became of theirs.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">A routine that takes ten minutes a week</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>When something ships, write to everyone who asked for it</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>When something is declined, say so, with one sentence of why</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Once a quarter, publish what changed because of feedback</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p>The first of these is the cheapest marketing a product team will ever do.</p>\n<!-- /wp:paragraph -->"
+}

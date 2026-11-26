@@ -1,0 +1,12 @@
+{
+	"uid": "saas:posts:counting-requests-is-not-prioritising",
+	"title": "Counting requests is not prioritising",
+	"slug": "counting-requests-is-not-prioritising",
+	"excerpt": "The feature with the most votes is rarely the one to build next. What to look at instead of the count.",
+	"featured": "ofss://media/blog-1",
+	"categories": [
+		"Product"
+	],
+	"days_ago": 5,
+	"content": "<!-- wp:paragraph -->\n<p>The feature with the most votes is rarely the one to build next. Votes measure how many people noticed a gap, not how much it costs them, and not whether they are the customers you want more of.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three questions beside the count</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Who is asking: new accounts, or the ones about to renew?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What do they do today instead?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What happens if we never build it?</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">A small example</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>One team found that \"export to CSV\" had forty requests and \"faster search\" had twelve. The twelve came from their eight largest accounts. They built search first, and the export requests fell by half, because people had been exporting in order to search.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Loop shows who is behind every theme. <a href=\"ofss://page/feature\">See how the inbox works</a>.</p>\n<!-- /wp:paragraph -->"
+}

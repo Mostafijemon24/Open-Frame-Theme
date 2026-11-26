@@ -1,0 +1,1269 @@
+{
+	"uid": "saas:pages:pricing",
+	"title": "Pricing",
+	"slug": "pricing",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "00000da",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 28,
+						"column": "28",
+						"row": "28",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 28,
+						"column": "28",
+						"row": "28",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000d9",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 70,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "00000d6",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Pricing",
+									"header_size": "p",
+									"title_color": "#C81E5B",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_family": "DM Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									},
+									"_element_width": "auto",
+									"_background_background": "classic",
+									"_background_color": "#FFE3EC",
+									"_padding": {
+										"unit": "px",
+										"top": "7",
+										"right": "14",
+										"bottom": "7",
+										"left": "14",
+										"isLinked": false
+									},
+									"_border_radius": {
+										"unit": "px",
+										"top": "999",
+										"right": "999",
+										"bottom": "999",
+										"left": "999",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000d7",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "One price per team, not per message read",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000d8",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Every plan starts with fourteen days free, with everything switched on. No card until you decide.</p>",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000df",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000de",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000db",
+								"elType": "widget",
+								"widgetType": "price-table",
+								"settings": {
+									"heading": "Starter",
+									"sub_heading": "For a first product and a small team.",
+									"heading_tag": "h2",
+									"currency_symbol": "euro",
+									"price": "29",
+									"currency_format": "",
+									"period": "per month",
+									"features_list": [
+										{
+											"_id": "starter0",
+											"item_text": "2 seats",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "starter1",
+											"item_text": "1,000 pieces of feedback a month",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "starter2",
+											"item_text": "Email and chat sources",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "starter3",
+											"item_text": "30 days of history",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										}
+									],
+									"button_text": "Start free",
+									"link": {
+										"url": "ofss://page/contact",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"footer_additional_info": "",
+									"show_ribbon": "",
+									"ribbon_title": "Popular",
+									"ribbon_bg_color": "#C81E5B",
+									"ribbon_text_color": "#FFFFFF",
+									"header_bg_color": "#F5F6FA",
+									"heading_color": "#0E1320",
+									"sub_heading_color": "#4A5165",
+									"heading_typography_typography": "custom",
+									"heading_typography_font_family": "Sora",
+									"heading_typography_font_size": {
+										"unit": "px",
+										"size": 24,
+										"sizes": []
+									},
+									"heading_typography_font_weight": "600",
+									"pricing_element_bg_color": "#FFFFFF",
+									"price_color": "#0E1320",
+									"price_typography_typography": "custom",
+									"price_typography_font_family": "Sora",
+									"price_typography_font_weight": "600",
+									"period_color": "#4A5165",
+									"features_list_bg_color": "#FFFFFF",
+									"features_list_color": "#0E1320",
+									"features_list_alignment": "left",
+									"features_list_padding": {
+										"unit": "px",
+										"top": "8",
+										"right": "32",
+										"bottom": "8",
+										"left": "32",
+										"isLinked": false
+									},
+									"footer_bg_color": "#FFFFFF",
+									"button_text_color": "#0E1320",
+									"button_background_color": "#F5F6FA",
+									"button_hover_color": "#FFFFFF",
+									"button_background_hover_color": "#C81E5B",
+									"button_border_radius": {
+										"unit": "px",
+										"top": "12",
+										"right": "12",
+										"bottom": "12",
+										"left": "12",
+										"isLinked": true
+									},
+									"additional_info_color": "#4A5165",
+									"_border_border": "solid",
+									"_border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"_border_color": "#E4E7EF",
+									"_border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000dc",
+								"elType": "widget",
+								"widgetType": "price-table",
+								"settings": {
+									"heading": "Team",
+									"sub_heading": "For product teams that ship every week.",
+									"heading_tag": "h2",
+									"currency_symbol": "euro",
+									"price": "89",
+									"currency_format": "",
+									"period": "per month",
+									"features_list": [
+										{
+											"_id": "team0",
+											"item_text": "10 seats",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "team1",
+											"item_text": "10,000 pieces of feedback a month",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "team2",
+											"item_text": "All sources and integrations",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "team3",
+											"item_text": "Trends and roadmap",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "team4",
+											"item_text": "Unlimited history",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										}
+									],
+									"button_text": "Start free",
+									"link": {
+										"url": "ofss://page/contact",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"footer_additional_info": "Most teams choose this one",
+									"show_ribbon": "yes",
+									"ribbon_title": "Popular",
+									"ribbon_bg_color": "#C81E5B",
+									"ribbon_text_color": "#FFFFFF",
+									"header_bg_color": "#0E1320",
+									"heading_color": "#FFFFFF",
+									"sub_heading_color": "#B6BCCB",
+									"heading_typography_typography": "custom",
+									"heading_typography_font_family": "Sora",
+									"heading_typography_font_size": {
+										"unit": "px",
+										"size": 24,
+										"sizes": []
+									},
+									"heading_typography_font_weight": "600",
+									"pricing_element_bg_color": "#FFFFFF",
+									"price_color": "#0E1320",
+									"price_typography_typography": "custom",
+									"price_typography_font_family": "Sora",
+									"price_typography_font_weight": "600",
+									"period_color": "#4A5165",
+									"features_list_bg_color": "#FFFFFF",
+									"features_list_color": "#0E1320",
+									"features_list_alignment": "left",
+									"features_list_padding": {
+										"unit": "px",
+										"top": "8",
+										"right": "32",
+										"bottom": "8",
+										"left": "32",
+										"isLinked": false
+									},
+									"footer_bg_color": "#FFFFFF",
+									"button_text_color": "#FFFFFF",
+									"button_background_color": "#0E1320",
+									"button_hover_color": "#FFFFFF",
+									"button_background_hover_color": "#C81E5B",
+									"button_border_radius": {
+										"unit": "px",
+										"top": "12",
+										"right": "12",
+										"bottom": "12",
+										"left": "12",
+										"isLinked": true
+									},
+									"additional_info_color": "#4A5165",
+									"_border_border": "solid",
+									"_border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"_border_color": "#0E1320",
+									"_border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000dd",
+								"elType": "widget",
+								"widgetType": "price-table",
+								"settings": {
+									"heading": "Scale",
+									"sub_heading": "For several products and a support organisation.",
+									"heading_tag": "h2",
+									"currency_symbol": "euro",
+									"price": "249",
+									"currency_format": "",
+									"period": "per month",
+									"features_list": [
+										{
+											"_id": "scale0",
+											"item_text": "Unlimited seats",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "scale1",
+											"item_text": "100,000 pieces of feedback a month",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "scale2",
+											"item_text": "Single sign-on",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "scale3",
+											"item_text": "Audit log",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										},
+										{
+											"_id": "scale4",
+											"item_text": "A named contact",
+											"selected_item_icon": {
+												"value": "fas fa-check",
+												"library": "fa-solid"
+											},
+											"item_icon_color": "#C81E5B"
+										}
+									],
+									"button_text": "Talk to us",
+									"link": {
+										"url": "ofss://page/contact",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"footer_additional_info": "",
+									"show_ribbon": "",
+									"ribbon_title": "Popular",
+									"ribbon_bg_color": "#C81E5B",
+									"ribbon_text_color": "#FFFFFF",
+									"header_bg_color": "#F5F6FA",
+									"heading_color": "#0E1320",
+									"sub_heading_color": "#4A5165",
+									"heading_typography_typography": "custom",
+									"heading_typography_font_family": "Sora",
+									"heading_typography_font_size": {
+										"unit": "px",
+										"size": 24,
+										"sizes": []
+									},
+									"heading_typography_font_weight": "600",
+									"pricing_element_bg_color": "#FFFFFF",
+									"price_color": "#0E1320",
+									"price_typography_typography": "custom",
+									"price_typography_font_family": "Sora",
+									"price_typography_font_weight": "600",
+									"period_color": "#4A5165",
+									"features_list_bg_color": "#FFFFFF",
+									"features_list_color": "#0E1320",
+									"features_list_alignment": "left",
+									"features_list_padding": {
+										"unit": "px",
+										"top": "8",
+										"right": "32",
+										"bottom": "8",
+										"left": "32",
+										"isLinked": false
+									},
+									"footer_bg_color": "#FFFFFF",
+									"button_text_color": "#0E1320",
+									"button_background_color": "#F5F6FA",
+									"button_hover_color": "#FFFFFF",
+									"button_background_hover_color": "#C81E5B",
+									"button_border_radius": {
+										"unit": "px",
+										"top": "12",
+										"right": "12",
+										"bottom": "12",
+										"left": "12",
+										"isLinked": true
+									},
+									"additional_info_color": "#4A5165",
+									"_border_border": "solid",
+									"_border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"_border_color": "#E4E7EF",
+									"_border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000ed",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 40,
+						"column": "40",
+						"row": "40",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000e2",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "00000e0",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Good to know",
+									"header_size": "p",
+									"title_color": "#C81E5B",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_family": "DM Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									},
+									"_element_width": "auto",
+									"_background_background": "classic",
+									"_background_color": "#FFE3EC",
+									"_padding": {
+										"unit": "px",
+										"top": "7",
+										"right": "14",
+										"bottom": "7",
+										"left": "14",
+										"isLinked": false
+									},
+									"_border_radius": {
+										"unit": "px",
+										"top": "999",
+										"right": "999",
+										"bottom": "999",
+										"left": "999",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000e1",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The small print, in large print",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "00000ec",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000e5",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 10,
+										"column": "10",
+										"row": "10",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#F5F6FA",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000e3",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What counts as a piece of feedback?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000e4",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>One message, review or call note from a customer. Replies from your own team do not count.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000e8",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 10,
+										"column": "10",
+										"row": "10",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#F5F6FA",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000e6",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What if we go over?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000e7",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Nothing is cut off. We write to you, and the plan moves up at the next invoice if it keeps happening.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000eb",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 10,
+										"column": "10",
+										"row": "10",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#F5F6FA",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000e9",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Is there a yearly price?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000ea",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Yes: two months free when you pay for a year. Ask for an invoice if you cannot pay by card.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000f4",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000f3",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_align_items": "center",
+							"flex_gap": {
+								"unit": "px",
+								"size": 22,
+								"column": "22",
+								"row": "22",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "80",
+								"right": "40",
+								"bottom": "80",
+								"left": "40",
+								"isLinked": false
+							},
+							"padding_mobile": {
+								"unit": "px",
+								"top": "48",
+								"right": "24",
+								"bottom": "48",
+								"left": "24",
+								"isLinked": false
+							},
+							"border_radius": {
+								"unit": "px",
+								"top": "28",
+								"right": "28",
+								"bottom": "28",
+								"left": "28",
+								"isLinked": true
+							},
+							"background_background": "gradient",
+							"background_color": "#FF4D8D",
+							"background_color_b": "#FF8A3D",
+							"background_gradient_angle": {
+								"unit": "deg",
+								"size": 120,
+								"sizes": []
+							}
+						},
+						"elements": [
+							{
+								"id": "00000ee",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Hear your customers by Friday",
+									"header_size": "h2",
+									"title_color": "#0E1320",
+									"align": "center"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000ef",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Connect your support inbox and Loop sorts the last ninety days of feedback while you make coffee. Free for fourteen days, no card.</p>",
+									"text_color": "#0E1320",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									},
+									"_element_width": "initial",
+									"_element_custom_width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"_element_custom_width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000f2",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "stretch",
+									"flex_align_items_mobile": "center",
+									"flex_justify_content": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_wrap": "wrap",
+									"flex_justify_content_mobile": "center"
+								},
+								"elements": [
+									{
+										"id": "00000f0",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Start a free trial",
+											"link": {
+												"url": "ofss://page/pricing",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"__globals__": {
+												"background_color": "globals/colors?id=primary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000f1",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book a demo",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0E1320",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#0E1320",
+											"hover_color": "#FFFFFF",
+											"button_background_hover_color": "#0E1320"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

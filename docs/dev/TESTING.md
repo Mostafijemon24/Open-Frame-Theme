@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [SaaS starter site](#the-saas-starter-site--test-report): Phase 7b, part 6
 - [Agency starter site](#the-agency-starter-site--test-report): Phase 7b, part 5; the first design for Elementor Pro
 - [Theme Builder templates in a package](#theme-builder-templates--test-report): groundwork for the Pro tier
 - [Medical starter site](#the-medical-starter-site--test-report): Phase 7b, part 4; the free tier is complete
@@ -12,6 +13,33 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The SaaS starter site — Test Report
+
+Phase 7b, part 6, plugin 0.5.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Elementor Pro 4.0.4 (installed, not activated with a licence), in Chromium.
+
+| Suite | Result |
+| --- | --- |
+| SaaS, `tests/e2e/saas.test.js` | **11 of 11 passed** |
+| All browser checks together | **116 of 116 passed** (11 for each of the seven designs, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, plugin PHP checks, library tools | **80 of 80** (import engine without Elementor Pro; its 92 checks with Pro were last run for the Agency report and no PHP has changed since), **138 of 138, 53 of 53 passed** |
+| PHPCS (no PHP changed since the Agency report) | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check, Plugin Check 2.2.0 | Theme Check: **0 required, 0 warnings** (1 recommended, 1 info, as before). Plugin Check: **no errors found** |
+
+The eleven checks are the shared ones in their Pro form (see the Agency report), on thirteen addresses (eleven pages, an article, an address that does not exist) at the nine widths: 117 page views. Headings in Sora, text in DM Sans, both from the site's own address; no request to another host. axe-core on all thirteen addresses at 390 and 1440 px: no violations, with the one rule switched off for Pro designs that the Agency report explains.
+
+**Contrast, measured:** headings on white 18.5:1; text 7.9:1 on white and 7.3:1 on the tinted bands; rose (links, pills, check marks) 5.5:1 on white and 5.1:1 on the tinted bands; ink on the gradient 5.9:1 at its pink end and 7.9:1 at its orange end; text on the ink bands 9.8:1.
+
+**Found by the tests and fixed:**
+
+1. axe-core, color contrast, only at 390 px: a grey line of company names is large text on a desktop and small text on a phone, where 3.2:1 is not enough. It is darker now (5.0:1).
+2. axe-core, "Links must be distinguishable without relying on color": a link in a paragraph of the privacy page. The theme now underlines links in Elementor's Text Editor widget.
+3. Twelve sections had no space below them.
+4. The preview picture was 681 KB, over the library's 400 KB limit, because of the gradient. It is a 256-color PNG of 119 KB now, and the preview tool warns about this.
+
+## Not covered
+
+As for Agency: a licensed Elementor Pro, sending the form, and CI (which has no Elementor Pro). The Price Table widgets were checked for layout, text and accessibility; their "Popular" ribbon is Elementor Pro's.
 
 # The Agency starter site — Test Report
 

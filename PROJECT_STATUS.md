@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Six of the ten designs exist: all five that work with the free version of Elementor, and the first that needs Elementor Pro.** Business, Portfolio, Restaurant, Education and Medical (free), and Agency (Pro), are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and four Pro designs are still to be made (SaaS, Shop, Real Estate, Magazine).
+**Seven of the ten designs exist: all five that work with the free version of Elementor, and two that need Elementor Pro.** Business, Portfolio, Restaurant, Education and Medical (free), Agency and SaaS (Pro), are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and three Pro designs are still to be made (Shop, Real Estate, Magazine).
 
 | Phase | Status |
 | --- | --- |
@@ -17,7 +17,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 5 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical) and the first Pro design, Agency, is done (plugin 0.5.0). Next: SaaS, Shop, Real Estate, Magazine |
+| 7b. Nine further starter sites | **In progress: 6 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency and SaaS are done (plugin 0.5.0). Next: Real Estate, Magazine, and Shop, which needs WooCommerce products in a package |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -146,6 +146,15 @@ Each is built with the first design that needs it, rather than against invented 
 - **Found by the tests and fixed:** the posts page had no `h1` (Elementor Pro has no title for it, so it has its own template with a written one); title and picture widgets showed placeholders until given their dynamic tag; pictures that link to an article had no name; links in an article could only be told apart by color; the menu button was 33px and is now 45px.
 - **One finding that cannot be fixed here:** Elementor Pro's Posts widgets give each article the role "listitem", which axe-core's best-practice rule "aria-allowed-role" rejects. The check is switched off for Pro designs, for that rule only, and the brief says so.
 
+### Phase 7b, part 6: the SaaS design
+
+- **The design** (`starter-sites/saas`, brief in `brief.md`): the fictional feedback tool "Loop". Home, Features, a feature page, Pricing, Integrations, Customers, About, Book a Demo, Privacy, Terms, and the blog with three articles.
+- **Built on Elementor Pro:** six Theme Builder templates (header, footer, blog, archives, article, "page not found"), three Price Table widgets, a demo form, the Nav Menu and Posts widgets.
+- **Its own look:** a white page, near-black type and buttons, one pink-to-orange gradient used only as a background, centered openers, rounded tinted cards; Sora with DM Sans. Every picture is a screen of the invented product, drawn in HTML.
+- **Images:** twelve original pictures (four app screens, integration tiles, customer covers, a team, blog covers), drawn by `tools/sites/saas-art.mjs`. CC0, about 500 KB.
+- **Theme (still 1.1.0, unreleased):** links in Elementor's Text Editor widget are underlined, so a link in a paragraph is not marked by color alone.
+- **Found by the tests and fixed:** a grey line of text failed contrast on phones, where it is smaller; a link in the legal text could only be told apart by color; twelve sections had no space below them; the preview picture was larger than the library accepts until reduced to 256 colors.
+
 ## Verified (executed 2026-11-26)
 
 - PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
@@ -153,7 +162,7 @@ Each is built with the first design that needs it, rather than against invented 
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
 - Import engine checks: 80 of 80 pass without Elementor Pro and 92 of 92 with it (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
-- Browser checks: 105 of 105 pass with Elementor Pro in the test site (94 without it, where the Agency file is skipped). 11 for each of the six designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Browser checks: 116 of 116 pass with Elementor Pro in the test site (94 without it, where the Agency and SaaS files are skipped). 11 for each of the seven designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 53 of 53 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -166,12 +175,13 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- Six designs can be imported: Business, Portfolio, Restaurant, Education, Medical and (with Elementor Pro) Agency. The other four (all Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- **Agency was built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything it uses worked that way here; a licensed site was not tested. Its form sends email through WordPress, and whether the email arrives depends on the site's mail setup.
+- Seven designs can be imported: Business, Portfolio, Restaurant, Education, Medical and (with Elementor Pro) Agency and SaaS. The other three (all Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **SaaS has no sign-up or payment, and its legal pages are sample text** that says so. "Start a free trial" leads to pricing and the demo form.
+- **Agency and SaaS were built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything they use worked that way here; a licensed site was not tested. Their forms send email through WordPress, and whether the email arrives depends on the site's mail setup.
 - **None of the free designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map; Education takes applications by email and telephone and has no course catalogue with enrolment; Medical takes appointments by telephone, email or at the desk and has no doctor directory with search. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
 - The texts, names, prices and figures of all designs are invented sample content; each footer says so.
 - **Medical's sample texts are not medical advice** and say so; a real clinic must have its own texts checked.
-- **The fonts of Portfolio, Restaurant, Education, Medical and Agency are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
+- **The fonts of every design except Business are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
 - Portfolio has no social media links: there are no accounts to point at, and a placeholder link would lead nowhere.
 - Text over pictures (Restaurant's two pictured bands) cannot be checked for contrast by axe-core; it was calculated by hand for the brightest part of each picture (6.4:1 at worst) and depends on the veil staying dark if the picture is replaced.
 - All designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
@@ -193,5 +203,5 @@ Each is built with the first design that needs it, rather than against invented 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b continues with the remaining four Pro-tier designs (SaaS, Shop, Real Estate, Magazine). Theme Builder templates can now be imported; Shop also needs WooCommerce products in a package, which is not built yet.
+2. Phase 7b continues with the remaining three Pro-tier designs (Real Estate, Magazine, Shop). Theme Builder templates can now be imported; Shop also needs WooCommerce products in a package, which is not built yet.
 3. A decision on the forms plugin, so the contact pages can carry a form.

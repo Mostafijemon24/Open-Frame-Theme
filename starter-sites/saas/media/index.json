@@ -1,0 +1,74 @@
+[
+	{
+		"uid": "app-dashboard",
+		"file": "app-dashboard.jpg",
+		"alt": "The Loop dashboard: this week's feedback, a chart and the top themes",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "app-inbox",
+		"file": "app-inbox.jpg",
+		"alt": "The Loop inbox: a list of customer messages, each with a topic",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "app-trends",
+		"file": "app-trends.jpg",
+		"alt": "The Trends screen: a rising chart and five themes as circles",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "app-roadmap",
+		"file": "app-roadmap.jpg",
+		"alt": "The Roadmap screen: three columns of cards with request counts",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "integrations",
+		"file": "integrations.jpg",
+		"alt": "Six integration tiles: Mailbox, Chatly, Desk, Sheets, Tracker and Stores",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "customer-1",
+		"file": "customer-1.jpg",
+		"alt": "Northpost",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "customer-2",
+		"file": "customer-2.jpg",
+		"alt": "Driftline",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "customer-3",
+		"file": "customer-3.jpg",
+		"alt": "Fable & Co",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "team",
+		"file": "team.jpg",
+		"alt": "Four members of the Loop team",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "blog-1",
+		"file": "blog-1.jpg",
+		"alt": "Cover of the article “Counting requests is not prioritising”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "blog-2",
+		"file": "blog-2.jpg",
+		"alt": "Cover of the article “What we learned reading ninety days of our own support inbox”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	},
+	{
+		"uid": "blog-3",
+		"file": "blog-3.jpg",
+		"alt": "Cover of the article “Closing the loop: telling customers what happened to their idea”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+	}
+]
