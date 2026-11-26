@@ -47,6 +47,22 @@ jobs:
           find . -name '*.php' -not -path './.git/*' -not -path './vendor/*' -not -path './tests/*' -print0 \
             | xargs -0 -n1 php -l > /dev/null
 
+  library:
+    name: Library tools and Worker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Library tools
+        working-directory: tools
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+      - name: Worker
+        run: node --test cloud/worker/test/*.test.mjs
+
   browser:
     name: Browser checks
     runs-on: ubuntu-latest
@@ -57,7 +73,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-          extensions: sqlite3, zip, gd, mbstring
+          extensions: sqlite3, sodium, zip, gd, mbstring
           coverage: none
       - uses: actions/setup-node@v4
         with:

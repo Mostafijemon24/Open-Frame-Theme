@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Phases 1 to 4 are done.** The theme (1.1.0) works with Elementor, Elementor Pro and WooCommerce. The companion plugin (0.1.0) has a working Starter Sites screen that reads a catalog, checks requirements and installs required plugins. The library itself, importing and the ten designs do not exist yet; the screen runs against a mock library.
+**Phases 1 to 4 are done; Phase 5 is built and tested locally but not deployed.** The theme (1.1.0) works with Elementor, Elementor Pro and WooCommerce. The companion plugin (0.1.0) has a working Starter Sites screen. The library can be built, signed and verified, the Worker that serves it is written and tested, and the plugin refuses anything that is not signed. What is missing for Phase 5 is the deployment to Cloudflare, which is blocked: the credential that was entered is not a Cloudflare API token. Importing and the ten designs do not exist yet.
 
 | Phase | Status |
 | --- | --- |
@@ -14,7 +14,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 2. Architecture and roadmap | Done, approved 2026-11-26 |
 | 3. Core theme and design system | Done (theme 1.1.0) |
 | 4. Starter Sites dashboard | **Done** (plugin 0.1.0) |
-| 5. Cloud API and package delivery | Next. Needs a Cloudflare API token from the owner (see "Needed from the owner") |
+| 5. Cloud API and package delivery | **Built and tested locally. Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | Not started |
 | 7a. Business starter site | Not started |
 | 7b. Nine further starter sites | Not started |
@@ -51,19 +51,30 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 - **Catalog schema:** `schemas/catalog.schema.json`.
 - Tooling: plugin coding-standard config, `bin/build-plugin-zip.sh`, Plugin Check runner, PHP checks, browser checks, CI steps, translation template, readme with the external-service disclosure.
 
+### Phase 5: the library (not yet deployed)
+
+- **Sources:** `starter-sites/` holds the ten planned sites (catalog data and placeholder previews). It is the single source; the mock library used by the tests is built from it.
+- **Tools** (`tools/library.mjs`): `keygen`, `public`, `build`, `verify`, `publish`. Deterministic package ZIPs, SHA-256 for every file, an Ed25519-signed catalog, and rules that stop a bad package or catalog entry from being built.
+- **Schemas:** catalog, signed envelope and manifest.
+- **Worker** (`cloud/worker`): read-only API over an R2 bucket for both host names, with caching headers, ETags and readable errors.
+- **Plugin:** the catalog is used only with a valid signature from a known key; a manifest only when it is the exact file the signed catalog names. `Config::PUBLIC_KEYS` is empty until the production key exists, so the plugin accepts nothing from the real library yet.
+- **Workflows:** a CI job for the tools and the Worker; a manual "Publish library" workflow (not yet run).
+- **Manual:** [docs/dev/LIBRARY.md](docs/dev/LIBRARY.md).
+
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 15 files, 0 errors, 0 warnings.
+- PHPCS: theme 42 files and plugin 17 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
-- Plugin PHP checks: all pass (99 with Elementor Pro in the test site, 100 on a fresh site without it).
-- Browser checks: 36 of 36 pass (18 theme integrations including Elementor Pro, 18 Starter Sites screen including a real plugin installation from WordPress.org and an axe-core accessibility scan).
+- Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
+- Browser checks: 37 of 37 pass (18 theme integrations including Elementor Pro, 19 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs and an axe-core accessibility scan).
+- Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
 ## Not verified
 
 - Elementor Pro with an activated licence (it was run without one), and building templates by hand in the Theme Builder screen.
-- The real library: nothing is deployed at `api.buildbetters.com` yet, so the released plugin would show "could not be reached" until Phase 5.
+- **Anything on Cloudflare.** The Worker, the R2 bucket, the two host names and the "Publish library" workflow have not run. Nothing is deployed at `api.buildbetters.com`. Whether `buildbetters.com` is a zone on the owner's Cloudflare account could not be checked either.
 - Multisite, servers that need FTP details to install plugins, and updating an outdated plugin through the screen.
 - PHP 7.4 at runtime (syntax is checked on 7.4 in CI), WordPress 6.4 with the new code, Safari, Firefox, real devices, screen readers.
 
@@ -78,10 +89,13 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Needed from the owner
 
-1. **For Phase 5: a Cloudflare API token**, limited to Workers and R2 on the account that holds `buildbetters.com`. It will be requested through the secure credential form when Phase 5 starts. An account password cannot be used for this and should not be shared.
-2. **For Phases 7 and 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
+1. **A Cloudflare API token, to finish Phase 5.** A credential was entered in the secure form on 2026-11-26, but Cloudflare rejects it with "Invalid format for Authorization header": it is not an API token (an account password or the "Global API Key" give this result). What is needed: Cloudflare dashboard > My Profile > API Tokens > Create Token > the "Edit Cloudflare Workers" template, plus the permission Zone > DNS > Edit, for the account and the zone `buildbetters.com`. The token is entered in the secure form again, never in chat.
+2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
+3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
+4. **For Phases 7 and 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
 
 ## Next steps
 
-1. Phase 5: schemas for manifests and packages, build, validate, sign and publish tools, the Worker and R2 layout, signature verification in the plugin.
-2. Phase 6: the import engine, then the first real design (Business).
+1. With a working token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, publish the catalog, and point a test site at the real address.
+2. Phase 6: the import engine (download and verify the package and media, import, rollback), using the reference package in `tests/fixtures/sites/reference`.
+3. Phase 7a: the first real design (Business).

@@ -1,0 +1,28 @@
+# Open Frame starter site library. Deploy with: npx wrangler deploy
+#
+# No secrets belong in this file. Wrangler reads the Cloudflare API token from
+# the CLOUDFLARE_API_TOKEN environment variable.
+name = "open-frame-library"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+workers_dev = false
+
+# Both hosts of the library are served by this Worker.
+routes = [
+	{ pattern = "api.buildbetters.com", custom_domain = true },
+	{ pattern = "cdn.buildbetters.com", custom_domain = true },
+]
+
+[[r2_buckets]]
+binding = "LIBRARY"
+bucket_name = "open-frame-library"
+
+# A second copy for trying a library before it is published.
+[env.staging]
+name = "open-frame-library-staging"
+workers_dev = true
+routes = []
+
+[[env.staging.r2_buckets]]
+binding = "LIBRARY"
+bucket_name = "open-frame-library-staging"

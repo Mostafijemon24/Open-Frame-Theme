@@ -1,8 +1,36 @@
 # Open Frame — Test Reports
 
+- [Library tools, Worker and signatures](#the-library--test-report): Phase 5, without a live deployment
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The library — Test Report
+
+Phase 5: the tools that build and sign the library, the Worker that serves it, and the plugin's verification of signatures and manifests. Executed on 26 November 2026. **Nothing was deployed to Cloudflare**; everything ran locally, against a library built by the real tools and served by the mock.
+
+| Suite | Result |
+| --- | --- |
+| Library tools, `tools/test/library.test.mjs` | **49 of 49 passed** |
+| Worker, `cloud/worker/test/worker.test.mjs` | **10 of 10 passed** |
+| Plugin PHP checks (below, now including signatures and manifests) | **all passed**: 138 with Elementor Pro in the test site, 139 without |
+| Browser checks of the Starter Sites screen | **19 of 19 passed**, one of them new: unsigned, altered and foreign-key catalogs |
+
+| Area | What is asserted |
+| --- | --- |
+| Build | The ten planned sites build into a catalog that matches `catalog.schema.json` inside an envelope that matches `envelope.schema.json`; a site with content becomes a package whose manifest matches `manifest.schema.json`; source-only fields do not leak into the catalog |
+| Package file | A real ZIP (checked with `unzip`), JSON and Markdown only, binaries outside it under their checksum; building twice gives byte-identical files |
+| Signature | A changed catalog, an unknown key, a key ID pointing at another key, no signatures, algorithm "none", a bare catalog and a catalog re-signed by an attacker are all refused; with two signatures either key opens it |
+| Checksums | A changed package, manifest or image, and a missing package, are each detected |
+| Package rules | 25 kinds of bad package are refused with a message naming the file: PHP or JavaScript files, invalid JSON, links to the authoring site, plain HTTP, script tags, event handlers, `javascript:` links, references to missing images or pages, undeclared widgets, options and theme settings outside the allow-list, wrong identities, zero or two front pages, images without licence or alt text, missing, SVG, oversized or fake images, paths that leave the media folder |
+| Catalog rules | 10 kinds of bad entry are refused: wrong id, tier or category, Pro without Elementor Pro, free with it, Elementor Pro "from WordPress.org", plugin file outside its folder, missing or wrong-sized preview, "available" without content. One bad site stops the whole build |
+| Publishing | Dry run: every versioned file first and marked immutable, the catalog last with a short cache life |
+| Command line | `keygen` writes a key only its owner can read and never overwrites one; `build`, `verify` and `public` work together; a wrong public key fails verification |
+| Worker | Catalog with a short cache life, versioned files immutable with correct types, ETag and "not modified", HEAD, readable 404 and 503, only GET and HEAD; paths outside `/v1/`, odd paths and unknown file types never reach storage |
+| Plugin: signatures | The library built by the tools is accepted; 13 kinds of forged or malformed envelope are refused; without a public key nothing is accepted; a forged catalog never replaces a saved one |
+| Plugin: manifests | Accepted only when identical to the file the signed catalog names; 10 kinds of manifest that pass the checksum but point elsewhere or list unsafe files are refused; a foreign address is never requested |
+
+Not covered: the deployed Worker, R2 and the custom domains, the publish workflow in GitHub Actions, and Cloudflare's own caching. They need a working Cloudflare API token.
 
 # Open Frame Starter Sites 0.1.0 — Test Report
 
@@ -23,7 +51,7 @@ WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (no licence act
 
 ## PHP checks
 
-`tests/php/starter-sites.php`, **all checks passed**: 99 on the site with Elementor Pro installed, 100 on a fresh site without it (a few checks depend on whether Elementor Pro is present). HTTP is replaced with canned answers.
+`tests/php/starter-sites.php`, **all checks passed**: 138 on the site with Elementor Pro installed, 139 on a fresh site without it (a few checks depend on whether Elementor Pro is present). HTTP is replaced with canned answers.
 
 | Area | What is asserted |
 | --- | --- |
@@ -36,7 +64,7 @@ WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (no licence act
 
 ## Browser checks
 
-`tests/e2e/starter-sites.test.js`, 18 tests, **18 passed.**
+`tests/e2e/starter-sites.test.js`, 19 tests, **19 passed.**
 
 | Area | What is asserted |
 | --- | --- |
@@ -123,7 +151,7 @@ The 1,995-check suite of the 1.0.1 report was not run again: its scripts are not
 
 ## Running the tests
 
-Requirements: PHP with the `sqlite3` and `zip` extensions, Composer, Node.js 20 or newer, Playwright with Chromium and axe-core (`npm install` in `tests/`), and network access to `wordpress.org`, `api.wordpress.org` and `downloads.wordpress.org`. The Plugin Check step also needs WP-CLI.
+Requirements: PHP with the `sqlite3`, `sodium` and `zip` extensions, Composer, Node.js 20 or newer, Playwright with Chromium and axe-core (`npm install` in `tests/`), and network access to `wordpress.org`, `api.wordpress.org` and `downloads.wordpress.org`. The Plugin Check step also needs WP-CLI.
 
 ```bash
 composer install

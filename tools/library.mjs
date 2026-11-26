@@ -3,6 +3,7 @@
  * Command line for the starter site library.
  *
  *   node tools/library.mjs keygen  --out <private-key-file>
+ *   node tools/library.mjs public  [--key <file>]            prints the key ID and public key of a signing key
  *   node tools/library.mjs build   --out dist/library --api <url> --cdn <url> [--key <file>] [--sources starter-sites]
  *   node tools/library.mjs verify  --out dist/library --api <url> --cdn <url> --public <key-id>=<base64>
  *   node tools/library.mjs publish --out dist/library --bucket <name> [--dry-run]
@@ -66,6 +67,12 @@ switch ( command ) {
 		break;
 	}
 
+	case 'public': {
+		const raw = publicKeyOf( signingKey() );
+		console.log( `${ keyId( raw ) }=${ raw.toString( 'base64' ) }` );
+		break;
+	}
+
 	case 'build': {
 		const pem = signingKey();
 		try {
@@ -114,6 +121,6 @@ switch ( command ) {
 	}
 
 	default:
-		console.error( 'Usage: node tools/library.mjs keygen|build|verify|publish [options]. See the top of this file.' );
+		console.error( 'Usage: node tools/library.mjs keygen|public|build|verify|publish [options]. See the top of this file.' );
 		process.exit( 2 );
 }

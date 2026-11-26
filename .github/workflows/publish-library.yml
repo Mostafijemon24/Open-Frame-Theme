@@ -1,0 +1,86 @@
+name: Publish library
+
+# Builds the starter site library from starter-sites/, signs it, deploys the
+# Worker and uploads the files to R2. Started by hand from the Actions tab.
+#
+# Repository secrets this needs (Settings > Secrets and variables > Actions):
+#   CLOUDFLARE_API_TOKEN    token limited to Workers and R2 on the account
+#   CLOUDFLARE_ACCOUNT_ID   the account's ID
+#   OFSS_SIGNING_KEY        the private signing key (PEM text, see docs/dev/LIBRARY.md)
+# and, for staging, the repository variable LIBRARY_STAGING_URL (the workers.dev
+# address of the staging Worker, without a trailing slash).
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Where to publish'
+        type: choice
+        options:
+          - staging
+          - production
+        default: staging
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-library-${{ inputs.target }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      OFSS_SIGNING_KEY: ${{ secrets.OFSS_SIGNING_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Choose the addresses and the bucket
+        run: |
+          if [ "${{ inputs.target }}" = "production" ]; then
+            echo "API_URL=https://api.buildbetters.com/v1" >> "$GITHUB_ENV"
+            echo "CDN_URL=https://cdn.buildbetters.com/v1" >> "$GITHUB_ENV"
+            echo "BUCKET=open-frame-library" >> "$GITHUB_ENV"
+            echo "WRANGLER_ENV=" >> "$GITHUB_ENV"
+          else
+            if [ -z "${{ vars.LIBRARY_STAGING_URL }}" ]; then
+              echo "Set the repository variable LIBRARY_STAGING_URL first." >&2
+              exit 1
+            fi
+            echo "API_URL=${{ vars.LIBRARY_STAGING_URL }}/v1" >> "$GITHUB_ENV"
+            echo "CDN_URL=${{ vars.LIBRARY_STAGING_URL }}/v1" >> "$GITHUB_ENV"
+            echo "BUCKET=open-frame-library-staging" >> "$GITHUB_ENV"
+            echo "WRANGLER_ENV=--env staging" >> "$GITHUB_ENV"
+          fi
+
+      - name: Test the tools and the Worker
+        run: |
+          ( cd tools && npm install --no-audit --no-fund && npm test )
+          node --test cloud/worker/test/*.test.mjs
+
+      - name: Build and sign
+        run: node tools/library.mjs build --out dist/library --api "$API_URL" --cdn "$CDN_URL"
+
+      - name: Verify what was built, with the public key
+        run: node tools/library.mjs verify --out dist/library --api "$API_URL" --cdn "$CDN_URL" --public "$(node tools/library.mjs public)"
+
+      - name: The plugin must know the production key
+        if: inputs.target == 'production'
+        run: |
+          KEY_ID="$(node tools/library.mjs public | cut -d= -f1)"
+          if ! grep -q "'$KEY_ID'" companion/open-frame-starter-sites/src/Config.php; then
+            echo "Key $KEY_ID is not in the plugin's Config::PUBLIC_KEYS; the plugin would refuse this library." >&2
+            exit 1
+          fi
+
+      - name: Deploy the Worker
+        working-directory: cloud/worker
+        run: npx --yes wrangler@4 deploy $WRANGLER_ENV
+
+      - name: Upload, catalog last
+        run: node tools/library.mjs publish --out dist/library --bucket "$BUCKET"

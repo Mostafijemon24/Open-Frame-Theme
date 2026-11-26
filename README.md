@@ -260,7 +260,10 @@ open-frame/
 ├── languages/                              Translation template
 ├── docs/                                   User documentation (not shipped in the ZIP)
 ├── companion/open-frame-starter-sites/     Companion plugin: the Starter Sites screen (own ZIP, not part of the theme)
-├── schemas/                                JSON Schema of the starter site catalog
+├── starter-sites/                          Sources of the starter site library (one folder per design)
+├── tools/                                  Build, sign and publish the library
+├── cloud/worker/                           The Cloudflare Worker that serves the library
+├── schemas/                                JSON Schemas of the catalog, its signed envelope and a site manifest
 ├── tests/                                  Test site setup, PHP and browser checks (not shipped in the ZIP)
 └── bin/                                    Build scripts (not shipped in the ZIP)
 ```
