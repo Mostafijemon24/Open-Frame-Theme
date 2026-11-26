@@ -1,92 +1,107 @@
 [
 	{
 		"uid": "hero",
-		"file": "hero.jpg",
-		"alt": "Abstract composition of blue panels and an amber arc",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "hero.webp",
+		"alt": "Two people at a table with laptops, one pointing at a sheet of notes with a pen",
+		"licence": "CC0-1.0. Photograph by Helloquence (@helloquence on Unsplash), from Wikimedia Commons.",
+		"author": "Helloquence (@helloquence on Unsplash)"
 	},
 	{
 		"uid": "about",
-		"file": "about.jpg",
-		"alt": "Abstract composition of stacked bars in navy and blue",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "about.webp",
+		"alt": "A man in a suit and a woman in a jacket talking across a table with a laptop",
+		"licence": "CC0-1.0. Photograph by rawpixel.com (@rawpixel on Unsplash), from Wikimedia Commons.",
+		"author": "rawpixel.com (@rawpixel on Unsplash)"
 	},
 	{
 		"uid": "approach",
-		"file": "approach.jpg",
-		"alt": "Abstract composition of concentric arcs",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "approach.webp",
+		"alt": "A man in a light blue shirt holding a pen over a notebook beside an open laptop",
+		"licence": "CC0-1.0. Photograph by JESHOOTS.COM (@jeshoots on Unsplash), from Wikimedia Commons.",
+		"author": "JESHOOTS.COM (@jeshoots on Unsplash)"
 	},
 	{
 		"uid": "office",
-		"file": "office.jpg",
-		"alt": "Abstract wide composition of a grid of panels",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "office.webp",
+		"alt": "A bright room with long tables, black chairs and tall windows",
+		"licence": "CC0-1.0. Photograph by Breather (@breather on Unsplash), from Wikimedia Commons.",
+		"author": "Breather (@breather on Unsplash)"
 	},
 	{
 		"uid": "project-harbor",
-		"file": "project-harbor.jpg",
-		"alt": "Abstract cover image for the Harbor Freight Lines case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "project-harbor.webp",
+		"alt": "A container terminal seen from above, with rows of stacked containers and cranes",
+		"licence": "CC0-1.0. Photograph by chuttersnap (@chuttersnap on Unsplash), from Wikimedia Commons.",
+		"author": "chuttersnap (@chuttersnap on Unsplash)"
 	},
 	{
 		"uid": "project-alder",
-		"file": "project-alder.jpg",
-		"alt": "Abstract cover image for the Alder Health Group case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "project-alder.webp",
+		"alt": "A long, bright hospital corridor",
+		"licence": "CC0-1.0. Photograph by W.carter, from Wikimedia Commons.",
+		"author": "W.carter"
 	},
 	{
 		"uid": "project-kestrel",
-		"file": "project-kestrel.jpg",
-		"alt": "Abstract cover image for the Kestrel Components case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "project-kestrel.webp",
+		"alt": "A works yard seen from above, with racks of materials and pallets",
+		"licence": "CC0-1.0. Photograph by Charly Birdsinger (@charlize on Unsplash), from Wikimedia Commons.",
+		"author": "Charly Birdsinger (@charlize on Unsplash)"
 	},
 	{
 		"uid": "project-lumen",
-		"file": "project-lumen.jpg",
-		"alt": "Abstract cover image for the Lumen Mutual case study",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "project-lumen.webp",
+		"alt": "Hands holding a tablet that shows a line chart, beside a coffee",
+		"licence": "CC0-1.0. Photograph by rawpixel.com (@rawpixel on Unsplash), from Wikimedia Commons.",
+		"author": "rawpixel.com (@rawpixel on Unsplash)"
 	},
 	{
 		"uid": "team-1",
-		"file": "team-1.jpg",
-		"alt": "Monogram portrait placeholder for Marit Halden",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "team-1.webp",
+		"alt": "Portrait of Marit Halden",
+		"licence": "CC0-1.0. Photograph by Brooke Cagle brookecagle, from Wikimedia Commons.",
+		"author": "Brooke Cagle brookecagle"
 	},
 	{
 		"uid": "team-2",
-		"file": "team-2.jpg",
-		"alt": "Monogram portrait placeholder for Tomas Okafor",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "team-2.webp",
+		"alt": "Portrait of Tomas Okafor",
+		"licence": "CC0-1.0. Photograph by Tamarcus Brown (@tamarcusbrown on Unsplash), from Wikimedia Commons.",
+		"author": "Tamarcus Brown (@tamarcusbrown on Unsplash)"
 	},
 	{
 		"uid": "team-3",
-		"file": "team-3.jpg",
-		"alt": "Monogram portrait placeholder for Ines Carvalho",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "team-3.webp",
+		"alt": "Portrait of Ines Carvalho",
+		"licence": "CC0-1.0. Photograph by Jimmy Chang (@photohunter on Unsplash), from Wikimedia Commons.",
+		"author": "Jimmy Chang (@photohunter on Unsplash)"
 	},
 	{
 		"uid": "team-4",
-		"file": "team-4.jpg",
-		"alt": "Monogram portrait placeholder for Daniel Reyes",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"file": "team-4.webp",
+		"alt": "Portrait of Daniel Reyes",
+		"licence": "CC0-1.0. Photograph by michael (@m_minimal on Unsplash), from Wikimedia Commons.",
+		"author": "michael (@m_minimal on Unsplash)"
 	},
 	{
 		"uid": "post-1",
-		"file": "post-1.jpg",
+		"file": "post-1.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"licence": "CC0-1.0. Photograph by rawpixel.com (@rawpixel on Unsplash), from Wikimedia Commons.",
+		"author": "rawpixel.com (@rawpixel on Unsplash)"
 	},
 	{
 		"uid": "post-2",
-		"file": "post-2.jpg",
+		"file": "post-2.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Bench Accounting benchaccounting, from Wikimedia Commons.",
+		"author": "Bench Accounting benchaccounting"
 	},
 	{
 		"uid": "post-3",
-		"file": "post-3.jpg",
+		"file": "post-3.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Benjamin Child (@bchild311 on Unsplash), from Wikimedia Commons.",
+		"author": "Benjamin Child (@bchild311 on Unsplash)"
 	}
 ]

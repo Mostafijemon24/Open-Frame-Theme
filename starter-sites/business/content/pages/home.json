@@ -442,7 +442,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "Trusted by teams in logistics, healthcare, manufacturing and finance",
+									"title": "Trusted by teams in logistics, healthcare, building materials and finance",
 									"header_size": "p",
 									"title_color": "#46546A",
 									"typography_typography": "custom",
@@ -1926,7 +1926,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Logistics",
+											"title": "Ports and logistics",
 											"header_size": "p",
 											"title_color": "#2456E6",
 											"typography_typography": "custom",
@@ -1950,7 +1950,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Delivery lead time cut from nine days to four",
+											"title": "Container dwell time cut from nine days to four",
 											"header_size": "h3",
 											"__globals__": {
 												"title_color": "globals/colors?id=secondary"
@@ -1963,7 +1963,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>A regional carrier was losing contracts to faster rivals. We rebuilt dispatch around three hubs instead of seven.</p>"
+											"editor": "<p>A container terminal was losing shipping lines to faster ports. We rebuilt the yard around three stacking zones instead of seven.</p>"
 										},
 										"elements": []
 									},
@@ -2240,7 +2240,7 @@
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
-									"editor": "<p><strong>Priya Nair</strong>, Chief Executive, Kestrel Components</p>",
+									"editor": "<p><strong>Priya Nair</strong>, Chief Executive, Kestrel Building Supply. A sample quote.</p>",
 									"align": "center"
 								},
 								"elements": []

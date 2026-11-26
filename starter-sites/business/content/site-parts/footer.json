@@ -582,7 +582,7 @@
 						"elType": "widget",
 						"widgetType": "text-editor",
 						"settings": {
-							"editor": "<p>© Halden Advisory. A fictional company, made for the Open Frame Business starter site.</p>",
+							"editor": "<p>Sample content: Halden Advisory is a fictional company made for the Open Frame Business starter site. The clients, figures and quotes are examples to replace with your own.</p>",
 							"text_color": "#B7C4D8",
 							"typography_typography": "custom",
 							"typography_font_size": {

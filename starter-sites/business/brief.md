@@ -35,9 +35,21 @@ In Elementor's Site Settings the four global colors follow the theme's conventio
 
 Header: wordmark left, the menu right, one button. On phones the button is hidden and the theme's menu button takes its place. Footer: ink, wordmark and one sentence, three link columns, a single line of small print.
 
-## Images
+## Photographs
 
-Abstract geometric artwork in the palette (panels, bars, arcs, tiles), drawn by `tools/sites/business-art.mjs`. Original, CC0, about 540 KB for all fifteen. Team portraits are monogram tiles. A real company replaces them with its own photographs; nothing in the layout depends on the artwork.
+Fifteen photographs from Wikimedia Commons, all recorded there as CC0, listed with their sources in `CREDITS.md`. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch business` prepares them.
+
+| Where | What the photograph shows |
+| --- | --- |
+| Home, hero | Two people working through handwritten notes at a table: the firm at work |
+| About | Two advisers in conversation over a laptop |
+| Approach | Notes being written beside a laptop |
+| About, wide strip | A bright meeting room with long tables |
+| Four case studies | The client's world: a container terminal, a hospital corridor, a materials yard, figures on a tablet |
+| Team | Four portraits, square |
+| Articles | Figures in a notebook, a cleared desk, an empty boardroom |
+
+The clients are described to match their photographs: the logistics client is a container terminal because its picture shows one.
 
 ## On a phone
 

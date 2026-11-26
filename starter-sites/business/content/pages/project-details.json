@@ -1,7 +1,7 @@
 {
 	"uid": "business:pages:project-details",
-	"title": "Harbor Freight Lines",
-	"slug": "harbor-freight-lines",
+	"title": "Harbor Terminals",
+	"slug": "harbor-terminals",
 	"template": "elementor_header_footer",
 	"elementor": {
 		"version": "4.4.2",
@@ -96,7 +96,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "Projects · Logistics",
+									"title": "Projects · Ports and logistics",
 									"header_size": "p",
 									"title_color": "#2456E6",
 									"typography_typography": "custom",
@@ -120,7 +120,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "Harbor Freight Lines: from nine days to four",
+									"title": "Harbor Terminals: from nine days to four",
 									"header_size": "h1",
 									"__globals__": {
 										"title_color": "globals/colors?id=secondary"
@@ -133,7 +133,7 @@
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
-									"editor": "<p>A regional carrier was losing contracts to faster rivals. The answer was fewer hubs, not more trucks.</p>",
+									"editor": "<p>A container terminal was losing shipping lines to faster ports. The answer was a simpler yard, not more cranes.</p>",
 									"typography_typography": "custom",
 									"typography_font_size": {
 										"unit": "px",
@@ -311,7 +311,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Harbor Freight Lines",
+											"title": "Harbor Terminals",
 											"header_size": "p",
 											"title_color": "#0B1F3A",
 											"typography_typography": "custom",
@@ -378,7 +378,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Regional logistics",
+											"title": "Ports and logistics",
 											"header_size": "p",
 											"title_color": "#0B1F3A",
 											"typography_typography": "custom",
@@ -669,7 +669,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Seven depots, each planning its own routes. Parcels crossed the region twice before delivery, and customers had noticed.</p>"
+											"editor": "<p>Seven stacking zones, each planned on its own. A container was lifted four times before it left the gate, and the shipping lines had noticed.</p>"
 										},
 										"elements": []
 									}
@@ -722,7 +722,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Modelled a year of consignments, then tested a three-hub network with the dispatchers who would run it. The pilot ran on one corridor for a month.</p>"
+											"editor": "<p>Modelled a year of container moves, then tested a three-zone yard with the planners who would run it. The pilot ran on one berth for a month.</p>"
 										},
 										"elements": []
 									}
@@ -775,7 +775,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Lead time fell from nine days to four. Two major contracts were renewed, and fuel cost per parcel dropped by 17%.</p>"
+											"editor": "<p>Dwell time fell from nine days to four. Two shipping lines renewed their contracts, and crane moves per container dropped by 17%.</p>"
 										},
 										"elements": []
 									}
@@ -885,7 +885,7 @@
 									"ending_number": 4,
 									"prefix": "",
 									"suffix": "",
-									"title": "days average lead time, from 9",
+									"title": "days average dwell time, from 9",
 									"duration": 1200,
 									"number_color": "#FFFFFF",
 									"title_color": "#B7C4D8",
@@ -915,7 +915,7 @@
 									"ending_number": 17,
 									"prefix": "",
 									"suffix": "%",
-									"title": "lower fuel cost per parcel",
+									"title": "fewer crane moves per container",
 									"duration": 1200,
 									"number_color": "#FFFFFF",
 									"title_color": "#B7C4D8",
@@ -945,7 +945,7 @@
 									"ending_number": 3,
 									"prefix": "",
 									"suffix": "",
-									"title": "hubs instead of seven depots",
+									"title": "stacking zones instead of seven",
 									"duration": 1200,
 									"number_color": "#FFFFFF",
 									"title_color": "#B7C4D8",
@@ -975,7 +975,7 @@
 									"ending_number": 2,
 									"prefix": "",
 									"suffix": "",
-									"title": "major contracts renewed",
+									"title": "shipping lines renewed",
 									"duration": 1200,
 									"number_color": "#FFFFFF",
 									"title_color": "#B7C4D8",
@@ -1087,7 +1087,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "“The plan came from our own dispatchers. Halden made sure we listened to them.”",
+									"title": "“The plan came from our own yard planners. Halden made sure we listened to them.”",
 									"header_size": "p",
 									"title_color": "#0B1F3A",
 									"align": "center",
@@ -1111,7 +1111,7 @@
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
-									"editor": "<p><strong>Jonas Weber</strong>, Operations Director, Harbor Freight Lines</p>",
+									"editor": "<p><strong>Jonas Weber</strong>, Operations Director, Harbor Terminals. A sample quote.</p>",
 									"align": "center"
 								},
 								"elements": []

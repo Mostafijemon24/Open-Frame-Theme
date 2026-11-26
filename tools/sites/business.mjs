@@ -11,7 +11,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { box, builders, em, fluid, gap, icon, ids, link, page, percent, px, widgetsOf, writeJson } from './kit.mjs';
+import { box, builders, em, fluid, gap, icon, ids, link, page, percent, photoIndex, px, widgetsOf, writeJson } from './kit.mjs';
 
 const SITE = 'business';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -126,17 +126,17 @@ const services = [
 ];
 
 const projects = [
-	{ uid: 'project-harbor', name: 'Harbor Freight Lines', sector: 'Logistics', result: 'Delivery lead time cut from nine days to four', text: 'A regional carrier was losing contracts to faster rivals. We rebuilt dispatch around three hubs instead of seven.' },
+	{ uid: 'project-harbor', name: 'Harbor Terminals', sector: 'Ports and logistics', result: 'Container dwell time cut from nine days to four', text: 'A container terminal was losing shipping lines to faster ports. We rebuilt the yard around three stacking zones instead of seven.' },
 	{ uid: 'project-alder', name: 'Alder Health Group', sector: 'Healthcare', result: 'Waiting list down 38% in two quarters', text: 'Twelve clinics, twelve ways of booking. One shared schedule freed more capacity than two new sites would have.' },
-	{ uid: 'project-kestrel', name: 'Kestrel Components', sector: 'Manufacturing', result: 'Margin up 4.2 points without a price rise', text: 'A cost-to-serve model showed a third of the catalogue lost money. The range was cut and the plant got quieter.' },
+	{ uid: 'project-kestrel', name: 'Kestrel Building Supply', sector: 'Building materials', result: 'Margin up 4.2 points without a price rise', text: 'A cost-to-serve model showed a third of the catalogue lost money. The range was cut and the yard got quieter.' },
 	{ uid: 'project-lumen', name: 'Lumen Mutual', sector: 'Financial services', result: 'Month-end close from fourteen days to five', text: 'Finance spent half the month reconciling. We removed 60 manual journals and gave the team its evenings back.' },
 ];
 
 const team = [
-	{ uid: 'team-1', name: 'Marit Halden', role: 'Founding partner, strategy', bio: 'Twenty years advising owner-led companies. Previously ran corporate development at a listed industrial group.' },
+	{ uid: 'team-1', name: 'Marit Halden', role: 'Founding partner, strategy', bio: 'Advises owner-led companies on where to compete and what to stop doing. Previously in corporate development at a listed industrial group.' },
 	{ uid: 'team-2', name: 'Tomas Okafor', role: 'Partner, operations', bio: 'Trained as a production engineer. Has redesigned plants, warehouses and one very busy hospital laundry.' },
 	{ uid: 'team-3', name: 'Ines Carvalho', role: 'Partner, finance', bio: 'Former group controller. Believes a forecast is only useful if the sales team recognises its own numbers in it.' },
-	{ uid: 'team-4', name: 'Daniel Reyes', role: 'Principal, technology', bio: 'Fifteen years delivering systems, long enough to prefer the boring option that the team can run on Monday.' },
+	{ uid: 'team-4', name: 'Daniel Reyes', role: 'Principal, technology', bio: 'Has delivered enough systems to prefer the boring option that the team can run on Monday.' },
 ];
 
 const posts = [
@@ -169,7 +169,7 @@ pages.home = {
 		section( { top: 0, bottom: 72, spacing: 20 }, [
 			b.divider( C.line ),
 			row( { align: 'center', spacing: 32, justify: 'space-between' }, [
-				heading( 'Trusted by teams in logistics, healthcare, manufacturing and finance', { tag: 'p', color: C.text, size: px( 15 ), weight: 500 } ),
+				heading( 'Trusted by teams in logistics, healthcare, building materials and finance', { tag: 'p', color: C.text, size: px( 15 ), weight: 500 } ),
 				heading( 'Harbor · Alder · Kestrel · Lumen · Northgate', { tag: 'p', color: C.ink, size: px( 17 ), weight: 700, more: { typography_letter_spacing: px( 0.4 ) } } ),
 			] ),
 		] ),
@@ -213,7 +213,7 @@ pages.home = {
 		section( { background: C.tint, top: 96, spacing: 0 }, [
 			column( { width: 78, spacing: 24, more: { _flex_align_self: 'center' } }, [
 				heading( '“They told us which half of our plan to drop. It was the half we were most proud of, and they were right.”', { tag: 'p', color: C.ink, size: fluid( 'clamp(1.5rem, 1.1rem + 1.6vw, 2.125rem)' ), weight: 600, align: 'center', more: { typography_line_height: em( 1.3 ) } } ),
-				text( '<p><strong>Priya Nair</strong>, Chief Executive, Kestrel Components</p>', { align: 'center' } ),
+				text( '<p><strong>Priya Nair</strong>, Chief Executive, Kestrel Building Supply. A sample quote.</p>', { align: 'center' } ),
 			] ),
 		] ),
 
@@ -324,26 +324,26 @@ pages.projects = {
 };
 
 pages[ 'project-details' ] = {
-	title: 'Harbor Freight Lines',
-	slug: 'harbor-freight-lines',
+	title: 'Harbor Terminals',
+	slug: 'harbor-terminals',
 	content: [
-		pageHero( 'Projects · Logistics', 'Harbor Freight Lines: from nine days to four', 'A regional carrier was losing contracts to faster rivals. The answer was fewer hubs, not more trucks.' ),
+		pageHero( 'Projects · Ports and logistics', 'Harbor Terminals: from nine days to four', 'A container terminal was losing shipping lines to faster ports. The answer was a simpler yard, not more cranes.' ),
 		section( { top: 72, bottom: 0, spacing: 32 }, [
 			image( 'project-harbor', { radius: 20 } ),
-			grid( { columns: 4, tablet: 2, spacing: 24 }, [ [ 'Client', 'Harbor Freight Lines' ], [ 'Sector', 'Regional logistics' ], [ 'Duration', '14 weeks' ], [ 'Practices', 'Operations, finance' ] ].map( ( [ label, value ] ) => column( { spacing: 4 }, [ eyebrow( label, C.text ), heading( value, { tag: 'p', color: C.ink, size: px( 18 ), weight: 600 } ) ] ) ) ),
+			grid( { columns: 4, tablet: 2, spacing: 24 }, [ [ 'Client', 'Harbor Terminals' ], [ 'Sector', 'Ports and logistics' ], [ 'Duration', '14 weeks' ], [ 'Practices', 'Operations, finance' ] ].map( ( [ label, value ] ) => column( { spacing: 4 }, [ eyebrow( label, C.text ), heading( value, { tag: 'p', color: C.ink, size: px( 18 ), weight: 600 } ) ] ) ) ),
 		] ),
 		section( { spacing: 0 }, [
 			grid( { columns: 3, spacing: 40 }, [
-				[ 'The challenge', 'Seven depots, each planning its own routes. Parcels crossed the region twice before delivery, and customers had noticed.' ],
-				[ 'What we did', 'Modelled a year of consignments, then tested a three-hub network with the dispatchers who would run it. The pilot ran on one corridor for a month.' ],
-				[ 'What changed', 'Lead time fell from nine days to four. Two major contracts were renewed, and fuel cost per parcel dropped by 17%.' ],
+				[ 'The challenge', 'Seven stacking zones, each planned on its own. A container was lifted four times before it left the gate, and the shipping lines had noticed.' ],
+				[ 'What we did', 'Modelled a year of container moves, then tested a three-zone yard with the planners who would run it. The pilot ran on one berth for a month.' ],
+				[ 'What changed', 'Dwell time fell from nine days to four. Two shipping lines renewed their contracts, and crane moves per container dropped by 17%.' ],
 			].map( ( [ title, body ] ) => column( { spacing: 12 }, [ heading( title, { tag: 'h2', size: px( 24 ) } ), text( `<p>${ body }</p>` ) ] ) ) ),
 		] ),
-		figures( [ [ 4, 'days average lead time, from 9' ], [ 17, 'lower fuel cost per parcel', { suffix: '%' } ], [ 3, 'hubs instead of seven depots' ], [ 2, 'major contracts renewed' ] ] ),
+		figures( [ [ 4, 'days average dwell time, from 9' ], [ 17, 'fewer crane moves per container', { suffix: '%' } ], [ 3, 'stacking zones instead of seven' ], [ 2, 'shipping lines renewed' ] ] ),
 		section( { background: C.tint, top: 88, spacing: 0 }, [
 			column( { width: 78, spacing: 20, more: { _flex_align_self: 'center' } }, [
-				heading( '“The plan came from our own dispatchers. Halden made sure we listened to them.”', { tag: 'p', color: C.ink, size: fluid( 'clamp(1.4rem, 1.1rem + 1.4vw, 2rem)' ), weight: 600, align: 'center', more: { typography_line_height: em( 1.3 ) } } ),
-				text( '<p><strong>Jonas Weber</strong>, Operations Director, Harbor Freight Lines</p>', { align: 'center' } ),
+				heading( '“The plan came from our own yard planners. Halden made sure we listened to them.”', { tag: 'p', color: C.ink, size: fluid( 'clamp(1.4rem, 1.1rem + 1.4vw, 2rem)' ), weight: 600, align: 'center', more: { typography_line_height: em( 1.3 ) } } ),
+				text( '<p><strong>Jonas Weber</strong>, Operations Director, Harbor Terminals. A sample quote.</p>', { align: 'center' } ),
 			] ),
 		] ),
 		callToAction( 'Facing something similar?', 'The details differ, the pattern rarely does. Tell us what you are seeing.' ),
@@ -492,7 +492,7 @@ const parts = {
 					footLinks( 'Contact', [ [ 'hello@example.com', 'mailto:hello@example.com' ], [ '+1 (555) 010-0142', 'tel:+15550100142' ], [ 'Get in touch', page( 'contact' ) ] ] ),
 				] ),
 				b.divider( '#23395B' ),
-				text( '<p>© Halden Advisory. A fictional company, made for the Open Frame Business starter site.</p>', { color: C.mist, size: px( 14 ) } ),
+				text( '<p>Sample content: Halden Advisory is a fictional company made for the Open Frame Business starter site. The clients, figures and quotes are examples to replace with your own.</p>', { color: C.mist, size: px( 14 ) } ),
 			] ),
 		],
 	},
@@ -640,16 +640,12 @@ writeJson( path.join( OUT, 'site/menus.json' ), [
 	},
 ] );
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/business-art.mjs).';
-writeJson( path.join( OUT, 'media/index.json' ), [
-	{ uid: 'hero', file: 'hero.jpg', alt: 'Abstract composition of blue panels and an amber arc' },
-	{ uid: 'about', file: 'about.jpg', alt: 'Abstract composition of stacked bars in navy and blue' },
-	{ uid: 'approach', file: 'approach.jpg', alt: 'Abstract composition of concentric arcs' },
-	{ uid: 'office', file: 'office.jpg', alt: 'Abstract wide composition of a grid of panels' },
-	...projects.map( ( project ) => ( { uid: project.uid, file: project.uid + '.jpg', alt: `Abstract cover image for the ${ project.name } case study` } ) ),
-	...team.map( ( person ) => ( { uid: person.uid, file: person.uid + '.jpg', alt: `Monogram portrait placeholder for ${ person.name }` } ) ),
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: '' } ) ),
-].map( ( item ) => ( { ...item, licence } ) ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// Portraits are named after the invented people they stand for; article covers are decoration beside their titles.
+writeJson( path.join( OUT, 'media/index.json' ), photoIndex( OUT, {
+	...Object.fromEntries( team.map( ( person ) => [ person.uid, `Portrait of ${ person.name }` ] ) ),
+	...Object.fromEntries( posts.map( ( post ) => [ post.image, '' ] ) ),
+} ) );
 
 // The catalog entry keeps its hand-written fields; the generated ones are refreshed.
 const siteFile = path.join( OUT, 'site.json' );

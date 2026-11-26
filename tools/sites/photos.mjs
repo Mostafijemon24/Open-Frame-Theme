@@ -18,6 +18,9 @@
  *       file again, crops it around its focal point, and writes
  *       media/files/<uid>.webp, photos.json and CREDITS.md.
  *
+ *   node tools/sites/photos.mjs credits <site>
+ *       Writes CREDITS.md again from photos.json, without asking Commons anything.
+ *
  * photo-sources.json is a list of
  *   { "uid", "title": "File:… on Commons", "width", "height", "focal": [ x, y ] (0-100),
  *     "alt", "section", "subject" }
@@ -38,6 +41,15 @@ const BYTES_PER_PIXEL = 0.2;
 
 const sleep = ( ms ) => new Promise( ( done ) => setTimeout( done, ms ) );
 const plain = ( html ) => String( html || '' ).replace( /<[^>]+>/g, '' ).replace( /&amp;/g, '&' ).replace( /&quot;/g, '"' ).replace( /&#0?39;/g, "'" ).replace( /\s+/g, ' ' ).trim();
+
+/**
+ * Commons gives the photographer of a picture that came from Unsplash as name and account
+ * name run together ("Naomi Hébert naomish"). Written apart, it reads as a credit.
+ */
+const tidyAuthor = ( author, title ) => {
+	const words = String( author ).split( ' ' );
+	return /\(Unsplash\)/.test( title ) && words.length > 1 && /^[a-z0-9_]+$/.test( words[ words.length - 1 ] ) ? `${ words.slice( 0, -1 ).join( ' ' ) } (@${ words[ words.length - 1 ] } on Unsplash)` : String( author );
+};
 
 /** A request that waits and tries again when the server asks for fewer requests. */
 async function request( url, tries = 14 ) {
@@ -84,7 +96,7 @@ function describe( page ) {
 		scaled_url: info.thumburl || info.url,
 		scaled_width: info.thumbwidth || info.width,
 		source_url: info.descriptionurl,
-		author: meta.Artist || meta.Credit || 'Unknown',
+		author: tidyAuthor( meta.Artist || meta.Credit || 'Unknown', page.title ),
 		credit: meta.Credit || '',
 		licence: meta.LicenseShortName || '',
 		licence_url: meta.LicenseUrl || '',
@@ -140,6 +152,26 @@ async function commandSearch( words, options ) {
 	await page.screenshot( { path: path.join( out, 'sheet.png' ), fullPage: true } );
 	await chrome.close();
 	console.log( `${ found.length } candidates for "${ words }": ${ path.join( out, 'sheet.png' ) }` );
+}
+
+/** The record of a design's photographs as a page people can read (CREDITS.md). */
+function writeCredits( site ) {
+	const home = path.join( ROOT, site );
+	const recordFile = path.join( home, 'photos.json' );
+	const kept = JSON.parse( fs.readFileSync( recordFile, 'utf8' ) ).map( ( item ) => ( { ...item, author: tidyAuthor( item.author, decodeURIComponent( item.source_url ).replace( /_/g, ' ' ) ) } ) );
+	fs.writeFileSync( recordFile, JSON.stringify( kept, null, '\t' ) + '\n' );
+	fs.writeFileSync( path.join( home, 'CREDITS.md' ), [
+		`# Photographs of the ${ site } starter site`,
+		'',
+		'Written by `tools/sites/photos.mjs`; do not edit by hand. Every photograph was taken from Wikimedia Commons, which records it as CC0 or public domain: it may be copied, changed and redistributed without conditions. The licence was read from Commons on the date shown. The files here are cropped and compressed copies.',
+		'',
+		'CC0 and the public domain cover copyright only. Where a photograph shows a person who can be recognised, a trade mark or a private building, the people who use the design remain responsible for how they use that picture; the starter site shows them as examples to be replaced.',
+		'',
+		'| File | Used for | Photographer | Licence | Source | Checked |',
+		'| --- | --- | --- | --- | --- | --- |',
+		...kept.map( ( item ) => `| \`media/files/${ item.file }\` | ${ item.section } | ${ item.author } | [${ item.licence }](${ item.licence_url }) | [Commons](${ item.source_url }) | ${ item.checked } |` ),
+		'',
+	].join( '\n' ) );
 }
 
 async function commandFetch( site, only ) {
@@ -218,20 +250,7 @@ async function commandFetch( site, only ) {
 	await chrome.close();
 	const order = sources.map( ( item ) => item.uid );
 	fs.writeFileSync( recordFile, JSON.stringify( [ ...records.values() ].filter( ( item ) => order.includes( item.uid ) ).sort( ( a, b ) => order.indexOf( a.uid ) - order.indexOf( b.uid ) ), null, '\t' ) + '\n' );
-	// The same record as a page people can read.
-	const kept = JSON.parse( fs.readFileSync( recordFile, 'utf8' ) );
-	fs.writeFileSync( path.join( home, 'CREDITS.md' ), [
-		`# Photographs of the ${ site } starter site`,
-		'',
-		'Written by `tools/sites/photos.mjs`; do not edit by hand. Every photograph was taken from Wikimedia Commons, which records it as CC0 or public domain: it may be copied, changed and redistributed without conditions. The licence was read from Commons on the date shown. The files here are cropped and compressed copies.',
-		'',
-		'CC0 and the public domain cover copyright only. Where a photograph shows a person who can be recognised, a trade mark or a private building, the people who use the design remain responsible for how they use that picture; the starter site shows them as examples to be replaced.',
-		'',
-		'| File | Used for | Photographer | Licence | Source | Checked |',
-		'| --- | --- | --- | --- | --- | --- |',
-		...kept.map( ( item ) => `| \`media/files/${ item.file }\` | ${ item.section } | ${ item.author } | [${ item.licence }](${ item.licence_url }) | [Commons](${ item.source_url }) | ${ item.checked } |` ),
-		'',
-	].join( '\n' ) );
+	writeCredits( site );
 	if ( failed ) {
 		process.exitCode = 1;
 	}
@@ -245,7 +264,9 @@ if ( command === 'search' ) {
 	await commandSearch( rest.join( ' ' ), options );
 } else if ( command === 'fetch' && rest.length ) {
 	await commandFetch( rest[ 0 ], rest.slice( 1 ) );
+} else if ( command === 'credits' && rest.length ) {
+	writeCredits( rest[ 0 ] );
 } else {
-	console.log( 'Usage: photos.mjs search "<words>" [--out <folder>] [--limit 24] [--min 2000] [--tall]\n       photos.mjs fetch <site> [<uid> …]' );
+	console.log( 'Usage: photos.mjs search "<words>" [--out <folder>] [--limit 24] [--min 2000] [--tall]\n       photos.mjs fetch <site> [<uid> …]\n       photos.mjs credits <site>' );
 	process.exitCode = 1;
 }

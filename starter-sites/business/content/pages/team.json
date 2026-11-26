@@ -409,7 +409,7 @@
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
-													"editor": "<p>Twenty years advising owner-led companies. Previously ran corporate development at a listed industrial group.</p>"
+													"editor": "<p>Advises owner-led companies on where to compete and what to stop doing. Previously in corporate development at a listed industrial group.</p>"
 												},
 												"elements": []
 											}
@@ -946,7 +946,7 @@
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
-													"editor": "<p>Fifteen years delivering systems, long enough to prefer the boring option that the team can run on Monday.</p>"
+													"editor": "<p>Has delivered enough systems to prefer the boring option that the team can run on Monday.</p>"
 												},
 												"elements": []
 											}

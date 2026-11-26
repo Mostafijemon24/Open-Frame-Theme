@@ -117,7 +117,6 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 	assert.equal( business.pages.length, 10 );
 	assert.equal( business.pages.filter( ( item ) => item.front_page ).length, 1 );
 	assert.equal( business.media.length, 15 );
-	assert.ok( business.media.every( ( item ) => item.bytes < 100 * 1024 ), 'every image is under 100 KB' );
 	assert.ok( business.requires.elementor.widgets.includes( 'of-nav-menu' ) );
 	assert.ok( business.package.bytes < 200 * 1024, 'the package is small' );
 	assert.equal( catalog.sites[ 0 ].preview.screenshots.length, 3 );

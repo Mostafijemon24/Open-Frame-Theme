@@ -287,7 +287,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Logistics",
+											"title": "Ports and logistics",
 											"header_size": "p",
 											"title_color": "#2456E6",
 											"typography_typography": "custom",
@@ -311,7 +311,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Harbor Freight Lines",
+											"title": "Harbor Terminals",
 											"header_size": "h2",
 											"__globals__": {
 												"title_color": "globals/colors?id=secondary"
@@ -330,7 +330,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p><strong>Delivery lead time cut from nine days to four.</strong> A regional carrier was losing contracts to faster rivals. We rebuilt dispatch around three hubs instead of seven.</p>"
+											"editor": "<p><strong>Container dwell time cut from nine days to four.</strong> A container terminal was losing shipping lines to faster ports. We rebuilt the yard around three stacking zones instead of seven.</p>"
 										},
 										"elements": []
 									},
@@ -547,7 +547,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Manufacturing",
+											"title": "Building materials",
 											"header_size": "p",
 											"title_color": "#2456E6",
 											"typography_typography": "custom",
@@ -571,7 +571,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "Kestrel Components",
+											"title": "Kestrel Building Supply",
 											"header_size": "h2",
 											"__globals__": {
 												"title_color": "globals/colors?id=secondary"
@@ -590,7 +590,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p><strong>Margin up 4.2 points without a price rise.</strong> A cost-to-serve model showed a third of the catalogue lost money. The range was cut and the plant got quieter.</p>"
+											"editor": "<p><strong>Margin up 4.2 points without a price rise.</strong> A cost-to-serve model showed a third of the catalogue lost money. The range was cut and the yard got quieter.</p>"
 										},
 										"elements": []
 									},

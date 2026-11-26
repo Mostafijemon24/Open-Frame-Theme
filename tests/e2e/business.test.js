@@ -17,7 +17,7 @@ runDesignChecks( {
 		{ path: '/services/' },
 		{ path: '/strategy/' },
 		{ path: '/projects/' },
-		{ path: '/harbor-freight-lines/' },
+		{ path: '/harbor-terminals/' },
 		{ path: '/team/' },
 		{ path: '/pricing/' },
 		{ path: '/contact/' },
