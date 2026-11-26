@@ -49,7 +49,7 @@ const eyebrow = ( label, color = C.brand ) =>
 
 /** Eyebrow, heading and optional lead, as one block. */
 const intro = ( label, title, lead, { tag = 'h2', align, dark = false, width = 62 } = {} ) =>
-	column( { width, spacing: 16, ...( align === 'center' ? { align: 'center', more: { align_self: 'center' } } : {} ) }, [
+	column( { width, spacing: 16, ...( align === 'center' ? { align: 'center', more: { _flex_align_self: 'center' } } : {} ) }, [
 		eyebrow( label, dark ? C.accent : C.brand ),
 		heading( title, { tag, align, ...( dark ? { color: C.white } : {} ) } ),
 		...( lead ? [ text( `<p>${ lead }</p>`, { align, size: px( 19 ), ...( dark ? { color: C.mist } : {} ) } ) ] : [] ),
@@ -211,7 +211,7 @@ pages.home = {
 		] ),
 
 		section( { background: C.tint, top: 96, spacing: 0 }, [
-			column( { width: 78, spacing: 24, more: { align_self: 'center' } }, [
+			column( { width: 78, spacing: 24, more: { _flex_align_self: 'center' } }, [
 				heading( '“They told us which half of our plan to drop. It was the half we were most proud of, and they were right.”', { tag: 'p', color: C.ink, size: fluid( 'clamp(1.5rem, 1.1rem + 1.6vw, 2.125rem)' ), weight: 600, align: 'center', more: { typography_line_height: em( 1.3 ) } } ),
 				text( '<p><strong>Priya Nair</strong>, Chief Executive, Kestrel Components</p>', { align: 'center' } ),
 			] ),
@@ -341,7 +341,7 @@ pages[ 'project-details' ] = {
 		] ),
 		figures( [ [ 4, 'days average lead time, from 9' ], [ 17, 'lower fuel cost per parcel', { suffix: '%' } ], [ 3, 'hubs instead of seven depots' ], [ 2, 'major contracts renewed' ] ] ),
 		section( { background: C.tint, top: 88, spacing: 0 }, [
-			column( { width: 78, spacing: 20, more: { align_self: 'center' } }, [
+			column( { width: 78, spacing: 20, more: { _flex_align_self: 'center' } }, [
 				heading( '“The plan came from our own dispatchers. Halden made sure we listened to them.”', { tag: 'p', color: C.ink, size: fluid( 'clamp(1.4rem, 1.1rem + 1.4vw, 2rem)' ), weight: 600, align: 'center', more: { typography_line_height: em( 1.3 ) } } ),
 				text( '<p><strong>Jonas Weber</strong>, Operations Director, Harbor Freight Lines</p>', { align: 'center' } ),
 			] ),
@@ -501,7 +501,7 @@ const parts = {
 		location: '404',
 		content: [
 			section( { background: C.tint, top: 128, spacing: 0 }, [
-				column( { width: 60, spacing: 20, align: 'center', more: { align_self: 'center' } }, [
+				column( { width: 60, spacing: 20, align: 'center', more: { _flex_align_self: 'center' } }, [
 					eyebrow( 'Error 404' ),
 					heading( 'This page has moved, or never existed', { tag: 'h1', align: 'center' } ),
 					text( '<p>The address may be mistyped, or the page may have been retired. The home page is a good place to start again.</p>', { align: 'center', size: px( 19 ) } ),

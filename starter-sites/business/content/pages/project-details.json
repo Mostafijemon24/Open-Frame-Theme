@@ -1079,7 +1079,7 @@
 								"left": "0",
 								"isLinked": true
 							},
-							"align_self": "center"
+							"_flex_align_self": "center"
 						},
 						"elements": [
 							{

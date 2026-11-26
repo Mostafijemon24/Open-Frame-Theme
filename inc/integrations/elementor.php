@@ -239,6 +239,8 @@ function open_frame_elementor_bridge_css() {
 	$primary = 'var(--e-global-color-primary,' . $colors['primary'] . ')';
 	$text    = 'var(--e-global-color-text,' . $colors['text'] . ')';
 	$heads   = 'var(--e-global-color-secondary,' . $colors['heading'] . ')';
+	// Tints are mixed into the surface color, so they work on a dark design too.
+	$surface = 'var(--of-color-surface,#fff)';
 
 	$vars = array(
 		'--of-color-primary'       => $primary,
@@ -246,7 +248,7 @@ function open_frame_elementor_bridge_css() {
 		'--of-color-link'          => $primary,
 		'--of-color-link-hover'    => 'color-mix(in srgb,' . $primary . ' 80%,#000)',
 		'--of-color-focus'         => $primary,
-		'--of-primary-100'         => 'color-mix(in srgb,' . $primary . ' 12%,#fff)',
+		'--of-primary-100'         => 'color-mix(in srgb,' . $primary . ' 12%,' . $surface . ')',
 		'--of-focus-ring'          => '0 0 0 3px color-mix(in srgb,' . $primary . ' 35%,transparent)',
 		'--of-color-heading'       => $heads,
 		'--of-color-text'          => $text,
@@ -256,11 +258,11 @@ function open_frame_elementor_bridge_css() {
 		'--of-slate-900'           => $heads,
 		'--of-slate-700'           => $text,
 		'--of-slate-500'           => $text,
-		'--of-slate-400'           => 'color-mix(in srgb,' . $text . ' 55%,#fff)',
-		'--of-slate-300'           => 'color-mix(in srgb,' . $text . ' 30%,#fff)',
-		'--of-slate-200'           => 'color-mix(in srgb,' . $text . ' 16%,#fff)',
-		'--of-slate-100'           => 'color-mix(in srgb,' . $text . ' 8%,#fff)',
-		'--of-slate-50'            => 'color-mix(in srgb,' . $text . ' 4%,#fff)',
+		'--of-slate-400'           => 'color-mix(in srgb,' . $text . ' 55%,' . $surface . ')',
+		'--of-slate-300'           => 'color-mix(in srgb,' . $text . ' 30%,' . $surface . ')',
+		'--of-slate-200'           => 'color-mix(in srgb,' . $text . ' 16%,' . $surface . ')',
+		'--of-slate-100'           => 'color-mix(in srgb,' . $text . ' 8%,' . $surface . ')',
+		'--of-slate-50'            => 'color-mix(in srgb,' . $text . ' 4%,' . $surface . ')',
 		'--of-color-accent'        => 'var(--e-global-color-accent,' . $colors['accent'] . ')',
 		'--of-font-heading'        => 'var(--e-global-typography-primary-font-family,' . $heading . '),' . $heading,
 		'--of-font-body'           => 'var(--e-global-typography-text-font-family,' . $body . '),' . $body,

@@ -1,0 +1,12 @@
+{
+	"uid": "restaurant:posts:bread-at-four",
+	"title": "Why we bake our bread at four in the afternoon",
+	"slug": "bread-at-four",
+	"excerpt": "Most bakeries work at night. Ours fires at four, so the rye is an hour out of the oven when the first guests sit down.",
+	"featured": "ofss://media/note-3",
+	"categories": [
+		"Kitchen"
+	],
+	"days_ago": 18,
+	"content": "<!-- wp:paragraph -->\n<p>Most bakeries work through the night so that bread is ready by morning. We serve dinner, so we turned the clock around: the oven is loaded at four, and the rye is an hour old when the first guests sit down.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">One dough, three days</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>The starter is fed on day one, the dough is mixed on day two and rests in the cold until the afternoon of day three. Slow fermentation is where the flavour comes from; the fire only finishes the job.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Stone-ground rye from a mill forty minutes away</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>A starter that is older than the restaurant</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Oak and beech, never gas</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p>What is left at the end of the night becomes the crumb on the leeks and the base of tomorrow's soup.</p>\n<!-- /wp:paragraph -->"
+}

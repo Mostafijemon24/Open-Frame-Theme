@@ -1,0 +1,98 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "dish-leeks",
+		"file": "dish-leeks.jpg",
+		"alt": "Charred leeks with romesco on a cream plate, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "dish-flatbread",
+		"file": "dish-flatbread.jpg",
+		"alt": "Rye flatbread with labneh, tomato and herbs, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "dish-steak",
+		"file": "dish-steak.jpg",
+		"alt": "Sliced bavette with chimichurri and potatoes, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "dish-cheesecake",
+		"file": "dish-cheesecake.jpg",
+		"alt": "A slice of burnt cheesecake with sour cherries, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "room",
+		"file": "room.jpg",
+		"alt": "The dining room: three arches, hanging lamps and a green banquette",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "oven",
+		"file": "oven.jpg",
+		"alt": "The brick oven with a fire burning inside",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "long-table",
+		"file": "long-table.jpg",
+		"alt": "A long table laid for twelve, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "bar",
+		"file": "bar.jpg",
+		"alt": "Two shelves of bottles behind the bar",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "cocktail",
+		"file": "cocktail.jpg",
+		"alt": "An orange cocktail with ice and a slice of citrus, seen from above",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "bread",
+		"file": "bread.jpg",
+		"alt": "Sliced bread on a wooden board with butter",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "chef",
+		"file": "chef.jpg",
+		"alt": "Illustrated portrait of Ines Marlow in chef whites",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "host",
+		"file": "host.jpg",
+		"alt": "Illustrated portrait of Tobias Reyes",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.jpg",
+		"alt": "",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+	}
+]

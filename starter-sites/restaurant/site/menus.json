@@ -1,0 +1,37 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Menu",
+				"url": "ofss://page/menu"
+			},
+			{
+				"title": "Reservations",
+				"url": "ofss://page/reservations"
+			},
+			{
+				"title": "Private Events",
+				"url": "ofss://page/private-events"
+			},
+			{
+				"title": "Our Story",
+				"url": "ofss://page/story"
+			},
+			{
+				"title": "Gallery",
+				"url": "ofss://page/gallery"
+			},
+			{
+				"title": "Journal",
+				"url": "ofss://page/journal"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

@@ -1,0 +1,12 @@
+{
+	"uid": "restaurant:posts:first-frost-leeks",
+	"title": "What the first frost does to a leek",
+	"slug": "first-frost-leeks",
+	"excerpt": "Our grower called on Tuesday: the cold has come, and the leeks have turned sweet. Why the best week of the year for this dish is the first cold one.",
+	"featured": "ofss://media/note-1",
+	"categories": [
+		"Seasons"
+	],
+	"days_ago": 5,
+	"content": "<!-- wp:paragraph -->\n<p>Our grower called on Tuesday. The cold has come to the valley, and the leeks have turned sweet. It happens every year, and every year it changes the menu within a day.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Why cold makes them sweet</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>A leek protects itself from frost by turning starch into sugar. In the field that is survival. Over a fire it means the outer leaves blacken while the heart goes soft and almost honeyed.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">How we cook them</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Whole, unwashed, straight onto the embers for twelve minutes. We peel away the burnt layers at the pass and dress what is left with romesco and brown butter. Nothing else.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>The dish takes twelve minutes and eleven months of waiting.</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Charred leeks are on the menu until the ground thaws. <a href=\"ofss://page/reservations\">Book a table</a> while they last.</p>\n<!-- /wp:paragraph -->"
+}

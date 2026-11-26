@@ -1,0 +1,204 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#E39A4A"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#F2E8D9"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#CDC2B2"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#E39A4A"
+		}
+	],
+	"custom_colors": [
+		{
+			"_id": "ofnight",
+			"title": "Night",
+			"color": "#141210"
+		},
+		{
+			"_id": "ofchar",
+			"title": "Char",
+			"color": "#1E1A17"
+		},
+		{
+			"_id": "offorest",
+			"title": "Forest",
+			"color": "#1C2A23"
+		},
+		{
+			"_id": "ofline",
+			"title": "Line",
+			"color": "#3A332C"
+		}
+	],
+	"system_typography": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"typography_typography": "custom",
+			"typography_font_family": "Cormorant Garamond",
+			"typography_font_weight": "500"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"typography_typography": "custom",
+			"typography_font_family": "Jost",
+			"typography_font_weight": "500"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"typography_typography": "custom",
+			"typography_font_family": "Jost",
+			"typography_font_weight": "400"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"typography_typography": "custom",
+			"typography_font_family": "Jost",
+			"typography_font_weight": "500"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1200,
+		"sizes": []
+	},
+	"body_background_background": "classic",
+	"body_background_color": "#141210",
+	"body_color": "#CDC2B2",
+	"body_typography_typography": "custom",
+	"body_typography_font_family": "Jost",
+	"body_typography_font_size": {
+		"unit": "px",
+		"size": 18,
+		"sizes": []
+	},
+	"body_typography_font_weight": "400",
+	"body_typography_line_height": {
+		"unit": "em",
+		"size": 1.7,
+		"sizes": []
+	},
+	"link_normal_color": "#E39A4A",
+	"link_hover_color": "#F0B46C",
+	"h1_color": "#F2E8D9",
+	"h1_typography_typography": "custom",
+	"h1_typography_font_family": "Cormorant Garamond",
+	"h1_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.75rem, 1.3rem + 6.4vw, 6.25rem)",
+		"sizes": []
+	},
+	"h1_typography_font_weight": "500",
+	"h1_typography_line_height": {
+		"unit": "em",
+		"size": 1,
+		"sizes": []
+	},
+	"h1_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.01,
+		"sizes": []
+	},
+	"h2_color": "#F2E8D9",
+	"h2_typography_typography": "custom",
+	"h2_typography_font_family": "Cormorant Garamond",
+	"h2_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.125rem, 1.5rem + 2.8vw, 3.75rem)",
+		"sizes": []
+	},
+	"h2_typography_font_weight": "500",
+	"h2_typography_line_height": {
+		"unit": "em",
+		"size": 1.06,
+		"sizes": []
+	},
+	"h2_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.005,
+		"sizes": []
+	},
+	"h3_color": "#F2E8D9",
+	"h3_typography_typography": "custom",
+	"h3_typography_font_family": "Cormorant Garamond",
+	"h3_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+		"sizes": []
+	},
+	"h3_typography_font_weight": "600",
+	"h3_typography_line_height": {
+		"unit": "em",
+		"size": 1.15,
+		"sizes": []
+	},
+	"h4_color": "#F2E8D9",
+	"h4_typography_typography": "custom",
+	"h4_typography_font_family": "Jost",
+	"h4_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"h4_typography_font_weight": "500",
+	"h4_typography_line_height": {
+		"unit": "em",
+		"size": 1.4,
+		"sizes": []
+	},
+	"button_typography_typography": "custom",
+	"button_typography_font_family": "Jost",
+	"button_typography_font_size": {
+		"unit": "px",
+		"size": 14,
+		"sizes": []
+	},
+	"button_typography_font_weight": "500",
+	"button_typography_text_transform": "uppercase",
+	"button_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"button_typography_letter_spacing": {
+		"unit": "em",
+		"size": 0.14,
+		"sizes": []
+	},
+	"button_text_color": "#141210",
+	"button_background_color": "#E39A4A",
+	"button_hover_text_color": "#141210",
+	"button_hover_background_color": "#F2E8D9",
+	"button_border_radius": {
+		"unit": "px",
+		"top": "0",
+		"right": "0",
+		"bottom": "0",
+		"left": "0",
+		"isLinked": true
+	},
+	"button_padding": {
+		"unit": "px",
+		"top": "17",
+		"right": "30",
+		"bottom": "17",
+		"left": "30",
+		"isLinked": false
+	}
+}

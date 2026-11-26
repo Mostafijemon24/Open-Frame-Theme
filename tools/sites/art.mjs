@@ -33,7 +33,7 @@ export const frame = ( width, height, background, body, css = '' ) => `<!doctype
  * Render images to a folder.
  *
  * @param {string} out    Folder; it is emptied first.
- * @param {Object} images name => [ width, height, html ].
+ * @param {Object} images name => [ width, height, html, quality? ].
  * @param {Object} [options]
  * @param {number} [options.quality] JPEG quality.
  * @return {Promise<number>} Bytes written.
@@ -46,12 +46,12 @@ export async function render( out, images, { quality = 84 } = {} ) {
 	const browser = await chromium.launch();
 	const page = await browser.newPage();
 	let total = 0;
-	for ( const [ name, [ width, height, html ] ] of Object.entries( images ) ) {
+	for ( const [ name, [ width, height, html, own ] ] of Object.entries( images ) ) {
 		await page.setViewportSize( { width, height } );
 		await page.setContent( html );
 		await page.evaluate( () => document.fonts.ready );
 		const file = path.join( out, name + '.jpg' );
-		await page.screenshot( { path: file, type: 'jpeg', quality } );
+		await page.screenshot( { path: file, type: 'jpeg', quality: own || quality } );
 		const bytes = fs.statSync( file ).size;
 		total += bytes;
 		if ( bytes > 100 * 1024 ) {

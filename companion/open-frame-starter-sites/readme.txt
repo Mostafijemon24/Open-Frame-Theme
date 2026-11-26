@@ -81,6 +81,7 @@ A copy of the list of designs, the record of the last import, a short import his
 
 = 0.4.0 =
 * New: Portfolio, the second complete design: a personal site with large serif type, a staggered grid of work, a case study, services, a resume and notes. Built with the free version of Elementor.
+* New: Restaurant, the third complete design and the first dark one: a full menu with prices, reservations by telephone and email, private events, a gallery and a journal. Built with the free version of Elementor.
 * New: a design can bring its own fonts. The font files are stored in your uploads folder, served by your own site and offered in Elementor's font list under "Starter site fonts". No font service is contacted. Rolling back an import removes them; deleting the plugin removes them too.
 
 = 0.3.0 =

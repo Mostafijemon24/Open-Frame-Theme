@@ -6,7 +6,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Two of the ten designs exist.** Business ("Halden Advisory") and Portfolio ("Juno Vale") are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. Both need only the free version of Elementor, and they share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and eight designs are still to be made.
+**Three of the ten designs exist.** Business ("Halden Advisory"), Portfolio ("Juno Vale") and Restaurant ("Ember & Rye") are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. All three need only the free version of Elementor, and they share no layout, typeface or color: one is white and blue, one is paper and serif, one is dark and centered. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and seven designs are still to be made.
 
 | Phase | Status |
 | --- | --- |
@@ -17,7 +17,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 1 of 9 done** (Portfolio, plugin 0.4.0). Next: Restaurant, Education, Medical, then the five Pro-tier designs |
+| 7b. Nine further starter sites | **In progress: 2 of 9 done** (Portfolio and Restaurant, plugin 0.4.0). Next: Education, Medical, then the five Pro-tier designs |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -102,6 +102,15 @@ Each is built with the first design that needs it, rather than against invented 
 - **Theme additions (still 1.1.0, unreleased), both found by looking at Portfolio's blog:** with "Use Elementor global colors and fonts" on, the theme's neutral greys (quotes, tables, form fields, small print) now take the tint of the design's text color instead of staying blue-grey; headings written in the block editor keep the theme's reading sizes, so a subheading in an article is no longer larger than the article's title.
 - **Tests no longer depend on which designs are finished:** the mock library and the PHP checks use a made-up design "Upcoming" where they need one that is not out yet.
 
+### Phase 7b, part 2: the Restaurant design
+
+- **The design** (`starter-sites/restaurant`, brief in `brief.md`): the fictional wood-fired kitchen "Ember & Rye". Home, Menu, Our Story, Reservations, Private Events, Gallery, Contact and Location, the blog page "Journal" with three articles, plus header, footer and a "page not found" page.
+- **The first dark design.** A nearly black page with cream headings and one ember accent, Cormorant Garamond with Jost, centered compositions, pictures under a dark veil with text on top, a two-line centered header, and a full menu with prices set as name, dotted line, price.
+- **Honest about what it cannot do:** no online booking, no form and no map. Reservations are by telephone and email, and the pages say so; a map would load from another company's servers on every visit.
+- **Images:** sixteen original illustrations (a table from above, dishes, the room, the oven, the bar, portraits, patterns), drawn by `tools/sites/restaurant-art.mjs`. CC0, about 750 KB.
+- **Theme (still 1.1.0, unreleased):** the tints the theme derives when it follows Elementor are now mixed into the surface color instead of white, so the blog, quotes, tables and form fields are right on a dark design too.
+- **Found while building it, and fixed in Business as well:** blocks meant to be centered were only centering their text, because the setting that centers a block inside its section has a different name in Elementor (`_flex_align_self`). Business's quotation and "page not found" page are now truly centered.
+
 ## Verified (executed 2026-11-26)
 
 - PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
@@ -109,7 +118,7 @@ Each is built with the first design that needs it, rather than against invented 
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
 - Import engine checks: 80 of 80 pass, including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
-- Browser checks: 61 of 61 pass. 11 each for the Business and Portfolio designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Browser checks: 72 of 72 pass. 11 each for the Business, Portfolio and Restaurant designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 49 of 49 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -122,12 +131,13 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- Two designs, Business and Portfolio, can be imported. The other eight are placeholders marked "Coming soon"; their previews say "Preview coming soon".
-- **Neither design has a contact form.** The contact pages give an email address, a telephone number and a button. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
-- The texts, names and figures of both designs are invented sample content; each footer says so.
-- **Portfolio's fonts are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
+- Three designs, Business, Portfolio and Restaurant, can be imported. The other seven are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **None of the designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
+- The texts, names, prices and figures of all designs are invented sample content; each footer says so.
+- **The fonts of Portfolio and Restaurant are Latin subsets** (Western European languages). Text in other scripts falls back to the visitor's system font. The Fonts class has no `unicode-range` support yet, so a design cannot ship several subsets of one typeface.
 - Portfolio has no social media links: there are no accounts to point at, and a placeholder link would lead nowhere.
-- Both designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
+- Text over pictures (Restaurant's two pictured bands) cannot be checked for contrast by axe-core; it was calculated by hand for the brightest part of each picture (6.4:1 at worst) and depends on the veil staying dark if the picture is replaced.
+- All designs were looked at in Chromium only, at the nine widths, as screenshots and by automated checks. No real phone, Safari or Firefox.
 - Only the most recent import can be rolled back. Importing a design again does not undo edits made to its pages in between; it replaces their content with the design's.
 - Site parts apply to the whole site; per-page display conditions are not built.
 - Theme 1.1.0 and plugin 0.4.0 are not tagged or released.
@@ -146,5 +156,5 @@ Each is built with the first design that needs it, rather than against invented 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b continues: Restaurant, Education and Medical (free tier), each with its own brief, layout and typeface, then the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine).
+2. Phase 7b continues: Education and Medical (free tier), each with its own brief, layout and typeface, then the five Pro-tier designs (Agency, SaaS, Shop, Real Estate, Magazine).
 3. A decision on the forms plugin, so the contact pages can carry a form.

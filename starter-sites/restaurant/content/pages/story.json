@@ -1,0 +1,1688 @@
+{
+	"uid": "restaurant:pages:story",
+	"title": "Our Story",
+	"slug": "our-story",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "00000ed",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000ec",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 18,
+								"column": "18",
+								"row": "18",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 70,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "00000e8",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Our story",
+									"header_size": "p",
+									"title_color": "#E39A4A",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_family": "Jost",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "500",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 3,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000e9",
+								"elType": "widget",
+								"widgetType": "divider",
+								"settings": {
+									"color": "#E39A4A",
+									"weight": {
+										"unit": "px",
+										"size": 1,
+										"sizes": []
+									},
+									"width": {
+										"unit": "px",
+										"size": 56,
+										"sizes": []
+									},
+									"align": "center",
+									"gap": {
+										"unit": "px",
+										"size": 4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000ea",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "A restaurant built around one <em>oven</em>",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							},
+							{
+								"id": "00000eb",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Ember & Rye opened in 2017 in a former sail loft. The oven went in first, and everything else was arranged around it.</p>",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000ef",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000ee",
+						"elType": "widget",
+						"widgetType": "image",
+						"settings": {
+							"image": {
+								"id": "ofss://media/room",
+								"url": "ofss://media/room"
+							},
+							"image_size": "full",
+							"image_border_radius": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": []
+					}
+				]
+			},
+			{
+				"id": "00000f8",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000f7",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 88,
+								"column": "88",
+								"row": "88",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000f4",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 22,
+										"column": "22",
+										"row": "22",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 54,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00000f0",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "How it started",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000f1",
+										"elType": "widget",
+										"widgetType": "divider",
+										"settings": {
+											"color": "#E39A4A",
+											"weight": {
+												"unit": "px",
+												"size": 1,
+												"sizes": []
+											},
+											"width": {
+												"unit": "px",
+												"size": 56,
+												"sizes": []
+											},
+											"align": "left",
+											"gap": {
+												"unit": "px",
+												"size": 4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000f2",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Two cooks and a pile of <em>bricks</em>",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000f3",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Ines Marlow and Tobias Reyes met on the line of a hotel kitchen and spent their days off building ovens in friends' gardens. When the sail loft came up for rent, they laid the bricks themselves over one winter.</p><p>The first menu had six dishes, because that was how many the oven could hold. It has twelve now. The rule is the same: if it cannot go near the fire, it is not on the menu.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000f6",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 46,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00000f5",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/oven",
+												"url": "ofss://media/oven"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000108",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 56,
+						"column": "56",
+						"row": "56",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#1E1A17"
+				},
+				"elements": [
+					{
+						"id": "00000fc",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 18,
+								"column": "18",
+								"row": "18",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "00000f9",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The people",
+									"header_size": "p",
+									"title_color": "#E39A4A",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_family": "Jost",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "500",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 3,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000fa",
+								"elType": "widget",
+								"widgetType": "divider",
+								"settings": {
+									"color": "#E39A4A",
+									"weight": {
+										"unit": "px",
+										"size": 1,
+										"sizes": []
+									},
+									"width": {
+										"unit": "px",
+										"size": 56,
+										"sizes": []
+									},
+									"align": "center",
+									"gap": {
+										"unit": "px",
+										"size": 4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000fb",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Who you will meet",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000107",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 48,
+								"column": "48",
+								"row": "48",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 76,
+								"sizes": []
+							},
+							"width_tablet": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "0000101",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000fd",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/chef",
+												"url": "ofss://media/chef"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000fe",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Ines Marlow",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000ff",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Chef and co-owner",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000100",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Runs the fire. Trained in Lyon and San Sebastián, and still does the bread herself.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000106",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000102",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/host",
+												"url": "ofss://media/host"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000103",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Tobias Reyes",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000104",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Front of house and cellar",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000105",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Looks after the room and the wine list. Will remember what you drank last time.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000121",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000010d",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 18,
+								"column": "18",
+								"row": "18",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "0000109",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Where it comes from",
+									"header_size": "p",
+									"title_color": "#E39A4A",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_family": "Jost",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "500",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 3,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000010a",
+								"elType": "widget",
+								"widgetType": "divider",
+								"settings": {
+									"color": "#E39A4A",
+									"weight": {
+										"unit": "px",
+										"size": 1,
+										"sizes": []
+									},
+									"width": {
+										"unit": "px",
+										"size": 56,
+										"sizes": []
+									},
+									"align": "center",
+									"gap": {
+										"unit": "px",
+										"size": 4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000010b",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Eleven growers and one boat",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							},
+							{
+								"id": "000010c",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>We name them because they do half the work.</p>",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000120",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 0,
+								"column": "48",
+								"row": "0",
+								"isLinked": false
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000110",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "000010e",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Vegetables",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000010f",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Hollow Farm, Westbrook",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000113",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "0000111",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Leeks and brassicas",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000112",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "The Tully family, Marsh End",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000116",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "0000114",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Fish",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000115",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "The boat “Margit”, Old Port",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000119",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "0000117",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Beef and chicken",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000118",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Ridgeway Pastures",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000011c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "000011a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Flour",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Calder Mill",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000011f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "24",
+										"right": "0",
+										"bottom": "24",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#3A332C"
+								},
+								"elements": [
+									{
+										"id": "000011d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Cheese",
+											"header_size": "p",
+											"title_color": "#E39A4A",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "500",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 3,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011e",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Three dairies within an hour",
+											"header_size": "p",
+											"title_color": "#F2E8D9",
+											"typography_typography": "custom",
+											"typography_font_family": "Jost",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "400",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
