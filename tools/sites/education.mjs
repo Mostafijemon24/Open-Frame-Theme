@@ -10,7 +10,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'education';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -103,15 +103,15 @@ const courses = [
 	{ uid: 'course-data', color: C.mint, name: 'Data analysis with spreadsheets and SQL', weeks: '8 weeks', level: 'Beginner', fee: '1,150', when: 'Mon and Wed, 18:30 to 20:30', body: 'Ask a question of a dataset and answer it with a chart your manager can read.' },
 	{ uid: 'course-design', color: C.lilac, name: 'Interface design', weeks: '10 weeks', level: 'Intermediate', fee: '1,450', when: 'Tue and Thu, 18:30 to 21:00', body: 'Layout, type and colour for screens, practised on a real brief from a local company.' },
 	{ uid: 'course-language', color: C.peach, name: 'Spanish for work', weeks: '12 weeks', level: 'All levels', fee: '780', when: 'Wednesday, 18:00 to 20:00', body: 'Meetings, email and small talk. Groups of eight, taught entirely in Spanish from week three.' },
-	{ uid: 'course-photo', color: '#FFE9A8', name: 'Photography weekends', weeks: '4 Saturdays', level: 'Beginner', fee: '520', when: 'Saturday, 10:00 to 16:00', body: 'Get off automatic. Light, composition and editing, with a walk through the old town each week.' },
+	{ uid: 'course-photo', color: '#FFE9A8', name: 'Photography weekends', weeks: '4 Saturdays', level: 'Beginner', fee: '520', when: 'Saturday, 10:00 to 16:00', body: 'Get off automatic. Light, composition and editing, with a walk out of town each week.' },
 	{ uid: 'course-writing', color: C.sky, name: 'Writing clearly at work', weeks: '6 weeks', level: 'All levels', fee: '490', when: 'Monday, 18:30 to 20:30', body: 'Reports, proposals and difficult emails, edited line by line in a small group.' },
 ];
 
 const teachers = [
-	{ uid: 'teacher-1', name: 'Dana Whitlock', subject: 'Interface design', bio: 'Product designer for twelve years, most recently at a bank. Teaches the course she wishes she had taken.' },
+	{ uid: 'teacher-1', name: 'Dana Whitlock', subject: 'Interface design', bio: 'Product designer, most recently at a bank. Teaches the course she wishes she had taken.' },
 	{ uid: 'teacher-2', name: 'Samuel Okoye', subject: 'Web development', bio: 'Front-end engineer and former apprentice. Believes nobody learns to code by watching someone else type.' },
-	{ uid: 'teacher-3', name: 'Lucía Fernández', subject: 'Spanish', bio: 'From Seville, a teacher for fifteen years. Her groups are known for laughing through the wall.' },
-	{ uid: 'teacher-4', name: 'Priya Raman', subject: 'Data analysis', bio: 'Analyst at a city hospital. Brings real, messy data to class, with the names removed.' },
+	{ uid: 'teacher-3', name: 'Lucía Fernández', subject: 'Spanish', bio: 'From Seville. Her groups are known for laughing through the wall.' },
+	{ uid: 'teacher-4', name: 'Maya Lind', subject: 'Data analysis', bio: 'Analyst at a city hospital. Brings real, messy data to class, with the names removed.' },
 ];
 
 const events = [
@@ -263,7 +263,7 @@ pages.home = {
 			panel( C.lilac, [
 				column( { width: 82, spacing: 22 }, [
 					heading( '“I had tried three online courses and finished none. In a room with thirteen other people, I did not miss a single evening.”', { tag: 'p', size: fluid( 'clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem)' ), more: { typography_line_height: em( 1.2 ) } } ),
-					fact( 'Mira Castell, web development, autumn group', { color: C.text, size: 16 } ),
+					fact( 'Mira Castell, web development, autumn group. A sample quote.', { color: C.text, size: 16 } ),
 				] ),
 			] ),
 		] ),
@@ -504,7 +504,7 @@ const parts = {
 						footLinks( 'Join', [ [ 'Admissions and fees', page( 'admissions' ) ], [ 'About', page( 'about' ) ], [ 'Contact', page( 'contact' ) ] ] ),
 						footLinks( 'Reach us', [ [ EMAIL, `mailto:${ EMAIL }` ], [ PHONE, TEL ] ] ),
 					] ),
-					container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#33406B' }, [ fact( '© Tandem Academy. A fictional school, made for the Open Frame Education starter site.', { color: C.haze, size: 14, weight: 400 } ) ] ),
+					container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#33406B' }, [ fact( 'Sample content: Tandem Academy is a fictional school made for the Open Frame Education starter site. The courses, fees, dates, people and quotes are examples to replace with your own.', { color: C.haze, size: 14, weight: 400 } ) ] ),
 				] ),
 			] ),
 		],
@@ -606,15 +606,12 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/education-art.mjs).';
-const mediaIndex = [
-	{ uid: 'hero', file: 'hero.jpg', alt: 'A laptop on a stack of books, with a plant and a mug' },
-	...courses.map( ( course ) => ( { uid: course.uid, file: course.uid + '.jpg', alt: `Illustration for the course “${ course.name }”` } ) ),
-	{ uid: 'campus', file: 'campus.jpg', alt: 'The academy building, with trees on both sides' },
-	{ uid: 'group', file: 'group.jpg', alt: 'Five students standing together' },
-	...teachers.map( ( person ) => ( { uid: person.uid, file: person.uid + '.jpg', alt: `Illustrated portrait of ${ person.name }` } ) ),
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: '' } ) ),
-].map( ( entry ) => ( { ...entry, licence } ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// Portraits are named after the invented people they stand for; article covers are decoration beside their titles.
+const mediaIndex = photoIndex( OUT, {
+	...Object.fromEntries( teachers.map( ( person ) => [ person.uid, `Portrait of ${ person.name }` ] ) ),
+	...Object.fromEntries( posts.map( ( post ) => [ post.image, '' ] ) ),
+} );
 
 const fonts = [
 	{ family: DISPLAY, weight: '200 800', style: 'normal', file: 'bricolage-grotesque-latin.woff2', licence: 'OFL-1.1. Copyright 2022 The Bricolage Grotesque Project Authors.' },

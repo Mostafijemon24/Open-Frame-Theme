@@ -43,7 +43,7 @@ runDesignChecks( {
 	editor: [
 		[ 'education:pages:home', 'Learn the thing you keep putting off' ],
 		[ 'education:site-parts:header', 'Tandem' ],
-		[ 'education:site-parts:footer', 'A fictional school' ],
+		[ 'education:site-parts:footer', 'Sample content' ],
 	],
 	gone: '/courses/',
 	brand: 'Tandem',

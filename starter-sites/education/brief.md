@@ -37,9 +37,20 @@ In Elementor's Site Settings: Primary is iris, Secondary is navy (headings), Tex
 
 Header: a floating white pill with an outline and a hard shadow, inside the page margin: name on the left, menu, an "Apply" button. On a phone the pill becomes a rounded bar with the name and the theme's menu button. Footer: a navy block with rounded top corners, the name and one sentence, three link lists with sun-colored titles, small print.
 
-## Images
+## Photographs
 
-Sixteen original flat illustrations drawn by `tools/sites/education-art.mjs`: a hero composition on the same sun color as its panel, one tile per course, the building, a group, four portraits (shown as circles) and three covers for news. CC0, about 500 KB together. A school replaces portraits and the building with photographs first; the course tiles work as they are.
+Sixteen photographs from Wikimedia Commons, all recorded there as CC0, listed with their sources in `CREDITS.md`. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch education` prepares them.
+
+| Where | What the photograph shows |
+| --- | --- |
+| Home, hero | An adult learner at a laptop, pen in hand |
+| Six courses | The subject itself: code on a screen, a dashboard of charts, wireframes being drawn, a conversation over notes, a photographer at work, a hand writing |
+| About, Contact | A bright room with long tables: where the classes meet |
+| Instructors, About | People reading and writing together at a table |
+| Instructors | Four portraits, shown round |
+| News | A bright library for the open day, a learner at her laptop, a man at his new desk |
+
+The photographs keep the warm wood and daylight of the paper-coloured page; the coloured course cards carry the school's palette.
 
 ## On a phone
 

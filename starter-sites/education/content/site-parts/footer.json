@@ -645,7 +645,7 @@
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
-											"title": "© Tandem Academy. A fictional school, made for the Open Frame Education starter site.",
+											"title": "Sample content: Tandem Academy is a fictional school made for the Open Frame Education starter site. The courses, fees, dates, people and quotes are examples to replace with your own.",
 											"header_size": "p",
 											"title_color": "#C9D1EA",
 											"typography_typography": "custom",

@@ -559,7 +559,7 @@
 														"elType": "widget",
 														"widgetType": "text-editor",
 														"settings": {
-															"editor": "<p>Product designer for twelve years, most recently at a bank. Teaches the course she wishes she had taken.</p>",
+															"editor": "<p>Product designer, most recently at a bank. Teaches the course she wishes she had taken.</p>",
 															"typography_typography": "custom",
 															"typography_font_size": {
 																"unit": "px",
@@ -1081,7 +1081,7 @@
 														"elType": "widget",
 														"widgetType": "text-editor",
 														"settings": {
-															"editor": "<p>From Seville, a teacher for fifteen years. Her groups are known for laughing through the wall.</p>",
+															"editor": "<p>From Seville. Her groups are known for laughing through the wall.</p>",
 															"typography_typography": "custom",
 															"typography_font_size": {
 																"unit": "px",
@@ -1323,7 +1323,7 @@
 														"elType": "widget",
 														"widgetType": "heading",
 														"settings": {
-															"title": "Priya Raman",
+															"title": "Maya Lind",
 															"header_size": "h2",
 															"__globals__": {
 																"title_color": "globals/colors?id=secondary"
