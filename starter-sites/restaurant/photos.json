@@ -1,0 +1,418 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero, behind the heading under a dark veil",
+		"subject": "A wood fire burning in a dark hearth",
+		"alt": "",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fire_in_the_Winter_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Fire_in_the_Winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Sweet Ice Cream Photography (@sweeticecreamphotography on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5707,
+			3805
+		],
+		"width": 1800,
+		"height": 1080,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 131392,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-leeks",
+		"file": "dish-leeks.webp",
+		"section": "Home: from the fire, first dish; gallery",
+		"subject": "Two bowls of vegetables on a wooden table with a glass of white wine",
+		"alt": "Two bowls of vegetables on a wooden table with a glass of white wine",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bowl_of_Mushrooms_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Bowl_of_Mushrooms_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Joanna Kosinska (@joannakosinska on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6016,
+			4016
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			52,
+			60
+		],
+		"bytes": 45424,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-flatbread",
+		"file": "dish-flatbread.webp",
+		"section": "Home: from the fire, second dish; gallery",
+		"subject": "A flatbread with rocket on a wooden peel",
+		"alt": "A flatbread with rocket on a wooden peel",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Healthy_Cafe_Food_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Healthy_Cafe_Food_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jade Wulfraat (@jadew on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			2936,
+			1960
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			45,
+			50
+		],
+		"bytes": 63544,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-steak",
+		"file": "dish-steak.webp",
+		"section": "Home: from the fire, third dish; gallery",
+		"subject": "A plate of steak with rosemary",
+		"alt": "A plate of steak with rosemary",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Steak_Dinner_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Steak_Dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eduardo Roda Lopes (@eduroda on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3374
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			60,
+			50
+		],
+		"bytes": 61330,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-cheesecake",
+		"file": "dish-cheesecake.webp",
+		"section": "Home: from the fire, fourth dish; gallery",
+		"subject": "A dessert in a white bowl with sauce poured over it",
+		"alt": "A dessert in a white bowl with sauce poured over it",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Alto_Pasti_Trattoria_-_Cocina_Italiana_Moderna_en_Manizales,_Colombia_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Alto_Pasti_Trattoria_-_Cocina_Italiana_Moderna_en_Manizales%2C_Colombia_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Pablo Merchán Montes (@pablomerchanm on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3072
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			68,
+			45
+		],
+		"bytes": 33128,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "room",
+		"file": "room.webp",
+		"section": "Home: reservations band; About; Contact; gallery",
+		"subject": "A dark dining room with laid tables",
+		"alt": "A dark dining room with laid tables",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:In_a_vintage_tavern_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/In_a_vintage_tavern_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Todd Diemer (@todd_diemer on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4718,
+			2982
+		],
+		"width": 1600,
+		"height": 1100,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 312492,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "oven",
+		"file": "oven.webp",
+		"section": "Home and About: the oven; gallery",
+		"subject": "A brick wood-fired oven with a fire inside",
+		"alt": "A brick wood-fired oven with a fire inside",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Cathal_Mac_an_Bheatha_2017-03-15_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Cathal_Mac_an_Bheatha_2017-03-15_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Cathal Mac an Bheatha (@cathalmacan on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3165,
+			2110
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			36,
+			50
+		],
+		"bytes": 181578,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "long-table",
+		"file": "long-table.webp",
+		"section": "Home and Private dining: the long table; gallery",
+		"subject": "A long table laid with glasses",
+		"alt": "A long table laid with glasses",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Table_of_wine_and_snacks_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Table_of_wine_and_snacks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Joel Aguilar (@antonioflores89 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5812,
+			3875
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 138206,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "bar",
+		"file": "bar.webp",
+		"section": "Private dining: the bar; gallery",
+		"subject": "Shelves of bottles behind a bar",
+		"alt": "Shelves of bottles behind a bar",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Busy_bar_shelf_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Busy_bar_shelf_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eaters Collective (@eaterscollective on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4592,
+			3448
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			40
+		],
+		"bytes": 252294,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "cocktail",
+		"file": "cocktail.webp",
+		"section": "Gallery",
+		"subject": "An orange cocktail with a slice of orange",
+		"alt": "An orange cocktail with a slice of orange",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Cocktail_orange_drink_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Cocktail_orange_drink_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Adam Jaime (@arobj on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4008,
+			6000
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			50,
+			35
+		],
+		"bytes": 56074,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "bread",
+		"file": "bread.webp",
+		"section": "Gallery",
+		"subject": "A loaf of bread with butter",
+		"alt": "A loaf of bread with butter",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fresh_Bread_and_Butter_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Fresh_Bread_and_Butter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			40,
+			55
+		],
+		"bytes": 73424,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "chef",
+		"file": "chef.webp",
+		"section": "About: Ines Marlow, chef and co-owner",
+		"subject": "A cook in an apron slicing on a wooden board",
+		"alt": "A cook in an apron slicing on a wooden board",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Caroline_Attwood_2017_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Caroline_Attwood_2017_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Caroline Attwood (@carolineattwood on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3078
+		],
+		"width": 900,
+		"height": 1080,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 60028,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "host",
+		"file": "host.webp",
+		"section": "About: Tobias Reyes, front of house and cellar",
+		"subject": "A man in a white shirt and tie behind a bar",
+		"alt": "A man in a white shirt and tie behind a bar",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bartenders_serving_in_a_bar_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Bartenders_serving_in_a_bar_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Taylor Davidson (@tdavidson on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3264,
+			2448
+		],
+		"width": 900,
+		"height": 1080,
+		"focal": [
+			60,
+			45
+		],
+		"bytes": 136956,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"section": "Article cover: What the first frost does to a leek",
+		"subject": "Leeks and carrots on a market stall",
+		"alt": "Leeks and carrots on a market stall",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fresh_Veggies_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fresh_Veggies_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Peter Wendt (@peterwendt on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5961,
+			3974
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 257244,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"section": "Article cover: A short guide to our wine list",
+		"subject": "A row of wine glasses",
+		"alt": "A row of wine glasses",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Row_of_wine_glasses_in_close-up_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Row_of_wine_glasses_in_close-up_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "henry fournier (@henryatpull on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5360,
+			3560
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 140730,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"section": "Article cover: Why we bake our bread at four in the afternoon",
+		"subject": "Loaves of bread on racks",
+		"alt": "Loaves of bread on racks",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Loaves_of_Bread_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Loaves_of_Bread_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Clark Young (@clark1 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4256,
+			2832
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 87620,
+		"checked": "2026-11-26"
+	}
+]
