@@ -47,7 +47,7 @@ runDesignChecks( {
 	editor: [
 		[ 'saas:pages:home', 'Know what your customers are asking for' ],
 		[ 'saas:templates:header', 'Loop' ],
-		[ 'saas:templates:footer', 'A fictional product' ],
+		[ 'saas:templates:footer', 'Sample content' ],
 	],
 	gone: '/pricing/',
 	brand: 'Loop reads',

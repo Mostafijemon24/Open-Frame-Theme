@@ -6,8 +6,8 @@
  *
  * A software product is sold with pictures of itself. These are screens of an
  * invented feedback tool, drawn in HTML: a dashboard, an inbox, a trends view
- * and a roadmap, plus integration tiles, customer covers, a team and three
- * covers for the blog. Original (CC0) and small.
+ * and a roadmap, plus integration tiles. Original (CC0) and small. Everything
+ * else in the design is a photograph (see photo-sources.json).
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -111,15 +111,6 @@ const images = {
 			const y = 110 + Math.floor( index / 3 ) * 370;
 			return rect( x, y, size, size, { background: color, 'border-radius': 56, 'box-shadow': soft }, draw( size ) ) + word( name, { left: x, width: size, 'text-align': 'center', top: y + size + 22, 'font-size': 26, color: C.ink } );
 		} ).join( '' ) ) ],
-	'customer-1': [ 1400, 1000, customer( C.ink, C.white, 'northpost', C.pink ) ],
-	'customer-2': [ 1400, 1000, customer( '#FFE3EC', C.ink, 'driftline', C.orange ) ],
-	'customer-3': [ 1400, 1000, customer( '#ECE7FF', C.ink, 'fable&co', C.violet ) ],
-	team: [ 1600, 900, art( 1600, 900, C.mist,
-		circle( 800, 1050, 700, { background: '#ECEEF5' } )
-		+ person( 340, 330, 1, C.pink, '#E3B594', C.ink ) + person( 650, 290, 1.05, C.ink, '#8C5A3C', '#1B1B1B' ) + person( 960, 330, 1, C.orange, '#F0C9A8', '#7A3B22' ) + person( 1270, 300, 1.02, C.violet, '#C68E63', '#2B1D14' ) ) ],
-	'blog-1': [ 1600, 900, blend( C.pink, C.orange, circle( 1200, 450, 300, { background: 'rgba(255,255,255,.22)' } ) + circle( 1320, 300, 150, { background: 'rgba(255,255,255,.3)' } ) + [ 0, 1, 2 ].map( ( index ) => rect( 140, 300 + index * 110, 620 - index * 130, 60, { background: C.white, 'border-radius': 30, opacity: 0.95 - index * 0.2 } ) ).join( '' ) ) ],
-	'blog-2': [ 1600, 900, blend( C.ink, '#2A1F4A', [ [ 320, 520, 150, C.pink ], [ 640, 380, 110, C.orange ], [ 900, 560, 80, C.violet ], [ 1150, 340, 190, C.pink ], [ 1380, 600, 60, C.orange ] ].map( ( [ x, y, r, color ] ) => circle( x, y, r, { background: color, opacity: 0.9 } ) ).join( '' ) ) ],
-	'blog-3': [ 1600, 900, blend( '#ECE7FF', '#FFE3EC', rect( 200, 180, 1200, 540, { background: C.white, 'border-radius': 28, 'box-shadow': soft }, chart( 60, 80, 1080, 380, C.violet ) ) ) ],
 };
 
 const total = await render( path.join( SITE, 'media/files' ), images, { quality: 82 } );

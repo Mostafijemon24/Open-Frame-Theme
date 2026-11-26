@@ -31,44 +31,51 @@
 	},
 	{
 		"uid": "customer-1",
-		"file": "customer-1.jpg",
-		"alt": "Northpost",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"file": "customer-1.webp",
+		"alt": "A person packing a cardboard parcel on a white table in a bright studio office",
+		"licence": "CC0-1.0. Photograph by Bench Accounting (@benchaccounting on Unsplash), from Wikimedia Commons.",
+		"author": "Bench Accounting (@benchaccounting on Unsplash)"
 	},
 	{
 		"uid": "customer-2",
-		"file": "customer-2.jpg",
-		"alt": "Driftline",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"file": "customer-2.webp",
+		"alt": "Surfboards on a wooden rack under a thatched roof, beside a calm sea",
+		"licence": "CC0-1.0. Photograph by Joey Pilgrim (@joeypilgrim on Unsplash), from Wikimedia Commons.",
+		"author": "Joey Pilgrim (@joeypilgrim on Unsplash)"
 	},
 	{
 		"uid": "customer-3",
-		"file": "customer-3.jpg",
-		"alt": "Fable & Co",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"file": "customer-3.webp",
+		"alt": "A wall of wooden shelves filled with books",
+		"licence": "CC0-1.0. Photograph by kazuend (@kazuend on Unsplash), from Wikimedia Commons.",
+		"author": "kazuend (@kazuend on Unsplash)"
 	},
 	{
 		"uid": "team",
-		"file": "team.jpg",
-		"alt": "Four members of the Loop team",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"file": "team.webp",
+		"alt": "The long table in the Loop studio, with laptops and headphones",
+		"licence": "CC0-1.0. Photograph by Crew (@crew on Unsplash), from Wikimedia Commons.",
+		"author": "Crew (@crew on Unsplash)"
 	},
 	{
 		"uid": "blog-1",
-		"file": "blog-1.jpg",
+		"file": "blog-1.webp",
 		"alt": "Cover of the article “Counting requests is not prioritising”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"licence": "CC0-1.0. Photograph by JESHOOTS.COM (@jeshoots on Unsplash), from Wikimedia Commons.",
+		"author": "JESHOOTS.COM (@jeshoots on Unsplash)"
 	},
 	{
 		"uid": "blog-2",
-		"file": "blog-2.jpg",
+		"file": "blog-2.webp",
 		"alt": "Cover of the article “What we learned reading ninety days of our own support inbox”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Alejandro Escamilla (@alejandroescamilla on Unsplash), from Wikimedia Commons.",
+		"author": "Alejandro Escamilla (@alejandroescamilla on Unsplash)"
 	},
 	{
 		"uid": "blog-3",
-		"file": "blog-3.jpg",
+		"file": "blog-3.webp",
 		"alt": "Cover of the article “Closing the loop: telling customers what happened to their idea”",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs)."
+		"licence": "CC0-1.0. Photograph by NordWood Themes (@nordwood on Unsplash), from Wikimedia Commons.",
+		"author": "NordWood Themes (@nordwood on Unsplash)"
 	}
 ]

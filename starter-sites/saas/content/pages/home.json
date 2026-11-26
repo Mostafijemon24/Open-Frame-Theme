@@ -1749,7 +1749,7 @@
 				]
 			},
 			{
-				"id": "0000052",
+				"id": "0000053",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -1797,7 +1797,7 @@
 				},
 				"elements": [
 					{
-						"id": "000003f",
+						"id": "0000040",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -1887,11 +1887,28 @@
 									"align": "center"
 								},
 								"elements": []
+							},
+							{
+								"id": "000003f",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Three sample quotes: replace them with what your own customers say.</p>",
+									"text_color": "#B6BCCB",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
 							}
 						]
 					},
 					{
-						"id": "000004f",
+						"id": "0000050",
 						"elType": "container",
 						"settings": {
 							"container_type": "grid",
@@ -1934,7 +1951,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000044",
+								"id": "0000045",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -1975,7 +1992,7 @@
 								},
 								"elements": [
 									{
-										"id": "0000040",
+										"id": "0000041",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -1999,7 +2016,7 @@
 										"elements": []
 									},
 									{
-										"id": "0000043",
+										"id": "0000044",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -2022,7 +2039,7 @@
 										},
 										"elements": [
 											{
-												"id": "0000041",
+												"id": "0000042",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2046,7 +2063,7 @@
 												"elements": []
 											},
 											{
-												"id": "0000042",
+												"id": "0000043",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2074,7 +2091,7 @@
 								]
 							},
 							{
-								"id": "0000049",
+								"id": "000004a",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -2115,7 +2132,7 @@
 								},
 								"elements": [
 									{
-										"id": "0000045",
+										"id": "0000046",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -2139,7 +2156,7 @@
 										"elements": []
 									},
 									{
-										"id": "0000048",
+										"id": "0000049",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -2162,7 +2179,7 @@
 										},
 										"elements": [
 											{
-												"id": "0000046",
+												"id": "0000047",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2186,7 +2203,7 @@
 												"elements": []
 											},
 											{
-												"id": "0000047",
+												"id": "0000048",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2214,7 +2231,7 @@
 								]
 							},
 							{
-								"id": "000004e",
+								"id": "000004f",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -2255,7 +2272,7 @@
 								},
 								"elements": [
 									{
-										"id": "000004a",
+										"id": "000004b",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -2279,7 +2296,7 @@
 										"elements": []
 									},
 									{
-										"id": "000004d",
+										"id": "000004e",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -2302,7 +2319,7 @@
 										},
 										"elements": [
 											{
-												"id": "000004b",
+												"id": "000004c",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2326,7 +2343,7 @@
 												"elements": []
 											},
 											{
-												"id": "000004c",
+												"id": "000004d",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -2356,7 +2373,7 @@
 						]
 					},
 					{
-						"id": "0000051",
+						"id": "0000052",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -2380,7 +2397,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000050",
+								"id": "0000051",
 								"elType": "widget",
 								"widgetType": "button",
 								"settings": {
@@ -2415,7 +2432,7 @@
 				]
 			},
 			{
-				"id": "0000057",
+				"id": "0000058",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -2461,7 +2478,7 @@
 				},
 				"elements": [
 					{
-						"id": "0000055",
+						"id": "0000056",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -2496,7 +2513,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000053",
+								"id": "0000054",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -2541,7 +2558,7 @@
 								"elements": []
 							},
 							{
-								"id": "0000054",
+								"id": "0000055",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -2557,7 +2574,7 @@
 						]
 					},
 					{
-						"id": "0000056",
+						"id": "0000057",
 						"elType": "widget",
 						"widgetType": "posts",
 						"settings": {
@@ -2605,7 +2622,7 @@
 				]
 			},
 			{
-				"id": "000005e",
+				"id": "000005f",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -2651,7 +2668,7 @@
 				},
 				"elements": [
 					{
-						"id": "000005d",
+						"id": "000005e",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -2699,7 +2716,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000058",
+								"id": "0000059",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -2711,7 +2728,7 @@
 								"elements": []
 							},
 							{
-								"id": "0000059",
+								"id": "000005a",
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
@@ -2739,7 +2756,7 @@
 								"elements": []
 							},
 							{
-								"id": "000005c",
+								"id": "000005d",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -2776,7 +2793,7 @@
 								},
 								"elements": [
 									{
-										"id": "000005a",
+										"id": "000005b",
 										"elType": "widget",
 										"widgetType": "button",
 										"settings": {
@@ -2794,7 +2811,7 @@
 										"elements": []
 									},
 									{
-										"id": "000005b",
+										"id": "000005c",
 										"elType": "widget",
 										"widgetType": "button",
 										"settings": {

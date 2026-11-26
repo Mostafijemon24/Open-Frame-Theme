@@ -14,7 +14,7 @@
 		"page_settings": {},
 		"content": [
 			{
-				"id": "00001ed",
+				"id": "00001ee",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -62,7 +62,7 @@
 				},
 				"elements": [
 					{
-						"id": "00001ea",
+						"id": "00001eb",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -97,7 +97,7 @@
 						},
 						"elements": [
 							{
-								"id": "00001d6",
+								"id": "00001d7",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -135,7 +135,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001d4",
+										"id": "00001d5",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -153,7 +153,7 @@
 										"elements": []
 									},
 									{
-										"id": "00001d5",
+										"id": "00001d6",
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
@@ -165,7 +165,7 @@
 								]
 							},
 							{
-								"id": "00001dd",
+								"id": "00001de",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -203,7 +203,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001d7",
+										"id": "00001d8",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -227,13 +227,13 @@
 										"elements": []
 									},
 									{
-										"id": "00001dc",
+										"id": "00001dd",
 										"elType": "widget",
 										"widgetType": "icon-list",
 										"settings": {
 											"icon_list": [
 												{
-													"_id": "00001d8",
+													"_id": "00001d9",
 													"text": "Features",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -247,7 +247,7 @@
 													}
 												},
 												{
-													"_id": "00001d9",
+													"_id": "00001da",
 													"text": "Pricing",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -261,7 +261,7 @@
 													}
 												},
 												{
-													"_id": "00001da",
+													"_id": "00001db",
 													"text": "Integrations",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -275,7 +275,7 @@
 													}
 												},
 												{
-													"_id": "00001db",
+													"_id": "00001dc",
 													"text": "Customers",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -313,7 +313,7 @@
 								]
 							},
 							{
-								"id": "00001e3",
+								"id": "00001e4",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -351,7 +351,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001de",
+										"id": "00001df",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -375,13 +375,13 @@
 										"elements": []
 									},
 									{
-										"id": "00001e2",
+										"id": "00001e3",
 										"elType": "widget",
 										"widgetType": "icon-list",
 										"settings": {
 											"icon_list": [
 												{
-													"_id": "00001df",
+													"_id": "00001e0",
 													"text": "About",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -395,7 +395,7 @@
 													}
 												},
 												{
-													"_id": "00001e0",
+													"_id": "00001e1",
 													"text": "Blog",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -409,7 +409,7 @@
 													}
 												},
 												{
-													"_id": "00001e1",
+													"_id": "00001e2",
 													"text": "Book a demo",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -447,7 +447,7 @@
 								]
 							},
 							{
-								"id": "00001e9",
+								"id": "00001ea",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -485,7 +485,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001e4",
+										"id": "00001e5",
 										"elType": "widget",
 										"widgetType": "heading",
 										"settings": {
@@ -509,13 +509,13 @@
 										"elements": []
 									},
 									{
-										"id": "00001e8",
+										"id": "00001e9",
 										"elType": "widget",
 										"widgetType": "icon-list",
 										"settings": {
 											"icon_list": [
 												{
-													"_id": "00001e5",
+													"_id": "00001e6",
 													"text": "Privacy",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -529,7 +529,7 @@
 													}
 												},
 												{
-													"_id": "00001e6",
+													"_id": "00001e7",
 													"text": "Terms",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -543,7 +543,7 @@
 													}
 												},
 												{
-													"_id": "00001e7",
+													"_id": "00001e8",
 													"text": "hello@example.com",
 													"selected_icon": {
 														"value": "fas fa-check",
@@ -583,7 +583,7 @@
 						]
 					},
 					{
-						"id": "00001ec",
+						"id": "00001ed",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -609,11 +609,11 @@
 						},
 						"elements": [
 							{
-								"id": "00001eb",
+								"id": "00001ec",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "© Loop. A fictional product, made for the Open Frame SaaS starter site.",
+									"title": "Sample content: Loop is a fictional product made for the Open Frame SaaS starter site. The customers, figures and quotes are examples to replace with your own.",
 									"header_size": "p",
 									"title_color": "#B6BCCB",
 									"typography_typography": "custom",

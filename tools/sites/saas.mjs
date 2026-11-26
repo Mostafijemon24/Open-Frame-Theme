@@ -12,7 +12,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, menu, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'saas';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -210,7 +210,7 @@ pages.home = {
 		] ),
 
 		section( { background: C.ink, spacing: 56 }, [
-			intro( 'Customers', 'Teams that stopped guessing', null, { dark: true } ),
+			intro( 'Customers', 'Teams that stopped guessing', 'Three sample quotes: replace them with what your own customers say.', { dark: true } ),
 			grid( { columns: 3, spacing: 24 }, [
 				[ '“We cancelled the quarterly feedback review. Loop is the review, and it is finished every morning.”', 'Maya Lindström', 'Head of product, Northpost' ],
 				[ '“It found a billing problem that forty customers had described in forty different ways.”', 'Rafael Ortiz', 'Support lead, Driftline' ],
@@ -368,7 +368,7 @@ pages.customers = {
 		pageHero( 'Customers', 'What changed when teams started reading everything', 'Three companies, three different problems, one habit.' ),
 		section( { top: 0, bottom: 112, spacing: 72 }, [
 			...[
-				[ 'customer-1', 'Northpost', 'Logistics software, 140 people', 'Found the feature behind a third of all churn', 'Northpost lost customers in their fourth month and did not know why. Loop grouped ninety days of cancellations and found that most mentioned the same missing report.', [ [ '31%', 'less churn in two quarters' ], [ '6 weeks', 'from finding to shipping' ] ], false ],
+				[ 'customer-1', 'Northpost', 'Shipping tools for online shops, 140 people', 'Found the feature behind a third of all churn', 'Northpost lost customers in their fourth month and did not know why. Loop grouped ninety days of cancellations and found that most mentioned the same missing report.', [ [ '31%', 'less churn in two quarters' ], [ '6 weeks', 'from finding to shipping' ] ], false ],
 				[ 'customer-2', 'Driftline', 'Booking tool for surf schools, 12 people', 'A billing bug described in forty ways', 'Nobody wrote "billing bug". They wrote about a strange charge, a wrong date, an angry parent. Loop put the forty messages next to each other.', [ [ '40', 'tickets, one cause' ], [ '1 day', 'to find it' ] ], true ],
 				[ 'customer-3', 'Fable & Co', 'Publishing platform, 60 people', 'A roadmap the whole company could read', 'Every item on the roadmap now shows who asked for it. Sales stopped promising dates, because they can see the queue.', [ [ '3×', 'more replies to "it shipped" emails' ], [ '0', 'roadmap meetings longer than an hour' ] ], false ],
 			].map( ( [ uid, name, kind, title, body, figures, flip ] ) => {
@@ -534,7 +534,7 @@ const templates = {
 					footLinks( 'Company', [ [ 'About', page( 'about' ) ], [ 'Blog', page( 'blog' ) ], [ 'Book a demo', page( 'contact' ) ] ] ),
 					footLinks( 'Legal', [ [ 'Privacy', page( 'privacy' ) ], [ 'Terms', page( 'terms' ) ], [ EMAIL, `mailto:${ EMAIL }` ] ] ),
 				] ),
-				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#262D42' }, [ fact( '© Loop. A fictional product, made for the Open Frame SaaS starter site.', { color: C.haze, size: 14, weight: 400 } ) ] ),
+				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#262D42' }, [ fact( 'Sample content: Loop is a fictional product made for the Open Frame SaaS starter site. The customers, figures and quotes are examples to replace with your own.', { color: C.haze, size: 14, weight: 400 } ) ] ),
 			] ),
 		],
 	},
@@ -658,6 +658,7 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
+// The screens of the product are drawn (tools/sites/saas-art.mjs); everything else is a photograph.
 const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/saas-art.mjs).';
 const mediaIndex = [
 	{ uid: 'app-dashboard', file: 'app-dashboard.jpg', alt: 'The Loop dashboard: this week\'s feedback, a chart and the top themes' },
@@ -665,13 +666,12 @@ const mediaIndex = [
 	{ uid: 'app-trends', file: 'app-trends.jpg', alt: 'The Trends screen: a rising chart and five themes as circles' },
 	{ uid: 'app-roadmap', file: 'app-roadmap.jpg', alt: 'The Roadmap screen: three columns of cards with request counts' },
 	{ uid: 'integrations', file: 'integrations.jpg', alt: 'Six integration tiles: Mailbox, Chatly, Desk, Sheets, Tracker and Stores' },
-	{ uid: 'customer-1', file: 'customer-1.jpg', alt: 'Northpost' },
-	{ uid: 'customer-2', file: 'customer-2.jpg', alt: 'Driftline' },
-	{ uid: 'customer-3', file: 'customer-3.jpg', alt: 'Fable & Co' },
-	{ uid: 'team', file: 'team.jpg', alt: 'Four members of the Loop team' },
-	// Elementor Pro links these pictures to their articles, so each needs a name.
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: `Cover of the article “${ post.title }”` } ) ),
-].map( ( entry ) => ( { ...entry, licence } ) );
+].map( ( entry ) => ( { ...entry, licence } ) ).concat( photoIndex( OUT, {
+	// The photographs (photos.json, written by tools/sites/photos.mjs). Elementor Pro links
+	// the covers to their articles, so each is named after its article.
+	team: 'The long table in the Loop studio, with laptops and headphones',
+	...Object.fromEntries( posts.map( ( post ) => [ post.image, `Cover of the article “${ post.title }”` ] ) ),
+} ) );
 
 const fonts = [
 	{ family: DISPLAY, weight: '100 800', style: 'normal', file: 'sora-latin.woff2', licence: 'OFL-1.1. Copyright 2019 The Sora Project Authors.' },

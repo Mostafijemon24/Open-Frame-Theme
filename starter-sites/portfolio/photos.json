@@ -341,26 +341,26 @@
 		"uid": "note-2",
 		"file": "note-2.webp",
 		"section": "Article cover: Design the system first, the pages second",
-		"subject": "A hand in a knitted sleeve drawing page layouts on paper with a pen, a mug behind",
-		"alt": "A hand drawing page layouts on paper with a pen, a mug on the table behind",
+		"subject": "A hand drawing small sketches in a notebook on a wooden desk, a camera and a laptop beside it",
+		"alt": "A hand drawing small sketches in a notebook on a wooden desk",
 		"source": "Wikimedia Commons",
-		"source_url": "https://commons.wikimedia.org/wiki/File:Designer_sketching_Wireframes_(Unsplash).jpg",
-		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Designer_sketching_Wireframes_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-		"author": "Green Chameleon (@craftedbygc on Unsplash)",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Rough_Draft_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Rough_Draft_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brad Neathery (@bradneathery on Unsplash)",
 		"licence": "CC0",
 		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
 		"restrictions": "",
 		"original_size": [
-			5184,
-			3456
+			3953,
+			2641
 		],
 		"width": 1600,
 		"height": 900,
 		"focal": [
-			50,
-			50
+			40,
+			55
 		],
-		"bytes": 70786,
+		"bytes": 144460,
 		"checked": "2026-11-26"
 	},
 	{

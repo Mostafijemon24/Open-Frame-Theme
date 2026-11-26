@@ -44,9 +44,9 @@ In Elementor's Site Settings: Primary and Secondary are ink, Text is body, Accen
 - Every page closes with the gradient band: one sentence, two buttons.
 - Legal pages have a list of their sections beside the text, linking to each heading.
 
-## Images
+## Pictures
 
-Twelve original pictures drawn by `tools/sites/saas-art.mjs`: four screens of the invented app, six integration tiles, three customer covers, a team and three blog covers. CC0, about 500 KB together. A real product replaces the screens with its own; they are ordinary images, so a screenshot of the same proportions drops in.
+Two kinds, on purpose. The **screens of the product** (dashboard, inbox, trends, roadmap, integration tiles) are drawn by `tools/sites/saas-art.mjs`: the product is invented, so only a drawing can show it. **Everything else is a photograph** from Wikimedia Commons, recorded there as CC0 and listed in `CREDITS.md`: the three customers are pictured by their own world (a parcel being packed, surfboards on a beach rack, a wall of books), the About page shows the studio's long table, and the three articles have desks and notebooks as covers.
 
 ## On a phone
 

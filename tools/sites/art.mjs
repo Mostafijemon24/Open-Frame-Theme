@@ -32,7 +32,7 @@ export const frame = ( width, height, background, body, css = '' ) => `<!doctype
 /**
  * Render images to a folder.
  *
- * @param {string} out    Folder; it is emptied first.
+ * @param {string} out    Folder.
  * @param {Object} images name => [ width, height, html, quality? ].
  * @param {Object} [options]
  * @param {number} [options.quality] JPEG quality.
@@ -40,7 +40,7 @@ export const frame = ( width, height, background, body, css = '' ) => `<!doctype
  */
 export async function render( out, images, { quality = 84 } = {} ) {
 	const { chromium } = createRequire( import.meta.url )( 'playwright' );
-	fs.rmSync( out, { recursive: true, force: true } );
+	// The folder may also hold photographs, so nothing in it is removed.
 	fs.mkdirSync( out, { recursive: true } );
 
 	const browser = await chromium.launch();

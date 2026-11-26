@@ -15,7 +15,7 @@
 		"page_settings": {},
 		"content": [
 			{
-				"id": "000020c",
+				"id": "000020d",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -61,7 +61,7 @@
 				},
 				"elements": [
 					{
-						"id": "000020b",
+						"id": "000020c",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -101,7 +101,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000209",
+								"id": "000020a",
 								"elType": "widget",
 								"widgetType": "post-info",
 								"settings": {
@@ -138,7 +138,7 @@
 								"elements": []
 							},
 							{
-								"id": "000020a",
+								"id": "000020b",
 								"elType": "widget",
 								"widgetType": "theme-post-title",
 								"settings": {
@@ -161,7 +161,7 @@
 				]
 			},
 			{
-				"id": "000020e",
+				"id": "000020f",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -207,7 +207,7 @@
 				},
 				"elements": [
 					{
-						"id": "000020d",
+						"id": "000020e",
 						"elType": "widget",
 						"widgetType": "theme-post-featured-image",
 						"settings": {
@@ -229,7 +229,7 @@
 				]
 			},
 			{
-				"id": "0000213",
+				"id": "0000214",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -275,7 +275,7 @@
 				},
 				"elements": [
 					{
-						"id": "0000210",
+						"id": "0000211",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -314,7 +314,7 @@
 						},
 						"elements": [
 							{
-								"id": "000020f",
+								"id": "0000210",
 								"elType": "widget",
 								"widgetType": "theme-post-content",
 								"settings": {
@@ -325,7 +325,7 @@
 						]
 					},
 					{
-						"id": "0000212",
+						"id": "0000213",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -374,7 +374,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000211",
+								"id": "0000212",
 								"elType": "widget",
 								"widgetType": "post-navigation",
 								"settings": {
@@ -394,7 +394,7 @@
 				]
 			},
 			{
-				"id": "000021a",
+				"id": "000021b",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -440,7 +440,7 @@
 				},
 				"elements": [
 					{
-						"id": "0000219",
+						"id": "000021a",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -488,7 +488,7 @@
 						},
 						"elements": [
 							{
-								"id": "0000214",
+								"id": "0000215",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -500,7 +500,7 @@
 								"elements": []
 							},
 							{
-								"id": "0000215",
+								"id": "0000216",
 								"elType": "widget",
 								"widgetType": "text-editor",
 								"settings": {
@@ -528,7 +528,7 @@
 								"elements": []
 							},
 							{
-								"id": "0000218",
+								"id": "0000219",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -565,7 +565,7 @@
 								},
 								"elements": [
 									{
-										"id": "0000216",
+										"id": "0000217",
 										"elType": "widget",
 										"widgetType": "button",
 										"settings": {
@@ -583,7 +583,7 @@
 										"elements": []
 									},
 									{
-										"id": "0000217",
+										"id": "0000218",
 										"elType": "widget",
 										"widgetType": "button",
 										"settings": {

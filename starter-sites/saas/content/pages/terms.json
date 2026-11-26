@@ -11,7 +11,7 @@
 		},
 		"content": [
 			{
-				"id": "00001af",
+				"id": "00001b0",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -57,7 +57,7 @@
 				},
 				"elements": [
 					{
-						"id": "00001ae",
+						"id": "00001af",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -91,7 +91,7 @@
 						},
 						"elements": [
 							{
-								"id": "00001ab",
+								"id": "00001ac",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -135,7 +135,7 @@
 								"elements": []
 							},
 							{
-								"id": "00001ac",
+								"id": "00001ad",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -148,7 +148,7 @@
 								"elements": []
 							},
 							{
-								"id": "00001ad",
+								"id": "00001ae",
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
@@ -176,7 +176,7 @@
 				]
 			},
 			{
-				"id": "00001ce",
+				"id": "00001cf",
 				"elType": "container",
 				"settings": {
 					"content_width": "boxed",
@@ -222,7 +222,7 @@
 				},
 				"elements": [
 					{
-						"id": "00001cd",
+						"id": "00001ce",
 						"elType": "container",
 						"settings": {
 							"content_width": "full",
@@ -256,7 +256,7 @@
 						},
 						"elements": [
 							{
-								"id": "00001b9",
+								"id": "00001ba",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -294,7 +294,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001b8",
+										"id": "00001b9",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -335,7 +335,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001b0",
+												"id": "00001b1",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -359,13 +359,13 @@
 												"elements": []
 											},
 											{
-												"id": "00001b7",
+												"id": "00001b8",
 												"elType": "widget",
 												"widgetType": "icon-list",
 												"settings": {
 													"icon_list": [
 														{
-															"_id": "00001b1",
+															"_id": "00001b2",
 															"text": "The service",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -379,7 +379,7 @@
 															}
 														},
 														{
-															"_id": "00001b2",
+															"_id": "00001b3",
 															"text": "Your account",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -393,7 +393,7 @@
 															}
 														},
 														{
-															"_id": "00001b3",
+															"_id": "00001b4",
 															"text": "Paying",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -407,7 +407,7 @@
 															}
 														},
 														{
-															"_id": "00001b4",
+															"_id": "00001b5",
 															"text": "Your content",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -421,7 +421,7 @@
 															}
 														},
 														{
-															"_id": "00001b5",
+															"_id": "00001b6",
 															"text": "Ending",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -435,7 +435,7 @@
 															}
 														},
 														{
-															"_id": "00001b6",
+															"_id": "00001b7",
 															"text": "Changes",
 															"selected_icon": {
 																"value": "fas fa-check",
@@ -475,7 +475,7 @@
 								]
 							},
 							{
-								"id": "00001cc",
+								"id": "00001cd",
 								"elType": "container",
 								"settings": {
 									"content_width": "full",
@@ -513,7 +513,7 @@
 								},
 								"elements": [
 									{
-										"id": "00001bc",
+										"id": "00001bd",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -536,7 +536,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001ba",
+												"id": "00001bb",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -556,7 +556,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001bb",
+												"id": "00001bc",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
@@ -567,7 +567,7 @@
 										]
 									},
 									{
-										"id": "00001bf",
+										"id": "00001c0",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -590,7 +590,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001bd",
+												"id": "00001be",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -610,7 +610,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001be",
+												"id": "00001bf",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
@@ -621,7 +621,7 @@
 										]
 									},
 									{
-										"id": "00001c2",
+										"id": "00001c3",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -644,7 +644,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001c0",
+												"id": "00001c1",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -664,7 +664,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001c1",
+												"id": "00001c2",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
@@ -675,7 +675,7 @@
 										]
 									},
 									{
-										"id": "00001c5",
+										"id": "00001c6",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -698,7 +698,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001c3",
+												"id": "00001c4",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -718,7 +718,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001c4",
+												"id": "00001c5",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
@@ -729,7 +729,7 @@
 										]
 									},
 									{
-										"id": "00001c8",
+										"id": "00001c9",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -752,7 +752,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001c6",
+												"id": "00001c7",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -772,7 +772,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001c7",
+												"id": "00001c8",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
@@ -783,7 +783,7 @@
 										]
 									},
 									{
-										"id": "00001cb",
+										"id": "00001cc",
 										"elType": "container",
 										"settings": {
 											"content_width": "full",
@@ -806,7 +806,7 @@
 										},
 										"elements": [
 											{
-												"id": "00001c9",
+												"id": "00001ca",
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
@@ -826,7 +826,7 @@
 												"elements": []
 											},
 											{
-												"id": "00001ca",
+												"id": "00001cb",
 												"elType": "widget",
 												"widgetType": "text-editor",
 												"settings": {
