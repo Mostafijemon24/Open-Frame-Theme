@@ -56,7 +56,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 - PHPCS: theme 42 files and plugin 15 files, 0 errors, 0 warnings.
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
-- Plugin PHP checks: 99 of 99 pass.
+- Plugin PHP checks: all pass (99 with Elementor Pro in the test site, 100 on a fresh site without it).
 - Browser checks: 36 of 36 pass (18 theme integrations including Elementor Pro, 18 Starter Sites screen including a real plugin installation from WordPress.org and an axe-core accessibility scan).
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 

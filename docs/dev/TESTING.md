@@ -23,7 +23,7 @@ WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (no licence act
 
 ## PHP checks
 
-`tests/php/starter-sites.php`, **99 checks, 99 passed.** HTTP is replaced with canned answers.
+`tests/php/starter-sites.php`, **all checks passed**: 99 on the site with Elementor Pro installed, 100 on a fresh site without it (a few checks depend on whether Elementor Pro is present). HTTP is replaced with canned answers.
 
 | Area | What is asserted |
 | --- | --- |

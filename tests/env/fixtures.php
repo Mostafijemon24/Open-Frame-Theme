@@ -10,7 +10,7 @@
 switch_theme( 'open-frame' );
 update_option( 'permalink_structure', '/%postname%/' );
 
-foreach ( array( 'elementor/elementor.php', 'woocommerce/woocommerce.php' ) as $open_frame_plugin ) {
+foreach ( array( 'elementor/elementor.php', 'woocommerce/woocommerce.php', 'open-frame-starter-sites/open-frame-starter-sites.php' ) as $open_frame_plugin ) {
 	if ( ! is_plugin_active( $open_frame_plugin ) ) {
 		$open_frame_result = activate_plugin( $open_frame_plugin );
 		if ( is_wp_error( $open_frame_result ) ) {
