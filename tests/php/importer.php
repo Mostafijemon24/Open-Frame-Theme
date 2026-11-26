@@ -394,6 +394,19 @@ if ( ! $elementor->has_theme_builder() ) {
 }
 
 /* ---------------------------------------------------------------------- */
+ofss_section( 'References to categories' );
+
+$ofss_term     = wp_insert_term( 'Ofss Places', 'category' );
+$ofss_resolver = new \OpenFrame\StarterSites\Import\TokenResolver( array(), array() );
+$ofss_resolved = $ofss_resolver->resolve( array( 'ids' => array( 'ofss://term/ofss-places' ), 'link' => 'ofss://category/ofss-places', 'gone' => 'ofss://term/ofss-nowhere' ) );
+ofss_check( 'a category reference in a list of posts becomes its number', ! is_wp_error( $ofss_term ) && array( (string) $ofss_term['term_taxonomy_id'] ) === $ofss_resolved['ids'] );
+ofss_check( 'a category link becomes the address of its archive', ! is_wp_error( $ofss_term ) && get_term_link( (int) $ofss_term['term_id'], 'category' ) === $ofss_resolved['link'] );
+ofss_check( 'a category that does not exist is reported', '' === $ofss_resolved['gone'] && array( 'ofss://term/ofss-nowhere' ) === $ofss_resolver->unresolved );
+if ( ! is_wp_error( $ofss_term ) ) {
+	wp_delete_term( (int) $ofss_term['term_id'], 'category' );
+}
+
+/* ---------------------------------------------------------------------- */
 ofss_section( 'Products of a store (needs WooCommerce active in the test site)' );
 
 if ( ! function_exists( 'wc_get_product' ) ) {

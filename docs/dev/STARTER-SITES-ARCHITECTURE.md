@@ -495,7 +495,7 @@ Rules enforced by `tools/validate-package.mjs` at build time and again by the pl
 | Rule | Detail |
 | --- | --- |
 | File types | ZIP entries: `.json`, `.md` only. Media: `jpg`, `png`, `webp`, `avif`, `gif`. Fonts: `woff2`. No PHP, JavaScript, HTML or SVG. |
-| References | No numeric WordPress IDs and no authoring URLs. Images are `ofss://media/{uid}`, links are `ofss://page/{uid}`, products `ofss://product/{uid}`, menus `ofss://menu/{uid}`, terms `ofss://term/{uid}`, and the pages WooCommerce owns are `ofss://store/shop`, `/cart`, `/checkout` and `/account`. The importer resolves them to local IDs and URLs; an unresolved token fails validation. |
+| References | No numeric WordPress IDs and no authoring URLs. Images are `ofss://media/{uid}`, links are `ofss://page/{uid}`, products `ofss://product/{uid}`, menus `ofss://menu/{uid}`, a category of the design's posts `ofss://term/{slug}` (its number, for widgets that list posts) or `ofss://category/{slug}` (the address of its archive), and the pages WooCommerce owns are `ofss://store/shop`, `/cart`, `/checkout` and `/account`. The importer resolves them to local IDs and URLs; an unresolved token fails validation. |
 | External URLs | Only hosts on an allow-list (for example map embeds and social profile placeholders). Everything else is rejected. |
 | Elementor content | Every widget type must be listed in `requires.elementor.widgets`. HTML widgets containing `<script>`, event-handler attributes or `javascript:` URLs are rejected. |
 | Settings | `theme-mods.json` and `options.json` may contain only allow-listed keys. `siteurl`, `home`, `admin_email`, user data, roles and active plugins can never be set by a package. |

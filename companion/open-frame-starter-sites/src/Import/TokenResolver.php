@@ -91,7 +91,7 @@ class TokenResolver {
 		}
 
 		return preg_replace_callback(
-			'#ofss://(media|page|post|site-part|product|menu|store)/([a-z0-9-]+)#',
+			'#ofss://(media|page|post|site-part|product|menu|store|term|category)/([a-z0-9-]+)#',
 			function ( $found ) {
 				$url = $this->url( $found[1], $found[2] );
 				if ( '' === $url ) {
@@ -131,6 +131,18 @@ class TokenResolver {
 
 		if ( 'menu' === $kind ) {
 			return (string) ( $this->menus[ $name ] ?? '' );
+		}
+
+		if ( 'term' === $kind || 'category' === $kind ) {
+			// A category the posts of the design were filed under. Widgets that list posts ask for
+			// its number ("term"); a link wants the address of its archive ("category").
+			$term = get_term_by( 'slug', $name, 'category' );
+			if ( ! $term ) {
+				return '';
+			}
+			$link = 'category' === $kind ? get_term_link( $term ) : (string) $term->term_taxonomy_id;
+
+			return is_string( $link ) ? $link : '';
 		}
 
 		if ( 'store' === $kind ) {

@@ -339,6 +339,7 @@ test( 'catalog entries that break the rules are not built', async ( t ) => {
 		'a product in a design that does not require WooCommerce': [ ( src ) => product( src, () => {} ), /a design with products must require WooCommerce/ ],
 		'a product without a usable price': [ ( src ) => product( src, ( data ) => void ( data.price = 'cheap' ), true ), /a product needs a title and a price/ ],
 		'a product without a picture': [ ( src ) => product( src, ( data ) => void delete data.image, true ), /a product needs a picture/ ],
+		'a reference to a category no post is filed under': [ ( src ) => edit( src, 'reference/site/menus.json', ( data ) => void data[ 0 ].items.push( { title: 'Places', url: 'ofss://category/places' } ) ), /ofss:\/\/category\/places does not exist in this package/ ],
 		'a link to the shop in a design without a store': [ ( src ) => edit( src, 'reference/site/menus.json', ( data ) => void data[ 0 ].items.push( { title: 'Shop', url: 'ofss://store/shop' } ) ), /ofss:\/\/store\/shop does not exist in this package/ ],
 		'a link to a store page that does not exist': [ ( src ) => { product( src, () => {}, true ); edit( src, 'reference/site/menus.json', ( data ) => void data[ 0 ].items.push( { title: 'Wishlist', url: 'ofss://store/wishlist' } ) ); }, /ofss:\/\/store\/wishlist does not exist in this package/ ],
 	};

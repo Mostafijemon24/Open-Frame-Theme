@@ -174,6 +174,7 @@ Each is built with the first design that needs it, rather than against invented 
 - **Products in a package:** `content/products/<name>.json` becomes a simple WooCommerce product with its name, address, short and long description, price, sale price, picture, gallery, categories and "featured" mark. A design with products must require WooCommerce, which the Starter Sites screen installs from WordPress.org like Elementor.
 - **Links into the store:** `ofss://store/shop`, `/cart`, `/checkout` and `/account` become the addresses of WooCommerce's own pages; `ofss://product/<name>` the address of a product.
 - **Rollback** removes the products and the product categories the import created.
+- **Categories:** `ofss://term/<slug>` becomes the number of a category of the design's posts (for widgets that list posts of one category) and `ofss://category/<slug>` the address of its archive. Needed by the Magazine design.
 - **Tests:** a "Reference Shop" fixture; twelve importer checks that run when WooCommerce is active in the test site (CI runs the importer checks a second time with it); six new library tool checks.
 - **Not built:** variable products, attributes, stock, tax and shipping settings, and Elementor Pro's shop templates. The store pages are WooCommerce's, styled by the theme.
 

@@ -401,6 +401,8 @@ export function collectPackage( site ) {
 
 	// Nothing in a package may point at the place it was authored, run script, or reference something that is not there.
 	const mediaUids = new Set( media.map( ( item ) => item.uid ) );
+	// The categories its posts are filed under, as WordPress will name their addresses.
+	const categories = new Set( Object.entries( documents ).filter( ( [ name ] ) => name.startsWith( 'content/posts/' ) ).flatMap( ( [ , document ] ) => document.categories || [] ).map( ( category ) => String( category ).toLowerCase().replace( /[^a-z0-9]+/g, '-' ).replace( /^-|-$/g, '' ) ) );
 	for ( const [ name, document ] of Object.entries( documents ) ) {
 		eachString( document, ( value, trail ) => {
 			if ( /<script|javascript:|\son[a-z]+\s*=/i.test( value ) ) {
@@ -415,8 +417,8 @@ export function collectPackage( site ) {
 					problems.push( `${ name } (${ trail }): link to "${ host || url }" is not allowed; use ofss:// references` );
 				}
 			}
-			for ( const [ , kind, uid ] of value.matchAll( /ofss:\/\/(media|page|post|site-part|product|menu|term|store)\/([a-z0-9-]+)/g ) ) {
-				const known = kind === 'media' ? mediaUids.has( uid ) : kind === 'store' ? hasStore && STORE_PAGES.includes( uid ) : kind === 'menu' || kind === 'term' ? true : uids.has( { page: 'pages', post: 'posts', 'site-part': 'site-parts', product: 'products' }[ kind ] + '/' + uid );
+			for ( const [ , kind, uid ] of value.matchAll( /ofss:\/\/(media|page|post|site-part|product|menu|term|category|store)\/([a-z0-9-]+)/g ) ) {
+				const known = kind === 'media' ? mediaUids.has( uid ) : kind === 'store' ? hasStore && STORE_PAGES.includes( uid ) : kind === 'term' || kind === 'category' ? categories.has( uid ) : kind === 'menu' ? true : uids.has( { page: 'pages', post: 'posts', 'site-part': 'site-parts', product: 'products' }[ kind ] + '/' + uid );
 				if ( ! known ) {
 					problems.push( `${ name } (${ trail }): ofss://${ kind }/${ uid } does not exist in this package` );
 				}
