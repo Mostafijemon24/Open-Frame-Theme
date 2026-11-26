@@ -1,0 +1,724 @@
+{
+	"uid": "real-estate:pages:contact",
+	"title": "Contact",
+	"slug": "contact",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000223",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#1F3A2E"
+				},
+				"elements": [
+					{
+						"id": "0000222",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 70,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000021f",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Contact",
+									"header_size": "p",
+									"title_color": "#DDB96A",
+									"typography_typography": "custom",
+									"typography_font_family": "Manrope",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									},
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000220",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Call, write, or come in",
+									"header_size": "h1",
+									"title_color": "#F7F3EA"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000221",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>The office is on Mercer Row, opposite the bakery. There is always a partner in on Saturdays.</p>",
+									"text_color": "#C9D4CC",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000233",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000232",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 72,
+								"column": "72",
+								"row": "72",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000226",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 54,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000224",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Book a valuation, or ask us anything",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000225",
+										"elType": "widget",
+										"widgetType": "form",
+										"settings": {
+											"form_name": "Contact",
+											"form_fields": [
+												{
+													"_id": "name",
+													"custom_id": "name",
+													"field_type": "text",
+													"field_label": "Your name",
+													"placeholder": "",
+													"required": "true",
+													"width": "100"
+												},
+												{
+													"_id": "email",
+													"custom_id": "email",
+													"field_type": "email",
+													"field_label": "Email",
+													"placeholder": "",
+													"required": "true",
+													"width": "50"
+												},
+												{
+													"_id": "phone",
+													"custom_id": "phone",
+													"field_type": "tel",
+													"field_label": "Telephone",
+													"placeholder": "",
+													"width": "50"
+												},
+												{
+													"_id": "message",
+													"custom_id": "message",
+													"field_type": "textarea",
+													"field_label": "How can we help?",
+													"placeholder": "",
+													"width": "100",
+													"rows": 4
+												}
+											],
+											"show_labels": "true",
+											"mark_required": "yes",
+											"button_text": "Send",
+											"button_width": "100",
+											"submit_actions": [
+												"email"
+											],
+											"email_subject": "Enquiry from the website",
+											"success_message": "Thank you. One of the partners will be in touch within one working day.",
+											"label_color": "#16211B",
+											"field_text_color": "#16211B",
+											"field_background_color": "#FFFFFF",
+											"field_border_color": "#B9B19E",
+											"field_border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "1",
+												"bottom": "1",
+												"left": "1",
+												"isLinked": true
+											},
+											"field_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											},
+											"button_background_color": "#1F3A2E",
+											"button_text_color": "#F7F3EA",
+											"button_background_hover_color": "#16291F",
+											"button_hover_color": "#F7F3EA",
+											"button_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											},
+											"row_gap": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"column_gap": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000231",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 0,
+										"column": "0",
+										"row": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 46,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000229",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "24",
+												"right": "0",
+												"bottom": "24",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "0000227",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Telephone",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000228",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "+44 20 5550 0164",
+													"header_size": "p",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.5rem, 1.3rem + 1vw, 2rem)",
+														"sizes": []
+													},
+													"link": {
+														"url": "tel:+442055500164",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000022c",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "24",
+												"right": "0",
+												"bottom": "24",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "000022a",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Email",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000022b",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "hello@example.com",
+													"header_size": "p",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "custom",
+														"size": "clamp(1.5rem, 1.3rem + 1vw, 2rem)",
+														"sizes": []
+													},
+													"link": {
+														"url": "mailto:hello@example.com",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000230",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "24",
+												"right": "0",
+												"bottom": "24",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "000022d",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Office",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000022e",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "22 Mercer Row, Old Town",
+													"header_size": "p",
+													"title_color": "#16211B",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 19,
+														"sizes": []
+													},
+													"typography_font_weight": "500",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000022f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Monday to Friday 9:00 to 18:00, Saturday 10:00 to 15:00",
+													"header_size": "p",
+													"title_color": "#4B5650",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 16,
+														"sizes": []
+													},
+													"typography_font_weight": "500",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

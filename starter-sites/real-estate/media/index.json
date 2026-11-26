@@ -1,0 +1,128 @@
+[
+	{
+		"uid": "street",
+		"file": "street.webp",
+		"alt": "A quiet street of brick terraced houses at dusk",
+		"licence": "CC0-1.0. Photograph by Christian Vasile christianvasile, from Wikimedia Commons.",
+		"author": "Christian Vasile christianvasile"
+	},
+	{
+		"uid": "home-modern",
+		"file": "home-modern.webp",
+		"alt": "A contemporary three-storey house with a garage and a lit front door at twilight",
+		"licence": "CC0-1.0. Photograph by Brian Babb brianbabb, from Wikimedia Commons.",
+		"author": "Brian Babb brianbabb"
+	},
+	{
+		"uid": "home-modern-wide",
+		"file": "home-modern-wide.webp",
+		"alt": "12 Orchard Rise seen from the street at twilight",
+		"licence": "CC0-1.0. Photograph by Brian Babb brianbabb, from Wikimedia Commons.",
+		"author": "Brian Babb brianbabb"
+	},
+	{
+		"uid": "home-detached",
+		"file": "home-detached.webp",
+		"alt": "A detached house with ivy on its walls, behind a hedge",
+		"licence": "CC0-1.0. Photograph by Jamie Whiffen jamiewhiffen, from Wikimedia Commons.",
+		"author": "Jamie Whiffen jamiewhiffen"
+	},
+	{
+		"uid": "home-cottage",
+		"file": "home-cottage.webp",
+		"alt": "A thatched cottage with a lit window and a garden",
+		"licence": "CC0-1.0. Photograph by Ritchie Valens ritchievalens, from Wikimedia Commons.",
+		"author": "Ritchie Valens ritchievalens"
+	},
+	{
+		"uid": "home-forest",
+		"file": "home-forest.webp",
+		"alt": "A stone house with a white upper floor among pine trees",
+		"licence": "CC0-1.0. Photograph by Flo Pappert flopt, from Wikimedia Commons.",
+		"author": "Flo Pappert flopt"
+	},
+	{
+		"uid": "home-apartment",
+		"file": "home-apartment.webp",
+		"alt": "A white apartment building with stepped terraces",
+		"licence": "CC0-1.0. Photograph by Grant Lemons grantlemons, from Wikimedia Commons.",
+		"author": "Grant Lemons grantlemons"
+	},
+	{
+		"uid": "home-terrace",
+		"file": "home-terrace.webp",
+		"alt": "A row of stone cottages with slate roofs on a narrow lane",
+		"licence": "CC0-1.0. Photograph by Eduard Militaru eduardmilitaru, from Wikimedia Commons.",
+		"author": "Eduard Militaru eduardmilitaru"
+	},
+	{
+		"uid": "living",
+		"file": "living.webp",
+		"alt": "A bright living room with a blue sofa and a herringbone wood floor",
+		"licence": "CC0-1.0. Photograph by Jarosław Ceborski jarson, from Wikimedia Commons.",
+		"author": "Jarosław Ceborski jarson"
+	},
+	{
+		"uid": "kitchen",
+		"file": "kitchen.webp",
+		"alt": "A white kitchen with an island, two stools and pendant lamps",
+		"licence": "CC0-1.0. Photograph by Naomi Hébert naomish, from Wikimedia Commons.",
+		"author": "Naomi Hébert naomish"
+	},
+	{
+		"uid": "dining",
+		"file": "dining.webp",
+		"alt": "A dining table by a tall window with white curtains",
+		"licence": "CC0-1.0. Photograph by Erick Lee Hodge holasirhodge, from Wikimedia Commons.",
+		"author": "Erick Lee Hodge holasirhodge"
+	},
+	{
+		"uid": "old-town",
+		"file": "old-town.webp",
+		"alt": "Old cottages with tiled and thatched roofs stepping down a hill",
+		"licence": "CC0-1.0. Photograph by Annie Spratt anniespratt, from Wikimedia Commons.",
+		"author": "Annie Spratt anniespratt"
+	},
+	{
+		"uid": "agent-1",
+		"file": "agent-1.webp",
+		"alt": "Portrait of Clara Hartwell",
+		"licence": "CC0-1.0. Photograph by rawpixel.com rawpixel, from Wikimedia Commons.",
+		"author": "rawpixel.com rawpixel"
+	},
+	{
+		"uid": "agent-2",
+		"file": "agent-2.webp",
+		"alt": "Portrait of Samuel Rowe",
+		"licence": "CC0-1.0. Photograph by Foto Sushi fotosushi, from Wikimedia Commons.",
+		"author": "Foto Sushi fotosushi"
+	},
+	{
+		"uid": "agent-3",
+		"file": "agent-3.webp",
+		"alt": "Portrait of Leo Marsh",
+		"licence": "CC0-1.0. Photograph by Warren Wong wflwong, from Wikimedia Commons.",
+		"author": "Warren Wong wflwong"
+	},
+	{
+		"uid": "post-1",
+		"file": "post-1.webp",
+		"alt": "The fronts of several old town houses side by side",
+		"licence": "CC0-1.0. Photograph by David Cohen dcp, from Wikimedia Commons.",
+		"author": "David Cohen dcp"
+	},
+	{
+		"uid": "post-2",
+		"file": "post-2.webp",
+		"alt": "A hallway with a wood floor, looking through to the rooms beyond",
+		"licence": "CC0-1.0. Photograph by Kari Shea karishea, from Wikimedia Commons.",
+		"author": "Kari Shea karishea"
+	},
+	{
+		"uid": "post-3",
+		"file": "post-3.webp",
+		"alt": "Streets of houses seen from the air",
+		"licence": "CC0-1.0. Photograph by Richard Horne richardhorne, from Wikimedia Commons.",
+		"author": "Richard Horne richardhorne"
+	}
+]

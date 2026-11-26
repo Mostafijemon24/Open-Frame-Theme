@@ -1,0 +1,470 @@
+[
+	{
+		"uid": "street",
+		"file": "street.webp",
+		"section": "Home: hero, right half",
+		"subject": "A residential street of brick terraced houses at dusk",
+		"alt": "A quiet street of brick terraced houses at dusk",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Terraced_houses_in_Kensington_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Terraced_houses_in_Kensington_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Christian Vasile christianvasile",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3808,
+			2592
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 356498,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-modern",
+		"file": "home-modern.webp",
+		"section": "Listing card: 12 Orchard Rise",
+		"subject": "A contemporary house with a lit entrance at twilight",
+		"alt": "A contemporary three-storey house with a garage and a lit front door at twilight",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Terra_Sol_Twilight_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Terra_Sol_Twilight_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brian Babb brianbabb",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5362,
+			3577
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			42,
+			50
+		],
+		"bytes": 118214,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-modern-wide",
+		"file": "home-modern-wide.webp",
+		"section": "Property details: main picture",
+		"subject": "The same house, wide",
+		"alt": "12 Orchard Rise seen from the street at twilight",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Terra_Sol_Twilight_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Terra_Sol_Twilight_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brian Babb brianbabb",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5362,
+			3577
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			45,
+			50
+		],
+		"bytes": 160854,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-detached",
+		"file": "home-detached.webp",
+		"section": "Listing card: Ivy House",
+		"subject": "A detached house covered in ivy, with a hedge and a parked car",
+		"alt": "A detached house with ivy on its walls, behind a hedge",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Vintage_House_in_a_City_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Vintage_House_in_a_City_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jamie Whiffen jamiewhiffen",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5166,
+			3696
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 196584,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-cottage",
+		"file": "home-cottage.webp",
+		"section": "Listing card: Quince Cottage",
+		"subject": "A thatched cottage of stone and brick",
+		"alt": "A thatched cottage with a lit window and a garden",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Cozy_Cottage_Home_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Cozy_Cottage_Home_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Ritchie Valens ritchievalens",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4316,
+			3121
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 198400,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-forest",
+		"file": "home-forest.webp",
+		"section": "Listing card: Pinewood",
+		"subject": "A stone house with a white upper floor among pine trees",
+		"alt": "A stone house with a white upper floor among pine trees",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:House_in_forest_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/House_in_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Flo Pappert flopt",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3000,
+			2000
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			52,
+			55
+		],
+		"bytes": 245354,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-apartment",
+		"file": "home-apartment.webp",
+		"section": "Listing card: Flat 9, Linden Court",
+		"subject": "A white apartment building with stepped terraces",
+		"alt": "A white apartment building with stepped terraces",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Modern_apartment_building_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Modern_apartment_building_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Grant Lemons grantlemons",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5760,
+			3840
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			35,
+			50
+		],
+		"bytes": 88484,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "home-terrace",
+		"file": "home-terrace.webp",
+		"section": "Listing card: 2 Weavers' Row",
+		"subject": "A row of old stone cottages on a lane",
+		"alt": "A row of stone cottages with slate roofs on a narrow lane",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Building_in_an_old_street._(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Building_in_an_old_street._%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eduard Militaru eduardmilitaru",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4272,
+			2848
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			60,
+			50
+		],
+		"bytes": 343582,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "living",
+		"file": "living.webp",
+		"section": "Property details: gallery",
+		"subject": "A bright living room with a blue sofa and a herringbone floor",
+		"alt": "A bright living room with a blue sofa and a herringbone wood floor",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Living_room_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Living_room_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jarosław Ceborski jarson",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5346,
+			3568
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 111222,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "kitchen",
+		"file": "kitchen.webp",
+		"section": "Property details: gallery",
+		"subject": "A white kitchen with an island and two stools",
+		"alt": "A white kitchen with an island, two stools and pendant lamps",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Kitchen_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Kitchen_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Naomi Hébert naomish",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4288,
+			2848
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 63236,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dining",
+		"file": "dining.webp",
+		"section": "Home: how we work",
+		"subject": "A dining table by a window in a lived-in home",
+		"alt": "A dining table by a tall window with white curtains",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:New_Home_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/New_Home_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Erick Lee Hodge holasirhodge",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5900,
+			3933
+		],
+		"width": 1200,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 73052,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "old-town",
+		"file": "old-town.webp",
+		"section": "About: picture under the heading",
+		"subject": "Old cottages stepping down a hill",
+		"alt": "Old cottages with tiled and thatched roofs stepping down a hill",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Gold_Hill_houses_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Gold_Hill_houses_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Annie Spratt anniespratt",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4000,
+			2892
+		],
+		"width": 1600,
+		"height": 800,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 232804,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "agent-1",
+		"file": "agent-1.webp",
+		"section": "Agents: Clara Hartwell",
+		"subject": "A smiling woman in a teal shirt, outdoors",
+		"alt": "Portrait of Clara Hartwell",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Smiling_woman_with_a_phone_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Smiling_woman_with_a_phone_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com rawpixel",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4393
+		],
+		"width": 900,
+		"height": 1200,
+		"focal": [
+			47,
+			45
+		],
+		"bytes": 138454,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "agent-2",
+		"file": "agent-2.webp",
+		"section": "Agents: Samuel Rowe",
+		"subject": "A grey-haired man with glasses in a studio",
+		"alt": "Portrait of Samuel Rowe",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Gray-haired_man_portrait_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gray-haired_man_portrait_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Foto Sushi fotosushi",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5760,
+			3840
+		],
+		"width": 900,
+		"height": 1200,
+		"focal": [
+			52,
+			45
+		],
+		"bytes": 69860,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "agent-3",
+		"file": "agent-3.webp",
+		"section": "Agents: Leo Marsh",
+		"subject": "A smiling man with his arms crossed, outdoors",
+		"alt": "Portrait of Leo Marsh",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Man_with_crossed_arms_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Man_with_crossed_arms_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Warren Wong wflwong",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5771,
+			3951
+		],
+		"width": 900,
+		"height": 1200,
+		"focal": [
+			58,
+			45
+		],
+		"bytes": 82902,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-1",
+		"file": "post-1.webp",
+		"section": "Article cover: What a valuation is",
+		"subject": "The fronts of old town houses side by side",
+		"alt": "The fronts of several old town houses side by side",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Two_rows_of_houses_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Two_rows_of_houses_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "David Cohen dcp",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4189,
+			2782
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 230544,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-2",
+		"file": "post-2.webp",
+		"section": "Article cover: How to read a floor plan",
+		"subject": "A hallway looking through to other rooms",
+		"alt": "A hallway with a wood floor, looking through to the rooms beyond",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Home_Sweet_Home_Pt._4_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Home_Sweet_Home_Pt._4_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Kari Shea karishea",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4800,
+			3200
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 101490,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-3",
+		"file": "post-3.webp",
+		"section": "Article cover: The market this autumn",
+		"subject": "Streets of houses seen from the air",
+		"alt": "Streets of houses seen from the air",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Drone_view_of_houses_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Drone_view_of_houses_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Richard Horne richardhorne",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 323454,
+		"checked": "2026-11-26"
+	}
+]

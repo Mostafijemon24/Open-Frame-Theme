@@ -289,7 +289,7 @@ export function collectPackage( site ) {
 	const entries = [];
 	const documents = {};
 
-	for ( const name of filesBelow( site.dir ).filter( ( file ) => /^(site|content|media|fonts)\//.test( file ) || file === 'LICENSES.md' ) ) {
+	for ( const name of filesBelow( site.dir ).filter( ( file ) => /^(site|content|media|fonts)\//.test( file ) || file === 'LICENSES.md' || file === 'CREDITS.md' ) ) {
 		const full = path.join( site.dir, name );
 		if ( /^media\/files\//.test( name ) || /^fonts\/files\//.test( name ) ) {
 			continue; // Binaries travel outside the ZIP, by hash.

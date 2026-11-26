@@ -1,0 +1,12 @@
+{
+	"uid": "real-estate:posts:what-a-valuation-is",
+	"title": "What a valuation is, and what it is not",
+	"slug": "what-a-valuation-is",
+	"excerpt": "Three agents, three figures, and the highest one is the most tempting. How to tell a valuation from a sales pitch.",
+	"featured": "ofss://media/post-1",
+	"categories": [
+		"Selling"
+	],
+	"days_ago": 6,
+	"content": "<!-- wp:paragraph -->\n<p>Ask three agents what your house is worth and you will hear three figures. The highest is the most tempting, and often the least useful: an agent who wants the instruction has every reason to be generous.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What we look at</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>What has actually sold nearby in the last six months, not what is advertised</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>The condition of roof, windows, heating and wiring</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Who is buying at this price, and how many of them there are</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What to ask an agent</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Ask which three sales the figure is based on, and what the agent would do if there were no offers in the first month. The answers tell you more than the number.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We are happy to be asked both. <a href=\"ofss://page/contact\">Book a valuation</a> and bring the questions.</p>\n<!-- /wp:paragraph -->"
+}

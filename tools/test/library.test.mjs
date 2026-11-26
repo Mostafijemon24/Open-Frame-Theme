@@ -116,8 +116,17 @@ test( 'the ten sites build into a signed catalog that matches the schema', ( t )
 		const manifest = readJson( path.join( out, `v1/sites/${ site.id }/${ site.version }/manifest.json` ) );
 		matches( 'manifest.schema.json', manifest );
 		assert.equal( manifest.pages.filter( ( item ) => item.front_page ).length, 1, `${ site.id }: one front page` );
-		assert.ok( manifest.media.every( ( item ) => item.bytes <= 100 * 1024 ), `${ site.id }: no image over 100 KB` );
-		assert.ok( manifest.media.reduce( ( sum, item ) => sum + item.bytes, 0 ) < 1024 * 1024, `${ site.id }: under 1 MB of images` );
+		// Drawn pictures compress far better than photographs, so a design with photographs has its own budget.
+		const photographs = fs.existsSync( path.join( ROOT, 'starter-sites', site.id, 'photos.json' ) );
+		const [ each, total ] = photographs ? [ 360, 4096 ] : [ 100, 1024 ];
+		assert.ok( manifest.media.every( ( item ) => item.bytes <= each * 1024 ), `${ site.id }: no image over ${ each } KB` );
+		assert.ok( manifest.media.reduce( ( sum, item ) => sum + item.bytes, 0 ) < total * 1024, `${ site.id }: under ${ total } KB of images` );
+		if ( photographs ) {
+			// Every photograph has a record of its source and a licence that allows redistribution.
+			const records = readJson( path.join( ROOT, 'starter-sites', site.id, 'photos.json' ) );
+			assert.deepEqual( records.map( ( item ) => item.uid ).sort(), manifest.media.map( ( item ) => item.uid ).sort(), `${ site.id }: a record for every photograph` );
+			assert.ok( records.every( ( item ) => /^(CC0|Public domain)/i.test( item.licence ) && /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test( item.source_url ) && item.author && item.checked ), `${ site.id }: source, author and a free licence for every photograph` );
+		}
 		assert.ok( manifest.fonts.reduce( ( sum, item ) => sum + item.bytes, 0 ) < 200 * 1024, `${ site.id }: under 200 KB of fonts` );
 		assert.ok( manifest.package.bytes < 200 * 1024, `${ site.id }: a small package` );
 		assert.ok( site.preview.screenshots.length >= 3, `${ site.id }: preview pictures` );

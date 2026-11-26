@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Real Estate and the photography standard](#the-real-estate-starter-site-and-the-photography-standard--test-report): Phase 7b, part 7; the first design with real photographs
 - [SaaS starter site](#the-saas-starter-site--test-report): Phase 7b, part 6
 - [Agency starter site](#the-agency-starter-site--test-report): Phase 7b, part 5; the first design for Elementor Pro
 - [Theme Builder templates in a package](#theme-builder-templates--test-report): groundwork for the Pro tier
@@ -13,6 +14,38 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Real Estate starter site and the photography standard — Test Report
+
+Phase 7b, part 7, plugin 0.5.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Elementor Pro 4.0.4 (installed, not activated with a licence), in Chromium.
+
+| Suite | Result |
+| --- | --- |
+| Real Estate, `tests/e2e/real-estate.test.js` | **11 of 11 passed** |
+| All browser checks together | **127 of 127 passed** (11 for each of the eight designs, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine, plugin PHP checks, library tools | **80 of 80** without Elementor Pro and **92 of 92** with it, **138 of 138, 53 of 53 passed** |
+| PHPCS | Theme 42 files, plugin 26 files: **0 errors, 0 warnings**, after a correction (see below) |
+| Theme Check, Plugin Check 2.2.0 | Theme Check: **0 required, 0 warnings** (1 recommended, 1 info, as before). Plugin Check: **no errors found** |
+
+The eleven checks are the shared ones in their Pro form (see the Agency report), on twelve addresses (ten pages, an article, an address that does not exist) at the nine widths: 108 page views. Headings in Newsreader, text in Manrope, both from the site's own address; no request to another host, so no photograph is loaded from where it was found. axe-core on all twelve addresses at 390 and 1440 px: no violations, with the one rule switched off for Pro designs that the Agency report explains.
+
+**Correction to the Agency and SaaS reports.** Both said PHPCS found nothing in the plugin. That was wrong: CI reported three comment-alignment errors in `src/Import/TokenResolver.php`, introduced with the Agency commit, and both CI runs failed on them. The local check had been read through a pipe, which hid its exit code. The three lines are corrected, both PHPCS commands now end with exit code 0 when run on their own, and the other suites of those two reports are unaffected.
+
+**Photographs.** Which sources could be used was tested, not assumed:
+
+| Source | What happened from the test environment |
+| --- | --- |
+| Pexels (site), Pixabay, StockSnap | Refused with 403: they do not serve automated visitors |
+| Pexels API | Answers, and asks for a key (401). No key was available |
+| Unsplash (site) | Sends automated visitors to a check that was not worked around |
+| Openverse API | Throttled: its allowance for anonymous requests from this address was used up |
+| Wikimedia Commons API | Works, with pauses when it asks for fewer requests |
+
+All eighteen photographs therefore come from Wikimedia Commons. For each one, `photos.mjs fetch` read the licence from Commons on the day of the build and got "CC0"; anything else would have stopped it. The library tests now check that every photograph of such a design has a record with a source page on Commons, a photographer and a free licence, and hold it to a budget of 360 KB per picture and 4 MB per design (Real Estate: 3.1 MB; the largest picture 348 KB).
+
+**Checked by eye**, on screenshots at 1440 and 390 px: every home in a list is whole and recognisable in its crop; the three portraits keep the face in the upper half; no subject is cut off on a phone.
+
+**Not checked:** the photographs on Commons were taken at face value as to who took them and that the person who released them had the right to; no model or property releases exist for them. Pictures were judged by one reviewer, not by the owner yet.
 
 # The SaaS starter site — Test Report
 

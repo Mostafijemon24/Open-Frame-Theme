@@ -2,7 +2,7 @@
 	"id": "real-estate",
 	"order": 7,
 	"name": "Real Estate",
-	"summary": "A site for agencies and agents: listings, property pages, agent profiles and services.",
+	"summary": "A calm, established site for an estate agency: homes for sale, a property page with a viewing form, agents with profiles, services and market notes. Header, footer and blog are Theme Builder templates.",
 	"category": "property",
 	"tags": [
 		"property",
@@ -11,23 +11,23 @@
 		"homes"
 	],
 	"tier": "pro",
-	"status": "coming_soon",
+	"status": "available",
 	"version": "1.0.0",
 	"colors": [
-		"#26323d",
-		"#c9a26b",
-		"#ffffff"
+		"#1f3a2e",
+		"#ddb96a",
+		"#f7f3ea"
 	],
 	"pages": [
 		"Home",
-		"Listings",
+		"Homes for Sale",
 		"Property Details",
 		"Agents",
 		"Agent Profile",
 		"Services",
 		"Service Details",
 		"About",
-		"Blog",
+		"Market Notes (blog)",
 		"Single Post",
 		"Contact",
 		"404"
@@ -37,7 +37,7 @@
 		"wordpress": "6.8",
 		"php": "7.4",
 		"theme": "1.1.0",
-		"importer": "1.0.0",
+		"importer": "0.5.0",
 		"plugins": [
 			{
 				"slug": "elementor",
@@ -56,7 +56,27 @@
 				"required": true,
 				"url": "https://elementor.com/pro/"
 			}
-		]
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"counter",
+				"form",
+				"heading",
+				"icon-list",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title"
+			]
+		}
 	},
 	"editable": {
 		"404": "elementor",
@@ -66,5 +86,19 @@
 		"blog": "elementor",
 		"single": "elementor"
 	},
-	"demo_url": ""
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Homes for sale",
+			"file": "homes.png"
+		},
+		{
+			"title": "Property details",
+			"file": "property.png"
+		},
+		{
+			"title": "Agents",
+			"file": "agents.png"
+		}
+	]
 }

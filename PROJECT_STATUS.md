@@ -6,7 +6,9 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 ## Current state
 
-**Seven of the ten designs exist: all five that work with the free version of Elementor, and two that need Elementor Pro.** Business, Portfolio, Restaurant, Education and Medical (free), Agency and SaaS (Pro), are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and three Pro designs are still to be made (Shop, Real Estate, Magazine).
+**Eight of the ten designs exist, and the owner has changed the standard for their pictures.** On 2026-11-26 the owner asked for real photographs instead of drawn pictures, words written for the business shown, and a record of source and licence for every picture. Real Estate is the first design made that way and is offered as the benchmark; the seven earlier designs still use drawn pictures and are waiting for the owner's decision on the benchmark before they are redone (see "Needed from the owner").
+
+Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and Real Estate (Pro), are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color. What is still missing before a user can do the same: the library is not deployed (blocked on a Cloudflare token), and two Pro designs are still to be made (Shop, Magazine).
 
 | Phase | Status |
 | --- | --- |
@@ -17,7 +19,8 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 6 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency and SaaS are done (plugin 0.5.0). Next: Real Estate, Magazine, and Shop, which needs WooCommerce products in a package |
+| 7b. Nine further starter sites | **In progress: 7 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS and Real Estate are done (plugin 0.5.0). Next: Magazine, and Shop, which needs WooCommerce products in a package |
+| 7c. Photographs and matching words for every design | **Started.** The standard, the tool and the first design (Real Estate) are done; seven designs to redo after the owner approves the benchmark |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -26,7 +29,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 1. **Distribution: free.** Theme for WordPress.org, free companion plugin, free library. The licence gate stays in the design but is switched off.
 2. **Elementor: two tiers.** Five starter sites work with Elementor free (Business, Portfolio, Restaurant, Education, Medical) and five require Elementor Pro (Agency, SaaS, E-commerce, Real Estate, Magazine).
-3. **Images: implementer's choice.** Original generated images by default, CC0 photographs where better, every file's licence recorded. Confirmed per site at the start of Phase 7.
+3. **Images: real photographs (changed by the owner on 2026-11-26).** The first decision left the choice to the implementer, who drew the pictures. The owner now asks for real photographs chosen for each section, no illustrations in place of photographs, words written for the business shown, nothing invented presented as fact, and source, photographer and licence recorded for every picture. How this is done is in the architecture document, section 5.7.
 4. **Library address:** `api.buildbetters.com` (catalog, manifests) and `cdn.buildbetters.com` (packages, media, previews), on the owner's Cloudflare account.
 5. Open: the free forms plugin for the five free-tier sites. Business ships without a form (see "Known issues").
 
@@ -155,14 +158,25 @@ Each is built with the first design that needs it, rather than against invented 
 - **Theme (still 1.1.0, unreleased):** links in Elementor's Text Editor widget are underlined, so a link in a paragraph is not marked by color alone.
 - **Found by the tests and fixed:** a grey line of text failed contrast on phones, where it is smaller; a link in the legal text could only be told apart by color; twelve sections had no space below them; the preview picture was larger than the library accepts until reduced to 256 colors.
 
+### Phase 7b, part 7: the Real Estate design, and the photography standard
+
+- **The owner's request:** real photographs in place of drawn pictures, chosen section by section; words that fit the business and the picture; no invented facts presented as real; a record of source and licence per picture; one benchmark design first.
+- **What could be reached from here:** Pexels, Pixabay and StockSnap refuse automated visitors, Unsplash asks them to pass a check, and Openverse had used up its allowance for anonymous requests. Wikimedia Commons answers through its public API and holds many thousands of professional photographs that Unsplash released as CC0 before 2017. Those are used.
+- **Licence rule:** only photographs that Commons records as CC0 or public domain. They may be redistributed and changed without conditions, which also keeps the way open for WordPress.org, where pictures under the present Unsplash, Pexels or Pixabay licences are not accepted inside a theme.
+- **The tool** (`tools/sites/photos.mjs`): `search` lists candidates and draws a numbered contact sheet to choose from; `fetch` reads a design's `photo-sources.json`, checks each licence again, crops around a focal point to the exact shape the layout needs, writes WebP, and records source page, photographer, licence, original size and date in `photos.json` and in a readable `CREDITS.md` that travels with the design.
+- **The design** (`starter-sites/real-estate`, brief in `brief.md`): the fictional agency "Hartwell & Rowe". Home, Homes for Sale, a property with a viewing form, Agents, an agent's profile, Services, Selling, About, Contact, and market notes with three articles. Six Theme Builder templates, Newsreader with Manrope, forest green on cream.
+- **Pictures first, words second:** the eighteen photographs were chosen before the texts were finished. Each home is named and described after its photograph, the people after their portraits, each article has a cover that shows its subject.
+- **Sample content is marked:** the footer says the agency, homes, prices and figures are examples; the client quote says it is a sample.
+- **Budgets:** a design with photographs may carry 360 KB per picture and 4 MB in total (here 3.1 MB); drawn designs keep 100 KB and 1 MB. The library tests also check that every photograph has a record with a free licence.
+
 ## Verified (executed 2026-11-26)
 
-- PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings.
+- PHPCS: theme 42 files and plugin 26 files, 0 errors, 0 warnings. (CI found three comment-alignment errors in the plugin in the Agency and SaaS commits, which the local check had missed; corrected in the Real Estate commit.)
 - Theme Check on the packaged theme: 0 required, 0 warnings.
 - Plugin Check 2.2.0 on the packaged plugin: no errors, no warnings.
 - Plugin PHP checks: all pass (138 with Elementor Pro in the test site, 139 on a fresh site without it).
 - Import engine checks: 80 of 80 pass without Elementor Pro and 92 of 92 with it (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, and the fonts of a design.
-- Browser checks: 116 of 116 pass with Elementor Pro in the test site (94 without it, where the Agency and SaaS files are skipped). 11 for each of the seven designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
+- Browser checks: 127 of 127 pass with Elementor Pro in the test site (94 without it, where the Agency, SaaS and Real Estate files are skipped). 11 for each of the eight designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
 - Library tools: 53 of 53 pass. Worker: 10 of 10 pass.
 - Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
@@ -175,7 +189,11 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Known issues and limitations
 
-- Seven designs can be imported: Business, Portfolio, Restaurant, Education, Medical and (with Elementor Pro) Agency and SaaS. The other three (all Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- Eight designs can be imported: Business, Portfolio, Restaurant, Education, Medical and (with Elementor Pro) Agency, SaaS and Real Estate. The other two (Pro tier) are placeholders marked "Coming soon"; their previews say "Preview coming soon".
+- **Seven designs do not meet the owner's new standard for pictures:** Business, Portfolio, Restaurant, Education, Medical, Agency and SaaS use drawn pictures. Their words name invented businesses and say so in the footer, but were not written around photographs.
+- **The photographs come from one source.** Only CC0 photographs on Wikimedia Commons could be searched from here. The choice is good for houses, rooms, streets, food and portraits, and thin for some trades; with an API key from the owner, Pexels could be searched too (its licence allows use in templates, but not inside a WordPress.org theme).
+- **Three Real Estate photographs show people who can be recognised.** CC0 covers copyright, not the rights of the person shown; the portraits stand for invented staff and are meant to be replaced. `LICENSES.md` of the design says so.
+- **Real Estate has no property search, map or enquiry database.** Homes are ordinary pages; the viewing form sends an email.
 - **SaaS has no sign-up or payment, and its legal pages are sample text** that says so. "Start a free trial" leads to pricing and the demo form.
 - **Agency and SaaS were built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything they use worked that way here; a licensed site was not tested. Their forms send email through WordPress, and whether the email arrives depends on the site's mail setup.
 - **None of the free designs has a form.** Contact pages give an email address, a telephone number and a button; Restaurant takes reservations by telephone and email and has no map; Education takes applications by email and telephone and has no course catalogue with enrolment; Medical takes appointments by telephone, email or at the desk and has no doctor directory with search. Free Elementor has no form widget, and no forms plugin has been chosen yet (decision 5).
@@ -198,10 +216,14 @@ Each is built with the first design that needs it, rather than against invented 
 1. **A Cloudflare API token, to finish Phase 5.** A credential was entered in the secure form on 2026-11-26, but Cloudflare rejects it with "Invalid format for Authorization header": it is not an API token (an account password or the "Global API Key" give this result). What is needed: Cloudflare dashboard > My Profile > API Tokens > Create Token > the "Edit Cloudflare Workers" template, plus the permission Zone > DNS > Edit, for the account and the zone `buildbetters.com`. The token is entered in the secure form again, never in chat.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
-4. **For Phases 7 and 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
+4. **A look at the Real Estate design, and a decision.** It is the proposed benchmark for pictures and words. If it is what the owner means, the seven earlier designs are redone the same way, then Magazine and Shop are made. If not, what should be different.
+5. **"Roofing".** The owner's message names a Roofing design as the benchmark. No Roofing design exists in this project; the ten agreed designs are Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Shop, Real Estate and Magazine. Should a Roofing design be added, replace one of the ten, or was it an example?
+6. **Optional: a Pexels API key** (free, from pexels.com/api), entered in the secure form, if the owner wants a wider choice of photographs than CC0 offers.
+7. **For Phases 7 and 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
 
 ## Next steps
 
 1. With a working Cloudflare token: create the buckets, generate the production signing key, put its public half into the plugin, deploy the Worker to staging and production, and publish the catalog.
-2. Phase 7b continues with the remaining three Pro-tier designs (Real Estate, Magazine, Shop). Theme Builder templates can now be imported; Shop also needs WooCommerce products in a package, which is not built yet.
-3. A decision on the forms plugin, so the contact pages can carry a form.
+2. After the owner's answer on the benchmark: redo the pictures and words of the seven earlier designs to the photography standard, one commit per design.
+3. Phase 7b continues with the remaining two Pro-tier designs (Magazine, Shop), made with photographs from the start. Shop also needs WooCommerce products in a package, which is not built yet.
+4. A decision on the forms plugin, so the contact pages can carry a form.

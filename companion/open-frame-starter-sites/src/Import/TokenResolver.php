@@ -54,9 +54,9 @@ class TokenResolver {
 	/**
 	 * Constructor.
 	 *
-	 * @param array<string,int> $media Attachment IDs by media uid.
-	 * @param array<string,int> $posts Post IDs by "<kind>/<name>".
-	 * @param string            $front The page that becomes the front page, as "page/<name>".
+	 * @param array<string,int>    $media Attachment IDs by media uid.
+	 * @param array<string,int>    $posts Post IDs by "<kind>/<name>".
+	 * @param string               $front The page that becomes the front page, as "page/<name>".
 	 * @param array<string,string> $menus Menu slugs by the name of the menu inside the package.
 	 */
 	public function __construct( array $media, array $posts, $front = '', array $menus = array() ) {

@@ -194,7 +194,7 @@ Monorepo. **The theme stays at the repository root** so the existing release wor
 └── PROJECT_STATUS.md                     living status file
 ```
 
-**Changed in Phase 7a.** The plan was to keep media binaries out of Git and in a private R2 prefix. The Business design showed that this is not needed for generated artwork: its fifteen images are drawn by a script (`tools/sites/business-art.mjs`), weigh about 540 KB together and are committed under `media/files/`, so a build needs nothing but the repository. The budget is 1 MB of media per site in Git. A design that needs photographs beyond that goes back to the original plan (hashes in Git, originals in R2).
+**Changed in Phase 7a.** The plan was to keep media binaries out of Git and in a private R2 prefix. The Business design showed that this is not needed for generated artwork: its fifteen images are drawn by a script (`tools/sites/business-art.mjs`), weigh about 540 KB together and are committed under `media/files/`, so a build needs nothing but the repository. The budget is 1 MB of media per site in Git. **Changed again in Phase 7b (2026-11-26):** designs now use photographs (section 5.7). They are cropped and compressed to WebP before they are committed, about 3 MB per design, and stay in Git with the record of their sources; the budget for such a design is 360 KB per picture and 4 MB in total.
 
 Also from Phase 7a: a design is written as a generator (`tools/sites/<site>.mjs`, with shared builders in `tools/sites/kit.mjs`) that writes the JSON under `starter-sites/<site>/`. The JSON is committed and is what gets packaged; the generator exists so that a design is described once and consistently. There is no `design-tokens.json`: the generator holds the tokens and writes both `site/kit.json` and `site/theme-mods.json` from them.
 
@@ -417,6 +417,25 @@ Each site gets its own `brief.md` and `design-tokens.json` before any page is bu
 
 ---
 
+### 5.7 Photographs and words (owner's standard, 2026-11-26)
+
+A starter site has to read as the site of a real business. The rules, and how each is kept:
+
+| Rule | How it is kept |
+| --- | --- |
+| Pictures are real photographs. A drawing is used only where a drawing explains something (a diagram, a screen of a software product) | `tools/sites/photos.mjs` prepares photographs only; a design with photographs has `photo-sources.json` |
+| Every picture is chosen for its section | `photo-sources.json` names, for each picture, the section it is for and what it must show; the brief has a table of picture needs per section |
+| Pictures first, words second | The photographs are chosen from contact sheets before the texts are finished. Names, descriptions and captions are then written to say what the photograph shows |
+| The picture fits the layout | Each photograph is cropped to the exact shape its place needs, around a focal point, so rows align and a phone does not cut the subject off |
+| Licences allow redistribution, and are checked | Only CC0 and public-domain photographs, taken from Wikimedia Commons through its API. `fetch` reads the licence again every time it runs and refuses anything else |
+| The source of every picture is on record | `photos.json` (source page, photographer, licence, original size, date checked) and `CREDITS.md`, which is part of the package; the library tests fail if a photograph has no record |
+| Nothing invented is presented as fact | The business is fictional and the footer says so; figures, prices and quotes are marked as examples |
+| No picture is loaded from another site | Photographs are packaged with the design and imported into the media library, like every other image |
+
+Why CC0 only: a design is copied to every site that imports it, and the theme is meant for WordPress.org, which does not accept pictures under the present Unsplash, Pexels or Pixabay licences inside a theme. Those licences do allow use in a template that is delivered separately, so photographs from Pexels could be added to the library's packages later (never to the theme) if the owner supplies an API key; each would be recorded with its own licence.
+
+CC0 covers copyright only. A photograph of a recognisable person, a trade mark or a private building can raise other rights; such pictures are named in the design's `LICENSES.md` and are meant to be replaced by the site's owner.
+
 ## 6. Starter site package specification
 
 Format version `1`. A package is a small ZIP of JSON, plus media and fonts addressed by hash.
@@ -438,7 +457,8 @@ Format version `1`. A package is a small ZIP of JSON, plus media and fonts addre
 │   └── products/{uid}.json     WooCommerce products (site 05)
 ├── media/index.json        uid, sha256, bytes, mime, width, height, alt, licence
 ├── fonts/index.json        family, weight range, sha256, licence
-└── LICENSES.md
+├── LICENSES.md
+└── CREDITS.md               source, photographer and licence of every photograph (designs with photographs)
 ```
 
 `manifest.json` (abridged):
@@ -614,7 +634,7 @@ Sequencing notes:
 | --- | --- | --- | --- |
 | 1 | **Distribution model** | **Decided: free.** Theme on WordPress.org, free plugin, free library. The licence gate stays in the design, switched off | Decides whether the cloud needs licence checks and where the plugin can be listed |
 | 2 | **Elementor baseline** | **Decided: two tiers**, five sites for Elementor free and five that require Elementor Pro (section 5.3) | Decides the Site Parts and widget-pack work, and what "editable" means per site |
-| 3 | **Imagery** | **Decided: left to the implementer.** Original generated images as the default, CC0 photographs where a real photograph is clearly better, every file's licence recorded. Confirmed per site at the start of Phase 7 | "Premium" quality depends on it more than on anything else, and licences must be clean for redistribution |
+| 3 | **Imagery** | **Decided, then changed by the owner on 2026-11-26: real photographs.** Chosen per section, CC0 or public domain, source and licence recorded for every file (section 5.7). Designs made before that date still use drawn pictures until they are redone | "Premium" quality depends on it more than on anything else, and licences must be clean for redistribution |
 | 4 | **Cloudflare account and domain** for `api.` and `cdn.` | **Decided: at Phase 5.** A mock API is used until then | Only the owner can create it |
 | 5 | **Forms plugin** for the five free-tier sites | Open; chosen during Phase 7a | Appears in those sites' requirements |
 
