@@ -249,17 +249,17 @@
 									"flex_direction": "column",
 									"flex_gap": {
 										"unit": "px",
-										"size": 14,
-										"column": "14",
-										"row": "14",
+										"size": 18,
+										"column": "18",
+										"row": "18",
 										"isLinked": true
 									},
 									"padding": {
 										"unit": "px",
-										"top": "14",
-										"right": "14",
-										"bottom": "14",
-										"left": "14",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
 										"isLinked": true
 									},
 									"padding_mobile": {
@@ -293,28 +293,27 @@
 									{
 										"id": "0000108",
 										"elType": "widget",
-										"widgetType": "image",
+										"widgetType": "icon",
 										"settings": {
-											"image": {
-												"id": "ofss://media/doctor-1",
-												"url": "ofss://media/doctor-1"
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
 											},
-											"image_size": "full",
-											"image_border_radius": {
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
 												"unit": "px",
-												"top": "80",
-												"right": "24",
-												"bottom": "24",
-												"left": "24",
-												"isLinked": false
+												"size": 26,
+												"sizes": []
 											},
-											"link_to": "custom",
-											"link": {
-												"url": "ofss://page/doctor",
-												"is_external": "",
-												"nofollow": "",
-												"custom_attributes": ""
-											}
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
 										},
 										"elements": []
 									},
@@ -333,11 +332,11 @@
 											},
 											"padding": {
 												"unit": "px",
-												"top": "4",
-												"right": "8",
-												"bottom": "8",
-												"left": "8",
-												"isLinked": false
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
 											}
 										},
 										"elements": [
@@ -422,17 +421,17 @@
 									"flex_direction": "column",
 									"flex_gap": {
 										"unit": "px",
-										"size": 14,
-										"column": "14",
-										"row": "14",
+										"size": 18,
+										"column": "18",
+										"row": "18",
 										"isLinked": true
 									},
 									"padding": {
 										"unit": "px",
-										"top": "14",
-										"right": "14",
-										"bottom": "14",
-										"left": "14",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
 										"isLinked": true
 									},
 									"padding_mobile": {
@@ -466,28 +465,27 @@
 									{
 										"id": "000010e",
 										"elType": "widget",
-										"widgetType": "image",
+										"widgetType": "icon",
 										"settings": {
-											"image": {
-												"id": "ofss://media/doctor-2",
-												"url": "ofss://media/doctor-2"
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
 											},
-											"image_size": "full",
-											"image_border_radius": {
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
 												"unit": "px",
-												"top": "80",
-												"right": "24",
-												"bottom": "24",
-												"left": "24",
-												"isLinked": false
+												"size": 26,
+												"sizes": []
 											},
-											"link_to": "custom",
-											"link": {
-												"url": "ofss://page/doctor",
-												"is_external": "",
-												"nofollow": "",
-												"custom_attributes": ""
-											}
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
 										},
 										"elements": []
 									},
@@ -506,11 +504,11 @@
 											},
 											"padding": {
 												"unit": "px",
-												"top": "4",
-												"right": "8",
-												"bottom": "8",
-												"left": "8",
-												"isLinked": false
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
 											}
 										},
 										"elements": [
@@ -595,17 +593,17 @@
 									"flex_direction": "column",
 									"flex_gap": {
 										"unit": "px",
-										"size": 14,
-										"column": "14",
-										"row": "14",
+										"size": 18,
+										"column": "18",
+										"row": "18",
 										"isLinked": true
 									},
 									"padding": {
 										"unit": "px",
-										"top": "14",
-										"right": "14",
-										"bottom": "14",
-										"left": "14",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
 										"isLinked": true
 									},
 									"padding_mobile": {
@@ -639,28 +637,27 @@
 									{
 										"id": "0000114",
 										"elType": "widget",
-										"widgetType": "image",
+										"widgetType": "icon",
 										"settings": {
-											"image": {
-												"id": "ofss://media/doctor-3",
-												"url": "ofss://media/doctor-3"
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
 											},
-											"image_size": "full",
-											"image_border_radius": {
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
 												"unit": "px",
-												"top": "80",
-												"right": "24",
-												"bottom": "24",
-												"left": "24",
-												"isLinked": false
+												"size": 26,
+												"sizes": []
 											},
-											"link_to": "custom",
-											"link": {
-												"url": "ofss://page/doctor",
-												"is_external": "",
-												"nofollow": "",
-												"custom_attributes": ""
-											}
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
 										},
 										"elements": []
 									},
@@ -679,11 +676,11 @@
 											},
 											"padding": {
 												"unit": "px",
-												"top": "4",
-												"right": "8",
-												"bottom": "8",
-												"left": "8",
-												"isLinked": false
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
 											}
 										},
 										"elements": [
@@ -768,17 +765,17 @@
 									"flex_direction": "column",
 									"flex_gap": {
 										"unit": "px",
-										"size": 14,
-										"column": "14",
-										"row": "14",
+										"size": 18,
+										"column": "18",
+										"row": "18",
 										"isLinked": true
 									},
 									"padding": {
 										"unit": "px",
-										"top": "14",
-										"right": "14",
-										"bottom": "14",
-										"left": "14",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
 										"isLinked": true
 									},
 									"padding_mobile": {
@@ -812,28 +809,27 @@
 									{
 										"id": "000011a",
 										"elType": "widget",
-										"widgetType": "image",
+										"widgetType": "icon",
 										"settings": {
-											"image": {
-												"id": "ofss://media/doctor-4",
-												"url": "ofss://media/doctor-4"
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
 											},
-											"image_size": "full",
-											"image_border_radius": {
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
 												"unit": "px",
-												"top": "80",
-												"right": "24",
-												"bottom": "24",
-												"left": "24",
-												"isLinked": false
+												"size": 26,
+												"sizes": []
 											},
-											"link_to": "custom",
-											"link": {
-												"url": "ofss://page/doctor",
-												"is_external": "",
-												"nofollow": "",
-												"custom_attributes": ""
-											}
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
 										},
 										"elements": []
 									},
@@ -852,11 +848,11 @@
 											},
 											"padding": {
 												"unit": "px",
-												"top": "4",
-												"right": "8",
-												"bottom": "8",
-												"left": "8",
-												"isLinked": false
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
 											}
 										},
 										"elements": [

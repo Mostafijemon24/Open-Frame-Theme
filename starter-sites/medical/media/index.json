@@ -1,80 +1,65 @@
 [
 	{
 		"uid": "hero",
-		"file": "hero.jpg",
-		"alt": "Illustration of a doctor in a white coat with a stethoscope",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
-	},
-	{
-		"uid": "doctor-1",
-		"file": "doctor-1.jpg",
-		"alt": "Illustrated portrait of Dr Amara Okafor",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
-	},
-	{
-		"uid": "doctor-2",
-		"file": "doctor-2.jpg",
-		"alt": "Illustrated portrait of Dr Daniel Mbeki",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
-	},
-	{
-		"uid": "doctor-3",
-		"file": "doctor-3.jpg",
-		"alt": "Illustrated portrait of Dr Hanna Lindqvist",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
-	},
-	{
-		"uid": "doctor-4",
-		"file": "doctor-4.jpg",
-		"alt": "Illustrated portrait of Dr Peter Varga",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "hero.webp",
+		"alt": "A doctor in a white coat taking a patient’s blood pressure",
+		"licence": "Public domain. Photograph by Bill Branson (Photographer), from Wikimedia Commons.",
+		"author": "Bill Branson (Photographer)"
 	},
 	{
 		"uid": "building",
-		"file": "building.jpg",
-		"alt": "The clinic building, with a cross above the door",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "building.webp",
+		"alt": "A small modern clinic building behind trees and a lawn",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
 	},
 	{
 		"uid": "reception",
-		"file": "reception.jpg",
-		"alt": "The reception desk and waiting area",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "reception.webp",
+		"alt": "The information desk in the entrance hall",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
 	},
 	{
 		"uid": "room",
-		"file": "room.jpg",
-		"alt": "A consulting room with an examination couch and a monitor",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "room.webp",
+		"alt": "An examination room with a couch, a chair and a sink",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
 	},
 	{
 		"uid": "family",
-		"file": "family.jpg",
-		"alt": "Three patients of different ages",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "family.webp",
+		"alt": "Three women of different ages cooking together in a kitchen",
+		"licence": "Public domain. Photograph by Rhoda Baer (Photographer), from Wikimedia Commons.",
+		"author": "Rhoda Baer (Photographer)"
 	},
 	{
 		"uid": "cardio",
-		"file": "cardio.jpg",
-		"alt": "A heart with a heartbeat line across it",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"file": "cardio.webp",
+		"alt": "A stethoscope and a pen lying on a printed form",
+		"licence": "CC0-1.0. Photograph by DarkoStojanovic (on Pixabay), from Wikimedia Commons.",
+		"author": "DarkoStojanovic (on Pixabay)"
 	},
 	{
 		"uid": "note-1",
-		"file": "note-1.jpg",
+		"file": "note-1.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"licence": "Public domain. Photograph by Daniel Sone (photographer), from Wikimedia Commons.",
+		"author": "Daniel Sone (photographer)"
 	},
 	{
 		"uid": "note-2",
-		"file": "note-2.jpg",
+		"file": "note-2.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Mark Solarski (@marksolarski on Unsplash), from Wikimedia Commons.",
+		"author": "Mark Solarski (@marksolarski on Unsplash)"
 	},
 	{
 		"uid": "note-3",
-		"file": "note-3.jpg",
+		"file": "note-3.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs)."
+		"licence": "Public domain. Photograph by Rhoda Baer (Photographer), from Wikimedia Commons.",
+		"author": "Rhoda Baer (Photographer)"
 	}
 ]

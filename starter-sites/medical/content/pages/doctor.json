@@ -136,8 +136,8 @@
 										"widgetType": "image",
 										"settings": {
 											"image": {
-												"id": "ofss://media/doctor-1",
-												"url": "ofss://media/doctor-1"
+												"id": "ofss://media/room",
+												"url": "ofss://media/room"
 											},
 											"image_size": "full",
 											"image_border_radius": {

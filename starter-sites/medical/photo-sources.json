@@ -1,0 +1,119 @@
+[
+	{
+		"uid": "hero",
+		"title": "File:Doctor takes blood pressure.jpg",
+		"width": 1260,
+		"height": 1170,
+		"focal": [
+			55,
+			50
+		],
+		"section": "Home: hero",
+		"subject": "A woman doctor in a white coat with a stethoscope taking the blood pressure of a woman in a patient gown",
+		"alt": "A doctor in a white coat taking a patient’s blood pressure"
+	},
+	{
+		"uid": "building",
+		"title": "File:20190625-RD-PJK-1999 TONED.jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			40,
+			50
+		],
+		"section": "Home and Contact: the clinic building",
+		"subject": "A small modern hospital with a glazed entrance, seen across a wet drive with trees and planting, under an overcast sky",
+		"alt": "The clinic building with its glazed entrance, seen across the drive and the trees in front"
+	},
+	{
+		"uid": "reception",
+		"title": "File:20190625-RD-PJK-1672 TONED.jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			60
+		],
+		"section": "Home: why patients stay",
+		"subject": "An information desk in a double-height entrance hall with a brick wall; one person sits behind the desk",
+		"alt": "The information desk in the entrance hall"
+	},
+	{
+		"uid": "room",
+		"title": "File:20190625-RD-PJK-1681 TONED.jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"section": "Consulting room (not placed on a page at present)",
+		"subject": "An empty examination room with a couch, a patient chair, a sink and a small desk",
+		"alt": "An examination room with a couch, a patient chair and a sink"
+	},
+	{
+		"uid": "family",
+		"title": "File:Women preparing food.jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			45
+		],
+		"section": "Home: our patients",
+		"subject": "Three adult women of different ages cooking together in a kitchen",
+		"alt": "Three women of different ages cooking together in a kitchen"
+	},
+	{
+		"uid": "cardio",
+		"title": "File:Medical Care.jpg",
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Cardiology: beside the introduction",
+		"subject": "A teal stethoscope and a blue pen lying on a printed appointment form",
+		"alt": "A stethoscope and a pen lying on a printed form"
+	},
+	{
+		"uid": "note-1",
+		"title": "File:Stethoscope and Laptop Computer - Nci-vol-9713-300.jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: Five numbers worth knowing about your heart",
+		"subject": "A stethoscope lying beside a laptop computer",
+		"alt": "A stethoscope beside a laptop computer"
+	},
+	{
+		"uid": "note-2",
+		"title": "File:Bed + Snake Plant (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: Why sleep is the first thing we ask about",
+		"subject": "A bed with pale blue covers and a dark headboard beside a snake plant in a bright room",
+		"alt": "A bed with pale covers beside a plant in a bright room"
+	},
+	{
+		"uid": "note-3",
+		"title": "File:Nurse administers a vaccine.jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: Getting ready for winter",
+		"subject": "Close view of gloved hands giving an injection in an upper arm; no faces",
+		"alt": "Gloved hands giving a vaccination in an upper arm"
+	}
+]

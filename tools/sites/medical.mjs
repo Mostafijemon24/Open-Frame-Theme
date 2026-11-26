@@ -10,7 +10,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, em, fluid, gap, icon, ids, kitTypography, link, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'medical';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -198,11 +198,15 @@ const posts = [
 	},
 ];
 
+/** A round mark in place of a portrait. */
+const badge = ( name, size = 26 ) => widget( 'icon', { selected_icon: icon( name ), view: 'stacked', shape: 'circle', primary_color: C.mist, secondary_color: C.teal, size: px( size ), icon_padding: px( Math.round( size * 0.7 ) ), align: 'left' } );
+
 const doctorCard = ( person, tag = 'h3' ) =>
 	card( [
-		image( person.uid, { radius: leaf( 80 ), more: { link_to: 'custom', link: link( page( 'doctor' ) ) } } ),
-		column( { spacing: 6, more: { padding: box( 4, 8, 8, 8 ) } }, [ label( person.role ), heading( person.name, { tag, size: px( 21 ), more: { link: link( page( 'doctor' ) ) } } ), text( `<p>${ person.line }</p>`, { size: px( 15 ) } ) ] ),
-	], { padding: 14, spacing: 14 } );
+		// No portrait: a photograph of a stranger under a doctor's name would mislead. A clinic adds its own.
+		badge( 'user-md' ),
+		column( { spacing: 6 }, [ label( person.role ), heading( person.name, { tag, size: px( 21 ), more: { link: link( page( 'doctor' ) ) } } ), text( `<p>${ person.line }</p>`, { size: px( 15 ) } ) ] ),
+	], { spacing: 18 } );
 
 /* -------------------------------------------------------------------------
    Pages
@@ -269,7 +273,7 @@ pages.home = {
 		section( { background: C.mist, top: 96, spacing: 0 }, [
 			column( { width: 76, spacing: 22, align: 'center', more: { _flex_align_self: 'center' } }, [
 				heading( '“Dr Mbeki has looked after three generations of my family. He still asks about my mother by name.”', { tag: 'p', align: 'center', size: fluid( 'clamp(1.375rem, 1.1rem + 1.4vw, 2.125rem)' ), weight: 600, more: { typography_line_height: em( 1.35 ) } } ),
-				fact( 'Elena R., patient since 2011', { color: C.text, size: 16, weight: 500, align: 'center' } ),
+				fact( 'Elena R., patient since 2011. A sample quote.', { color: C.text, size: 16, weight: 500, align: 'center' } ),
 			] ),
 		] ),
 
@@ -337,7 +341,7 @@ pages.department = {
 				] ),
 				column( { width: 40, spacing: 28, more: { width_tablet: percent( 100 ) } }, [
 					card( [ heading( 'Cardiology clinics', { tag: 'h2', size: px( 22 ) } ), column( { spacing: 0 }, [ line( 'Monday', '8:00 to 16:00' ), line( 'Wednesday', '8:00 to 18:30' ), line( 'Friday', '8:00 to 13:00' ) ] ), button( 'Book an appointment', page( 'appointment' ), { more: { align: 'justify' } } ) ], { spacing: 18 } ),
-					card( [ label( 'Your cardiologist' ), row( { spacing: 18, align: 'center', more: { flex_direction_mobile: 'row', flex_align_items_mobile: 'center', flex_wrap: 'nowrap' } }, [ container( { content_width: 'full', width: px( 96 ), padding: box( 0 ), _flex_size: 'none' }, [ image( 'doctor-1', { radius: leaf( 40 ) } ) ] ), column( { spacing: 4 }, [ heading( 'Dr Amara Okafor', { tag: 'h2', size: px( 20 ), more: { link: link( page( 'doctor' ) ) } } ), fact( 'With the clinic since 2014', { color: C.text, size: 15, weight: 500 } ) ] ) ] ), arrow( 'View profile', page( 'doctor' ) ) ], { spacing: 16 } ),
+					card( [ label( 'Your cardiologist' ), row( { spacing: 18, align: 'center', more: { flex_direction_mobile: 'row', flex_align_items_mobile: 'center', flex_wrap: 'nowrap' } }, [ container( { content_width: 'full', width: px( 64 ), padding: box( 0 ), _flex_size: 'none' }, [ badge( 'user-md', 22 ) ] ), column( { spacing: 4 }, [ heading( 'Dr Amara Okafor', { tag: 'h2', size: px( 20 ), more: { link: link( page( 'doctor' ) ) } } ), fact( 'With the clinic since 2014', { color: C.text, size: 15, weight: 500 } ) ] ) ] ), arrow( 'View profile', page( 'doctor' ) ) ], { spacing: 16 } ),
 					card( [ heading( 'Do I need a referral?', { tag: 'h2', size: px( 20 ) } ), text( '<p>Not from us. If your insurer asks for one, your family doctor here can write it at the same visit.</p>', { size: px( 16 ) } ) ], { background: C.sand, more: { box_shadow_box_shadow_type: '' } } ),
 				] ),
 			] ),
@@ -369,7 +373,7 @@ pages.doctor = {
 	content: [
 		section( { background: C.mist, top: 80, bottom: 80, spacing: 0 }, [
 			row( { spacing: 64, align: 'center', tablet: 'column' }, [
-				column( { width: 36, more: { width_tablet: percent( 60 ), width_mobile: percent( 100 ) } }, [ image( 'doctor-1', { radius: leaf( 140 ) } ) ] ),
+				column( { width: 36, more: { width_tablet: percent( 60 ), width_mobile: percent( 100 ) } }, [ image( 'room', { radius: leaf( 140 ) } ) ] ),
 				column( { width: 64, spacing: 18, more: { width_tablet: percent( 100 ) } }, [
 					label( 'Cardiology' ),
 					heading( 'Dr Amara Okafor', { tag: 'h1' } ),
@@ -520,7 +524,7 @@ const parts = {
 					footLinks( 'Patients', [ [ 'Book an appointment', page( 'appointment' ) ], [ 'Patient information', page( 'patients' ) ], [ 'Contact', page( 'contact' ) ] ] ),
 					footLinks( 'Reach us', [ [ PHONE, TEL ], [ EMAIL, `mailto:${ EMAIL }` ] ] ),
 				] ),
-				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#27474A' }, [ fact( '© Linden Clinic. A fictional practice, made for the Open Frame Medical starter site. Nothing on this site is medical advice.', { color: C.haze, size: 14, weight: 400 } ) ] ),
+				container( { content_width: 'full', flex_direction: 'column', padding: box( 24, 0, 0, 0 ), border_border: 'solid', border_width: box( 1, 0, 0, 0 ), border_color: '#27474A' }, [ fact( 'Sample content: Linden Clinic is a fictional practice made for the Open Frame Medical starter site. The doctors, figures and quote are examples to replace with your own. Nothing on this site is medical advice.', { color: C.haze, size: 14, weight: 400 } ) ] ),
 			] ),
 		],
 	},
@@ -608,17 +612,9 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/medical-art.mjs).';
-const mediaIndex = [
-	{ uid: 'hero', file: 'hero.jpg', alt: 'Illustration of a doctor in a white coat with a stethoscope' },
-	...doctors.map( ( person ) => ( { uid: person.uid, file: person.uid + '.jpg', alt: `Illustrated portrait of ${ person.name }` } ) ),
-	{ uid: 'building', file: 'building.jpg', alt: 'The clinic building, with a cross above the door' },
-	{ uid: 'reception', file: 'reception.jpg', alt: 'The reception desk and waiting area' },
-	{ uid: 'room', file: 'room.jpg', alt: 'A consulting room with an examination couch and a monitor' },
-	{ uid: 'family', file: 'family.jpg', alt: 'Three patients of different ages' },
-	{ uid: 'cardio', file: 'cardio.jpg', alt: 'A heart with a heartbeat line across it' },
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: '' } ) ),
-].map( ( entry ) => ( { ...entry, licence } ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// Article covers are decoration beside their titles.
+const mediaIndex = photoIndex( OUT, Object.fromEntries( posts.map( ( post ) => [ post.image, '' ] ) ) );
 
 const fonts = [ { family: FONT, weight: '200 800', style: 'normal', file: 'plus-jakarta-sans-latin.woff2', licence: 'OFL-1.1. Copyright 2020 The Plus Jakarta Sans Project Authors.' } ];
 

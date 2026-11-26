@@ -38,9 +38,20 @@ In Elementor's Site Settings: Primary is teal, Secondary is ink (headings), Text
 
 Header: a narrow deep bar with the opening hours and the telephone number (the number is a link, and stays on phones), then a white bar with the name and its mark, the menu and a "Book an appointment" button. On tablets and phones the button is hidden and the theme's menu button appears. Footer: ink, the name and one sentence, three link lists, and small print that says the site gives no medical advice.
 
-## Images
+## Photographs
 
-Thirteen original flat illustrations drawn by `tools/sites/medical-art.mjs`: a hero, four doctors, the building, the reception, a consulting room, a family, a heart and three covers for health notes. CC0, about 360 KB together. A clinic replaces the portraits and the building with photographs first.
+Nine photographs from Wikimedia Commons, each recorded there as public domain or CC0, listed with their sources in `CREDITS.md`: staged pictures from the US National Cancer Institute, pictures of a modern rural hospital from the US Department of Agriculture, and three still lifes. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch medical` prepares them.
+
+| Where | What the photograph shows |
+| --- | --- |
+| Home, hero | A doctor taking a patient's blood pressure |
+| Home, About, Contact | The reception desk; the building from its drive |
+| About | Three women of different ages cooking together: the patients |
+| Cardiology | A stethoscope on a form |
+| A doctor's profile | An examination room |
+| Articles | A stethoscope beside a laptop, a made bed, a vaccination |
+
+**Doctors have no portraits.** Each is shown by name, specialty and a round mark. Suitable free pictures of clinicians are almost all of real, named hospital staff, and putting an invented doctor's name under a real person's face would mislead; a clinic that uses the design adds photographs of its own doctors.
 
 ## On a phone
 

@@ -1487,7 +1487,7 @@
 															"content_width": "full",
 															"width": {
 																"unit": "px",
-																"size": 96,
+																"size": 64,
 																"sizes": []
 															},
 															"padding": {
@@ -1504,21 +1504,27 @@
 															{
 																"id": "00000ed",
 																"elType": "widget",
-																"widgetType": "image",
+																"widgetType": "icon",
 																"settings": {
-																	"image": {
-																		"id": "ofss://media/doctor-1",
-																		"url": "ofss://media/doctor-1"
+																	"selected_icon": {
+																		"value": "fas fa-user-md",
+																		"library": "fa-solid"
 																	},
-																	"image_size": "full",
-																	"image_border_radius": {
+																	"view": "stacked",
+																	"shape": "circle",
+																	"primary_color": "#E8F4F1",
+																	"secondary_color": "#0B6B69",
+																	"size": {
 																		"unit": "px",
-																		"top": "40",
-																		"right": "24",
-																		"bottom": "24",
-																		"left": "24",
-																		"isLinked": false
-																	}
+																		"size": 22,
+																		"sizes": []
+																	},
+																	"icon_padding": {
+																		"unit": "px",
+																		"size": 15,
+																		"sizes": []
+																	},
+																	"align": "left"
 																},
 																"elements": []
 															}

@@ -47,6 +47,11 @@ const plain = ( html ) => String( html || '' ).replace( /<[^>]+>/g, '' ).replace
  * name run together ("Naomi Hébert naomish"). Written apart, it reads as a credit.
  */
 const tidyAuthor = ( author, title ) => {
+	// Sometimes only the address of the photographer's account is given: name the account and the site.
+	const account = String( author ).trim().match( /^https?:\/\/(?:www\.)?([a-z0-9-]+)\.[a-z.]+\/(?:.*\/)?([^/]+?)(?:-\d+)?\/?$/i );
+	if ( account ) {
+		return `${ account[ 2 ] } (on ${ account[ 1 ][ 0 ].toUpperCase() + account[ 1 ].slice( 1 ) })`;
+	}
 	const words = String( author ).split( ' ' );
 	return /\(Unsplash\)/.test( title ) && words.length > 1 && /^[a-z0-9_]+$/.test( words[ words.length - 1 ] ) ? `${ words.slice( 0, -1 ).join( ' ' ) } (@${ words[ words.length - 1 ] } on Unsplash)` : String( author );
 };

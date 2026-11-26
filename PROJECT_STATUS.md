@@ -20,7 +20,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and 
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
 | 7b. Nine further starter sites | **In progress: 7 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS and Real Estate are done (plugin 0.5.0). Next: Magazine, and Shop, which needs WooCommerce products in a package |
-| 7c. Photographs and matching words for every design | **In progress.** The owner approved the Real Estate benchmark on 2026-11-26. Redone so far: Business, Education, Portfolio. Still with drawn pictures: Restaurant, Medical, Agency, SaaS |
+| 7c. Photographs and matching words for every design | **In progress.** The owner approved the Real Estate benchmark on 2026-11-26. Redone so far: Business, Education, Portfolio, Medical. Still with drawn pictures: Restaurant, Agency, SaaS |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
 | 10. Documentation and release | Not started |
@@ -202,6 +202,8 @@ Each is built with the first design that needs it, rather than against invented 
 - **Seven designs do not meet the owner's new standard for pictures:** Business, Portfolio, Restaurant, Education, Medical, Agency and SaaS use drawn pictures. Their words name invented businesses and say so in the footer, but were not written around photographs.
 - **The photographs come from one source.** Only CC0 photographs on Wikimedia Commons could be searched from here. The choice is good for houses, rooms, streets, food and portraits, and thin for some trades; with an API key from the owner, Pexels could be searched too (its licence allows use in templates, but not inside a WordPress.org theme).
 - **Three Real Estate photographs show people who can be recognised.** CC0 covers copyright, not the rights of the person shown; the portraits stand for invented staff and are meant to be replaced. `LICENSES.md` of the design says so.
+- **Medical shows its doctors without portraits.** Free photographs of clinicians are almost all of real, named hospital staff; an invented doctor's name under a real person's face would mislead, so each doctor has a name, a specialty and a round mark, and a clinic adds its own photographs.
+- **The pool of free, neutral portraits is small.** Three designs (Real Estate, Business, Education) use it for staff; each portrait is used in one design only, and what is left is mostly fashion photography.
 - **Real Estate has no property search, map or enquiry database.** Homes are ordinary pages; the viewing form sends an email.
 - **SaaS has no sign-up or payment, and its legal pages are sample text** that says so. "Start a free trial" leads to pricing and the demo form.
 - **Agency and SaaS were built and tested with Elementor Pro 4.0.4 without an activated licence.** Everything they use worked that way here; a licensed site was not tested. Their forms send email through WordPress, and whether the email arrives depends on the site's mail setup.

@@ -590,7 +590,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "© Linden Clinic. A fictional practice, made for the Open Frame Medical starter site. Nothing on this site is medical advice.",
+									"title": "Sample content: Linden Clinic is a fictional practice made for the Open Frame Medical starter site. The doctors, figures and quote are examples to replace with your own. Nothing on this site is medical advice.",
 									"header_size": "p",
 									"title_color": "#CFE6E1",
 									"typography_typography": "custom",

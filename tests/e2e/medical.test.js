@@ -25,7 +25,7 @@ runDesignChecks( {
 		{ path: '/heart-numbers/' },
 		{ path: '/a-page-that-does-not-exist/', status: 404 },
 	],
-	counts: { pages: 10, posts: 3, images: 13, reused: 0, menus: 1 },
+	counts: { pages: 10, posts: 3, images: 9, reused: 0, menus: 1 },
 	pageNames: [ 'home', 'about', 'departments', 'department', 'doctors', 'doctor', 'appointment', 'patients', 'contact', 'notes' ],
 	headingFont: 'Plus Jakarta Sans',
 	bodyFont: 'Plus Jakarta Sans',
@@ -44,7 +44,7 @@ runDesignChecks( {
 	editor: [
 		[ 'medical:pages:home', 'Unhurried care, close to home' ],
 		[ 'medical:site-parts:header', 'Linden Clinic' ],
-		[ 'medical:site-parts:footer', 'A fictional practice' ],
+		[ 'medical:site-parts:footer', 'Sample content' ],
 	],
 	gone: '/departments/',
 	brand: 'Linden Clinic',
