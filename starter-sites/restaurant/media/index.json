@@ -1,98 +1,114 @@
 [
 	{
 		"uid": "hero",
-		"file": "hero.jpg",
+		"file": "hero.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Sweet Ice Cream Photography (@sweeticecreamphotography on Unsplash), from Wikimedia Commons.",
+		"author": "Sweet Ice Cream Photography (@sweeticecreamphotography on Unsplash)"
 	},
 	{
 		"uid": "dish-leeks",
-		"file": "dish-leeks.jpg",
-		"alt": "Charred leeks with romesco on a cream plate, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "dish-leeks.webp",
+		"alt": "A stone bowl of cured fish with shaved fennel and dill on a wooden table, with a bowl of vegetables and a glass of white wine behind",
+		"licence": "CC0-1.0. Photograph by Stefan Johnson (@stefanjonhson on Unsplash), from Wikimedia Commons.",
+		"author": "Stefan Johnson (@stefanjonhson on Unsplash)"
 	},
 	{
 		"uid": "dish-flatbread",
-		"file": "dish-flatbread.jpg",
-		"alt": "Rye flatbread with labneh, tomato and herbs, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "dish-flatbread.webp",
+		"alt": "A blistered flatbread topped with rocket, tomato and olives on a wooden peel",
+		"licence": "CC0-1.0. Photograph by David Nuescheler (@uncled on Unsplash), from Wikimedia Commons.",
+		"author": "David Nuescheler (@uncled on Unsplash)"
 	},
 	{
 		"uid": "dish-steak",
-		"file": "dish-steak.jpg",
-		"alt": "Sliced bavette with chimichurri and potatoes, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "dish-steak.webp",
+		"alt": "Grilled beef with rosemary, a soft-boiled egg and chopped tomato on a white plate, seen from above",
+		"licence": "CC0-1.0. Photograph by Eduardo Roda Lopes (@eduroda on Unsplash), from Wikimedia Commons.",
+		"author": "Eduardo Roda Lopes (@eduroda on Unsplash)"
 	},
 	{
 		"uid": "dish-cheesecake",
-		"file": "dish-cheesecake.jpg",
-		"alt": "A slice of burnt cheesecake with sour cherries, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "dish-cheesecake.webp",
+		"alt": "A small pudding with a crumble top in a white bowl, with berries and cream sauce being poured over it",
+		"licence": "CC0-1.0. Photograph by Pablo Merchán Montes (@pablomerchanm on Unsplash), from Wikimedia Commons.",
+		"author": "Pablo Merchán Montes (@pablomerchanm on Unsplash)"
 	},
 	{
 		"uid": "room",
-		"file": "room.jpg",
-		"alt": "The dining room: three arches, hanging lamps and a green banquette",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "room.webp",
+		"alt": "A dark dining room with whitewashed walls, a window and wooden tables laid with wine glasses",
+		"licence": "CC0-1.0. Photograph by Todd Diemer (@todd_diemer on Unsplash), from Wikimedia Commons.",
+		"author": "Todd Diemer (@todd_diemer on Unsplash)"
 	},
 	{
 		"uid": "oven",
-		"file": "oven.jpg",
-		"alt": "The brick oven with a fire burning inside",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "oven.webp",
+		"alt": "A brick wood-fired oven with a fire inside",
+		"licence": "CC0-1.0. Photograph by Cathal Mac an Bheatha (@cathalmacan on Unsplash), from Wikimedia Commons.",
+		"author": "Cathal Mac an Bheatha (@cathalmacan on Unsplash)"
 	},
 	{
 		"uid": "long-table",
-		"file": "long-table.jpg",
-		"alt": "A long table laid for twelve, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "long-table.webp",
+		"alt": "A long table laid for a group with wine glasses, plates and vases of white tulips",
+		"licence": "CC0-1.0. Photograph by Leon Christopher arvtd, from Wikimedia Commons.",
+		"author": "Leon Christopher arvtd"
 	},
 	{
 		"uid": "bar",
-		"file": "bar.jpg",
-		"alt": "Two shelves of bottles behind the bar",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "bar.webp",
+		"alt": "Rows of bottles on the counter and shelves behind a bar",
+		"licence": "CC0-1.0. Photograph by Eaters Collective (@eaterscollective on Unsplash), from Wikimedia Commons.",
+		"author": "Eaters Collective (@eaterscollective on Unsplash)"
 	},
 	{
 		"uid": "cocktail",
-		"file": "cocktail.jpg",
-		"alt": "An orange cocktail with ice and a slice of citrus, seen from above",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "cocktail.webp",
+		"alt": "An amber cocktail in a coupe glass with a slice of orange, in front of a bowl of oranges",
+		"licence": "CC0-1.0. Photograph by Adam Jaime (@arobj on Unsplash), from Wikimedia Commons.",
+		"author": "Adam Jaime (@arobj on Unsplash)"
 	},
 	{
 		"uid": "bread",
-		"file": "bread.jpg",
-		"alt": "Sliced bread on a wooden board with butter",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "bread.webp",
+		"alt": "A crusty loaf on a linen cloth with a dish of butter behind it",
+		"licence": "CC0-1.0. Photograph by Brooke Cagle (@brookecagle on Unsplash), from Wikimedia Commons.",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)"
 	},
 	{
 		"uid": "chef",
-		"file": "chef.jpg",
-		"alt": "Illustrated portrait of Ines Marlow in chef whites",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "chef.webp",
+		"alt": "A cook in a linen apron slicing an onion on a wooden board",
+		"licence": "CC0-1.0. Photograph by Caroline Attwood (@carolineattwood on Unsplash), from Wikimedia Commons.",
+		"author": "Caroline Attwood (@carolineattwood on Unsplash)"
 	},
 	{
 		"uid": "host",
-		"file": "host.jpg",
-		"alt": "Illustrated portrait of Tobias Reyes",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"file": "host.webp",
+		"alt": "Tobias Reyes behind the bar",
+		"licence": "CC0-1.0. Photograph by Taylor Davidson (@tdavidson on Unsplash), from Wikimedia Commons.",
+		"author": "Taylor Davidson (@tdavidson on Unsplash)"
 	},
 	{
 		"uid": "note-1",
-		"file": "note-1.jpg",
+		"file": "note-1.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
-	},
-	{
-		"uid": "note-3",
-		"file": "note-3.jpg",
-		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"licence": "CC0-1.0. Photograph by Peter Wendt (@peterwendt on Unsplash), from Wikimedia Commons.",
+		"author": "Peter Wendt (@peterwendt on Unsplash)"
 	},
 	{
 		"uid": "note-2",
-		"file": "note-2.jpg",
+		"file": "note-2.webp",
 		"alt": "",
-		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs)."
+		"licence": "CC0-1.0. Photograph by henry fournier (@henryatpull on Unsplash), from Wikimedia Commons.",
+		"author": "henry fournier (@henryatpull on Unsplash)"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Clark Young (@clark1 on Unsplash), from Wikimedia Commons.",
+		"author": "Clark Young (@clark1 on Unsplash)"
 	}
 ]

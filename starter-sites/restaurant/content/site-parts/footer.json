@@ -701,7 +701,7 @@
 								"elType": "widget",
 								"widgetType": "heading",
 								"settings": {
-									"title": "© Ember & Rye. A fictional restaurant, made for the Open Frame Restaurant starter site.",
+									"title": "Sample content: Ember & Rye is a fictional restaurant made for the Open Frame Restaurant starter site. The dishes, prices, people and quote are examples to replace with your own.",
 									"header_size": "p",
 									"title_color": "#CDC2B2",
 									"align": "center",

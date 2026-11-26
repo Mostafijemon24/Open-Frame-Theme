@@ -10,7 +10,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, em, fluid, gap, ids, kitTypography, link, media, page, percent, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, em, fluid, gap, ids, kitTypography, link, media, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'restaurant';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -107,10 +107,10 @@ const hoursList = () => column( { spacing: 14 }, hours.map( ( [ day, time ] ) =>
    Content
    ---------------------------------------------------------------------- */
 const signature = [
-	[ 'dish-leeks', 'Charred leeks', '14', 'Romesco, toasted hazelnut, burnt butter' ],
-	[ 'dish-flatbread', 'Rye flatbread', '12', 'Whipped labneh, blistered tomato, herbs' ],
-	[ 'dish-steak', 'Bavette over oak', '29', 'Chimichurri, ember-roast potatoes' ],
-	[ 'dish-cheesecake', 'Burnt cheesecake', '11', 'Sour cherry, bay leaf' ],
+	[ 'dish-leeks', 'Cured trout', '15', 'Shaved fennel, dill, crisp leaves' ],
+	[ 'dish-flatbread', 'Oven flatbread', '13', 'Rocket, tomato, black olives, cured ham' ],
+	[ 'dish-steak', 'Beef over oak', '29', 'Rosemary, soft egg, chopped tomato' ],
+	[ 'dish-cheesecake', 'Warm sponge pudding', '11', 'Berries, cream poured at the table' ],
 ];
 
 const posts = [
@@ -234,7 +234,7 @@ pages.home = {
 		section( { background: C.forest, top: 112, spacing: 24 }, [
 			column( { width: 70, spacing: 24, align: 'center', more: { _flex_align_self: 'center' } }, [
 				heading( '“The best thing I ate this year was a leek. I have thought about it every week since.”', { tag: 'p', align: 'center', size: fluid( 'clamp(1.75rem, 1.2rem + 2.4vw, 3rem)' ), more: { typography_font_style: 'italic', typography_line_height: em( 1.2 ) } } ),
-				label( 'The Harbour Gazette', { align: 'center' } ),
+				label( 'The Harbour Gazette. A sample quote', { align: 'center' } ),
 			] ),
 		] ),
 	],
@@ -245,15 +245,15 @@ pages.menu = {
 	content: [
 		pageHero( 'Dinner', 'The <em>menu</em>', 'Written each Tuesday, after the growers have called. Dishes are made to share and arrive when they are ready.' ),
 		course( 'To start', 'Small plates', [
-			[ 'Rye flatbread', '12', 'Whipped labneh, blistered tomato, herbs' ],
+			[ 'Oven flatbread', '13', 'Rocket, tomato, black olives, cured ham' ],
 			[ 'Charred leeks', '14', 'Romesco, toasted hazelnut, burnt butter' ],
 			[ 'Ember-roast squash soup', '10', 'Crème fraîche, toasted seeds' ],
-			[ 'Smoked trout', '15', 'Pickled cucumber, dill, rye crisp' ],
+			[ 'Cured trout', '15', 'Shaved fennel, dill, crisp leaves' ],
 			[ 'House bread and cultured butter', '6', 'Baked at four in the afternoon' ],
 			[ 'Burrata', '13', 'Grilled peach, basil, olive oil' ],
 		], { background: C.char } ),
 		course( 'Main', 'From the fire', [
-			[ 'Bavette over oak', '29', 'Chimichurri, ember-roast potatoes' ],
+			[ 'Beef over oak', '29', 'Rosemary, soft egg, chopped tomato' ],
 			[ 'Whole sea bream', '32', 'Lemon, fennel, brown butter. For two' ],
 			[ 'Half chicken', '24', 'Brined two days, harissa, yoghurt' ],
 			[ 'Celeriac steak', '21', 'Hazelnut crust, mushroom jus' ],
@@ -265,7 +265,7 @@ pages.menu = {
 			[ 'Charred carrots', '8', 'Honey, cumin, labneh' ],
 		], { background: C.char } ),
 		course( 'To finish', 'Dessert and cheese', [
-			[ 'Burnt cheesecake', '11', 'Sour cherry, bay leaf' ],
+			[ 'Warm sponge pudding', '11', 'Berries, cream poured at the table' ],
 			[ 'Chocolate and rye tart', '10', 'Sea salt, crème fraîche' ],
 			[ 'Roast pear', '9', 'Brown sugar, vanilla ice cream' ],
 			[ 'Three cheeses', '14', 'From the region, with quince' ],
@@ -469,7 +469,7 @@ const parts = {
 				] ),
 				ruled( [
 					b.list( [ [ 'Menu', 'menu' ], [ 'Reservations', 'reservations' ], [ 'Private Events', 'private-events' ], [ 'Our Story', 'story' ], [ 'Gallery', 'gallery' ], [ 'Journal', 'journal' ], [ 'Contact', 'contact' ] ].map( ( [ title, name ] ) => ( { text: title, url: page( name ) } ) ), { color: C.bone, more: { view: 'inline', icon_align: 'center', icon_size: px( 0 ), text_indent: px( 0 ), space_between: px( 28 ), text_color_hover: C.ember, icon_typography_typography: 'custom', icon_typography_font_size: px( 14 ), icon_typography_text_transform: 'uppercase', icon_typography_letter_spacing: px( 2 ) } } ),
-					fact( '© Ember & Rye. A fictional restaurant, made for the Open Frame Restaurant starter site.', { color: C.bone, size: 14, align: 'center' } ),
+					fact( 'Sample content: Ember & Rye is a fictional restaurant made for the Open Frame Restaurant starter site. The dishes, prices, people and quote are examples to replace with your own.', { color: C.bone, size: 14, align: 'center' } ),
 				], { top: 32, bottom: 0, spacing: 22 } ),
 			] ),
 		],
@@ -563,23 +563,9 @@ const themeMods = {
 	open_frame_page_layout: 'no-sidebar',
 };
 
-const licence = 'CC0-1.0. Original artwork generated for this starter site (tools/sites/restaurant-art.mjs).';
-const mediaIndex = [
-	{ uid: 'hero', file: 'hero.jpg', alt: '' },
-	{ uid: 'dish-leeks', file: 'dish-leeks.jpg', alt: 'Charred leeks with romesco on a cream plate, seen from above' },
-	{ uid: 'dish-flatbread', file: 'dish-flatbread.jpg', alt: 'Rye flatbread with labneh, tomato and herbs, seen from above' },
-	{ uid: 'dish-steak', file: 'dish-steak.jpg', alt: 'Sliced bavette with chimichurri and potatoes, seen from above' },
-	{ uid: 'dish-cheesecake', file: 'dish-cheesecake.jpg', alt: 'A slice of burnt cheesecake with sour cherries, seen from above' },
-	{ uid: 'room', file: 'room.jpg', alt: 'The dining room: three arches, hanging lamps and a green banquette' },
-	{ uid: 'oven', file: 'oven.jpg', alt: 'The brick oven with a fire burning inside' },
-	{ uid: 'long-table', file: 'long-table.jpg', alt: 'A long table laid for twelve, seen from above' },
-	{ uid: 'bar', file: 'bar.jpg', alt: 'Two shelves of bottles behind the bar' },
-	{ uid: 'cocktail', file: 'cocktail.jpg', alt: 'An orange cocktail with ice and a slice of citrus, seen from above' },
-	{ uid: 'bread', file: 'bread.jpg', alt: 'Sliced bread on a wooden board with butter' },
-	{ uid: 'chef', file: 'chef.jpg', alt: 'Illustrated portrait of Ines Marlow in chef whites' },
-	{ uid: 'host', file: 'host.jpg', alt: 'Illustrated portrait of Tobias Reyes' },
-	...posts.map( ( post ) => ( { uid: post.image, file: post.image + '.jpg', alt: '' } ) ),
-].map( ( entry ) => ( { ...entry, licence } ) );
+// The photographs, with where each came from (photos.json, written by tools/sites/photos.mjs).
+// The hero lies under the headline and the article covers beside their titles: decoration, so no alt text.
+const mediaIndex = photoIndex( OUT, { hero: '', host: 'Tobias Reyes behind the bar', ...Object.fromEntries( posts.map( ( post ) => [ post.image, '' ] ) ) } );
 
 const fonts = [
 	{ family: SERIF, weight: '300 700', style: 'normal', file: 'cormorant-garamond-latin.woff2', licence: 'OFL-1.1. Copyright 2015 The Cormorant Project Authors.' },

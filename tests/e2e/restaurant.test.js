@@ -42,7 +42,7 @@ runDesignChecks( {
 	editor: [
 		[ 'restaurant:pages:home', 'Fire, grain and' ],
 		[ 'restaurant:site-parts:header', 'Rye' ],
-		[ 'restaurant:site-parts:footer', 'A fictional restaurant' ],
+		[ 'restaurant:site-parts:footer', 'Sample content' ],
 	],
 	gone: '/menu/',
 	brand: 'Ember & Rye',

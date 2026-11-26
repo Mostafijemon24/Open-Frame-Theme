@@ -36,9 +36,13 @@ In Elementor's Site Settings: Primary and Accent are ember, Secondary is cream (
 
 Header: two lines on a desktop. First the opening hours on the left, the name in the centre and a "Reserve" button on the right; under them the menu, centered, in tracked capitals. On a phone only the name and the theme's menu button remain, on one line. Footer: the name, large and centered, three centered columns (visit, hours, reservations), the menu again as one line, small print.
 
-## Images
+## Photographs
 
-Sixteen original illustrations drawn by `tools/sites/restaurant-art.mjs`: a table seen from above, four dishes, the dining room, the oven, the long table, the bar, a cocktail, bread, two portraits and three patterns for the journal. CC0, about 750 KB together. A restaurant replaces them with photographs; dark, low-key photographs suit the design best, because text sits on two of them.
+Sixteen photographs from Wikimedia Commons, all recorded there as CC0, listed with their sources in `CREDITS.md`. `photo-sources.json` says which is used where; `tools/sites/photos.mjs fetch restaurant` prepares them.
+
+All are dark and warm, lit by fire, candles or bar lamps, so they sit in the night-coloured page without a frame: logs burning in a hearth under the headline, the brick oven, a dim dining room, a long laid table, the bar, four plated dishes, a loaf, a cocktail, a cook's hands at the board and the host behind the bar.
+
+The four pictured dishes are named after what their photographs show (cured trout with fennel, a flatbread from the oven, beef with rosemary and a soft egg, a warm sponge pudding); the rest of the menu is text.
 
 ## On a phone
 

@@ -433,7 +433,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Rye flatbread",
+													"title": "Oven flatbread",
 													"header_size": "h3",
 													"__globals__": {
 														"title_color": "globals/colors?id=secondary"
@@ -480,7 +480,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "12",
+													"title": "13",
 													"header_size": "p",
 													"title_color": "#E39A4A",
 													"typography_typography": "custom",
@@ -507,7 +507,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Whipped labneh, blistered tomato, herbs</p>",
+											"editor": "<p>Rocket, tomato, black olives, cured ham</p>",
 											"typography_typography": "custom",
 											"typography_font_size": {
 												"unit": "px",
@@ -853,7 +853,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Smoked trout",
+													"title": "Cured trout",
 													"header_size": "h3",
 													"__globals__": {
 														"title_color": "globals/colors?id=secondary"
@@ -927,7 +927,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Pickled cucumber, dill, rye crisp</p>",
+											"editor": "<p>Shaved fennel, dill, crisp leaves</p>",
 											"typography_typography": "custom",
 											"typography_font_size": {
 												"unit": "px",
@@ -1473,7 +1473,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Bavette over oak",
+													"title": "Beef over oak",
 													"header_size": "h3",
 													"__globals__": {
 														"title_color": "globals/colors?id=secondary"
@@ -1547,7 +1547,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Chimichurri, ember-roast potatoes</p>",
+											"editor": "<p>Rosemary, soft egg, chopped tomato</p>",
 											"typography_typography": "custom",
 											"typography_font_size": {
 												"unit": "px",
@@ -2995,7 +2995,7 @@
 												"elType": "widget",
 												"widgetType": "heading",
 												"settings": {
-													"title": "Burnt cheesecake",
+													"title": "Warm sponge pudding",
 													"header_size": "h3",
 													"__globals__": {
 														"title_color": "globals/colors?id=secondary"
@@ -3069,7 +3069,7 @@
 										"elType": "widget",
 										"widgetType": "text-editor",
 										"settings": {
-											"editor": "<p>Sour cherry, bay leaf</p>",
+											"editor": "<p>Berries, cream poured at the table</p>",
 											"typography_typography": "custom",
 											"typography_font_size": {
 												"unit": "px",
