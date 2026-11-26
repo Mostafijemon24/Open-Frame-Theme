@@ -2,7 +2,7 @@
 	"id": "magazine",
 	"order": 10,
 	"name": "Magazine",
-	"summary": "An editorial front page with category, article and author layouts for blogs and publications.",
+	"summary": "An editorial front page for a magazine or blog: a cover story, sections by category, a ruled masthead, a calm article layout, writers, and subscription and contact forms. Masthead, footer, lists and articles are Theme Builder templates.",
 	"category": "publishing",
 	"tags": [
 		"blog",
@@ -11,11 +11,11 @@
 		"publication"
 	],
 	"tier": "pro",
-	"status": "coming_soon",
+	"status": "available",
 	"version": "1.0.0",
 	"colors": [
 		"#ffffff",
-		"#d7263d",
+		"#b5121b",
 		"#111111"
 	],
 	"pages": [
@@ -26,6 +26,7 @@
 		"About",
 		"Subscribe",
 		"Contact",
+		"All Stories",
 		"404"
 	],
 	"requires": {
@@ -33,7 +34,7 @@
 		"wordpress": "6.8",
 		"php": "7.4",
 		"theme": "1.1.0",
-		"importer": "1.0.0",
+		"importer": "0.6.0",
 		"plugins": [
 			{
 				"slug": "elementor",
@@ -52,7 +53,26 @@
 				"required": true,
 				"url": "https://elementor.com/pro/"
 			}
-		]
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"form",
+				"heading",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-excerpt",
+				"theme-post-featured-image",
+				"theme-post-title"
+			]
+		}
 	},
 	"editable": {
 		"404": "elementor",
@@ -62,5 +82,19 @@
 		"blog": "elementor",
 		"single": "elementor"
 	},
-	"demo_url": ""
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "A story",
+			"file": "story.png"
+		},
+		{
+			"title": "A section",
+			"file": "section.png"
+		},
+		{
+			"title": "About",
+			"file": "about.png"
+		}
+	]
 }

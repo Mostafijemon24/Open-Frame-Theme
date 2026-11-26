@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Places",
+				"url": "ofss://category/places"
+			},
+			{
+				"title": "Table",
+				"url": "ofss://category/table"
+			},
+			{
+				"title": "Craft",
+				"url": "ofss://category/craft"
+			},
+			{
+				"title": "All stories",
+				"url": "ofss://page/stories"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			},
+			{
+				"title": "Subscribe",
+				"url": "ofss://page/subscribe"
+			}
+		]
+	}
+]

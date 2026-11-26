@@ -1,0 +1,22 @@
+# Photographs of the magazine starter site
+
+Written by `tools/sites/photos.mjs`; do not edit by hand. Every photograph was taken from Wikimedia Commons, which records it as CC0 or public domain: it may be copied, changed and redistributed without conditions. The licence was read from Commons on the date shown. The files here are cropped and compressed copies.
+
+CC0 and the public domain cover copyright only. Where a photograph shows a person who can be recognised, a trade mark or a private building, the people who use the design remain responsible for how they use that picture; the starter site shows them as examples to be replaced.
+
+| File | Used for | Photographer | Licence | Source | Checked |
+| --- | --- | --- | --- | --- | --- |
+| `media/files/places-1.webp` | Places: cover story | Andreea Chidu (@achidu on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Cabins_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/places-2.webp` | Places: second story | Ales Krivec (@aleskrivec on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Cabins_in_the_Mountains_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/places-3.webp` | Places: third story | Caitlin Wynne (@caitlinwynne on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Single_lane_village_street_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/table-1.webp` | Table: first story | Kate Remmer (@studioktr on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Man_holding_bread_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/table-2.webp` | Table: second story | Igor Ovsyannykov (@igorovsyannykov on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Street_Fruit_Seller_at_work_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/table-3.webp` | Table: third story | Annie Spratt (@anniespratt on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Coffee_from_a_steel_kettle_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/craft-1.webp` | Craft: first story | SwapnIl Dwivedi (@momentance on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Mud_games_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/craft-2.webp` | Craft: second story | Clark Young (@clark1 on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Clark_Young_2016_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/craft-3.webp` | Craft: third story | Igor Ovsyannykov (@igorovsyannykov on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Factory_Worker_Making_Clothes_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/author-1.webp` | Author portrait 1 | REASONS ART (@reas on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Smiling_woman_in_blanket_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/author-2.webp` | Author portrait 2 | JD Mason (@jmason on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Professional_Bowtie_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/author-3.webp` | Author portrait 3 | Norman Toth 100rulez | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Hungary_(Unsplash_lCVP-lu0kxk).jpg) | 2026-11-26 |
+| `media/files/about.webp` | About: the making of the magazine | rawpixel.com (@rawpixel on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Scribbling_in_a_newspaper_(Unsplash).jpg) | 2026-11-26 |
+| `media/files/subscribe.webp` | Subscribe: a reader | Roman Kraft (@romankraft on Unsplash) | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Person_reading_a_newspaper_(Unsplash).jpg) | 2026-11-26 |

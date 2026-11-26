@@ -1,0 +1,198 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#111111"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#111111"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#3D3D3D"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#B5121B"
+		}
+	],
+	"custom_colors": [
+		{
+			"_id": "ofpaper",
+			"title": "Paper",
+			"color": "#F5F2EB"
+		},
+		{
+			"_id": "ofrule",
+			"title": "Rule",
+			"color": "#D8D4CA"
+		},
+		{
+			"_id": "ofgrey",
+			"title": "Grey",
+			"color": "#5E5E5E"
+		}
+	],
+	"system_typography": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"typography_typography": "custom",
+			"typography_font_family": "Literata",
+			"typography_font_weight": "700"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"typography_typography": "custom",
+			"typography_font_family": "Public Sans",
+			"typography_font_weight": "600"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"typography_typography": "custom",
+			"typography_font_family": "Public Sans",
+			"typography_font_weight": "400"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"typography_typography": "custom",
+			"typography_font_family": "Public Sans",
+			"typography_font_weight": "700"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1200,
+		"sizes": []
+	},
+	"body_background_background": "classic",
+	"body_background_color": "#FFFFFF",
+	"body_color": "#3D3D3D",
+	"body_typography_typography": "custom",
+	"body_typography_font_family": "Public Sans",
+	"body_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"body_typography_font_weight": "400",
+	"body_typography_line_height": {
+		"unit": "em",
+		"size": 1.65,
+		"sizes": []
+	},
+	"link_normal_color": "#111111",
+	"link_hover_color": "#B5121B",
+	"h1_color": "#111111",
+	"h1_typography_typography": "custom",
+	"h1_typography_font_family": "Literata",
+	"h1_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.125rem, 1.4rem + 3.2vw, 3.75rem)",
+		"sizes": []
+	},
+	"h1_typography_font_weight": "700",
+	"h1_typography_line_height": {
+		"unit": "em",
+		"size": 1.08,
+		"sizes": []
+	},
+	"h1_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.02,
+		"sizes": []
+	},
+	"h2_color": "#111111",
+	"h2_typography_typography": "custom",
+	"h2_typography_font_family": "Literata",
+	"h2_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.625rem, 1.3rem + 1.5vw, 2.375rem)",
+		"sizes": []
+	},
+	"h2_typography_font_weight": "700",
+	"h2_typography_line_height": {
+		"unit": "em",
+		"size": 1.15,
+		"sizes": []
+	},
+	"h2_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.015,
+		"sizes": []
+	},
+	"h3_color": "#111111",
+	"h3_typography_typography": "custom",
+	"h3_typography_font_family": "Literata",
+	"h3_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem)",
+		"sizes": []
+	},
+	"h3_typography_font_weight": "700",
+	"h3_typography_line_height": {
+		"unit": "em",
+		"size": 1.25,
+		"sizes": []
+	},
+	"h3_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.01,
+		"sizes": []
+	},
+	"h4_color": "#111111",
+	"h4_typography_typography": "custom",
+	"h4_typography_font_family": "Public Sans",
+	"h4_typography_font_size": {
+		"unit": "px",
+		"size": 16,
+		"sizes": []
+	},
+	"h4_typography_font_weight": "700",
+	"h4_typography_line_height": {
+		"unit": "em",
+		"size": 1.4,
+		"sizes": []
+	},
+	"button_typography_typography": "custom",
+	"button_typography_font_family": "Public Sans",
+	"button_typography_font_size": {
+		"unit": "px",
+		"size": 14,
+		"sizes": []
+	},
+	"button_typography_font_weight": "700",
+	"button_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"button_text_color": "#FFFFFF",
+	"button_background_color": "#111111",
+	"button_hover_text_color": "#FFFFFF",
+	"button_hover_background_color": "#B5121B",
+	"button_border_radius": {
+		"unit": "px",
+		"top": "0",
+		"right": "0",
+		"bottom": "0",
+		"left": "0",
+		"isLinked": true
+	},
+	"button_padding": {
+		"unit": "px",
+		"top": "15",
+		"right": "26",
+		"bottom": "15",
+		"left": "26",
+		"isLinked": false
+	}
+}

@@ -19,7 +19,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS and 
 | 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
-| 7b. Nine further starter sites | **In progress: 7 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS and Real Estate are done (plugin 0.5.0). Next: Magazine, and Shop, which needs WooCommerce products in a package |
+| 7b. Nine further starter sites | **In progress: 8 of 9 done.** The free tier is complete (Portfolio, Restaurant, Education, Medical); of the Pro tier, Agency, SaaS, Real Estate and Magazine are done (plugin 0.6.0). Next: Shop |
 | 7c. Photographs and matching words for every design | **In progress.** The owner approved the Real Estate benchmark on 2026-11-26. Redone so far: Business, Education, Portfolio, Medical, Restaurant, SaaS (its product screens stay drawn). Still with drawn pictures: Agency |
 | 8. Package, validate, publish | Not started |
 | 9. QA | Not started |
@@ -177,6 +177,13 @@ Each is built with the first design that needs it, rather than against invented 
 - **Categories:** `ofss://term/<slug>` becomes the number of a category of the design's posts (for widgets that list posts of one category) and `ofss://category/<slug>` the address of its archive. Needed by the Magazine design.
 - **Tests:** a "Reference Shop" fixture; twelve importer checks that run when WooCommerce is active in the test site (CI runs the importer checks a second time with it); six new library tool checks.
 - **Not built:** variable products, attributes, stock, tax and shipping settings, and Elementor Pro's shop templates. The store pages are WooCommerce's, styled by the theme.
+
+### Phase 7b, part 8: the Magazine design
+
+- **The design** (`starter-sites/magazine`, brief in `brief.md`): the fictional quarterly "Common Ground". A front page, three sections (Places, Table, Craft), nine stories, a writer's page, About, Subscribe, Contact and a page of all stories. Six Theme Builder templates, Literata with Public Sans, black rules on white with one red.
+- **Photographs first:** fourteen CC0 photographs were chosen, then each story was written about what its photograph shows. No story names a real place.
+- **A front page that follows the posts:** four Posts widgets show the newest stories of each section, and a story shown once is not shown again. The sections are bound to categories by name (`ofss://term/places`), which the importer turns into numbers.
+- **Found by the tests and fixed:** dates and section names were set smaller than 13px; stories had no subheading; a section page said "Category: Table" where the magazine says "Table".
 
 ## Verified (executed 2026-11-26)
 

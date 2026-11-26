@@ -1,0 +1,16 @@
+[
+	{
+		"family": "Literata",
+		"weight": "200 900",
+		"style": "normal",
+		"file": "literata-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2017 The Literata Project Authors."
+	},
+	{
+		"family": "Public Sans",
+		"weight": "100 900",
+		"style": "normal",
+		"file": "public-sans-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2015 The Public Sans Project Authors."
+	}
+]
