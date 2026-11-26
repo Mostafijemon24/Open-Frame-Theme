@@ -1290,6 +1290,9 @@ body[class*="elementor-kit-"] .of-builder .entry-title { font-size: var(--of-fs-
 body[class*="elementor-kit-"] .entry-title a { color: var(--of-color-heading); }
 body[class*="elementor-kit-"] .entry-title a:hover { color: var(--of-color-primary); }
 body[class*="elementor-kit-"] .entry-meta a { color: var(--of-color-muted); }
+/* Links inside a post shown by an Elementor Pro template are underlined, like
+   those in the theme's own templates: color alone does not mark a link. */
+.elementor-widget-theme-post-content a:not(.wp-block-button__link):not(.elementor-button) { text-decoration: underline; text-underline-offset: 0.15em; }
 /* Headings written in the block editor keep the reading sizes of the theme:
    Site Settings sizes are made for page sections and would dwarf a post title. */
 body[class*="elementor-kit-"] .entry-content > :is(h1, h2, h3, h4),

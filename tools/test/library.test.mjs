@@ -48,7 +48,15 @@ function sources( t ) {
 	const dir = temp( t, 'ofss-src-' );
 	fs.copyFileSync( path.join( ROOT, 'starter-sites/categories.json' ), path.join( dir, 'categories.json' ) );
 	fs.cpSync( path.join( ROOT, 'tests/fixtures/sites/reference' ), path.join( dir, 'reference' ), { recursive: true } );
-	fs.cpSync( path.join( ROOT, 'starter-sites/agency' ), path.join( dir, 'agency' ), { recursive: true } );
+	// A Pro design that is not out yet, made from a real catalog entry so that the
+	// tests do not depend on which designs happen to be finished.
+	fs.mkdirSync( path.join( dir, 'agency/preview' ), { recursive: true } );
+	fs.copyFileSync( path.join( ROOT, 'starter-sites/agency/preview/thumbnail.png' ), path.join( dir, 'agency/preview/thumbnail.png' ) );
+	const entry = readJson( path.join( ROOT, 'starter-sites/agency/site.json' ) );
+	entry.status = 'coming_soon';
+	delete entry.screenshots;
+	delete entry.requires.elementor;
+	fs.writeFileSync( path.join( dir, 'agency/site.json' ), JSON.stringify( entry ) );
 	return dir;
 }
 

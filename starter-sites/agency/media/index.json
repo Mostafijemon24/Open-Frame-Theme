@@ -1,0 +1,92 @@
+[
+	{
+		"uid": "case-volt",
+		"file": "case-volt.jpg",
+		"alt": "Cover of the Volt case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "case-orbit",
+		"file": "case-orbit.jpg",
+		"alt": "Cover of the Orbit case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "case-pulse",
+		"file": "case-pulse.jpg",
+		"alt": "Cover of the Pulse Festival case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "case-terra",
+		"file": "case-terra.jpg",
+		"alt": "Cover of the Terra Outdoor case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "case-nord",
+		"file": "case-nord.jpg",
+		"alt": "Cover of the Nord Furniture case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "case-kino",
+		"file": "case-kino.jpg",
+		"alt": "Cover of the Kino Fest case study",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "reel",
+		"file": "reel.jpg",
+		"alt": "Six project covers arranged as a wall",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "studio",
+		"file": "studio.jpg",
+		"alt": "The studio: a long table with three screens under a large window",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "team-1",
+		"file": "team-1.jpg",
+		"alt": "Illustrated portrait of Noa Feldman",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "team-2",
+		"file": "team-2.jpg",
+		"alt": "Illustrated portrait of Idris Kamara",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "team-3",
+		"file": "team-3.jpg",
+		"alt": "Illustrated portrait of Freya Olsen",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "team-4",
+		"file": "team-4.jpg",
+		"alt": "Illustrated portrait of Mateo Ruiz",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "journal-1",
+		"file": "journal-1.jpg",
+		"alt": "Cover of the article “In praise of the half-finished brief”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "journal-2",
+		"file": "journal-2.jpg",
+		"alt": "Cover of the article “Why we do not pitch with finished work”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	},
+	{
+		"uid": "journal-3",
+		"file": "journal-3.jpg",
+		"alt": "Cover of the article “We ship on Fridays, and other bad ideas that work”",
+		"licence": "CC0-1.0. Original artwork generated for this starter site (tools/sites/agency-art.mjs)."
+	}
+]

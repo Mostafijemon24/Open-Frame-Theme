@@ -38,6 +38,13 @@ class TokenResolver {
 	private $front;
 
 	/**
+	 * Menu slugs by the name of the menu inside the package.
+	 *
+	 * @var array<string,string>
+	 */
+	private $menus;
+
+	/**
 	 * References that pointed at nothing.
 	 *
 	 * @var string[]
@@ -50,11 +57,13 @@ class TokenResolver {
 	 * @param array<string,int> $media Attachment IDs by media uid.
 	 * @param array<string,int> $posts Post IDs by "<kind>/<name>".
 	 * @param string            $front The page that becomes the front page, as "page/<name>".
+	 * @param array<string,string> $menus Menu slugs by the name of the menu inside the package.
 	 */
-	public function __construct( array $media, array $posts, $front = '' ) {
+	public function __construct( array $media, array $posts, $front = '', array $menus = array() ) {
 		$this->media = $media;
 		$this->posts = $posts;
 		$this->front = (string) $front;
+		$this->menus = $menus;
 	}
 
 	/**
@@ -82,7 +91,7 @@ class TokenResolver {
 		}
 
 		return preg_replace_callback(
-			'#ofss://(media|page|post|site-part|product)/([a-z0-9-]+)#',
+			'#ofss://(media|page|post|site-part|product|menu)/([a-z0-9-]+)#',
 			function ( $found ) {
 				$url = $this->url( $found[1], $found[2] );
 				if ( '' === $url ) {
@@ -118,6 +127,10 @@ class TokenResolver {
 	private function url( $kind, $name ) {
 		if ( 'media' === $kind ) {
 			return isset( $this->media[ $name ] ) ? (string) wp_get_attachment_url( $this->media[ $name ] ) : '';
+		}
+
+		if ( 'menu' === $kind ) {
+			return (string) ( $this->menus[ $name ] ?? '' );
 		}
 
 		$id = $this->posts[ $kind . '/' . $name ] ?? 0;

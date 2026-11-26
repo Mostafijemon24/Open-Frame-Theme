@@ -200,6 +200,9 @@ export function writeJson( file, data ) {
 	fs.writeFileSync( file, JSON.stringify( data, null, '\t' ) + '\n' );
 }
 
+/** Elementor Pro's way of saying "fill this in from the current post": a dynamic tag, such as post-title. */
+export const dynamic = ( name ) => `[elementor-tag id="" name="${ name }" settings="%7B%7D"]`;
+
 /** A menu of the design, for widgets that ask which menu to show. */
 export const menu = ( uid ) => `ofss://menu/${ uid }`;
 

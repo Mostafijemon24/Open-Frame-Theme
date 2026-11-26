@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Agency starter site](#the-agency-starter-site--test-report): Phase 7b, part 5; the first design for Elementor Pro
 - [Theme Builder templates in a package](#theme-builder-templates--test-report): groundwork for the Pro tier
 - [Medical starter site](#the-medical-starter-site--test-report): Phase 7b, part 4; the free tier is complete
 - [Education starter site](#the-education-starter-site--test-report): Phase 7b, part 3
@@ -11,6 +12,51 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The Agency starter site — Test Report
+
+Phase 7b, part 5, plugin 0.5.0, design version 1.0.0. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and **Elementor Pro 4.0.4, installed and not activated with a licence**, in Chromium.
+
+| Suite | Result |
+| --- | --- |
+| Agency, `tests/e2e/agency.test.js` | **11 of 11 passed** |
+| All browser checks together | **105 of 105 passed** (11 for each of the six designs, 18 theme integrations, 21 Starter Sites screen) |
+| Import engine | **92 of 92** with Elementor Pro active, **80 of 80** without |
+| Plugin PHP checks, library tools | **138 of 138, 53 of 53 passed** |
+| PHPCS | Theme 42 files, plugin 26 files: **0 errors, 0 warnings** |
+| Theme Check on the packaged theme | **0 required, 0 warnings** (59 checks) |
+| Plugin Check 2.2.0 on the packaged plugin | **No errors, no warnings** |
+
+The shared checks were extended for the Pro tier (`pro: true` in a design's test file). The same eleven questions are asked; where the answer lives is different:
+
+| Question | Free design | Pro design |
+| --- | --- | --- |
+| Header and footer of the design, not the theme's | Site parts | Theme Builder templates (`.elementor-location-header`, `.elementor-location-footer`) |
+| Menu on a phone | The theme's menu button and list | Elementor Pro's burger and dropdown: opens, lists the six items, stays on screen, closes, marks the current page |
+| Blog | The theme's templates | The archive template: every article with its title and picture, three columns |
+| An article | The theme's template | The single-post template: title as `h1`, text, subheadings smaller than the title |
+| Editor | Home page and two site parts | Home page, header template and footer template |
+
+Eleven addresses (nine pages, an article, an address that does not exist) at the nine widths: 99 page views, with the usual assertions. Headings in Unbounded, text in Inter, both from the site's own address; no request to another host. A category archive was looked at separately and shows "Category: Process" as its title.
+
+**Accessibility.** axe-core on all eleven addresses at 390 and 1440 px: no violations, **with one rule switched off for Pro designs**: "aria-allowed-role". Elementor Pro's Posts and Archive Posts widgets give each `article` the role "listitem"; that is in Elementor Pro's markup and a design cannot change it. Everything else the scan found was fixed (see below).
+
+**Contrast, measured:** ink and paper 17.5:1 either way; lime on ink and ink on lime 15.4:1; text on paper 10.3:1; text on ink 8.2:1; white on the violet band 6.9:1.
+
+**Found by the tests and fixed:**
+
+1. The posts page had no `h1`: Elementor Pro's archive title is empty there. It now has its own template with a written title; categories and other archives use a second template with the dynamic title.
+2. Post Title, Archive Title and Featured Image showed their placeholders ("Add Your Heading Text Here"): saved outside the editor, they need their dynamic tag spelled out.
+3. axe-core, "Links must have discernible text": the pictures that link to an article had empty alternative text. They now name the article.
+4. axe-core, "Links must be distinguishable without relying on color": links in an article. The theme now underlines links inside Elementor Pro's Post Content widget.
+5. The menu button was 33 by 33 px; it is 45 by 45 now.
+
+## Not covered
+
+- **A licensed Elementor Pro.** Not available here.
+- **Sending the form.** The form is rendered and checked by axe-core; no message was submitted, because the test site has no mail server.
+- **CI.** There is no Elementor Pro in CI, so this file is skipped there with a message.
+- Otherwise as for the free designs: real devices, other browsers, a person in the editor, a screen reader.
 
 # Theme Builder templates — Test Report
 

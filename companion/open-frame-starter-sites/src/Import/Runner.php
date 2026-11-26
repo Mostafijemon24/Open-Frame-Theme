@@ -36,7 +36,7 @@ class Runner {
 	/**
 	 * Steps in order. Each one is a method named step_<name>.
 	 */
-	const STEPS = array( 'preflight', 'snapshot', 'download', 'media', 'fonts', 'content', 'kit', 'documents', 'menus', 'settings', 'finalize' );
+	const STEPS = array( 'preflight', 'snapshot', 'download', 'media', 'fonts', 'content', 'kit', 'menus', 'documents', 'settings', 'finalize' );
 
 	/**
 	 * Plugin configuration.
@@ -627,7 +627,7 @@ class Runner {
 	private function import_post( array &$state, $name, array $data ) {
 		$uid      = $state['site'] . ':posts:' . $name;
 		$existing = $this->find( $uid );
-		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
+		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
 
 		$post_id = wp_insert_post(
 			array(
@@ -747,7 +747,7 @@ class Runner {
 			'templates'  => 'template',
 		);
 		$post_id  = $state['posts'][ $kinds[ $match[1] ] . '/' . $match[2] ] ?? 0;
-		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
+		$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
 
 		$elements = $resolver->resolve( (array) ( $data['elementor']['content'] ?? array() ) );
 		$settings = $resolver->resolve( (array) ( $data['elementor']['page_settings'] ?? array() ) );
@@ -800,7 +800,7 @@ class Runner {
 			return $menus;
 		}
 
-		$resolver  = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
+		$resolver  = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
 		$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
 
 		foreach ( $menus as $menu ) {
@@ -859,6 +859,12 @@ class Runner {
 				wp_update_nav_menu_item( $menu_id, 0, $args );
 			}
 
+			// Widgets that ask which menu to show name it by its slug.
+			$term = get_term( $menu_id, 'nav_menu' );
+			if ( $term && ! is_wp_error( $term ) ) {
+				$state['menus'][ $menu['uid'] ] = $term->slug;
+			}
+
 			$location = (string) ( $menu['location'] ?? '' );
 			if ( array_key_exists( $location, get_registered_nav_menus() ) ) {
 				$locations[ $location ] = $menu_id;
@@ -913,7 +919,7 @@ class Runner {
 				return $options;
 			}
 
-			$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ) );
+			$resolver = new TokenResolver( $state['media'], $state['posts'], (string) ( $state['front'] ?? '' ), (array) ( $state['menus'] ?? array() ) );
 			$front    = $resolver->id( $options['page_on_front'] ?? '' );
 			if ( 'page' === ( $options['show_on_front'] ?? '' ) && $front ) {
 				update_option( 'show_on_front', 'page' );

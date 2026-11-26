@@ -80,6 +80,8 @@ A copy of the list of designs, the record of the last import, a short import his
 == Changelog ==
 
 = 0.5.0 =
+* New: Agency, the sixth complete design and the first for Elementor Pro: case studies, services, careers, a journal and a contact form, with header, footer and blog as Theme Builder templates.
+* New: a page of a design can show one of the design's menus (needed by Elementor Pro's Nav Menu widget).
 * New: designs for Elementor Pro can bring Theme Builder templates (header, footer, single post, archive, search results, "page not found"), each with the place it is used. A rollback removes them and their display conditions.
 
 = 0.4.0 =

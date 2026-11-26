@@ -58,11 +58,14 @@ function cloudRequests() {
 /**
  * Accessibility problems in part of a page, found by axe-core.
  *
+ * @param {Object}   [options]
+ * @param {string[]} [options.disable] Rules to leave out, for known problems in another product's markup.
  * @return {string[]} One line per violation, empty when there are none.
  */
-async function axe( page, selector ) {
+async function axe( page, selector, { disable = [] } = {} ) {
 	await page.addScriptTag( { path: require.resolve( 'axe-core/axe.min.js' ) } );
-	const results = await page.evaluate( ( sel ) => window.axe.run( sel, { runOnly: [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice' ] } ), selector );
+	const rules = Object.fromEntries( disable.map( ( rule ) => [ rule, { enabled: false } ] ) );
+	const results = await page.evaluate( ( [ sel, off ] ) => window.axe.run( sel, { runOnly: [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice' ], rules: off } ), [ selector, rules ] );
 	return results.violations.map( ( violation ) => `${ violation.id }: ${ violation.help } (${ violation.nodes.map( ( node ) => node.target.join( ' ' ) ).slice( 0, 3 ).join( ', ' ) })` );
 }
 

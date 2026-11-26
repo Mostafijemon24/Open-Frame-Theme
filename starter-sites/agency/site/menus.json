@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Work",
+				"url": "ofss://page/work"
+			},
+			{
+				"title": "Services",
+				"url": "ofss://page/services"
+			},
+			{
+				"title": "Studio",
+				"url": "ofss://page/studio"
+			},
+			{
+				"title": "Careers",
+				"url": "ofss://page/careers"
+			},
+			{
+				"title": "Journal",
+				"url": "ofss://page/journal"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

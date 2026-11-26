@@ -10,7 +10,7 @@
 const { test, before, after } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
 const { chromium } = require( 'playwright' );
-const { BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
+const { BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login, hasElementorPro } = require( './helpers' );
 
 /**
  * @param {Object}   design
@@ -30,10 +30,23 @@ const { BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login } = r
  * @param {Array[]}  design.editor        [ uid, text ] pairs to open in the Elementor editor.
  * @param {string}   design.gone          An address that must answer 404 after the rollback.
  * @param {string}   design.brand         A word that must not remain on the home page after the rollback.
+ * @param {boolean}  [design.pro]         A design of the Pro tier: header, footer and blog are Theme Builder
+ *                                        templates, the menu is Elementor Pro's. Skipped without Elementor Pro.
  */
 function runDesignChecks( design ) {
 const NAME = design.name;
 const PAGES = design.pages;
+const PRO = Boolean( design.pro );
+
+if ( PRO && ! hasElementorPro() ) {
+	test( `${ NAME }: skipped, because Elementor Pro is not installed in the test site`, { skip: true }, () => {} );
+	return;
+}
+
+// Where things are: a free design is drawn by site parts and the theme, a Pro design by Theme Builder templates.
+const SEL = PRO
+	? { header: 'header.elementor-location-header', footer: '.elementor-location-footer', toggle: 'header.elementor-location-header .elementor-menu-toggle', menu: 'header.elementor-location-header nav.elementor-nav-menu--dropdown', row: 'header.elementor-location-header nav.elementor-nav-menu--main', items: 'a.elementor-item', current: 'header.elementor-location-header nav.elementor-nav-menu--main a.elementor-item-active', post: 'article.elementor-post', postTitle: 'article.elementor-post .elementor-post__title', postImage: 'article.elementor-post .elementor-post__thumbnail img', postLink: 'article.elementor-post .elementor-post__title a', postText: 'article.elementor-post .elementor-post__excerpt', content: '.elementor-widget-theme-post-content' }
+	: { header: 'header.of-site-part--header', footer: '.of-site-part--footer', toggle: 'header.of-site-part--header .menu-toggle', menu: '#primary-menu', row: '#primary-menu', items: ':scope > li > a', current: '#primary-menu .current-menu-item > a', post: 'article', postTitle: 'article .entry-title', postImage: 'article img.wp-post-image', postLink: 'article .entry-title a', postText: 'article .entry-summary, article .entry-content', content: '.entry-content' };
 
 let browser;
 let report;
@@ -77,7 +90,7 @@ before( async () => {
 	browser = await chromium.launch();
 	clearErrorLog();
 	cloud( 'ok' );
-	state( 'ofss:rollback', 'reset', 'ofss:clear', 'ofss:forget', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', 'plugin:elementor-pro=off', 'plugin:woocommerce=off' );
+	state( 'ofss:rollback', 'reset', 'ofss:clear', 'ofss:forget', 'theme:open-frame', 'plugin:starter-sites=on', 'plugin:elementor=on', PRO ? 'plugin:elementor-pro=on' : 'plugin:elementor-pro=off', 'plugin:woocommerce=off' );
 	report = JSON.parse( state( 'ofss:import=' + design.site ).trim().split( '\n' ).pop() );
 	ids = JSON.parse( state( 'ofss:ids' ).trim().split( '\n' ).pop() );
 } );
@@ -94,8 +107,8 @@ test( `${ NAME } imports completely, with free Elementor only`, () => {
 	for ( const name of design.pageNames ) {
 		assert.ok( ids[ `${ design.site }:pages:${ name }` ], `page ${ name } exists` );
 	}
-	for ( const name of [ 'header', 'footer', 'not-found' ] ) {
-		assert.ok( ids[ `${ design.site }:site-parts:${ name }` ], `site part ${ name } exists` );
+	for ( const name of PRO ? [ 'header', 'footer', 'archive', 'single', 'not-found' ] : [ 'header', 'footer', 'not-found' ] ) {
+		assert.ok( ids[ `${ design.site }:${ PRO ? 'templates' : 'site-parts' }:${ name }` ], `${ PRO ? 'template' : 'site part' } ${ name } exists` );
 	}
 } );
 
@@ -109,13 +122,13 @@ test( `${ NAME }: every page fits every width, loads its images and asks no othe
 			await scrollThrough( page );
 
 			await page.evaluate( () => document.fonts.ready );
-			const found = await page.evaluate( () => ( {
+			const found = await page.evaluate( ( SEL ) => ( {
 				overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
 				h1: [ ...document.querySelectorAll( 'h1' ) ].map( ( heading ) => heading.textContent.trim() ),
 				mains: document.querySelectorAll( 'main' ).length,
 				target: !! document.querySelector( 'main#main' ),
-				header: document.querySelectorAll( 'header.of-site-part--header' ).length,
-				footer: document.querySelectorAll( '.of-site-part--footer' ).length,
+				header: document.querySelectorAll( SEL.header ).length,
+				footer: document.querySelectorAll( SEL.footer ).length,
 				themeChrome: document.querySelectorAll( '#masthead, #colophon' ).length,
 				broken: [ ...document.images ].filter( ( image ) => ! image.naturalWidth ).map( ( image ) => image.currentSrc || image.src ),
 				noAlt: [ ...document.images ].filter( ( image ) => ! image.hasAttribute( 'alt' ) ).length,
@@ -124,7 +137,7 @@ test( `${ NAME }: every page fits every width, loads its images and asks no othe
 				bodyFont: getComputedStyle( document.body ).fontFamily.split( ',' )[ 0 ].replace( /"/g, '' ),
 				fontsLoaded: [ getComputedStyle( document.querySelector( 'h1' ) ), getComputedStyle( document.body ) ].every( ( style ) => document.fonts.check( `${ style.fontWeight } 16px ${ style.fontFamily.split( ',' )[ 0 ] }` ) ),
 				small: [ ...document.querySelectorAll( 'main p, main li, footer a, footer p' ) ].filter( ( node ) => node.offsetParent && parseFloat( getComputedStyle( node ).fontSize ) < 13 ).length,
-			} ) );
+			} ), SEL );
 
 			assert.equal( found.overflow, 0, `${ where }: nothing wider than the screen` );
 			assert.equal( found.h1.length, 1, `${ where }: one main heading (${ found.h1.join( ' | ' ) })` );
@@ -153,8 +166,8 @@ test( `${ NAME }: every page fits every width, loads its images and asks no othe
 test( `${ NAME }: the menu works on a phone and with a keyboard`, async () => {
 	const { context, page, problems } = await visitor( 390 );
 	await page.goto( BASE + '/' );
-	const toggle = page.locator( 'header.of-site-part--header .menu-toggle' );
-	const menu = page.locator( '#primary-menu' );
+	const toggle = page.locator( SEL.toggle );
+	const menu = page.locator( SEL.menu );
 	assert.ok( await toggle.isVisible(), 'the menu button shows on a phone' );
 	assert.ok( ! ( await menu.isVisible() ), 'the menu starts closed' );
 
@@ -163,26 +176,34 @@ test( `${ NAME }: the menu works on a phone and with a keyboard`, async () => {
 
 	await toggle.click();
 	assert.equal( await toggle.getAttribute( 'aria-expanded' ), 'true' );
+	// Elementor Pro's menu slides open; wait until it has.
+	await menu.locator( SEL.items ).first().waitFor( { state: 'visible', timeout: 5000 } );
 	assert.ok( await menu.isVisible() );
-	assert.deepEqual( await menu.locator( ':scope > li > a' ).allTextContents(), design.menu );
+	assert.deepEqual( ( await menu.locator( SEL.items ).allTextContents() ).map( ( label ) => label.trim() ), design.menu );
 	const inside = await menu.evaluate( ( list ) => {
 		const rect = list.getBoundingClientRect();
 		return rect.left >= 0 && rect.right <= document.documentElement.clientWidth;
 	} );
 	assert.ok( inside, 'the open menu stays on the screen' );
 
-	await page.keyboard.press( 'Escape' );
-	assert.equal( await toggle.getAttribute( 'aria-expanded' ), 'false', 'Escape closes it' );
+	if ( PRO ) {
+		// Elementor Pro's menu closes with its own button.
+		await toggle.click();
+		assert.equal( await toggle.getAttribute( 'aria-expanded' ), 'false', 'the button closes it' );
+	} else {
+		await page.keyboard.press( 'Escape' );
+		assert.equal( await toggle.getAttribute( 'aria-expanded' ), 'false', 'Escape closes it' );
+	}
 
 	await toggle.click();
 	await Promise.all( [ page.waitForURL( BASE + design.current.path ), menu.getByRole( 'link', { name: design.current.label, exact: true } ).click() ] );
-	assert.equal( await page.locator( '#primary-menu .current-menu-item > a' ).textContent(), design.current.label, 'the current page is marked' );
+	assert.equal( ( await page.locator( SEL.current ).first().textContent() ).trim(), design.current.label, 'the current page is marked' );
 
 	// On a desktop the menu is a row and the button is gone.
 	await page.setViewportSize( { width: 1440, height: 900 } );
 	await page.goto( BASE + '/' );
 	assert.ok( ! ( await toggle.isVisible() ) );
-	assert.ok( await menu.isVisible() );
+	assert.ok( await page.locator( SEL.row ).isVisible() );
 	await page.keyboard.press( 'Tab' );
 	assert.equal( await page.evaluate( () => document.activeElement.className ), 'skip-link screen-reader-text', 'the skip link comes first' );
 	assert.deepEqual( problems, [] );
@@ -218,22 +239,22 @@ test( `${ NAME }: every link inside the site leads somewhere`, async () => {
 test( `${ NAME }: the blog shows the three articles, each with its picture`, async () => {
 	const { context, page, problems } = await visitor( 1440 );
 	await page.goto( BASE + design.blog.path );
-	assert.ok( await page.locator( 'h1.page-title' ).isVisible(), 'the page has a visible title' );
-	const titles = ( await page.locator( 'article .entry-title' ).allTextContents() ).map( ( title ) => title.trim() );
+	assert.ok( await page.locator( 'h1' ).isVisible(), 'the page has a visible title' );
+	const titles = ( await page.locator( SEL.postTitle ).allTextContents() ).map( ( title ) => title.trim() );
 	for ( const title of design.blog.titles ) {
 		assert.ok( titles.includes( title ), title );
 	}
-	assert.equal( await page.locator( 'article img.wp-post-image' ).count(), design.blog.titles.length );
+	assert.equal( await page.locator( SEL.postImage ).count(), design.blog.titles.length );
 	assert.equal( ( await page.request.get( BASE + design.blog.category ) ).status(), 200, 'articles are filed under their categories' );
-	const columns = await page.locator( 'article' ).evaluateAll( ( articles ) => new Set( articles.map( ( article ) => Math.round( article.getBoundingClientRect().left ) ) ).size );
+	const columns = await page.locator( SEL.post ).evaluateAll( ( articles ) => new Set( articles.map( ( article ) => Math.round( article.getBoundingClientRect().left ) ) ).size );
 	assert.equal( columns, design.blog.columns, `${ design.blog.columns } columns on a desktop` );
 
 	await Promise.all( [ page.waitForURL( BASE + design.blog.open.path ), page.getByRole( 'link', { name: design.blog.open.title } ).first().click() ] );
 	assert.equal( await page.locator( 'h1' ).textContent().then( ( text ) => text.trim() ), design.blog.open.title );
-	const sizes = await page.evaluate( () => ( { title: parseFloat( getComputedStyle( document.querySelector( 'h1' ) ).fontSize ), sub: parseFloat( getComputedStyle( document.querySelector( '.entry-content h2' ) ).fontSize ) } ) );
+	const sizes = await page.evaluate( ( content ) => ( { title: parseFloat( getComputedStyle( document.querySelector( 'h1' ) ).fontSize ), sub: parseFloat( getComputedStyle( document.querySelector( content + ' h2' ) ).fontSize ) } ), SEL.content );
 	assert.ok( sizes.sub < sizes.title, `a subheading (${ sizes.sub }px) is smaller than the title of the article (${ sizes.title }px)` );
-	assert.ok( await page.locator( '.entry-content p' ).count() >= 3, 'the article has its text' );
-	assert.ok( await page.locator( '.entry-content h2' ).count() >= 1, 'and its subheadings' );
+	assert.ok( await page.locator( SEL.content + ' p' ).count() >= 3, 'the article has its text' );
+	assert.ok( await page.locator( SEL.content + ' h2' ).count() >= 1, 'and its subheadings' );
 	assert.deepEqual( problems, [] );
 	await context.close();
 } );
@@ -255,7 +276,9 @@ test( `${ NAME }: pages pass the automated accessibility checks`, async () => {
 			await scrollThrough( page );
 			// Counters run for a moment; wait until they show their final numbers.
 			await page.waitForTimeout( 1500 );
-			assert.deepEqual( await axe( page, 'body' ), [], `${ item.path } at ${ width }` );
+			// Elementor Pro's Posts widget gives each article the role "listitem", which axe-core's
+			// best-practice rule "aria-allowed-role" rejects. It is Elementor Pro's markup, not the design's.
+			assert.deepEqual( await axe( page, 'body', { disable: PRO ? [ 'aria-allowed-role' ] : [] } ), [], `${ item.path } at ${ width }` );
 		}
 		await context.close();
 	}
@@ -307,10 +330,10 @@ test( `${ NAME }: colors and fonts come from Elementor Site Settings`, async () 
 
 	// The blog is drawn by the theme, and follows the same settings.
 	await page.goto( BASE + design.blog.path );
-	const blog = await page.evaluate( () => ( {
-		title: getComputedStyle( document.querySelector( 'article .entry-title a' ) ).color,
-		text: getComputedStyle( document.querySelector( 'article .entry-summary, article .entry-content' ) ).color,
-	} ) );
+	const blog = await page.evaluate( ( SEL ) => ( {
+		title: getComputedStyle( document.querySelector( SEL.postLink ) ).color,
+		text: getComputedStyle( document.querySelector( SEL.postText ) ).color,
+	} ), SEL );
 	assert.deepEqual( blog, { title: design.kit.heading, text: design.kit.bodyText } );
 	await context.close();
 } );

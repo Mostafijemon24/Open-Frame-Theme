@@ -1,6 +1,6 @@
 # Open Frame Starter Sites — Technical Architecture and Roadmap
 
-Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) the core of Phase 6 (import, resume and rollback), Phase 7a (the Business design) and the four free-tier designs of Phase 7b (Portfolio, Restaurant, Education and Medical) and Theme Builder templates in a package (plugin 0.5.0) are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
+Status: **approved on 26 November 2026.** Phase 3 (theme foundation, theme 1.1.0), Phase 4 (the Starter Sites screen), Phase 5 (library tools, Worker and signatures; not yet deployed) the core of Phase 6 (import, resume and rollback), Phase 7a (the Business design) and the four free-tier designs of Phase 7b (Portfolio, Restaurant, Education and Medical) Theme Builder templates in a package and the first Pro design, Agency (plugin 0.5.0), are implemented; see `PROJECT_STATUS.md` for progress. Sections 2, 4, 5, 7 and 11 were updated with the owner's decisions and with what the phases found.
 Scope: a cloud-delivered library of 10 complete, Elementor-editable starter websites for the Open Frame theme.
 
 Contents

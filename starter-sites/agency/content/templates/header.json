@@ -1,0 +1,193 @@
+{
+	"uid": "agency:templates:header",
+	"title": "Header",
+	"type": "header",
+	"conditions": [
+		[
+			"include",
+			"general"
+		]
+	],
+	"elementor": {
+		"version": "4.4.2",
+		"type": "header",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "00001e4",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "row",
+					"flex_direction_mobile": "row",
+					"flex_align_items": "center",
+					"flex_justify_content": "space-between",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_wrap": "nowrap",
+					"padding": {
+						"unit": "px",
+						"top": "18",
+						"right": "24",
+						"bottom": "18",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "12",
+						"right": "20",
+						"bottom": "12",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0D0D0D"
+				},
+				"elements": [
+					{
+						"id": "00001e0",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "parallel",
+							"header_size": "p",
+							"title_color": "#F5F3EE",
+							"typography_typography": "custom",
+							"typography_font_size": {
+								"unit": "px",
+								"size": 24,
+								"sizes": []
+							},
+							"typography_font_weight": "800",
+							"link": {
+								"url": "ofss://page/home",
+								"is_external": "",
+								"nofollow": "",
+								"custom_attributes": ""
+							},
+							"typography_letter_spacing": {
+								"unit": "px",
+								"size": -1,
+								"sizes": []
+							},
+							"_flex_size": "none"
+						},
+						"elements": []
+					},
+					{
+						"id": "00001e3",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"width": {
+								"unit": "%",
+								"size": 10,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 10,
+								"sizes": []
+							},
+							"flex_direction": "row",
+							"flex_direction_mobile": "row",
+							"flex_align_items": "center",
+							"flex_justify_content": "flex-end",
+							"flex_gap": {
+								"unit": "px",
+								"size": 20,
+								"column": "20",
+								"row": "20",
+								"isLinked": true
+							},
+							"flex_wrap": "nowrap",
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_size": "grow"
+						},
+						"elements": [
+							{
+								"id": "00001e1",
+								"elType": "widget",
+								"widgetType": "nav-menu",
+								"settings": {
+									"menu": "ofss://menu/primary",
+									"layout": "horizontal",
+									"align_items": "end",
+									"pointer": "underline",
+									"animation_line": "fade",
+									"dropdown": "tablet",
+									"full_width": "stretch",
+									"text_align": "aside",
+									"toggle": "burger",
+									"toggle_align": "right",
+									"menu_typography_typography": "custom",
+									"menu_typography_font_family": "Inter",
+									"menu_typography_font_size": {
+										"unit": "px",
+										"size": 16,
+										"sizes": []
+									},
+									"menu_typography_font_weight": "500",
+									"color_menu_item": "#F5F3EE",
+									"color_menu_item_hover": "#C8F53C",
+									"pointer_color_menu_item_hover": "#C8F53C",
+									"color_menu_item_active": "#C8F53C",
+									"pointer_color_menu_item_active": "#C8F53C",
+									"padding_horizontal_menu_item": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"color_dropdown_item": "#F5F3EE",
+									"background_color_dropdown_item": "#1A1A19",
+									"color_dropdown_item_hover": "#0D0D0D",
+									"background_color_dropdown_item_hover": "#C8F53C",
+									"toggle_color": "#F5F3EE",
+									"toggle_background_color": "#1A1A19",
+									"toggle_size": {
+										"unit": "px",
+										"size": 30,
+										"sizes": []
+									},
+									"_flex_size": "grow"
+								},
+								"elements": []
+							},
+							{
+								"id": "00001e2",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "Start a project",
+									"link": {
+										"url": "ofss://page/contact",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"size": "sm",
+									"hide_mobile": "hidden-mobile",
+									"hide_tablet": "hidden-tablet"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
