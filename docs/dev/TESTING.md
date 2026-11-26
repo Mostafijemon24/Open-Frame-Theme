@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Package and publish](#package-and-publish--test-report): Phase 8, a rehearsal with the real Worker; nothing is on Cloudflare yet
 - [All ten designs with photographs](#all-ten-designs-with-photographs--test-report): Phase 7b complete, Phase 7c
 - [Products of a store](#products-of-a-store--test-report): plugin 0.6.0, groundwork for the Shop design
 - [Real Estate and the photography standard](#the-real-estate-starter-site-and-the-photography-standard--test-report): Phase 7b, part 7; the first design with real photographs
@@ -16,6 +17,66 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Package and publish — Test Report
+
+Phase 8. Executed on 26 November 2026 on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (installed, not activated with a licence), WooCommerce 11.3.1 and wrangler 4, in Chromium.
+
+**Nothing was published to Cloudflare.** The credential saved for `api.cloudflare.com` is still rejected by Cloudflare ("Invalid format for Authorization header"), so no bucket, Worker or domain exists. What could be done without Cloudflare was done: the publication was rehearsed on one machine with the real Worker code and a simulated bucket, and every design was imported from that library on a clean WordPress site.
+
+| Suite | Result |
+| --- | --- |
+| Rehearsal: publication (`tests/library/rehearsal.sh`, steps 1 to 4) | **Passed.** 227 files uploaded; live library downloaded and every checksum valid; second publication: 1 file to upload, 226 unchanged; a changed Business 1.0.0 refused and the live catalog untouched |
+| Rehearsal: import on a clean site (step 6) | **10 of 10 designs** imported from the Starter Sites screen, every reachable page visited, rolled back, site equal to before |
+| Library tools | **66 of 66 passed** (60 before; new: preview names, publish plan, live check, licence overview, two icon rules) |
+| Worker | **10 of 10 passed** |
+| Plugin PHP checks | **138 of 138 passed** |
+| Import engine | **83 of 83** plain, **96 of 96** with WooCommerce, **95 of 95** with Elementor Pro |
+| All browser checks together | **149 of 149 passed**, run again because the library the test site reads is built by the changed tools |
+| PHPCS, theme and plugin (`composer lint`) | **Exit code 0** |
+| Theme Check, Plugin Check | Not run on this machine in this phase (neither the theme nor the plugin changed). Both passed in CI run 38 on GitHub, together with every other job |
+| Build with the production addresses | 10 designs, 227 files, 28 MB; signature and every checksum valid; `publish --dry-run` lists 227 uploads with the catalog last. `plan` against `api.buildbetters.com` stops with "Could not ask … Nothing was uploaded", as it should while nothing is there |
+
+**In CI.** The new job "Library rehearsal" ran on GitHub for the first time with this change and passed in under six minutes: the same script, with the five designs for free Elementor (Elementor Pro is not available there).
+
+**What the rehearsal does.** It builds the theme and plugin ZIPs; builds and signs the library with a key made for the rehearsal; starts `cloud/worker` under `wrangler dev` with an empty simulated R2 bucket; uploads with the same `publish` command the workflow uses; downloads everything again through the Worker and checks it; publishes again; and tries to publish a Business whose home page changed while its version stayed 1.0.0. Then it installs WordPress with nothing in it (one sample page, one sample post, the permalinks WordPress chooses on a working host), installs the theme and the plugin **from the ZIPs**, and for each design restores that clean state and does what a new user does: opens Appearance > Starter Sites, opens the design, presses "Activate" for each plugin the design needs, imports, and rolls back.
+
+| Design | Plugins the screen activated | Import | Pages visited | Pictures seen | Rolled back cleanly |
+| --- | --- | --- | --- | --- | --- |
+| Business | Elementor | 10 pages, 15 images, 1 menu, 10 s | 19 | 32 | yes |
+| Creative Agency | Elementor, Elementor Pro | 9 pages, 15 images, 1 menu, 11 s | 20 | 35 | yes |
+| SaaS | Elementor, Elementor Pro | 11 pages, 12 images, 1 menu, 8 s | 22 | 30 | yes |
+| Portfolio | Elementor | 9 pages, 15 images, 1 menu, 11 s | 17 | 33 | yes |
+| Shop | Elementor, Elementor Pro, WooCommerce | 6 pages, 17 images, 1 menu, 14 s | 37 | 66 | yes |
+| Restaurant | Elementor | 8 pages, 16 images, 1 menu, 10 s | 17 | 36 | yes |
+| Real Estate | Elementor, Elementor Pro | 10 pages, 18 images, 1 menu, 12 s | 22 | 41 | yes |
+| Education | Elementor | 9 pages, 16 images, 1 menu, 9 s | 17 | 37 | yes |
+| Medical | Elementor | 10 pages, 9 images, 1 menu, 8 s | 19 | 20 | yes |
+| Magazine | Elementor, Elementor Pro | 6 pages, 14 images, 1 menu, 9 s | 30 | 54 | yes |
+
+On every visited page: HTTP 200, every picture loads, exactly one main heading, no script error, no leftover `ofss://` reference, and no request to another site except the two WordPress itself makes on a site without content of its own (the avatar of the sample comment, `secure.gravatar.com`, and the emoji picture of WooCommerce's product gallery, `s.w.org`). After the rollback: no post or term marked by the import, the same number of attachments and menus, the same home page setting and theme settings as before the import.
+
+**Found by the rehearsal, and fixed.**
+
+| Where | What |
+| --- | --- |
+| Business, contact page | The address row had no icon (after the correction all four rows of the list show theirs, and Elementor logs nothing). The design named it `location-dot`, a Font Awesome 6 name; Elementor carries Font Awesome 5 and silently leaves an unknown icon out. Elementor wrote a PHP warning, which the browser checks did not count because it is not from the theme or the plugin. Now `map-marker-alt`, and the build refuses any icon Elementor does not have (`tools/icons.json`) |
+| Publishing | Preview pictures were served with a one-year cache under a name that never changed, so a replaced picture would not have reached anyone who had seen the old one. Their names now contain their checksum |
+| Publishing | Nothing stopped a design from being changed without a new version number, although its files are cached for a year and the catalog names their checksums: sites with the old copy would have refused the import. `publish --live` now refuses it |
+| Rehearsal script | My first version waited for the wrong row when two plugins had to be activated one after the other, and started the Worker in a way that kept the script from ending. Both corrected before the run reported here |
+
+**Not checked, because it needs Cloudflare.**
+
+- The real R2 bucket, the two host names, DNS, HTTPS certificates and the edge cache, including how long a replaced catalog takes to be the one served.
+- The "Publish library" workflow in GitHub Actions; its steps were run by hand here, with wrangler in local mode.
+- An import from `api.buildbetters.com`. The roadmap's exit criterion for this phase, "each site imported from production on a clean install", is met against a local Worker, not against production.
+- wrangler's simulated bucket is not R2: it behaved the same for everything used here (put, get, ETag, conditional requests), but it is a simulation.
+
+**Not done in this phase.**
+
+- **Live demo sites.** They need a host that runs WordPress, and a licensed Elementor Pro for five of them. No design has a demo address, and the screen shows the "Open the live demo" link only when one exists.
+- **The production signing key.** It is generated at the first real publication, when its private half can be stored as a GitHub secret straight away.
+- Other permalink settings (plain, or a custom structure), multisite, and a site that already has content were not part of the rehearsal; the import engine checks cover an existing site.
 
 # All ten designs with photographs — Test Report
 
