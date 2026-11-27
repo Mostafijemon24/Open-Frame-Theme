@@ -33,7 +33,13 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 2. **Elementor: two tiers.** Five starter sites work with Elementor free (Business, Portfolio, Restaurant, Education, Medical) and five require Elementor Pro (Agency, SaaS, E-commerce, Real Estate, Magazine).
 3. **Images: real photographs (changed by the owner on 2026-11-26).** The first decision left the choice to the implementer, who drew the pictures. The owner now asks for real photographs chosen for each section, no illustrations in place of photographs, words written for the business shown, nothing invented presented as fact, and source, photographer and licence recorded for every picture. How this is done is in the architecture document, section 5.7.
 4. **Library address:** `api.buildbetters.com` (catalog, manifests) and `cdn.buildbetters.com` (packages, media, previews), on the owner's Cloudflare account.
-5. Open: the free forms plugin for the five free-tier sites. Business ships without a form (see "Known issues").
+5. **Forms on the free designs (owner, 2026-11-27): no forms plugin.** The five designs for free Elementor keep their email and telephone links.
+
+## Decisions (owner, 2026-11-27)
+
+1. **The support and update policy** ([docs/SUPPORT.md](docs/SUPPORT.md)) is read and agreed.
+2. **The first public release of the plugin is 1.0.0**, made once the library is online and the manual checks are done. Until then it stays 0.6.1, unreleased.
+3. **A banner and an icon** for the plugin's WordPress.org page were asked for and made (`companion/open-frame-starter-sites/.wordpress-org/`, drawn by `bin/wporg-assets.js`).
 
 ## Completed
 
@@ -310,7 +316,7 @@ From Phase 8 (2026-11-26), not repeated:
 
 ## Needed from the owner
 
-1. **One more permission on the Cloudflare token, to finish Phases 5 and 8.** State on 2026-11-27: `buildbetters.com` is now on Cloudflare and active (since 05:13 UTC; its name servers are Cloudflare's), and the token is valid. With it the DNS records of the domain can be read and changed and the account's Workers can be listed. What it cannot do: use R2, the file storage the library is kept in (Cloudflare answers "Authentication error"), or read the account's settings. Needed: a token made from the template "Edit Cloudflare Workers" with "Account Resources" set to the owner's account and "Zone Resources" to `buildbetters.com`, plus the permission Zone > DNS > Edit; that template includes "Workers R2 Storage: Edit". R2 also has to be switched on once in the dashboard (R2 Object Storage); Cloudflare asks for a payment card there, although the library's 28 MB are far inside the free 10 GB. If the owner prefers not to add a card, the library can be served as static files of the Worker instead of from R2; that is a change to the publishing tools, not to the plugin or the designs, and has not been built.
+1. **One more permission on the Cloudflare token, to finish Phases 5 and 8.** State on 2026-11-27: `buildbetters.com` is now on Cloudflare and active (since 05:13 UTC; its name servers are Cloudflare's), and the token is valid. With it the DNS records of the domain can be read and changed and the account's Workers can be listed. What it cannot do: use R2, the file storage the library is kept in (Cloudflare answers "Authentication error"), or read the account's settings. Needed: a token made from the template "Edit Cloudflare Workers" with "Account Resources" set to the owner's account and "Zone Resources" to `buildbetters.com`, plus the permission Zone > DNS > Edit; that template includes "Workers R2 Storage: Edit". R2 also has to be switched on once in the dashboard (R2 Object Storage); Cloudflare asks for a payment card there, although the library's 28 MB are far inside the free 10 GB. **Checked again on 2026-11-27 at 13:01 UTC, after the owner reported the permission as given: unchanged.** The saved token (the same one as before) is still refused by R2 and still sees no account. If a new token was made, its value has to be entered in the secure form; if the old one was edited, "Account Resources" has to include the account. If the owner prefers not to add a card, the library can be served as static files of the Worker instead of from R2; that is a change to the publishing tools, not to the plugin or the designs, and has not been built.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
@@ -318,7 +324,7 @@ From Phase 8 (2026-11-26), not repeated:
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
 8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
-9. **Read and agree to the support and update policy** ([docs/SUPPORT.md](docs/SUPPORT.md)). It says, in the owner's name: no guaranteed response time, security reports through GitHub's private reporting (to be switched on in the repository's settings), and 90 days' notice before the library would ever be switched off. Anything the owner does not want to promise should be changed before a release.
+9. **Switch on "Private vulnerability reporting"** in the repository's Settings → Security. The support policy, which the owner agreed to on 2026-11-27, sends security reports there.
 10. **The word to release the theme**, and later the plugin. Nothing is tagged, published or submitted without it. For WordPress.org the owner's account is needed, and for the plugin's page a banner and an icon.
 
 ## Next steps
@@ -328,5 +334,5 @@ The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 1. **The theme can be released now**, on the owner's word: merge the branch into `main`, run the Release workflow for the theme, and upload the ZIP to WordPress.org. The manual checklist should come first.
 2. With a token that may use R2 (or the decision to do without R2): generate the production signing key and put its public half into the plugin, publish to staging, run the import test against staging, then publish to production and repeat it there. That closes Phases 5 and 8 and unblocks the plugin.
 3. The manual checklist, and fixes for what it finds.
-4. Release the plugin, then submit it to WordPress.org with a banner and an icon.
-5. Decisions still open: the forms plugin for the free designs, live demos, Medical's doctors, the version number of the first public plugin release, and the owner's agreement to the support and update policy.
+4. Raise the plugin to 1.0.0, release it, then submit it to WordPress.org (its banner, icon and screenshots are ready).
+5. Decisions still open: live demos, Medical's doctors.

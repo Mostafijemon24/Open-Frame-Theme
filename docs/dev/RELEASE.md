@@ -12,7 +12,7 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 | **Open Frame Starter Sites** (plugin) | 0.6.1 | **Not releasable yet.** The plugin itself passes every automated check, but the library it reads from is not online, so a released plugin would show an empty screen. `bin/release-package.sh plugin` refuses to build a release for that reason |
 | **Starter site library** | ten designs, each 1.0.0 | **Built, signed with a test key, publication rehearsed.** Not on Cloudflare: the saved token lacks permission for R2 storage |
 
-**The checklist is not signed off.** Parts A and B are complete. Parts C and D are open and belong to the owner.
+**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled four points on 27 November 2026 (C5, C6, C7 and the pictures of C9); the others are open, and part D is still blocked by C3.
 
 ## A. What a release consists of
 
@@ -23,10 +23,11 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 | Theme user guide with screenshots | [docs/README.md](../README.md), 26 chapters, 46 pictures; HTML in `docs/index.html` | Done. Elementor and WooCommerce chapters now have pictures |
 | Plugin user guide with screenshots | [docs/STARTER-SITES.md](../STARTER-SITES.md), 17 chapters, 11 pictures; HTML in `docs/starter-sites.html` | Done |
 | Installation guide | [docs/INSTALL.md](../INSTALL.md); HTML in `docs/install.html` | Done |
-| Support and update policy | [docs/SUPPORT.md](../SUPPORT.md); HTML in `docs/support.html` | Written. **The owner has to read it and agree**: it makes promises in the owner's name (C7) |
+| Support and update policy | [docs/SUPPORT.md](../SUPPORT.md); HTML in `docs/support.html` | Done. Read and agreed by the owner on 27 November 2026 (C7) |
 | Developer documentation | Theme: [chapter 23 of the theme guide](../README.md#23-child-themes-and-developer-reference) and [ARCHITECTURE.md](ARCHITECTURE.md). Plugin: [PLUGIN.md](PLUGIN.md), [STARTER-SITES-ARCHITECTURE.md](STARTER-SITES-ARCHITECTURE.md). Library: [LIBRARY.md](LIBRARY.md). Tests: [TESTING.md](TESTING.md) | Done |
 | Changelogs | `readme.txt` of the theme and of the plugin (what WordPress reads), gathered with the versions of the designs in [CHANGELOG.md](../../CHANGELOG.md) | Done |
-| Pictures for the plugin's page on WordPress.org | `companion/open-frame-starter-sites/.wordpress-org/screenshot-1.png` to `-5.png`, matching `== Screenshots ==` in its readme | Done. No banner or icon yet (C9) |
+| Pictures for the plugin's page on WordPress.org | `companion/open-frame-starter-sites/.wordpress-org/screenshot-1.png` to `-5.png`, matching `== Screenshots ==` in its readme | Done |
+| Banner and icon for the plugin's page on WordPress.org | `.wordpress-org/banner-1544x500.png`, `banner-772x250.png`, `icon-256x256.png`, `icon-128x128.png`, `icon.svg`, drawn by `node bin/wporg-assets.js` | Done, at the owner's request |
 | Release workflow | `.github/workflows/release.yml`: one release per product, each with ZIP, checksum and notes taken from the changelog | Written. The packaging script was run on this machine; **the workflow itself has not run** since it was changed, because running it publishes a release |
 
 ## B. Checked by machine
@@ -50,19 +51,19 @@ Signed off by the output of the checks on 27 November 2026, after the last chang
 
 ## C. For the owner to confirm
 
-None of these is signed off.
+Signed off where a date is given; the owner said so in the project's conversation on that day.
 
 | # | What | How | Signed off |
 | --- | --- | --- | --- |
 | C1 | **The manual checks**: real phones, Safari, a screen reader, a real shared host | [QA-CHECKLIST.md](QA-CHECKLIST.md), about two hours. Write the results into TESTING.md | Open |
 | C2 | **The Cloudflare password that was pasted into a chat has been changed** | Cloudflare dashboard → My Profile → Authentication | Open |
-| C3 | **A Cloudflare token that can use R2**, and R2 switched on for the account | Token from the template "Edit Cloudflare Workers", with the account and the zone `buildbetters.com` selected, plus Zone → DNS → Edit. Saved in the secure credential form, never in a chat or a file | Open |
+| C3 | **A Cloudflare token that can use R2**, and R2 switched on for the account | Token from the template "Edit Cloudflare Workers", with the account and the zone `buildbetters.com` selected, plus Zone → DNS → Edit. Saved in the secure credential form, never in a chat or a file | **Open.** The owner reported the permission as given on 27 November; checked at 13:01 UTC, the saved token is still refused by R2 ("Authentication error") and sees no account. Either the token that was changed is not the saved one, or "Account Resources" does not include the account |
 | C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | `node tools/library.mjs keygen`, described in [LIBRARY.md](LIBRARY.md). It never enters the repository | Open |
-| C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision. Today they have no form | Open |
-| C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision. Recommended: 1.0.0 once the library is online and C1 is done, because the update promise in SUPPORT.md starts at 1.0.0 | Open |
-| C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | Open |
+| C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision | **Owner, 27 November 2026:** no forms plugin is needed. The free designs keep their email and telephone links |
+| C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision | **Owner, 27 November 2026:** 1.0.0, once the library is online and the manual checks (C1) are done. Until then the plugin stays 0.6.1 and is not released |
+| C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | **Owner, 27 November 2026:** read and agreed. Still to do by the owner: switch on "Private vulnerability reporting", which the policy points people to |
 | C8 | **The work is on the default branch** | The links in the readme files and release notes point at `main`. Merge the branch `development` (a pull request can be opened on request) | Open |
-| C9 | **WordPress.org**: accounts, and for the plugin a banner (1544×500 and 772×250) and an icon (256×256) | See part E | Open |
+| C9 | **WordPress.org**: the owner's account, from which both products are submitted | See part E. The banner and the icon for the plugin's page were made on 27 November 2026 at the owner's request | Open (the submission itself) |
 | C10 | **Known issues are acceptable for a first release** | The list under "Open issues" in TESTING.md: page-speed target missed on phones (81 to 93 of 100), importing a design again overwrites edits, RTL and Multisite untested, Medical has no portraits | Open |
 
 ## D. Blocked: what the plugin needs before it can be released
@@ -73,7 +74,7 @@ In this order. Each step depends on the one before.
 2. **C4**, then put the key ID and the public key into `Config::PUBLIC_KEYS` in `companion/open-frame-starter-sites/src/Config.php`.
 3. Check the live library: `node tools/library.mjs check-live --api https://api.buildbetters.com/v1 --public <public key>`.
 4. On a clean WordPress site with the two packages installed and nothing else changed, import one free and one Pro design from the live library through the screen.
-5. Run parts B and C again for the plugin, then release it (below).
+5. Raise the plugin to 1.0.0 (C6), run parts B and C again for it, then release it (below).
 
 Until then the theme can be released on its own. It does not depend on the plugin.
 

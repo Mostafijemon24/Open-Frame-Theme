@@ -335,6 +335,12 @@ npm install --no-save marked@18.3.0 && node bin/build-docs.js
 node bin/docs-shots.js http://localhost:8890
 ```
 
+**Redraw the banner and icon of the plugin's WordPress.org page** (kept in `companion/open-frame-starter-sites/.wordpress-org/`, not shipped in the ZIP):
+
+```bash
+node bin/wporg-assets.js
+```
+
 **Release.** The theme and the plugin are released separately, each with its own version and tag (`v1.1.0`, `starter-sites-v0.6.1`). Go through the [release checklist](docs/dev/RELEASE.md), try the packaging with `bash bin/release-package.sh theme` (or `plugin`), then open **Actions → Release → Run workflow** or push the tag. The [release workflow](.github/workflows/release.yml) checks the version numbers and the changelog, builds the ZIP with its checksum and publishes a GitHub release.
 
 Architecture notes, the test reports and the release checklist are in [`docs/dev/`](docs/dev/). The changelogs are in the two `readme.txt` files and, gathered, in [`CHANGELOG.md`](CHANGELOG.md).
