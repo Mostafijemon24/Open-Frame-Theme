@@ -59,7 +59,11 @@ Replacing a key: add the new public key to the plugin next to the old one and re
 
 ## Publishing
 
-In the repository, add the secrets `CLOUDFLARE_API_TOKEN` (a token limited to Workers and R2), `CLOUDFLARE_ACCOUNT_ID` and `OFSS_SIGNING_KEY`, and the variable `LIBRARY_STAGING_URL`. The R2 buckets `open-frame-library` and `open-frame-library-staging` are created by the workflow if they do not exist.
+**The Cloudflare token.** Publishing needs one API token that may edit Workers scripts, R2 storage and Workers routes, read the account's settings and the zone, and edit DNS. Three tokens made by hand on 27 November 2026 each lacked a part, so use Cloudflare's pre-filled form instead: [create the token](https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22workers_scripts%22%2C%22type%22%3A%22edit%22%7D%2C%7B%22key%22%3A%22workers_r2%22%2C%22type%22%3A%22edit%22%7D%2C%7B%22key%22%3A%22workers_routes%22%2C%22type%22%3A%22edit%22%7D%2C%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22dns%22%2C%22type%22%3A%22edit%22%7D%2C%7B%22key%22%3A%22zone%22%2C%22type%22%3A%22read%22%7D%5D&accountId=%2A&zoneId=all&name=Open%20Frame%20library), then "Continue to summary" and "Create Token". The summary has to name Workers Scripts, Workers R2 Storage, Workers Routes, Account Settings, DNS and Zone.
+
+**Staging** is a second Worker and bucket with an address of its own, `https://library-staging.buildbetters.com`. It is signed with a key made for staging, never with the production key, and only a site whose `wp-config.php` names that address and key reads it (see `tests/env/setup.sh`).
+
+In the repository, add the secrets `CLOUDFLARE_API_TOKEN` (the token above), `CLOUDFLARE_ACCOUNT_ID` and `OFSS_SIGNING_KEY`, and the variable `LIBRARY_STAGING_URL` (`https://library-staging.buildbetters.com`). The R2 buckets `open-frame-library` and `open-frame-library-staging` are created by the workflow if they do not exist.
 
 Then run the **Publish library** workflow from the Actions tab and choose staging or production. In this order it:
 

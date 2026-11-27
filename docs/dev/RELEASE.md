@@ -10,9 +10,9 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 | --- | --- | --- |
 | **Open Frame** (theme) | 1.1.0 (released so far: 1.0.1, on 25 November 2026) | **Ready.** Every automated check passes and the package is built. Waiting for the owner's checks in part C and the owner's decision to publish |
 | **Open Frame Starter Sites** (plugin) | 0.6.1 | **Not releasable yet.** The plugin itself passes every automated check, but the library it reads from is not online, so a released plugin would show an empty screen. `bin/release-package.sh plugin` refuses to build a release for that reason |
-| **Starter site library** | ten designs, each 1.0.0 | **Built, signed with a test key, publication rehearsed.** Not on Cloudflare: the saved token lacks permission for R2 storage |
+| **Starter site library** | ten designs, each 1.0.0 | **Live in staging on Cloudflare** (`library-staging.buildbetters.com`) since 27 November 2026, verified there, and all ten designs imported from it. **Not in production**: that needs the signing key (C4) |
 
-**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled four points on 27 November 2026 (C5, C6, C7 and the pictures of C9); the others are open, and part D is still blocked by C3.
+**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled five points on 27 November 2026 (C3, C5, C6, C7 and the pictures of C9); the others are open, and part D now waits for the signing key (C4).
 
 ## A. What a release consists of
 
@@ -57,7 +57,7 @@ Signed off where a date is given; the owner said so in the project's conversatio
 | --- | --- | --- | --- |
 | C1 | **The manual checks**: real phones, Safari, a screen reader, a real shared host | [QA-CHECKLIST.md](QA-CHECKLIST.md), about two hours. Write the results into TESTING.md | Open |
 | C2 | **The Cloudflare password that was pasted into a chat has been changed** | Cloudflare dashboard → My Profile → Authentication | Open |
-| C3 | **A Cloudflare token that can use R2**, and R2 switched on for the account | Token from the template "Edit Cloudflare Workers", with the account and the zone `buildbetters.com` selected, plus Zone → DNS → Edit. Saved in the secure credential form, never in a chat or a file | **Open.** Two tokens were saved on 27 November. The first could use R2 only (the bucket `open-frame-library-staging` was created with it). The second, saved now, sees the zone, its DNS and its routes, but no account, so R2 and Workers are refused. Needed: "Account Resources" of that token set to include the account |
+| C3 | **A Cloudflare token that can publish**: Workers scripts, R2, Workers routes, DNS, account settings and zone | Made from Cloudflare's pre-filled form; the link is in [LIBRARY.md](LIBRARY.md). Saved in the secure credential form, never in a chat or a file | **Done, 27 November 2026, 13:21 UTC.** Checked by using it: bucket, Worker and address created in staging |
 | C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | `node tools/library.mjs keygen`, described in [LIBRARY.md](LIBRARY.md). It never enters the repository | Open |
 | C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision | **Owner, 27 November 2026:** no forms plugin is needed. The free designs keep their email and telephone links |
 | C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision | **Owner, 27 November 2026:** 1.0.0, once the library is online and the manual checks (C1) are done. Until then the plugin stays 0.6.1 and is not released |
@@ -70,11 +70,12 @@ Signed off where a date is given; the owner said so in the project's conversatio
 
 In this order. Each step depends on the one before.
 
-1. **C3**, then publish the Worker and the library: `publish-library.yml`, or the commands in [LIBRARY.md](LIBRARY.md). The publication was rehearsed on one machine with the real Worker code (`tests/library/rehearsal.sh`).
-2. **C4**, then put the key ID and the public key into `Config::PUBLIC_KEYS` in `companion/open-frame-starter-sites/src/Config.php`.
-3. Check the live library: `node tools/library.mjs check-live --api https://api.buildbetters.com/v1 --public <public key>`.
-4. On a clean WordPress site with the two packages installed and nothing else changed, import one free and one Pro design from the live library through the screen.
-5. Raise the plugin to 1.0.0 (C6), run parts B and C again for it, then release it (below).
+1. **Done for staging (27 November 2026):** Worker deployed, library uploaded, checked live, all ten designs imported from it.
+1. **C4**, then publish the Worker and the library to production: `publish-library.yml`, or the commands in [LIBRARY.md](LIBRARY.md).
+1. Put the key ID and the public key into `Config::PUBLIC_KEYS` in `companion/open-frame-starter-sites/src/Config.php`.
+1. Check the live library: `node tools/library.mjs check-live --api https://api.buildbetters.com/v1 --public <public key>`.
+1. On a clean WordPress site with the two packages installed and nothing else changed, import one free and one Pro design from the live library through the screen.
+1. Raise the plugin to 1.0.0 (C6), run parts B and C again for it, then release it (below).
 
 Until then the theme can be released on its own. It does not depend on the plugin.
 

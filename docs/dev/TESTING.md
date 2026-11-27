@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Staging on Cloudflare](#staging-on-cloudflare--test-report): the library on Cloudflare for the first time, and every design imported from it
 - [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
 - [QA](#qa--test-report): Phase 9, three browser engines, three PHP versions, oldest supported versions, performance, a security review
 - [Package and publish](#package-and-publish--test-report): Phase 8, a rehearsal with the real Worker; nothing is on Cloudflare yet
@@ -19,6 +20,53 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Staging on Cloudflare — Test Report
+
+Executed on 27 November 2026 between 13:07 and 13:40 UTC. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
+
+**This is staging, not production.** Same Worker code and same files as production will have, at another address (`https://library-staging.buildbetters.com`) and signed with a key made for staging. A plugin as users install it does not read this address.
+
+| Step | Result |
+| --- | --- |
+| Worker tests | **10 of 10 passed** |
+| `wrangler r2 bucket create open-frame-library-staging` | Created |
+| `wrangler deploy --env staging` | Deployed, with the address `library-staging.buildbetters.com` as a custom domain. Before the upload the address answered `404` with the Worker's own headers, from Cloudflare's edge |
+| Build for that address, signed with the staging key | 10 designs, 227 files; signature and every checksum valid |
+| `publish --live` | `plan`: 227 to upload, 0 unchanged, 0 in conflict. **227 uploaded**, the catalog last |
+| `check-live` | **Catalog of 10 designs, signature valid, 227 files downloaded and every checksum valid** |
+| `plan` again | 1 file to upload (the catalog, whose timestamp is new with every build), 226 unchanged |
+| Import on a clean site, through the Starter Sites screen (`tests/library/import-all.js`) | **10 of 10 designs** imported from the staging library, 17 to 33 pages visited per design, every picture loading, each import rolled back and the site equal to before |
+
+| Design | Import | Pages visited | Time |
+| --- | --- | --- | --- |
+| Business | 10 pages, 15 images, 1 menu | 19 | 25 s |
+| Creative Agency | 9 pages, 15 images, 1 menu | 20 | 62 s |
+| SaaS | 11 pages, 12 images, 1 menu | 22 | 56 s |
+| Portfolio | 9 pages, 15 images, 1 menu | 17 | 26 s |
+| Shop | 6 pages, 17 images, 1 menu | 33 | 74 s |
+| Restaurant | 8 pages, 16 images, 1 menu | 17 | 25 s |
+| Real Estate | 10 pages, 18 images, 1 menu | 22 | 63 s |
+| Education | 9 pages, 16 images, 1 menu | 17 | 24 s |
+| Medical | 10 pages, 9 images, 1 menu | 19 | 22 s |
+| Magazine | 6 pages, 14 images, 1 menu | 30 | 59 s |
+
+The notes are the known ones: WordPress asking `secure.gravatar.com` for the avatar of its sample comment and `s.w.org` for an emoji picture, and one PHP notice from another plugin.
+
+## What had to change
+
+| Found | Change |
+| --- | --- |
+| The account has no workers.dev address, which the staging Worker was configured to use | Staging has an address on the domain instead (`library-staging.buildbetters.com`, `cloud/worker/wrangler.toml`). One thing less to set up, and staging is reached the way production will be |
+| A test site blocks every outgoing request except to WordPress.org, so it could not read a library on the internet | `tests/env/setup.sh` adds the host of `OFT_LIBRARY_BASE` to the hosts the site may reach, when it is not this machine |
+| Three API tokens made by hand each lacked a part (R2, the account, or the zone) | Cloudflare's pre-filled token form; the link is in [LIBRARY.md](LIBRARY.md) |
+
+## Not covered
+
+- **Production**: `api.buildbetters.com` and `cdn.buildbetters.com`, the production bucket, the production key. Nothing of it exists yet.
+- The "Publish library" workflow on GitHub. The same commands were run from the development machine instead; the workflow needs the repository's secrets, which the owner sets.
+- Cloudflare's edge cache over time, and a library update (publishing a second catalog over the first).
+- The import ran from one machine in one region, with Elementor Pro not licensed.
 
 # Documentation and release — Test Report
 
@@ -161,7 +209,7 @@ The plugin was read by a second reviewer against eight questions: a hostile libr
 
 | Severity | Issue |
 | --- | --- |
-| Medium | **Nothing is published.** On 27 November `buildbetters.com` became active on Cloudflare. An empty staging bucket was created in R2 that afternoon with a token for R2 only; the token saved since sees the domain but not the account, so neither R2 nor Workers can be used with it. See "Needed from the owner" in `PROJECT_STATUS.md` |
+| Medium | **Nothing is published to production.** The library is live in staging on Cloudflare since 27 November and all ten designs were imported from there (see the report at the top). Production waits for the signing key, whose private half the owner has to keep |
 | Medium | The largest paint of the first screen takes 2.9 to 4.7 seconds in Lighthouse's slow-4G simulation, against a target of 2.5; Portfolio and Real Estate score 82 and 81 against a target of 85 |
 | Medium | The manual checklist has not been done: no real phone, no Safari on a Mac, no screen reader, no licensed Elementor Pro, no order placed in the Shop, no real host |
 | Low | In Firefox, Elementor 4.4.2's editor sometimes reports "can't convert undefined to object" from its own `editor-global-classes.js` when a page of a design is opened (two of three times here). The page opens and can be edited. It does not happen with our plugin off on the same Elementor, but the code that fails is Elementor's and was not traced further |

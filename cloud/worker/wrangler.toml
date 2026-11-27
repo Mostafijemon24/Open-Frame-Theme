@@ -17,11 +17,14 @@ routes = [
 binding = "LIBRARY"
 bucket_name = "open-frame-library"
 
-# A second copy for trying a library before it is published.
+# A second copy for trying a library before it is published. It has an
+# address of its own on the same domain, so it needs no workers.dev subdomain.
 [env.staging]
 name = "open-frame-library-staging"
-workers_dev = true
-routes = []
+workers_dev = false
+routes = [
+	{ pattern = "library-staging.buildbetters.com", custom_domain = true },
+]
 
 [[env.staging.r2_buckets]]
 binding = "LIBRARY"

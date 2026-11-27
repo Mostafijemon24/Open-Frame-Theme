@@ -10,7 +10,7 @@ Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-AR
 
 Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Real Estate, Magazine and Shop (Elementor Pro; Shop also needs WooCommerce) are each imported, checked at nine screen widths, opened in the Elementor editor and rolled back by the automated tests. They share no layout, typeface or color.
 
-**The library is packaged and its publication is rehearsed, but nothing is on Cloudflare yet.** In Phase 8 the ten designs were built into the library as it will be published (227 files, 28 MB), the publication was run against the real Worker code on one machine, and each design was imported from that library into a WordPress site with nothing in it, through the Starter Sites screen. What is still missing before a user can do the same is the deployment itself, which is blocked on a Cloudflare token.
+**The library is live on Cloudflare in staging, and every design was imported from there. Production is the next step.** On 2026-11-27 the staging Worker was deployed at `https://library-staging.buildbetters.com`, the library's 227 files (28 MB) were uploaded to R2, downloaded again from that address with the signature and every checksum valid, and all ten designs were imported from it into a clean WordPress site through the Starter Sites screen. What a user's plugin reads is the production library at `api.buildbetters.com` and `cdn.buildbetters.com`, which does not exist yet: it needs the production signing key, whose private half the owner has to keep.
 
 | Phase | Status |
 | --- | --- |
@@ -18,12 +18,12 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 2. Architecture and roadmap | Done, approved 2026-11-26 |
 | 3. Core theme and design system | Done (theme 1.1.0) |
 | 4. Starter Sites dashboard | Done |
-| 5. Cloud API and package delivery | Built and tested locally. **Deployment blocked** (see "Needed from the owner") |
+| 5. Cloud API and package delivery | **Deployed to staging on Cloudflare and verified there (2026-11-27).** Production not deployed yet |
 | 6. Import engine | **Core done and tested.** Some planned parts are not built yet, listed below |
 | 7a. Business starter site | **Done** (plugin 0.3.0, design version 1.0.0) |
 | 7b. Nine further starter sites | **Done** (plugin 0.6.0). Free: Portfolio, Restaurant, Education, Medical. Pro: Agency, SaaS, Real Estate, Magazine, Shop |
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
-| 8. Package, validate, publish | **Packaged, validated and rehearsed locally. Publication to Cloudflare blocked** (same token as Phase 5). Live demo sites not built |
+| 8. Package, validate, publish | **Published to staging; 10 of 10 designs imported from staging on a clean install (2026-11-27).** Publication to production waits for the signing key. Live demo sites not built |
 | 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
 | 10. Documentation and release | **Documents, packages and release tooling done. Nothing released, and the checklist is not signed off.** The theme is ready and waits for the owner; the plugin cannot be released before the library is online ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)) |
 
@@ -249,6 +249,12 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Verified (executed 2026-11-27, unless a line says otherwise)
 
+On Cloudflare, staging (2026-11-27, 13:22 to 13:40 UTC):
+
+- The Worker's tests 10 of 10, then deployed; `https://library-staging.buildbetters.com/v1/catalog.json` answered 404 from Cloudflare's edge before the upload, as it should.
+- 227 files uploaded to R2 with the `publish` command; `check-live` downloaded the catalog and all 227 files from the address: signature valid, every checksum valid. A second `plan` found 1 file to upload (the catalog) and 226 unchanged.
+- **10 of 10 designs imported from the staging library** on a clean site (WordPress 7.1.5, PHP 8.3) through the Starter Sites screen, 17 to 33 pages visited per design, each rolled back.
+
 After the Phase 10 changes to the plugin:
 
 - Plugin PHP checks **145 of 145** on PHP 7.4, 8.1 and 8.3. Import engine on PHP 8.3 **102**, **115** with WooCommerce, **114** with Elementor Pro, all passing; plain on PHP 7.4 and 8.1 **102 of 102**.
@@ -279,7 +285,7 @@ From Phase 8 (2026-11-26), not repeated:
 - **The release itself.** No tag, no GitHub release, no submission to WordPress.org. The Release workflow has not run since it was changed; its checking and packaging were run as a script.
 - **The guides, by anyone but their author.** Nobody has yet followed them as a first-time user.
 - **Everything on the manual checklist:** a real phone, Safari on a Mac, a screen reader, Elementor Pro with an activated licence, an order in the Shop, an import on an ordinary shared host.
-- **Anything on Cloudflare.** The real R2 bucket, the two host names, DNS, the edge cache and the "Publish library" workflow have not run; the Worker has only run on this machine with a simulated bucket. The exit criterion of Phase 8, "each site imported from production on a clean install", is met against a local Worker only.
+- **Production on Cloudflare.** The two host names `api.` and `cdn.buildbetters.com`, the production bucket and the "Publish library" workflow have not run. The exit criterion of Phase 8, "each site imported from production on a clean install", is met against staging on Cloudflare (same Worker code, same files, another address and key), not yet against production.
 - Right-to-left languages, multisite, servers that need FTP details to install plugins, updating an outdated plugin through the screen, a hard memory limit of 128 MB.
 - WebKit on Linux is the engine of Safari, not Safari: fonts, scrolling and form controls of macOS and iOS are not covered by it.
 
@@ -316,7 +322,7 @@ From Phase 8 (2026-11-26), not repeated:
 
 ## Needed from the owner
 
-1. **One more permission on the Cloudflare token, to finish Phases 5 and 8.** State on 2026-11-27: `buildbetters.com` is now on Cloudflare and active (since 05:13 UTC; its name servers are Cloudflare's), and the token is valid. With it the DNS records of the domain can be read and changed and the account's Workers can be listed. What it cannot do: use R2, the file storage the library is kept in (Cloudflare answers "Authentication error"), or read the account's settings. Needed: a token made from the template "Edit Cloudflare Workers" with "Account Resources" set to the owner's account and "Zone Resources" to `buildbetters.com`, plus the permission Zone > DNS > Edit; that template includes "Workers R2 Storage: Edit". R2 also has to be switched on once in the dashboard (R2 Object Storage); Cloudflare asks for a payment card there, although the library's 28 MB are far inside the free 10 GB. **State on 2026-11-27 at 13:13 UTC:** two tokens were saved that afternoon, each with half of what is needed. The first was a token for R2 only: with it the empty bucket `open-frame-library-staging` was created, the first thing of this project on Cloudflare, but a Worker could not be deployed. The second, which replaced it and is the one saved now, is a user token that sees the zone `buildbetters.com`, its DNS records and its Worker routes, but no account: R2 and Workers are refused. Still needed: on that same token (My Profile > API Tokens > Edit), "Account Resources" set to include the owner's account. Its value does not change, so nothing has to be entered again.
+1. **The production signing key, to finish Phases 5 and 8.** The Cloudflare token is settled: the fourth one, made on 2026-11-27 at 13:21 UTC from Cloudflare's pre-filled form (the link is in [docs/dev/LIBRARY.md](docs/dev/LIBRARY.md)), can do everything publishing needs. On the owner's Cloudflare account there are now: the R2 bucket `open-frame-library-staging` with the library's 227 files, the Worker `open-frame-library-staging`, and the address `library-staging.buildbetters.com` that leads to it. Nothing else on the domain was changed. For production a signing key has to be made, and its private half kept by the owner, in a password manager and as the repository secret `OFSS_SIGNING_KEY`; whoever has it can sign a list of designs that every installed plugin accepts.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
@@ -331,8 +337,8 @@ From Phase 8 (2026-11-26), not repeated:
 
 The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
+1. **Production library:** make the signing key with the owner, put its public half into the plugin, publish to `api.` and `cdn.buildbetters.com`, check it live, and import from it on a clean site.
 1. **The theme can be released now**, on the owner's word: merge the branch into `main`, run the Release workflow for the theme, and upload the ZIP to WordPress.org. The manual checklist should come first.
-2. With a token that may use R2 (or the decision to do without R2): generate the production signing key and put its public half into the plugin, publish to staging, run the import test against staging, then publish to production and repeat it there. That closes Phases 5 and 8 and unblocks the plugin.
 3. The manual checklist, and fixes for what it finds.
 4. Raise the plugin to 1.0.0, release it, then submit it to WordPress.org (its banner, icon and screenshots are ready).
 5. Decisions still open: live demos, Medical's doctors.

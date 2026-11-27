@@ -122,6 +122,11 @@ if [ -n "${OFT_LIBRARY_BASE:-}" ]; then
 	LIBRARY_BASE="${OFT_LIBRARY_BASE%/}"
 	DEV_KEY_ID="${OFT_LIBRARY_KEY%%=*}"
 	DEV_PUBLIC_KEY="${OFT_LIBRARY_KEY#*=}"
+	# A library on the internet (staging, for example): the test site may reach its host.
+	LIBRARY_HOST="$(printf '%s' "$LIBRARY_BASE" | sed -E 's#^[a-z]+://([^/:]+).*#\1#')"
+	case "$LIBRARY_HOST" in
+		localhost | 127.0.0.1) LIBRARY_HOST="" ;;
+	esac
 else
 	# The mock starter site library: the real build of the planned sites plus the
 	# reference package, signed with a development key made for this test site.
@@ -174,7 +179,8 @@ define( 'WP_HOME', 'http://localhost:$PORT' );
 define( 'WP_SITEURL', 'http://localhost:$PORT' );
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'WP_HTTP_BLOCK_EXTERNAL', true );
-define( 'WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,downloads.wordpress.org' );
+define( 'WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,downloads.wordpress.org${LIBRARY_HOST:+,$LIBRARY_HOST}' );
+define( 'OFT_LIBRARY_HOST', '${LIBRARY_HOST:-}' );
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 define( 'OFSS_API_BASE', '$LIBRARY_BASE' );
 define( 'OFSS_PUBLIC_KEYS', array( '$DEV_KEY_ID' => '$DEV_PUBLIC_KEY' ) );

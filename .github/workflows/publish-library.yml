@@ -7,8 +7,8 @@ name: Publish library
 #   CLOUDFLARE_API_TOKEN    token limited to Workers and R2 on the account
 #   CLOUDFLARE_ACCOUNT_ID   the account's ID
 #   OFSS_SIGNING_KEY        the private signing key (PEM text, see docs/dev/LIBRARY.md)
-# and, for staging, the repository variable LIBRARY_STAGING_URL (the workers.dev
-# address of the staging Worker, without a trailing slash).
+# and, for staging, the repository variable LIBRARY_STAGING_URL (the address of the
+# staging Worker, https://library-staging.buildbetters.com, without a trailing slash).
 on:
   workflow_dispatch:
     inputs:
