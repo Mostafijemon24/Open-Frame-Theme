@@ -8,18 +8,18 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 
 | Product | Version | State |
 | --- | --- | --- |
-| **Open Frame** (theme) | 1.1.0 (released so far: 1.0.1, on 25 November 2026) | **Ready.** Every automated check passes and the package is built. Waiting for the owner's checks in part C and the owner's decision to publish |
-| **Open Frame Starter Sites** (plugin) | 0.6.1 | **Technically releasable since 27 November 2026**: the library is online and the plugin carries its key, so `bin/release-package.sh plugin` builds a release package. **Not released**, by the owner's decision (C6): the first public version is 1.0.0, after the manual checks (C1) |
+| **Open Frame** (theme) | 1.1.0 | **Released on 27 November 2026** on the owner's word, from `main` after pull request 1 was merged with CI green: <https://github.com/Mostafijemon24/Open-Frame-Theme/releases/tag/v1.1.0>. The package was downloaded from the release page afterwards: its checksum matches, it holds the same 74 entries as the build that was tested, and nothing that does not belong in it. Not yet submitted to WordPress.org (C9) |
+| **Open Frame Starter Sites** (plugin) | 1.0.0, prepared | **Prepared for its first public release, not released.** The owner asked on 27 November 2026 for the preparation: the version is 1.0.0 everywhere, the changelog has its entry, the package builds, and the checks of part B were run again on it. It waits for the manual checks (C1) and the owner's word. The 1.0.0 preparation is on the branch `development`; releasing it means merging that into `main` and running the Release workflow for the plugin |
 | **Starter site library** | ten designs, each 1.0.0 | **Published on 27 November 2026** at `api.buildbetters.com` and `cdn.buildbetters.com`, signed with the production key (ID `135200d7`), checked live, and all ten designs imported from it on a clean site with the packaged plugin |
 
-**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled six points on 27 November 2026 (C3, C4, C5, C6, C7 and the pictures of C9); the others are open. Part D is done except for its last step, the release itself.
+**The checklist is signed off for the theme, which is released. For the plugin it is not:** the manual checks (C1) and the owner's word to release are open. Also open, and not holding a release back: C2 (the pasted password), C9 (WordPress.org) and C10.
 
 ## A. What a release consists of
 
 | Deliverable | Where | State |
 | --- | --- | --- |
 | Theme ZIP with checksum | `dist/open-frame-1.1.0.zip`, built by `bash bin/release-package.sh theme` | Done. 408 KB |
-| Plugin ZIP with checksum | `dist/open-frame-starter-sites-0.6.1.zip`, built by `bash bin/release-package.sh plugin` | Done. 80 KB. The version becomes 1.0.0 before the release (C6) |
+| Plugin ZIP with checksum | `dist/open-frame-starter-sites-1.0.0.zip`, built by `bash bin/release-package.sh plugin` | Done. 80 KB |
 | Theme user guide with screenshots | [docs/README.md](../README.md), 26 chapters, 46 pictures; HTML in `docs/index.html` | Done. Elementor and WooCommerce chapters now have pictures |
 | Plugin user guide with screenshots | [docs/STARTER-SITES.md](../STARTER-SITES.md), 17 chapters, 11 pictures; HTML in `docs/starter-sites.html` | Done |
 | Installation guide | [docs/INSTALL.md](../INSTALL.md); HTML in `docs/install.html` | Done |
@@ -41,13 +41,13 @@ Signed off by the output of the checks on 27 November 2026, after the last chang
 | B3 | The packages contain no development files, keys, archives or environment files | Pass (checked by `bin/release-package.sh`); file lists read |
 | B4 | The checksums match the packages | Pass |
 | B5 | WordPress coding standards, theme and plugin (`composer lint`) | Exit code 0 |
-| B6 | Plugin checks on PHP 7.4, 8.1 and 8.3 | 145 of 145 on each |
-| B7 | Import engine: plain, with WooCommerce, with Elementor Pro (PHP 8.3); plain on PHP 7.4 and 8.1 | 102, 115 and 114 of their totals; 102 of 102 on each |
+| B6 | Plugin checks on PHP 7.4, 8.1 and 8.3 | 145 of 145 on each, again on 1.0.0 |
+| B7 | Import engine: plain, with WooCommerce, with Elementor Pro (PHP 8.3); plain on PHP 7.4 and 8.1 | 102, 115 and 114 of their totals; 102 of 102 on each. On 1.0.0: 115 of 115 with WooCommerce on PHP 8.3 |
 | B8 | Library tools | 74 of 74 |
-| B9 | Browser checks in Chromium: every page of every design at nine widths, import, rollback, editor, accessibility rules | 149 of 149 |
-| B10 | Theme Check and Plugin Check on the packages | Theme Check: 0 required, 0 warnings. Plugin Check: no errors found |
+| B9 | Browser checks in Chromium: every page of every design at nine widths, import, rollback, editor, accessibility rules | 149 of 149 on 0.6.1 (also in CI on the commit that was merged). On 1.0.0: the 21 checks of the Starter Sites screen on this machine, all of them in CI |
+| B10 | Theme Check and Plugin Check on the packages | Theme Check: 0 required, 0 warnings. Plugin Check: no errors found, again on 1.0.0 |
 | B11 | Every link and picture in the guides leads somewhere (`bin/check-docs.js`) | 522 checked, 0 broken |
-| B12 | Browser checks in Firefox and WebKit, the version matrix, performance and the security review | Done in Phase 9 on plugin 0.6.1 before two small changes (the wording of the confirmation, and how often an import reports back). Not repeated for those |
+| B12 | Browser checks in Firefox and WebKit, the version matrix, performance and the security review | Done in Phase 9 on plugin 0.6.1. Since then the plugin changed in four small places (the wording of the confirmation, how often an import reports back, the public key, the version number). Not repeated for those |
 
 ## C. For the owner to confirm
 
@@ -61,8 +61,8 @@ Signed off where a date is given; the owner said so in the project's conversatio
 | C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | Made on 27 November 2026 with `node tools/library.mjs keygen` and handed to the owner as a file, which the owner chose. It never entered the repository | **Owner, 27 November 2026:** the key is stored. The copy on the development machine was deleted the same day; the owner's copy is the only one |
 | C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision | **Owner, 27 November 2026:** no forms plugin is needed. The free designs keep their email and telephone links |
 | C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision | **Owner, 27 November 2026:** 1.0.0, once the library is online and the manual checks (C1) are done. Until then the plugin stays 0.6.1 and is not released |
-| C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | **Owner, 27 November 2026:** read and agreed. Still to do by the owner: switch on "Private vulnerability reporting", which the policy points people to |
-| C8 | **The work is on the default branch** | The links in the readme files and release notes point at `main`. Merge the branch `development` (a pull request can be opened on request) | Open |
+| C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | **Owner, 27 November 2026:** read and agreed, and "Private vulnerability reporting" is switched on (as the owner reported; it cannot be seen from the development machine) |
+| C8 | **The work is on the default branch** | The links in the readme files and release notes point at `main` | **Done, 27 November 2026:** pull request 1 merged on the owner's word, with both CI runs green. The 1.0.0 preparation of the plugin came after it and is not on `main` yet |
 | C9 | **WordPress.org**: the owner's account, from which both products are submitted | See part E. The banner and the icon for the plugin's page were made on 27 November 2026 at the owner's request | Open (the submission itself) |
 | C10 | **Known issues are acceptable for a first release** | The list under "Open issues" in TESTING.md: page-speed target missed on phones (81 to 93 of 100), importing a design again overwrites edits, RTL and Multisite untested, Medical has no portraits | Open |
 
@@ -74,7 +74,8 @@ Done on 27 November 2026, except the last step.
 1. **Done.** The production key made (C4) and its public half put into `Config::PUBLIC_KEYS`.
 1. **Done.** Production: Worker deployed to `api.` and `cdn.buildbetters.com`, library uploaded, `check-live` valid.
 1. **Done.** On a clean WordPress site with the two packages installed from their ZIP files, all ten designs imported from the production library through the screen.
-1. **Open.** After the manual checks (C1): raise the plugin to 1.0.0 (C6), run part B again for it, then release it (below).
+1. **Done, 27 November 2026.** The plugin raised to 1.0.0 (C6) and part B run again for it.
+1. **Open.** After the manual checks (C1), on the owner's word: merge the preparation into `main` and release the plugin (below).
 
 The theme can be released on its own at any time. It does not depend on the plugin.
 
@@ -84,7 +85,7 @@ Only after the part of this list that concerns the product is signed off.
 
 1. Raise the version where it is written (theme: `style.css`, `OPEN_FRAME_VERSION` in `functions.php` and `Stable tag` in `readme.txt`; plugin: the header of its main file, `OFSS_VERSION`, `Stable tag` in its `readme.txt`), add the changelog entry, regenerate the plugin's translation template, run `node bin/build-docs.js`, commit.
 2. Try the packaging: `bash bin/release-package.sh theme` or `plugin`. It names what is missing.
-3. On GitHub: **Actions → Release → Run workflow**, choose the branch and the product. Or push the tag: `v1.1.0` for the theme, `starter-sites-v0.6.1` for the plugin.
+3. On GitHub: **Actions → Release → Run workflow**, choose the branch and the product. Or push the tag: `v1.1.0` for the theme, `starter-sites-v1.0.0` for the plugin.
 4. Open the release page. Download the ZIP, check it against its checksum, and install it on a test site.
 
 A release that turned out wrong is replaced by running the workflow again with "replace" ticked. A version that people may already have installed is not replaced: fix it and release the next patch version.

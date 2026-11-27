@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.6.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,15 +110,18 @@ A copy of the list of designs, the record of the last import, a short import his
 
 == Changelog ==
 
+= 1.0.0 =
+* The first public release. The versions below were development versions and were not published.
+* New: the library of designs is online, with ten designs, and the plugin carries the key its list of designs is signed with. A list signed with any other key is refused.
+* Changed: an import reports back every few seconds, so the progress bar moves on a fast server too instead of waiting at 0% and jumping to the end.
+* Fixed: the confirmation before an import named a number of pages that counted a design's post layout and "not found" page as pages.
+
 = 0.6.1 =
-* New: the library of designs is online, and the plugin carries the key its list of designs is signed with. A list signed with any other key is refused.
 * Fixed: on the designs for free Elementor, the styles of the header and the footer were loaded at the end of the page. The header appeared unstyled for a moment and the page jumped. They are now loaded in the head.
 * Security: the plugin checks the pages of a design again before storing them, and refuses raw HTML and shortcode widgets, script, embedded frames, style blocks and hand-written CSS or attributes, even in a package that is correctly signed.
 * Security: a list of designs that is older than the one the site already has is not accepted, even with a valid signature.
 * Security: values of a design's Site Settings are reduced to what a color, a font name or a size can contain.
 * Fixed: when a plugin a design needs cannot be installed because its current version needs a newer WordPress or PHP, the screen says so instead of "The package could not be installed".
-* Changed: an import reports back every few seconds, so the progress bar moves on a fast server too instead of waiting at 0% and jumping to the end.
-* Fixed: the confirmation before an import named a number of pages that counted a design's post layout and "not found" page as pages.
 * Changed: the smaller sizes of a design's pictures are saved at the quality of the picture itself, which makes pages lighter.
 * Changed: removing the plugin also removes what an unfinished import left in the uploads folder.
 * Changed: the designs need Elementor 4.0.3 or newer. Elementor 4.0.0 to 4.0.2 with Elementor Pro load a font from Google on every page.

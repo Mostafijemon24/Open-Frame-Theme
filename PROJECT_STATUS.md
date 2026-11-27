@@ -25,7 +25,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | **Done.** Published to production; 10 of 10 designs imported from production on a clean install (2026-11-27). Live demo sites not built |
 | 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
-| 10. Documentation and release | **Documents, packages and release tooling done. Nothing released, and the checklist is not signed off.** The theme is ready and waits for the owner; the plugin cannot be released before the library is online ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)) |
+| 10. Documentation and release | **Theme 1.1.0 released on 2026-11-27.** The plugin is prepared as 1.0.0 and not released: it waits for the manual checks and the owner's word ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)). Neither is submitted to WordPress.org yet |
 
 ## Decisions (owner, 2026-11-26)
 
@@ -249,6 +249,11 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Verified (executed 2026-11-27, unless a line says otherwise)
 
+Theme release and plugin 1.0.0 (2026-11-27):
+
+- Pull request 1 merged into `main` after both CI runs on its head were green; the Release workflow ran for the theme and succeeded. `open-frame-1.1.0.zip` downloaded from the release page: checksum valid, version 1.1.0 in `style.css`, 74 entries as in the tested build, no development file.
+- Plugin 1.0.0 (version numbers, changelog, translation template, guides, screenshots): plugin checks 145 of 145 on PHP 7.4, 8.1 and 8.3, import engine 115 of 115, the 21 browser checks of the Starter Sites screen, library tools 74 of 74, PHPCS exit code 0, Plugin Check without errors, release package built.
+
 Emulated phones (2026-11-27, after the owner asked for everything a machine can do of the manual checklist):
 
 - Every design imported from production, then four pages each on an emulated iPhone 15 (WebKit) and Pixel 7 (Chromium), upright and sideways: nothing wider than the screen, the menu opens and closes on a tap, no tap target under the minimum of WCAG 2.2, "Skip to content" first for the keyboard. **10 of 10 without a problem.** Not a replacement for real phones.
@@ -333,7 +338,7 @@ From Phase 8 (2026-11-26), not repeated:
 
 ## Needed from the owner
 
-1. **The production signing key is with the owner, and only there.** It was made on 2026-11-27 (key ID `135200d7`) and handed over as a file, at the owner's choice; the owner confirmed the same day that it is stored, and the copy on the development machine was deleted. Whoever has this file can sign a list of designs that every installed plugin accepts. If it is lost, a new key has to be introduced with a plugin release before the library can change again. **To publish a change to the library** the key is needed again: either as the repository secret `OFSS_SIGNING_KEY` (Settings > Secrets and variables > Actions, together with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`) for the "Publish library" workflow, or handed over for that one publication. On the owner's Cloudflare account there are: the R2 buckets `open-frame-library` and `open-frame-library-staging`, the Workers of the same names, and the addresses `api.`, `cdn.` and `library-staging.buildbetters.com` that lead to them. One more change to the domain, asked for by the owner on 2026-11-27 and unrelated to this project: the three DKIM records of the domain's email (`hostingermail-a`, `-b`, `-c._domainkey`) were switched from "Proxied" to "DNS only"; proxied, they gave mail servers no answer.
+1. **The production signing key is with the owner, and only there.** It was made on 2026-11-27 (key ID `135200d7`) and handed over as a file, at the owner's choice; the owner confirmed the same day that it is stored, and the copy on the development machine was deleted. Whoever has this file can sign a list of designs that every installed plugin accepts. If it is lost, a new key has to be introduced with a plugin release before the library can change again. **To publish a change to the library** the key is needed again: either as the repository secret `OFSS_SIGNING_KEY` (Settings > Secrets and variables > Actions, together with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`) for the "Publish library" workflow, or handed over for that one publication. On the owner's Cloudflare account there are: the R2 buckets `open-frame-library` and `open-frame-library-staging`, the Workers of the same names, and the addresses `api.`, `cdn.` and `library-staging.buildbetters.com` that lead to them. Further changes to the domain, asked for by the owner on 2026-11-27 and unrelated to this project: the three DKIM records of the domain's email (`hostingermail-a`, `-b`, `-c._domainkey`), which gave mail servers no answer while proxied, and the records `autoconfig`, `autodiscover` and `ftp` were switched from "Proxied" to "DNS only".
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
@@ -341,14 +346,15 @@ From Phase 8 (2026-11-26), not repeated:
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
 8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
-9. **Switch on "Private vulnerability reporting"** in the repository's Settings → Security. The support policy, which the owner agreed to on 2026-11-27, sends security reports there.
+9. Done by the owner on 2026-11-27: "Private vulnerability reporting" is switched on in the repository, where the support policy sends security reports.
 10. **The word to release the theme**, and later the plugin. Nothing is tagged, published or submitted without it. For WordPress.org the owner's account is needed, and for the plugin's page a banner and an icon.
 
 ## Next steps
 
 The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
-1. **The theme can be released now**, on the owner's word: merge the branch into `main`, run the Release workflow for the theme, and upload the ZIP to WordPress.org. The manual checklist should come first.
-3. The manual checklist, and fixes for what it finds.
-4. Raise the plugin to 1.0.0, release it, then submit it to WordPress.org (its banner, icon and screenshots are ready).
+1. **Done on 2026-11-27:** the branch merged into `main` (pull request 1), theme 1.1.0 released on GitHub, the plugin prepared as 1.0.0.
+2. The manual checklist, by the owner, and fixes for what it finds.
+3. On the owner's word: merge the 1.0.0 preparation into `main` and release the plugin.
+4. Submissions to WordPress.org from the owner's account: the theme ZIP now, the plugin after its release (banner, icon and screenshots are ready).
 5. Decisions still open: live demos, Medical's doctors.

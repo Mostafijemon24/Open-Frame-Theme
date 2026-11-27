@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Theme 1.1.0 released, plugin 1.0.0 prepared](#theme-110-released-plugin-100-prepared--test-report): the release itself, and the checks on the plugin's first public version
 - [Emulated phones](#emulated-phones--test-report): every design on an emulated iPhone and Android phone, from the production library
 - [The library on Cloudflare](#the-library-on-cloudflare--test-report): published to staging and to production, and every design imported from each
 - [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
@@ -21,6 +22,39 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Theme 1.1.0 released, plugin 1.0.0 prepared — Test Report
+
+Executed on 27 November 2026.
+
+## The theme's release
+
+| Step | Result |
+| --- | --- |
+| CI on the head of pull request 1, for the push and for the pull request | **Both runs succeeded** (runs 51 and 52) |
+| Merge into `main` | Done on the owner's word, as a merge commit |
+| Release workflow on `main`, product "theme" | **Succeeded** in 18 seconds: tag `v1.1.0`, release "Open Frame v1.1.0" with the ZIP, its checksum and the changelog entry. The first run of the workflow in its new form |
+| The package, downloaded from the release page | Checksum valid; `style.css` says 1.1.0; 74 entries, the same list as the build Theme Check and the browser checks ran on; no development file, no key |
+
+Not done: installing the downloaded file on a site by hand, and the submission to WordPress.org.
+
+## Plugin 1.0.0
+
+The version number, the changelog entry, the translation template, the guides and the screenshots that show a version number. No change to what the plugin does since the key was added.
+
+| Suite | Result |
+| --- | --- |
+| Plugin PHP checks | **145 of 145** on each of PHP 7.4, 8.1 and 8.3 |
+| Import engine, with WooCommerce, PHP 8.3 | **115 of 115** |
+| Browser checks of the Starter Sites screen, Chromium | **21 of 21**. A first run failed two of them with "Cannot find module axe-core": the machine had been restarted and the accessibility library was no longer on its path. Not a fault of the plugin; with the path set, all pass |
+| Library tools | **74 of 74** |
+| PHPCS (`composer lint`) | **Exit code 0** |
+| Plugin Check on the package | **No errors found** |
+| `bin/release-package.sh plugin` | Version numbers agree, changelog entry present, `open-frame-starter-sites-1.0.0.zip` built with its checksum |
+
+**Not run on 1.0.0 on this machine:** the browser checks of the ten designs (CI runs them on the commit), Firefox, WebKit, and an import from the production library with the 1.0.0 package (done with 0.6.1, from which 1.0.0 differs in its version number and texts).
+
+**Not released.** The plugin waits for the manual checks and the owner's word.
 
 # Emulated phones — Test Report
 

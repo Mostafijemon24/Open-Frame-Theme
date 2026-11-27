@@ -5,7 +5,7 @@ name: Release
 # its own version number and its own tag:
 #
 #   theme    tag v1.1.0                 package open-frame-1.1.0.zip
-#   plugin   tag starter-sites-v0.6.1   package open-frame-starter-sites-0.6.1.zip
+#   plugin   tag starter-sites-v1.0.0   package open-frame-starter-sites-1.0.0.zip
 #
 # It runs when such a tag is pushed, or when started by hand from the Actions
 # tab ("Run workflow"), where you choose the product. A manual run releases the
