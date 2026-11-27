@@ -1,6 +1,6 @@
 # Project Status — Open Frame Starter Sites
 
-Last updated: 2026-11-26
+Last updated: 2026-11-27
 
 Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](docs/dev/TESTING.md)
 
@@ -24,7 +24,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 7b. Nine further starter sites | **Done** (plugin 0.6.0). Free: Portfolio, Restaurant, Education, Medical. Pro: Agency, SaaS, Real Estate, Magazine, Shop |
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | **Packaged, validated and rehearsed locally. Publication to Cloudflare blocked** (same token as Phase 5). Live demo sites not built |
-| 9. QA | Not started |
+| 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
 | 10. Documentation and release | Not started |
 
 ## Decisions (owner, 2026-11-26)
@@ -214,28 +214,40 @@ Each is built with the first design that needs it, rather than against invented 
 - **Not built: live demo sites.** They need a host that runs WordPress (and a licensed Elementor Pro for five of them). No design has a demo address; the screen shows the demo link only when one exists.
 - **Not done: the production signing key and the publication itself.** Both wait for the Cloudflare token.
 
-## Verified (executed 2026-11-26)
+### Phase 9: QA (plugin 0.6.1)
+
+- **Three browser engines.** The browser checks can run in Firefox and in WebKit, the engine of Safari, as well as in Chromium (`OFT_BROWSER`).
+- **Three PHP versions and the oldest supported versions.** The plugin and import engine checks run on PHP 7.4, 8.1 and 8.3. Every design was imported on a clean site with PHP 7.4, WordPress 6.8, Elementor 4.0.3 and WooCommerce 10.0.0, and with PHP 8.1 and the newest versions. On WordPress 6.4 the theme works and the plugin's screen says what the designs need.
+- **Two more kinds of site:** plain permalinks, and a site that already has pages, a post, a menu and a static front page.
+- **Found and fixed, front end:** the stylesheets of a free design's header and footer were loaded at the end of the page, so the header appeared unstyled and the page jumped; lists of articles in the Pro designs used 300-pixel pictures in spaces up to 750 pixels wide, and jumped after loading; hero backgrounds were downloaded at full width on phones; WordPress re-saved the smaller picture sizes at a higher quality than the pictures have.
+- **Found and fixed, compatibility:** Elementor 4.0.0 to 4.0.2 with Elementor Pro load a font from Google on every page, so the designs now need Elementor 4.0.3; on WordPress 6.8 the screen could not install WooCommerce (its current version needs WordPress 7.0) and did not say why.
+- **Security review** by a second reviewer: nothing of high or critical severity. The plugin now checks a design's pages again before storing them (no raw HTML or shortcode widgets, script, frames, style blocks, hand-written CSS or attributes), refuses a catalog older than the one it has, and cleans the values of a design's Site Settings. Removing the plugin also removes what an unfinished import left.
+- **Performance measured** with Lighthouse (mobile, slow 4G): eight of ten home pages score 85 or more, all stay under 0.1 layout shift and under 1.2 MB. The 2.5-second target for the largest paint is met by none in that simulation.
+- **A manual checklist** for what a machine cannot check: [docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md).
+
+## Verified (executed 2026-11-27, unless a line says otherwise)
+
+- Browser checks, all 149: Chromium **149 of 149**; Firefox 155 **149 of 149** (second complete run; the first found five faults in the checks themselves, none in the product); WebKit 26.6 **149 of 149** (second complete run; the first found faults in the checks and one internal error of WebKit itself). Two checks were added for every page: styles loaded in the head, no picture stretched beyond its file.
+- Every design imported from the Starter Sites screen on a clean site, visited link by link and rolled back: **10 of 10** on PHP 8.3 with the newest versions, **10 of 10** on PHP 8.1, **10 of 10** on PHP 7.4 with WordPress 6.8, Elementor 4.0.3 and WooCommerce 10.0.0; **3 of 3** on a site with plain permalinks and existing content.
+- Plugin PHP checks: **145 of 145** on each of PHP 7.4, 8.1 and 8.3. Import engine: **102**, **115** with WooCommerce and **114** with Elementor Pro, all passing, on each of the three.
+- Library tools: 74 of 74. Worker: 10 of 10.
+- PHPCS (`composer lint`): exit code 0. Theme Check: 0 required, 0 warnings. Plugin Check on plugin 0.6.1: no errors found.
+- Lighthouse, mobile: Business 92, Portfolio 82, Restaurant 87, Education 92, Medical 92, Creative Agency 92, SaaS 93, Real Estate 81, Magazine 87, Shop 87.
+
+From Phase 8 (2026-11-26), not repeated:
+
 
 - **Rehearsal of the publication:** 227 files uploaded to the simulated bucket through wrangler; the library served by the Worker was downloaded again and every checksum was valid; a second publication had 1 file to upload (the catalog) and 226 unchanged; a changed Business 1.0.0 was refused and the live catalog stayed as it was.
 - **Rehearsal of the import:** 10 of 10 designs imported on a clean WordPress site from the Starter Sites screen, which activated Elementor, Elementor Pro and WooCommerce where a design needs them; 17 to 37 pages visited per design with every picture loading, no script error and no leftover reference; every import rolled back, and the site compared with what it was before.
 - The library built with the production addresses: signature and every checksum valid.
 
-- PHPCS: theme and plugin, both commands end with exit code 0. (CI found three comment-alignment errors in the plugin in the Agency and SaaS commits, which the local check had missed; corrected since, and the check now reads the exit code.)
-- Theme Check on the packaged theme: 0 required, 0 warnings. Plugin Check 2.2.0 on the packaged plugin: no errors found. (Both from the run before Phase 8; in Phase 8 neither package changed, and both checks passed again in CI run 38.)
-- CI run 38 on GitHub (the Phase 8 commit): every job passed, including the new rehearsal job with the five free designs.
-- Plugin PHP checks: 138 of 138 pass.
-- Import engine checks: 83 of 83 pass without Elementor Pro and WooCommerce, 96 of 96 with WooCommerce (thirteen checks for products) and 95 of 95 with Elementor Pro (twelve checks for Theme Builder templates), including a rollback that is compared field by field with the site before the import, interruptions at every one of the 18 points of an import, the fonts of a design, and references to categories.
-- Browser checks, run again after the changes to the library tools: 149 of 149 pass with Elementor Pro and WooCommerce in the test site (94 without Elementor Pro, where the five Pro designs are skipped). 11 for each of the ten designs (import, every address at nine widths, menu, links, blog, 404, axe-core, typefaces, global styles, editor, rollback), 18 theme integrations including Elementor Pro, 21 Starter Sites screen including a real plugin installation from WordPress.org, forged catalogs, an import with editing and rollback, and axe-core accessibility scans.
-- Library tools: 66 of 66 pass. Worker: 10 of 10 pass.
-- Environment: WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4, WooCommerce 11.3.1.
 
 ## Not verified
 
-- Elementor Pro with an activated licence (it was run without one), and building templates by hand in the Theme Builder screen.
-- **Anything on Cloudflare.** The real R2 bucket, the two host names, DNS, the edge cache and the "Publish library" workflow have not run; the Worker has only run on this machine with a simulated bucket. Nothing is deployed at `api.buildbetters.com`. Whether `buildbetters.com` is a zone on the owner's Cloudflare account could not be checked either. The exit criterion of Phase 8, "each site imported from production on a clean install", is met against a local Worker only.
-- The rehearsal used the permalinks WordPress chooses on a working host. Plain permalinks and a site with content of its own were not part of it (the import engine checks cover an existing site).
-- Multisite, servers that need FTP details to install plugins, and updating an outdated plugin through the screen.
-- PHP 7.4 at runtime (syntax is checked on 7.4 in CI), WordPress 6.4 with the new code, Safari, Firefox, real devices, screen readers.
+- **Everything on the manual checklist:** a real phone, Safari on a Mac, a screen reader, Elementor Pro with an activated licence, an order in the Shop, an import on an ordinary shared host.
+- **Anything on Cloudflare.** The real R2 bucket, the two host names, DNS, the edge cache and the "Publish library" workflow have not run; the Worker has only run on this machine with a simulated bucket. The exit criterion of Phase 8, "each site imported from production on a clean install", is met against a local Worker only.
+- Right-to-left languages, multisite, servers that need FTP details to install plugins, updating an outdated plugin through the screen, a hard memory limit of 128 MB.
+- WebKit on Linux is the engine of Safari, not Safari: fonts, scrolling and form controls of macOS and iOS are not covered by it.
 
 ## Known issues and limitations
 
@@ -270,17 +282,18 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Needed from the owner
 
-1. **A Cloudflare API token, to finish Phases 5 and 8.** The credential saved in the secure form is still rejected by Cloudflare with "Invalid format for Authorization header" (checked again on 2026-11-26 in Phase 8): it is not an API token (an account password or the "Global API Key" give this result). What is needed: Cloudflare dashboard > My Profile > API Tokens > Create Token > the "Edit Cloudflare Workers" template, plus the permission Zone > DNS > Edit, for the account and the zone `buildbetters.com`. The token is entered in the secure form again, never in chat. Everything after that is prepared: one run of the publication, then the same import test against the real address.
+1. **One more permission on the Cloudflare token, to finish Phases 5 and 8.** State on 2026-11-27: `buildbetters.com` is now on Cloudflare and active (since 05:13 UTC; its name servers are Cloudflare's), and the token is valid. With it the DNS records of the domain can be read and changed and the account's Workers can be listed. What it cannot do: use R2, the file storage the library is kept in (Cloudflare answers "Authentication error"), or read the account's settings. Needed: a token made from the template "Edit Cloudflare Workers" with "Account Resources" set to the owner's account and "Zone Resources" to `buildbetters.com`, plus the permission Zone > DNS > Edit; that template includes "Workers R2 Storage: Edit". R2 also has to be switched on once in the dashboard (R2 Object Storage); Cloudflare asks for a payment card there, although the library's 28 MB are far inside the free 10 GB. If the owner prefers not to add a card, the library can be served as static files of the Worker instead of from R2; that is a change to the publishing tools, not to the plugin or the designs, and has not been built.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
 5. **Optional: a Pexels API key** (free, from pexels.com/api), entered in the secure form, if the owner wants a wider choice of photographs than CC0 offers, above all for portraits and healthcare.
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
-8. **For Phase 9:** if any Pro-tier design needs a feature that Elementor only unlocks after licence activation, an activated licence on a test site, or the owner's own testing of those designs.
+8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
 
 ## Next steps
 
-1. With a working Cloudflare token: generate the production signing key and put its public half into the plugin, run the publication to staging, run the import test against staging, then publish to production and repeat the import test there. That closes Phases 5 and 8.
-2. Phase 9: the designs in Safari and Firefox and on real phones; Elementor Pro with a licence; the user guide's missing chapters.
-3. A decision on the forms plugin, so the contact pages can carry a form, and on live demos.
+1. With a token that may use R2 (or the decision to do without R2): generate the production signing key and put its public half into the plugin, publish to staging, run the import test against staging, then publish to production and repeat it there. That closes Phases 5 and 8.
+2. The manual checklist, and fixes for what it finds.
+3. Phase 10: user guide with screenshots (the chapters for Elementor, WooCommerce and the plugin are missing), changelogs, tagged releases of theme 1.1.0 and the plugin, the submission to WordPress.org.
+4. Decisions still open: the forms plugin for the free designs, live demos, Medical's doctors.

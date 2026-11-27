@@ -13,7 +13,7 @@ const assert = require( 'node:assert/strict' );
 const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
 const fs = require( 'node:fs' );
 const path = require( 'node:path' );
-const { BASE, DIR, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
+const { engineNoise, BASE, DIR, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
 
 const SCREEN = BASE + '/wp-admin/themes.php?page=open-frame-starter-sites';
 
@@ -24,10 +24,14 @@ let errors;
 before( async () => {
 	browser = await browserType.launch();
 	page = await ( await browser.newContext( { viewport: { width: 1440, height: 1000 } } ) ).newPage();
-	page.on( 'pageerror', ( error ) => errors.push( error.message ) );
+	page.on( 'pageerror', ( error ) => {
+		if ( ! engineNoise( error.message ) ) {
+			errors.push( error.message );
+		}
+	} );
 	page.on( 'console', ( message ) => {
 		// The avatar in the toolbar is requested from another site, which the test site cannot reach.
-		if ( message.type() === 'error' && ! /Failed to load resource|Prefetch request denied: URL must be secure/.test( message.text() ) ) {
+		if ( message.type() === 'error' && ! /Failed to load resource|Prefetch request denied: URL must be secure/.test( message.text() ) && ! engineNoise( message.text() ) ) {
 			errors.push( message.text() );
 		}
 	} );
@@ -438,6 +442,8 @@ test( 'a design is imported from the screen, can be edited in Elementor, and is 
 	await page.goto( BASE + editLink.replace( BASE, '' ).replace( /&amp;/g, '&' ) );
 	let frame = page.frameLocator( '#elementor-preview-iframe' );
 	await frame.locator( 'body.elementor-editor-active .elementor-edit-area h1' ).first().waitFor( { timeout: 90000 } );
+	// The editor draws the widgets one after the other; wait for the picture before counting it.
+	await frame.locator( '.elementor-widget-image img' ).first().waitFor( { timeout: 60000 } );
 	assert.equal( await frame.locator( '.elementor-widget-image img' ).count(), 1 );
 
 	await page.goto( BASE + '/wp-admin/edit.php?post_type=of_site_part' );
@@ -572,7 +578,10 @@ test( 'import history and imported versions are shown when they exist', async ()
 
 test( 'accessibility: no problems found by axe on the list and in the details', async () => {
 	await open();
-	assert.deepEqual( await axe( page, '.ofss-wrap' ), [], 'the list' );
+	// WordPress moves the notices of other plugins into the screen's wrapper (Elementor's invitation to
+	// "shape the future of web creation" has a third-level heading); they are not this plugin's to answer for.
+	const others = { exclude: [ '.ofss-wrap > .notice' ] };
+	assert.deepEqual( await axe( page, '.ofss-wrap', others ), [], 'the list' );
 
 	await details( 'Creative Agency' );
 	// The dialog animates in; contrast is measured once it is fully opaque.
@@ -581,7 +590,7 @@ test( 'accessibility: no problems found by axe on the list and in the details', 
 	await page.keyboard.press( 'Escape' );
 
 	await page.getByRole( 'searchbox', { name: 'Search designs' } ).fill( 'zzzz' );
-	assert.deepEqual( await axe( page, '.ofss-wrap' ), [], 'the empty state' );
+	assert.deepEqual( await axe( page, '.ofss-wrap', others ), [], 'the empty state' );
 } );
 
 test( 'the plugin loads nothing outside its own screen', async () => {

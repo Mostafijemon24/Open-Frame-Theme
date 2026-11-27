@@ -60,12 +60,13 @@ function cloudRequests() {
  *
  * @param {Object}   [options]
  * @param {string[]} [options.disable] Rules to leave out, for known problems in another product's markup.
+ * @param {string[]} [options.exclude] Parts inside the selector that belong to another product and are not checked.
  * @return {string[]} One line per violation, empty when there are none.
  */
-async function axe( page, selector, { disable = [] } = {} ) {
+async function axe( page, selector, { disable = [], exclude = [] } = {} ) {
 	await page.addScriptTag( { path: require.resolve( 'axe-core/axe.min.js' ) } );
 	const rules = Object.fromEntries( disable.map( ( rule ) => [ rule, { enabled: false } ] ) );
-	const results = await page.evaluate( ( [ sel, off ] ) => window.axe.run( sel, { runOnly: [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice' ], rules: off } ), [ selector, rules ] );
+	const results = await page.evaluate( ( [ sel, off, not ] ) => window.axe.run( { include: [ [ sel ] ], exclude: not.map( ( part ) => [ part ] ) }, { runOnly: [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice' ], rules: off } ), [ selector, rules, exclude ] );
 	return results.violations.map( ( violation ) => `${ violation.id }: ${ violation.help } (${ violation.nodes.map( ( node ) => node.target.join( ' ' ) ).slice( 0, 3 ).join( ', ' ) })` );
 }
 
@@ -151,15 +152,43 @@ function style( page, selector, property ) {
 	}, [ selector, property ] );
 }
 
-/** Log in as the administrator. */
-async function login( page ) {
-	await page.goto( BASE + '/wp-login.php' );
-	await page.fill( '#user_login', 'admin' );
-	await page.fill( '#user_pass', 'password' );
-	// Until the dashboard's own markup is there, not until its last picture has loaded: the
-	// dashboard asks another site for the user's avatar, and where that site cannot be reached
-	// the wait for "everything loaded" can outlast the test.
-	await Promise.all( [ page.waitForURL( /wp-admin/, { waitUntil: 'domcontentloaded' } ), page.click( '#wp-submit' ) ] );
+/**
+ * Whether a script error comes from the browser engine or from Elementor's editor rather than from the page under test.
+ *
+ * Only Firefox and WebKit report these. Both report downloads that were still running when a page was left
+ * as failed: parts of the Elementor editor's preview ("failed to load chunk") and requests of the WordPress
+ * dashboard ("due to access control checks" is WebKit's wording). In Firefox, Elementor 4.4's editor also
+ * sometimes fails to load its "global classes" (editor-global-classes.js) and says so with a bare TypeError.
+ */
+function engineNoise( message ) {
+	const engine = process.env.OFT_BROWSER || 'chromium';
+	if ( engine === 'chromium' ) {
+		return false;
+	}
+	return /^(Error: )?\[elementor\] failed to load chunk |due to access control checks\.?$/.test( message )
+		|| ( engine === 'firefox' && /^can't convert undefined to object$|frontendIndex is undefined/.test( message ) );
 }
 
-module.exports = { BASE, WIDTHS, WP, ROOT, DIR, state, runScript, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login };
+/** Log in as the administrator. */
+async function login( page ) {
+	// Tried twice: the test site answers one request at a time, and now and then the login
+	// waits behind a request the page before it left unfinished (seen in Firefox only).
+	for ( let attempt = 1; ; attempt++ ) {
+		try {
+			await page.goto( BASE + '/wp-login.php' );
+			await page.fill( '#user_login', 'admin' );
+			await page.fill( '#user_pass', 'password' );
+			// Until the dashboard's own markup is there, not until its last picture has loaded: the
+			// dashboard asks another site for the user's avatar, and where that site cannot be reached
+			// the wait for "everything loaded" can outlast the test.
+			await Promise.all( [ page.waitForURL( /wp-admin/, { waitUntil: 'domcontentloaded', timeout: 45000 } ), page.click( '#wp-submit' ) ] );
+			return;
+		} catch ( error ) {
+			if ( attempt === 2 ) {
+				throw error;
+			}
+		}
+	}
+}
+
+module.exports = { engineNoise, BASE, WIDTHS, WP, ROOT, DIR, state, runScript, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login };

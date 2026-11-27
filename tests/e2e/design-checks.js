@@ -11,7 +11,7 @@ const { test, before, after } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
 // The browser engine: chromium unless OFT_BROWSER names firefox or webkit.
 const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
-const { BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login, hasElementorPro } = require( './helpers' );
+const { engineNoise, BASE, WIDTHS, state, cloud, axe, themeErrors, clearErrorLog, login, hasElementorPro } = require( './helpers' );
 
 /**
  * @param {Object}   design
@@ -367,10 +367,7 @@ test( `${ NAME }: the home page, the header and the footer open in the Elementor
 		// Let the editor finish loading its parts: leaving in the middle makes Firefox report each interrupted download as an error.
 		await page.waitForLoadState( 'networkidle' ).catch( () => {} );
 	}
-	// Elementor 4.4's editor sometimes fails to load its "global classes" in Firefox and reports it with these words
-	// (editor-global-classes.js, loadCurrentDocumentClasses). The editor works all the same; it is Elementor's to fix.
-	const known = process.env.OFT_BROWSER === 'firefox' ? /^can't convert undefined to object$/ : null;
-	assert.deepEqual( problems.filter( ( message ) => ! ( known && known.test( message ) ) ), [], 'script errors in the editor' );
+	assert.deepEqual( problems.filter( ( message ) => ! engineNoise( message ) ), [], 'script errors in the editor' );
 	await context.close();
 } );
 

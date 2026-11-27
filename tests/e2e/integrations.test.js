@@ -8,7 +8,7 @@ const { test, before, after } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
 // The browser engine: chromium unless OFT_BROWSER names firefox or webkit.
 const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
-const { BASE, WIDTHS, state, runScript, hasElementorPro, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login } = require( './helpers' );
+const { engineNoise, BASE, WIDTHS, state, runScript, hasElementorPro, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login } = require( './helpers' );
 
 let browser;
 let page; // A visitor.
@@ -40,6 +40,8 @@ const setWidth = ( width ) => page.setViewportSize( { width, height: 900 } );
  * of the button.
  */
 async function settled( page, selector, property, expected ) {
+	// The pointer stays where the last click was; over a button it would show the button's hover color.
+	await page.mouse.move( 1, 1 );
 	let value;
 	for ( let attempt = 0; attempt < 20; attempt++ ) {
 		value = await style( page, selector, property );
@@ -249,7 +251,7 @@ test( 'Elementor: the editor opens every template', async () => {
 		// Let the editor finish loading its parts: leaving in the middle makes Firefox report each interrupted download as an error.
 		await admin.waitForLoadState( 'networkidle' ).catch( () => {} );
 		admin.off( 'pageerror', onPageError );
-		assert.deepEqual( errors, [], `${ slug }: script errors in the editor` );
+		assert.deepEqual( errors.filter( ( message ) => ! engineNoise( message ) ), [], `${ slug }: script errors in the editor` );
 	}
 } );
 
