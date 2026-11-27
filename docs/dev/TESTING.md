@@ -161,7 +161,7 @@ The plugin was read by a second reviewer against eight questions: a hostile libr
 
 | Severity | Issue |
 | --- | --- |
-| Medium | **Nothing is published.** On 27 November `buildbetters.com` became active on Cloudflare and the saved token is valid; it can change the domain's DNS records and list Workers, but Cloudflare refuses it for R2, where the library's files are kept. See "Needed from the owner" in `PROJECT_STATUS.md` |
+| Medium | **Nothing is published.** On 27 November `buildbetters.com` became active on Cloudflare. The token saved that afternoon can use R2 (an empty staging bucket was created with it) but cannot deploy the Worker or see the domain. See "Needed from the owner" in `PROJECT_STATUS.md` |
 | Medium | The largest paint of the first screen takes 2.9 to 4.7 seconds in Lighthouse's slow-4G simulation, against a target of 2.5; Portfolio and Real Estate score 82 and 81 against a target of 85 |
 | Medium | The manual checklist has not been done: no real phone, no Safari on a Mac, no screen reader, no licensed Elementor Pro, no order placed in the Shop, no real host |
 | Low | In Firefox, Elementor 4.4.2's editor sometimes reports "can't convert undefined to object" from its own `editor-global-classes.js` when a page of a design is opened (two of three times here). The page opens and can be edited. It does not happen with our plugin off on the same Elementor, but the code that fails is Elementor's and was not traced further |
