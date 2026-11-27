@@ -249,7 +249,7 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Verified (executed 2026-11-27, unless a line says otherwise)
 
-On Cloudflare, production (2026-11-27, 13:40 to 14:05 UTC):
+On Cloudflare, production (2026-11-27, 13:40 to 13:52 UTC):
 
 - Worker deployed to `api.buildbetters.com` and `cdn.buildbetters.com`; 227 files uploaded; `check-live` against `https://api.buildbetters.com/v1`: **signature valid with the key in the plugin, 227 files downloaded, every checksum valid**.
 - **10 of 10 designs imported from production** on a clean site with the theme and the plugin installed from their ZIP files, through the Starter Sites screen, each rolled back. This is the exit criterion of Phase 8.

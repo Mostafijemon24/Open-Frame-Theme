@@ -23,7 +23,7 @@
 
 # The library on Cloudflare — Test Report
 
-Executed on 27 November 2026 between 13:07 and 14:05 UTC, first in staging, then in production. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
+Executed on 27 November 2026 between 13:07 and 13:52 UTC, first in staging, then in production. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
 
 ## Production
 
