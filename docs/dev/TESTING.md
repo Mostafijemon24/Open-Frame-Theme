@@ -27,6 +27,8 @@
 
 Executed on 27 November 2026.
 
+On 27 November 2026 the owner created the repository anew at the same address, and the history was pushed to it again. The three releases (theme 1.0.1 and 1.1.0, plugin 1.0.0) were published again from the same commits, and the packages of theme 1.1.0 and plugin 1.0.0 were compared with the first ones: identical, file for file. The pull request numbers and CI run numbers named in these documents are those of the earlier repository and lead nowhere now.
+
 ## The theme's release
 
 | Step | Result |

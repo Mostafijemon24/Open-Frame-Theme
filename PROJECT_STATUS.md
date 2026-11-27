@@ -351,10 +351,12 @@ From Phase 8 (2026-11-26), not repeated:
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
 8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
-9. Done by the owner on 2026-11-27: "Private vulnerability reporting" is switched on in the repository, where the support policy sends security reports.
+9. **Switch on "Private vulnerability reporting" again** (Settings → Security). It was on in the earlier repository; the repository was created anew on 2026-11-27, and settings do not carry over. The support policy sends security reports there.
 10. **The word to release the theme**, and later the plugin. Nothing is tagged, published or submitted without it. For WordPress.org the owner's account is needed, and for the plugin's page a banner and an icon.
 
 ## Next steps
+
+On 27 November 2026 the owner created the repository anew at the same address, and the history was pushed to it again. The three releases (theme 1.0.1 and 1.1.0, plugin 1.0.0) were published again from the same commits, and the packages of theme 1.1.0 and plugin 1.0.0 were compared with the first ones: identical, file for file. The pull request numbers and CI run numbers named in these documents are those of the earlier repository and lead nowhere now.
 
 The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
