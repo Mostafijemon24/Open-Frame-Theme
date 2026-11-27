@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
 - [QA](#qa--test-report): Phase 9, three browser engines, three PHP versions, oldest supported versions, performance, a security review
 - [Package and publish](#package-and-publish--test-report): Phase 8, a rehearsal with the real Worker; nothing is on Cloudflare yet
 - [All ten designs with photographs](#all-ten-designs-with-photographs--test-report): Phase 7b complete, Phase 7c
@@ -18,6 +19,58 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# Documentation and release — Test Report
+
+Phase 10, theme 1.1.0 and plugin 0.6.1. Executed on 27 November 2026 on WordPress 7.1.5, PHP 8.3.6 (and 7.4, 8.1 where named), Elementor 4.4.2, Elementor Pro 4.0.4 (installed, not activated with a licence) and WooCommerce 11.3.1, in Chromium.
+
+**Nothing was released.** No tag was created, no GitHub release published and nothing submitted to WordPress.org: those are the owner's decisions, and the plugin cannot be released before the library is online. The checklist in [RELEASE.md](RELEASE.md) is prepared and its machine-checkable part is confirmed; the owner's part is open.
+
+## What was run
+
+All of it after the last change to the plugin.
+
+| Suite | Result |
+| --- | --- |
+| Plugin PHP checks | **145 of 145** on each of PHP 7.4, 8.1 and 8.3 |
+| Import engine | PHP 8.3: **102 of 102** plain, **115 of 115** with WooCommerce, **114 of 114** with Elementor Pro. Plain on PHP 7.4 and 8.1: **102 of 102** each |
+| All browser checks together, Chromium | **149 of 149 passed** (31 minutes) |
+| Library tools | **74 of 74** |
+| PHPCS, theme and plugin (`composer lint`) | **Exit code 0** |
+| Theme Check, Plugin Check on the packages | Theme Check: **0 required, 0 warnings** (1 recommended, 1 info, as before). Plugin Check: **no errors found** |
+| Release packaging (`bin/release-package.sh`) | Theme: version numbers agree, changelog entry present, package built (408 KB), checksum verified, no development file inside. Plugin: **refused, as intended**, because it carries no public key of the library; with `RELEASE_ALLOW_UNPUBLISHED=1` it builds a trial package (80 KB) whose checksum verifies and whose file list holds only `assets`, `languages`, `src`, the main file, `readme.txt` and `uninstall.php` |
+| Links and pictures of the guides (`bin/check-docs.js`) | **522 checked, 0 broken**: the four HTML pages and the Markdown documents, including links to headings |
+| The built HTML guides in a browser | Opened at 1280 and 390 pixels: no script error, no request that failed, nothing wider than the screen |
+
+**Not run again:** Firefox and WebKit, the version matrix on clean sites, Lighthouse and the security review. They were done in Phase 9 on plugin 0.6.1; since then the plugin changed in two places (below), neither of which touches what a visitor's browser loads. The Worker's tests were not run (its code is unchanged). **The release workflow was not run**: running it publishes a release. Its packaging and checking steps are the script above; the steps that talk to GitHub (`gh release view`, `delete`, `create`) are the ones that published theme 1.0.1 on 25 November, the only release so far, but they have not run in their new form, which adds the choice of product and a second tag pattern.
+
+## Found while writing the guides, and fixed
+
+Taking the screenshots meant doing everything a user does, slowly. Two things were wrong.
+
+| What a user would have seen | Cause | Fix |
+| --- | --- | --- |
+| The confirmation before an import said "12 pages and their images are added to your site" for Business. The import then reported 10 pages | The sentence counted the entries of the design's page list, which also names what is not a page of its own: the article layout and the "page not found" page, and in the Shop the pages WooCommerce makes | The sentence no longer gives a number: "The pages of this design and their images are added to your site." The exact numbers come with the result |
+| On a fast server the progress bar stood at "Checking your site · 0%" for ten seconds and then jumped to the end | One request worked for up to twenty seconds before it answered, and a fast server finishes an import in less | A request now works for about four seconds, then reports. The bar moved from 0 to 27% ("Importing images") to the end on the same site. On a slow server nothing changes except more, shorter requests |
+
+Both are in the plugin's changelog under 0.6.1, which has not been released.
+
+## The guides
+
+| Guide | Size | How its statements were checked |
+| --- | --- | --- |
+| Starter Sites user guide ([STARTER-SITES.md](../STARTER-SITES.md)) | 17 chapters, 11 pictures, 9 of them with numbered markers | Every screenshot was taken from the running plugin by `bin/docs-shots.js`, which fails when something it should mark is not on the screen. Button names, messages, the names of the import steps, category names, picture counts and version requirements were read from the code and the designs' sources, not from memory. Four statements of the first draft were wrong and corrected: where the unfinished-import notice leads, the category names, where Elementor Pro keeps display conditions, and whether the menu entry depends on the theme |
+| Theme guide ([README.md](../README.md)) | 26 chapters, 46 pictures | Three pictures and a section on starter sites added to the Elementor and WooCommerce chapters, taken on a site without an imported design |
+| Installation guide ([INSTALL.md](../INSTALL.md)) | | The file names are those `bin/release-package.sh` produces; the checksum commands were run on the built packages. **The WordPress error messages in its last table were written from knowledge of WordPress, not reproduced here** |
+| Support and update policy ([SUPPORT.md](../SUPPORT.md)) | | A policy, not a fact: it has to be read and agreed by the owner (RELEASE.md, C7) |
+| Plugin developer reference ([PLUGIN.md](PLUGIN.md)) | | Hooks, constants, routes, option names and meta keys were listed from the code with `grep` and compared line by line; two statements of the first draft were wrong and corrected (when `http://` is accepted for a library address, and what a reference inside a package looks like). The older architecture document describes the design as planned and differs in places; where they differ, PLUGIN.md is the one that matches the code |
+
+## Not covered
+
+- **Nobody but the author of these guides has followed them.** Whether a first-time user can import a design with the guide open beside the screen is the first line of a manual check that has not happened.
+- The guides are in English only.
+- No guide can be accurate about the live library, because there is none: the screenshots were taken against a library on the same machine with the same ten designs.
+- The pictures for the plugin's WordPress.org page exist; a banner and an icon do not.
 
 # QA — Test Report
 

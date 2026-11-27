@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-27
 
-Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](docs/dev/TESTING.md)
+Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](docs/dev/TESTING.md) · Release checklist: [docs/dev/RELEASE.md](docs/dev/RELEASE.md)
 
 ## Current state
 
@@ -25,7 +25,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | **Packaged, validated and rehearsed locally. Publication to Cloudflare blocked** (same token as Phase 5). Live demo sites not built |
 | 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
-| 10. Documentation and release | Not started |
+| 10. Documentation and release | **Documents, packages and release tooling done. Nothing released, and the checklist is not signed off.** The theme is ready and waits for the owner; the plugin cannot be released before the library is online ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)) |
 
 ## Decisions (owner, 2026-11-26)
 
@@ -225,7 +225,33 @@ Each is built with the first design that needs it, rather than against invented 
 - **Performance measured** with Lighthouse (mobile, slow 4G): eight of ten home pages score 85 or more, all stay under 0.1 layout shift and under 1.2 MB. The 2.5-second target for the largest paint is met by none in that simulation.
 - **A manual checklist** for what a machine cannot check: [docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md).
 
+### Phase 10: documentation and release (as far as it goes without a release)
+
+- **User guide for the plugin**, [docs/STARTER-SITES.md](docs/STARTER-SITES.md): 17 chapters from installing to removing, with 11 screenshots, 9 of them with numbered markers explained in a table. Its statements were checked against the code and the designs' sources.
+- **Theme guide**: the Elementor and WooCommerce chapters have pictures now, and a section that leads to the starter sites.
+- **Installation guide**, [docs/INSTALL.md](docs/INSTALL.md): what to download, installing, checking a download against its checksum, updating, removing, and what the usual error messages mean.
+- **Support and update policy**, [docs/SUPPORT.md](docs/SUPPORT.md): where to get help, what is and is not supported, how version numbers are chosen, how updates reach a site today and after WordPress.org, security reports, what happens if the library or the project ends. It makes promises in the owner's name and waits for the owner's agreement.
+- **Developer reference for the plugin**, [docs/dev/PLUGIN.md](docs/dev/PLUGIN.md): the three hooks, the two constants, the REST routes, what is stored, how an import runs, how to run a library of one's own.
+- **Changelogs**: [CHANGELOG.md](CHANGELOG.md) gathers the two `readme.txt` changelogs and the versions of the designs; it is generated, so it cannot drift.
+- **All four guides as HTML pages** (`docs/*.html`) with links between them, built by `bin/build-docs.js`.
+- **Screenshots by script**: `bin/docs-shots.js` takes every picture of the plugin guide from a running test site and draws the markers, so the pictures can be retaken when the screen changes.
+- **Release tooling**: `bin/release-package.sh` checks that version numbers agree and a changelog entry exists, builds the ZIP with its checksum and the text of the release page, and refuses a package with development files in it. The Release workflow publishes the theme and the plugin separately (`v1.1.0`, `starter-sites-v0.6.1`). The script refuses to release the plugin while it has no public key of the library.
+- **Release checklist**, [docs/dev/RELEASE.md](docs/dev/RELEASE.md): what is done, what the machine confirmed, the ten points only the owner can confirm, the order of the steps that unblock the plugin, how a release is made, and what to expect from WordPress.org.
+- **CI**: a new job builds the guides and compares them with what is committed, checks every link and picture, and packages both products.
+- **The plugin's readme** describes the ten designs instead of "an early version", answers four more questions and lists its screenshots; five unmarked screenshots for its WordPress.org page are in `.wordpress-org/`.
+- **Found while taking the screenshots, and fixed (plugin 0.6.1, unreleased):** the confirmation before an import named a wrong number of pages (12 for Business, which has 10); on a fast server the progress bar stood at 0% for ten seconds and jumped to the end.
+
 ## Verified (executed 2026-11-27, unless a line says otherwise)
+
+After the Phase 10 changes to the plugin:
+
+- Plugin PHP checks **145 of 145** on PHP 7.4, 8.1 and 8.3. Import engine on PHP 8.3 **102**, **115** with WooCommerce, **114** with Elementor Pro, all passing; plain on PHP 7.4 and 8.1 **102 of 102**.
+- Browser checks in Chromium: **149 of 149**.
+- Library tools 74 of 74. PHPCS exit code 0. Theme Check: 0 required, 0 warnings. Plugin Check: no errors found.
+- Release packaging: theme package built and its checksum verified; the plugin refused for want of the library's public key, as intended, and a trial package built and verified. Links and pictures of the guides: 522 checked, 0 broken.
+
+From Phase 9, before those changes, not repeated (Firefox, WebKit, the version matrix, Lighthouse):
+
 
 - Browser checks, all 149: Chromium **149 of 149**; Firefox 155 **149 of 149** (second complete run; the first found five faults in the checks themselves, none in the product); WebKit 26.6 **149 of 149** (second complete run; the first found faults in the checks and one internal error of WebKit itself). Two checks were added for every page: styles loaded in the head, no picture stretched beyond its file.
 - Every design imported from the Starter Sites screen on a clean site, visited link by link and rolled back: **10 of 10** on PHP 8.3 with the newest versions, **10 of 10** on PHP 8.1, **10 of 10** on PHP 7.4 with WordPress 6.8, Elementor 4.0.3 and WooCommerce 10.0.0; **3 of 3** on a site with plain permalinks and existing content.
@@ -244,6 +270,8 @@ From Phase 8 (2026-11-26), not repeated:
 
 ## Not verified
 
+- **The release itself.** No tag, no GitHub release, no submission to WordPress.org. The Release workflow has not run since it was changed; its checking and packaging were run as a script.
+- **The guides, by anyone but their author.** Nobody has yet followed them as a first-time user.
 - **Everything on the manual checklist:** a real phone, Safari on a Mac, a screen reader, Elementor Pro with an activated licence, an order in the Shop, an import on an ordinary shared host.
 - **Anything on Cloudflare.** The real R2 bucket, the two host names, DNS, the edge cache and the "Publish library" workflow have not run; the Worker has only run on this machine with a simulated bucket. The exit criterion of Phase 8, "each site imported from production on a clean install", is met against a local Worker only.
 - Right-to-left languages, multisite, servers that need FTP details to install plugins, updating an outdated plugin through the screen, a hard memory limit of 128 MB.
@@ -290,10 +318,15 @@ From Phase 8 (2026-11-26), not repeated:
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
 8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
+9. **Read and agree to the support and update policy** ([docs/SUPPORT.md](docs/SUPPORT.md)). It says, in the owner's name: no guaranteed response time, security reports through GitHub's private reporting (to be switched on in the repository's settings), and 90 days' notice before the library would ever be switched off. Anything the owner does not want to promise should be changed before a release.
+10. **The word to release the theme**, and later the plugin. Nothing is tagged, published or submitted without it. For WordPress.org the owner's account is needed, and for the plugin's page a banner and an icon.
 
 ## Next steps
 
-1. With a token that may use R2 (or the decision to do without R2): generate the production signing key and put its public half into the plugin, publish to staging, run the import test against staging, then publish to production and repeat it there. That closes Phases 5 and 8.
-2. The manual checklist, and fixes for what it finds.
-3. Phase 10: user guide with screenshots (the chapters for Elementor, WooCommerce and the plugin are missing), changelogs, tagged releases of theme 1.1.0 and the plugin, the submission to WordPress.org.
-4. Decisions still open: the forms plugin for the free designs, live demos, Medical's doctors.
+The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
+
+1. **The theme can be released now**, on the owner's word: merge the branch into `main`, run the Release workflow for the theme, and upload the ZIP to WordPress.org. The manual checklist should come first.
+2. With a token that may use R2 (or the decision to do without R2): generate the production signing key and put its public half into the plugin, publish to staging, run the import test against staging, then publish to production and repeat it there. That closes Phases 5 and 8 and unblocks the plugin.
+3. The manual checklist, and fixes for what it finds.
+4. Release the plugin, then submit it to WordPress.org with a banner and an icon.
+5. Decisions still open: the forms plugin for the free designs, live demos, Medical's doctors, the version number of the first public plugin release, and the owner's agreement to the support and update policy.

@@ -43,8 +43,8 @@ Signed off by the output of the checks on 27 November 2026, after the last chang
 | B6 | Plugin checks on PHP 7.4, 8.1 and 8.3 | 145 of 145 on each |
 | B7 | Import engine: plain, with WooCommerce, with Elementor Pro (PHP 8.3); plain on PHP 7.4 and 8.1 | 102, 115 and 114 of their totals; 102 of 102 on each |
 | B8 | Library tools | 74 of 74 |
-| B9 | Browser checks in Chromium: every page of every design at nine widths, import, rollback, editor, accessibility rules | See TESTING.md, Phase 10 |
-| B10 | Theme Check and Plugin Check on the packages | See TESTING.md, Phase 10 |
+| B9 | Browser checks in Chromium: every page of every design at nine widths, import, rollback, editor, accessibility rules | 149 of 149 |
+| B10 | Theme Check and Plugin Check on the packages | Theme Check: 0 required, 0 warnings. Plugin Check: no errors found |
 | B11 | Every link and picture in the guides leads somewhere (`bin/check-docs.js`) | 522 checked, 0 broken |
 | B12 | Browser checks in Firefox and WebKit, the version matrix, performance and the security review | Done in Phase 9 on plugin 0.6.1 before two small changes (the wording of the confirmation, and how often an import reports back). Not repeated for those |
 
