@@ -9,17 +9,17 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 | Product | Version | State |
 | --- | --- | --- |
 | **Open Frame** (theme) | 1.1.0 (released so far: 1.0.1, on 25 November 2026) | **Ready.** Every automated check passes and the package is built. Waiting for the owner's checks in part C and the owner's decision to publish |
-| **Open Frame Starter Sites** (plugin) | 0.6.1 | **Not releasable yet.** The plugin itself passes every automated check, but the library it reads from is not online, so a released plugin would show an empty screen. `bin/release-package.sh plugin` refuses to build a release for that reason |
-| **Starter site library** | ten designs, each 1.0.0 | **Live in staging on Cloudflare** (`library-staging.buildbetters.com`) since 27 November 2026, verified there, and all ten designs imported from it. **Not in production**: that needs the signing key (C4) |
+| **Open Frame Starter Sites** (plugin) | 0.6.1 | **Technically releasable since 27 November 2026**: the library is online and the plugin carries its key, so `bin/release-package.sh plugin` builds a release package. **Not released**, by the owner's decision (C6): the first public version is 1.0.0, after the manual checks (C1) |
+| **Starter site library** | ten designs, each 1.0.0 | **Published on 27 November 2026** at `api.buildbetters.com` and `cdn.buildbetters.com`, signed with the production key (ID `135200d7`), checked live, and all ten designs imported from it on a clean site with the packaged plugin |
 
-**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled five points on 27 November 2026 (C3, C5, C6, C7 and the pictures of C9); the others are open, and part D now waits for the signing key (C4).
+**The checklist is not signed off.** Parts A and B are complete. In part C the owner settled five points on 27 November 2026 (C3, C5, C6, C7 and the pictures of C9); the others are open. Part D is done except for its last step, the release itself.
 
 ## A. What a release consists of
 
 | Deliverable | Where | State |
 | --- | --- | --- |
 | Theme ZIP with checksum | `dist/open-frame-1.1.0.zip`, built by `bash bin/release-package.sh theme` | Done. 408 KB |
-| Plugin ZIP with checksum | `dist/open-frame-starter-sites-0.6.1.zip`, built by `bash bin/release-package.sh plugin` | Builds (80 KB) only with `RELEASE_ALLOW_UNPUBLISHED=1`, for trying out. See part D |
+| Plugin ZIP with checksum | `dist/open-frame-starter-sites-0.6.1.zip`, built by `bash bin/release-package.sh plugin` | Done. 80 KB. The version becomes 1.0.0 before the release (C6) |
 | Theme user guide with screenshots | [docs/README.md](../README.md), 26 chapters, 46 pictures; HTML in `docs/index.html` | Done. Elementor and WooCommerce chapters now have pictures |
 | Plugin user guide with screenshots | [docs/STARTER-SITES.md](../STARTER-SITES.md), 17 chapters, 11 pictures; HTML in `docs/starter-sites.html` | Done |
 | Installation guide | [docs/INSTALL.md](../INSTALL.md); HTML in `docs/install.html` | Done |
@@ -58,7 +58,7 @@ Signed off where a date is given; the owner said so in the project's conversatio
 | C1 | **The manual checks**: real phones, Safari, a screen reader, a real shared host | [QA-CHECKLIST.md](QA-CHECKLIST.md), about two hours. Write the results into TESTING.md | Open |
 | C2 | **The Cloudflare password that was pasted into a chat has been changed** | Cloudflare dashboard → My Profile → Authentication | Open |
 | C3 | **A Cloudflare token that can publish**: Workers scripts, R2, Workers routes, DNS, account settings and zone | Made from Cloudflare's pre-filled form; the link is in [LIBRARY.md](LIBRARY.md). Saved in the secure credential form, never in a chat or a file | **Done, 27 November 2026, 13:21 UTC.** Checked by using it: bucket, Worker and address created in staging |
-| C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | `node tools/library.mjs keygen`, described in [LIBRARY.md](LIBRARY.md). It never enters the repository | Open |
+| C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | Made on 27 November 2026 with `node tools/library.mjs keygen` and handed to the owner as a file, which the owner chose. It never entered the repository | **Open until the owner confirms** that the file is stored. Then the copy on the development machine is deleted |
 | C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision | **Owner, 27 November 2026:** no forms plugin is needed. The free designs keep their email and telephone links |
 | C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision | **Owner, 27 November 2026:** 1.0.0, once the library is online and the manual checks (C1) are done. Until then the plugin stays 0.6.1 and is not released |
 | C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | **Owner, 27 November 2026:** read and agreed. Still to do by the owner: switch on "Private vulnerability reporting", which the policy points people to |
@@ -66,18 +66,17 @@ Signed off where a date is given; the owner said so in the project's conversatio
 | C9 | **WordPress.org**: the owner's account, from which both products are submitted | See part E. The banner and the icon for the plugin's page were made on 27 November 2026 at the owner's request | Open (the submission itself) |
 | C10 | **Known issues are acceptable for a first release** | The list under "Open issues" in TESTING.md: page-speed target missed on phones (81 to 93 of 100), importing a design again overwrites edits, RTL and Multisite untested, Medical has no portraits | Open |
 
-## D. Blocked: what the plugin needs before it can be released
+## D. What the plugin needed before it can be released
 
-In this order. Each step depends on the one before.
+Done on 27 November 2026, except the last step.
 
-1. **Done for staging (27 November 2026):** Worker deployed, library uploaded, checked live, all ten designs imported from it.
-1. **C4**, then publish the Worker and the library to production: `publish-library.yml`, or the commands in [LIBRARY.md](LIBRARY.md).
-1. Put the key ID and the public key into `Config::PUBLIC_KEYS` in `companion/open-frame-starter-sites/src/Config.php`.
-1. Check the live library: `node tools/library.mjs check-live --api https://api.buildbetters.com/v1 --public <public key>`.
-1. On a clean WordPress site with the two packages installed and nothing else changed, import one free and one Pro design from the live library through the screen.
-1. Raise the plugin to 1.0.0 (C6), run parts B and C again for it, then release it (below).
+1. **Done.** Staging: Worker deployed, library uploaded, checked live, all ten designs imported from it.
+1. **Done.** The production key made (C4) and its public half put into `Config::PUBLIC_KEYS`.
+1. **Done.** Production: Worker deployed to `api.` and `cdn.buildbetters.com`, library uploaded, `check-live` valid.
+1. **Done.** On a clean WordPress site with the two packages installed from their ZIP files, all ten designs imported from the production library through the screen.
+1. **Open.** After the manual checks (C1): raise the plugin to 1.0.0 (C6), run part B again for it, then release it (below).
 
-Until then the theme can be released on its own. It does not depend on the plugin.
+The theme can be released on its own at any time. It does not depend on the plugin.
 
 ## Making a release
 

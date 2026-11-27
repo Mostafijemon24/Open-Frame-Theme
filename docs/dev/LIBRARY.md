@@ -55,7 +55,7 @@ This prints a key ID and a public key and writes the private key to the file. Th
 
 Replacing a key: add the new public key to the plugin next to the old one and release; sign with both keys for a while (the envelope takes several signatures); then drop the old key from the plugin.
 
-**Until a key is in `Config::PUBLIC_KEYS`, the plugin accepts no catalog from the real library.** That is intended: it fails closed.
+**A catalog signed with a key that is not in `Config::PUBLIC_KEYS` is refused.** That is intended: it fails closed. The key in use since the first publication on 27 November 2026 has the ID `135200d7`; its private half is with the owner.
 
 ## Publishing
 

@@ -12,6 +12,8 @@ vendor/
 *.log
 
 # Local env / secrets (never commit)
+*.key
+*.pem
 .env
 .env.*
 *.sql

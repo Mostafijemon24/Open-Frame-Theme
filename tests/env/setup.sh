@@ -126,6 +126,8 @@ if [ -n "${OFT_LIBRARY_BASE:-}" ]; then
 	LIBRARY_HOST="$(printf '%s' "$LIBRARY_BASE" | sed -E 's#^[a-z]+://([^/:]+).*#\1#')"
 	case "$LIBRARY_HOST" in
 		localhost | 127.0.0.1) LIBRARY_HOST="" ;;
+		# The production library serves its files from a second host.
+		api.*) LIBRARY_HOST="$LIBRARY_HOST,cdn.${LIBRARY_HOST#api.}" ;;
 	esac
 else
 	# The mock starter site library: the real build of the planned sites plus the

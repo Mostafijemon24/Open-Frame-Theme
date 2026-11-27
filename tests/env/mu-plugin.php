@@ -48,7 +48,7 @@ if ( defined( 'OFT_CA_BUNDLE' ) && OFT_CA_BUNDLE && is_readable( OFT_CA_BUNDLE )
 			// site was set up to read; the proxy does the resolving.
 			$open_frame_hosts = array( 'api.wordpress.org', 'downloads.wordpress.org' );
 			if ( defined( 'OFT_LIBRARY_HOST' ) && OFT_LIBRARY_HOST ) {
-				$open_frame_hosts[] = OFT_LIBRARY_HOST;
+				$open_frame_hosts = array_merge( $open_frame_hosts, explode( ',', OFT_LIBRARY_HOST ) );
 			}
 			if ( in_array( wp_parse_url( $url, PHP_URL_HOST ), $open_frame_hosts, true ) ) {
 				$args['reject_unsafe_urls'] = false;

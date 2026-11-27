@@ -98,6 +98,7 @@ How version numbers are chosen, and what each kind of update means for a site, i
 
 ### 0.6.1
 
+- New: the library of designs is online, and the plugin carries the key its list of designs is signed with. A list signed with any other key is refused.
 - Fixed: on the designs for free Elementor, the styles of the header and the footer were loaded at the end of the page. The header appeared unstyled for a moment and the page jumped. They are now loaded in the head.
 - Security: the plugin checks the pages of a design again before storing them, and refuses raw HTML and shortcode widgets, script, embedded frames, style blocks and hand-written CSS or attributes, even in a package that is correctly signed.
 - Security: a list of designs that is older than the one the site already has is not accepted, even with a valid signature.

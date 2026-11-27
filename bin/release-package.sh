@@ -63,7 +63,7 @@ case "$PRODUCT" in
 		grep -q "^\"Project-Id-Version: $NAME $VERSION\\\\n\"$" "$SOURCE/languages/$SLUG.pot" || fail "the translation template was not regenerated for $VERSION (see docs/dev/PLUGIN.md, \"Translating\")."
 
 		# Without a public key the plugin accepts no list of designs: it would show an empty screen.
-		if grep -q 'const PUBLIC_KEYS = array();' "$SOURCE/src/Config.php"; then
+		if ! grep -A3 'const PUBLIC_KEYS = array(' "$SOURCE/src/Config.php" | grep -qE "^[[:space:]]*'[0-9a-f]{8}' => '[A-Za-z0-9+/]{43}=',\$"; then
 			if [ "${RELEASE_ALLOW_UNPUBLISHED:-}" = "1" ]; then
 				echo "Warning: the plugin has no public key of the library. This package is for trying out only." >&2
 			else

@@ -1,6 +1,6 @@
 # Open Frame — Test Reports
 
-- [Staging on Cloudflare](#staging-on-cloudflare--test-report): the library on Cloudflare for the first time, and every design imported from it
+- [The library on Cloudflare](#the-library-on-cloudflare--test-report): published to staging and to production, and every design imported from each
 - [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
 - [QA](#qa--test-report): Phase 9, three browser engines, three PHP versions, oldest supported versions, performance, a security review
 - [Package and publish](#package-and-publish--test-report): Phase 8, a rehearsal with the real Worker; nothing is on Cloudflare yet
@@ -21,11 +21,30 @@
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
 
-# Staging on Cloudflare — Test Report
+# The library on Cloudflare — Test Report
 
-Executed on 27 November 2026 between 13:07 and 13:40 UTC. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
+Executed on 27 November 2026 between 13:07 and 14:05 UTC, first in staging, then in production. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
 
-**This is staging, not production.** Same Worker code and same files as production will have, at another address (`https://library-staging.buildbetters.com`) and signed with a key made for staging. A plugin as users install it does not read this address.
+## Production
+
+`https://api.buildbetters.com/v1` (catalog and manifests) and `https://cdn.buildbetters.com/v1` (packages, pictures, fonts): what a plugin as users install it reads.
+
+| Step | Result |
+| --- | --- |
+| Production key made; its public half (ID `135200d7`) put into `Config::PUBLIC_KEYS` | Plugin checks **145 of 145** on PHP 7.4, 8.1 and 8.3; import engine **115 of 115** (with WooCommerce); PHPCS exit code 0; `bin/release-package.sh plugin` builds a release package |
+| `wrangler r2 bucket create open-frame-library`, `wrangler deploy` | Created; deployed with both addresses as custom domains. Each answered `404` before the upload |
+| Build for the production addresses, signed with the production key | 10 designs, 227 files; signature and every checksum valid |
+| `publish --live` | 227 to upload, 0 in conflict; **227 uploaded**, the catalog last |
+| `check-live` with the public key that is in the plugin | **Catalog of 10 designs, signature valid, 227 files downloaded and every checksum valid** |
+| Import on a clean site with theme and plugin **installed from their ZIP files** | **10 of 10 designs** imported through the Starter Sites screen, 17 to 33 pages visited per design, each rolled back. The same counts of pages, images and menus as in staging below, in 22 to 72 seconds per design |
+
+That is the exit criterion of Phase 8, "each site imported from production on a clean install". The test site names the production address in its `wp-config.php`, which is the plugin's default anyway; the key came from the plugin's own code, since a key from `wp-config.php` is ignored for the default address.
+
+**Not run after the key was added:** the browser checks on this machine. They read a library on the same machine with a key of its own and are run by CI on this commit.
+
+## Staging
+
+Same Worker code and same files as production, at another address (`https://library-staging.buildbetters.com`) and signed with a key made for staging. A plugin as users install it does not read this address.
 
 | Step | Result |
 | --- | --- |
@@ -63,10 +82,9 @@ The notes are the known ones: WordPress asking `secure.gravatar.com` for the ava
 
 ## Not covered
 
-- **Production**: `api.buildbetters.com` and `cdn.buildbetters.com`, the production bucket, the production key. Nothing of it exists yet.
 - The "Publish library" workflow on GitHub. The same commands were run from the development machine instead; the workflow needs the repository's secrets, which the owner sets.
 - Cloudflare's edge cache over time, and a library update (publishing a second catalog over the first).
-- The import ran from one machine in one region, with Elementor Pro not licensed.
+- The imports ran from one machine in one region, with Elementor Pro not licensed. No import from production has been done on a real host or by a person.
 
 # Documentation and release — Test Report
 
@@ -209,7 +227,6 @@ The plugin was read by a second reviewer against eight questions: a hostile libr
 
 | Severity | Issue |
 | --- | --- |
-| Medium | **Nothing is published to production.** The library is live in staging on Cloudflare since 27 November and all ten designs were imported from there (see the report at the top). Production waits for the signing key, whose private half the owner has to keep |
 | Medium | The largest paint of the first screen takes 2.9 to 4.7 seconds in Lighthouse's slow-4G simulation, against a target of 2.5; Portfolio and Real Estate score 82 and 81 against a target of 85 |
 | Medium | The manual checklist has not been done: no real phone, no Safari on a Mac, no screen reader, no licensed Elementor Pro, no order placed in the Shop, no real host |
 | Low | In Firefox, Elementor 4.4.2's editor sometimes reports "can't convert undefined to object" from its own `editor-global-classes.js` when a page of a design is opened (two of three times here). The page opens and can be edited. It does not happen with our plugin off on the same Elementor, but the code that fails is Elementor's and was not traced further |

@@ -37,11 +37,13 @@ class Config {
 	/**
 	 * Public keys of the library, by key ID (see tools/library.mjs keygen).
 	 *
-	 * The catalog must be signed with the private half of one of these. Empty
-	 * until the library is published: until then no catalog from the default
-	 * library is accepted.
+	 * The catalog must be signed with the private half of one of these; a list
+	 * of designs signed with any other key is refused. To replace a key, add the
+	 * new one beside the old one and release, then sign with both for a while.
 	 */
-	const PUBLIC_KEYS = array();
+	const PUBLIC_KEYS = array(
+		'135200d7' => 'oQdItC/+hV9UnQRbn3nRipk+89gfuMpFrbwpYvBNUVE=',
+	);
 
 	/**
 	 * How long a downloaded catalog counts as fresh, in seconds.
