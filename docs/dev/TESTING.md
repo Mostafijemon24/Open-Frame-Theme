@@ -1,6 +1,6 @@
 # Open Frame — Test Reports
 
-- [Theme 1.1.0 released, plugin 1.0.0 prepared](#theme-110-released-plugin-100-prepared--test-report): the release itself, and the checks on the plugin's first public version
+- [Theme 1.1.0 and plugin 1.0.0 released](#theme-110-and-plugin-100-released--test-report): the two releases, and the checks on the plugin's first public version
 - [Emulated phones](#emulated-phones--test-report): every design on an emulated iPhone and Android phone, from the production library
 - [The library on Cloudflare](#the-library-on-cloudflare--test-report): published to staging and to production, and every design imported from each
 - [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
@@ -23,7 +23,7 @@
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
 
-# Theme 1.1.0 released, plugin 1.0.0 prepared — Test Report
+# Theme 1.1.0 and plugin 1.0.0 released — Test Report
 
 Executed on 27 November 2026.
 
@@ -52,9 +52,22 @@ The version number, the changelog entry, the translation template, the guides an
 | Plugin Check on the package | **No errors found** |
 | `bin/release-package.sh plugin` | Version numbers agree, changelog entry present, `open-frame-starter-sites-1.0.0.zip` built with its checksum |
 
-**Not run on 1.0.0 on this machine:** the browser checks of the ten designs (CI runs them on the commit), Firefox, WebKit, and an import from the production library with the 1.0.0 package (done with 0.6.1, from which 1.0.0 differs in its version number and texts).
+| Import from the production library with the 1.0.0 package, installed from its ZIP on a clean site | **10 of 10 designs**, each with the emulated-phone pass (0 problems), each rolled back |
+| CI on the 1.0.0 commit, for the push and for pull request 2 | **Both runs succeeded** (runs 54 and 55): every browser check, the library rehearsal, the guides and packages |
 
-**Not released.** The plugin waits for the manual checks and the owner's word.
+**Not run on 1.0.0:** Firefox and WebKit (done on 0.6.1 in Phase 9).
+
+## The plugin's release
+
+| Step | Result |
+| --- | --- |
+| Merge of pull request 2 into `main` | Done on the owner's word, as a merge commit |
+| Release workflow on `main`, product "plugin" | **Succeeded**: tag `starter-sites-v1.0.0`, release "Open Frame Starter Sites v1.0.0" with the ZIP, its checksum and the changelog entry. It does not take the "Latest" mark from the theme's release |
+| The package, downloaded from the release page | Checksum valid; version 1.0.0; the public key of the library inside; 48 entries; compared file by file with the build the checks above ran on: **identical** |
+
+**Released without the manual checks.** The owner had made them a condition for 1.0.0 and then asked for the release before doing them. Nothing a person has to see or hold has been checked: real phones, Safari, a screen reader, an import on a real host, an order in the Shop, a form that sends an email.
+
+Not done: the submissions to WordPress.org.
 
 # Emulated phones — Test Report
 
@@ -278,7 +291,7 @@ The plugin was read by a second reviewer against eight questions: a hostile libr
 | Severity | Issue |
 | --- | --- |
 | Medium | The largest paint of the first screen takes 2.9 to 4.7 seconds in Lighthouse's slow-4G simulation, against a target of 2.5; Portfolio and Real Estate score 82 and 81 against a target of 85 |
-| Medium | The manual checklist has not been done: no real phone, no Safari on a Mac, no screen reader, no licensed Elementor Pro, no order placed in the Shop, no real host |
+| **High** | Both products are released and the manual checklist has not been done: no real phone, no Safari on a Mac, no screen reader, no licensed Elementor Pro, no order placed in the Shop, no real host |
 | Low | In Firefox, Elementor 4.4.2's editor sometimes reports "can't convert undefined to object" from its own `editor-global-classes.js` when a page of a design is opened (two of three times here). The page opens and can be edited. It does not happen with our plugin off on the same Elementor, but the code that fails is Elementor's and was not traced further |
 | Low | Importing a design again overwrites edits made to its pages since the first import, and only the latest import can be rolled back. The confirmation says so; a "keep my changes" choice is not built |
 | Low | Not tested: right-to-left languages, multisite, hosts that ask for FTP details, a hard memory limit of 128 MB, WordPress between 6.4 and 6.8 with the plugin beyond its screen |

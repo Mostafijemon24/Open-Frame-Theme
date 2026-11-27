@@ -25,7 +25,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | **Done.** Published to production; 10 of 10 designs imported from production on a clean install (2026-11-27). Live demo sites not built |
 | 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
-| 10. Documentation and release | **Theme 1.1.0 released on 2026-11-27.** The plugin is prepared as 1.0.0 and not released: it waits for the manual checks and the owner's word ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)). Neither is submitted to WordPress.org yet |
+| 10. Documentation and release | **Theme 1.1.0 and plugin 1.0.0 released on GitHub on 2026-11-27.** Open: the manual checks, which were not done before the releases, and the submissions to WordPress.org ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)) |
 
 ## Decisions (owner, 2026-11-26)
 
@@ -249,6 +249,11 @@ Each is built with the first design that needs it, rather than against invented 
 
 ## Verified (executed 2026-11-27, unless a line says otherwise)
 
+Plugin release (2026-11-27):
+
+- With the 1.0.0 package installed from its ZIP on a clean site: **10 of 10 designs imported from the production library**, each with the emulated-phone pass, each rolled back.
+- Pull request 2 merged after both CI runs on its head were green (every browser check on the 1.0.0 commit); the Release workflow ran for the plugin and succeeded. `open-frame-starter-sites-1.0.0.zip` downloaded from the release page: checksum valid, and file for file the build that was tested.
+
 Theme release and plugin 1.0.0 (2026-11-27):
 
 - Pull request 1 merged into `main` after both CI runs on its head were green; the Release workflow ran for the theme and succeeded. `open-frame-1.1.0.zip` downloaded from the release page: checksum valid, version 1.1.0 in `style.css`, 74 entries as in the tested build, no development file.
@@ -353,8 +358,8 @@ From Phase 8 (2026-11-26), not repeated:
 
 The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
-1. **Done on 2026-11-27:** the branch merged into `main` (pull request 1), theme 1.1.0 released on GitHub, the plugin prepared as 1.0.0.
-2. The manual checklist, by the owner, and fixes for what it finds.
-3. On the owner's word: merge the 1.0.0 preparation into `main` and release the plugin.
-4. Submissions to WordPress.org from the owner's account: the theme ZIP now, the plugin after its release (banner, icon and screenshots are ready).
+1. **Done on 2026-11-27:** pull requests 1 and 2 merged into `main`, theme 1.1.0 and plugin 1.0.0 released on GitHub.
+2. The manual checklist, by the owner. It was not done before the releases; what it finds goes into patch releases (theme 1.1.1, plugin 1.0.1).
+3. Submissions to WordPress.org from the owner's account (`mostafijemon`): the theme at wordpress.org/themes/upload, the plugin at wordpress.org/plugins/developers/add. After the plugin is approved: its files, banner, icon and screenshots into its Subversion repository.
+4. When a product is listed on WordPress.org: change "How updates reach you" in docs/SUPPORT.md and the download instructions in docs/INSTALL.md.
 5. Decisions still open: live demos, Medical's doctors.
