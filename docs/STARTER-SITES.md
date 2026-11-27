@@ -1,6 +1,6 @@
 # Open Frame Starter Sites — User Guide
 
-**Plugin version 0.6.1** · Needs the Open Frame theme 1.1.0 or newer · WordPress 6.8+ and PHP 7.4+ for the designs · GPL-2.0-or-later
+**Plugin version 1.0.0** · Needs the Open Frame theme 1.1.0 or newer · WordPress 6.8+ and PHP 7.4+ for the designs · GPL-2.0-or-later
 
 ![The Starter Sites screen with ten designs](images/starter-sites-designs.png)
 

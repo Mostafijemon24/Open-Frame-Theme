@@ -49,7 +49,7 @@ Theme and plugin use version numbers of the form **major.minor.patch**, each pro
 | **Minor** (1.1.0 → 1.2.0) | Something is added | Existing settings and content keep working. New options start switched off or with the old behaviour |
 | **Major** (1.x → 2.0.0) | Something had to change in a way that is not compatible | The release notes say what to check, and how to carry your settings over |
 
-While the plugin's version starts with 0 (0.6.1), it is still before its first stable release: details may change from one version to the next. The promise above applies from 1.0.0.
+Versions of the plugin before 1.0.0 were development versions and were not published. The promise above applies from 1.0.0, its first public release.
 
 **Starter sites** have version numbers of their own (for example Business 1.0.0). A published version of a design is never changed afterwards; a correction gets a new number. Your site is not touched when a design is updated: a new version only arrives if you import the design again (see [History and updates of a design](STARTER-SITES.md#13-history-and-updates-of-a-design)).
 

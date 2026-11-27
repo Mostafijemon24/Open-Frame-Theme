@@ -1,6 +1,6 @@
 # Open Frame Starter Sites — Developer Reference
 
-For people who extend the plugin, integrate with it, run their own library, or work on its code. It describes the plugin as it is in version 0.6.1.
+For people who extend the plugin, integrate with it, run their own library, or work on its code. It describes the plugin as it is in version 1.0.0.
 
 Related documents: the design of the whole system and the reasons behind it are in [STARTER-SITES-ARCHITECTURE.md](STARTER-SITES-ARCHITECTURE.md); building, signing and publishing the library in [LIBRARY.md](LIBRARY.md); the tests and their results in [TESTING.md](TESTING.md); releasing in [RELEASE.md](RELEASE.md). The theme's hooks are in [chapter 23 of the theme guide](../README.md#23-child-themes-and-developer-reference).
 
