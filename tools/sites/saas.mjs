@@ -12,7 +12,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, dynamic, em, fluid, gap, icon, ids, kitTypography, link, menu, noRatio, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'saas';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -221,7 +221,7 @@ pages.home = {
 
 		section( { spacing: 56 }, [
 			intro( 'From the blog', 'Notes on listening to customers' ),
-			widget( 'posts', { classic_columns: '3', classic_columns_tablet: '2', classic_columns_mobile: '1', classic_posts_per_page: 3, classic_show_excerpt: 'yes', classic_excerpt_length: 18, classic_meta_data: [ 'date' ], classic_show_read_more: '', classic_title_tag: 'h3', classic_item_ratio: { unit: 'px', size: 0.56, sizes: [] }, classic_img_border_radius: box( 16 ), classic_title_color: C.ink, classic_excerpt_color: C.text, classic_meta_color: C.text, classic_row_gap: px( 40 ), classic_column_gap: px( 28 ), pagination_type: '' } ),
+			widget( 'posts', { classic_thumbnail_size_size: 'medium_large', classic_columns: '3', classic_columns_tablet: '2', classic_columns_mobile: '1', classic_posts_per_page: 3, classic_show_excerpt: 'yes', classic_excerpt_length: 18, classic_meta_data: [ 'date' ], classic_show_read_more: '', classic_title_tag: 'h3', ...noRatio( 'classic' ), classic_img_border_radius: box( 16 ), classic_title_color: C.ink, classic_excerpt_color: C.text, classic_meta_color: C.text, classic_row_gap: px( 40 ), classic_column_gap: px( 28 ), pagination_type: '' } ),
 		] ),
 
 		tryIt(),
@@ -499,7 +499,7 @@ pages.blog = { title: 'Blog', plain: true };
    Theme Builder templates (Elementor Pro)
    ---------------------------------------------------------------------- */
 const postList = () =>
-	widget( 'archive-posts', { archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 20, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', archive_classic_item_ratio: { unit: 'px', size: 0.56, sizes: [] }, archive_classic_img_border_radius: box( 16 ), archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.text, archive_classic_row_gap: px( 48 ), archive_classic_column_gap: px( 28 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
+	widget( 'archive-posts', { archive_classic_thumbnail_size_size: 'medium_large', archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 20, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', ...noRatio( 'archive_classic' ), archive_classic_img_border_radius: box( 16 ), archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.text, archive_classic_row_gap: px( 48 ), archive_classic_column_gap: px( 28 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
 
 const footLinks = ( title, items ) =>
 	column( { width: 18, spacing: 14, more: { width_tablet: percent( 30 ) } }, [

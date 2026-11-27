@@ -42,7 +42,7 @@
 				"slug": "elementor",
 				"name": "Elementor",
 				"file": "elementor/elementor.php",
-				"version": "4.0",
+				"version": "4.0.3",
 				"source": "wordpress.org",
 				"required": true
 			}

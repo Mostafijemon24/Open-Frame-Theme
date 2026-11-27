@@ -91,6 +91,35 @@ class PluginInstaller {
 			return new WP_Error( 'ofss_plugin_lookup', __( 'WordPress.org could not be reached to download the plugin. Try again, or install it under Plugins > Add New.', 'open-frame-starter-sites' ) );
 		}
 
+		// WordPress.org offers the newest version only. When that one needs a newer
+		// WordPress or PHP than this site has, WordPress refuses the package with a
+		// message that does not say why; say it here, before trying.
+		$name = isset( $api->name ) ? wp_strip_all_tags( (string) $api->name ) : $slug;
+		if ( ! empty( $api->requires ) && ! is_wp_version_compatible( (string) $api->requires ) ) {
+			return new WP_Error(
+				'ofss_plugin_needs_wordpress',
+				sprintf(
+					/* translators: 1: plugin name, 2: WordPress version the plugin needs, 3: WordPress version of this site. */
+					__( 'The current version of %1$s needs WordPress %2$s or newer, and this site has WordPress %3$s. Update WordPress under Dashboard > Updates, then try again.', 'open-frame-starter-sites' ),
+					$name,
+					(string) $api->requires,
+					get_bloginfo( 'version' )
+				)
+			);
+		}
+		if ( ! empty( $api->requires_php ) && ! is_php_version_compatible( (string) $api->requires_php ) ) {
+			return new WP_Error(
+				'ofss_plugin_needs_php',
+				sprintf(
+					/* translators: 1: plugin name, 2: PHP version the plugin needs, 3: PHP version of this site. */
+					__( 'The current version of %1$s needs PHP %2$s or newer, and this site runs PHP %3$s. Your hosting company can change the PHP version.', 'open-frame-starter-sites' ),
+					$name,
+					(string) $api->requires_php,
+					PHP_VERSION
+				)
+			);
+		}
+
 		$skin     = new WP_Ajax_Upgrader_Skin();
 		$upgrader = new Plugin_Upgrader( $skin );
 

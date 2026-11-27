@@ -97,6 +97,18 @@ class Catalog {
 			);
 		}
 
+		// A list that is older than the one this site has already seen is not
+		// taken, although it is signed: whoever stands between the site and the
+		// library could otherwise bring back a list that was replaced for a reason.
+		if ( $saved && $this->is_older( $catalog['generated'], $saved['catalog']['generated'] ?? '' ) ) {
+			return array(
+				'catalog'    => $saved['catalog'],
+				'fetched_at' => $saved['fetched_at'],
+				'stale'      => true,
+				'error'      => new WP_Error( 'ofss_old_catalog', __( 'The library sent an older list of designs than the one this site already has, so it was not used.', 'open-frame-starter-sites' ) ),
+			);
+		}
+
 		$fresh = array(
 			'catalog'    => $catalog,
 			'etag'       => (string) $response['etag'],
@@ -110,6 +122,20 @@ class Catalog {
 			'fetched_at' => $fresh['fetched_at'],
 			'stale'      => false,
 		);
+	}
+
+	/**
+	 * Whether one catalog was made before another, going by the time each was signed with.
+	 *
+	 * @param string $candidate `generated` of the catalog that was just downloaded.
+	 * @param string $known     `generated` of the saved catalog.
+	 * @return bool False when either time cannot be read.
+	 */
+	private function is_older( $candidate, $known ) {
+		$candidate = strtotime( (string) $candidate );
+		$known     = strtotime( (string) $known );
+
+		return false !== $candidate && false !== $known && $candidate < $known;
 	}
 
 	/**

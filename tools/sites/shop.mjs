@@ -15,7 +15,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, media, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
+import { backdrop, blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, media, menu, noRatio, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'shop';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -164,7 +164,7 @@ pages.home = {
 	front_page: true,
 	content: [
 		// A room across the whole screen, with the words on a card that sits in it.
-		container( { content_width: 'boxed', flex_direction: 'column', flex_justify_content: 'flex-end', min_height: { unit: 'px', size: 620, sizes: [] }, min_height_mobile: { unit: 'px', size: 520, sizes: [] }, padding: box( 48, 24 ), padding_mobile: box( 20 ), background_background: 'classic', background_image: media( 'hero' ), background_position: 'center center', background_size: 'cover', background_repeat: 'no-repeat' }, [
+		container( { content_width: 'boxed', flex_direction: 'column', flex_justify_content: 'flex-end', min_height: { unit: 'px', size: 620, sizes: [] }, min_height_mobile: { unit: 'px', size: 520, sizes: [] }, padding: box( 48, 24 ), padding_mobile: box( 20 ), ...backdrop( 'hero' ), background_position: 'center center', background_size: 'cover', background_repeat: 'no-repeat' }, [
 			container( { content_width: 'full', width: px( 520 ), width_mobile: percent( 100 ), flex_direction: 'column', flex_gap: gap( 16 ), padding: box( 40 ), padding_mobile: box( 24 ), background_background: 'classic', background_color: C.page, border_radius: box( 24 ) }, [
 				label( 'Homeware and plants' ),
 				heading( 'Useful things for a quiet room', { tag: 'h1' } ),
@@ -197,7 +197,7 @@ pages.home = {
 
 		section( { background: C.sand, spacing: 40 }, [
 			row( { align: 'flex-end', justify: 'space-between', spacing: 32 }, [ intro( 'Journal', 'Notes on plants, tables and buying well' ), textLink( 'All notes', page( 'journal' ) ) ] ),
-			widget( 'posts', { classic_columns: '3', classic_columns_tablet: '2', classic_columns_mobile: '1', classic_posts_per_page: 3, classic_show_excerpt: 'yes', classic_excerpt_length: 18, classic_meta_data: [ 'date' ], classic_show_read_more: '', classic_title_tag: 'h3', classic_item_ratio: { unit: 'px', size: 0.62, sizes: [] }, classic_img_border_radius: box( 18 ), classic_title_color: C.ink, classic_excerpt_color: C.text, classic_meta_color: C.text, classic_row_gap: px( 40 ), classic_column_gap: px( 28 ), pagination_type: '' } ),
+			widget( 'posts', { classic_thumbnail_size_size: 'medium_large', classic_columns: '3', classic_columns_tablet: '2', classic_columns_mobile: '1', classic_posts_per_page: 3, classic_show_excerpt: 'yes', classic_excerpt_length: 18, classic_meta_data: [ 'date' ], classic_show_read_more: '', classic_title_tag: 'h3', ...noRatio( 'classic' ), classic_img_border_radius: box( 18 ), classic_title_color: C.ink, classic_excerpt_color: C.text, classic_meta_color: C.text, classic_row_gap: px( 40 ), classic_column_gap: px( 28 ), pagination_type: '' } ),
 		] ),
 
 		promises(),
@@ -290,7 +290,7 @@ pages.journal = { title: 'Journal', plain: true };
    Theme Builder templates (Elementor Pro)
    ---------------------------------------------------------------------- */
 const postList = () =>
-	widget( 'archive-posts', { archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 18, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', archive_classic_item_ratio: { unit: 'px', size: 0.62, sizes: [] }, archive_classic_img_border_radius: box( 18 ), archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.text, archive_classic_row_gap: px( 48 ), archive_classic_column_gap: px( 28 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
+	widget( 'archive-posts', { archive_classic_thumbnail_size_size: 'medium_large', archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 18, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', ...noRatio( 'archive_classic' ), archive_classic_img_border_radius: box( 18 ), archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.text, archive_classic_row_gap: px( 48 ), archive_classic_column_gap: px( 28 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
 
 const wordmark = ( size, color = C.ink ) => heading( 'Sill &amp; Shelf', { tag: 'p', color, size: px( size ), weight: 600, more: { link: link( page( 'home' ) ), typography_letter_spacing: px( -0.4 ), _flex_size: 'none' } } );
 

@@ -102,13 +102,22 @@ class SiteParts {
 	}
 
 	/**
-	 * Load the small stylesheet for site parts when the page shows one.
+	 * Load the styles of the site parts the page shows, in the head of the page.
 	 *
 	 * @return void
 	 */
 	public function styles() {
-		if ( $this->part( 'header' ) || $this->part( 'footer' ) || ( is_404() && $this->part( '404' ) ) ) {
-			wp_enqueue_style( 'ofss-site-parts', OFSS_URL . 'assets/frontend/site-parts.css', array(), OFSS_VERSION );
+		$parts = array_filter( array( $this->part( 'header' ), $this->part( 'footer' ), is_404() ? $this->part( '404' ) : 0 ) );
+		if ( ! $parts ) {
+			return;
+		}
+
+		wp_enqueue_style( 'ofss-site-parts', OFSS_URL . 'assets/frontend/site-parts.css', array(), OFSS_VERSION );
+
+		// Each part's own stylesheet too: left to Elementor, it would only be added
+		// where the part is rendered, which for a header is too late (see the adapter).
+		foreach ( $parts as $part ) {
+			$this->elementor->enqueue_styles( $part );
 		}
 	}
 

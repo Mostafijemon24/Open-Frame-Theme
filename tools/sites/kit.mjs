@@ -31,6 +31,21 @@ export const gap = ( size, row = size ) => ( { unit: 'px', size, column: String(
 
 export const icon = ( name ) => ( { value: 'fas fa-' + name, library: 'fa-solid' } );
 export const media = ( uid ) => ( { id: `ofss://media/${ uid }`, url: `ofss://media/${ uid }` } );
+
+/**
+ * A picture as the background of a container. A background has no "srcset", so
+ * without this a phone would download the picture at its full width; Elementor
+ * can name a smaller size of the same picture for tablets and phones.
+ */
+export const backdrop = ( uid, { mobile = 'large' } = {} ) => ( {
+	background_background: 'classic',
+	background_image: media( uid ),
+	background_image_tablet: { ...media( uid ), size: '1536x1536' },
+	// "large" is 1024 pixels wide, for a tall band that crops the picture; a low band can take "medium_large" (768).
+	background_image_mobile: { ...media( uid ), size: mobile },
+} );
+/** A post list of Elementor Pro without its "Image Ratio", on every screen size (see where it is used). */
+export const noRatio = ( skin ) => Object.fromEntries( [ '', '_tablet', '_mobile' ].map( ( device ) => [ `${ skin }_item_ratio${ device }`, { unit: 'px', size: '', sizes: [] } ] ) );
 export const page = ( name ) => `ofss://page/${ name }`;
 export const link = ( url ) => ( { url, is_external: '', nofollow: '', custom_attributes: '' } );
 

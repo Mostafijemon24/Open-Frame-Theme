@@ -6,7 +6,8 @@
  */
 const { test, before, after } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
-const { chromium } = require( 'playwright' );
+// The browser engine: chromium unless OFT_BROWSER names firefox or webkit.
+const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
 const { BASE, WIDTHS, state, runScript, hasElementorPro, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login } = require( './helpers' );
 
 let browser;
@@ -14,7 +15,7 @@ let page; // A visitor.
 let admin; // The administrator, in a separate session.
 
 before( async () => {
-	browser = await chromium.launch();
+	browser = await browserType.launch();
 	page = await browser.newPage( { viewport: { width: 1440, height: 900 } } );
 	admin = await ( await browser.newContext( { viewport: { width: 1440, height: 900 } } ) ).newPage();
 	// Elementor Pro, when present, is only switched on by its own test.
@@ -33,6 +34,23 @@ const setWidth = ( width ) => page.setViewportSize( { width, height: 900 } );
 /* -------------------------------------------------------------------------
    The theme on its own
    ---------------------------------------------------------------------- */
+/**
+ * A computed style, read again for up to two seconds while it is not the expected
+ * value: a color that is still fading (buttons have a transition) is not the color
+ * of the button.
+ */
+async function settled( page, selector, property, expected ) {
+	let value;
+	for ( let attempt = 0; attempt < 20; attempt++ ) {
+		value = await style( page, selector, property );
+		if ( value === expected ) {
+			break;
+		}
+		await page.waitForTimeout( 100 );
+	}
+	return value;
+}
+
 test( 'theme alone: nothing from the integrations is loaded', async () => {
 	state( 'reset', 'plugin:elementor=off', 'plugin:woocommerce=off' );
 
@@ -228,6 +246,8 @@ test( 'Elementor: the editor opens every template', async () => {
 		assert.equal( preview.heroWidth, preview.frameWidth, `${ slug }: full-width section in the editor` );
 		assert.equal( await admin.locator( '#elementor-fatal-error-dialog, .elementor-preview-loading-error' ).count(), 0, `${ slug }: no editor error` );
 
+		// Let the editor finish loading its parts: leaving in the middle makes Firefox report each interrupted download as an error.
+		await admin.waitForLoadState( 'networkidle' ).catch( () => {} );
 		admin.off( 'pageerror', onPageError );
 		assert.deepEqual( errors, [], `${ slug }: script errors in the editor` );
 	}
@@ -384,7 +404,7 @@ test( 'WooCommerce: shop, product, cart, checkout and account', async () => {
 	const firstRow = cards.filter( ( card ) => card.top === cards[ 0 ].top );
 	assert.ok( firstRow.length >= 3, `several products per row on desktop (${ firstRow.length })` );
 	assert.ok( firstRow.every( ( card ) => card.height === firstRow[ 0 ].height ), 'cards in a row share one height' );
-	assert.equal( await style( shop, 'ul.products li.product .button', 'backgroundColor' ), primary, 'buttons use the primary color' );
+	assert.equal( await settled( shop, 'ul.products li.product .button', 'backgroundColor', primary ), primary, 'buttons use the primary color' );
 
 	await shop.setViewportSize( { width: 360, height: 900 } );
 	await visit( shop, '/shop/' );
@@ -397,7 +417,7 @@ test( 'WooCommerce: shop, product, cart, checkout and account', async () => {
 	// Product page.
 	await shop.setViewportSize( { width: 1440, height: 900 } );
 	await visit( shop, '/product/oft-product-0/' );
-	assert.equal( await style( shop, 'button.single_add_to_cart_button', 'backgroundColor' ), primary );
+	assert.equal( await settled( shop, 'button.single_add_to_cart_button', 'backgroundColor', primary ), primary );
 	const gallery = await box( shop, '.woocommerce-product-gallery' );
 	const summary = await box( shop, '.summary' );
 	assert.ok( summary.left > gallery.left + gallery.width - 1, 'summary next to the gallery on desktop' );

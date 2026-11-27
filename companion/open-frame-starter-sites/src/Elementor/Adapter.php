@@ -218,6 +218,37 @@ class Adapter {
 	}
 
 	/**
+	 * Put the stylesheet of an Elementor document into the head of the page.
+	 *
+	 * Elementor adds the stylesheet of a document at the moment the document
+	 * is rendered. For a header that is after the head has been sent, so the
+	 * stylesheet would arrive at the end of the page: the header would first
+	 * appear unstyled, and the page would jump when the styles came in.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return void
+	 */
+	public function enqueue_styles( $post_id ) {
+		$elementor = \Elementor\Plugin::$instance;
+
+		if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
+			\Elementor\Core\Files\CSS\Post::create( $post_id )->enqueue();
+		}
+
+		// The styles of the widgets the document uses, which Elementor notes with the
+		// document once it has been rendered. Only the styles: a script that is
+		// loaded this early runs before Elementor has printed the settings it reads.
+		if ( ! isset( $elementor->assets_loader ) || ! method_exists( $elementor->assets_loader, 'enable_assets' ) ) {
+			return;
+		}
+
+		$assets = get_post_meta( $post_id, '_elementor_page_assets', true );
+		if ( is_array( $assets ) && ! empty( $assets['styles'] ) && is_array( $assets['styles'] ) ) {
+			$elementor->assets_loader->enable_assets( array( 'styles' => $assets['styles'] ) );
+		}
+	}
+
+	/**
 	 * Whether the current request is Elementor's editor or its preview.
 	 *
 	 * @return bool

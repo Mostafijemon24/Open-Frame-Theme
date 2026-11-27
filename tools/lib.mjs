@@ -247,6 +247,42 @@ function widgetsIn( elements, found = new Set() ) {
 	return found;
 }
 
+/**
+ * What the plugin refuses in Elementor content before it stores it (ContentGuard.php).
+ * The same rules here, so that a design never reaches a site only to be turned away.
+ */
+const SCRIPT = /<\s*(script|iframe|object|embed|style|link|meta|base)\b|javascript:|vbscript:|data:text\/html|\son[a-z]+\s*=/i;
+const ELEMENT_TYPES = [ 'container', 'widget', 'section', 'column' ];
+const BLOCKED_WIDGETS = [ 'html', 'shortcode', 'sidebar' ];
+const BLOCKED_SETTINGS = [ 'custom_css', '_attributes', 'custom_attributes' ];
+
+/** Element types, widgets and settings in an Elementor element tree that carry code. */
+function refusedContent( value, found = new Set(), isElementList = true ) {
+	if ( Array.isArray( value ) ) {
+		value.forEach( ( item ) => refusedContent( item, found, isElementList ) );
+	} else if ( value && typeof value === 'object' ) {
+		if ( isElementList ) {
+			if ( ! ELEMENT_TYPES.includes( value.elType ) ) {
+				found.add( `element type "${ value.elType }"` );
+			}
+			if ( value.elType === 'widget' && ( ! /^[a-z0-9][a-z0-9_-]*$/.test( String( value.widgetType ) ) || BLOCKED_WIDGETS.includes( value.widgetType ) || String( value.widgetType ).startsWith( 'wp-widget-' ) ) ) {
+				found.add( `widget "${ value.widgetType }"` );
+			}
+			refusedContent( value.settings, found, false );
+			refusedContent( value.elements, found, true );
+			return found;
+		}
+		for ( const [ key, item ] of Object.entries( value ) ) {
+			if ( BLOCKED_SETTINGS.includes( key ) && item !== '' && item !== null && ! ( Array.isArray( item ) && item.length === 0 ) ) {
+				found.add( `the setting "${ key }"` );
+			} else {
+				refusedContent( item, found, false );
+			}
+		}
+	}
+	return found;
+}
+
 /** Icons in an Elementor element tree that Elementor does not have, as "library: value". */
 function unknownIcons( value, found = new Set() ) {
 	if ( Array.isArray( value ) ) {
@@ -422,6 +458,9 @@ export function collectPackage( site ) {
 			pages.push( { uid, title: String( document.title || '' ), ...( document.front_page ? { front_page: true } : {} ) } );
 		}
 		widgetsIn( document.elementor && document.elementor.content, widgets );
+		for ( const refused of [ ...refusedContent( ( document.elementor && document.elementor.content ) || [] ), ...refusedContent( ( document.elementor && document.elementor.page_settings ) || {}, new Set(), false ) ] ) {
+			problems.push( `${ name }: ${ refused } is not allowed in a design` );
+		}
 		for ( const icon of unknownIcons( document.elementor && document.elementor.content ) ) {
 			problems.push( `${ name }: Elementor has no icon "${ icon }" (it carries Font Awesome 5; see tools/icons.json)` );
 		}
@@ -433,7 +472,7 @@ export function collectPackage( site ) {
 	const categories = new Set( Object.entries( documents ).filter( ( [ name ] ) => name.startsWith( 'content/posts/' ) ).flatMap( ( [ , document ] ) => document.categories || [] ).map( ( category ) => String( category ).toLowerCase().replace( /[^a-z0-9]+/g, '-' ).replace( /^-|-$/g, '' ) ) );
 	for ( const [ name, document ] of Object.entries( documents ) ) {
 		eachString( document, ( value, trail ) => {
-			if ( /<script|javascript:|\son[a-z]+\s*=/i.test( value ) ) {
+			if ( SCRIPT.test( value ) ) {
 				problems.push( `${ name } (${ trail }): script is not allowed` );
 			}
 			for ( const url of value.match( /https?:\/\/[^\s"'<>)]+/g ) || [] ) {

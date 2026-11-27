@@ -101,7 +101,7 @@ async function visit( page, url, options = {} ) {
 	const onPageError = ( error ) => errors.push( error.message );
 	const onConsole = ( message ) => {
 		// Missing sample images of the test store are not the theme's concern.
-		if ( message.type() === 'error' && ! /Failed to load resource/.test( message.text() ) ) {
+		if ( message.type() === 'error' && ! /Failed to load resource|Prefetch request denied: URL must be secure/.test( message.text() ) ) {
 			errors.push( message.text() );
 		}
 	};
@@ -156,7 +156,10 @@ async function login( page ) {
 	await page.goto( BASE + '/wp-login.php' );
 	await page.fill( '#user_login', 'admin' );
 	await page.fill( '#user_pass', 'password' );
-	await Promise.all( [ page.waitForURL( /wp-admin/ ), page.click( '#wp-submit' ) ] );
+	// Until the dashboard's own markup is there, not until its last picture has loaded: the
+	// dashboard asks another site for the user's avatar, and where that site cannot be reached
+	// the wait for "everything loaded" can outlast the test.
+	await Promise.all( [ page.waitForURL( /wp-admin/, { waitUntil: 'domcontentloaded' } ), page.click( '#wp-submit' ) ] );
 }
 
 module.exports = { BASE, WIDTHS, WP, ROOT, DIR, state, runScript, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, pageIds, themeErrors, clearErrorLog, visit, facts, box, style, login };

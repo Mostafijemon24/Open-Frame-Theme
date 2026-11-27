@@ -60,6 +60,16 @@
 						"id": "ofss://media/hero",
 						"url": "ofss://media/hero"
 					},
+					"background_image_tablet": {
+						"id": "ofss://media/hero",
+						"url": "ofss://media/hero",
+						"size": "1536x1536"
+					},
+					"background_image_mobile": {
+						"id": "ofss://media/hero",
+						"url": "ofss://media/hero",
+						"size": "large"
+					},
 					"background_position": "center center",
 					"background_size": "cover",
 					"background_repeat": "no-repeat",
@@ -1832,6 +1842,16 @@
 					"background_image": {
 						"id": "ofss://media/room",
 						"url": "ofss://media/room"
+					},
+					"background_image_tablet": {
+						"id": "ofss://media/room",
+						"url": "ofss://media/room",
+						"size": "1536x1536"
+					},
+					"background_image_mobile": {
+						"id": "ofss://media/room",
+						"url": "ofss://media/room",
+						"size": "large"
 					},
 					"background_position": "center center",
 					"background_size": "cover",

@@ -286,6 +286,16 @@
 								"id": "ofss://media/street",
 								"url": "ofss://media/street"
 							},
+							"background_image_tablet": {
+								"id": "ofss://media/street",
+								"url": "ofss://media/street",
+								"size": "1536x1536"
+							},
+							"background_image_mobile": {
+								"id": "ofss://media/street",
+								"url": "ofss://media/street",
+								"size": "medium_large"
+							},
 							"background_position": "center center",
 							"background_size": "cover",
 							"background_repeat": "no-repeat"
@@ -2950,6 +2960,7 @@
 						"elType": "widget",
 						"widgetType": "posts",
 						"settings": {
+							"classic_thumbnail_size_size": "medium_large",
 							"classic_columns": "3",
 							"classic_columns_tablet": "2",
 							"classic_columns_mobile": "1",
@@ -2963,7 +2974,17 @@
 							"classic_title_tag": "h3",
 							"classic_item_ratio": {
 								"unit": "px",
-								"size": 0.6,
+								"size": "",
+								"sizes": []
+							},
+							"classic_item_ratio_tablet": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"classic_item_ratio_mobile": {
+								"unit": "px",
+								"size": "",
 								"sizes": []
 							},
 							"classic_img_border_radius": {

@@ -38,7 +38,7 @@ Everything except the catalog is served with a cache lifetime of one year. That 
 
 So the server, the storage and the connection can all be wrong without the plugin installing anything the signing key did not approve. The signing key is the one thing to protect.
 
-On top of that, the tools refuse to build a package that contains anything but JSON and Markdown, links to the site it was authored on, script, references that do not resolve, settings outside a short allow-list, images without a licence, or files over the size budget. The plugin repeats the checks that matter on its side.
+On top of that, the tools refuse to build a package that contains anything but JSON and Markdown, links to the site it was authored on, script, embedded frames or style blocks, raw HTML or shortcode widgets, hand-written CSS or attributes, icons Elementor does not have, references that do not resolve, settings outside a short allow-list, images without a licence, or files over the size budget. The plugin repeats the checks that matter on its side: it refuses the same content before it creates anything, and it refuses a catalog older than the one it already has.
 
 ## The signing key
 

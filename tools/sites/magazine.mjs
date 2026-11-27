@@ -13,7 +13,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, menu, page, percent, photoIndex, px, writeSite } from './kit.mjs';
+import { blocks, box, builders, dynamic, em, fluid, gap, ids, kitTypography, link, menu, noRatio, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'magazine';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -76,11 +76,13 @@ const ruledTitle = ( name, line, url ) =>
 /** A list of stories (Elementor Pro's Posts widget), newest first. */
 const stories = ( { count = 3, columns = 3, term, excerpt = true, tag = 'h3', lead = false, fresh = false } = {} ) =>
 	widget( 'posts', {
-		classic_columns: String( columns ), classic_columns_tablet: String( Math.min( columns, 2 ) ), classic_columns_mobile: '1',
+		classic_thumbnail_size_size: 'medium_large', classic_columns: String( columns ), classic_columns_tablet: String( Math.min( columns, 2 ) ), classic_columns_mobile: '1',
 		classic_posts_per_page: count,
 		classic_show_excerpt: excerpt ? 'yes' : '', classic_excerpt_length: 18,
 		classic_meta_data: [ 'date' ], classic_show_read_more: '', classic_title_tag: tag,
-		classic_item_ratio: { unit: 'px', size: lead ? 0.56 : 0.62, sizes: [] },
+		// No "Image Ratio": with one, Elementor Pro first shows each picture above an empty box of that ratio and
+		// only fits it in once its script has run, and the page jumps. The pictures are all 16:9, so the rows are even without it.
+		...noRatio( 'classic' ),
 		...( lead ? { classic_title_typography_typography: 'custom', classic_title_typography_font_family: SERIF, classic_title_typography_font_weight: '700', classic_title_typography_font_size: fluid( 'clamp(2rem, 1.4rem + 2.6vw, 3.25rem)' ), classic_title_typography_line_height: em( 1.08 ), classic_excerpt_typography_typography: 'custom', classic_excerpt_typography_font_family: SANS, classic_excerpt_typography_font_size: px( 19 ), classic_excerpt_length: 40 } : {} ),
 		classic_title_color: C.ink, classic_excerpt_color: C.text, classic_meta_color: C.grey,
 		classic_meta_typography_typography: 'custom', classic_meta_typography_font_family: SANS, classic_meta_typography_font_size: px( 13 ),
@@ -306,7 +308,7 @@ pages.stories = { title: 'All Stories', slug: 'stories', plain: true };
 const sectionName = `[elementor-tag id="" name="archive-title" settings="${ encodeURIComponent( JSON.stringify( { include_context: '' } ) ) }"]`;
 
 const storyList = () =>
-	widget( 'archive-posts', { archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 18, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', archive_classic_item_ratio: { unit: 'px', size: 0.62, sizes: [] }, archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.grey, archive_classic_meta_typography_typography: 'custom', archive_classic_meta_typography_font_family: SANS, archive_classic_meta_typography_font_size: px( 13 ), archive_classic_row_gap: px( 52 ), archive_classic_column_gap: px( 32 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
+	widget( 'archive-posts', { archive_classic_thumbnail_size_size: 'medium_large', archive_classic_columns: '3', archive_classic_columns_tablet: '2', archive_classic_columns_mobile: '1', archive_classic_show_excerpt: 'yes', archive_classic_excerpt_length: 18, archive_classic_meta_data: [ 'date' ], archive_classic_show_read_more: '', archive_classic_title_tag: 'h2', ...noRatio( 'archive_classic' ), archive_classic_title_color: C.ink, archive_classic_excerpt_color: C.text, archive_classic_meta_color: C.grey, archive_classic_meta_typography_typography: 'custom', archive_classic_meta_typography_font_family: SANS, archive_classic_meta_typography_font_size: px( 13 ), archive_classic_row_gap: px( 52 ), archive_classic_column_gap: px( 32 ), pagination_type: 'numbers', nothing_found_message: 'Nothing here yet.' } );
 
 const wordmark = ( size, color = C.ink ) => heading( 'Common Ground', { tag: 'p', color, align: 'center', size, weight: 700, more: { link: link( page( 'home' ) ), typography_letter_spacing: px( -0.5 ), typography_line_height: em( 1 ) } } );
 

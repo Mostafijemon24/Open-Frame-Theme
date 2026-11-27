@@ -24,6 +24,8 @@
 #   OFT_PORT         port of the site            (default: 8894)
 #   OFT_WORKER_PORT  port of the Worker          (default: 8895)
 #   WRANGLER         the wrangler command        (default: npx --yes wrangler@4)
+#   OFT_VARIANT      "plain" for a site with plain permalinks (?page_id=12), "existing"
+#                    for a site that already has pages, a post and a menu, or both
 #   OFT_ELEMENTOR_PRO_ZIP  an Elementor Pro ZIP you are licensed to use; without
 #                          it the five Pro designs are skipped, and the report says so
 #
@@ -120,7 +122,8 @@ echo "A changed Business 1.0.0 was refused, and the live catalog is untouched."
 
 echo "== 5. A clean WordPress site, installed from the ZIPs"
 OFT_LIBRARY_BASE="$BASE" OFT_LIBRARY_KEY="$PUBLIC_KEY" OFT_PACKAGES="$ROOT/dist" OFT_FIXTURES=no bash tests/env/setup.sh > "$DIR/setup.log"
-php tests/env/run.php "$WP" tests/library/clean.php
+# shellcheck disable=SC2086 -- The variant is a list of words.
+php tests/env/run.php "$WP" tests/library/clean.php ${OFT_VARIANT:-}
 rm -rf "$DIR/clean" && mkdir -p "$DIR/clean"
 cp -r "$WP/wp-content/database" "$DIR/clean/database"
 [ -d "$WP/wp-content/uploads" ] && cp -r "$WP/wp-content/uploads" "$DIR/clean/uploads"

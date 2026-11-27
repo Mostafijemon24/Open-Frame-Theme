@@ -172,6 +172,7 @@
 						"elType": "widget",
 						"widgetType": "archive-posts",
 						"settings": {
+							"archive_classic_thumbnail_size_size": "medium_large",
 							"archive_classic_columns": "3",
 							"archive_classic_columns_tablet": "2",
 							"archive_classic_columns_mobile": "1",
@@ -184,7 +185,17 @@
 							"archive_classic_title_tag": "h2",
 							"archive_classic_item_ratio": {
 								"unit": "px",
-								"size": 0.62,
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_tablet": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_mobile": {
+								"unit": "px",
+								"size": "",
 								"sizes": []
 							},
 							"archive_classic_img_border_radius": {

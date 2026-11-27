@@ -383,7 +383,34 @@ class Runner {
 			return $fetched;
 		}
 
-		return $this->package->inspect( $zip, $state['manifest']['files'] );
+		$inspected = $this->package->inspect( $zip, $state['manifest']['files'] );
+		if ( true !== $inspected ) {
+			return $inspected;
+		}
+
+		// Before anything is created: no page, header or template of the package may carry code.
+		$guard = new ContentGuard();
+		foreach ( preg_grep( '#^content/(pages|site-parts|templates)/[a-z0-9-]+\.json$#', array_keys( $state['manifest']['files'] ) ) as $name ) {
+			$data = $this->package->read( $zip, $name, $state['manifest']['files'] );
+			if ( is_wp_error( $data ) ) {
+				return $data;
+			}
+
+			$elementor = is_array( $data['elementor'] ?? null ) ? $data['elementor'] : array();
+			$problems  = $guard->problems( (array) ( $elementor['content'] ?? array() ), (array) ( $elementor['page_settings'] ?? array() ) );
+			if ( $problems ) {
+				return new WP_Error(
+					'ofss_refused_content',
+					sprintf(
+						/* translators: %s: what was found, in technical words. */
+						__( 'This design was not imported, because it contains something the plugin does not accept (%s). No page was created. Please report this to the makers of the design.', 'open-frame-starter-sites' ),
+						implode( ', ', $problems )
+					)
+				);
+			}
+		}
+
+		return true;
 	}
 
 	/**
@@ -444,6 +471,14 @@ class Runner {
 			return new WP_Error( 'ofss_bad_image', __( 'An image of this design is not a valid image, so the import was stopped.', 'open-frame-starter-sites' ) );
 		}
 
+		// The pictures of a design arrive compressed. WordPress would save their
+		// smaller sizes at a higher quality than the picture itself has, which makes
+		// files that are larger without looking better; for this one upload the
+		// smaller sizes are saved at the quality of the original.
+		$quality = static function () {
+			return 80;
+		};
+		add_filter( 'wp_editor_set_quality', $quality, 99 );
 		$attachment = media_handle_sideload(
 			array(
 				'name'     => $name,
@@ -451,6 +486,7 @@ class Runner {
 			),
 			0
 		);
+		remove_filter( 'wp_editor_set_quality', $quality, 99 );
 		if ( is_wp_error( $attachment ) ) {
 			wp_delete_file( $temp );
 			return new WP_Error( 'ofss_media', __( 'An image could not be added to the media library. Check that the uploads folder can be written to.', 'open-frame-starter-sites' ) );
@@ -491,6 +527,10 @@ class Runner {
 
 			// Recorded before it is downloaded, so a rollback finds the file even if this request dies.
 			$fonts->add( $item, $state['id'] );
+			// A font the plugin would not print (an unknown weight or style) is not stored either.
+			if ( ! in_array( $item['sha256'] . '.woff2', wp_list_pluck( $fonts->all(), 'file' ), true ) ) {
+				return new WP_Error( 'ofss_damaged_download', __( 'The package of this design is damaged or was altered, so it was not used. Please try again.', 'open-frame-starter-sites' ) );
+			}
 
 			$file    = $dir . '/' . $item['sha256'] . '.woff2';
 			$fetched = $this->package->fetch( $item, $file );
@@ -782,7 +822,7 @@ class Runner {
 		$allowed = array();
 		foreach ( $settings as $key => $value ) {
 			if ( in_array( $key, array( 'system_colors', 'custom_colors', 'system_typography', 'custom_typography', 'container_width', 'space_between_widgets', 'viewport_md', 'viewport_lg' ), true ) || preg_match( '/^(body|link|h[1-6]|button|form_field|paragraph)_/', $key ) ) {
-				$allowed[ $key ] = map_deep( $value, array( $this, 'clean_scalar' ) );
+				$allowed[ $key ] = map_deep( $value, array( $this, 'clean_style_value' ) );
 			}
 		}
 
@@ -1156,5 +1196,25 @@ class Runner {
 	 */
 	public function clean_scalar( $value ) {
 		return is_string( $value ) ? sanitize_text_field( $value ) : $value;
+	}
+
+	/**
+	 * Clean one value of the design's Site Settings.
+	 *
+	 * These values (colors, font names, sizes, names of global styles) end up
+	 * in a stylesheet Elementor writes, so nothing that could close a rule or
+	 * start another one is kept.
+	 *
+	 * @param mixed $value Value from the package.
+	 * @return mixed
+	 */
+	public function clean_style_value( $value ) {
+		if ( ! is_string( $value ) ) {
+			return $value;
+		}
+
+		$value = (string) preg_replace( '/[^\p{L}\p{N} #.,%&\'()_+\-]/u', '', sanitize_text_field( $value ) );
+
+		return (string) preg_replace( '/(url|expression|image-set|attr)\s*\(/i', '(', $value );
 	}
 }

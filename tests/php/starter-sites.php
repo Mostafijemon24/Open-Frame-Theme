@@ -290,6 +290,27 @@ ofss_answers( array( 'code' => 200, 'body' => '<html>not json</html>' ) );
 $garbage = $store->get( true );
 ofss_check( 'an unreadable answer keeps the saved copy', ! is_wp_error( $garbage ) && true === $garbage['stale'] );
 
+// A list that was replaced cannot be brought back by whoever answers for the library.
+$older              = $raw;
+$older['generated'] = gmdate( 'Y-m-d\TH:i:s\Z', strtotime( $raw['generated'] ) - DAY_IN_SECONDS );
+$older['sites']     = array_slice( $raw['sites'], 0, 3 );
+$newer              = $raw;
+$newer['generated'] = gmdate( 'Y-m-d\TH:i:s\Z', strtotime( $raw['generated'] ) + DAY_IN_SECONDS );
+$newer['sites']     = array_slice( $raw['sites'], 0, 9 );
+
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( ofss_sign( $older ) ), 'headers' => array( 'etag' => '"old"' ) ) );
+$replayed = $store->get( true );
+ofss_check( 'an older catalog is refused although its signature is valid', ! is_wp_error( $replayed ) && true === $replayed['stale'] && 'ofss_old_catalog' === $replayed['error']->get_error_code() && 10 === count( $replayed['catalog']['sites'] ) );
+ofss_check( 'and the saved copy stays as it was', 10 === count( get_option( Catalog::OPTION )['catalog']['sites'] ) && '"v2"' === get_option( Catalog::OPTION )['etag'] );
+
+ofss_answers( array( 'code' => 200, 'body' => wp_json_encode( ofss_sign( $newer ) ), 'headers' => array( 'etag' => '"new"' ) ) );
+$advanced = $store->get( true );
+ofss_check( 'a newer catalog replaces the saved one', ! is_wp_error( $advanced ) && false === $advanced['stale'] && 9 === count( $advanced['catalog']['sites'] ) );
+
+ofss_answers( array( 'code' => 200, 'body' => $body, 'headers' => array( 'etag' => '"v2"' ) ) );
+$back = $store->get( true );
+ofss_check( 'after which the one before it counts as older', true === $back['stale'] && 9 === count( $back['catalog']['sites'] ) );
+
 delete_option( Catalog::OPTION );
 ofss_answers( array( 'code' => 503 ) );
 $none = $store->get();
@@ -469,6 +490,29 @@ wp_set_current_user( $subscriber );
 $site['requires']['plugins'][0]['slug'] = 'ofss-missing-plugin';
 $site['requires']['plugins'][0]['file'] = 'ofss-missing-plugin/ofss-missing-plugin.php';
 ofss_check( 'a user who cannot install plugins is not offered the button', false === $checker->check( $site )['plugins'][0]['allowed'] );
+
+// A plugin whose newest version needs a newer WordPress or PHP than the site has:
+// the installer says so itself, because WordPress only says "could not be installed".
+$ofss_api = function ( $result, $action, $args ) {
+	if ( 'plugin_information' !== $action || ! in_array( $args->slug ?? '', array( 'ofss-needs-wp', 'ofss-needs-php' ), true ) ) {
+		return $result;
+	}
+	return (object) array(
+		'name'          => 'Tomorrow <b>Shop</b>',
+		'slug'          => $args->slug,
+		'download_link' => 'https://downloads.wordpress.org/plugin/never-fetched.zip',
+		'requires'      => 'ofss-needs-wp' === $args->slug ? '99.0' : '5.0',
+		'requires_php'  => 'ofss-needs-php' === $args->slug ? '99.0' : '7.0',
+	);
+};
+add_filter( 'plugins_api', $ofss_api, 10, 3 );
+$installer = new OpenFrame\StarterSites\Requirements\PluginInstaller();
+$too_new   = $installer->perform( array( 'slug' => 'ofss-needs-wp', 'file' => 'ofss-needs-wp/x.php', 'source' => 'wordpress.org', 'allowed' => true ), 'install' );
+ofss_check( 'a plugin that needs a newer WordPress is not downloaded, and the message says which version it needs', is_wp_error( $too_new ) && 'ofss_plugin_needs_wordpress' === $too_new->get_error_code() && false !== strpos( $too_new->get_error_message(), 'needs WordPress 99.0 or newer' ) && false !== strpos( $too_new->get_error_message(), get_bloginfo( 'version' ) ) );
+ofss_check( 'the name of the plugin in that message is text, not markup', false === strpos( $too_new->get_error_message(), '<b>' ) && false !== strpos( $too_new->get_error_message(), 'Tomorrow Shop' ) );
+$too_new_php = $installer->perform( array( 'slug' => 'ofss-needs-php', 'file' => 'ofss-needs-php/x.php', 'source' => 'wordpress.org', 'allowed' => true ), 'install' );
+ofss_check( 'the same for a plugin that needs a newer PHP', is_wp_error( $too_new_php ) && 'ofss_plugin_needs_php' === $too_new_php->get_error_code() && false !== strpos( $too_new_php->get_error_message(), 'needs PHP 99.0 or newer' ) );
+remove_filter( 'plugins_api', $ofss_api, 10 );
 
 /* ---------------------------------------------------------------------- */
 ofss_section( 'REST routes' );

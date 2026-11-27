@@ -3,7 +3,7 @@
  * Plugin Name:       Open Frame Starter Sites
  * Plugin URI:        https://github.com/Mostafijemon24/Open-Frame-Theme
  * Description:       Browse the starter website library for the Open Frame theme and prepare your site for an import: preview each design, see what it needs and install the required plugins.
- * Version:           0.6.0
+ * Version:           0.6.1
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Mostafij Emon
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OFSS_VERSION', '0.6.0' );
+define( 'OFSS_VERSION', '0.6.1' );
 define( 'OFSS_FILE', __FILE__ );
 define( 'OFSS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'OFSS_URL', plugin_dir_url( __FILE__ ) );

@@ -21,5 +21,7 @@ echo wp_json_encode(
 		'page_for_posts' => (int) get_option( 'page_for_posts' ),
 		'theme_mods'     => md5( (string) wp_json_encode( get_option( 'theme_mods_' . get_stylesheet() ) ) ),
 		'active_site'    => get_option( 'ofss_active_site', null ),
+		// The owner's own content: titles and addresses of every page and post that no import marked.
+		'own_content'    => md5( (string) wp_json_encode( $wpdb->get_results( "SELECT ID, post_title, post_name, post_status, post_content FROM $wpdb->posts WHERE post_type IN ( 'page', 'post', 'nav_menu_item' ) AND ID NOT IN ( SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_ofss_run' ) ORDER BY ID" ) ) ),
 	)
 ), "\n";

@@ -563,6 +563,14 @@ Built in Phase 4 (plugin 0.1.0): everything in that list except the import stepp
 | Supply chain | Plugin has no runtime Composer or npm dependencies; build-time dependencies are locked; published packages are immutable |
 | Standards | WordPress Coding Standards, escaping on output, sanitising on input, prepared queries (no custom SQL is planned), Plugin Check and Theme Check in CI |
 
+**As reviewed in Phase 9.** An independent review of the plugin against this table found nothing of high or critical severity, and three gaps, which were closed in plugin 0.6.1:
+
+- The "widget-type allow-list, script and handler checks" of the stored-XSS row existed only in the build tools. The plugin now repeats them (`src/Import/ContentGuard.php`) right after the package is verified and before anything is created: raw HTML, shortcode and sidebar widgets, WordPress widgets inside Elementor, element kinds it does not know, script, embedded frames, style blocks, `javascript:` addresses, and hand-written CSS or attributes are refused. It is a deny-list of the widgets that carry code rather than an allow-list of every widget, so that a new design does not need a plugin release.
+- A catalog that is older than the one the site has already seen is refused, even with a valid signature (`Catalog::is_older()`). The signed `generated` time is the measure; taking a catalog back means building it again, which gives it a new time.
+- Values of the Site Settings a design brings are reduced to the characters a color, a font name or a size can have, so that none can close a rule in the stylesheet Elementor writes.
+
+Left as it is, on purpose: site parts (header, footer, "page not found") can be edited by anyone who may edit pages, as Elementor's own templates can; importing a design again replaces what the earlier import of it created, including later edits to those pages (the confirmation says so); the import lock is a transient, so two administrators starting an import in the same second could both get through.
+
 ### 8.2 Performance
 
 | Area | Strategy |
@@ -576,6 +584,8 @@ Built in Phase 4 (plugin 0.1.0): everything in that list except the import stepp
 | Elementor pages | Shallow container nesting, global styles instead of per-widget overrides, no motion effects on first-screen content, no widget that pulls a large script for a small effect. |
 | Budgets, enforced in CI | Largest Contentful Paint under 2.5 s, Cumulative Layout Shift under 0.1, home page transfer under 1.2 MB, Lighthouse mobile performance of at least 85 on every starter home page, no horizontal overflow at any tested width. |
 | Cloud | Immutable versioned assets cached at the edge for a year; a single small mutable catalog. |
+
+**As measured in Phase 9** (Lighthouse 12, mobile, simulated slow 4G, a server that minifies and compresses like an ordinary host; the figures are in `docs/dev/TESTING.md`). Met: layout shift under 0.1 and transfer under 1.2 MB on every home page; a score of 85 or more on eight of ten. Not met: the largest picture or text of the first screen appears after 2.9 to 4.7 seconds in that simulation, not within 2.5, on every design; Portfolio (82) and Real Estate (81) are under 85. What decides it is outside the designs: Elementor's stylesheets and jQuery are loaded before the page is drawn. Found on the way and fixed: the stylesheets of a free design's header and footer were loaded at the end of the page (a jump of 0.4); Elementor Pro's post lists jump when they have an "Image Ratio" (the designs now do without); post lists used 300-pixel pictures for spaces up to 750 pixels wide; WordPress re-saved the smaller sizes of the pictures at a higher quality than the pictures have; hero backgrounds were downloaded at full width on phones.
 
 ---
 

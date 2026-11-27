@@ -10,7 +10,7 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { blocks, box, builders, em, fluid, gap, ids, kitTypography, link, media, page, percent, photoIndex, px, writeSite } from './kit.mjs';
+import { backdrop, blocks, box, builders, em, fluid, gap, ids, kitTypography, link, media, page, percent, photoIndex, px, writeSite } from './kit.mjs';
 
 const SITE = 'restaurant';
 const OUT = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../../starter-sites', SITE );
@@ -91,7 +91,7 @@ const course = ( name, title, dishes, { background, note } = {} ) =>
 
 /** A band with a picture behind it and a dark veil over the picture. */
 const pictured = ( uid, { top = 144, bottom = top, veil = 0.62, spacing = 28, more = {} }, elements ) =>
-	section( { top, bottom, spacing, more: { background_background: 'classic', background_image: media( uid ), background_position: 'center center', background_size: 'cover', background_repeat: 'no-repeat', background_overlay_background: 'classic', background_overlay_color: C.night, background_overlay_opacity: { unit: 'px', size: veil, sizes: [] }, ...more } }, elements );
+	section( { top, bottom, spacing, more: { ...backdrop( uid ), background_position: 'center center', background_size: 'cover', background_repeat: 'no-repeat', background_overlay_background: 'classic', background_overlay_color: C.night, background_overlay_opacity: { unit: 'px', size: veil, sizes: [] }, ...more } }, elements );
 
 /** The top of an inner page, centered. */
 const pageHero = ( name, title, lead ) => section( { top: 112, bottom: 72, spacing: 0 }, [ intro( name, title, lead, { tag: 'h1', width: 70 } ) ] );

@@ -9,7 +9,8 @@
  */
 const { test, before, after, beforeEach } = require( 'node:test' );
 const assert = require( 'node:assert/strict' );
-const { chromium } = require( 'playwright' );
+// The browser engine: chromium unless OFT_BROWSER names firefox or webkit.
+const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
 const fs = require( 'node:fs' );
 const path = require( 'node:path' );
 const { BASE, DIR, state, hasElementorPro, hasPlugin, cloud, cloudRequests, axe, themeErrors, clearErrorLog, login } = require( './helpers' );
@@ -21,12 +22,12 @@ let page;
 let errors;
 
 before( async () => {
-	browser = await chromium.launch();
+	browser = await browserType.launch();
 	page = await ( await browser.newContext( { viewport: { width: 1440, height: 1000 } } ) ).newPage();
 	page.on( 'pageerror', ( error ) => errors.push( error.message ) );
 	page.on( 'console', ( message ) => {
 		// The avatar in the toolbar is requested from another site, which the test site cannot reach.
-		if ( message.type() === 'error' && ! /Failed to load resource/.test( message.text() ) ) {
+		if ( message.type() === 'error' && ! /Failed to load resource|Prefetch request denied: URL must be secure/.test( message.text() ) ) {
 			errors.push( message.text() );
 		}
 	} );

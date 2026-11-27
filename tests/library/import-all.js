@@ -17,7 +17,8 @@
 const fs = require( 'node:fs' );
 const path = require( 'node:path' );
 const { execFileSync } = require( 'node:child_process' );
-const { chromium } = require( 'playwright' );
+// The browser engine: chromium unless OFT_BROWSER names firefox or webkit.
+const browserType = require( 'playwright' )[ process.env.OFT_BROWSER || 'chromium' ];
 const { BASE, DIR, WP, ROOT, hasPlugin, login } = require( '../e2e/helpers.js' );
 
 const SCREEN = BASE + '/wp-admin/themes.php?page=open-frame-starter-sites';
@@ -201,7 +202,9 @@ async function crawl( browser, site ) {
 			const target = new URL( link );
 			target.hash = '';
 			// Only pages of the site: no admin, no feeds, no files, no links that do something (add to basket, log out, reply).
-			if ( target.origin !== BASE || target.search || /^\/(wp-admin|wp-login\.php|wp-json|feed|comments)\b|\/feed\/?$|\.[a-z0-9]{2,5}$/i.test( target.pathname ) ) {
+			// With plain permalinks a page's address is a query (?page_id=12); those are followed, other queries are not.
+			const plain = [ ...target.searchParams.keys() ].every( ( key ) => [ 'page_id', 'p', 'cat', 'product', 'product_cat', 'post_type', 'm', 'author' ].includes( key ) );
+			if ( target.origin !== BASE || ! plain || /^\/(wp-admin|wp-login\.php|wp-json|feed|comments)\b|\/feed\/?$|\.[a-z0-9]{2,5}$/i.test( target.pathname ) ) {
 				continue;
 			}
 			if ( ! seen.has( target.href ) ) {
@@ -233,7 +236,7 @@ async function crawl( browser, site ) {
 		.filter( ( site ) => site.status === 'available' && ( ! wanted.length || wanted.includes( site.id ) ) )
 		.sort( ( a, b ) => ( a.order ?? 100 ) - ( b.order ?? 100 ) );
 
-	const browser = await chromium.launch();
+	const browser = await browserType.launch();
 	const results = [];
 	for ( const site of sites ) {
 		const missing = site.requires.plugins.filter( ( plugin ) => plugin.source !== 'wordpress.org' && ! hasPlugin( plugin.slug ) ).map( ( plugin ) => plugin.name );

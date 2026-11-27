@@ -472,6 +472,87 @@ foreach ( $damage as $label => $break ) {
 	ofss_check( "$label stops the import, and rolling back leaves no trace", $clean && ofss_fingerprint() === $baseline );
 }
 
+/* ---------------------------------------------------------------------- */
+ofss_section( 'Content that could run code' );
+
+// The package is signed and its checksums are right, but a page in it carries
+// something the build tools should have refused. The plugin looks again.
+$guard   = new OpenFrame\StarterSites\Import\ContentGuard();
+$widget  = function ( $type, array $settings = array() ) {
+	return array( array( 'elType' => 'container', 'settings' => array(), 'elements' => array( array( 'elType' => 'widget', 'widgetType' => $type, 'settings' => $settings ) ) ) );
+};
+$hostile = array(
+	'a raw HTML widget'                => array( $widget( 'html', array( 'html' => 'hello' ) ), array() ),
+	'a shortcode widget'               => array( $widget( 'shortcode', array( 'shortcode' => '[x]' ) ), array() ),
+	'a WordPress widget inside Elementor' => array( $widget( 'wp-widget-custom_html' ), array() ),
+	'a script tag in a heading'        => array( $widget( 'heading', array( 'title' => 'Hi <ScRiPt src="//x.example/a.js"></script>' ) ), array() ),
+	'an event handler in a text'       => array( $widget( 'text-editor', array( 'editor' => '<p onclick="go()">Hi</p>' ) ), array() ),
+	'a javascript: link on a button'   => array( $widget( 'button', array( 'link' => array( 'url' => 'JavaScript:alert(1)' ) ) ), array() ),
+	'an embedded frame'                => array( $widget( 'text-editor', array( 'editor' => '<iframe src="https://x.example/"></iframe>' ) ), array() ),
+	'a style block'                    => array( $widget( 'text-editor', array( 'editor' => '<style>body{display:none}</style>' ) ), array() ),
+	'CSS written by hand on a widget'  => array( $widget( 'heading', array( 'title' => 'Hi', 'custom_css' => 'selector{background:url(//x.example)}' ) ), array() ),
+	'attributes written by hand on a link' => array( $widget( 'button', array( 'link' => array( 'url' => '#', 'custom_attributes' => 'onmouseover|go()' ) ) ), array() ),
+	'CSS written by hand for the page' => array( $widget( 'heading', array( 'title' => 'Hi' ) ), array( 'custom_css' => 'body{display:none}' ) ),
+	'an element of an unknown kind'    => array( array( array( 'elType' => 'e-code', 'settings' => array() ) ), array() ),
+	'a widget without a proper name'   => array( $widget( '../html' ), array() ),
+);
+foreach ( $hostile as $label => $content ) {
+	ofss_check( "$label is refused", array() !== $guard->problems( $content[0], $content[1] ) );
+}
+ofss_check( 'an ordinary page is accepted, with an empty attributes field as Elementor writes it', array() === $guard->problems( $widget( 'button', array( 'text' => 'Go on, then = fine', 'link' => array( 'url' => 'https://example.com/', 'custom_attributes' => '' ) ) ), array( 'hide_title' => 'yes' ) ) );
+
+// The same from the outside: an import of such a package stops before a single page exists.
+$pages_before = (int) wp_count_posts( 'page' )->publish;
+$state        = $runner->start( 'reference' );
+$state        = $runner->advance( $state['id'], 2 );
+
+// Build a package like the real one, with one hostile page, and point the verified manifest at it.
+$real_zip  = OFT_LIBRARY . '/v1/sites/reference/' . $state['manifest']['version'] . '/package.zip';
+$evil_zip  = sys_get_temp_dir() . '/ofss-evil-' . wp_generate_password( 8, false ) . '.zip';
+copy( $real_zip, $evil_zip );
+$archive = new ZipArchive();
+$archive->open( $evil_zip );
+$home                                  = json_decode( $archive->getFromName( 'content/pages/home.json' ), true );
+$home['elementor']['content'][0]['elements'][] = array( 'id' => 'evil0001', 'elType' => 'widget', 'widgetType' => 'html', 'settings' => array( 'html' => '<script>document.title="owned"</script>' ) );
+$evil_page                             = wp_json_encode( $home );
+$archive->addFromString( 'content/pages/home.json', $evil_page );
+$archive->close();
+$evil_body = file_get_contents( $evil_zip );
+unlink( $evil_zip );
+
+$state['manifest']['files']['content/pages/home.json'] = array( 'sha256' => hash( 'sha256', $evil_page ), 'bytes' => strlen( $evil_page ) );
+$state['manifest']['package']['sha256']                = hash( 'sha256', $evil_body );
+$state['manifest']['package']['bytes']                 = strlen( $evil_body );
+$runner->save( $state );
+add_filter(
+	'pre_http_request',
+	$ofss_serve = function ( $pre, $args, $url ) use ( $evil_body ) {
+		if ( false === strpos( $url, '/package.zip' ) ) {
+			return $pre;
+		}
+		if ( ! empty( $args['filename'] ) ) {
+			file_put_contents( $args['filename'], $evil_body );
+		}
+		return array( 'headers' => array(), 'body' => empty( $args['filename'] ) ? $evil_body : '', 'response' => array( 'code' => 200, 'message' => 'OK' ), 'cookies' => array(), 'filename' => $args['filename'] ?? null );
+	},
+	5,
+	3
+);
+$state = ofss_finish( $runner, $state );
+remove_filter( 'pre_http_request', $ofss_serve, 5 );
+ofss_check( 'a signed package with a script in a page is refused', 'failed' === $state['status'] && false !== strpos( $state['error'], 'does not accept' ) && false !== strpos( $state['error'], 'widget "html"' ) );
+ofss_check( 'before a single page was created', (int) wp_count_posts( 'page' )->publish === $pages_before && array() === get_posts( array( 'post_type' => 'any', 'post_status' => 'any', 'meta_key' => '_ofss_run', 'meta_value' => $state['id'], 'fields' => 'ids' ) ) );
+$rollback->run( $state );
+ofss_reset_run();
+ofss_check( 'and rolling back leaves no trace', ofss_fingerprint() === $baseline );
+
+// Site Settings end up in a stylesheet: nothing that closes a rule may get there.
+ofss_check( 'a color that tries to close its rule is reduced to harmless text', 'redbodybackground(httpsx.examplea)' === $runner->clean_style_value( 'red;}body{background:url(https://x.example/a)}' ) );
+ofss_check( 'ordinary colors, font names and fluid sizes pass unchanged', '#1F3A2E' === $runner->clean_style_value( '#1F3A2E' ) && 'Hanken Grotesk' === $runner->clean_style_value( 'Hanken Grotesk' ) && 'clamp(1.75rem, 1.3rem + 1.8vw, 2.625rem)' === $runner->clean_style_value( 'clamp(1.75rem, 1.3rem + 1.8vw, 2.625rem)' ) && 'rgba(0, 0, 0, 0.5)' === $runner->clean_style_value( 'rgba(0, 0, 0, 0.5)' ) && 600 === $runner->clean_style_value( 600 ) );
+
+/* ---------------------------------------------------------------------- */
+ofss_section( 'Downloads from other hosts' );
+
 $package = new Package( $config );
 ofss_check( 'a file is never fetched from a foreign host', is_wp_error( $package->fetch( array( 'url' => 'https://evil.example/x.zip', 'sha256' => str_repeat( 'a', 64 ), 'bytes' => 1 ), sys_get_temp_dir() . '/ofss-x' ) ) && ! file_exists( sys_get_temp_dir() . '/ofss-x' ) );
 
