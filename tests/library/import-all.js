@@ -11,6 +11,9 @@
  * is put back to the state saved in <OFT_DIR>/clean (database and uploads), so
  * no design sees what another left behind.
  *
+ * With OFT_PHONES=1 a few pages of each design are also opened on an emulated
+ * iPhone and an emulated Android phone (see phones() below).
+ *
  * Writes <OFT_DIR>/report.json and prints a table. Exits with 1 when a design
  * could not be imported or a check failed.
  */
@@ -122,6 +125,14 @@ async function importDesign( browser, site ) {
 		result.pagesVisited = seen.pagesVisited;
 		result.imagesSeen = seen.imagesSeen;
 
+		// The same pages on two emulated phones, upright and on their side.
+		if ( process.env.OFT_PHONES ) {
+			const held = await phones( seen.pages.slice( 0, 4 ) );
+			result.problems.push( ...held.problems );
+			result.notes.push( ...held.notes );
+			result.phones = held.summary;
+		}
+
 		// Rolling back leaves nothing of the design behind.
 		await dialog().getByRole( 'button', { name: 'Roll back this import' } ).click();
 		await dialog().getByRole( 'group', { name: 'Roll back the import' } ).getByRole( 'button', { name: 'Yes, roll back' } ).click();
@@ -224,7 +235,154 @@ async function crawl( browser, site ) {
 		problems.push( 'requests to other sites: ' + foreign.join( ', ' ) );
 	}
 	const notes = [ ...external ].filter( ( host ) => WORDPRESS_HOSTS.includes( host ) ).map( ( host ) => `WordPress asked ${ host }` );
-	return { pagesVisited: seen.size - queue.length, imagesSeen: images, problems, notes };
+	return { pagesVisited: seen.size - queue.length, imagesSeen: images, problems, notes, pages: [ ...seen ].slice( 0, seen.size - queue.length ) };
+}
+
+/**
+ * A few pages on an emulated iPhone (in WebKit, the engine of Safari) and an
+ * emulated Android phone (in Chromium), upright and on their side: nothing
+ * wider than the screen, a menu button that opens and closes the menu when
+ * tapped, nothing to tap that is smaller than 24 by 24 pixels unless it has
+ * room around it (WCAG 2.2, criterion 2.5.8), and "Skip to content" as the
+ * first stop of the Tab key.
+ *
+ * This is an emulation: the screen size, the touch input and the browser
+ * engine of a phone, not the phone. docs/dev/QA-CHECKLIST.md says what still
+ * needs a hand and an eye.
+ */
+async function phones( pages ) {
+	const playwright = require( 'playwright' );
+	const problems = [];
+	const notes = [];
+	const summary = [];
+
+	for ( const [ engine, upright, sideways ] of [ [ 'webkit', 'iPhone 15', 'iPhone 15 landscape' ], [ 'chromium', 'Pixel 7', 'Pixel 7 landscape' ] ] ) {
+		let browser;
+		try {
+			browser = await playwright[ engine ].launch();
+		} catch ( error ) {
+			notes.push( `${ upright }: not checked, the ${ engine } engine is not installed` );
+			continue;
+		}
+		let small = 0;
+		let checked = 0;
+
+		for ( const device of [ upright, sideways ] ) {
+			const context = await browser.newContext( { ...playwright.devices[ device ] } );
+			const page = await context.newPage();
+			for ( const url of pages ) {
+				const where = `${ device }, ${ url.slice( BASE.length ) || '/' }`;
+				const response = await page.goto( url, { waitUntil: 'load' } ).catch( ( error ) => ( { status: () => error.message.split( '\n' )[ 0 ] } ) );
+				if ( response.status() !== 200 ) {
+					problems.push( `${ where }: ${ response.status() }` );
+					continue;
+				}
+				await page.waitForTimeout( 400 );
+				checked++;
+
+				const seen = await page.evaluate( () => {
+					const root = document.documentElement;
+					const visible = ( element ) => {
+						const box = element.getBoundingClientRect();
+						const style = getComputedStyle( element );
+						return box.width > 0 && box.height > 0 && style.visibility !== 'hidden' && style.display !== 'none' && Number( style.opacity ) > 0;
+					};
+					// A link inside a sentence is as high as its line; the rule for targets leaves those out.
+					const inSentence = ( element ) => {
+						const block = element.closest( 'p, li, figcaption, blockquote, td, dd' );
+						return element.tagName === 'A' && block && block.textContent.trim().length > element.textContent.trim().length + 12;
+					};
+					const targets = [ ...document.querySelectorAll( 'a[href], button, [role="button"], input:not([type="hidden"]), select, textarea, summary' ) ]
+						.filter( ( element ) => visible( element ) && ! inSentence( element ) && ! element.closest( '.screen-reader-text, .skip-link, #wpadminbar' ) );
+					// WCAG 2.2, 2.5.8: a target under 24 by 24 pixels is still in order when a circle of
+					// 24 pixels around its centre touches no other target and no other such circle.
+					const boxes = targets.map( ( element ) => {
+						const box = element.getBoundingClientRect();
+						return { element, box, small: box.width < 24 || box.height < 24, x: box.left + box.width / 2, y: box.top + box.height / 2 };
+					} );
+					const tooSmall = boxes.filter( ( target ) => target.small && boxes.some( ( other ) => {
+						if ( other === target || other.element.contains( target.element ) || target.element.contains( other.element ) || other.element.href && other.element.href === target.element.href ) {
+							return false;
+						}
+						if ( other.small ) {
+							return Math.hypot( other.x - target.x, other.y - target.y ) < 24;
+						}
+						const dx = Math.max( other.box.left - target.x, 0, target.x - other.box.right );
+						const dy = Math.max( other.box.top - target.y, 0, target.y - other.box.bottom );
+						return Math.hypot( dx, dy ) < 12;
+					} ) ).map( ( target ) => target.element );
+					return {
+						overflow: root.scrollWidth - root.clientWidth,
+						small: tooSmall.length,
+						example: tooSmall.slice( 0, 2 ).map( ( element ) => {
+							const box = element.getBoundingClientRect();
+							return `${ ( element.textContent.trim() || element.getAttribute( 'aria-label' ) || element.tagName ).slice( 0, 30 ) } (${ Math.round( box.width ) } by ${ Math.round( box.height ) })`;
+						} ),
+					};
+				} );
+				if ( seen.overflow > 1 ) {
+					problems.push( `${ where }: the page is ${ seen.overflow } pixels wider than the screen` );
+				}
+				if ( seen.small ) {
+					small += seen.small;
+					problems.push( `${ where }: ${ seen.small } things to tap are smaller than 24 by 24 pixels and closer than 24 pixels to the next, for example ${ seen.example.join( '; ' ) }` );
+				}
+
+				// The menu button, on the home page with the phone upright.
+				if ( device === upright && url === pages[ 0 ] ) {
+					const marked = await page.evaluate( () => {
+						const inView = ( link ) => {
+							const box = link.getBoundingClientRect();
+							return box.width > 0 && box.height > 0 && box.top < innerHeight && box.bottom > 0 && box.left < innerWidth && box.right > 0 && getComputedStyle( link ).visibility !== 'hidden';
+						};
+						window.oftLinks = () => [ ...document.querySelectorAll( 'nav a, [role="navigation"] a' ) ].filter( inView ).length;
+						const toggle = [ ...document.querySelectorAll( 'button[aria-expanded], [role="button"][aria-expanded]' ) ].find( ( element ) => {
+							const box = element.getBoundingClientRect();
+							return box.width >= 20 && box.height >= 20 && box.top < 200 && getComputedStyle( element ).display !== 'none';
+						} );
+						if ( toggle ) {
+							toggle.setAttribute( 'data-oft-toggle', '1' );
+						}
+						return toggle ? window.oftLinks() : -1;
+					} );
+					if ( marked < 0 ) {
+						problems.push( `${ where }: no menu button` );
+					} else {
+						const toggle = page.locator( '[data-oft-toggle]' );
+						await toggle.tap();
+						await page.waitForTimeout( 500 );
+						const opened = await page.evaluate( () => ( { links: window.oftLinks(), state: document.querySelector( '[data-oft-toggle]' ).getAttribute( 'aria-expanded' ) } ) );
+						if ( opened.state !== 'true' || opened.links < marked + 3 ) {
+							problems.push( `${ where }: tapping the menu button did not open the menu (${ opened.links - marked } more links to be seen, the button says expanded="${ opened.state }")` );
+						} else {
+							await toggle.tap( { timeout: 3000 } ).catch( () => page.keyboard.press( 'Escape' ) );
+							await page.waitForTimeout( 500 );
+							const closed = await page.evaluate( () => document.querySelector( '[data-oft-toggle]' ).getAttribute( 'aria-expanded' ) );
+							if ( closed !== 'false' ) {
+								problems.push( `${ where }: the menu did not close again` );
+							}
+						}
+					}
+				}
+			}
+			await context.close();
+		}
+		summary.push( `${ upright }: ${ checked } page views, ${ small } targets too small and too close` );
+		await browser.close();
+	}
+
+	// The keyboard: the first stop of the Tab key.
+	const browser = await browserType.launch();
+	const page = await ( await browser.newContext( { viewport: { width: 1280, height: 800 } } ) ).newPage();
+	await page.goto( pages[ 0 ], { waitUntil: 'load' } );
+	await page.keyboard.press( 'Tab' );
+	const first = await page.evaluate( () => ( document.activeElement.textContent || '' ).trim() );
+	if ( ! /skip to (the )?content/i.test( first ) ) {
+		problems.push( `keyboard: the first stop of the Tab key is "${ first.slice( 0, 40 ) }", not "Skip to content"` );
+	}
+	await browser.close();
+
+	return { problems, notes, summary };
 }
 
 ( async () => {
@@ -251,6 +409,7 @@ async function crawl( browser, site ) {
 		console.log( `${ result.problems.length ? '✗' : '✓' } ${ site.name } ${ site.version }: ${ result.report || 'not imported' } (${ result.pagesVisited ?? 0 } pages visited, ${ result.seconds } s)` );
 		result.problems.forEach( ( problem ) => console.log( '    ' + problem ) );
 		result.notes.forEach( ( note ) => console.log( '    note: ' + note ) );
+		( result.phones || [] ).forEach( ( line ) => console.log( '    ' + line ) );
 	}
 	await browser.close();
 	restore();

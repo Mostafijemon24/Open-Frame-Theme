@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [Emulated phones](#emulated-phones--test-report): every design on an emulated iPhone and Android phone, from the production library
 - [The library on Cloudflare](#the-library-on-cloudflare--test-report): published to staging and to production, and every design imported from each
 - [Documentation and release](#documentation-and-release--test-report): Phase 10, the guides, the packages and the release checklist; nothing is released
 - [QA](#qa--test-report): Phase 9, three browser engines, three PHP versions, oldest supported versions, performance, a security review
@@ -21,7 +22,22 @@
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
 
-# The library on Cloudflare — Test Report
+# Emulated phones — Test Report
+
+Executed on 27 November 2026, after the owner asked for everything a machine can do of the manual checklist. Each design was imported from the production library through the Starter Sites screen (plugin 0.6.1 from its ZIP), then its home page and three more pages were opened on an emulated **iPhone 15 in WebKit**, the engine of Safari, and an emulated **Pixel 7 in Chromium**, each upright and on its side, with touch input (`OFT_PHONES=1 node tests/library/import-all.js`).
+
+**This is an emulation**: the screen size, the pixel density, the touch input and the browser engine of a phone. It is not the phone: not its fonts, its scrolling, its address bar that comes and goes, or a thumb. Section 2 of [QA-CHECKLIST.md](QA-CHECKLIST.md) stays open.
+
+| Check, on 16 page views per phone and design | Result, all ten designs |
+| --- | --- |
+| Nothing wider than the screen, upright and sideways | **Passed** |
+| The menu button, tapped: the menu opens (the button says so, and at least three more links can be seen), tapped again: it closes | **Passed** |
+| Nothing to tap is smaller than 24 by 24 pixels, unless a circle of 24 pixels around its centre touches no other target (WCAG 2.2, criterion 2.5.8) | **Passed: 0 targets too small and too close** |
+| Keyboard: the first stop of the Tab key is "Skip to content" | **Passed** |
+| The import itself, the pages reached from the home page, and the rollback | **10 of 10**, as in the report below |
+
+**What the first version of the check showed.** It counted everything under 24 pixels in either direction, without the standard's allowance for targets that have room around them, and found such links in eight designs: text links such as "Course details", "All products", the titles in lists of articles, and email addresses, 15 to 23 pixels high. With the allowance none of them fails. They are in order by the standard, and they are still small: whether they are comfortable to hit with a thumb is a question for a person with a phone, and it is now a line of its own in the manual checklist.
+
 
 Executed on 27 November 2026 between 13:07 and 13:52 UTC, first in staging, then in production. The first time anything of this project ran on Cloudflare itself. Plugin 0.6.1, theme 1.1.0, wrangler 4.168.0; the test site on WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Elementor Pro 4.0.4 (not activated with a licence), WooCommerce 11.3.1, Chromium.
 

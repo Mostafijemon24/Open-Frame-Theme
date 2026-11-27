@@ -31,7 +31,7 @@ Import the design, then open the site on an iPhone and on an Android phone.
 - [ ] The home page has no sideways scrolling, and no text is cut off or overlapping.
 - [ ] The menu button opens the menu; every entry can be tapped; the menu closes again.
 - [ ] Pictures are sharp, not stretched, and show what the text beside them is about.
-- [ ] Buttons and links are easy to hit with a thumb, and none leads to "Page not found".
+- [ ] Buttons and links are easy to hit with a thumb, and none leads to "Page not found". Look at the small text links in particular ("Course details", "All products", titles in lists of articles, email addresses): they are 15 to 23 pixels high. They pass the standard's minimum because they have room around them, which a machine checked; whether they are comfortable is yours to say.
 - [ ] Text is comfortable to read without zooming.
 - [ ] Turn the phone sideways: the page still fits.
 - [ ] Open two inner pages and one article the same way.
@@ -69,4 +69,4 @@ Designs: Business, Portfolio, Restaurant, Education, Medical, Creative Agency, S
 
 ## Checked by machine, no need to repeat
 
-Every page of every design at nine widths from 360 to 1920 pixels (overflow, pictures loading, one main heading, text size, typefaces loaded, no request to another site), every internal link, the automated accessibility rules of axe-core, the Elementor editor opening the home page, header and footer, import and rollback, and the same again in Firefox and in WebKit, the engine of Safari. The reports are in `docs/dev/TESTING.md`.
+Every page of every design at nine widths from 360 to 1920 pixels (overflow, pictures loading, one main heading, text size, typefaces loaded, no request to another site), every internal link, the automated accessibility rules of axe-core, the Elementor editor opening the home page, header and footer, import and rollback, and the same again in Firefox and in WebKit, the engine of Safari. On an emulated iPhone and an emulated Android phone, upright and sideways: nothing wider than the screen, the menu button opening and closing the menu when tapped, no tap target under the standard's minimum, and "Skip to content" as the first stop of the Tab key. An emulated phone is not a phone; sections 2 and 6 are still to be done by hand. The reports are in `docs/dev/TESTING.md`.
