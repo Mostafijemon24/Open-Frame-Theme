@@ -1,0 +1,12 @@
+{
+	"uid": "shop:posts:keeping-a-succulent-alive",
+	"title": "Keeping a succulent alive, honestly",
+	"slug": "keeping-a-succulent-alive",
+	"excerpt": "Most of them die of kindness. How much light, how little water, and what to do when the leaves go soft.",
+	"featured": "ofss://media/journal-1",
+	"categories": [
+		"Plants"
+	],
+	"days_ago": 5,
+	"content": "<!-- wp:paragraph -->\n<p>Most house plants that die are watered to death. A succulent stores its water in its leaves, and the kindest thing you can do is forget about it for a fortnight.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three rules</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>The brightest sill you have</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Water when the soil is dry all the way down, not before</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>A pot with a hole in the bottom, or very little water</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">When the leaves go soft</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Soft, pale leaves mean too much water. Wrinkled leaves mean too little. Both can be put right if you notice within a week or two.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The <a href=\"ofss://product/echeveria-in-concrete\">echeveria in a concrete pot</a> is a forgiving one to start with.</p>\n<!-- /wp:paragraph -->"
+}

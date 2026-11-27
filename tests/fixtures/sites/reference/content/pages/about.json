@@ -1,0 +1,41 @@
+{
+	"uid": "reference:pages:about",
+	"title": "About",
+	"slug": "about",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "f1a2b3c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed"
+				},
+				"elements": [
+					{
+						"id": "a2b3c4d",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "About",
+							"header_size": "h1"
+						},
+						"elements": []
+					},
+					{
+						"id": "b2c3d4e",
+						"elType": "widget",
+						"widgetType": "text-editor",
+						"settings": {
+							"editor": "<p>A second page.</p>"
+						},
+						"elements": []
+					}
+				]
+			}
+		]
+	}
+}

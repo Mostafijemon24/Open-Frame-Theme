@@ -1,0 +1,84 @@
+{
+	"id": "restaurant",
+	"order": 6,
+	"name": "Restaurant",
+	"summary": "A dark, candle-lit site for a restaurant: a full menu with prices, reservations by phone and email, private events, a gallery and a journal.",
+	"category": "food",
+	"tags": [
+		"cafe",
+		"food",
+		"menu",
+		"reservations"
+	],
+	"tier": "free",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#141210",
+		"#e39a4a",
+		"#f2e8d9"
+	],
+	"pages": [
+		"Home",
+		"Menu",
+		"Our Story",
+		"Reservations",
+		"Private Events",
+		"Gallery",
+		"Journal (blog)",
+		"Single Post",
+		"Contact and Location",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.4.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"divider",
+				"heading",
+				"icon-list",
+				"image",
+				"of-nav-menu",
+				"text-editor"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Menu",
+			"file": "menu.png"
+		},
+		{
+			"title": "Reservations",
+			"file": "reservations.png"
+		},
+		{
+			"title": "Our story",
+			"file": "story.png"
+		}
+	]
+}

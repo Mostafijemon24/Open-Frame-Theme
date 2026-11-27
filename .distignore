@@ -11,3 +11,13 @@ docs
 dist
 node_modules
 vendor
+PROJECT_STATUS.md
+tests
+composer.json
+composer.lock
+companion
+schemas
+starter-sites
+tools
+cloud
+CHANGELOG.md

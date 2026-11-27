@@ -1,0 +1,1479 @@
+{
+	"uid": "business:pages:pricing",
+	"title": "Pricing",
+	"slug": "pricing",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000195",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "0000194",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 66,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000191",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Pricing",
+									"header_size": "p",
+									"title_color": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000192",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Fixed fees, agreed before we start",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000193",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>No day rates and no surprises. You know the price, the scope and the measure of success on the first page of the proposal.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00001bc",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF"
+				},
+				"elements": [
+					{
+						"id": "00001bb",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"grid_align_items": "stretch"
+						},
+						"elements": [
+							{
+								"id": "00001a1",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"border_color": "#DCE3EE",
+									"border_radius": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000196",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Diagnostic",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000197",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A clear view of what is really going on, before you commit to more.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000198",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "$18,000",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(2.25rem, 1.8rem + 1.8vw, 3rem)",
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000199",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Two weeks</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000019a",
+										"elType": "widget",
+										"widgetType": "divider",
+										"settings": {
+											"color": "#DCE3EE",
+											"weight": {
+												"unit": "px",
+												"size": 1,
+												"sizes": []
+											},
+											"gap": {
+												"unit": "px",
+												"size": 2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000019f",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "000019b",
+													"text": "Interviews and site visits",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000019c",
+													"text": "Analysis of your own data",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000019d",
+													"text": "A short findings paper",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000019e",
+													"text": "A working session with your team",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0B1F3A",
+											"icon_color": "#2456E6"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001a0",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Talk to us",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"align": "justify",
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001ae",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#0B1F3A",
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"border_color": "#0B1F3A",
+									"border_radius": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00001a2",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Engagement",
+											"header_size": "h2",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001a3",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>From diagnosis to the first changes in place, with one partner throughout.</p>",
+											"text_color": "#B7C4D8"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001a4",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "$65,000",
+											"header_size": "p",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(2.25rem, 1.8rem + 1.8vw, 3rem)",
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001a5",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Typical, eight to twelve weeks</p>",
+											"text_color": "#B7C4D8",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001a6",
+										"elType": "widget",
+										"widgetType": "divider",
+										"settings": {
+											"color": "#2A4266",
+											"weight": {
+												"unit": "px",
+												"size": 1,
+												"sizes": []
+											},
+											"gap": {
+												"unit": "px",
+												"size": 2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001ac",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "00001a7",
+													"text": "Everything in Diagnostic",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001a8",
+													"text": "Options with costs and consequences",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001a9",
+													"text": "Delivery alongside your team",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001aa",
+													"text": "Four quarterly reviews",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001ab",
+													"text": "All models and materials are yours",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#FFFFFF",
+											"icon_color": "#F2A93B"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001ad",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Talk to us",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"align": "justify",
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0B1F3A",
+											"hover_color": "#0B1F3A",
+											"button_background_hover_color": "#F2A93B"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001ba",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "32",
+										"right": "32",
+										"bottom": "32",
+										"left": "32",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "1",
+										"bottom": "1",
+										"left": "1",
+										"isLinked": true
+									},
+									"border_color": "#DCE3EE",
+									"border_radius": {
+										"unit": "px",
+										"top": "16",
+										"right": "16",
+										"bottom": "16",
+										"left": "16",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00001af",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Retained",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b0",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A partner on call for leadership teams in the middle of a change.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b1",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "$9,500",
+											"header_size": "p",
+											"title_color": "#0B1F3A",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(2.25rem, 1.8rem + 1.8vw, 3rem)",
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b2",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Per month, three-month minimum</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b3",
+										"elType": "widget",
+										"widgetType": "divider",
+										"settings": {
+											"color": "#DCE3EE",
+											"weight": {
+												"unit": "px",
+												"size": 1,
+												"sizes": []
+											},
+											"gap": {
+												"unit": "px",
+												"size": 2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b8",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "00001b4",
+													"text": "Two working days a month",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001b5",
+													"text": "Board and investor preparation",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001b6",
+													"text": "Access to all four practices",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "00001b7",
+													"text": "Cancel with one month of notice",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0B1F3A",
+											"icon_color": "#2456E6"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001b9",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Talk to us",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"align": "justify",
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00001cc",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "00001bf",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00001bd",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Good to know",
+									"header_size": "p",
+									"title_color": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00001be",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Questions about fees",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "00001cb",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 0,
+								"column": "0",
+								"row": "0",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00001c2",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "0",
+										"bottom": "20",
+										"left": "0",
+										"isLinked": false
+									}
+								},
+								"elements": [
+									{
+										"id": "00001c0",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What if the scope changes?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001c1",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>We stop and agree the change in writing before any further work. You will never receive an invoice you did not expect.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001c3",
+								"elType": "widget",
+								"widgetType": "divider",
+								"settings": {
+									"color": "#DCE3EE",
+									"weight": {
+										"unit": "px",
+										"size": 1,
+										"sizes": []
+									},
+									"gap": {
+										"unit": "px",
+										"size": 2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00001c6",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "0",
+										"bottom": "20",
+										"left": "0",
+										"isLinked": false
+									}
+								},
+								"elements": [
+									{
+										"id": "00001c4",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Do you charge expenses?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001c5",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Travel outside your region is charged at cost, with receipts. Everything else is included.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001c7",
+								"elType": "widget",
+								"widgetType": "divider",
+								"settings": {
+									"color": "#DCE3EE",
+									"weight": {
+										"unit": "px",
+										"size": 1,
+										"sizes": []
+									},
+									"gap": {
+										"unit": "px",
+										"size": 2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00001ca",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "20",
+										"right": "0",
+										"bottom": "20",
+										"left": "0",
+										"isLinked": false
+									}
+								},
+								"elements": [
+									{
+										"id": "00001c8",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Is any part of the fee tied to results?",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00001c9",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>It can be. Up to a fifth of an engagement fee can depend on a measure we agree at the start.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00001d3",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#2456E6"
+				},
+				"elements": [
+					{
+						"id": "00001d2",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00001cf",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00001cd",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Have a decision that cannot wait?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001ce",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Tell us where you are stuck. You will hear from a partner within one working day.</p>",
+											"text_color": "#DCE6FF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001d1",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"flex_align_items": "flex-end",
+									"width": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_align_items_mobile": "flex-start"
+								},
+								"elements": [
+									{
+										"id": "00001d0",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Start a conversation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0B1F3A",
+											"hover_color": "#0B1F3A",
+											"button_background_hover_color": "#F2A93B",
+											"size": "md"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

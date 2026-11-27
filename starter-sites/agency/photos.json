@@ -1,0 +1,392 @@
+[
+	{
+		"uid": "case-volt",
+		"file": "case-volt.webp",
+		"section": "Work: Volt case study cover; Volt case study main picture; Brand service page",
+		"subject": "A single violet lightning bolt across a dark night sky above a black horizon",
+		"alt": "A violet lightning bolt crossing a dark night sky above a black horizon",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Electric_Surprise_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Electric_Surprise_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jack Patrick (@jack_patrick on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3000,
+			1691
+		],
+		"width": 1280,
+		"height": 960,
+		"focal": [
+			48,
+			45
+		],
+		"bytes": 13672,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "case-orbit",
+		"file": "case-orbit.webp",
+		"section": "Work: Orbit case study cover; Volt case study, lower pictures",
+		"subject": "A black camera drone with a green light, close up against a white background",
+		"alt": "A black camera drone with a green status light, seen close up against a white background",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Blades_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Blades_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Kaleb Kendall (@kalebart on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			60,
+			55
+		],
+		"bytes": 37462,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "case-pulse",
+		"file": "case-pulse.webp",
+		"section": "Work: Pulse Festival case study cover; Brand service page",
+		"subject": "Stage light beams fanning through smoke above the silhouettes of a concert crowd",
+		"alt": "Beams of stage light fanning through smoke above the silhouettes of a concert crowd",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Smoke_and_light_beams_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Smoke_and_light_beams_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Daniel Robert (@danielrobertdinu on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4836,
+			3224
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			45,
+			55
+		],
+		"bytes": 160486,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "case-terra",
+		"file": "case-terra.webp",
+		"section": "Work: Terra Outdoor case study cover; Volt case study, lower pictures",
+		"subject": "A tent glowing lime green at night under a starry sky, between dark trees and a mountain",
+		"alt": "A tent glowing green at night under a starry sky, between dark trees and a mountain ridge",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:The_Wandering_Night_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/The_Wandering_Night_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Sayan Nath (@sayannath on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			42,
+			60
+		],
+		"bytes": 122402,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "case-nord",
+		"file": "case-nord.webp",
+		"section": "Work: Nord Furniture case study cover",
+		"subject": "A black moulded shell chair on a black wire base against a white wall, on a dark floor",
+		"alt": "A black moulded shell chair on a wire base, against a white wall on a dark floor",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Black_Eames_Style_Chair_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Black_Eames_Style_Chair_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Andrew Jasso (@andrewjasso on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5062,
+			3493
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 86078,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "case-kino",
+		"file": "case-kino.webp",
+		"section": "Work: Kino Fest case study cover",
+		"subject": "Rows of red cinema seats in darkness, with a lit staircase running up the middle aisle",
+		"alt": "Rows of red cinema seats in darkness, with lit steps running up the middle aisle",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Disused_Cinema_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Disused_Cinema_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Felix Mooneeram (@felixmooneeram on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			50,
+			65
+		],
+		"bytes": 29444,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "reel",
+		"file": "reel.webp",
+		"section": "Home: wide picture under the hero",
+		"subject": "A photographic studio: a white backdrop lit by softboxes and an octagonal light, a lighting rig overhead, a photographer crouching in front",
+		"alt": "A photographic studio with a white backdrop, softboxes on stands and a lighting rig overhead; a photographer crouches in front",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Photographic_studio_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Photographic_studio_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alexander Dummer (@4dgraphic on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4459,
+			2508
+		],
+		"width": 1800,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 72868,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "studio",
+		"file": "studio.webp",
+		"section": "Studio: wide picture under the hero",
+		"subject": "A dark loft office with concrete columns, long desks and a large factory window; one person works at a desk",
+		"alt": "A dark loft office with concrete columns, long desks and a large window; one person works at a desk",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Lone_office_worker_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Lone_office_worker_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jadon Barnes (@xjadonx on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3225,
+			2163
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 93152,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-1",
+		"file": "team-1.webp",
+		"section": "Studio: people, first portrait",
+		"subject": "A woman with short dark hair and hoop earrings in a black sleeveless top, looking to the side, in front of a stone wall",
+		"alt": "Portrait of a woman with short dark hair and hoop earrings, in a black sleeveless top, looking to the side",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Chic_and_Glamorous_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Chic_and_Glamorous_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Henri Meilhac (@henrimeilhac on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			55,
+			40
+		],
+		"bytes": 138744,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-2",
+		"file": "team-2.webp",
+		"section": "Studio: people, second portrait",
+		"subject": "A young man with round glasses in a black leather jacket, in a dark workshop",
+		"alt": "Portrait of a young man with round glasses and a black leather jacket, in a dark room",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Irenio_Dionzio_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Irenio_Dionzio_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jascha Huisman (@jaschahuisman on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			42,
+			45
+		],
+		"bytes": 42104,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-3",
+		"file": "team-3.webp",
+		"section": "Studio: people, third portrait",
+		"subject": "A woman with dark curly hair in a burgundy top, looking straight at the camera, in front of a pale wall",
+		"alt": "Portrait of a woman with dark curly hair in a burgundy top, looking straight at the camera",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Confident_Eye_Contact_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Confident_Eye_Contact_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Tanja Heffner (@tanjaheffner on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			40,
+			45
+		],
+		"bytes": 74466,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-4",
+		"file": "team-4.webp",
+		"section": "Studio: people, fourth portrait",
+		"subject": "A bearded man in a dark suit and red tie, smiling, talking on a phone",
+		"alt": "Portrait of a bearded man in a dark suit talking on a phone",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Smiling_businessman_on_a_phone_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Smiling_businessman_on_a_phone_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com (@rawpixel on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4004
+		],
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			62,
+			35
+		],
+		"bytes": 102894,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-1",
+		"file": "journal-1.webp",
+		"section": "Journal: cover of “In praise of the half-finished brief”",
+		"subject": "A framed teal poster reading “Ask more questions” on a white wall between two wall clocks",
+		"alt": "A framed poster reading “Ask more questions” on a white wall, between two wall clocks",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Schoolhouse_Electric_and_Supply_Co.,_Portland,_United_States_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Schoolhouse_Electric_and_Supply_Co.%2C_Portland%2C_United_States_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Lumvox (@lumvox on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			2994,
+			2993
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 67698,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-2",
+		"file": "journal-2.webp",
+		"section": "Journal: cover of “Why we do not pitch with finished work”",
+		"subject": "A dark wooden desk with a closed laptop, a white mouse and a white shell chair, seen from above",
+		"alt": "A dark wooden desk with a closed laptop and a white chair",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Half-closed_laptop_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Half-closed_laptop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Luca Bravo (@lucabravo on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5914,
+			3942
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 95034,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-3",
+		"file": "journal-3.webp",
+		"section": "Journal: cover of “We ship on Fridays, and other bad ideas that work”",
+		"subject": "A desk with a large monitor, keyboard and speaker in a dark room lit violet",
+		"alt": "A desk with a large monitor, a keyboard and a speaker in a dark room lit violet",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Desktop_purple_neon_light_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Desktop_purple_neon_light_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Redd Angelo (@reddangelo16 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			3375
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 98260,
+		"checked": "2026-11-26"
+	}
+]

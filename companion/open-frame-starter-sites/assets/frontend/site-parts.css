@@ -1,0 +1,16 @@
+/*
+ * Site parts: header, footer and "page not found" built in Elementor.
+ * Loaded only on pages that show one.
+ */
+
+/* The mobile menu panel of the theme's navigation opens below the header and
+   spans its width, so the header is its positioning context. */
+.of-site-part--header {
+	position: relative;
+	z-index: 100;
+}
+
+/* The menu button sits at the end of its row on small screens. */
+.of-site-part--header .elementor-widget-of-nav-menu .main-navigation {
+	align-items: center;
+}

@@ -1,0 +1,513 @@
+{
+	"uid": "real-estate:templates:archive",
+	"title": "Market notes",
+	"type": "archive",
+	"conditions": [
+		[
+			"include",
+			"archive",
+			"post_archive"
+		]
+	],
+	"elementor": {
+		"version": "4.4.2",
+		"type": "archive",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "0000256",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#1F3A2E"
+				},
+				"elements": [
+					{
+						"id": "0000255",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 70,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000252",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Market notes",
+									"header_size": "p",
+									"title_color": "#DDB96A",
+									"typography_typography": "custom",
+									"typography_font_family": "Manrope",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									},
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000253",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Plain words about buying and selling",
+									"header_size": "h1",
+									"title_color": "#F7F3EA"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000254",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Written by the partners, from what we see in the office each week.</p>",
+									"text_color": "#C9D4CC",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000258",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000257",
+						"elType": "widget",
+						"widgetType": "archive-posts",
+						"settings": {
+							"archive_classic_thumbnail_size_size": "medium_large",
+							"archive_classic_columns": "3",
+							"archive_classic_columns_tablet": "2",
+							"archive_classic_columns_mobile": "1",
+							"archive_classic_show_excerpt": "yes",
+							"archive_classic_excerpt_length": 20,
+							"archive_classic_meta_data": [
+								"date"
+							],
+							"archive_classic_show_read_more": "",
+							"archive_classic_title_tag": "h2",
+							"archive_classic_item_ratio": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_tablet": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_mobile": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_img_border_radius": {
+								"unit": "px",
+								"top": "4",
+								"right": "4",
+								"bottom": "4",
+								"left": "4",
+								"isLinked": true
+							},
+							"archive_classic_title_color": "#16211B",
+							"archive_classic_excerpt_color": "#4B5650",
+							"archive_classic_meta_color": "#4B5650",
+							"archive_classic_row_gap": {
+								"unit": "px",
+								"size": 56,
+								"sizes": []
+							},
+							"archive_classic_column_gap": {
+								"unit": "px",
+								"size": 36,
+								"sizes": []
+							},
+							"pagination_type": "numbers",
+							"nothing_found_message": "Nothing here yet."
+						},
+						"elements": []
+					}
+				]
+			},
+			{
+				"id": "0000260",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8DFCC"
+				},
+				"elements": [
+					{
+						"id": "000025f",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000025b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000259",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Thinking of selling? Start with what it is worth.",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000025a",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A partner visits, looks properly and tells you a figure we would be happy to be held to. It takes an hour and costs nothing.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000025e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"flex_justify_content": "flex-end",
+									"flex_justify_content_mobile": "flex-start",
+									"flex_wrap": "wrap"
+								},
+								"elements": [
+									{
+										"id": "000025c",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book a valuation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"__globals__": {
+												"background_color": "globals/colors?id=primary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000025d",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Call us",
+											"link": {
+												"url": "tel:+442055500164",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#1F3A2E",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#1F3A2E",
+											"hover_color": "#F7F3EA",
+											"button_background_hover_color": "#1F3A2E",
+											"button_hover_border_color": "#1F3A2E"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

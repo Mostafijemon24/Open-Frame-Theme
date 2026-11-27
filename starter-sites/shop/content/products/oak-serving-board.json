@@ -1,0 +1,14 @@
+{
+	"uid": "shop:products:oak-serving-board",
+	"title": "Oak serving board",
+	"slug": "oak-serving-board",
+	"excerpt": "A board cut from one piece of oak, with a handle and a hanging hole. For bread, cheese or a bowl of fruit.",
+	"content": "<p>Forty centimetres long, cut from a single piece and oiled twice. The marks of the saw are left on one face on purpose.</p><p>Wipe it clean and oil it now and then. The small bowl in the picture is not included.</p>",
+	"price": "38",
+	"featured": true,
+	"image": "ofss://media/product-4",
+	"gallery": [],
+	"categories": [
+		"Kitchen"
+	]
+}

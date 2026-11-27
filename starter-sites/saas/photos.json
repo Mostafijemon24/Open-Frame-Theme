@@ -1,0 +1,184 @@
+[
+	{
+		"uid": "customer-1",
+		"file": "customer-1.webp",
+		"section": "Customers: first story (Northpost)",
+		"subject": "A person in a dark red shirt packing a cardboard parcel on a white table in a bright studio office, with wrapping paper and string beside it",
+		"alt": "A person packing a cardboard parcel on a white table in a bright studio office",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Ships_out_today_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Ships_out_today_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Bench Accounting (@benchaccounting on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3500,
+			2338
+		],
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 91538,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "customer-2",
+		"file": "customer-2.webp",
+		"section": "Customers: second story (Driftline)",
+		"subject": "Surfboards stored on a wooden rack under a thatched roof on a beach, with a calm sea behind",
+		"alt": "Surfboards on a wooden rack under a thatched roof, beside a calm sea",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Joey_Pilgrim_2017-05-26_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Joey_Pilgrim_2017-05-26_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Joey Pilgrim (@joeypilgrim on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			40,
+			45
+		],
+		"bytes": 194414,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "customer-3",
+		"file": "customer-3.webp",
+		"section": "Customers: third story (Fable & Co)",
+		"subject": "A wall of dark wooden shelves filled with books, seen straight on",
+		"alt": "A wall of wooden shelves filled with books",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bookshelf_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Bookshelf_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "kazuend (@kazuend on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 272872,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team",
+		"file": "team.webp",
+		"section": "About: picture under the heading",
+		"subject": "A bright white studio with a long wooden table carrying laptops, headphones and phones; two people stand at the far end with their backs to the camera, looking at a print on the wall",
+		"alt": "A long wooden table with laptops and headphones in a bright studio, and two people standing at the far end",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Couple_working_at_home_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Couple_working_at_home_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Crew (@crew on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5481,
+			4539
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			42
+		],
+		"bytes": 51950,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "blog-1",
+		"file": "blog-1.webp",
+		"section": "Article cover: Counting requests is not prioritising",
+		"subject": "An open notebook with a pencil, a pair of glasses, a phone and the corner of a laptop on a white desk",
+		"alt": "An open notebook with a pencil, glasses and a phone on a white desk",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:White_work_table_with_notes,_smartphone_and_laptop_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/White_work_table_with_notes%2C_smartphone_and_laptop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "JESHOOTS.COM (@jeshoots on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4600,
+			3067
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 44478,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "blog-2",
+		"file": "blog-2.webp",
+		"section": "Article cover: What we learned reading ninety days of our own support inbox",
+		"subject": "A man seen from behind his shoulder typing at a laptop on a wooden desk, a phone and a notebook beside it",
+		"alt": "A man typing at a laptop on a wooden desk, seen over his shoulder",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Man_typing_on_laptop_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Man_typing_on_laptop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alejandro Escamilla (@alejandroescamilla on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5245,
+			3497
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 63356,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "blog-3",
+		"file": "blog-3.webp",
+		"section": "Article cover: Closing the loop",
+		"subject": "Hands typing on a laptop on a white desk against a white wall, with a small green plant in a white pot",
+		"alt": "Hands typing on a laptop at a white desk, with a small green plant beside it",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Work_space_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Work_space_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "NordWood Themes (@nordwood on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4867,
+			3245
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			60
+		],
+		"bytes": 29594,
+		"checked": "2026-11-26"
+	}
+]

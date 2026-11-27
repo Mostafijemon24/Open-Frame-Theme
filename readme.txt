@@ -4,10 +4,10 @@ Contributors: mostafijemon
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, portfolio, news, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
+Tags: blog, portfolio, e-commerce, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
 
 A lightweight, accessibility-minded multipurpose theme with a token-driven design system, header and footer builders, and a Landing Page template.
 
@@ -29,6 +29,8 @@ The theme is fully functional on its own: it needs no plugin, bundles its fonts 
 * Page templates: Full Width, and Landing Page (a blank canvas with no title, card or sidebar).
 * Six block patterns (two heroes, feature cards, latest posts, call to action, complete landing page) and five block styles.
 * Block editor support through theme.json: shared color palette that follows the Customizer colors, font sizes, spacing scale and editor styles.
+* Works with Elementor: pages built with Elementor span the full width, the Canvas and Full Width templates are supported, and Elementor Pro's Theme Builder can replace the header, footer, single, archive and 404 templates. An optional setting makes the theme follow Elementor's global colors and fonts.
+* WooCommerce support: the shop, product, cart, checkout and account pages use the theme's colors, buttons and cards.
 * Translation-ready, RTL-friendly through logical CSS properties, reduced-motion aware, and usable without JavaScript.
 * Child-theme friendly.
 
@@ -66,11 +68,35 @@ Pages use the "No sidebar" layout by default. Change it under Customize > Open F
 
 It applies to the front page only. To make the header float over the content, the front page must use the Landing Page template.
 
+= Does Open Frame work with Elementor? =
+
+Yes, with the free version and with Elementor Pro. A page built with Elementor fills the full width of the window; you can also choose Elementor's "Full Width" or "Canvas" template in the page settings. With Elementor Pro, Theme Builder templates replace the theme's header, footer, single, archive and 404 templates. Elementor is optional: the theme does not need it.
+
+= How do I make the blog use the same colors and fonts as my Elementor pages? =
+
+Go to Appearance > Customize > Open Frame Options > Elementor and tick "Use Elementor global colors and fonts". The theme then takes the Primary, Secondary, Text and Accent colors and the Primary and Text fonts from Elementor > Site Settings. The section is only shown while Elementor is active.
+
+= Does Open Frame work with WooCommerce? =
+
+Yes. Activate WooCommerce and the shop, product, cart, checkout and account pages use the theme's design. No setup is needed.
+
 = Where is the documentation? =
 
 The full documentation, with screenshots, is available at https://github.com/Mostafijemon24/Open-Frame-Theme/tree/main/docs
 
 == Changelog ==
+
+= 1.1.0 =
+* New: Elementor support. A page built with Elementor on the default template now spans the full width of the window instead of sitting inside the page card. Elementor's "Canvas" and "Full Width" templates are supported, and "Full Width" keeps the main landmark the skip link points to.
+* New: Elementor Pro Theme Builder support. Header, footer, single, archive and 404 templates created in the Theme Builder replace the theme's templates.
+* New: "Use Elementor global colors and fonts" option (Customize > Open Frame Options > Elementor). When on, the blog, posts, search and other theme templates follow Elementor's Site Settings. The section only appears while Elementor is active.
+* New: WooCommerce support. The shop, product, cart, checkout and account pages use the theme's colors, buttons, cards and layout; product grids adapt from two columns on phones to the number of columns set in WooCommerce.
+* New: "Show the title of the posts page" option (Customize > Open Frame Options > Layout), for a blog that is not the front page. Off by default; the title stays available to screen readers either way.
+* New: the fonts that ship with the theme (Hanken Grotesk and JetBrains Mono) can be chosen in Elementor, and are served from your own site when they are.
+* Fix: with a darker page background, the "Previous" and "Next" labels under a post no longer fall below the WCAG AA contrast ratio.
+* New for developers: `open_frame_do_location` and `open_frame_has_location` filters let a plugin replace the header, footer, single, archive or 404 output; `open_frame_is_builder_page` marks a page as laid out by a page builder.
+* Change: the header and footer markup moved to `template-parts/header/site-header.php` and `template-parts/footer/site-footer.php`, so child themes can override them. The output is unchanged.
+* The theme still needs no plugin and makes no remote requests. Nothing changes on sites that do not use Elementor or WooCommerce.
 
 = 1.0.1 =
 * Change: the Author URI in the theme header now points to the author's GitHub profile (https://github.com/Mostafijemon24). No functional changes.

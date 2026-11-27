@@ -1,0 +1,169 @@
+{
+	"uid": "business:site-parts:header",
+	"title": "Header",
+	"location": "header",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-post",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "00001f2",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "row",
+					"flex_direction_mobile": "row",
+					"flex_align_items": "center",
+					"flex_justify_content": "space-between",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_wrap": "nowrap",
+					"padding": {
+						"unit": "px",
+						"top": "16",
+						"right": "24",
+						"bottom": "16",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "12",
+						"right": "20",
+						"bottom": "12",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF",
+					"border_border": "solid",
+					"border_width": {
+						"unit": "px",
+						"top": "0",
+						"right": "0",
+						"bottom": "1",
+						"left": "0",
+						"isLinked": false
+					},
+					"border_color": "#DCE3EE"
+				},
+				"elements": [
+					{
+						"id": "00001ee",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "Halden",
+							"header_size": "p",
+							"title_color": "#0B1F3A",
+							"typography_typography": "custom",
+							"typography_font_size": {
+								"unit": "px",
+								"size": 24,
+								"sizes": []
+							},
+							"typography_font_weight": "800",
+							"link": {
+								"url": "ofss://page/home",
+								"is_external": "",
+								"nofollow": "",
+								"custom_attributes": ""
+							},
+							"typography_letter_spacing": {
+								"unit": "px",
+								"size": -0.5,
+								"sizes": []
+							}
+						},
+						"elements": []
+					},
+					{
+						"id": "00001f1",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"width": {
+								"unit": "%",
+								"size": 10,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 10,
+								"sizes": []
+							},
+							"flex_direction": "row",
+							"flex_direction_mobile": "row",
+							"flex_align_items": "center",
+							"flex_justify_content": "flex-end",
+							"flex_gap": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"flex_wrap": "nowrap",
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_size": "grow"
+						},
+						"elements": [
+							{
+								"id": "00001ef",
+								"elType": "widget",
+								"widgetType": "of-nav-menu",
+								"settings": {
+									"align": "flex-end",
+									"color": "#0B1F3A",
+									"color_active": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 16,
+										"sizes": []
+									},
+									"typography_font_weight": "600",
+									"_flex_size": "grow"
+								},
+								"elements": []
+							},
+							{
+								"id": "00001f0",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "Get in touch",
+									"link": {
+										"url": "ofss://page/contact",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"__globals__": {
+										"background_color": "globals/colors?id=primary"
+									},
+									"size": "sm",
+									"hide_mobile": "hidden-mobile"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

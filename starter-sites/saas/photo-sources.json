@@ -1,0 +1,93 @@
+[
+	{
+		"uid": "customer-1",
+		"title": "File:Ships out today (Unsplash).jpg",
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			40,
+			50
+		],
+		"section": "Customers: first story (Northpost)",
+		"subject": "A person in a dark red shirt packing a cardboard parcel on a white table in a bright studio office, with wrapping paper and string beside it",
+		"alt": "A person packing a cardboard parcel on a white table in a bright studio office"
+	},
+	{
+		"uid": "customer-2",
+		"title": "File:Joey Pilgrim 2017-05-26 (Unsplash).jpg",
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			40,
+			45
+		],
+		"section": "Customers: second story (Driftline)",
+		"subject": "Surfboards stored on a wooden rack under a thatched roof on a beach, with a calm sea behind",
+		"alt": "Surfboards on a wooden rack under a thatched roof, beside a calm sea"
+	},
+	{
+		"uid": "customer-3",
+		"title": "File:Bookshelf (Unsplash).jpg",
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Customers: third story (Fable & Co)",
+		"subject": "A wall of dark wooden shelves filled with books, seen straight on",
+		"alt": "A wall of wooden shelves filled with books"
+	},
+	{
+		"uid": "team",
+		"title": "File:Couple working at home (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			42
+		],
+		"section": "About: picture under the heading",
+		"subject": "A bright white studio with a long wooden table carrying laptops, headphones and phones; two people stand at the far end with their backs to the camera, looking at a print on the wall",
+		"alt": "A long wooden table with laptops and headphones in a bright studio, and two people standing at the far end"
+	},
+	{
+		"uid": "blog-1",
+		"title": "File:White work table with notes, smartphone and laptop (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: Counting requests is not prioritising",
+		"subject": "An open notebook with a pencil, a pair of glasses, a phone and the corner of a laptop on a white desk",
+		"alt": "An open notebook with a pencil, glasses and a phone on a white desk"
+	},
+	{
+		"uid": "blog-2",
+		"title": "File:Man typing on laptop (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: What we learned reading ninety days of our own support inbox",
+		"subject": "A man seen from behind his shoulder typing at a laptop on a wooden desk, a phone and a notebook beside it",
+		"alt": "A man typing at a laptop on a wooden desk, seen over his shoulder"
+	},
+	{
+		"uid": "blog-3",
+		"title": "File:Work space (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			60
+		],
+		"section": "Article cover: Closing the loop",
+		"subject": "Hands typing on a laptop on a white desk against a white wall, with a small green plant in a white pot",
+		"alt": "Hands typing on a laptop at a white desk, with a small green plant beside it"
+	}
+]

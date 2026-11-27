@@ -1,0 +1,19 @@
+{
+	"open_frame_follow_elementor": true,
+	"open_frame_color_primary": "#2456e6",
+	"open_frame_color_primary_hover": "#1a3fb4",
+	"open_frame_color_heading": "#0b1f3a",
+	"open_frame_color_text": "#46546a",
+	"open_frame_color_link": "#2456e6",
+	"open_frame_color_link_hover": "#1a3fb4",
+	"open_frame_color_accent": "#f2a93b",
+	"open_frame_color_border": "#dce3ee",
+	"open_frame_color_bg": "#f3f6fb",
+	"open_frame_container_width": 1200,
+	"open_frame_blog_style": "grid",
+	"open_frame_blog_columns": 3,
+	"open_frame_blog_title": true,
+	"open_frame_blog_layout": "full-width",
+	"open_frame_single_layout": "no-sidebar",
+	"open_frame_page_layout": "no-sidebar"
+}

@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Frame 1.0.1\n"
-"POT-Creation-Date: 2026-11-25T14:28:35+00:00\n"
+"Project-Id-Version: Open Frame 1.1.0\n"
+"POT-Creation-Date: 2026-11-26T09:00:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,19 +17,27 @@ msgstr ""
 "Language-Team: Mostafij Emon\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:14
+#: 404.php:16
 msgid "This page could not be found"
 msgstr ""
 
-#: 404.php:17
+#: 404.php:19
 msgid "The page you are looking for may have moved or no longer exists. Try a search instead."
 msgstr ""
 
-#: archive.php:33, comments.php:49, index.php:34, search.php:35, single.php:21
+#: archive.php:35
+#: comments.php:49
+#: index.php:36
+#: search.php:37
+#: single.php:23
 msgid "Previous"
 msgstr ""
 
-#: archive.php:34, comments.php:50, index.php:35, search.php:36, single.php:22
+#: archive.php:36
+#: comments.php:50
+#: index.php:37
+#: search.php:38
+#: single.php:24
 msgid "Next"
 msgstr ""
 
@@ -52,12 +60,12 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: index.php:36
+#: index.php:38
 msgid "Posts navigation"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:18
+#: search.php:20
 msgid "Search results for: %s"
 msgstr ""
 
@@ -79,7 +87,8 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: inc/blocks.php:29, inc/blocks.php:37
+#: inc/blocks.php:29
+#: inc/blocks.php:37
 msgid "Card"
 msgstr ""
 
@@ -236,7 +245,9 @@ msgstr ""
 msgid "Logo right, menu left"
 msgstr ""
 
-#: inc/header-builder.php:227, inc/header-builder.php:238, inc/customizer/customizer.php:308
+#: inc/customizer/customizer.php:311
+#: inc/header-builder.php:227
+#: inc/header-builder.php:238
 msgid "Primary"
 msgstr ""
 
@@ -301,7 +312,8 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:98, inc/template-tags.php:107
+#: inc/template-tags.php:98
+#: inc/template-tags.php:107
 msgid ", "
 msgstr ""
 
@@ -313,7 +325,8 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:122, inc/template-tags.php:185
+#: inc/template-tags.php:122
+#: inc/template-tags.php:185
 msgid "Edit"
 msgstr ""
 
@@ -337,175 +350,175 @@ msgstr ""
 msgid "Monospace"
 msgstr ""
 
-#: inc/customizer/customizer.php:134
+#: inc/customizer/customizer.php:137
 msgid "Open Frame Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:143
+#: inc/customizer/customizer.php:146
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:159
+#: inc/customizer/customizer.php:162
 msgid "Site layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:163
+#: inc/customizer/customizer.php:166
 msgid "Full width"
 msgstr ""
 
-#: inc/customizer/customizer.php:164
+#: inc/customizer/customizer.php:167
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/customizer.php:170
+#: inc/customizer/customizer.php:173
 msgid "Container width (px)"
 msgstr ""
 
-#: inc/customizer/customizer.php:170
+#: inc/customizer/customizer.php:173
 msgid "Maximum width of the header, footer and sidebar layouts."
 msgstr ""
 
-#: inc/customizer/customizer.php:171
+#: inc/customizer/customizer.php:174
 msgid "Content width (px)"
 msgstr ""
 
-#: inc/customizer/customizer.php:171
+#: inc/customizer/customizer.php:174
 msgid "Maximum width of the content column in the No sidebar layout and of blocks on the Landing Page template."
 msgstr ""
 
-#: inc/customizer/customizer.php:172
+#: inc/customizer/customizer.php:175
 msgid "Section spacing (px)"
 msgstr ""
 
-#: inc/customizer/customizer.php:172
+#: inc/customizer/customizer.php:175
 msgid "Vertical space above and below the main content area. The default (64) shrinks automatically on small screens."
 msgstr ""
 
-#: inc/customizer/customizer.php:211
+#: inc/customizer/customizer.php:214
 msgid "Blog listing style"
 msgstr ""
 
-#: inc/customizer/customizer.php:215
+#: inc/customizer/customizer.php:218
 msgid "List"
 msgstr ""
 
-#: inc/customizer/customizer.php:216
+#: inc/customizer/customizer.php:219
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/customizer.php:232
+#: inc/customizer/customizer.php:235
 msgid "Grid columns"
 msgstr ""
 
-#: inc/customizer/customizer.php:233
+#: inc/customizer/customizer.php:236
 msgid "Applies when the blog listing style is Grid."
 msgstr ""
 
-#: inc/customizer/customizer.php:256
+#: inc/customizer/customizer.php:259
 msgid "Excerpt length (words)"
 msgstr ""
 
-#: inc/customizer/customizer.php:268
+#: inc/customizer/customizer.php:271
 msgid "Right sidebar"
 msgstr ""
 
-#: inc/customizer/customizer.php:269
+#: inc/customizer/customizer.php:272
 msgid "Left sidebar"
 msgstr ""
 
-#: inc/customizer/customizer.php:270
+#: inc/customizer/customizer.php:273
 msgid "No sidebar (content width)"
 msgstr ""
 
-#: inc/customizer/customizer.php:271
+#: inc/customizer/customizer.php:274
 msgid "Full width (container width)"
 msgstr ""
 
-#: inc/customizer/customizer.php:274
+#: inc/customizer/customizer.php:277
 msgid "Blog / archive layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:275
+#: inc/customizer/customizer.php:278
 msgid "Single post layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:276
+#: inc/customizer/customizer.php:279
 msgid "Default page layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:302
+#: inc/customizer/customizer.php:305
 msgid "Global Colors"
 msgstr ""
 
-#: inc/customizer/customizer.php:309
+#: inc/customizer/customizer.php:312
 msgid "Primary (hover)"
 msgstr ""
 
-#: inc/customizer/customizer.php:310
+#: inc/customizer/customizer.php:313
 msgid "Secondary"
 msgstr ""
 
-#: inc/customizer/customizer.php:311
+#: inc/customizer/customizer.php:314
 msgid "Accent"
 msgstr ""
 
-#: inc/customizer/customizer.php:312
+#: inc/customizer/customizer.php:315
 msgid "Headings"
 msgstr ""
 
-#: inc/customizer/customizer.php:313
+#: inc/customizer/customizer.php:316
 msgid "Body text"
 msgstr ""
 
-#: inc/customizer/customizer.php:314
+#: inc/customizer/customizer.php:317
 msgid "Links"
 msgstr ""
 
-#: inc/customizer/customizer.php:315
+#: inc/customizer/customizer.php:318
 msgid "Link hover"
 msgstr ""
 
-#: inc/customizer/customizer.php:316
+#: inc/customizer/customizer.php:319
 msgid "Borders"
 msgstr ""
 
-#: inc/customizer/customizer.php:317
+#: inc/customizer/customizer.php:320
 msgid "Page background"
 msgstr ""
 
-#: inc/customizer/customizer.php:318
+#: inc/customizer/customizer.php:321
 msgid "Surfaces"
 msgstr ""
 
-#: inc/customizer/customizer.php:321
+#: inc/customizer/customizer.php:324
 msgid "Offered to blocks as the \"Secondary\" color in the editor palette."
 msgstr ""
 
-#: inc/customizer/customizer.php:322
+#: inc/customizer/customizer.php:325
 msgid "Highlighted text, and the \"Accent\" color in the editor palette."
 msgstr ""
 
-#: inc/customizer/customizer.php:350
+#: inc/customizer/customizer.php:353
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/customizer.php:361
+#: inc/customizer/customizer.php:364
 msgid "Body font"
 msgstr ""
 
-#: inc/customizer/customizer.php:362
+#: inc/customizer/customizer.php:365
 msgid "Heading font"
 msgstr ""
 
-#: inc/customizer/customizer.php:385
+#: inc/customizer/customizer.php:388
 msgid "Base font size (px)"
 msgstr ""
 
-#: inc/customizer/customizer.php:386
+#: inc/customizer/customizer.php:389
 msgid "Body line height (%)"
 msgstr ""
 
-#: inc/customizer/customizer.php:387
+#: inc/customizer/customizer.php:390
 msgid "Heading weight"
 msgstr ""
 
@@ -526,11 +539,15 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-page.php:22, template-parts/content-single.php:31, page-templates/landing.php:27
+#: page-templates/landing.php:27
+#: template-parts/content-builder.php:25
+#: template-parts/content-page.php:22
+#: template-parts/content-single.php:31
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-search.php:24, template-parts/content.php:37
+#: template-parts/content-search.php:24
+#: template-parts/content.php:37
 msgid "Read more"
 msgstr ""
 
@@ -541,14 +558,6 @@ msgstr ""
 
 #: template-parts/content.php:16
 msgid "Featured"
-msgstr ""
-
-#: page-templates/full-width.php:3
-msgid "Full Width"
-msgstr ""
-
-#: page-templates/landing.php:3
-msgid "Landing Page"
 msgstr ""
 
 #: patterns/call-to-action.php:15
@@ -607,7 +616,8 @@ msgstr ""
 msgid "Launch a business site, blog or portfolio with a fast, accessible design system you can fully customize, no extra plugins required."
 msgstr ""
 
-#: patterns/hero-media.php:30, patterns/hero.php:24
+#: patterns/hero-media.php:30
+#: patterns/hero.php:24
 msgid "Get started"
 msgstr ""
 
@@ -639,9 +649,29 @@ msgstr ""
 msgid "Latest stories"
 msgstr ""
 
+#: inc/integrations/elementor.php:276
+msgid "Elementor"
+msgstr ""
+
+#: inc/integrations/elementor.php:293
+msgid "Use Elementor global colors and fonts"
+msgstr ""
+
+#: inc/integrations/elementor.php:294
+msgid "The blog, posts, search and other theme templates follow Elementor > Site Settings: the Primary color is used for buttons and links, Secondary for headings, Text for body text and Accent for highlights; the Primary font is used for headings and the Text font for body text. While this is on, the matching colors and fonts set here in the Customizer are only used as a fallback."
+msgstr ""
+
+#: page-templates/full-width.php:3
+msgid "Full Width"
+msgstr ""
+
+#: page-templates/landing.php:3
+msgid "Landing Page"
+msgstr ""
+
 #. Description of the theme
 #: style.css
-msgid "Open Frame is a lightweight, accessibility-minded multipurpose theme for business sites, blogs and portfolios. A token-driven design system keeps colors, typography and spacing consistent, and everything is controlled from the Customizer: global colors, fonts, layout widths, five header layouts with sticky and transparent modes, and a footer with up to four widget columns. It includes a keyboard-friendly navigation with an optional multi-column mega menu, sidebar and full-width layouts, a Landing Page template with ready-made block patterns, and full block editor support. Fonts are bundled locally, no plugins are required and no remote requests are made."
+msgid "Open Frame is a lightweight, accessibility-minded multipurpose theme for business sites, blogs and portfolios. A token-driven design system keeps colors, typography and spacing consistent, and everything is controlled from the Customizer: global colors, fonts, layout widths, five header layouts with sticky and transparent modes, and a footer with up to four widget columns. It includes a keyboard-friendly navigation with an optional multi-column mega menu, sidebar and full-width layouts, a Landing Page template with ready-made block patterns, and full block editor support. It works with Elementor (including the Canvas and Full Width templates and the Pro Theme Builder) and styles WooCommerce stores. Fonts are bundled locally, no plugins are required and no remote requests are made."
 msgstr ""
 
 #. Author of the theme
@@ -707,4 +737,16 @@ msgstr ""
 #. Pattern description
 #: patterns/page-landing.php
 msgid "A complete home page: hero, feature cards, latest posts and a call to action. Best with the Landing Page template."
+msgstr ""
+
+#: inc/customizer/customizer.php
+msgid "Show the title of the posts page"
+msgstr ""
+
+#: inc/customizer/customizer.php
+msgid "Applies when a page other than the front page lists your posts. The title is always available to screen readers."
+msgstr ""
+
+#: inc/integrations/elementor.php
+msgid "Open Frame (bundled)"
 msgstr ""

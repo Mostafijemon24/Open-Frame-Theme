@@ -12,6 +12,8 @@ vendor/
 *.log
 
 # Local env / secrets (never commit)
+*.key
+*.pem
 .env
 .env.*
 *.sql
@@ -20,3 +22,6 @@ wp-config.php
 # Release artifacts (built by bin/build-zip.sh)
 *.zip
 dist/
+
+# Local state of the Worker (wrangler dev)
+.wrangler/

@@ -1,0 +1,39 @@
+{
+	"uid": "reference:site-parts:header",
+	"title": "Header",
+	"location": "header",
+	"conditions": [
+		"include/general"
+	],
+	"elementor": {
+		"version": "4.4.2",
+		"type": "container",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "c2d3e4f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed"
+				},
+				"elements": [
+					{
+						"id": "d2e3f4a",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "Reference",
+							"header_size": "p",
+							"link": {
+								"url": "ofss://page/home",
+								"is_external": "",
+								"nofollow": ""
+							}
+						},
+						"elements": []
+					}
+				]
+			}
+		]
+	}
+}

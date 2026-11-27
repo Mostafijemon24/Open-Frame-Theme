@@ -1,0 +1,418 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero panel",
+		"subject": "A woman with glasses at a round wooden table, a pen in her hand, working at a laptop; a plant, two phones and a bookshelf around her",
+		"alt": "A woman with glasses working at a laptop on a round wooden table, a pen in her hand and a plant beside her",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Taking_notes_at_a_coffee_table_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Taking_notes_at_a_coffee_table_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Tran Mau Tri Tam (@tranmautritam on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1400,
+		"height": 1200,
+		"focal": [
+			47,
+			50
+		],
+		"bytes": 228662,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-code",
+		"file": "course-code.webp",
+		"section": "Course card and course details: Web development fundamentals",
+		"subject": "A close view of a laptop screen with JavaScript in a code editor",
+		"alt": "JavaScript code in an editor on a laptop screen",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Macro_laptop_coding_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Macro_laptop_coding_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Marc Mueller (@seven11nash on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			60,
+			50
+		],
+		"bytes": 79388,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-data",
+		"file": "course-data.webp",
+		"section": "Course card: Data analysis with spreadsheets and SQL",
+		"subject": "An open laptop on a glass table showing a dashboard with figures, an area chart, bar charts and a ring chart",
+		"alt": "A laptop showing a dashboard with figures and charts",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Statistics_on_a_laptop_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Statistics_on_a_laptop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Carlos Muza (@kmuza on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			2426,
+			1728
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			45,
+			50
+		],
+		"bytes": 54654,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-design",
+		"file": "course-design.webp",
+		"section": "Course card: Interface design",
+		"subject": "A hand in a grey jumper drawing screen layouts on paper with a blue pen, a mug behind",
+		"alt": "A hand sketching screen layouts on paper with a pen, a mug on the table behind",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Designer_sketching_Wireframes_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Designer_sketching_Wireframes_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Green Chameleon (@craftedbygc on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			35,
+			50
+		],
+		"bytes": 61818,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-language",
+		"file": "course-language.webp",
+		"section": "Course card: Spanish for work",
+		"subject": "The hands of two people facing each other across a wooden table: one writes in a small notebook; a coffee cup, a glass of water, two phones, a tablet and a leather bag",
+		"alt": "Two people talking across a wooden table, one writing in a small notebook beside a cup of coffee",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Two_people_meeting_with_iphone_and_ipad_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Two_people_meeting_with_iphone_and_ipad_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alejandro Escamilla (@alejandroescamilla on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4728,
+			3168
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 56044,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-photo",
+		"file": "course-photo.webp",
+		"section": "Course card: Photography weekends",
+		"subject": "A woman in a white jumper holding a camera to her eye on a country road lined with autumn trees",
+		"alt": "A woman holding a camera to her eye on a road lined with autumn trees",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fall_photographer_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Fall_photographer_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Evan Kirby (@evankirby2 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 70506,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "course-writing",
+		"file": "course-writing.webp",
+		"section": "Course card: Writing clearly at work",
+		"subject": "A hand with a wristwatch writing in a notebook with a pen, a laptop beside it on a wooden desk",
+		"alt": "A hand writing in a notebook with a pen, next to a laptop on a wooden desk",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Left-handed_writing_with_wristwatch.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Left-handed_writing_with_wristwatch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alejandro Escamilla",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5616,
+			3744
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			60,
+			55
+		],
+		"bytes": 42526,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "campus",
+		"file": "campus.webp",
+		"section": "About: beside “Why evenings, and why small”; Contact: under the cards",
+		"subject": "A bright, empty white room with long tables, dark chairs and a screen on the wall",
+		"alt": "A bright white room with long tables, dark chairs and a screen on the wall",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:153_W_27th_St,_New_York,_United_States_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/153_W_27th_St%2C_New_York%2C_United_States_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Breather (@breather on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5517,
+			3678
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 61290,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "group",
+		"file": "group.webp",
+		"section": "Courses and About: wide picture near the end",
+		"subject": "Three people studying at a dark wooden table outdoors, seen from above: one reads a book, one writes in a notebook, one holds a book with highlighted lines",
+		"alt": "Three people studying at a wooden table, seen from above: one reads, one writes in a notebook, one holds a book with highlighted lines",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Students_learning_together_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Students_learning_together_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alexis Brown (@alexisrbrown on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5760,
+			3840
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 265046,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "teacher-1",
+		"file": "teacher-1.webp",
+		"section": "Instructors: Dana Whitlock",
+		"subject": "A woman of about thirty with curly red-blonde hair, a denim shirt and a backpack, smiling over her shoulder in a city street after dark, a phone in her hand",
+		"alt": "Portrait of a woman with curly red-blonde hair and a denim shirt, smiling",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Outdoor_portrait_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Outdoor_portrait_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Anthony Ginsbrook (@aginsbrook on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4320,
+			2880
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			45,
+			50
+		],
+		"bytes": 57868,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "teacher-2",
+		"file": "teacher-2.webp",
+		"section": "Instructors and course details: Samuel Okoye",
+		"subject": "A young Black man with short dreadlocks, a beanie, a denim jacket and earphones, smiling broadly in a city street in daylight",
+		"alt": "Portrait of a man with short dreadlocks and a denim jacket, smiling broadly",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Stockholm_man_with_headphones_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Stockholm_man_with_headphones_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Yingchou Han (@hyingchou on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 66686,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "teacher-3",
+		"file": "teacher-3.webp",
+		"section": "Instructors: Lucía Fernández",
+		"subject": "A young woman with long brown hair and a checked shirt, smiling, among tall maize plants",
+		"alt": "Portrait of a woman with long brown hair and a checked shirt, smiling",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Smiling_in_a_cornfield_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Smiling_in_a_cornfield_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Allef Vinicius (@seteales on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 46036,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "teacher-4",
+		"file": "teacher-4.webp",
+		"section": "Instructors: Maya Lind",
+		"subject": "A smiling woman with long brown hair in a pink top, outdoors in front of a hedge",
+		"alt": "Portrait of a smiling woman with long brown hair in a pink top",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:I_Love_Portraits_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/I_Love_Portraits_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Clarisse Meyer (@clarissemeyer on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3648,
+			5472
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			43
+		],
+		"bytes": 53530,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "news-1",
+		"file": "news-1.webp",
+		"section": "Article cover: Open day on 18 January",
+		"subject": "A bright white library with tall arched windows, desks and a round counter",
+		"alt": "A bright white library with tall arched windows and study desks",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:White_library_tall_windows_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/White_library_tall_windows_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Tu Tram Pham (@tutrampham on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6016,
+			4000
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 192982,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "news-2",
+		"file": "news-2.webp",
+		"section": "Article cover: Ten weeks of evenings",
+		"subject": "A woman with wavy red hair and a tattooed arm, smiling down at a laptop in a café with a neon sign behind her",
+		"alt": "A woman with wavy red hair smiling at her laptop in a café",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Tattooed_woman_with_laptop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5128,
+			3419
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 114746,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "news-3",
+		"file": "news-3.webp",
+		"section": "Article cover: From night classes to a first job in data",
+		"subject": "A man seen from behind his shoulder, typing at a laptop that shows a table of entries, at a wooden table by a window with flowers and a small plant",
+		"alt": "A man typing at a laptop that shows a table of figures, at a wooden table by a window",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Man_at_a_laptop_in_an_office_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Man_at_a_laptop_in_an_office_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Bench Accounting (@benchaccounting on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3500,
+			2338
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 95430,
+		"checked": "2026-11-26"
+	}
+]

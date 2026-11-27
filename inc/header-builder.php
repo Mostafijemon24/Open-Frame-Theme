@@ -150,7 +150,7 @@ function open_frame_header_classes() {
  * @return bool
  */
 function open_frame_has_transparent_header() {
-	return open_frame_get_mod( 'open_frame_transparent_header' ) && is_front_page();
+	return open_frame_get_mod( 'open_frame_transparent_header' ) && is_front_page() && ! open_frame_has_location( 'header' );
 }
 
 /**

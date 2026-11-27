@@ -1,0 +1,7 @@
+# Left out of the installable plugin ZIP (bin/build-plugin-zip.sh).
+.distignore
+.DS_Store
+phpcs.xml.dist
+node_modules
+vendor
+.wordpress-org

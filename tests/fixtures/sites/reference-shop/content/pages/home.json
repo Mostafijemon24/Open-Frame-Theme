@@ -1,0 +1,65 @@
+{
+	"uid": "reference-shop:pages:home",
+	"title": "Home",
+	"slug": "home",
+	"front_page": true,
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "a1b2c3d",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed"
+				},
+				"elements": [
+					{
+						"id": "b1c2d3e",
+						"elType": "widget",
+						"widgetType": "heading",
+						"settings": {
+							"title": "A reference shop",
+							"header_size": "h1"
+						},
+						"elements": []
+					},
+					{
+						"id": "c1d2e3f",
+						"elType": "widget",
+						"widgetType": "button",
+						"settings": {
+							"text": "See the shop",
+							"link": {
+								"url": "ofss://store/shop",
+								"is_external": "",
+								"nofollow": "",
+								"custom_attributes": ""
+							}
+						},
+						"elements": []
+					},
+					{
+						"id": "d1e2f3a",
+						"elType": "widget",
+						"widgetType": "button",
+						"settings": {
+							"text": "The blue mug",
+							"link": {
+								"url": "ofss://product/mug",
+								"is_external": "",
+								"nofollow": "",
+								"custom_attributes": ""
+							}
+						},
+						"elements": []
+					}
+				]
+			}
+		]
+	}
+}

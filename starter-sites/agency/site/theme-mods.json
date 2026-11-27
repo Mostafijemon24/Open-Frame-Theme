@@ -1,0 +1,15 @@
+{
+	"open_frame_follow_elementor": true,
+	"open_frame_color_primary": "#0d0d0d",
+	"open_frame_color_primary_hover": "#4a3ae8",
+	"open_frame_color_heading": "#0d0d0d",
+	"open_frame_color_text": "#3a3a38",
+	"open_frame_color_link": "#0d0d0d",
+	"open_frame_color_link_hover": "#4a3ae8",
+	"open_frame_color_accent": "#c8f53c",
+	"open_frame_color_border": "#d9d5cb",
+	"open_frame_color_bg": "#f5f3ee",
+	"open_frame_container_width": 1280,
+	"open_frame_single_layout": "no-sidebar",
+	"open_frame_page_layout": "no-sidebar"
+}

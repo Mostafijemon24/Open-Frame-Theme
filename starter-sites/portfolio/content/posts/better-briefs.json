@@ -1,0 +1,12 @@
+{
+	"uid": "portfolio:posts:better-briefs",
+	"title": "Five questions that make a better brief",
+	"slug": "better-briefs",
+	"excerpt": "You do not need a formal document to start a design project. You need honest answers to five questions, most of them about your customers.",
+	"featured": "ofss://media/note-3",
+	"categories": [
+		"Process"
+	],
+	"days_ago": 41,
+	"content": "<!-- wp:paragraph -->\n<p>You do not need a formal document to start a design project. You need honest answers to five questions, and most of them are about your customers rather than about design.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Who has to notice this, and where will they be when they do?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What do they believe about you today?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What should they do next?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What must not change?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>How will we know it worked?</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">The one people skip</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>The fourth question is the one that saves projects. Every company has something its customers are quietly attached to: a colour, a phrase, the way the box opens. Find it before the redesign does.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Send me your answers, however rough, and <a href=\"ofss://page/contact\">we can take it from there</a>.</p>\n<!-- /wp:paragraph -->"
+}

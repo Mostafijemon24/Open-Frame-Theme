@@ -93,6 +93,33 @@ function open_frame_layout_classes() {
 }
 
 /**
+ * Whether the current page is laid out by a page builder.
+ *
+ * Such pages drop the page card and span the full width of the window. Only
+ * pages on the default template without a sidebar qualify; a page builder
+ * integration confirms through the `open_frame_is_builder_page` filter.
+ *
+ * @since 1.1.0
+ *
+ * @return bool
+ */
+function open_frame_is_builder_page() {
+	if ( ! is_page() || is_page_template() || open_frame_has_sidebar() ) {
+		return false;
+	}
+
+	/**
+	 * Filters whether the current page is laid out by a page builder.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param bool $is_builder Whether a page builder lays out the page. Default false.
+	 * @param int  $post_id    Page ID.
+	 */
+	return (bool) apply_filters( 'open_frame_is_builder_page', false, get_queried_object_id() );
+}
+
+/**
  * Add helpful classes to the body element.
  *
  * @param array $classes Existing classes.
@@ -113,12 +140,16 @@ function open_frame_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
-	if ( open_frame_get_mod( 'open_frame_sticky_header' ) ) {
+	if ( open_frame_get_mod( 'open_frame_sticky_header' ) && ! open_frame_has_location( 'header' ) ) {
 		$classes[] = 'has-sticky-header';
 	}
 
 	if ( open_frame_has_transparent_header() ) {
 		$classes[] = 'has-transparent-header';
+	}
+
+	if ( open_frame_is_builder_page() ) {
+		$classes[] = 'of-builder-page';
 	}
 
 	return $classes;

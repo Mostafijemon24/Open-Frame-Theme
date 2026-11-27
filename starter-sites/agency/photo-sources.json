@@ -1,0 +1,197 @@
+[
+	{
+		"uid": "case-volt",
+		"title": "File:Electric Surprise (Unsplash).jpg",
+		"width": 1280,
+		"height": 960,
+		"focal": [
+			48,
+			45
+		],
+		"section": "Work: Volt case study cover; Volt case study main picture; Brand service page",
+		"subject": "A single violet lightning bolt across a dark night sky above a black horizon",
+		"alt": "A violet lightning bolt crossing a dark night sky above a black horizon"
+	},
+	{
+		"uid": "case-orbit",
+		"title": "File:Blades (Unsplash).jpg",
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			60,
+			55
+		],
+		"section": "Work: Orbit case study cover; Volt case study, lower pictures",
+		"subject": "A black camera drone with a green light, close up against a white background",
+		"alt": "A black camera drone with a green status light, seen close up against a white background"
+	},
+	{
+		"uid": "case-pulse",
+		"title": "File:Smoke and light beams (Unsplash).jpg",
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			45,
+			55
+		],
+		"section": "Work: Pulse Festival case study cover; Brand service page",
+		"subject": "Stage light beams fanning through smoke above the silhouettes of a concert crowd",
+		"alt": "Beams of stage light fanning through smoke above the silhouettes of a concert crowd"
+	},
+	{
+		"uid": "case-terra",
+		"title": "File:The Wandering Night (Unsplash).jpg",
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			42,
+			60
+		],
+		"section": "Work: Terra Outdoor case study cover; Volt case study, lower pictures",
+		"subject": "A tent glowing lime green at night under a starry sky, between dark trees and a mountain",
+		"alt": "A tent glowing green at night under a starry sky, between dark trees and a mountain ridge"
+	},
+	{
+		"uid": "case-nord",
+		"title": "File:Black Eames Style Chair (Unsplash).jpg",
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Work: Nord Furniture case study cover",
+		"subject": "A black moulded shell chair on a black wire base against a white wall, on a dark floor",
+		"alt": "A black moulded shell chair on a wire base, against a white wall on a dark floor"
+	},
+	{
+		"uid": "case-kino",
+		"title": "File:Disused Cinema (Unsplash).jpg",
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			50,
+			65
+		],
+		"section": "Work: Kino Fest case study cover",
+		"subject": "Rows of red cinema seats in darkness, with a lit staircase running up the middle aisle",
+		"alt": "Rows of red cinema seats in darkness, with lit steps running up the middle aisle"
+	},
+	{
+		"uid": "reel",
+		"title": "File:Photographic studio (Unsplash).jpg",
+		"width": 1800,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Home: wide picture under the hero",
+		"subject": "A photographic studio: a white backdrop lit by softboxes and an octagonal light, a lighting rig overhead, a photographer crouching in front",
+		"alt": "A photographic studio with a white backdrop, softboxes on stands and a lighting rig overhead; a photographer crouches in front"
+	},
+	{
+		"uid": "studio",
+		"title": "File:Lone office worker (Unsplash).jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"section": "Studio: wide picture under the hero",
+		"subject": "A dark loft office with concrete columns, long desks and a large factory window; one person works at a desk",
+		"alt": "A dark loft office with concrete columns, long desks and a large window; one person works at a desk"
+	},
+	{
+		"uid": "team-1",
+		"title": "File:Chic and Glamorous (Unsplash).jpg",
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			55,
+			40
+		],
+		"section": "Studio: people, first portrait",
+		"subject": "A woman with short dark hair and hoop earrings in a black sleeveless top, looking to the side, in front of a stone wall",
+		"alt": "Portrait of a woman with short dark hair and hoop earrings, in a black sleeveless top, looking to the side"
+	},
+	{
+		"uid": "team-2",
+		"title": "File:Irenio Dionzio (Unsplash).jpg",
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			42,
+			45
+		],
+		"section": "Studio: people, second portrait",
+		"subject": "A young man with round glasses in a black leather jacket, in a dark workshop",
+		"alt": "Portrait of a young man with round glasses and a black leather jacket, in a dark room"
+	},
+	{
+		"uid": "team-3",
+		"title": "File:Confident Eye Contact (Unsplash).jpg",
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			40,
+			45
+		],
+		"section": "Studio: people, third portrait",
+		"subject": "A woman with dark curly hair in a burgundy top, looking straight at the camera, in front of a pale wall",
+		"alt": "Portrait of a woman with dark curly hair in a burgundy top, looking straight at the camera"
+	},
+	{
+		"uid": "team-4",
+		"title": "File:Smiling businessman on a phone (Unsplash).jpg",
+		"width": 900,
+		"height": 1100,
+		"focal": [
+			62,
+			35
+		],
+		"section": "Studio: people, fourth portrait",
+		"subject": "A bearded man in a dark suit and red tie, smiling, talking on a phone",
+		"alt": "Portrait of a bearded man in a dark suit talking on a phone"
+	},
+	{
+		"uid": "journal-1",
+		"title": "File:Schoolhouse Electric and Supply Co., Portland, United States (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			45
+		],
+		"section": "Journal: cover of “In praise of the half-finished brief”",
+		"subject": "A framed teal poster reading “Ask more questions” on a white wall between two wall clocks",
+		"alt": "A framed poster reading “Ask more questions” on a white wall, between two wall clocks"
+	},
+	{
+		"uid": "journal-2",
+		"title": "File:Half-closed laptop (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Journal: cover of “Why we do not pitch with finished work”",
+		"subject": "A dark wooden desk with a closed laptop, a white mouse and a white shell chair, seen from above",
+		"alt": "A dark wooden desk with a closed laptop and a white chair"
+	},
+	{
+		"uid": "journal-3",
+		"title": "File:Desktop purple neon light (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Journal: cover of “We ship on Fridays, and other bad ideas that work”",
+		"subject": "A desk with a large monitor, keyboard and speaker in a dark room lit violet",
+		"alt": "A desk with a large monitor, a keyboard and a speaker in a dark room lit violet"
+	}
+]

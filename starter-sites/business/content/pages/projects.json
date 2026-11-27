@@ -1,0 +1,973 @@
+{
+	"uid": "business:pages:projects",
+	"title": "Projects",
+	"slug": "projects",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "000010f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F3F6FB"
+				},
+				"elements": [
+					{
+						"id": "000010e",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 66,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000010b",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Projects",
+									"header_size": "p",
+									"title_color": "#2456E6",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000010c",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Work we are allowed to talk about",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000010d",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Four engagements, described with the numbers our clients agreed to publish.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000129",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#FFFFFF"
+				},
+				"elements": [
+					{
+						"id": "0000128",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000115",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000110",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/project-harbor",
+												"url": "ofss://media/project-harbor"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000111",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Ports and logistics",
+											"header_size": "p",
+											"title_color": "#2456E6",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000112",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Harbor Terminals",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000113",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p><strong>Container dwell time cut from nine days to four.</strong> A container terminal was losing shipping lines to faster ports. We rebuilt the yard around three stacking zones instead of seven.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000114",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Read the case",
+											"link": {
+												"url": "ofss://page/project-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6",
+											"size": "sm",
+											"align": "left"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000011b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000116",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/project-alder",
+												"url": "ofss://media/project-alder"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000117",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Healthcare",
+											"header_size": "p",
+											"title_color": "#2456E6",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000118",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Alder Health Group",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000119",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p><strong>Waiting list down 38% in two quarters.</strong> Twelve clinics, twelve ways of booking. One shared schedule freed more capacity than two new sites would have.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "000011a",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Read the case",
+											"link": {
+												"url": "ofss://page/project-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6",
+											"size": "sm",
+											"align": "left"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000121",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000011c",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/project-kestrel",
+												"url": "ofss://media/project-kestrel"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Building materials",
+											"header_size": "p",
+											"title_color": "#2456E6",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011e",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Kestrel Building Supply",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000011f",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p><strong>Margin up 4.2 points without a price rise.</strong> A cost-to-serve model showed a third of the catalogue lost money. The range was cut and the yard got quieter.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000120",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Read the case",
+											"link": {
+												"url": "ofss://page/project-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6",
+											"size": "sm",
+											"align": "left"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000127",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000122",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/project-lumen",
+												"url": "ofss://media/project-lumen"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "16",
+												"right": "16",
+												"bottom": "16",
+												"left": "16",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000123",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Financial services",
+											"header_size": "p",
+											"title_color": "#2456E6",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000124",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Lumen Mutual",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000125",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p><strong>Month-end close from fourteen days to five.</strong> Finance spent half the month reconciling. We removed 60 manual journals and gave the team its evenings back.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000126",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Read the case",
+											"link": {
+												"url": "ofss://page/project-details",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B1F3A",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#DCE3EE",
+											"hover_color": "#2456E6",
+											"button_background_hover_color": "#F3F6FB",
+											"button_hover_border_color": "#2456E6",
+											"size": "sm",
+											"align": "left"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000130",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#2456E6"
+				},
+				"elements": [
+					{
+						"id": "000012f",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000012c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000012a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Facing something similar?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "000012b",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>The details differ, the pattern rarely does. Tell us what you are seeing.</p>",
+											"text_color": "#DCE6FF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000012e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"flex_align_items": "flex-end",
+									"width": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_align_items_mobile": "flex-start"
+								},
+								"elements": [
+									{
+										"id": "000012d",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Start a conversation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0B1F3A",
+											"hover_color": "#0B1F3A",
+											"button_background_hover_color": "#F2A93B",
+											"size": "md"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

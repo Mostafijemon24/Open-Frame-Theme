@@ -3,15 +3,15 @@ Theme Name: Open Frame
 Theme URI: https://github.com/Mostafijemon24/Open-Frame-Theme
 Author: Mostafij Emon
 Author URI: https://github.com/Mostafijemon24
-Description: Open Frame is a lightweight, accessibility-minded multipurpose theme for business sites, blogs and portfolios. A token-driven design system keeps colors, typography and spacing consistent, and everything is controlled from the Customizer: global colors, fonts, layout widths, five header layouts with sticky and transparent modes, and a footer with up to four widget columns. It includes a keyboard-friendly navigation with an optional multi-column mega menu, sidebar and full-width layouts, a Landing Page template with ready-made block patterns, and full block editor support. Fonts are bundled locally, no plugins are required and no remote requests are made.
-Version: 1.0.1
+Description: Open Frame is a lightweight, accessibility-minded multipurpose theme for business sites, blogs and portfolios. A token-driven design system keeps colors, typography and spacing consistent, and everything is controlled from the Customizer: global colors, fonts, layout widths, five header layouts with sticky and transparent modes, and a footer with up to four widget columns. It includes a keyboard-friendly navigation with an optional multi-column mega menu, sidebar and full-width layouts, a Landing Page template with ready-made block patterns, and full block editor support. It works with Elementor (including the Canvas and Full Width templates and the Pro Theme Builder) and styles WooCommerce stores. Fonts are bundled locally, no plugins are required and no remote requests are made.
+Version: 1.1.0
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: open-frame
-Tags: blog, portfolio, news, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
+Tags: blog, portfolio, e-commerce, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
 
 Open Frame WordPress Theme, (C) 2026 Mostafij Emon
 Open Frame is distributed under the terms of the GNU GPL.
@@ -1078,7 +1078,7 @@ textarea { resize: vertical; min-height: 7rem; }
 .post-navigation { margin-top: var(--of-space-6); display: grid; gap: var(--of-space-4); }
 .post-navigation .nav-links { display: flex; justify-content: space-between; gap: var(--of-space-4); flex-wrap: wrap; }
 .post-navigation a { text-decoration: none; }
-.post-navigation .nav-subtitle { display: block; font-size: var(--of-fs-small); color: var(--of-color-muted); }
+.post-navigation .nav-subtitle { display: block; font-size: var(--of-fs-small); color: var(--of-color-text); }
 .post-navigation .nav-title { font-weight: var(--of-fw-semibold); color: var(--of-color-heading); }
 
 /* ==========================================================================
@@ -1240,6 +1240,76 @@ textarea { resize: vertical; min-height: 7rem; }
 
 /* Full-width sections keep their inner content off the screen edges. */
 .of-canvas .entry-content > .alignfull.wp-block-group { padding-inline: var(--of-content-padding); }
+
+/* --------------------------------------------------------------------------
+   Page-builder pages: the content is laid out by a page builder and spans the
+   full width of the window, without the page card. The title keeps the
+   container width; its spacing sits on the heading itself, so nothing is left
+   behind when a page builder hides the title.
+   -------------------------------------------------------------------------- */
+.of-builder > * + *,
+.of-location > * + * { margin-top: 0; }
+.of-builder .entry-title { font-size: var(--of-fs-h1); margin-block: var(--of-section-spacing) var(--of-space-5); }
+.of-builder-comments { padding-block: var(--of-section-spacing); }
+
+/* --------------------------------------------------------------------------
+   Elementor Site Settings and theme components. Elementor's global styles
+   target bare elements (h1 to h6, a, button) from a single class, which
+   outranks many of the theme's own rules. Its page content is meant to change;
+   the theme's navigation, post titles, meta links and footer keep their own
+   look. Each rule restates the theme's value with a selector that wins.
+   -------------------------------------------------------------------------- */
+body[class*="elementor-kit-"] .site-title a { color: var(--of-header-text, var(--of-color-heading)); }
+body[class*="elementor-kit-"] .main-navigation a { color: var(--of-header-text, var(--of-slate-700)); }
+body[class*="elementor-kit-"] .main-navigation .sub-menu a { color: var(--of-color-text); }
+body[class*="elementor-kit-"] .main-navigation a:hover,
+body[class*="elementor-kit-"] .main-navigation a:focus-visible,
+body[class*="elementor-kit-"] .main-navigation .current-menu-item > a,
+body[class*="elementor-kit-"] .main-navigation .current_page_item > a { color: var(--of-color-primary); }
+body[class*="elementor-kit-"] .of-submenu-toggle {
+	padding: 0;
+	font-size: inherit;
+	line-height: 1;
+	color: var(--of-header-text, var(--of-color-muted));
+	background: transparent;
+	border-radius: var(--of-radius-sm);
+}
+body[class*="elementor-kit-"] .menu-toggle {
+	padding: var(--of-space-3);
+	color: var(--of-color-primary);
+	background: var(--of-primary-100);
+	border-radius: var(--of-radius-sm);
+}
+body[class*="elementor-kit-"] .entry-title {
+	font-size: var(--of-fs-h3);
+	line-height: var(--of-lh-heading);
+	letter-spacing: normal;
+}
+body[class*="elementor-kit-"] .entry-single .entry-title,
+body[class*="elementor-kit-"] .of-builder .entry-title { font-size: var(--of-fs-h1); }
+body[class*="elementor-kit-"] .entry-title a { color: var(--of-color-heading); }
+body[class*="elementor-kit-"] .entry-title a:hover { color: var(--of-color-primary); }
+body[class*="elementor-kit-"] .entry-meta a { color: var(--of-color-muted); }
+/* Links in running text built with Elementor (the Text Editor widget, and a
+   post shown by an Elementor Pro template) are underlined, like those in the
+   theme's own templates: color alone does not mark a link. */
+.elementor-widget-theme-post-content a:not(.wp-block-button__link):not(.elementor-button),
+.elementor-widget-text-editor a:not(.elementor-button) { text-decoration: underline; text-underline-offset: 0.15em; }
+/* Headings written in the block editor keep the reading sizes of the theme:
+   Site Settings sizes are made for page sections and would dwarf a post title. */
+body[class*="elementor-kit-"] .entry-content > :is(h1, h2, h3, h4),
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] :is(h1, h2, h3, h4) { line-height: var(--of-lh-heading); letter-spacing: normal; }
+body[class*="elementor-kit-"] .entry-content > h1,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h1 { font-size: var(--of-fs-h1); }
+body[class*="elementor-kit-"] .entry-content > h2,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h2 { font-size: var(--of-fs-h2); }
+body[class*="elementor-kit-"] .entry-content > h3,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h3 { font-size: var(--of-fs-h3); }
+body[class*="elementor-kit-"] .entry-content > h4,
+body[class*="elementor-kit-"] .entry-content [class*="wp-block-"] h4 { font-size: var(--of-fs-h4); }
+body[class*="elementor-kit-"] .site-footer a,
+body[class*="elementor-kit-"] .site-footer a:hover,
+body[class*="elementor-kit-"] .site-footer a:focus { color: var(--of-footer-heading, var(--of-white)); }
 
 .page-template-landing .site-footer { margin-top: 0; }
 

@@ -1,0 +1,14 @@
+{
+	"uid": "shop:products:white-stoneware-jug",
+	"title": "White stoneware jug",
+	"slug": "white-stoneware-jug",
+	"excerpt": "A tall white jug with a pulled handle. For water at the table, or for a bunch of tulips.",
+	"content": "<p>Stoneware, glazed white with a soft sheen. One litre to the shoulder, and narrow enough at the neck to hold a small bunch of flowers upright.</p><p>The tulips in the picture are not included.</p>",
+	"price": "32",
+	"featured": true,
+	"image": "ofss://media/product-3",
+	"gallery": [],
+	"categories": [
+		"Ceramics"
+	]
+}

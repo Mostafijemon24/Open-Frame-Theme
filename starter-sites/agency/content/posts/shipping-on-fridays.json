@@ -1,0 +1,12 @@
+{
+	"uid": "agency:posts:shipping-on-fridays",
+	"title": "We ship on Fridays, and other bad ideas that work",
+	"slug": "shipping-on-fridays",
+	"excerpt": "Six studio habits that every handbook advises against. We kept them because the work got better.",
+	"featured": "ofss://media/journal-3",
+	"categories": [
+		"Studio"
+	],
+	"days_ago": 34,
+	"content": "<!-- wp:paragraph -->\n<p>Every handbook says not to launch at the end of the week. We do, because it means the whole team is in the room when it goes out, and because nobody starts something new on a Friday afternoon anyway.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three more</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>No slides in the first meeting</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Designers write their own copy first</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>The client sees the mess</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p>None of these is a rule. They are habits that stayed because the work was better with them than without.</p>\n<!-- /wp:paragraph -->"
+}

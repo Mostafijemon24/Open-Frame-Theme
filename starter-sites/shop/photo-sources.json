@@ -1,0 +1,223 @@
+[
+	{
+		"uid": "hero",
+		"title": "File:White room decoration (Unsplash).jpg",
+		"width": 1800,
+		"height": 1000,
+		"focal": [
+			50,
+			60
+		],
+		"section": "Home: hero",
+		"subject": "A bright white room with a white wire chair, a wooden side table with a small plant, a radiator and a window",
+		"alt": "A bright white room with a wire chair and a wooden side table"
+	},
+	{
+		"uid": "product-1",
+		"title": "File:Artem Sapegin 2017 (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			78,
+			58
+		],
+		"section": "Product 1",
+		"subject": "A terracotta-coloured ceramic mug on a slate coaster, beside a laptop",
+		"alt": "A terracotta ceramic mug on a slate coaster"
+	},
+	{
+		"uid": "product-2",
+		"title": "File:Potted Succulent (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			78,
+			70
+		],
+		"section": "Product 2",
+		"subject": "A green succulent in a rough concrete pot against a pale wall",
+		"alt": "A succulent in a concrete pot"
+	},
+	{
+		"uid": "product-3",
+		"title": "File:A Kiss of Pink (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			42,
+			50
+		],
+		"section": "Product 3",
+		"subject": "A white ceramic jug holding pink tulips, more tulips lying beside it",
+		"alt": "A white ceramic jug holding pink tulips"
+	},
+	{
+		"uid": "product-4",
+		"title": "File:NotRedBerries (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			54,
+			50
+		],
+		"section": "Product 4",
+		"subject": "A wooden serving board with a handle, a small white bowl of blueberries on it",
+		"alt": "A wooden serving board with a small bowl of blueberries"
+	},
+	{
+		"uid": "product-5",
+		"title": "File:Leather notebook (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			62,
+			45
+		],
+		"section": "Product 5",
+		"subject": "A small tan leather notebook with a pen and a binder clip on a pale background",
+		"alt": "A small tan leather notebook with a pen"
+	},
+	{
+		"uid": "product-6",
+		"title": "File:Gasworks Plaza, Newstead, Australia (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Product 6",
+		"subject": "Five woven baskets of different shapes on white boards, seen from above",
+		"alt": "Five woven baskets seen from above"
+	},
+	{
+		"uid": "product-7",
+		"title": "File:Floor lamp near a wall (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			72,
+			50
+		],
+		"section": "Product 7",
+		"subject": "A black floor lamp with a round shade against a sage green wall",
+		"alt": "A black floor lamp against a sage green wall"
+	},
+	{
+		"uid": "product-8",
+		"title": "File:Minimalist Basket Chair (Unsplash).jpg",
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			55,
+			85
+		],
+		"section": "Product 8",
+		"subject": "A white shell chair with wooden legs beside a woven belly basket holding a grey blanket",
+		"alt": "A white shell chair with wooden legs beside a woven basket"
+	},
+	{
+		"uid": "lookbook-1",
+		"title": "File:Lucky Cat (Unsplash).jpg",
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			52,
+			50
+		],
+		"section": "Lookbook 1",
+		"subject": "A white wall shelf with a snake plant in a pale pot and a black cat figure",
+		"alt": "A white shelf with a snake plant and a black cat figure"
+	},
+	{
+		"uid": "lookbook-2",
+		"title": "File:Brooke Lark 2016 (Unsplash).jpg",
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			40,
+			50
+		],
+		"section": "Lookbook 2",
+		"subject": "A breakfast table with a plate of fruit, glasses of juice and a wooden chair",
+		"alt": "A breakfast table with a plate of fruit and glasses of juice"
+	},
+	{
+		"uid": "lookbook-3",
+		"title": "File:Kari Shea 2016-06-06 (Unsplash).jpg",
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			55,
+			50
+		],
+		"section": "Lookbook 3",
+		"subject": "A wooden armchair with a patterned cushion by a window with white curtains",
+		"alt": "A wooden armchair with a patterned cushion by a window"
+	},
+	{
+		"uid": "lookbook-4",
+		"title": "File:Bright windowsill (Unsplash).jpg",
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			50,
+			60
+		],
+		"section": "Lookbook 4",
+		"subject": "Two small trees in white lace-patterned pots on a window sill",
+		"alt": "Two small trees in white pots on a window sill"
+	},
+	{
+		"uid": "about",
+		"title": "File:Making pottery (Unsplash).jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "About",
+		"subject": "Two clay-covered hands shaping a pot on a wheel, seen from above",
+		"alt": "Hands shaping a pot on a wheel, seen from above"
+	},
+	{
+		"uid": "journal-1",
+		"title": "File:Gardening Supplies (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Journal 1",
+		"subject": "Potted herbs and plants on a wooden table, seen from above",
+		"alt": "Potted herbs on a wooden table, seen from above"
+	},
+	{
+		"uid": "journal-2",
+		"title": "File:Rawpixel.com 2017-04-27 (Unsplash FWOGqSKq Cs).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Journal 2",
+		"subject": "A wooden table laid for six with plates, greenery and a runner, seen from above",
+		"alt": "A table laid for six with greenery, seen from above"
+	},
+	{
+		"uid": "journal-3",
+		"title": "File:Ben Garratt 2016 (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Journal 3",
+		"subject": "A round crusty loaf on a wooden board with a knife",
+		"alt": "A round loaf on a wooden board"
+	}
+]

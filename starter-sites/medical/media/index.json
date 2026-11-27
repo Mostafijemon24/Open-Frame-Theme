@@ -1,0 +1,65 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"alt": "A doctor in a white coat taking a patient’s blood pressure",
+		"licence": "Public domain. Photograph by Bill Branson (Photographer), from Wikimedia Commons.",
+		"author": "Bill Branson (Photographer)"
+	},
+	{
+		"uid": "building",
+		"file": "building.webp",
+		"alt": "A small modern clinic building behind trees and a lawn",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
+	},
+	{
+		"uid": "reception",
+		"file": "reception.webp",
+		"alt": "The information desk in the entrance hall",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
+	},
+	{
+		"uid": "room",
+		"file": "room.webp",
+		"alt": "An examination room with a couch, a chair and a sink",
+		"licence": "Public domain. Photograph by USDAgov, from Wikimedia Commons.",
+		"author": "USDAgov"
+	},
+	{
+		"uid": "family",
+		"file": "family.webp",
+		"alt": "Three women of different ages cooking together in a kitchen",
+		"licence": "Public domain. Photograph by Rhoda Baer (Photographer), from Wikimedia Commons.",
+		"author": "Rhoda Baer (Photographer)"
+	},
+	{
+		"uid": "cardio",
+		"file": "cardio.webp",
+		"alt": "A stethoscope and a pen lying on a printed form",
+		"licence": "CC0-1.0. Photograph by DarkoStojanovic (on Pixabay), from Wikimedia Commons.",
+		"author": "DarkoStojanovic (on Pixabay)"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"alt": "",
+		"licence": "Public domain. Photograph by Daniel Sone (photographer), from Wikimedia Commons.",
+		"author": "Daniel Sone (photographer)"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Mark Solarski (@marksolarski on Unsplash), from Wikimedia Commons.",
+		"author": "Mark Solarski (@marksolarski on Unsplash)"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"alt": "",
+		"licence": "Public domain. Photograph by Rhoda Baer (Photographer), from Wikimedia Commons.",
+		"author": "Rhoda Baer (Photographer)"
+	}
+]

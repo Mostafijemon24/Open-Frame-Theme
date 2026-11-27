@@ -1,0 +1,6 @@
+{
+	"uid": "medical:pages:notes",
+	"title": "Health Notes",
+	"slug": "health-notes",
+	"template": "default"
+}

@@ -1,0 +1,16 @@
+[
+	{
+		"family": "Unbounded",
+		"weight": "200 900",
+		"style": "normal",
+		"file": "unbounded-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2022 The Unbounded Project Authors."
+	},
+	{
+		"family": "Inter",
+		"weight": "100 900",
+		"style": "normal",
+		"file": "inter-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2016 The Inter Project Authors."
+	}
+]

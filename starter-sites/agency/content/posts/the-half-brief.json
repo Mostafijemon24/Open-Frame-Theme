@@ -1,0 +1,12 @@
+{
+	"uid": "agency:posts:the-half-brief",
+	"title": "In praise of the half-finished brief",
+	"slug": "the-half-brief",
+	"excerpt": "The best projects we have had started with a paragraph and a deadline. Why a rough brief beats a polished one.",
+	"featured": "ofss://media/journal-1",
+	"categories": [
+		"Process"
+	],
+	"days_ago": 6,
+	"content": "<!-- wp:paragraph -->\n<p>The best projects we have had started with a paragraph and a deadline. The worst started with forty pages that three departments had signed off.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">A brief is a question, not an answer</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>A polished brief has usually decided what the work should be. A rough one still asks what the problem is, which is the part we are useful for.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Who are we trying to reach?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What do they believe now?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>What would make this a success in a year?</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Send it early</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>If you can answer those three, you have a brief. <a href=\"ofss://page/contact\">Send it to us</a> before someone makes it longer.</p>\n<!-- /wp:paragraph -->"
+}

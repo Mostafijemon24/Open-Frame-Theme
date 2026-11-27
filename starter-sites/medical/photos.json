@@ -1,0 +1,236 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero",
+		"subject": "A woman doctor in a white coat with a stethoscope taking the blood pressure of a woman in a patient gown",
+		"alt": "A doctor in a white coat taking a patient’s blood pressure",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Doctor_takes_blood_pressure.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Doctor_takes_blood_pressure.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Bill Branson (Photographer)",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			2700,
+			1800
+		],
+		"width": 1260,
+		"height": 1170,
+		"focal": [
+			55,
+			50
+		],
+		"bytes": 169918,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "building",
+		"file": "building.webp",
+		"section": "Home and Contact: the clinic building",
+		"subject": "A small modern hospital building behind trees and a lawn",
+		"alt": "A small modern clinic building behind trees and a lawn",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:20190625-RD-PJK-1999_TONED.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/20190625-RD-PJK-1999_TONED.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "USDAgov",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 299670,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "reception",
+		"file": "reception.webp",
+		"section": "Home: why patients stay",
+		"subject": "An information desk in an entrance hall",
+		"alt": "The information desk in the entrance hall",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:20190625-RD-PJK-1672_TONED.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/20190625-RD-PJK-1672_TONED.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "USDAgov",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			4836,
+			3224
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			60
+		],
+		"bytes": 239386,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "room",
+		"file": "room.webp",
+		"section": "Consulting room",
+		"subject": "An examination room with a couch, a chair and a sink",
+		"alt": "An examination room with a couch, a chair and a sink",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:20190625-RD-PJK-1681_TONED.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/20190625-RD-PJK-1681_TONED.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "USDAgov",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			4398,
+			2932
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 162258,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "family",
+		"file": "family.webp",
+		"section": "Home: our patients",
+		"subject": "Three women of different ages cooking together",
+		"alt": "Three women of different ages cooking together in a kitchen",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Women_preparing_food.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Women_preparing_food.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Rhoda Baer (Photographer)",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			3000,
+			2400
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 138942,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "cardio",
+		"file": "cardio.webp",
+		"section": "Cardiology: beside the introduction",
+		"subject": "A teal stethoscope and a blue pen lying on a printed appointment form",
+		"alt": "A stethoscope and a pen lying on a printed form",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Medical_Care.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Medical_Care.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "DarkoStojanovic (on Pixabay)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3000,
+			2000
+		],
+		"width": 1400,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 65702,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"section": "Article cover: Five numbers worth knowing about your heart",
+		"subject": "A stethoscope lying beside a laptop computer",
+		"alt": "A stethoscope beside a laptop computer",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Stethoscope_and_Laptop_Computer_-_Nci-vol-9713-300.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Stethoscope_and_Laptop_Computer_-_Nci-vol-9713-300.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Daniel Sone (photographer)",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 45564,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"section": "Article cover: Why sleep is the first thing we ask about",
+		"subject": "A made bed beside a plant in a bright room",
+		"alt": "A bed with pale covers beside a plant in a bright room",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bed_%2B_Snake_Plant_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Bed_%2B_Snake_Plant_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Mark Solarski (@marksolarski on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4920,
+			2767
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 54466,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"section": "Article cover: Getting ready for winter",
+		"subject": "Gloved hands giving a vaccination in an upper arm",
+		"alt": "A nurse's gloved hands giving a vaccination in an upper arm",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Nurse_administers_a_vaccine.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Nurse_administers_a_vaccine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Rhoda Baer (Photographer)",
+		"licence": "Public domain",
+		"licence_url": "",
+		"restrictions": "",
+		"original_size": [
+			3000,
+			2400
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 74802,
+		"checked": "2026-11-26"
+	}
+]

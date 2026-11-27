@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OPEN_FRAME_VERSION', '1.0.1' );
+define( 'OPEN_FRAME_VERSION', '1.1.0' );
 define( 'OPEN_FRAME_DIR', get_template_directory() );
 define( 'OPEN_FRAME_URI', get_template_directory_uri() );
 
@@ -29,6 +29,7 @@ function open_frame_require( $relative ) {
 	}
 }
 
+open_frame_require( 'inc/hooks.php' );
 open_frame_require( 'inc/setup.php' );
 open_frame_require( 'inc/enqueue.php' );
 open_frame_require( 'inc/template-tags.php' );
@@ -40,3 +41,5 @@ open_frame_require( 'inc/customizer/dynamic-css.php' );
 open_frame_require( 'inc/header-builder.php' );
 open_frame_require( 'inc/footer-builder.php' );
 open_frame_require( 'inc/blocks.php' );
+open_frame_require( 'inc/integrations/elementor.php' );
+open_frame_require( 'inc/integrations/woocommerce.php' );

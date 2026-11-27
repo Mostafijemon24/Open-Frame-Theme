@@ -1,0 +1,107 @@
+[
+	{
+		"uid": "feature",
+		"file": "feature.webp",
+		"alt": "A hand sorting pale, unroasted coffee beans in a shallow woven basket",
+		"licence": "CC0-1.0. Photograph by Joshua Newton joshuanewton, from Wikimedia Commons.",
+		"author": "Joshua Newton joshuanewton"
+	},
+	{
+		"uid": "work-tidewater",
+		"file": "work-tidewater.webp",
+		"alt": "Roasted coffee beans being poured from a bag into the glass hopper of a grinder",
+		"licence": "CC0-1.0. Photograph by Nathan Dumlao (@nate_dumlao on Unsplash), from Wikimedia Commons.",
+		"author": "Nathan Dumlao (@nate_dumlao on Unsplash)"
+	},
+	{
+		"uid": "work-fieldnote",
+		"file": "work-fieldnote.webp",
+		"alt": "An open notebook lying on sand, with a fern and a flower pressed on one page",
+		"licence": "CC0-1.0. Photograph by rawpixel.com rawpixel, from Wikimedia Commons.",
+		"author": "rawpixel.com rawpixel"
+	},
+	{
+		"uid": "work-kite",
+		"file": "work-kite.webp",
+		"alt": "A stack of four books with plain green, blue, grey and red covers",
+		"licence": "CC0-1.0. Photograph by Hope House Press (@hopehousepress on Unsplash), from Wikimedia Commons.",
+		"author": "Hope House Press (@hopehousepress on Unsplash)"
+	},
+	{
+		"uid": "work-lumen",
+		"file": "work-lumen.webp",
+		"alt": "The hub and spokes of a bicycle wheel, close up, in warm evening light",
+		"licence": "CC0-1.0. Photograph by Pietro De Grandi (@peter_mc_greats on Unsplash), from Wikimedia Commons.",
+		"author": "Pietro De Grandi (@peter_mc_greats on Unsplash)"
+	},
+	{
+		"uid": "work-atlas",
+		"file": "work-atlas.webp",
+		"alt": "Old folded paper maps spread out and overlapping on a table",
+		"licence": "CC0-1.0. Photograph by Andrew Neel (@andrewtneel on Unsplash), from Wikimedia Commons.",
+		"author": "Andrew Neel (@andrewtneel on Unsplash)"
+	},
+	{
+		"uid": "work-sol",
+		"file": "work-sol.webp",
+		"alt": "Rows of glazed ceramic bottles in soft greens and blues",
+		"licence": "CC0-1.0. Photograph by Jessica Ruscello (@jruscello on Unsplash), from Wikimedia Commons.",
+		"author": "Jessica Ruscello (@jruscello on Unsplash)"
+	},
+	{
+		"uid": "portrait",
+		"file": "portrait.webp",
+		"alt": "Portrait of Juno Vale",
+		"licence": "CC0-1.0. Photograph by Brooke Cagle (@brookecagle on Unsplash), from Wikimedia Commons.",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)"
+	},
+	{
+		"uid": "studio",
+		"file": "studio.webp",
+		"alt": "A wooden desk with a leather notebook, steel rulers and a pen, and an orange chair beside it",
+		"licence": "CC0-1.0. Photograph by Jeff Sheldon (@ugmonk on Unsplash), from Wikimedia Commons.",
+		"author": "Jeff Sheldon (@ugmonk on Unsplash)"
+	},
+	{
+		"uid": "detail-marks",
+		"file": "detail-marks.webp",
+		"alt": "A white cup filled with roasted coffee beans, seen from above",
+		"licence": "CC0-1.0. Photograph by Glen Carrie (@glencarrie on Unsplash), from Wikimedia Commons.",
+		"author": "Glen Carrie (@glencarrie on Unsplash)"
+	},
+	{
+		"uid": "detail-palette",
+		"file": "detail-palette.webp",
+		"alt": "Coffee beans laid out in a square, from unroasted green to dark roast",
+		"licence": "CC0-1.0. Photograph by nousnou iwasaki (@nousnou on Unsplash), from Wikimedia Commons.",
+		"author": "nousnou iwasaki (@nousnou on Unsplash)"
+	},
+	{
+		"uid": "detail-wide",
+		"file": "detail-wide.webp",
+		"alt": "Orange folding chairs and a small table on a brick pavement outside a café",
+		"licence": "CC0-1.0. Photograph by Alisa Anton (@alisaanton on Unsplash), from Wikimedia Commons.",
+		"author": "Alisa Anton (@alisaanton on Unsplash)"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Thomas Martinsen (@faceline on Unsplash), from Wikimedia Commons.",
+		"author": "Thomas Martinsen (@faceline on Unsplash)"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Green Chameleon (@craftedbygc on Unsplash), from Wikimedia Commons.",
+		"author": "Green Chameleon (@craftedbygc on Unsplash)"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Hope House Press (@hopehousepress on Unsplash), from Wikimedia Commons.",
+		"author": "Hope House Press (@hopehousepress on Unsplash)"
+	}
+]

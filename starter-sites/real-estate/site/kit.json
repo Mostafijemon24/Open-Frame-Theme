@@ -1,0 +1,203 @@
+{
+	"system_colors": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"color": "#1F3A2E"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"color": "#16211B"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"color": "#4B5650"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"color": "#DDB96A"
+		}
+	],
+	"custom_colors": [
+		{
+			"_id": "ofcream",
+			"title": "Cream",
+			"color": "#F7F3EA"
+		},
+		{
+			"_id": "ofsand",
+			"title": "Sand",
+			"color": "#E8DFCC"
+		},
+		{
+			"_id": "ofbrass",
+			"title": "Brass (text)",
+			"color": "#8A6420"
+		},
+		{
+			"_id": "ofline",
+			"title": "Line",
+			"color": "#DDD5C3"
+		}
+	],
+	"system_typography": [
+		{
+			"_id": "primary",
+			"title": "Primary",
+			"typography_typography": "custom",
+			"typography_font_family": "Newsreader",
+			"typography_font_weight": "500"
+		},
+		{
+			"_id": "secondary",
+			"title": "Secondary",
+			"typography_typography": "custom",
+			"typography_font_family": "Manrope",
+			"typography_font_weight": "500"
+		},
+		{
+			"_id": "text",
+			"title": "Text",
+			"typography_typography": "custom",
+			"typography_font_family": "Manrope",
+			"typography_font_weight": "400"
+		},
+		{
+			"_id": "accent",
+			"title": "Accent",
+			"typography_typography": "custom",
+			"typography_font_family": "Manrope",
+			"typography_font_weight": "700"
+		}
+	],
+	"container_width": {
+		"unit": "px",
+		"size": 1240,
+		"sizes": []
+	},
+	"body_background_background": "classic",
+	"body_background_color": "#F7F3EA",
+	"body_color": "#4B5650",
+	"body_typography_typography": "custom",
+	"body_typography_font_family": "Manrope",
+	"body_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"body_typography_font_weight": "400",
+	"body_typography_line_height": {
+		"unit": "em",
+		"size": 1.7,
+		"sizes": []
+	},
+	"link_normal_color": "#1F3A2E",
+	"link_hover_color": "#8A6420",
+	"h1_color": "#16211B",
+	"h1_typography_typography": "custom",
+	"h1_typography_font_family": "Newsreader",
+	"h1_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(2.375rem, 1.4rem + 4.2vw, 4.5rem)",
+		"sizes": []
+	},
+	"h1_typography_font_weight": "500",
+	"h1_typography_line_height": {
+		"unit": "em",
+		"size": 1.06,
+		"sizes": []
+	},
+	"h1_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.02,
+		"sizes": []
+	},
+	"h2_color": "#16211B",
+	"h2_typography_typography": "custom",
+	"h2_typography_font_family": "Newsreader",
+	"h2_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.875rem, 1.4rem + 2.2vw, 3rem)",
+		"sizes": []
+	},
+	"h2_typography_font_weight": "500",
+	"h2_typography_line_height": {
+		"unit": "em",
+		"size": 1.12,
+		"sizes": []
+	},
+	"h2_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.015,
+		"sizes": []
+	},
+	"h3_color": "#16211B",
+	"h3_typography_typography": "custom",
+	"h3_typography_font_family": "Newsreader",
+	"h3_typography_font_size": {
+		"unit": "custom",
+		"size": "clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem)",
+		"sizes": []
+	},
+	"h3_typography_font_weight": "500",
+	"h3_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"h3_typography_letter_spacing": {
+		"unit": "em",
+		"size": -0.01,
+		"sizes": []
+	},
+	"h4_color": "#16211B",
+	"h4_typography_typography": "custom",
+	"h4_typography_font_family": "Manrope",
+	"h4_typography_font_size": {
+		"unit": "px",
+		"size": 17,
+		"sizes": []
+	},
+	"h4_typography_font_weight": "700",
+	"h4_typography_line_height": {
+		"unit": "em",
+		"size": 1.4,
+		"sizes": []
+	},
+	"button_typography_typography": "custom",
+	"button_typography_font_family": "Manrope",
+	"button_typography_font_size": {
+		"unit": "px",
+		"size": 15,
+		"sizes": []
+	},
+	"button_typography_font_weight": "700",
+	"button_typography_line_height": {
+		"unit": "em",
+		"size": 1.2,
+		"sizes": []
+	},
+	"button_text_color": "#F7F3EA",
+	"button_background_color": "#1F3A2E",
+	"button_hover_text_color": "#F7F3EA",
+	"button_hover_background_color": "#16291F",
+	"button_border_radius": {
+		"unit": "px",
+		"top": "4",
+		"right": "4",
+		"bottom": "4",
+		"left": "4",
+		"isLinked": true
+	},
+	"button_padding": {
+		"unit": "px",
+		"top": "16",
+		"right": "26",
+		"bottom": "16",
+		"left": "26",
+		"isLinked": false
+	}
+}

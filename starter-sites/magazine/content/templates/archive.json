@@ -1,0 +1,463 @@
+{
+	"uid": "magazine:templates:archive",
+	"title": "All stories",
+	"type": "archive",
+	"conditions": [
+		[
+			"include",
+			"archive",
+			"post_archive"
+		]
+	],
+	"elementor": {
+		"version": "4.4.2",
+		"type": "archive",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "00000a5",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "64",
+						"right": "24",
+						"bottom": "40",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "45",
+						"right": "24",
+						"bottom": "28",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "40",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000a4",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 72,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000a1",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The archive",
+									"header_size": "p",
+									"title_color": "#B5121B",
+									"typography_typography": "custom",
+									"typography_font_family": "Public Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "800",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									},
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 2.2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000a2",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "All stories",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "00000a3",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Everything we have printed, newest first.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 20,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000a7",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "00000a6",
+						"elType": "widget",
+						"widgetType": "archive-posts",
+						"settings": {
+							"archive_classic_thumbnail_size_size": "medium_large",
+							"archive_classic_columns": "3",
+							"archive_classic_columns_tablet": "2",
+							"archive_classic_columns_mobile": "1",
+							"archive_classic_show_excerpt": "yes",
+							"archive_classic_excerpt_length": 18,
+							"archive_classic_meta_data": [
+								"date"
+							],
+							"archive_classic_show_read_more": "",
+							"archive_classic_title_tag": "h2",
+							"archive_classic_item_ratio": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_tablet": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_item_ratio_mobile": {
+								"unit": "px",
+								"size": "",
+								"sizes": []
+							},
+							"archive_classic_title_color": "#111111",
+							"archive_classic_excerpt_color": "#3D3D3D",
+							"archive_classic_meta_color": "#5E5E5E",
+							"archive_classic_meta_typography_typography": "custom",
+							"archive_classic_meta_typography_font_family": "Public Sans",
+							"archive_classic_meta_typography_font_size": {
+								"unit": "px",
+								"size": 13,
+								"sizes": []
+							},
+							"archive_classic_row_gap": {
+								"unit": "px",
+								"size": 52,
+								"sizes": []
+							},
+							"archive_classic_column_gap": {
+								"unit": "px",
+								"size": 32,
+								"sizes": []
+							},
+							"pagination_type": "numbers",
+							"nothing_found_message": "Nothing here yet."
+						},
+						"elements": []
+					}
+				]
+			},
+			{
+				"id": "00000ae",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "72",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "50",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F5F2EB"
+				},
+				"elements": [
+					{
+						"id": "00000ad",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 48,
+								"column": "48",
+								"row": "48",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "00000ab",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 10,
+										"column": "10",
+										"row": "10",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "00000a8",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Four issues a year",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000a9",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Printed slowly, read slowly",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "00000aa",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Common Ground comes out with the seasons: nine stories, no advertising, on paper worth keeping. A year costs less than a dinner.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00000ac",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "Subscribe",
+									"link": {
+										"url": "ofss://page/subscribe",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"__globals__": {
+										"background_color": "globals/colors?id=primary"
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

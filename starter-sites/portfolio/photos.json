@@ -1,0 +1,392 @@
+[
+	{
+		"uid": "feature",
+		"file": "feature.webp",
+		"section": "Home: featured project; Project details: main picture",
+		"subject": "A hand sorting pale, unroasted coffee beans in a shallow woven basket",
+		"alt": "A hand sorting pale, unroasted coffee beans in a shallow woven basket",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Joshua_Newton_2016-10-01_(Unsplash_XpyD7z6AP4g).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Joshua_Newton_2016-10-01_%28Unsplash_XpyD7z6AP4g%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Joshua Newton joshuanewton",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4310,
+			2875
+		],
+		"width": 1800,
+		"height": 1100,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 284228,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-tidewater",
+		"file": "work-tidewater.webp",
+		"section": "Work grid: Tidewater Coffee Roasters",
+		"subject": "Roasted coffee beans being poured from a bag into the glass hopper of a copper-coloured grinder",
+		"alt": "Roasted coffee beans being poured from a bag into the glass hopper of a grinder",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Just_Grind_it_Out_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Just_Grind_it_Out_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Nathan Dumlao (@nate_dumlao on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4480,
+			6720
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 62554,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-fieldnote",
+		"file": "work-fieldnote.webp",
+		"section": "Work grid: Fieldnote",
+		"subject": "An open notebook lying on sand, with a fern and a flower pressed on one page",
+		"alt": "An open notebook lying on sand, with a fern and a flower pressed on one page",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:An_open_notebook_on_a_sandy_beach.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/An_open_notebook_on_a_sandy_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com rawpixel",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			7360,
+			4912
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 231516,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-kite",
+		"file": "work-kite.webp",
+		"section": "Work grid: Paper Kite Books",
+		"subject": "A stack of four plain books with green, blue, grey and red covers, no titles visible",
+		"alt": "A stack of four books with plain green, blue, grey and red covers",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Notebooks-cambridge_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Notebooks-cambridge_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Hope House Press (@hopehousepress on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4096,
+			4096
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 51774,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-lumen",
+		"file": "work-lumen.webp",
+		"section": "Work grid: Lumen Cycles",
+		"subject": "The hub, fork and spokes of a bicycle wheel, close up, in amber evening light",
+		"alt": "The hub and spokes of a bicycle wheel, close up, in warm evening light",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bicycle_wheel_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Bicycle_wheel_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Pietro De Grandi (@peter_mc_greats on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5106,
+			3404
+		],
+		"width": 1040,
+		"height": 1300,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 284830,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-atlas",
+		"file": "work-atlas.webp",
+		"section": "Work grid: Atlas Museum of Maps",
+		"subject": "Dozens of old folded paper maps spread out and overlapping",
+		"alt": "Old folded paper maps spread out and overlapping on a table",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Where_to_next%3F_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Where_to_next%3F_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Andrew Neel (@andrewtneel on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 280078,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "work-sol",
+		"file": "work-sol.webp",
+		"section": "Work grid: Sol Skincare",
+		"subject": "Rows of glazed ceramic bottles in soft greens and blues, without labels",
+		"alt": "Rows of glazed ceramic bottles in soft greens and blues",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Large_ceramic_bottles_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Large_ceramic_bottles_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jessica Ruscello (@jruscello on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4733,
+			3155
+		],
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 62202,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "portrait",
+		"file": "portrait.webp",
+		"section": "Home and About: the designer",
+		"subject": "A woman with red hair and a fringe, in a blue jumper, standing in a misty field",
+		"alt": "Portrait of a woman with red hair in a blue jumper, outdoors on a misty day",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:She%27s_Self-conscious_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/She%27s_Self-conscious_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3108,
+			4662
+		],
+		"width": 900,
+		"height": 1125,
+		"focal": [
+			50,
+			60
+		],
+		"bytes": 81370,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "studio",
+		"file": "studio.webp",
+		"section": "About: picture of the studio",
+		"subject": "The corner of a pale wooden desk with a leather notebook, two steel rulers and a pen, and an orange chair beside it",
+		"alt": "A wooden desk with a leather notebook, steel rulers and a pen, and an orange chair beside it",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Jeff_Sheldon_2014_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Jeff_Sheldon_2014_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jeff Sheldon (@ugmonk on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4000,
+			3000
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			35
+		],
+		"bytes": 165914,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "detail-marks",
+		"file": "detail-marks.webp",
+		"section": "Project details and Work: first detail",
+		"subject": "A white cup on a white saucer, filled with roasted coffee beans, seen from above",
+		"alt": "A white cup filled with roasted coffee beans, seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Glen_Carrie_2014-09-21_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Glen_Carrie_2014-09-21_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Glen Carrie (@glencarrie on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3888,
+			2592
+		],
+		"width": 1200,
+		"height": 1200,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 42594,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "detail-palette",
+		"file": "detail-palette.webp",
+		"section": "Project details and Work: second detail",
+		"subject": "Coffee beans laid out in a square on grey, from unroasted green through to dark roast",
+		"alt": "Coffee beans laid out in a square, from unroasted green to dark roast",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Nousnou_iwasaki_2015_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Nousnou_iwasaki_2015_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "nousnou iwasaki (@nousnou on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3048,
+			2286
+		],
+		"width": 1200,
+		"height": 1200,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 244280,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "detail-wide",
+		"file": "detail-wide.webp",
+		"section": "Project details: wide picture",
+		"subject": "Orange folding chairs and a small metal table with a flower pot on a brick pavement outside a café; no sign visible",
+		"alt": "Orange folding chairs and a small table on a brick pavement outside a café",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Coffee_shop_entrance_in_Leiden_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Coffee_shop_entrance_in_Leiden_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Alisa Anton (@alisaanton on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4272,
+			2848
+		],
+		"width": 1800,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 197456,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"section": "Article cover: The projects I turned down last year, and why",
+		"subject": "A pen lying on a closed, grey cloth-bound notebook",
+		"alt": "A pen lying on a closed grey notebook",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Pen_on_a_notebook_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Pen_on_a_notebook_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Thomas Martinsen (@faceline on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4811,
+			2844
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 234208,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"section": "Article cover: Design the system first, the pages second",
+		"subject": "A hand drawing small sketches in a notebook on a wooden desk, a camera and a laptop beside it",
+		"alt": "A hand drawing small sketches in a notebook on a wooden desk",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Rough_Draft_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Rough_Draft_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brad Neathery (@bradneathery on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3953,
+			2641
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			40,
+			55
+		],
+		"bytes": 144460,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"section": "Article cover: Five questions that make a better brief",
+		"subject": "An open notebook with ruled, lightly printed pages and a pencil lying across it, on a wooden table",
+		"alt": "An open notebook with a pencil lying across its pages",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Planning_over_coffee_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Planning_over_coffee_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Hope House Press (@hopehousepress on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4096,
+			4096
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 58958,
+		"checked": "2026-11-26"
+	}
+]

@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Departments",
+				"url": "ofss://page/departments"
+			},
+			{
+				"title": "Doctors",
+				"url": "ofss://page/doctors"
+			},
+			{
+				"title": "Patients",
+				"url": "ofss://page/patients"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			},
+			{
+				"title": "Health Notes",
+				"url": "ofss://page/notes"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

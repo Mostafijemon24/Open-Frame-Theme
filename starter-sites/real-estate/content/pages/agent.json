@@ -1,0 +1,2156 @@
+{
+	"uid": "real-estate:pages:agent",
+	"title": "Clara Hartwell",
+	"slug": "clara-hartwell",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "000015c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#1F3A2E"
+				},
+				"elements": [
+					{
+						"id": "000015b",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 72,
+								"column": "72",
+								"row": "72",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000152",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 34,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 56,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000151",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/agent-1",
+												"url": "ofss://media/agent-1"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000015a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 66,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000153",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Partner, sales",
+											"header_size": "p",
+											"title_color": "#DDB96A",
+											"typography_typography": "custom",
+											"typography_font_family": "Manrope",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000154",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Clara Hartwell",
+											"header_size": "h1",
+											"title_color": "#F7F3EA"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000155",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Clara joined her father at the agency in 2014 and became a partner five years later. She does every valuation in the Old Town herself, and shows every home she takes on.</p>",
+											"text_color": "#C9D4CC",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000158",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000156",
+													"text": "+44 20 5550 0164",
+													"selected_icon": {
+														"value": "fas fa-phone-alt",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "tel:+442055500164",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "0000157",
+													"text": "hello@example.com",
+													"selected_icon": {
+														"value": "fas fa-envelope",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "mailto:hello@example.com",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#F7F3EA",
+											"icon_color": "#DDB96A"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000159",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Ask Clara for a valuation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#F7F3EA",
+											"button_text_color": "#1F3A2E",
+											"hover_color": "#1F3A2E",
+											"button_background_hover_color": "#DDB96A"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000172",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "112",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "78",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000171",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 72,
+								"column": "72",
+								"row": "72",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000015f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 56,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000015d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "In her own words",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000015e",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>“I was eleven when my father let me hold the tape measure. What I learned from him is that a house is worth what someone will pay for it on a Tuesday in the rain, and that telling a seller anything else is a kindness that costs them money.”</p><p>Clara is a Fellow of the national association of estate agents and sits on the board of the Old Town conservation trust.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000170",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 0,
+										"column": "0",
+										"row": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 44,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000163",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "16",
+												"right": "0",
+												"bottom": "16",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "0000162",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "row",
+													"flex_direction_tablet": "row",
+													"flex_direction_mobile": "row",
+													"flex_align_items": "baseline",
+													"flex_align_items_mobile": "baseline",
+													"flex_justify_content": "space-between",
+													"flex_gap": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"flex_gap_mobile": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000160",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Homes sold",
+															"header_size": "p",
+															"title_color": "#4B5650",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "500",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "0000161",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "310",
+															"header_size": "p",
+															"title_color": "#16211B",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															},
+															"_flex_size": "none"
+														},
+														"elements": []
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "0000167",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "16",
+												"right": "0",
+												"bottom": "16",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "0000166",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "row",
+													"flex_direction_tablet": "row",
+													"flex_direction_mobile": "row",
+													"flex_align_items": "baseline",
+													"flex_align_items_mobile": "baseline",
+													"flex_justify_content": "space-between",
+													"flex_gap": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"flex_gap_mobile": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000164",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Area",
+															"header_size": "p",
+															"title_color": "#4B5650",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "500",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "0000165",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Old Town, Hill Park",
+															"header_size": "p",
+															"title_color": "#16211B",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															},
+															"_flex_size": "none"
+														},
+														"elements": []
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "000016b",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "16",
+												"right": "0",
+												"bottom": "16",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "000016a",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "row",
+													"flex_direction_tablet": "row",
+													"flex_direction_mobile": "row",
+													"flex_align_items": "baseline",
+													"flex_align_items_mobile": "baseline",
+													"flex_justify_content": "space-between",
+													"flex_gap": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"flex_gap_mobile": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000168",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "With the agency since",
+															"header_size": "p",
+															"title_color": "#4B5650",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "500",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "0000169",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "2014",
+															"header_size": "p",
+															"title_color": "#16211B",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															},
+															"_flex_size": "none"
+														},
+														"elements": []
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "000016f",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "16",
+												"right": "0",
+												"bottom": "16",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": false
+											},
+											"border_color": "#DDD5C3"
+										},
+										"elements": [
+											{
+												"id": "000016e",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "row",
+													"flex_direction_tablet": "row",
+													"flex_direction_mobile": "row",
+													"flex_align_items": "baseline",
+													"flex_align_items_mobile": "baseline",
+													"flex_justify_content": "space-between",
+													"flex_gap": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"flex_gap_mobile": {
+														"unit": "px",
+														"size": 16,
+														"column": "16",
+														"row": "16",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "000016c",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Speaks",
+															"header_size": "p",
+															"title_color": "#4B5650",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "500",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "000016d",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "English, French",
+															"header_size": "p",
+															"title_color": "#16211B",
+															"typography_typography": "custom",
+															"typography_font_family": "Manrope",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 16,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.5,
+																"sizes": []
+															},
+															"_flex_size": "none"
+														},
+														"elements": []
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000197",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "112",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "78",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000174",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 12,
+								"column": "12",
+								"row": "12",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "48",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": false
+							},
+							"border_border": "solid",
+							"border_width": {
+								"unit": "px",
+								"top": "1",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": false
+							},
+							"border_color": "#DDD5C3"
+						},
+						"elements": [
+							{
+								"id": "0000173",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Homes Clara is selling",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "custom",
+										"size": "clamp(1.5rem, 1.3rem + 1vw, 2rem)",
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000196",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 36,
+								"column": "36",
+								"row": "36",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000017f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000175",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/home-modern",
+												"url": "ofss://media/home-modern"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000178",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_justify_content": "space-between",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000176",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "New",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000177",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Hill Park",
+													"header_size": "p",
+													"title_color": "#4B5650",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													},
+													"typography_font_weight": "500",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000179",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "12 Orchard Rise",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem)",
+												"sizes": []
+											},
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000017a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "£1,150,000",
+											"header_size": "p",
+											"title_color": "#16211B",
+											"typography_typography": "custom",
+											"typography_font_family": "Manrope",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000017e",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "000017b",
+													"text": "4 bedrooms",
+													"selected_icon": {
+														"value": "fas fa-bed",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000017c",
+													"text": "3 bathrooms",
+													"selected_icon": {
+														"value": "fas fa-bath",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000017d",
+													"text": "210 m²",
+													"selected_icon": {
+														"value": "fas fa-ruler-combined",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 14,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_color": "#4B5650",
+											"icon_color": "#8A6420",
+											"view": "inline",
+											"icon_typography_typography": "custom",
+											"icon_typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"icon_typography_font_weight": "500"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000018a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000180",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/home-detached",
+												"url": "ofss://media/home-detached"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000183",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_justify_content": "space-between",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000181",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "For sale",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000182",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Old Town",
+													"header_size": "p",
+													"title_color": "#4B5650",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													},
+													"typography_font_weight": "500",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000184",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Ivy House, Church Lane",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem)",
+												"sizes": []
+											},
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000185",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "£1,450,000",
+											"header_size": "p",
+											"title_color": "#16211B",
+											"typography_typography": "custom",
+											"typography_font_family": "Manrope",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000189",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000186",
+													"text": "5 bedrooms",
+													"selected_icon": {
+														"value": "fas fa-bed",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000187",
+													"text": "3 bathrooms",
+													"selected_icon": {
+														"value": "fas fa-bath",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000188",
+													"text": "260 m²",
+													"selected_icon": {
+														"value": "fas fa-ruler-combined",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 14,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_color": "#4B5650",
+											"icon_color": "#8A6420",
+											"view": "inline",
+											"icon_typography_typography": "custom",
+											"icon_typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"icon_typography_font_weight": "500"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000195",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000018b",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/home-terrace",
+												"url": "ofss://media/home-terrace"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "4",
+												"right": "4",
+												"bottom": "4",
+												"left": "4",
+												"isLinked": true
+											},
+											"link_to": "custom",
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000018e",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_justify_content": "space-between",
+											"flex_gap": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 12,
+												"column": "12",
+												"row": "12",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000018c",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "For sale",
+													"header_size": "p",
+													"title_color": "#8A6420",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 2,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000018d",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Old Town",
+													"header_size": "p",
+													"title_color": "#4B5650",
+													"typography_typography": "custom",
+													"typography_font_family": "Manrope",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													},
+													"typography_font_weight": "500",
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.5,
+														"sizes": []
+													},
+													"_flex_size": "none"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000018f",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "2 Weavers’ Row",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "custom",
+												"size": "clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem)",
+												"sizes": []
+											},
+											"link": {
+												"url": "ofss://page/property",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000190",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "£475,000",
+											"header_size": "p",
+											"title_color": "#16211B",
+											"typography_typography": "custom",
+											"typography_font_family": "Manrope",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000194",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000191",
+													"text": "2 bedrooms",
+													"selected_icon": {
+														"value": "fas fa-bed",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000192",
+													"text": "1 bathroom",
+													"selected_icon": {
+														"value": "fas fa-bath",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000193",
+													"text": "84 m²",
+													"selected_icon": {
+														"value": "fas fa-ruler-combined",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 14,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_color": "#4B5650",
+											"icon_color": "#8A6420",
+											"view": "inline",
+											"icon_typography_typography": "custom",
+											"icon_typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"icon_typography_font_weight": "500"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000019f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8DFCC"
+				},
+				"elements": [
+					{
+						"id": "000019e",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000019a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000198",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Thinking of selling? Start with what it is worth.",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000199",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A partner visits, looks properly and tells you a figure we would be happy to be held to. It takes an hour and costs nothing.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000019d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"flex_justify_content": "flex-end",
+									"flex_justify_content_mobile": "flex-start",
+									"flex_wrap": "wrap"
+								},
+								"elements": [
+									{
+										"id": "000019b",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book a valuation",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"__globals__": {
+												"background_color": "globals/colors?id=primary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000019c",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Call us",
+											"link": {
+												"url": "tel:+442055500164",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#1F3A2E",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#1F3A2E",
+											"hover_color": "#F7F3EA",
+											"button_background_hover_color": "#1F3A2E",
+											"button_hover_border_color": "#1F3A2E"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

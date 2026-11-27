@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Homes for sale",
+				"url": "ofss://page/listings"
+			},
+			{
+				"title": "Services",
+				"url": "ofss://page/services"
+			},
+			{
+				"title": "Agents",
+				"url": "ofss://page/agents"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			},
+			{
+				"title": "Market notes",
+				"url": "ofss://page/notes"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

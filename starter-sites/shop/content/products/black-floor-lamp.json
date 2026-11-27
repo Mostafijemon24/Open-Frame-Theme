@@ -1,0 +1,13 @@
+{
+	"uid": "shop:products:black-floor-lamp",
+	"title": "Black floor lamp",
+	"slug": "black-floor-lamp",
+	"excerpt": "A slim black floor lamp with a round shade that tilts. For reading, beside a chair.",
+	"content": "<p>A steel stem, 150 centimetres tall, with a shade that turns and tilts on a single joint. Matt black, with a black cloth cable and a switch you can find with your foot.</p><p>Takes a standard screw bulb, which is not included.</p>",
+	"price": "120",
+	"image": "ofss://media/product-7",
+	"gallery": [],
+	"categories": [
+		"Lighting"
+	]
+}

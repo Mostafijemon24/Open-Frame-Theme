@@ -1,0 +1,168 @@
+name: CI
+
+# Coding standards for the theme and the companion plugin, PHP syntax on the
+# oldest and newest supported PHP, PHP and browser checks against a real
+# WordPress site, and Theme Check and Plugin Check on the packages.
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Coding standards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - run: composer install --no-interaction --no-progress
+      - run: composer lint
+
+  syntax:
+    name: PHP ${{ matrix.php }} syntax
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Lint every theme PHP file
+        run: |
+          find . -name '*.php' -not -path './.git/*' -not -path './vendor/*' -not -path './tests/*' -print0 \
+            | xargs -0 -n1 php -l > /dev/null
+
+  library:
+    name: Library tools and Worker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Library tools
+        working-directory: tools
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+      - name: Worker
+        run: node --test cloud/worker/test/*.test.mjs
+
+  docs:
+    name: Guides and release packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: The HTML guides and CHANGELOG.md are built from their current sources
+        run: |
+          npm install --no-save --no-audit --no-fund marked@18.3.0
+          node bin/build-docs.js
+          git diff --exit-code -- docs/index.html docs/starter-sites.html docs/install.html docs/support.html CHANGELOG.md
+      - name: Every link and picture in the guides leads somewhere
+        run: node bin/check-docs.js
+      - name: The theme can be packaged for a release
+        run: bash bin/release-package.sh theme
+      - name: The plugin can be packaged (trial package while the library is not published)
+        run: RELEASE_ALLOW_UNPUBLISHED=1 bash bin/release-package.sh plugin
+
+  rehearsal:
+    name: Library rehearsal (publish and import on a clean site)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Choose where the rehearsal is built
+        run: echo "OFT_DIR=$RUNNER_TEMP/open-frame-rehearsal" >> "$GITHUB_ENV"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: sqlite3, sodium, zip, gd, mbstring
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        working-directory: tests
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      # The Worker runs on the runner with a simulated bucket; the five designs
+      # for free Elementor are imported (Elementor Pro is not available here).
+      - name: Publish to a local Worker and import every free design on a clean site
+        run: bash tests/library/rehearsal.sh
+      - name: Keep the report and the logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: library-rehearsal
+          path: |
+            ${{ runner.temp }}/open-frame-rehearsal/report.json
+            ${{ runner.temp }}/open-frame-rehearsal/shots
+            ${{ runner.temp }}/open-frame-rehearsal/*.log
+            ${{ runner.temp }}/open-frame-rehearsal/wordpress/wp-content/debug.log
+          if-no-files-found: ignore
+
+  browser:
+    name: Browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Choose where the test site is built
+        run: echo "OFT_DIR=$RUNNER_TEMP/open-frame-wp-test" >> "$GITHUB_ENV"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: sqlite3, sodium, zip, gd, mbstring
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        working-directory: tests
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build the test site
+        run: bash tests/env/setup.sh
+      - name: Plugin PHP checks
+        run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/starter-sites.php
+      - name: Import engine checks
+        run: php tests/env/run.php "$OFT_DIR/wordpress" tests/php/importer.php
+      - name: Import engine checks with a store (WooCommerce active)
+        run: |
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/env/state.php plugin:woocommerce=on
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/php/importer.php
+          php tests/env/run.php "$OFT_DIR/wordpress" tests/env/state.php plugin:woocommerce=off
+      - name: Browser checks
+        # One file at a time: the files share one test site.
+        run: node --test --test-concurrency=1 --test-reporter=spec tests/e2e/*.test.js
+      - name: Theme Check on the packaged theme
+        run: bash tests/env/theme-check.sh
+      - name: Plugin Check on the packaged plugin
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/wp-cli.phar" https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          OFT_WP_CLI="$RUNNER_TEMP/wp-cli.phar" bash tests/env/plugin-check.sh
+      - name: Keep the PHP error log when something fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-log
+          path: ${{ runner.temp }}/open-frame-wp-test/wordpress/wp-content/debug.log
+          if-no-files-found: ignore

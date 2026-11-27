@@ -1,0 +1,56 @@
+{
+	"id": "reference-pro",
+	"order": 1,
+	"name": "Reference Pro",
+	"summary": "A one-page site with Theme Builder templates, used by the tests of the importer.",
+	"category": "business",
+	"tags": [
+		"test"
+	],
+	"tier": "pro",
+	"status": "available",
+	"version": "1.0.0",
+	"pages": [
+		"Home"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.5.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"heading"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": ""
+}

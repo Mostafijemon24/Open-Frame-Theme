@@ -1,0 +1,121 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"alt": "",
+		"licence": "CC0-1.0. Photograph by Breather (@breather on Unsplash), from Wikimedia Commons.",
+		"author": "Breather (@breather on Unsplash)"
+	},
+	{
+		"uid": "product-1",
+		"file": "product-1.webp",
+		"alt": "A terracotta ceramic mug on a slate coaster",
+		"licence": "CC0-1.0. Photograph by Artem Sapegin (@sapegin on Unsplash), from Wikimedia Commons.",
+		"author": "Artem Sapegin (@sapegin on Unsplash)"
+	},
+	{
+		"uid": "product-2",
+		"file": "product-2.webp",
+		"alt": "A succulent in a concrete pot",
+		"licence": "CC0-1.0. Photograph by Scott Webb (@scottwebb on Unsplash), from Wikimedia Commons.",
+		"author": "Scott Webb (@scottwebb on Unsplash)"
+	},
+	{
+		"uid": "product-3",
+		"file": "product-3.webp",
+		"alt": "A white ceramic jug holding pink tulips",
+		"licence": "CC0-1.0. Photograph by Brooke Lark (@brookelark on Unsplash), from Wikimedia Commons.",
+		"author": "Brooke Lark (@brookelark on Unsplash)"
+	},
+	{
+		"uid": "product-4",
+		"file": "product-4.webp",
+		"alt": "A wooden serving board with a small bowl of blueberries",
+		"licence": "CC0-1.0. Photograph by Eduard Militaru (@eduardmilitaru on Unsplash), from Wikimedia Commons.",
+		"author": "Eduard Militaru (@eduardmilitaru on Unsplash)"
+	},
+	{
+		"uid": "product-5",
+		"file": "product-5.webp",
+		"alt": "A small tan leather notebook with a pen",
+		"licence": "CC0-1.0. Photograph by Kelly Jean (@kellyjean on Unsplash), from Wikimedia Commons.",
+		"author": "Kelly Jean (@kellyjean on Unsplash)"
+	},
+	{
+		"uid": "product-6",
+		"file": "product-6.webp",
+		"alt": "Five woven baskets seen from above",
+		"licence": "CC0-1.0. Photograph by Zachary Staines (@antibodies on Unsplash), from Wikimedia Commons.",
+		"author": "Zachary Staines (@antibodies on Unsplash)"
+	},
+	{
+		"uid": "product-7",
+		"file": "product-7.webp",
+		"alt": "A black floor lamp against a sage green wall",
+		"licence": "CC0-1.0. Photograph by David van Dijk (@dvandijk on Unsplash), from Wikimedia Commons.",
+		"author": "David van Dijk (@dvandijk on Unsplash)"
+	},
+	{
+		"uid": "product-8",
+		"file": "product-8.webp",
+		"alt": "A white shell chair with wooden legs beside a woven basket",
+		"licence": "CC0-1.0. Photograph by Sarah Dorweiler (@sarahdorweiler on Unsplash), from Wikimedia Commons.",
+		"author": "Sarah Dorweiler (@sarahdorweiler on Unsplash)"
+	},
+	{
+		"uid": "lookbook-1",
+		"file": "lookbook-1.webp",
+		"alt": "A white shelf with a snake plant and a black cat figure",
+		"licence": "CC0-1.0. Photograph by Charles Deluvio (@charlesdeluvio on Unsplash), from Wikimedia Commons.",
+		"author": "Charles Deluvio (@charlesdeluvio on Unsplash)"
+	},
+	{
+		"uid": "lookbook-2",
+		"file": "lookbook-2.webp",
+		"alt": "A breakfast table with a plate of fruit and glasses of juice",
+		"licence": "CC0-1.0. Photograph by Brooke Lark (@brookelark on Unsplash), from Wikimedia Commons.",
+		"author": "Brooke Lark (@brookelark on Unsplash)"
+	},
+	{
+		"uid": "lookbook-3",
+		"file": "lookbook-3.webp",
+		"alt": "A wooden armchair with a patterned cushion by a window",
+		"licence": "CC0-1.0. Photograph by Kari Shea (@karishea on Unsplash), from Wikimedia Commons.",
+		"author": "Kari Shea (@karishea on Unsplash)"
+	},
+	{
+		"uid": "lookbook-4",
+		"file": "lookbook-4.webp",
+		"alt": "Two small trees in white pots on a window sill",
+		"licence": "CC0-1.0. Photograph by Lucas Alexander (@lucasalexander on Unsplash), from Wikimedia Commons.",
+		"author": "Lucas Alexander (@lucasalexander on Unsplash)"
+	},
+	{
+		"uid": "about",
+		"file": "about.webp",
+		"alt": "Hands shaping a pot on a wheel, seen from above",
+		"licence": "CC0-1.0. Photograph by Jared Sluyter (@jaredsluyter on Unsplash), from Wikimedia Commons.",
+		"author": "Jared Sluyter (@jaredsluyter on Unsplash)"
+	},
+	{
+		"uid": "journal-1",
+		"file": "journal-1.webp",
+		"alt": "Cover of the article “Keeping a succulent alive, honestly”",
+		"licence": "CC0-1.0. Photograph by Giulia Bertelli (@unpeusauvage on Unsplash), from Wikimedia Commons.",
+		"author": "Giulia Bertelli (@unpeusauvage on Unsplash)"
+	},
+	{
+		"uid": "journal-2",
+		"file": "journal-2.webp",
+		"alt": "Cover of the article “Laying a table for six without buying anything”",
+		"licence": "CC0-1.0. Photograph by rawpixel.com rawpixel, from Wikimedia Commons.",
+		"author": "rawpixel.com rawpixel"
+	},
+	{
+		"uid": "journal-3",
+		"file": "journal-3.webp",
+		"alt": "Cover of the article “How to tell a thing that will last”",
+		"licence": "CC0-1.0. Photograph by Ben Garratt (@wstn on Unsplash), from Wikimedia Commons.",
+		"author": "Ben Garratt (@wstn on Unsplash)"
+	}
+]

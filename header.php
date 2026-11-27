@@ -20,14 +20,10 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'open-frame' ); ?></a>
 
-	<header id="masthead" class="<?php echo esc_attr( implode( ' ', open_frame_header_classes() ) ); ?>">
-		<div class="of-container site-header-inner">
-			<?php
-			open_frame_site_branding();
-			open_frame_primary_nav();
-			open_frame_header_search();
-			?>
-		</div>
-	</header>
+	<?php
+	if ( ! open_frame_do_location( 'header' ) ) {
+		get_template_part( 'template-parts/header/site-header' );
+	}
+	?>
 
 	<div id="content" class="site-content">

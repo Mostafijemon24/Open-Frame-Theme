@@ -1,0 +1,13 @@
+{
+	"name": "open-frame-library-tools",
+	"private": true,
+	"type": "module",
+	"description": "Builds, validates, signs and publishes the Open Frame starter site library. See docs/dev/LIBRARY.md.",
+	"scripts": {
+		"build": "node library.mjs build",
+		"test": "node --test test/*.test.mjs"
+	},
+	"devDependencies": {
+		"ajv": "^8.17.0"
+	}
+}

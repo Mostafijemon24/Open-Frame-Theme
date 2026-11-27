@@ -1,0 +1,12 @@
+{
+	"uid": "agency:posts:pitching-without-spec-work",
+	"title": "Why we do not pitch with finished work",
+	"slug": "pitching-without-spec-work",
+	"excerpt": "Free creative in a pitch looks generous and helps nobody. What we show instead, and why clients tend to prefer it.",
+	"featured": "ofss://media/journal-2",
+	"categories": [
+		"Studio"
+	],
+	"days_ago": 20,
+	"content": "<!-- wp:paragraph -->\n<p>Free creative in a pitch looks generous and helps nobody. It is made without knowing the client, so it is a guess, and the client ends up choosing between guesses.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What we show instead</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>An hour of our thinking about your problem, the three questions we would start with, and two past projects that had the same shape. Then a paid first week, so that both sides can change their minds cheaply.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>A pitch should show how an agency thinks, not what it would have made if it knew you.</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->"
+}

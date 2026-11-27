@@ -8,12 +8,11 @@
 ?>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<?php
-		open_frame_footer_widgets();
-		open_frame_footer_copyright();
-		?>
-	</footer>
+	<?php
+	if ( ! open_frame_do_location( 'footer' ) ) {
+		get_template_part( 'template-parts/footer/site-footer' );
+	}
+	?>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

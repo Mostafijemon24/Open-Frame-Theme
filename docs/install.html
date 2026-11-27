@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Frame — Installation Guide</title>
+<meta name="description" content="Installing, checking, updating and removing the Open Frame theme and the Starter Sites plugin.">
+<style>
+@font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+:root { --primary: #3f4cd6; --primary-dark: #2b36b8; --tint: #e8eafc; --heading: #0f172a; --text: #334155; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --surface: #ffffff; --code: #f1f5f9; --sidebar: 280px; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body { margin: 0; font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.65; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+a { color: var(--primary); text-underline-offset: 2px; }
+a:hover { color: var(--primary-dark); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 0.75rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 0.75rem; }
+.sidebar { position: fixed; inset: 0 auto 0 0; width: var(--sidebar); overflow-y: auto; padding: 2rem 1.5rem; background: var(--surface); border-right: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--heading); text-decoration: none; }
+.brand svg { flex: 0 0 auto; }
+.version { margin: 0 0 1.75rem; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.sidebar li { counter-increment: toc; }
+.sidebar li a { display: flex; gap: 0.6rem; padding: 0.42rem 0.7rem; border-radius: 8px; color: var(--text); font-size: 0.94rem; font-weight: 500; line-height: 1.35; text-decoration: none; }
+.sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
+.sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
+.sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
+main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
+.doc { max-width: 860px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
+h1 { margin: 0 0 1rem; font-size: clamp(2rem, 1.5rem + 2.2vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { margin: 4rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 1.75rem; }
+h3 { margin: 2.5rem 0 0.75rem; font-size: 1.25rem; }
+h4 { margin: 2rem 0 0.5rem; font-size: 1.05rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+li > p { margin-bottom: 0.5rem; }
+hr { display: none; }
+code, kbd { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.86em; }
+:not(pre) > code { padding: 0.15em 0.4em; background: var(--code); border-radius: 6px; color: var(--heading); overflow-wrap: anywhere; }
+kbd { padding: 0.15em 0.45em; background: var(--surface); border: 1px solid #cbd5e1; border-bottom-width: 2px; border-radius: 6px; color: var(--heading); }
+pre { margin: 0 0 1.5rem; padding: 1.1rem 1.25rem; overflow: auto; background: #0f172a; color: #f1f5f9; border-radius: 12px; font-size: 0.86rem; line-height: 1.6; }
+pre code { font-size: inherit; }
+blockquote { margin: 0 0 1.5rem; padding: 0.9rem 1.25rem; background: var(--tint); border-left: 4px solid var(--primary); border-radius: 10px; color: var(--heading); }
+blockquote p:last-child { margin-bottom: 0; }
+figure { margin: 1.5rem 0 2rem; }
+figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+figcaption { margin-top: 0.6rem; font-size: 0.875rem; color: var(--muted); text-align: center; }
+.table-wrap { margin: 0 0 1.5rem; overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+th, td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code); color: var(--heading); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.menu-toggle { display: none; }
+footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+@media (max-width: 900px) {
+	.sidebar { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 1.25rem; }
+	.version { margin-bottom: 1rem; }
+	.menu-toggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; font: inherit; font-weight: 600; color: var(--primary); background: var(--tint); border: 0; border-radius: 8px; cursor: pointer; }
+	.sidebar nav { display: none; margin-top: 1rem; }
+	.sidebar.is-open nav { display: block; }
+	main { margin-left: 0; padding-top: 2rem; }
+}
+@media print {
+	.sidebar { display: none; }
+	main { margin: 0; padding: 0; }
+	body { background: #fff; }
+	h2 { break-after: avoid; }
+	figure, table, pre { break-inside: avoid; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<aside class="sidebar" id="sidebar">
+	<a class="brand" href="#content">
+		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
+		Open Frame
+	</a>
+	<p class="version">Installation</p>
+	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
+	<nav id="toc" aria-label="Documentation sections">
+		<ol>
+				<li><a href="#what-you-download">What you download</a></li>
+				<li><a href="#what-your-site-needs">What your site needs</a></li>
+				<li><a href="#1-install-the-theme">Install the theme</a></li>
+				<li><a href="#2-install-the-plugin-optional">Install the plugin (optional)</a></li>
+				<li><a href="#3-check-that-it-worked">Check that it worked</a></li>
+				<li><a href="#checking-a-download-optional">Checking a download (optional)</a></li>
+				<li><a href="#installing-by-sftp-instead">Installing by SFTP instead</a></li>
+				<li><a href="#updating">Updating</a></li>
+				<li><a href="#removing">Removing</a></li>
+				<li><a href="#if-something-goes-wrong">If something goes wrong</a></li>
+		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			<li><a href="index.html">Theme guide</a></li>
+			<li><a href="starter-sites.html">Starter Sites guide</a></li>
+			<li><a href="install.html" aria-current="page">Installation</a></li>
+			<li><a href="support.html">Support and updates</a></li>
+		</ul>
+	</nav>
+</aside>
+<main id="content">
+	<article class="doc">
+<h1 id="installation-guide">Installation Guide</h1>
+<p>How to install the <strong>Open Frame</strong> theme and the <strong>Open Frame Starter Sites</strong> plugin, check the downloaded files, update them, and remove them again.</p>
+<p>You need a WordPress site and an administrator account. Nothing has to be installed on your own computer.</p>
+<h2 id="what-you-download">What you download</h2>
+<p>Each release has its own page at <a href="https://github.com/Mostafijemon24/Open-Frame-Theme/releases">https://github.com/Mostafijemon24/Open-Frame-Theme/releases</a>, with these files under &quot;Assets&quot;:</p>
+<div class="table-wrap"><table><thead><tr><th>File</th><th>What it is</th><th>Needed</th></tr></thead><tbody><tr><td><code>open-frame-&lt;version&gt;.zip</code></td><td>The theme</td><td>Always</td></tr>
+<tr><td><code>open-frame-starter-sites-&lt;version&gt;.zip</code></td><td>The plugin with the ten starter sites</td><td>Only if you want to start from a ready-made design</td></tr>
+<tr><td>the same names ending in <code>.sha256</code></td><td>Checksums, to check that a download is complete and unchanged</td><td>Optional</td></tr></tbody></table></div>
+<p>Do <strong>not</strong> use the green &quot;Code → Download ZIP&quot; button of the repository. That archive holds the development files of both products in one folder, and WordPress cannot install it.</p>
+<p>Do not unzip the files. WordPress installs them as ZIP files.</p>
+<h2 id="what-your-site-needs">What your site needs</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>Theme</th><th>Starter Sites plugin</th></tr></thead><tbody><tr><td>WordPress</td><td>6.4 or newer</td><td>6.4 or newer; the designs need 6.8 or newer</td></tr>
+<tr><td>PHP</td><td>7.4 or newer</td><td>7.4 or newer</td></tr>
+<tr><td>Other plugins</td><td>None</td><td>Elementor 4.0.3 or newer for every design (installed from the plugin&#39;s own screen). Elementor Pro 4.0 or newer for five designs. WooCommerce 10.0 or newer for the Shop design</td></tr>
+<tr><td>Server</td><td>Nothing special</td><td>Outgoing HTTPS requests, ZIP support, a writable uploads folder</td></tr></tbody></table></div>
+<p>You find your versions of WordPress and PHP under <strong>Tools → Site Health → Info</strong>.</p>
+<h2 id="1-install-the-theme">1. Install the theme</h2>
+<ol>
+<li>Go to <strong>Appearance → Themes</strong> and click <strong>Add Theme</strong>.</li>
+<li>Click <strong>Upload Theme</strong>, then <strong>Choose File</strong>, and select <code>open-frame-&lt;version&gt;.zip</code>.</li>
+<li>Click <strong>Install Now</strong>.</li>
+<li>Click <strong>Activate</strong>.</li>
+</ol>
+<p>The theme works at once, with a plain header showing your site title, your posts, and a copyright bar. The <a href="index.html">theme guide</a> explains every setting.</p>
+<h2 id="2-install-the-plugin-optional">2. Install the plugin (optional)</h2>
+<ol>
+<li>Go to <strong>Plugins → Add Plugin</strong> and click <strong>Upload Plugin</strong>.</li>
+<li>Click <strong>Choose File</strong> and select <code>open-frame-starter-sites-&lt;version&gt;.zip</code>.</li>
+<li>Click <strong>Install Now</strong>, then <strong>Activate Plugin</strong>.</li>
+<li>Go to <strong>Appearance → Starter Sites</strong>.</li>
+</ol>
+<p>There is no account to create and no key to enter. The <a href="starter-sites.html">Starter Sites guide</a> continues from here.</p>
+<p>The theme has to be active first: the designs are made for Open Frame and cannot be imported into another theme.</p>
+<h2 id="3-check-that-it-worked">3. Check that it worked</h2>
+<ul>
+<li><strong>Appearance → Themes</strong> shows Open Frame as &quot;Active&quot;.</li>
+<li><strong>Appearance → Starter Sites</strong> shows ten designs with their pictures. If the list is empty, see <a href="starter-sites.html#15-troubleshooting">Troubleshooting in the Starter Sites guide</a>.</li>
+<li><strong>Tools → Site Health</strong> reports no new critical issue.</li>
+</ul>
+<h2 id="checking-a-download-optional">Checking a download (optional)</h2>
+<p>A checksum is a fingerprint of a file. If the fingerprint of your download matches the one published with the release, the file is complete and has not been changed on the way.</p>
+<p>Put the ZIP file and its <code>.sha256</code> file in the same folder, open a terminal in that folder, and run:</p>
+<p><strong>macOS</strong></p>
+<pre><code class="language-bash">shasum -a 256 -c open-frame-1.1.0.zip.sha256
+</code></pre>
+<p><strong>Linux</strong></p>
+<pre><code class="language-bash">sha256sum -c open-frame-1.1.0.zip.sha256
+</code></pre>
+<p><strong>Windows (PowerShell)</strong></p>
+<pre><code class="language-powershell">Get-FileHash open-frame-1.1.0.zip -Algorithm SHA256
+</code></pre>
+<p>On macOS and Linux the answer is <code>open-frame-1.1.0.zip: OK</code>. On Windows, compare the long line of letters and digits with the one inside the <code>.sha256</code> file; they have to be the same.</p>
+<p>Use the file names of the version you downloaded.</p>
+<h2 id="installing-by-sftp-instead">Installing by SFTP instead</h2>
+<p>If your host does not allow uploads from the dashboard:</p>
+<ol>
+<li>Unzip the file on your computer.</li>
+<li>Upload the folder <code>open-frame</code> to <code>wp-content/themes/</code>, and the folder <code>open-frame-starter-sites</code> to <code>wp-content/plugins/</code>.</li>
+<li>Activate the theme under <strong>Appearance → Themes</strong> and the plugin under <strong>Plugins</strong>.</li>
+</ol>
+<h2 id="updating">Updating</h2>
+<p>Your settings and content are kept when you update. They are stored in the database, not in the files of the theme or the plugin.</p>
+<ol>
+<li>Download the new ZIP file from the releases page.</li>
+<li>Install it exactly as above (<strong>Upload Theme</strong> or <strong>Upload Plugin</strong>).</li>
+<li>WordPress notices that the theme or plugin is already installed, shows both version numbers, and asks. Click <strong>Replace current with uploaded</strong>.</li>
+</ol>
+<p>Before an update on a site with visitors, make a backup, and read the changes of the new version in the release notes.</p>
+<p>If you changed files of the theme by hand, an update overwrites them. Put your own code into a child theme instead (see <a href="index.html#23-child-themes-and-developer-reference">Child themes in the theme guide</a>).</p>
+<p>How new versions are announced, and what is supported for how long, is in the <a href="support.html">support and update policy</a>.</p>
+<h2 id="removing">Removing</h2>
+<p><strong>The plugin:</strong> <strong>Plugins → Deactivate</strong>, then <strong>Delete</strong>. Deleting removes the plugin&#39;s own data (the saved list of designs, the import history, the fonts of imported designs). Pages, posts, products and pictures stay. Read <a href="starter-sites.html#16-removing-the-plugin">Removing the plugin</a> first if your site uses one of the designs for free Elementor: their header, footer and fonts are shown by the plugin.</p>
+<p><strong>The theme:</strong> activate another theme under <strong>Appearance → Themes</strong>, then open Open Frame&#39;s details and click <strong>Delete</strong>. Your content stays. The settings you made in the Customizer stay in the database and are used again if you install the theme later.</p>
+<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>What to do</th></tr></thead><tbody><tr><td>&quot;The package could not be installed. The theme is missing the style.css stylesheet.&quot;</td><td>You uploaded the wrong file: the plugin ZIP under Themes, or the repository&#39;s &quot;Download ZIP&quot;. Use <code>open-frame-&lt;version&gt;.zip</code> from the releases page</td></tr>
+<tr><td>&quot;The package could not be installed. No valid plugins were found.&quot;</td><td>The same mistake the other way round. Upload <code>open-frame-starter-sites-&lt;version&gt;.zip</code> under <strong>Plugins</strong></td></tr>
+<tr><td>&quot;The uploaded file exceeds the upload_max_filesize directive&quot;</td><td>Your host limits uploads to less than the size of the file. Ask the host to raise the limit, or install by SFTP</td></tr>
+<tr><td>&quot;The link you followed has expired&quot;</td><td>The same limit, reported differently</td></tr>
+<tr><td>&quot;Destination folder already exists&quot;</td><td>An older copy is there. Choose <strong>Replace current with uploaded</strong>, or delete the old copy first</td></tr>
+<tr><td>A white page after activating</td><td>Switch back: rename the folder <code>wp-content/themes/open-frame</code> by SFTP and WordPress falls back to another theme. Then check that your site has PHP 7.4 or newer, and <a href="support.html">report it</a></td></tr></tbody></table></div>
+
+	</article>
+	<footer>Open Frame 1.1.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+</main>
+<script>
+( function () {
+	var sidebar = document.getElementById( 'sidebar' );
+	var toggle = sidebar.querySelector( '.menu-toggle' );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
+
+	toggle.addEventListener( 'click', function () {
+		var open = sidebar.classList.toggle( 'is-open' );
+		toggle.setAttribute( 'aria-expanded', String( open ) );
+	} );
+	links.forEach( function ( link ) {
+		link.addEventListener( 'click', function () {
+			sidebar.classList.remove( 'is-open' );
+			toggle.setAttribute( 'aria-expanded', 'false' );
+		} );
+	} );
+
+	// Highlight the section currently being read.
+	if ( 'IntersectionObserver' in window ) {
+		var byId = {};
+		links.forEach( function ( link ) { byId[ link.getAttribute( 'href' ).slice( 1 ) ] = link; } );
+		var observer = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting && byId[ entry.target.id ] ) {
+					links.forEach( function ( link ) { link.classList.remove( 'is-active' ); } );
+					byId[ entry.target.id ].classList.add( 'is-active' );
+				}
+			} );
+		}, { rootMargin: '0px 0px -75% 0px' } );
+		Object.keys( byId ).forEach( function ( id ) {
+			var heading = document.getElementById( id );
+			if ( heading ) { observer.observe( heading ); }
+		} );
+	}
+}() );
+</script>
+</body>
+</html>

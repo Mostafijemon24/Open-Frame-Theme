@@ -1,0 +1,104 @@
+{
+	"id": "real-estate",
+	"order": 7,
+	"name": "Real Estate",
+	"summary": "A calm, established site for an estate agency: homes for sale, a property page with a viewing form, agents with profiles, services and market notes. Header, footer and blog are Theme Builder templates.",
+	"category": "property",
+	"tags": [
+		"property",
+		"agents",
+		"listings",
+		"homes"
+	],
+	"tier": "pro",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#1f3a2e",
+		"#ddb96a",
+		"#f7f3ea"
+	],
+	"pages": [
+		"Home",
+		"Homes for Sale",
+		"Property Details",
+		"Agents",
+		"Agent Profile",
+		"Services",
+		"Service Details",
+		"About",
+		"Market Notes (blog)",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.5.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"counter",
+				"form",
+				"heading",
+				"icon-list",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Homes for sale",
+			"file": "homes.png"
+		},
+		{
+			"title": "Property details",
+			"file": "property.png"
+		},
+		{
+			"title": "Agents",
+			"file": "agents.png"
+		}
+	]
+}

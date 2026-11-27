@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Frame Starter Sites — User Guide</title>
+<meta name="description" content="How to choose, import, edit and roll back the starter sites of the Open Frame theme.">
+<style>
+@font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+:root { --primary: #3f4cd6; --primary-dark: #2b36b8; --tint: #e8eafc; --heading: #0f172a; --text: #334155; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --surface: #ffffff; --code: #f1f5f9; --sidebar: 280px; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body { margin: 0; font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.65; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+a { color: var(--primary); text-underline-offset: 2px; }
+a:hover { color: var(--primary-dark); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 0.75rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 0.75rem; }
+.sidebar { position: fixed; inset: 0 auto 0 0; width: var(--sidebar); overflow-y: auto; padding: 2rem 1.5rem; background: var(--surface); border-right: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--heading); text-decoration: none; }
+.brand svg { flex: 0 0 auto; }
+.version { margin: 0 0 1.75rem; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.sidebar li { counter-increment: toc; }
+.sidebar li a { display: flex; gap: 0.6rem; padding: 0.42rem 0.7rem; border-radius: 8px; color: var(--text); font-size: 0.94rem; font-weight: 500; line-height: 1.35; text-decoration: none; }
+.sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
+.sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
+.sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
+main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
+.doc { max-width: 860px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
+h1 { margin: 0 0 1rem; font-size: clamp(2rem, 1.5rem + 2.2vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { margin: 4rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 1.75rem; }
+h3 { margin: 2.5rem 0 0.75rem; font-size: 1.25rem; }
+h4 { margin: 2rem 0 0.5rem; font-size: 1.05rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+li > p { margin-bottom: 0.5rem; }
+hr { display: none; }
+code, kbd { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.86em; }
+:not(pre) > code { padding: 0.15em 0.4em; background: var(--code); border-radius: 6px; color: var(--heading); overflow-wrap: anywhere; }
+kbd { padding: 0.15em 0.45em; background: var(--surface); border: 1px solid #cbd5e1; border-bottom-width: 2px; border-radius: 6px; color: var(--heading); }
+pre { margin: 0 0 1.5rem; padding: 1.1rem 1.25rem; overflow: auto; background: #0f172a; color: #f1f5f9; border-radius: 12px; font-size: 0.86rem; line-height: 1.6; }
+pre code { font-size: inherit; }
+blockquote { margin: 0 0 1.5rem; padding: 0.9rem 1.25rem; background: var(--tint); border-left: 4px solid var(--primary); border-radius: 10px; color: var(--heading); }
+blockquote p:last-child { margin-bottom: 0; }
+figure { margin: 1.5rem 0 2rem; }
+figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+figcaption { margin-top: 0.6rem; font-size: 0.875rem; color: var(--muted); text-align: center; }
+.table-wrap { margin: 0 0 1.5rem; overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+th, td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code); color: var(--heading); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.menu-toggle { display: none; }
+footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+@media (max-width: 900px) {
+	.sidebar { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 1.25rem; }
+	.version { margin-bottom: 1rem; }
+	.menu-toggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; font: inherit; font-weight: 600; color: var(--primary); background: var(--tint); border: 0; border-radius: 8px; cursor: pointer; }
+	.sidebar nav { display: none; margin-top: 1rem; }
+	.sidebar.is-open nav { display: block; }
+	main { margin-left: 0; padding-top: 2rem; }
+}
+@media print {
+	.sidebar { display: none; }
+	main { margin: 0; padding: 0; }
+	body { background: #fff; }
+	h2 { break-after: avoid; }
+	figure, table, pre { break-inside: avoid; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<aside class="sidebar" id="sidebar">
+	<a class="brand" href="#content">
+		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
+		Open Frame
+	</a>
+	<p class="version">Starter Sites · v0.6.1</p>
+	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
+	<nav id="toc" aria-label="Documentation sections">
+		<ol>
+				<li><a href="#1-what-you-need">What you need</a></li>
+				<li><a href="#2-installation">Installation</a></li>
+				<li><a href="#3-the-starter-sites-screen">The Starter Sites screen</a></li>
+				<li><a href="#4-the-ten-designs">The ten designs</a></li>
+				<li><a href="#5-looking-at-a-design">Looking at a design</a></li>
+				<li><a href="#6-importing-a-design">Importing a design</a></li>
+				<li><a href="#7-after-the-import-make-it-yours">After the import: make it yours</a></li>
+				<li><a href="#8-header-footer-and-blog">Header, footer and blog</a></li>
+				<li><a href="#9-colors-and-fonts">Colors and fonts</a></li>
+				<li><a href="#10-forms">Forms</a></li>
+				<li><a href="#11-the-shop-design">The Shop design</a></li>
+				<li><a href="#12-rolling-back-an-import">Rolling back an import</a></li>
+				<li><a href="#13-history-and-updates-of-a-design">History and updates of a design</a></li>
+				<li><a href="#14-privacy">Privacy</a></li>
+				<li><a href="#15-troubleshooting">Troubleshooting</a></li>
+				<li><a href="#16-removing-the-plugin">Removing the plugin</a></li>
+				<li><a href="#17-support">Support</a></li>
+		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			<li><a href="index.html">Theme guide</a></li>
+			<li><a href="starter-sites.html" aria-current="page">Starter Sites guide</a></li>
+			<li><a href="install.html">Installation</a></li>
+			<li><a href="support.html">Support and updates</a></li>
+		</ul>
+	</nav>
+</aside>
+<main id="content">
+	<article class="doc">
+<h1 id="open-frame-starter-sites-user-guide">Open Frame Starter Sites — User Guide</h1>
+<p><strong>Plugin version 0.6.1</strong> · Needs the Open Frame theme 1.1.0 or newer · WordPress 6.8+ and PHP 7.4+ for the designs · GPL-2.0-or-later</p>
+<figure><a href="images/starter-sites-designs.png"><img src="images/starter-sites-designs.png" alt="The Starter Sites screen with ten designs" loading="lazy"></a><figcaption>The Starter Sites screen with ten designs</figcaption></figure>
+<p>Open Frame Starter Sites is the companion plugin of the <a href="index.html">Open Frame theme</a>. It adds one screen to your dashboard, <strong>Appearance → Starter Sites</strong>, where you choose a complete website design, see what it needs, and import it. Every page of a design is an ordinary Elementor page, so you change texts, pictures and colors the way you would on a page you built yourself. An import can be undone.</p>
+<p><strong>How to read this guide.</strong> Screenshots carry red numbered markers. The table under each screenshot explains every number.</p>
+<h2 id="1-what-you-need">1. What you need</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>Needed</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Theme</strong></td><td>Open Frame 1.1.0 or newer, active</td><td>A child theme of Open Frame works too</td></tr>
+<tr><td><strong>WordPress</strong></td><td>6.8 or newer</td><td>The plugin itself runs on 6.4, but the designs need 6.8</td></tr>
+<tr><td><strong>PHP</strong></td><td>7.4 or newer</td><td>Tested on 7.4, 8.1 and 8.3</td></tr>
+<tr><td><strong>Elementor</strong></td><td>4.0.3 or newer (free)</td><td>The screen installs and activates it for you</td></tr>
+<tr><td><strong>Elementor Pro</strong></td><td>4.0 or newer, only for designs marked &quot;Needs Elementor Pro&quot;</td><td>A commercial plugin sold by Elementor. The screen tells you when a design needs it; it never installs it</td></tr>
+<tr><td><strong>WooCommerce</strong></td><td>10.0 or newer, only for the Shop design</td><td>The screen installs and activates it for you</td></tr>
+<tr><td><strong>Server</strong></td><td>Outgoing HTTPS requests, ZIP support, a writable uploads folder</td><td>Standard on ordinary hosting. The screen checks all three</td></tr></tbody></table></div>
+<p>You need to be an administrator of the site.</p>
+<blockquote>
+<p><strong>Try it on a new site first.</strong> An import adds pages and changes your home page and site-wide colors. It deletes nothing and can be rolled back, but on a site that already has visitors, make a backup before you import.</p>
+</blockquote>
+<h2 id="2-installation">2. Installation</h2>
+<ol>
+<li>Install and activate the <strong>Open Frame</strong> theme (see <a href="index.html#2-installation">Installation in the theme guide</a>).</li>
+<li>In your dashboard go to <strong>Plugins → Add Plugin → Upload Plugin</strong>, choose <code>open-frame-starter-sites.zip</code>, click <strong>Install Now</strong>, then <strong>Activate Plugin</strong>.</li>
+<li>Go to <strong>Appearance → Starter Sites</strong>.</li>
+</ol>
+<p>There is nothing to set up: no account, no licence key, no settings page.</p>
+<p>The step-by-step version with checks for the downloaded files is in the <a href="install.html">installation guide</a>.</p>
+<h2 id="3-the-starter-sites-screen">3. The Starter Sites screen</h2>
+<figure><a href="images/starter-sites-screen.png"><img src="images/starter-sites-screen.png" alt="The Starter Sites screen" loading="lazy"></a><figcaption>The Starter Sites screen</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What you do with it</th></tr></thead><tbody><tr><td>1</td><td><strong>Appearance → Starter Sites</strong></td><td>Where the screen lives in the dashboard menu</td></tr>
+<tr><td>2</td><td><strong>Search</strong></td><td>Type a word such as &quot;restaurant&quot; or &quot;pricing&quot; to narrow the list</td></tr>
+<tr><td>3</td><td><strong>Category</strong></td><td>Show the designs of one kind: Business, Creative, Technology, Online store, Food and drink, Real estate, Education, Health, Blog and magazine</td></tr>
+<tr><td>4</td><td><strong>Elementor version</strong></td><td>Show only designs for free Elementor, only designs for Elementor Pro, or both</td></tr>
+<tr><td>5</td><td><strong>A design</strong></td><td>A picture of its home page, its name, its category and the number of pages. <strong>View details</strong> opens it</td></tr>
+<tr><td>6</td><td><strong>Badge</strong></td><td><strong>Free</strong>: works with free Elementor. <strong>Needs Elementor Pro</strong>: needs Elementor Pro. After an import the design also carries <strong>Imported</strong>, and <strong>Update available</strong> when the library has a newer version of it</td></tr>
+<tr><td>7</td><td><strong>Check for new designs</strong></td><td>The list is fetched from the library at most every twelve hours. This button fetches it now. The time of the last check is shown beside it</td></tr></tbody></table></div>
+<p>Looking through the list and opening designs changes nothing on your site.</p>
+<h2 id="4-the-ten-designs">4. The ten designs</h2>
+<p>Five designs work with the free version of Elementor. Five need Elementor Pro, because they use its Theme Builder, forms and post lists.</p>
+<div class="table-wrap"><table><thead><tr><th>Design</th><th>For</th><th>Elementor</th><th>Pages</th></tr></thead><tbody><tr><td><strong>Business</strong></td><td>Service companies and consultancies</td><td>Free</td><td>Home, About, Services, Service Details, Projects, Project Details, Team, Pricing, Insights (blog), Contact</td></tr>
+<tr><td><strong>Portfolio</strong></td><td>An independent designer or freelancer</td><td>Free</td><td>Home, About, Work, Project Details, Services, Service Details, Resume, Notes (blog), Contact</td></tr>
+<tr><td><strong>Restaurant</strong></td><td>A restaurant, café or bar (dark design)</td><td>Free</td><td>Home, Menu, Our Story, Reservations, Private Events, Gallery, Journal (blog), Contact and Location</td></tr>
+<tr><td><strong>Education</strong></td><td>An academy or training centre</td><td>Free</td><td>Home, Courses, Course Details, Instructors, Admissions and Fees, Events, About, News (blog), Contact</td></tr>
+<tr><td><strong>Medical</strong></td><td>A clinic or practice</td><td>Free</td><td>Home, About, Departments, Department Details, Doctors, Doctor Profile, Book an Appointment, Patient Information, Health Notes (blog), Contact</td></tr>
+<tr><td><strong>Creative Agency</strong></td><td>A studio or agency (dark design)</td><td>Pro</td><td>Home, Studio, Services, Service Details, Work, Case Study, Careers, Journal (blog), Contact</td></tr>
+<tr><td><strong>SaaS</strong></td><td>A software product</td><td>Pro</td><td>Home, Features, Feature Details, Pricing, Integrations, Customers, About, Blog, Book a Demo, Privacy, Terms</td></tr>
+<tr><td><strong>Real Estate</strong></td><td>An estate agency</td><td>Pro</td><td>Home, Homes for Sale, Property Details, Agents, Agent Profile, Services, Service Details, About, Market Notes (blog), Contact</td></tr>
+<tr><td><strong>Magazine</strong></td><td>A magazine or a blog with sections</td><td>Pro</td><td>Front Page, Category, Single Article, Author, About, Subscribe, Contact, All Stories</td></tr>
+<tr><td><strong>Shop</strong></td><td>A small online store (needs WooCommerce)</td><td>Pro</td><td>Home, Shop, Product, Cart, Checkout, My Account, About, Lookbook, Shipping and Returns, Journal, Contact</td></tr></tbody></table></div>
+<p>Every design also brings a header, a footer, a layout for single articles, a &quot;page not found&quot; page, a menu, a few sample articles and its own fonts.</p>
+<p><strong>About the sample content.</strong> Company names, people, prices and texts are invented, and are there to be replaced. The photographs are real and free to use: each one is in the public domain or under the CC0 licence, and the source of every photograph is listed in <a href="../starter-sites/LICENSES.md"><code>starter-sites/LICENSES.md</code></a>. You may keep them on your site, also on a commercial one.</p>
+<h2 id="5-looking-at-a-design">5. Looking at a design</h2>
+<p>Click <strong>View details</strong> on a design.</p>
+<figure><a href="images/starter-sites-details.png"><img src="images/starter-sites-details.png" alt="The details of a design" loading="lazy"></a><figcaption>The details of a design</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What it tells you</th></tr></thead><tbody><tr><td>1</td><td><strong>Preview pictures</strong></td><td>The home page and three more pages of the design. Click a name to switch</td></tr>
+<tr><td>2</td><td><strong>Status</strong></td><td>One sentence about where you stand: what is still missing, or that your site has everything this design needs</td></tr>
+<tr><td>3</td><td><strong>What it needs</strong></td><td>A list with a green tick for everything your site already has: the versions of WordPress and PHP, the theme, this plugin, ZIP support, a writable uploads folder, and the plugins the design is built with</td></tr>
+<tr><td>4</td><td><strong>Install and activate / Activate / Update</strong></td><td>Appears beside a plugin from WordPress.org that is missing, switched off or too old. One click does it, without leaving the screen</td></tr>
+<tr><td>5</td><td><strong>Pages included</strong></td><td>Every page and layout of the design by name</td></tr>
+<tr><td>6</td><td><strong>Where you edit each part</strong></td><td>Which parts are edited with Elementor and which are set in the Customizer</td></tr></tbody></table></div>
+<h3 id="when-something-is-missing">When something is missing</h3>
+<ul>
+<li><strong>Elementor or WooCommerce:</strong> click the button beside it (marker 4). WordPress downloads the plugin from WordPress.org with its own installer, the same way as under <strong>Plugins → Add Plugin</strong>.</li>
+<li><strong>Elementor Pro:</strong> the list says so and links to Elementor&#39;s website. Buy it there, install it under <strong>Plugins → Add Plugin → Upload Plugin</strong>, activate your licence, then come back. This plugin does not contain, install or unlock Elementor Pro.</li>
+<li><strong>WordPress, PHP or the theme is too old:</strong> update it first. For PHP, ask your hosting company.</li>
+<li><strong>&quot;This server asks for FTP details before it installs plugins&quot;:</strong> your host does not let WordPress write plugin files directly. Install the plugin under <strong>Plugins → Add Plugin</strong>, where WordPress asks for those details, then come back.</li>
+</ul>
+<p>When every line has a green tick, the status changes and the button <strong>Import this design</strong> appears.</p>
+<figure><a href="images/starter-sites-ready.png"><img src="images/starter-sites-ready.png" alt="A design that is ready to import" loading="lazy"></a><figcaption>A design that is ready to import</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>The status now reads &quot;Your site has everything this design needs.&quot;</td></tr>
+<tr><td>2</td><td><strong>Import this design</strong> opens the confirmation described in the next chapter</td></tr></tbody></table></div>
+<h2 id="6-importing-a-design">6. Importing a design</h2>
+<h3 id="step-1-read-what-will-change-and-confirm">Step 1: read what will change, and confirm</h3>
+<p>Click <strong>Import this design</strong>. Nothing happens yet: the screen first tells you what an import does.</p>
+<figure><a href="images/starter-sites-confirm.png"><img src="images/starter-sites-confirm.png" alt="The confirmation before an import" loading="lazy"></a><figcaption>The confirmation before an import</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What it means</th></tr></thead><tbody><tr><td>1</td><td><strong>Before you import</strong></td><td>Pages and images are <strong>added</strong>. Nothing you already have is deleted. Your <strong>home page</strong> changes to the home page of the design. Site-wide <strong>colors and fonts</strong> (Elementor&#39;s Site Settings), some <strong>theme settings</strong>, the <strong>header</strong> and the <strong>menu</strong> change to those of the design</td></tr>
+<tr><td>2</td><td><strong>&quot;I understand…&quot;</strong></td><td>Tick the box to say you have read it. The button stays grey until you do</td></tr>
+<tr><td>3</td><td><strong>Start the import</strong></td><td>Starts it. <strong>Cancel</strong> closes the box and changes nothing</td></tr></tbody></table></div>
+<h3 id="step-2-wait-while-it-runs">Step 2: wait while it runs</h3>
+<figure><a href="images/starter-sites-progress.png"><img src="images/starter-sites-progress.png" alt="An import in progress" loading="lazy"></a><figcaption>An import in progress</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td>The progress bar</td></tr>
+<tr><td>2</td><td>The step that is running now: Checking your site, Saving your current settings, Downloading the design, Importing images, Importing fonts, Creating pages, Setting colors and fonts, Creating menus, Building the pages in Elementor, Applying settings, Finishing</td></tr></tbody></table></div>
+<p>An import takes between half a minute and a few minutes, depending on your server and on the number of pictures (between 9 and 18 per design). <strong>Keep the window open.</strong></p>
+<p>If the window is closed, the connection drops or your computer goes to sleep, nothing is lost. Open <strong>Appearance → Starter Sites</strong> again: a notice at the top says that an import did not finish, with the link <strong>Continue or roll back</strong>. It opens the design, where <strong>Continue the import</strong> picks up where it stopped and <strong>Roll back this import</strong> takes back what was done so far.</p>
+<h3 id="step-3-done">Step 3: done</h3>
+<figure><a href="images/starter-sites-imported.png"><img src="images/starter-sites-imported.png" alt="A finished import" loading="lazy"></a><figcaption>A finished import</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What you do with it</th></tr></thead><tbody><tr><td>1</td><td><strong>The result</strong></td><td>How many pages, images and menus were added</td></tr>
+<tr><td>2</td><td><strong>View your site</strong>, <strong>Edit the home page with Elementor</strong>, <strong>Customize</strong></td><td>Three ways to go on from here</td></tr>
+<tr><td>3</td><td><strong>Roll back this import</strong></td><td>Takes the import back. See <a href="#12-rolling-back-an-import">Rolling back an import</a></td></tr></tbody></table></div>
+<p>This is the home page of the Business design a moment after the import:</p>
+<figure><a href="images/starter-sites-home.png"><img src="images/starter-sites-home.png" alt="The home page of the Business design after the import" loading="lazy"></a><figcaption>The home page of the Business design after the import</figcaption></figure>
+<h3 id="importing-a-second-time">Importing a second time</h3>
+<ul>
+<li><strong>The same design again:</strong> no page is created twice. The pages of the design are put back the way they came from the library, so <strong>changes you made to those pages are overwritten</strong>. Do this only when you want a fresh copy.</li>
+<li><strong>A different design:</strong> its pages are added beside the ones you have, and the home page, colors, fonts, header and menu change to the new design. The pages of the earlier design stay on your site until you delete them under <strong>Pages</strong>. If you only want to compare designs, roll back the first one before you import the next.</li>
+</ul>
+<h2 id="7-after-the-import-make-it-yours">7. After the import: make it yours</h2>
+<p>Everything a design brought is now ordinary content of your site.</p>
+<h3 id="edit-a-page">Edit a page</h3>
+<p>Go to <strong>Pages</strong>, point at a page and click <strong>Edit with Elementor</strong> (or use <strong>Edit the home page with Elementor</strong> right after the import).</p>
+<figure><a href="images/starter-sites-editor.png"><img src="images/starter-sites-editor.png" alt="The home page of a design in the Elementor editor" loading="lazy"></a><figcaption>The home page of a design in the Elementor editor</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What you do with it</th></tr></thead><tbody><tr><td>1</td><td><strong>The settings of what you clicked</strong></td><td>Click any text, picture or button on the page. Its settings open on the left: type a new text, choose another picture, change a link</td></tr>
+<tr><td>2</td><td><strong>Desktop, tablet, phone</strong></td><td>Shows the page as it looks at each size. The designs are prepared for all three; check them after larger changes</td></tr>
+<tr><td>3</td><td><strong>Publish</strong></td><td>Saves your changes and puts them on the site</td></tr>
+<tr><td>4</td><td><strong>Elementor menu</strong></td><td>Opens a menu with <strong>Site Settings</strong> (colors and fonts of the whole site) and, with Elementor Pro, <strong>Theme Builder</strong></td></tr></tbody></table></div>
+<h3 id="a-checklist-for-replacing-the-sample-content">A checklist for replacing the sample content</h3>
+<ol>
+<li><strong>Site name and logo:</strong> <strong>Appearance → Customize → Site Identity</strong>. The header of a design shows your site title; add a logo there if you have one.</li>
+<li><strong>Texts:</strong> go through every page under <strong>Pages</strong> and replace the invented names, prices, addresses, telephone numbers and email addresses with your own.</li>
+<li><strong>Pictures:</strong> click a picture in Elementor and choose your own from the media library. Give every picture a short description under &quot;Alt text&quot;; people who use a screen reader depend on it.</li>
+<li><strong>Articles:</strong> the design brought a few sample articles under <strong>Posts</strong>. Replace or delete them.</li>
+<li><strong>Menu:</strong> <strong>Appearance → Menus</strong>. Remove entries for pages you do not use.</li>
+<li><strong>Pages you do not need:</strong> move them to the trash under <strong>Pages</strong>. Check afterwards that no button still links to them.</li>
+<li><strong>Contact details in the footer:</strong> see the next chapter.</li>
+<li><strong>Legal pages:</strong> a privacy policy and, where your country asks for one, an imprint. The designs do not write these for you (the &quot;Privacy&quot; and &quot;Terms&quot; pages of the SaaS design are placeholders with sample text).</li>
+</ol>
+<h2 id="8-header-footer-and-blog">8. Header, footer and blog</h2>
+<p>Where you edit these depends on whether the design is for free Elementor or for Elementor Pro.</p>
+<h3 id="designs-for-free-elementor-site-parts">Designs for free Elementor: Site Parts</h3>
+<p>Business, Portfolio, Restaurant, Education and Medical store their header, footer and &quot;page not found&quot; page as <strong>Site Parts</strong>. Go to <strong>Appearance → Site Parts</strong>, point at a part and click <strong>Edit with Elementor</strong>.</p>
+<figure><a href="images/starter-sites-site-parts.png"><img src="images/starter-sites-site-parts.png" alt="The Site Parts of a design" loading="lazy"></a><figcaption>The Site Parts of a design</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td><strong>Appearance → Site Parts</strong></td></tr>
+<tr><td>2</td><td>The three parts of the design: <strong>Header</strong>, <strong>Footer</strong> and <strong>Page not found</strong>. Each one opens in Elementor like a page</td></tr></tbody></table></div>
+<p>The menu inside the header is your WordPress menu (<strong>Appearance → Menus</strong>), shown by the &quot;Navigation Menu (Open Frame)&quot; widget. On phones it becomes the menu button of the theme.</p>
+<p>The <strong>blog page, single articles, search results and archives</strong> of these designs are drawn by the Open Frame theme, with the colors and fonts of the design. Their layout is set under <strong>Appearance → Customize → Open Frame Options</strong> (see <a href="index.html#16-blog-and-posts">Blog and posts in the theme guide</a>).</p>
+<p>To go back to the header and footer of the theme, move the Site Part to the trash.</p>
+<h3 id="designs-for-elementor-pro-theme-builder">Designs for Elementor Pro: Theme Builder</h3>
+<p>Creative Agency, SaaS, Real Estate, Magazine and Shop bring templates for Elementor Pro&#39;s Theme Builder: header, footer, single article, archive (blog, categories, search results) and &quot;page not found&quot;. Go to <strong>Templates → Theme Builder</strong>, or open the Elementor menu (marker 4 in the editor picture above) and choose <strong>Theme Builder</strong>.</p>
+<p>Each template has <strong>display conditions</strong> that say where it is used (&quot;Entire Site&quot; for the header, &quot;All Archives&quot; for the blog, and so on). Open a template, click the arrow beside <strong>Publish</strong>, and choose <strong>Display Conditions</strong> to see or change them.</p>
+<p>If your site uses both, a Theme Builder template takes priority over a Site Part.</p>
+<h2 id="9-colors-and-fonts">9. Colors and fonts</h2>
+<h3 id="colors">Colors</h3>
+<p>A design sets Elementor&#39;s four site-wide colors, <strong>Primary</strong>, <strong>Secondary</strong>, <strong>Text</strong> and <strong>Accent</strong>, and adds a few of its own (for example a tint for backgrounds and a color for lines). To change them, open any page in Elementor, open the Elementor menu, and choose <strong>Site Settings → Global Colors</strong>. A change there reaches every page of the design at once, and, because the import switches on the theme option &quot;Use Elementor global colors and fonts&quot;, also the blog and the other pages drawn by the theme.</p>
+<h3 id="fonts">Fonts</h3>
+<p>Each design brings its own fonts. The font files are saved on <strong>your</strong> server, in <code>wp-content/uploads/open-frame-fonts</code>, and your site serves them itself. No font service such as Google Fonts is contacted, which keeps your visitors&#39; IP addresses with you and makes the pages load faster.</p>
+<p>To change a font, go to <strong>Site Settings → Global Fonts</strong>. The fonts of the design are in the font list under <strong>Starter site fonts</strong>. If you choose a Google font from Elementor&#39;s list instead, Elementor loads it from Google, and your privacy policy should say so.</p>
+<h2 id="10-forms">10. Forms</h2>
+<div class="table-wrap"><table><thead><tr><th>Design</th><th>How visitors contact you</th></tr></thead><tbody><tr><td>Business, Portfolio, Restaurant, Education, Medical</td><td>Buttons and links that open the visitor&#39;s email program or dial your telephone number. There is no form, because the free version of Elementor has no form widget. Replace the sample email address and telephone number with your own</td></tr>
+<tr><td>Creative Agency, SaaS, Real Estate, Magazine, Shop</td><td>Forms made with the <strong>Form</strong> widget of Elementor Pro: contact, demo request, viewing request, subscription</td></tr></tbody></table></div>
+<p><strong>Where form messages go.</strong> A form sends an email to the administrator address of your site (<strong>Settings → General → Administration Email Address</strong>). To change the address or the wording, edit the page in Elementor, click the form, and open <strong>Actions After Submit → Email</strong>.</p>
+<p><strong>Test every form before you launch.</strong> Send a message to yourself. If nothing arrives, the form is rarely the cause: many hosting companies do not deliver email sent by WordPress reliably. An SMTP plugin connected to a mail service solves it.</p>
+<p>If you want a form on a design for free Elementor, install a form plugin of your choice and place its widget or shortcode on the contact page.</p>
+<h2 id="11-the-shop-design">11. The Shop design</h2>
+<p>Shop needs Elementor Pro and <strong>WooCommerce</strong>. The screen installs WooCommerce for you.</p>
+<p>What the import adds: eight sample products with pictures, prices and categories, the home page, a lookbook, a shipping and returns page, a journal and a contact page. The <strong>Shop, Cart, Checkout and My Account</strong> pages are the ones WooCommerce creates itself; the design links to them and styles them through the theme.</p>
+<p>What you still have to do before you can sell:</p>
+<ol>
+<li>Run WooCommerce&#39;s own setup under <strong>WooCommerce → Home</strong>: your address, currency and taxes.</li>
+<li>Add a payment method under <strong>WooCommerce → Settings → Payments</strong>.</li>
+<li>Set your shipping zones and prices under <strong>WooCommerce → Settings → Shipping</strong>, and rewrite the &quot;Shipping and Returns&quot; page to match.</li>
+<li>Replace the sample products under <strong>Products</strong> with your own.</li>
+<li>Place a test order from start to finish.</li>
+</ol>
+<p>A rollback removes the sample products and their categories again. Orders, customers and your WooCommerce settings are not touched.</p>
+<h2 id="12-rolling-back-an-import">12. Rolling back an import</h2>
+<p><strong>Roll back this import</strong> undoes the most recent import. You find the button in the details of the imported design.</p>
+<p>What a rollback does:</p>
+<ul>
+<li>removes the pages, articles, products, images, menus, Site Parts, templates and fonts that the import <strong>added</strong>;</li>
+<li>puts back what the import <strong>changed</strong>: your earlier home page, Elementor&#39;s Site Settings, the theme settings and the menu positions.</li>
+</ul>
+<p>What you should know before you click:</p>
+<ul>
+<li><strong>Changes you made to imported pages are lost</strong>, because those pages are removed. Pages you created yourself are not touched.</li>
+<li><strong>Only the most recent import can be rolled back.</strong> Starting another import ends the possibility to roll back the one before it.</li>
+<li>Plugins that were installed for the design (Elementor, WooCommerce) stay installed. Remove them under <strong>Plugins</strong> if you no longer want them.</li>
+</ul>
+<p>The screen asks for confirmation before it rolls back.</p>
+<h2 id="13-history-and-updates-of-a-design">13. History and updates of a design</h2>
+<figure><a href="images/starter-sites-history.png"><img src="images/starter-sites-history.png" alt="The import history" loading="lazy"></a><figcaption>The import history</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th></tr></thead><tbody><tr><td>1</td><td><strong>Import history</strong> switches from the list of designs to the list of what was done on this site</td></tr>
+<tr><td>2</td><td>One line per import or rollback: the design and its version, the date, the result, and notes (for example a picture that could not be downloaded). The twenty most recent lines are kept</td></tr></tbody></table></div>
+<p><strong>Updates of a design.</strong> Designs have version numbers. When the library has a newer version of a design you imported, its card shows <strong>Update available</strong>. Importing it again brings the new version, with the consequence described under <a href="#importing-a-second-time">Importing a second time</a>: your changes to the pages of that design are overwritten. A site that is finished does not need design updates; they matter when you are about to start a new site.</p>
+<p><strong>Updates of the plugin</strong> are described in the <a href="support.html">support and update policy</a>.</p>
+<h2 id="14-privacy">14. Privacy</h2>
+<ul>
+<li><strong>Your visitors:</strong> the plugin does nothing on the public side of your site that contacts another server. Pages, pictures and fonts of a design are served by your own site.</li>
+<li><strong>The library:</strong> when an administrator opens the Starter Sites screen, the plugin fetches the list of designs from <code>api.buildbetters.com</code>, and the administrator&#39;s browser loads the preview pictures from <code>cdn.buildbetters.com</code>. Both are run by the author of the plugin and served through Cloudflare. The request contains what every web request contains (the IP address of your server or browser) and the name and version of the plugin. <strong>Nothing about your site, its address, its content or its users is sent.</strong></li>
+<li><strong>No tracking, no account, no licence check.</strong></li>
+<li><strong>Safety of downloads:</strong> the list of designs carries a digital signature, and every package, picture and font is checked against it before it is used. A download that was damaged or altered on the way is refused. A design never contains program code: it is data (texts, pictures, fonts, Elementor settings), and the plugin refuses a package with script in it.</li>
+<li><strong>Installing Elementor or WooCommerce</strong> from the screen is a download from WordPress.org, made by WordPress itself.</li>
+</ul>
+<h2 id="15-troubleshooting">15. Troubleshooting</h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>What it means and what to do</th></tr></thead><tbody><tr><td>The list of designs is empty, or &quot;The starter site library could not be reached&quot;</td><td>Your server could not open an HTTPS connection to the library. Click <strong>Check for new designs</strong> to try again. If it keeps failing, ask your hosting company whether outgoing HTTPS requests are allowed. A list that was fetched earlier keeps being shown</td></tr>
+<tr><td>&quot;The list of designs could not be verified, so it was not used&quot;</td><td>The signature of the list did not match. Usually a temporary fault on the way. Try again later; if it persists, <a href="#17-support">report it</a></td></tr>
+<tr><td>&quot;…is damaged or was altered, so it was not used. Please try again.&quot;</td><td>A download arrived incomplete. Click <strong>Try again</strong></td></tr>
+<tr><td>A plugin cannot be installed: &quot;needs WordPress …&quot; or &quot;needs PHP …&quot;</td><td>The current version of that plugin needs a newer WordPress or PHP than your site has. Update WordPress, or ask your host for a newer PHP</td></tr>
+<tr><td>&quot;This design is built with Elementor containers. Turn on &quot;Container&quot;…&quot;</td><td>Go to <strong>Elementor → Settings → Features</strong>, switch <strong>Container</strong> on, save, and import again</td></tr>
+<tr><td>&quot;The uploads folder cannot be written to&quot;</td><td>Ask your hosting company to make <code>wp-content/uploads</code> writable</td></tr>
+<tr><td>The import stops with an error</td><td>The screen shows the reason, with <strong>Try again</strong> and <strong>Roll back</strong>. Try again once; a single failed download is the usual cause</td></tr>
+<tr><td>The window was closed during an import</td><td>Open <strong>Appearance → Starter Sites</strong> and click <strong>Continue or roll back</strong> in the notice at the top</td></tr>
+<tr><td>&quot;An earlier import did not finish. Continue it or roll it back first.&quot;</td><td>The same situation: finish or roll back the earlier import, then start the new one</td></tr>
+<tr><td>&quot;The import is already running in another window&quot;</td><td>It runs in another browser tab. Wait a minute, or close the other tab</td></tr>
+<tr><td>A picture is missing after the import</td><td>The history (chapter 13) names it under Notes. Import the design again to fetch it, or put your own picture there</td></tr>
+<tr><td>The site looks unstyled right after the import</td><td>A cache is showing old files. Empty the cache of your cache plugin and of your host, and reload the page</td></tr>
+<tr><td>The header of the theme shows instead of the header of the design</td><td>Free designs: check that <strong>Appearance → Site Parts</strong> has a published &quot;Header&quot;. Pro designs: check that Elementor Pro is active and its licence is connected, and that the header template under <strong>Templates → Theme Builder</strong> has the condition &quot;Entire Site&quot;</td></tr>
+<tr><td>Fonts look different from the preview</td><td>Empty your caches. Then check <strong>Site Settings → Global Fonts</strong>: the fonts of the design are under &quot;Starter site fonts&quot;</td></tr>
+<tr><td>A form sends no email</td><td>See <a href="#10-forms">Forms</a></td></tr>
+<tr><td>&quot;Starter Sites&quot; is missing from the Appearance menu</td><td>The plugin has to be active, and you have to be an administrator of the site</td></tr>
+<tr><td>The screen says the Open Frame theme is not active</td><td>Activate Open Frame (or a child theme of it) under <strong>Appearance → Themes</strong>. The designs are made for this theme and cannot be imported into another one</td></tr></tbody></table></div>
+<h2 id="16-removing-the-plugin">16. Removing the plugin</h2>
+<p>A site keeps working when the plugin is switched off or deleted, with two things to know for designs made for free Elementor:</p>
+<ul>
+<li>the <strong>header, footer and &quot;page not found&quot; page</strong> stored as Site Parts are shown by the plugin. Without it, the header and footer of the theme appear instead;</li>
+<li>the <strong>fonts</strong> of the design are served by the plugin. Without it, Elementor falls back to the next font in the list.</li>
+</ul>
+<p>So keep the plugin active on a site that uses a free design. Designs for Elementor Pro keep their header, footer and templates, because those belong to Elementor Pro; only the fonts are affected.</p>
+<p>Deleting the plugin removes its own data: the saved list of designs, the import history, the record of the last import, and the font files in <code>wp-content/uploads/open-frame-fonts</code>. <strong>Pages, articles, products and pictures are your content and stay.</strong></p>
+<h2 id="17-support">17. Support</h2>
+<ul>
+<li>Questions and bug reports: <a href="https://github.com/Mostafijemon24/Open-Frame-Theme/issues">https://github.com/Mostafijemon24/Open-Frame-Theme/issues</a></li>
+<li>What is supported, for how long, and how updates are published: <a href="support.html">support and update policy</a></li>
+<li>Changes in each version: the <code>== Changelog ==</code> section of the plugin&#39;s <a href="../companion/open-frame-starter-sites/readme.txt"><code>readme.txt</code></a></li>
+<li>For developers: <a href="dev/PLUGIN.md">plugin developer reference</a></li>
+</ul>
+
+	</article>
+	<footer>Open Frame Starter Sites 0.6.1 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+</main>
+<script>
+( function () {
+	var sidebar = document.getElementById( 'sidebar' );
+	var toggle = sidebar.querySelector( '.menu-toggle' );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
+
+	toggle.addEventListener( 'click', function () {
+		var open = sidebar.classList.toggle( 'is-open' );
+		toggle.setAttribute( 'aria-expanded', String( open ) );
+	} );
+	links.forEach( function ( link ) {
+		link.addEventListener( 'click', function () {
+			sidebar.classList.remove( 'is-open' );
+			toggle.setAttribute( 'aria-expanded', 'false' );
+		} );
+	} );
+
+	// Highlight the section currently being read.
+	if ( 'IntersectionObserver' in window ) {
+		var byId = {};
+		links.forEach( function ( link ) { byId[ link.getAttribute( 'href' ).slice( 1 ) ] = link; } );
+		var observer = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting && byId[ entry.target.id ] ) {
+					links.forEach( function ( link ) { link.classList.remove( 'is-active' ); } );
+					byId[ entry.target.id ].classList.add( 'is-active' );
+				}
+			} );
+		}, { rootMargin: '0px 0px -75% 0px' } );
+		Object.keys( byId ).forEach( function ( id ) {
+			var heading = document.getElementById( id );
+			if ( heading ) { observer.observe( heading ); }
+		} );
+	}
+}() );
+</script>
+</body>
+</html>

@@ -1,0 +1,1557 @@
+{
+	"uid": "medical:pages:appointment",
+	"title": "Book an Appointment",
+	"slug": "appointments",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000171",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "80",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "0000170",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 68,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000016d",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Appointments",
+									"header_size": "p",
+									"title_color": "#0B6B69",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.6,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000016e",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Book an appointment",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000016f",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>By telephone, by email or at the desk. We do not use an online form: a person takes your booking and can answer your questions.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 20,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000017c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000017b",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000174",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000172",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-phone-alt",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "By telephone",
+											"description_text": "The quickest way. Lines are open from 7:30 on weekdays; mornings are the busiest.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000173",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "+1 (555) 010-0191",
+											"link": {
+												"url": "tel:+15550100191",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"__globals__": {
+												"background_color": "globals/colors?id=primary"
+											},
+											"align": "justify"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000177",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000175",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-envelope",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "By email",
+											"description_text": "For appointments that are not urgent. Tell us your name, date of birth and what it is about.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000176",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Write to us",
+											"link": {
+												"url": "mailto:care@example.com?subject=Appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#0B6B69",
+											"hover_color": "#FFFFFF",
+											"button_background_hover_color": "#0B6B69",
+											"button_hover_border_color": "#0B6B69",
+											"align": "justify"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000017a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000178",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-hospital-user",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "At the desk",
+											"description_text": "Linden Clinic, 8 Linden Avenue. The desk is staffed whenever the clinic is open.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000179",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "How to find us",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#0B6B69",
+											"hover_color": "#FFFFFF",
+											"button_background_hover_color": "#0B6B69",
+											"button_hover_border_color": "#0B6B69",
+											"align": "justify"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000184",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "0",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000183",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "32",
+								"right": "32",
+								"bottom": "32",
+								"left": "32",
+								"isLinked": true
+							},
+							"padding_mobile": {
+								"unit": "px",
+								"top": "24",
+								"right": "24",
+								"bottom": "24",
+								"left": "24",
+								"isLinked": true
+							},
+							"background_background": "classic",
+							"background_color": "#FBE9E3",
+							"border_radius": {
+								"unit": "px",
+								"top": "20",
+								"right": "20",
+								"bottom": "20",
+								"left": "20",
+								"isLinked": true
+							},
+							"box_shadow_box_shadow_type": "",
+							"box_shadow_box_shadow": {
+								"horizontal": 0,
+								"vertical": 18,
+								"blur": 44,
+								"spread": 0,
+								"color": "rgba(10,63,66,0.10)"
+							}
+						},
+						"elements": [
+							{
+								"id": "0000182",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "column",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "stretch",
+									"flex_gap": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 24,
+										"column": "24",
+										"row": "24",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_wrap": "nowrap"
+								},
+								"elements": [
+									{
+										"id": "000017e",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"width": {
+												"unit": "px",
+												"size": 64,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": [
+											{
+												"id": "000017d",
+												"elType": "widget",
+												"widgetType": "icon",
+												"settings": {
+													"selected_icon": {
+														"value": "fas fa-exclamation-triangle",
+														"library": "fa-solid"
+													},
+													"primary_color": "#B4432B",
+													"size": {
+														"unit": "px",
+														"size": 40,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000181",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000017f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "In an emergency",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 22,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000180",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>If you think a life is in danger, do not wait for an appointment. Call your local emergency number straight away.</p>",
+													"text_color": "#0F2B2D"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000019d",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "000019c",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000018d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 56,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000185",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Your first visit",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000186",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What to bring, and what to expect",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000018b",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000187",
+													"text": "Your insurance card and an identity document",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000188",
+													"text": "A list of the medicines you take",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000189",
+													"text": "Letters or results from other doctors, if you have them",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000018a",
+													"text": "For children: the vaccination booklet",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0F2B2D",
+											"icon_color": "#0B6B69"
+										},
+										"elements": []
+									},
+									{
+										"id": "000018c",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A first appointment lasts forty minutes. Please arrive ten minutes early to register. If you cannot come, tell us by 16:00 the day before, so that someone else can have the time.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000019b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 44,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000019a",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 16,
+												"column": "16",
+												"row": "16",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "30",
+												"right": "30",
+												"bottom": "30",
+												"left": "30",
+												"isLinked": true
+											},
+											"padding_mobile": {
+												"unit": "px",
+												"top": "24",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": true
+											},
+											"background_background": "classic",
+											"background_color": "#FFFFFF",
+											"border_radius": {
+												"unit": "px",
+												"top": "20",
+												"right": "20",
+												"bottom": "20",
+												"left": "20",
+												"isLinked": true
+											},
+											"box_shadow_box_shadow_type": "yes",
+											"box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 18,
+												"blur": 44,
+												"spread": 0,
+												"color": "rgba(10,63,66,0.10)"
+											}
+										},
+										"elements": [
+											{
+												"id": "000018e",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Opening hours",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 22,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000198",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 0,
+														"column": "0",
+														"row": "0",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000191",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "000018f",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Monday to Friday",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "0000190",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "7:30 to 19:00",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													},
+													{
+														"id": "0000194",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "0000192",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Saturday",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "0000193",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "9:00 to 13:00",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													},
+													{
+														"id": "0000197",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "0000195",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Sunday and holidays",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "0000196",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Closed",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													}
+												]
+											},
+											{
+												"id": "0000199",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Outside these hours, the recorded message on our telephone gives the number of the doctor on call.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

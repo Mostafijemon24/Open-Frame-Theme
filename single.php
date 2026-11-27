@@ -6,33 +6,37 @@
  */
 
 get_header();
-?>
-<div class="of-container of-content-area">
-	<div class="<?php echo esc_attr( open_frame_layout_classes() ); ?>">
-		<main id="main" class="site-main of-primary">
-			<?php
-			while ( have_posts() ) :
-				the_post();
 
-				get_template_part( 'template-parts/content', 'single' );
+if ( ! open_frame_do_location( 'single' ) ) :
+	?>
+	<div class="of-container of-content-area">
+		<div class="<?php echo esc_attr( open_frame_layout_classes() ); ?>">
+			<main id="main" class="site-main of-primary">
+				<?php
+				while ( have_posts() ) :
+					the_post();
 
-				the_post_navigation(
-					array(
-						'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous', 'open-frame' ) . '</span> <span class="nav-title">%title</span>',
-						'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next', 'open-frame' ) . '</span> <span class="nav-title">%title</span>',
-					)
-				);
+					get_template_part( 'template-parts/content', 'single' );
 
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+					the_post_navigation(
+						array(
+							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous', 'open-frame' ) . '</span> <span class="nav-title">%title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next', 'open-frame' ) . '</span> <span class="nav-title">%title</span>',
+						)
+					);
 
-			endwhile;
-			?>
-		</main>
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					}
 
-		<?php get_sidebar(); ?>
+				endwhile;
+				?>
+			</main>
+
+			<?php get_sidebar(); ?>
+		</div>
 	</div>
-</div>
-<?php
+	<?php
+endif;
+
 get_footer();

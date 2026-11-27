@@ -1,0 +1,85 @@
+{
+	"id": "portfolio",
+	"order": 4,
+	"name": "Portfolio",
+	"summary": "A personal site for an independent designer: large serif type on warm paper, staggered project covers, a case study, services, a resume and notes.",
+	"category": "creative",
+	"tags": [
+		"personal",
+		"designer",
+		"freelancer",
+		"resume"
+	],
+	"tier": "free",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#f4efe7",
+		"#a8390b",
+		"#1c1917"
+	],
+	"pages": [
+		"Home",
+		"About",
+		"Work",
+		"Project Details",
+		"Services",
+		"Service Details",
+		"Resume",
+		"Notes (blog)",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.4.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"counter",
+				"heading",
+				"icon-list",
+				"image",
+				"of-nav-menu",
+				"text-editor"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Work",
+			"file": "work.png"
+		},
+		{
+			"title": "Case study",
+			"file": "case-study.png"
+		},
+		{
+			"title": "Services",
+			"file": "services.png"
+		}
+	]
+}

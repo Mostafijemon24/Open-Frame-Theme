@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Features",
+				"url": "ofss://page/features"
+			},
+			{
+				"title": "Pricing",
+				"url": "ofss://page/pricing"
+			},
+			{
+				"title": "Integrations",
+				"url": "ofss://page/integrations"
+			},
+			{
+				"title": "Customers",
+				"url": "ofss://page/customers"
+			},
+			{
+				"title": "Blog",
+				"url": "ofss://page/blog"
+			},
+			{
+				"title": "Book a demo",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

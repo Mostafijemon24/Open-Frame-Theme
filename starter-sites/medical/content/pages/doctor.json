@@ -1,0 +1,1563 @@
+{
+	"uid": "medical:pages:doctor",
+	"title": "Dr Amara Okafor",
+	"slug": "dr-amara-okafor",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000149",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "80",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "0000148",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000136",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000135",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/room",
+												"url": "ofss://media/room"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "140",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000147",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000137",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Cardiology",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000138",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Dr Amara Okafor",
+											"header_size": "h1",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000139",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Consultant cardiologist. Heart rhythm, blood pressure and prevention.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000143",
+										"elType": "container",
+										"settings": {
+											"container_type": "grid",
+											"content_width": "full",
+											"grid_columns_grid": {
+												"unit": "fr",
+												"size": 3,
+												"sizes": []
+											},
+											"grid_columns_grid_tablet": {
+												"unit": "fr",
+												"size": 3,
+												"sizes": []
+											},
+											"grid_columns_grid_mobile": {
+												"unit": "fr",
+												"size": 1,
+												"sizes": []
+											},
+											"grid_rows_grid": {
+												"unit": "fr",
+												"size": 1,
+												"sizes": []
+											},
+											"grid_gaps": {
+												"unit": "px",
+												"size": 24,
+												"column": "24",
+												"row": "24",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000013c",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 4,
+														"column": "4",
+														"row": "4",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "000013a",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Clinic days",
+															"header_size": "p",
+															"title_color": "#3E5557",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 13,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_text_transform": "uppercase",
+															"typography_letter_spacing": {
+																"unit": "px",
+																"size": 1.6,
+																"sizes": []
+															},
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.4,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "000013b",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Monday, Wednesday, Friday",
+															"header_size": "p",
+															"title_color": "#0F2B2D",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 17,
+																"sizes": []
+															},
+															"typography_font_weight": "600",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.45,
+																"sizes": []
+															}
+														},
+														"elements": []
+													}
+												]
+											},
+											{
+												"id": "000013f",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 4,
+														"column": "4",
+														"row": "4",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "000013d",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "Languages",
+															"header_size": "p",
+															"title_color": "#3E5557",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 13,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_text_transform": "uppercase",
+															"typography_letter_spacing": {
+																"unit": "px",
+																"size": 1.6,
+																"sizes": []
+															},
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.4,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "000013e",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "English, Igbo, German",
+															"header_size": "p",
+															"title_color": "#0F2B2D",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 17,
+																"sizes": []
+															},
+															"typography_font_weight": "600",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.45,
+																"sizes": []
+															}
+														},
+														"elements": []
+													}
+												]
+											},
+											{
+												"id": "0000142",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 4,
+														"column": "4",
+														"row": "4",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000140",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "With us since",
+															"header_size": "p",
+															"title_color": "#3E5557",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 13,
+																"sizes": []
+															},
+															"typography_font_weight": "700",
+															"typography_text_transform": "uppercase",
+															"typography_letter_spacing": {
+																"unit": "px",
+																"size": 1.6,
+																"sizes": []
+															},
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.4,
+																"sizes": []
+															}
+														},
+														"elements": []
+													},
+													{
+														"id": "0000141",
+														"elType": "widget",
+														"widgetType": "heading",
+														"settings": {
+															"title": "2014",
+															"header_size": "p",
+															"title_color": "#0F2B2D",
+															"typography_typography": "custom",
+															"typography_font_size": {
+																"unit": "px",
+																"size": 17,
+																"sizes": []
+															},
+															"typography_font_weight": "600",
+															"typography_line_height": {
+																"unit": "em",
+																"size": 1.45,
+																"sizes": []
+															}
+														},
+														"elements": []
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "0000146",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "0000144",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "Book with Dr Okafor",
+													"link": {
+														"url": "ofss://page/appointment",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"__globals__": {
+														"background_color": "globals/colors?id=primary"
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000145",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "About cardiology",
+													"link": {
+														"url": "ofss://page/department",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"background_color": "transparent",
+													"button_text_color": "#0B6B69",
+													"border_border": "solid",
+													"border_width": {
+														"unit": "px",
+														"top": "1.5",
+														"right": "1.5",
+														"bottom": "1.5",
+														"left": "1.5",
+														"isLinked": true
+													},
+													"border_color": "#0B6B69",
+													"hover_color": "#FFFFFF",
+													"button_background_hover_color": "#0B6B69",
+													"button_hover_border_color": "#0B6B69"
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000164",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000163",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000152",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000014a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "About Dr Okafor",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000014b",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Dr Okafor trained in Lagos and Heidelberg and worked for eight years in a university hospital before joining the clinic. She set up our cardiology department and still runs it.</p><p>She has a particular interest in blood pressure that is hard to control, and in helping people return to exercise after a heart problem. Patients describe her as someone who draws diagrams.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "000014c",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Areas of interest",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000151",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "000014d",
+													"text": "Resistant high blood pressure",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000014e",
+													"text": "Atrial fibrillation",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000014f",
+													"text": "Cardiac rehabilitation",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000150",
+													"text": "Heart health in pregnancy",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0F2B2D",
+											"icon_color": "#0B6B69"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000162",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 28,
+										"column": "28",
+										"row": "28",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 40,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000015e",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 16,
+												"column": "16",
+												"row": "16",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "30",
+												"right": "30",
+												"bottom": "30",
+												"left": "30",
+												"isLinked": true
+											},
+											"padding_mobile": {
+												"unit": "px",
+												"top": "24",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": true
+											},
+											"background_background": "classic",
+											"background_color": "#FFFFFF",
+											"border_radius": {
+												"unit": "px",
+												"top": "20",
+												"right": "20",
+												"bottom": "20",
+												"left": "20",
+												"isLinked": true
+											},
+											"box_shadow_box_shadow_type": "yes",
+											"box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 18,
+												"blur": 44,
+												"spread": 0,
+												"color": "rgba(10,63,66,0.10)"
+											}
+										},
+										"elements": [
+											{
+												"id": "0000153",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Training",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 22,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000015d",
+												"elType": "container",
+												"settings": {
+													"content_width": "full",
+													"flex_direction": "column",
+													"flex_gap": {
+														"unit": "px",
+														"size": 0,
+														"column": "0",
+														"row": "0",
+														"isLinked": true
+													},
+													"padding": {
+														"unit": "px",
+														"top": "0",
+														"right": "0",
+														"bottom": "0",
+														"left": "0",
+														"isLinked": true
+													}
+												},
+												"elements": [
+													{
+														"id": "0000156",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "0000154",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Medical degree, Lagos",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "0000155",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "2001",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													},
+													{
+														"id": "0000159",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "0000157",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Specialist in cardiology, Heidelberg",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "0000158",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "2009",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													},
+													{
+														"id": "000015c",
+														"elType": "container",
+														"settings": {
+															"content_width": "full",
+															"flex_direction": "row",
+															"flex_direction_mobile": "row",
+															"flex_justify_content": "space-between",
+															"flex_align_items": "baseline",
+															"flex_gap": {
+																"unit": "px",
+																"size": 16,
+																"column": "16",
+																"row": "16",
+																"isLinked": true
+															},
+															"flex_wrap": "nowrap",
+															"padding": {
+																"unit": "px",
+																"top": "12",
+																"right": "0",
+																"bottom": "12",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_border": "solid",
+															"border_width": {
+																"unit": "px",
+																"top": "0",
+																"right": "0",
+																"bottom": "1",
+																"left": "0",
+																"isLinked": false
+															},
+															"border_color": "#D5E6E1"
+														},
+														"elements": [
+															{
+																"id": "000015a",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "Fellow, European Society of Cardiology",
+																	"header_size": "p",
+																	"title_color": "#3E5557",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "500",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	}
+																},
+																"elements": []
+															},
+															{
+																"id": "000015b",
+																"elType": "widget",
+																"widgetType": "heading",
+																"settings": {
+																	"title": "2016",
+																	"header_size": "p",
+																	"title_color": "#0F2B2D",
+																	"typography_typography": "custom",
+																	"typography_font_size": {
+																		"unit": "px",
+																		"size": 16,
+																		"sizes": []
+																	},
+																	"typography_font_weight": "600",
+																	"typography_line_height": {
+																		"unit": "em",
+																		"size": 1.45,
+																		"sizes": []
+																	},
+																	"_flex_size": "none"
+																},
+																"elements": []
+															}
+														]
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "0000161",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "30",
+												"right": "30",
+												"bottom": "30",
+												"left": "30",
+												"isLinked": true
+											},
+											"padding_mobile": {
+												"unit": "px",
+												"top": "24",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": true
+											},
+											"background_background": "classic",
+											"background_color": "#F6EFE6",
+											"border_radius": {
+												"unit": "px",
+												"top": "20",
+												"right": "20",
+												"bottom": "20",
+												"left": "20",
+												"isLinked": true
+											},
+											"box_shadow_box_shadow_type": "",
+											"box_shadow_box_shadow": {
+												"horizontal": 0,
+												"vertical": 18,
+												"blur": 44,
+												"spread": 0,
+												"color": "rgba(10,63,66,0.10)"
+											}
+										},
+										"elements": [
+											{
+												"id": "000015f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Before your first visit",
+													"header_size": "h2",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 20,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000160",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Please bring a list of your medicines and any earlier heart tests. Allow forty minutes.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 16,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000016c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0A3F42"
+				},
+				"elements": [
+					{
+						"id": "000016b",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000167",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000165",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Need to see someone this week?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000166",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Most patients are seen within three working days. Urgent appointments are kept free every morning.</p>",
+											"text_color": "#CFE6E1",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000016a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"flex_justify_content": "flex-end",
+									"flex_justify_content_mobile": "flex-start",
+									"flex_wrap": "wrap"
+								},
+								"elements": [
+									{
+										"id": "0000168",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book an appointment",
+											"link": {
+												"url": "ofss://page/appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0A3F42",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#BFE5DE"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000169",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Call us",
+											"link": {
+												"url": "tel:+15550100191",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#FFFFFF",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#CFE6E1",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#FFFFFF",
+											"button_hover_border_color": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

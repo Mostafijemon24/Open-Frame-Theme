@@ -1,0 +1,14 @@
+{
+	"uid": "shop:products:shell-chair-with-oak-legs",
+	"title": "Shell chair with oak legs",
+	"slug": "shell-chair-with-oak-legs",
+	"excerpt": "A white moulded seat on four oak legs. Light enough to carry with one hand.",
+	"content": "<p>A moulded shell in matt white on a base of oiled oak and black steel. It is a familiar shape made by a workshop we know, not a named original.</p><p>The woven basket and the blanket in the picture are not included.</p>",
+	"price": "95",
+	"sale_price": "79",
+	"image": "ofss://media/product-8",
+	"gallery": [],
+	"categories": [
+		"Furniture"
+	]
+}

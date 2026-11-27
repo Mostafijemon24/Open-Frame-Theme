@@ -1,0 +1,104 @@
+{
+	"id": "agency",
+	"order": 2,
+	"name": "Creative Agency",
+	"summary": "A loud, confident site for a studio or agency: case studies, services, careers and a journal, with a contact form. Header, footer and blog are Theme Builder templates.",
+	"category": "creative",
+	"tags": [
+		"agency",
+		"marketing",
+		"branding",
+		"studio"
+	],
+	"tier": "pro",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#0d0d0d",
+		"#c8f53c",
+		"#f5f3ee"
+	],
+	"pages": [
+		"Home",
+		"Studio",
+		"Services",
+		"Service Details",
+		"Work",
+		"Case Study",
+		"Careers",
+		"Journal (blog)",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.5.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"animated-headline",
+				"archive-posts",
+				"button",
+				"counter",
+				"form",
+				"heading",
+				"icon-list",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Work",
+			"file": "work.png"
+		},
+		{
+			"title": "Case study",
+			"file": "case-study.png"
+		},
+		{
+			"title": "Contact",
+			"file": "contact.png"
+		}
+	]
+}

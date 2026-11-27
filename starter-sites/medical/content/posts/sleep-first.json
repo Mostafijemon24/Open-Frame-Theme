@@ -1,0 +1,12 @@
+{
+	"uid": "medical:posts:sleep-first",
+	"title": "Why sleep is the first thing we ask about",
+	"slug": "sleep-first",
+	"excerpt": "Tiredness, low mood, headaches and raised blood pressure often share one cause. A few questions about your nights can save a lot of tests.",
+	"featured": "ofss://media/note-2",
+	"categories": [
+		"Everyday health"
+	],
+	"days_ago": 21,
+	"content": "<!-- wp:paragraph -->\n<p>Tiredness, low mood, headaches and raised blood pressure often share one cause. Before we order tests, we ask how you sleep, because the answer changes what we look for.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three questions we will ask</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>How long does it take you to fall asleep?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>How often do you wake in the night?</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Do you feel rested when you get up?</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What usually helps first</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Regular hours, less screen light in the last hour of the evening and less caffeine after midday help more people than tablets do. If they do not help within a few weeks, that is worth a conversation.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><em>This article is general information and not personal medical advice. If you are worried about your health, please make an appointment.</em></p>\n<!-- /wp:paragraph -->"
+}

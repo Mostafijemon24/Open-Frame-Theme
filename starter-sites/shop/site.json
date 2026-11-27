@@ -1,0 +1,114 @@
+{
+	"id": "shop",
+	"order": 5,
+	"name": "Shop",
+	"summary": "A small online store built on WooCommerce: eight products, a home page with a room-wide picture, a lookbook, shipping and returns, a journal and a contact form. Header with basket, footer and journal are Theme Builder templates.",
+	"category": "shop",
+	"tags": [
+		"store",
+		"e-commerce",
+		"products",
+		"woocommerce"
+	],
+	"tier": "pro",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#f0e8db",
+		"#9a4526",
+		"#23201c"
+	],
+	"pages": [
+		"Home",
+		"Shop",
+		"Product",
+		"Cart",
+		"Checkout",
+		"My Account",
+		"About",
+		"Lookbook",
+		"Shipping and Returns",
+		"Journal",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.6.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			},
+			{
+				"slug": "woocommerce",
+				"name": "WooCommerce",
+				"file": "woocommerce/woocommerce.php",
+				"version": "10.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"form",
+				"heading",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title",
+				"woocommerce-menu-cart",
+				"woocommerce-products"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"shop": "theme",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Shop",
+			"file": "store.png"
+		},
+		{
+			"title": "A product",
+			"file": "product.png"
+		},
+		{
+			"title": "Lookbook",
+			"file": "lookbook.png"
+		}
+	]
+}

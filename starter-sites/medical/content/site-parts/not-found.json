@@ -1,0 +1,246 @@
+{
+	"uid": "medical:site-parts:not-found",
+	"title": "Page not found",
+	"location": "404",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-post",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "000020f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "128",
+						"right": "24",
+						"bottom": "128",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "90",
+						"right": "24",
+						"bottom": "90",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "000020e",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 18,
+								"column": "18",
+								"row": "18",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 62,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "0000208",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Error 404",
+									"header_size": "p",
+									"title_color": "#0B6B69",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "700",
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 1.6,
+										"sizes": []
+									},
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.4,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000209",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "We could not find that page",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center"
+								},
+								"elements": []
+							},
+							{
+								"id": "000020a",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>It may have moved. If you were looking for an appointment or our opening hours, these will take you there.</p>",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 19,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "000020d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "stretch",
+									"flex_align_items_mobile": "center",
+									"flex_justify_content": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"flex_wrap": "wrap",
+									"flex_justify_content_mobile": "center"
+								},
+								"elements": [
+									{
+										"id": "000020b",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Back to the home page",
+											"link": {
+												"url": "ofss://page/home",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"__globals__": {
+												"background_color": "globals/colors?id=primary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000020c",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book an appointment",
+											"link": {
+												"url": "ofss://page/appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#0B6B69",
+											"hover_color": "#FFFFFF",
+											"button_background_hover_color": "#0B6B69",
+											"button_hover_border_color": "#0B6B69"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

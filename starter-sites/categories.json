@@ -1,0 +1,38 @@
+[
+	{
+		"slug": "business",
+		"name": "Business"
+	},
+	{
+		"slug": "creative",
+		"name": "Creative"
+	},
+	{
+		"slug": "technology",
+		"name": "Technology"
+	},
+	{
+		"slug": "shop",
+		"name": "Online store"
+	},
+	{
+		"slug": "food",
+		"name": "Food and drink"
+	},
+	{
+		"slug": "property",
+		"name": "Real estate"
+	},
+	{
+		"slug": "education",
+		"name": "Education"
+	},
+	{
+		"slug": "health",
+		"name": "Health"
+	},
+	{
+		"slug": "publishing",
+		"name": "Blog and magazine"
+	}
+]

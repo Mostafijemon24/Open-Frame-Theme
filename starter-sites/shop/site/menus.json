@@ -1,0 +1,33 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Shop",
+				"url": "ofss://store/shop"
+			},
+			{
+				"title": "Lookbook",
+				"url": "ofss://page/lookbook"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			},
+			{
+				"title": "Journal",
+				"url": "ofss://page/journal"
+			},
+			{
+				"title": "Shipping",
+				"url": "ofss://page/shipping"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

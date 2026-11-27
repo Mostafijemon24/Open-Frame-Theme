@@ -8,13 +8,22 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 
 | | |
 | --- | --- |
-| **Version** | 1.0.1 |
+| **Version** | 1.1.0 |
 | **Requires** | WordPress 6.4+, PHP 7.4+ (tested up to WordPress 7.1) |
 | **License** | GPL-2.0-or-later |
 | **Text domain** | `open-frame` |
 | **Author** | [Mostafij Emon](https://github.com/Mostafijemon24) |
 
-**[Read the full documentation →](docs/README.md)** · 24 chapters with numbered, annotated screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
+**[Read the full documentation →](docs/README.md)** · 26 chapters with numbered, annotated screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
+
+| Guide | For |
+| --- | --- |
+| [Theme guide](docs/README.md) | Every setting of the theme |
+| [Starter Sites guide](docs/STARTER-SITES.md) | The companion plugin: choosing, importing, editing and rolling back one of the ten ready-made websites |
+| [Installation guide](docs/INSTALL.md) | Installing, checking, updating and removing the theme and the plugin |
+| [Support and update policy](docs/SUPPORT.md) | Where to get help, what is supported, how updates are published |
+| [Changelog](CHANGELOG.md) | What changed in each version |
+| [Developer documents](docs/dev/) | Architecture, the plugin's hooks and REST routes, the library, tests, the release checklist |
 
 ## Contents
 
@@ -51,13 +60,15 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 ## Features
 
 - **Design system** — colors, typography, spacing, radius and elevation as CSS custom properties. Change a color once and the whole site follows, including the block editor palette.
-- **Customizer** — 39 settings in five sections. Every setting has a visible effect and most preview instantly.
+- **Customizer** — 39 settings in five sections, plus an Elementor section that appears while Elementor is active. Every setting has a visible effect and most preview instantly.
 - **Header builder** — five layouts, background and text colors, sticky and transparent modes, optional search, hide-title option.
 - **Footer builder** — one to four widget columns (empty ones are skipped), footer colors, custom copyright text.
 - **Navigation** — keyboard-friendly dropdowns, a mobile menu, and a multi-column **mega menu** without a plugin.
 - **Layouts** — right sidebar, left sidebar, no sidebar and full width, set separately for the blog, posts and pages. Blog as a list or a 2 to 4 column grid.
 - **Templates** — Full Width and **Landing Page** (a blank canvas for block-built pages).
 - **Block editor** — six patterns, five block styles, shared palette, font sizes and spacing scale through `theme.json`.
+- **Elementor** — pages built with Elementor span the full width; the Canvas and Full Width templates and Elementor Pro's Theme Builder (header, footer, single, archive, 404) are supported. One optional setting makes the theme follow Elementor's global colors and fonts.
+- **WooCommerce** — shop, product, cart, checkout and account pages use the theme's colors, buttons and cards.
 - **Built in** — translation-ready, RTL-friendly, reduced-motion aware, usable without JavaScript, child-theme friendly.
 
 ## Installation
@@ -67,6 +78,16 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 3. Upload the ZIP, click **Install**, then **Activate**.
 
 > Download the release ZIP rather than GitHub's "Source code" archive: the release package contains only the files the theme needs.
+
+The [installation guide](docs/INSTALL.md) covers checking the download, updating and removing.
+
+### Starter sites (optional)
+
+The companion plugin **Open Frame Starter Sites** adds ten complete websites made with Elementor for this theme, five for free Elementor and five for Elementor Pro. It is a separate download, `open-frame-starter-sites-<version>.zip`, installed under **Plugins → Add Plugin → Upload Plugin**. See the [Starter Sites guide](docs/STARTER-SITES.md).
+
+![The ten starter sites](docs/images/starter-sites-designs.png)
+
+> The plugin has not been released yet: the library it reads the designs from is not online. The state of the release is in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
 ![The Themes screen with Open Frame active](docs/images/admin-themes.png)
 
@@ -257,17 +278,37 @@ open-frame/
 ├── assets/                                 CSS, JS, fonts, images
 ├── languages/                              Translation template
 ├── docs/                                   User documentation (not shipped in the ZIP)
+├── companion/open-frame-starter-sites/     Companion plugin: the Starter Sites screen (own ZIP, not part of the theme)
+├── starter-sites/                          Sources of the starter site library (one folder per design)
+├── tools/                                  Build, sign and publish the library
+├── cloud/worker/                           The Cloudflare Worker that serves the library
+├── schemas/                                JSON Schemas of the catalog, its signed envelope and a site manifest
+├── tests/                                  Test site setup, PHP and browser checks (not shipped in the ZIP)
 └── bin/                                    Build scripts (not shipped in the ZIP)
 ```
 
 **Coding standards.** PHP follows the WordPress Coding Standards and is checked for PHP 7.4+ compatibility:
 
 ```bash
-composer global require squizlabs/php_codesniffer wp-coding-standards/wpcs phpcompatibility/phpcompatibility-wp dealerdirect/phpcodesniffer-composer-installer
+composer install
 ```
 
 ```bash
-phpcs
+composer lint
+```
+
+**Tests.** A script builds a disposable WordPress site (SQLite, PHP's built-in server) with Elementor, WooCommerce and Theme Check, and links this folder into it as the theme. The browser checks need Node.js 20+ and Playwright. See [docs/dev/TESTING.md](docs/dev/TESTING.md).
+
+```bash
+bash tests/env/setup.sh
+```
+
+```bash
+node --test --test-concurrency=1 tests/e2e/*.test.js
+```
+
+```bash
+bash tests/env/theme-check.sh
 ```
 
 **Build the installable ZIP** (everything in [`.distignore`](.distignore) is left out):
@@ -276,15 +317,33 @@ phpcs
 bash bin/build-zip.sh
 ```
 
-**Rebuild the HTML documentation** after editing `docs/README.md`:
+**Companion plugin.** [Open Frame Starter Sites](companion/open-frame-starter-sites) is a separate plugin that imports complete starter websites. It is not part of the theme ZIP. Its hooks, constants and REST routes are in [docs/dev/PLUGIN.md](docs/dev/PLUGIN.md). Build it with:
 
 ```bash
-npm install marked && node bin/build-docs.js
+bash bin/build-plugin-zip.sh
 ```
 
-**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry and push to `main`. Then either push a tag such as `v1.0.2`, or open **Actions → Release → Run workflow**. The [release workflow](.github/workflows/release.yml) builds the ZIP, creates the tag when needed and publishes the GitHub release.
+**Rebuild the HTML documentation and `CHANGELOG.md`** after editing one of the guides in `docs/` or a changelog in a `readme.txt`:
 
-Architecture notes and the test report are in [`docs/dev/`](docs/dev/). The changelog is in [`readme.txt`](readme.txt).
+```bash
+npm install --no-save marked@18.3.0 && node bin/build-docs.js
+```
+
+**Retake the screenshots of the guides** on a test site (see the head of the file for what the site needs):
+
+```bash
+node bin/docs-shots.js http://localhost:8890
+```
+
+**Redraw the banner and icon of the plugin's WordPress.org page** (kept in `companion/open-frame-starter-sites/.wordpress-org/`, not shipped in the ZIP):
+
+```bash
+node bin/wporg-assets.js
+```
+
+**Release.** The theme and the plugin are released separately, each with its own version and tag (`v1.1.0`, `starter-sites-v0.6.1`). Go through the [release checklist](docs/dev/RELEASE.md), try the packaging with `bash bin/release-package.sh theme` (or `plugin`), then open **Actions → Release → Run workflow** or push the tag. The [release workflow](.github/workflows/release.yml) checks the version numbers and the changelog, builds the ZIP with its checksum and publishes a GitHub release.
+
+Architecture notes, the test reports and the release checklist are in [`docs/dev/`](docs/dev/). The changelogs are in the two `readme.txt` files and, gathered, in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## License
 

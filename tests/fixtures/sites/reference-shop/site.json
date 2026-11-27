@@ -1,0 +1,56 @@
+{
+	"id": "reference-shop",
+	"order": 1,
+	"name": "Reference Shop",
+	"summary": "A one-page site with two products, used by the tests of the importer.",
+	"category": "business",
+	"tags": [
+		"test"
+	],
+	"tier": "free",
+	"status": "available",
+	"version": "1.0.0",
+	"pages": [
+		"Home"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.6.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "woocommerce",
+				"name": "WooCommerce",
+				"file": "woocommerce/woocommerce.php",
+				"version": "9.0",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"heading",
+				"button"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": ""
+}

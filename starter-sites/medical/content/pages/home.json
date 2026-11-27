@@ -1,0 +1,4003 @@
+{
+	"uid": "medical:pages:home",
+	"title": "Home",
+	"slug": "home",
+	"front_page": true,
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "000000f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "000000e",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000000b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 22,
+										"column": "22",
+										"row": "22",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 54,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000001",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Family medicine and specialists",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000002",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Unhurried care, close to home",
+											"header_size": "h1",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000003",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Linden Clinic is a group practice of twenty-four doctors and nurses. We give appointments the time they need, and you see the same doctor whenever we can arrange it.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000006",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "row",
+											"flex_direction_tablet": "row",
+											"flex_direction_mobile": "row",
+											"flex_align_items": "center",
+											"flex_align_items_mobile": "center",
+											"flex_gap": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"flex_gap_mobile": {
+												"unit": "px",
+												"size": 14,
+												"column": "14",
+												"row": "14",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"flex_wrap": "wrap"
+										},
+										"elements": [
+											{
+												"id": "0000004",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "Book an appointment",
+													"link": {
+														"url": "ofss://page/appointment",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"__globals__": {
+														"background_color": "globals/colors?id=primary"
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000005",
+												"elType": "widget",
+												"widgetType": "button",
+												"settings": {
+													"text": "Our departments",
+													"link": {
+														"url": "ofss://page/departments",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													},
+													"background_color": "transparent",
+													"button_text_color": "#0B6B69",
+													"border_border": "solid",
+													"border_width": {
+														"unit": "px",
+														"top": "1.5",
+														"right": "1.5",
+														"bottom": "1.5",
+														"left": "1.5",
+														"isLinked": true
+													},
+													"border_color": "#0B6B69",
+													"hover_color": "#FFFFFF",
+													"button_background_hover_color": "#0B6B69",
+													"button_hover_border_color": "#0B6B69"
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000000a",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000007",
+													"text": "Appointments within three working days",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000008",
+													"text": "Open on Saturday mornings",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "0000009",
+													"text": "All major insurers accepted",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0F2B2D",
+											"icon_color": "#0B6B69"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000000d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 46,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000000c",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/hero",
+												"url": "ofss://media/hero"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "160",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000001a",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "64",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "45",
+						"right": "24",
+						"bottom": "0",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "0",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000019",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000012",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000010",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-calendar-check",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Book an appointment",
+											"description_text": "By telephone, by email or at the desk. Urgent slots are kept free every morning.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000011",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "How to book",
+											"link": {
+												"url": "ofss://page/appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000015",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000013",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Find a doctor",
+											"description_text": "Twenty-four doctors and nurses in six departments. See who is in on which day.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000014",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Meet our doctors",
+											"link": {
+												"url": "ofss://page/doctors",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000018",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000016",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-clock",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Opening hours",
+											"description_text": "Monday to Friday 7:30 to 19:00, Saturday 9:00 to 13:00. On call outside these hours.",
+											"title_size": "h2",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000017",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Find us",
+											"link": {
+												"url": "ofss://page/contact",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000034",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000020",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-end",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000001e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000001b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Departments",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000001c",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Six departments under one roof",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000001d",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Most of what a family needs, without being sent across town.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000001f",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "All departments",
+									"link": {
+										"url": "ofss://page/departments",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"background_color": "transparent",
+									"button_background_hover_color": "transparent",
+									"button_text_color": "#0B6B69",
+									"hover_color": "#0A3F42",
+									"selected_icon": {
+										"value": "fas fa-arrow-right",
+										"library": "fa-solid"
+									},
+									"icon_align": "row-reverse",
+									"icon_indent": {
+										"unit": "px",
+										"size": 8,
+										"sizes": []
+									},
+									"text_padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000033",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 28,
+								"column": "28",
+								"row": "28",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000023",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000021",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-stethoscope",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Family medicine",
+											"description_text": "Your first stop for most things: check-ups, long-term conditions, vaccinations and referrals.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000022",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About family medicine",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000026",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000024",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-heartbeat",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Cardiology",
+											"description_text": "Blood pressure, rhythm and heart health, with ECG and ultrasound in the building.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000025",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About cardiology",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000029",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000027",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-baby",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Paediatrics",
+											"description_text": "From the first week to the eighteenth birthday. Well-child visits and same-day sick appointments.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000028",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About paediatrics",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000002c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000002a",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-bone",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Orthopaedics",
+											"description_text": "Joints, backs and sports injuries, working closely with our physiotherapists.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000002b",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About orthopaedics",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000002f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000002d",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-eye",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Eye care",
+											"description_text": "Sight tests, diabetic screening and minor procedures, without a hospital visit.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000002e",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About eye care",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000032",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000030",
+										"elType": "widget",
+										"widgetType": "icon-box",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-vial",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"title_text": "Laboratory",
+											"description_text": "Blood and urine tests taken on site. Most results are with your doctor the next morning.",
+											"title_size": "h3",
+											"position": "block-start",
+											"text_align": "start",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"icon_size": {
+												"unit": "px",
+												"size": 24,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"icon_space": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"title_bottom_space": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"title_color": "#0F2B2D",
+											"description_color": "#3E5557",
+											"title_typography_typography": "custom",
+											"title_typography_font_size": {
+												"unit": "px",
+												"size": 20,
+												"sizes": []
+											},
+											"title_typography_font_weight": "700",
+											"title_typography_line_height": {
+												"unit": "em",
+												"size": 1.3,
+												"sizes": []
+											},
+											"description_typography_typography": "custom",
+											"description_typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"description_typography_line_height": {
+												"unit": "em",
+												"size": 1.6,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000031",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "About laboratory",
+											"link": {
+												"url": "ofss://page/department",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000041",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F6EFE6"
+				},
+				"elements": [
+					{
+						"id": "0000040",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 72,
+								"column": "72",
+								"row": "72",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000036",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 48,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000035",
+										"elType": "widget",
+										"widgetType": "image",
+										"settings": {
+											"image": {
+												"id": "ofss://media/reception",
+												"url": "ofss://media/reception"
+											},
+											"image_size": "full",
+											"image_border_radius": {
+												"unit": "px",
+												"top": "120",
+												"right": "24",
+												"bottom": "24",
+												"left": "24",
+												"isLinked": false
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000003f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 52,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000037",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "About the clinic",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000038",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "A practice that knows its patients",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000039",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>We have looked after families in Lindenhof since 2008. Records are shared between our doctors, so you do not have to tell your story twice, and a nurse you know answers the telephone.</p>"
+										},
+										"elements": []
+									},
+									{
+										"id": "000003d",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "000003a",
+													"text": "Twenty-minute appointments as standard",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000003b",
+													"text": "One named doctor for every patient",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												},
+												{
+													"_id": "000003c",
+													"text": "Laboratory and ECG in the building",
+													"selected_icon": {
+														"value": "fas fa-check-circle",
+														"library": "fa-solid"
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"text_color": "#0F2B2D",
+											"icon_color": "#0B6B69"
+										},
+										"elements": []
+									},
+									{
+										"id": "000003e",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "More about us",
+											"link": {
+												"url": "ofss://page/about",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_background_hover_color": "transparent",
+											"button_text_color": "#0B6B69",
+											"hover_color": "#0A3F42",
+											"selected_icon": {
+												"value": "fas fa-arrow-right",
+												"library": "fa-solid"
+											},
+											"icon_align": "row-reverse",
+											"icon_indent": {
+												"unit": "px",
+												"size": 8,
+												"sizes": []
+											},
+											"text_padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											},
+											"_flex_size": "none"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000047",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "80",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0A3F42"
+				},
+				"elements": [
+					{
+						"id": "0000046",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 4,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000042",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 24,
+									"prefix": "",
+									"suffix": "",
+									"title": "doctors and nurses",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#CFE6E1",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000043",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 6,
+									"prefix": "",
+									"suffix": "",
+									"title": "departments",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#CFE6E1",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000044",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 18,
+									"prefix": "",
+									"suffix": "",
+									"title": "years in Lindenhof",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#CFE6E1",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							},
+							{
+								"id": "0000045",
+								"elType": "widget",
+								"widgetType": "counter",
+								"settings": {
+									"starting_number": 0,
+									"ending_number": 96,
+									"prefix": "",
+									"suffix": "%",
+									"title": "of patients would recommend us",
+									"duration": 1200,
+									"number_color": "#FFFFFF",
+									"title_color": "#CFE6E1",
+									"typography_number_typography": "custom",
+									"typography_number_font_size": {
+										"unit": "custom",
+										"size": "clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem)",
+										"sizes": []
+									},
+									"typography_number_font_weight": "700",
+									"typography_title_typography": "custom",
+									"typography_title_font_size": {
+										"unit": "px",
+										"size": 15,
+										"sizes": []
+									},
+									"typography_title_font_weight": "500"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000066",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "104",
+						"right": "24",
+						"bottom": "104",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "73",
+						"right": "24",
+						"bottom": "73",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000004c",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-end",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000004a",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000048",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Our doctors",
+											"header_size": "p",
+											"title_color": "#0B6B69",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "700",
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 1.6,
+												"sizes": []
+											},
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.4,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000049",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "The people you will see",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000004b",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "All doctors",
+									"link": {
+										"url": "ofss://page/doctors",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"background_color": "transparent",
+									"button_background_hover_color": "transparent",
+									"button_text_color": "#0B6B69",
+									"hover_color": "#0A3F42",
+									"selected_icon": {
+										"value": "fas fa-arrow-right",
+										"library": "fa-solid"
+									},
+									"icon_align": "row-reverse",
+									"icon_indent": {
+										"unit": "px",
+										"size": 8,
+										"sizes": []
+									},
+									"text_padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000065",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 4,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 24,
+								"column": "24",
+								"row": "24",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000052",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000004d",
+										"elType": "widget",
+										"widgetType": "icon",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000051",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000004e",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Cardiology",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000004f",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Amara Okafor",
+													"header_size": "h3",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000050",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Heart rhythm and blood pressure. With the clinic since 2014.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000058",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000053",
+										"elType": "widget",
+										"widgetType": "icon",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000057",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000054",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Family medicine",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000055",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Daniel Mbeki",
+													"header_size": "h3",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000056",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Long-term conditions and men's health. Speaks English and French.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "000005e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "0000059",
+										"elType": "widget",
+										"widgetType": "icon",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
+										},
+										"elements": []
+									},
+									{
+										"id": "000005d",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000005a",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Paediatrics",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000005b",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Hanna Lindqvist",
+													"header_size": "h3",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "000005c",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Newborns to teenagers. Runs the Saturday children's clinic.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "0000064",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 18,
+										"column": "18",
+										"row": "18",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "30",
+										"right": "30",
+										"bottom": "30",
+										"left": "30",
+										"isLinked": true
+									},
+									"padding_mobile": {
+										"unit": "px",
+										"top": "24",
+										"right": "24",
+										"bottom": "24",
+										"left": "24",
+										"isLinked": true
+									},
+									"background_background": "classic",
+									"background_color": "#FFFFFF",
+									"border_radius": {
+										"unit": "px",
+										"top": "20",
+										"right": "20",
+										"bottom": "20",
+										"left": "20",
+										"isLinked": true
+									},
+									"box_shadow_box_shadow_type": "yes",
+									"box_shadow_box_shadow": {
+										"horizontal": 0,
+										"vertical": 18,
+										"blur": 44,
+										"spread": 0,
+										"color": "rgba(10,63,66,0.10)"
+									}
+								},
+								"elements": [
+									{
+										"id": "000005f",
+										"elType": "widget",
+										"widgetType": "icon",
+										"settings": {
+											"selected_icon": {
+												"value": "fas fa-user-md",
+												"library": "fa-solid"
+											},
+											"view": "stacked",
+											"shape": "circle",
+											"primary_color": "#E8F4F1",
+											"secondary_color": "#0B6B69",
+											"size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											},
+											"icon_padding": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											},
+											"align": "left"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000063",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"flex_direction": "column",
+											"flex_gap": {
+												"unit": "px",
+												"size": 6,
+												"column": "6",
+												"row": "6",
+												"isLinked": true
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000060",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Orthopaedics",
+													"header_size": "p",
+													"title_color": "#0B6B69",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 13,
+														"sizes": []
+													},
+													"typography_font_weight": "700",
+													"typography_text_transform": "uppercase",
+													"typography_letter_spacing": {
+														"unit": "px",
+														"size": 1.6,
+														"sizes": []
+													},
+													"typography_line_height": {
+														"unit": "em",
+														"size": 1.4,
+														"sizes": []
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000061",
+												"elType": "widget",
+												"widgetType": "heading",
+												"settings": {
+													"title": "Dr Peter Varga",
+													"header_size": "h3",
+													"__globals__": {
+														"title_color": "globals/colors?id=secondary"
+													},
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 21,
+														"sizes": []
+													},
+													"link": {
+														"url": "ofss://page/doctor",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											},
+											{
+												"id": "0000062",
+												"elType": "widget",
+												"widgetType": "text-editor",
+												"settings": {
+													"editor": "<p>Knees, shoulders and backs. Thirty years in practice.</p>",
+													"typography_typography": "custom",
+													"typography_font_size": {
+														"unit": "px",
+														"size": 15,
+														"sizes": []
+													}
+												},
+												"elements": []
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000006a",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#E8F4F1"
+				},
+				"elements": [
+					{
+						"id": "0000069",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 22,
+								"column": "22",
+								"row": "22",
+								"isLinked": true
+							},
+							"flex_align_items": "center",
+							"width": {
+								"unit": "%",
+								"size": 76,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"_flex_align_self": "center"
+						},
+						"elements": [
+							{
+								"id": "0000067",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "“Dr Mbeki has looked after three generations of my family. He still asks about my mother by name.”",
+									"header_size": "p",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "custom",
+										"size": "clamp(1.375rem, 1.1rem + 1.4vw, 2.125rem)",
+										"sizes": []
+									},
+									"typography_font_weight": "600",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.35,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000068",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Elena R., patient since 2011. A sample quote.",
+									"header_size": "p",
+									"title_color": "#3E5557",
+									"align": "center",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 16,
+										"sizes": []
+									},
+									"typography_font_weight": "500",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.45,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000072",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "88",
+						"right": "24",
+						"bottom": "88",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "62",
+						"right": "24",
+						"bottom": "62",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0A3F42"
+				},
+				"elements": [
+					{
+						"id": "0000071",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000006d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000006b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Need to see someone this week?",
+											"header_size": "h2",
+											"title_color": "#FFFFFF"
+										},
+										"elements": []
+									},
+									{
+										"id": "000006c",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Most patients are seen within three working days. Urgent appointments are kept free every morning.</p>",
+											"text_color": "#CFE6E1",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000070",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "row",
+									"flex_direction_tablet": "row",
+									"flex_direction_mobile": "row",
+									"flex_align_items": "center",
+									"flex_align_items_mobile": "center",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"flex_gap_mobile": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"flex_justify_content": "flex-end",
+									"flex_justify_content_mobile": "flex-start",
+									"flex_wrap": "wrap"
+								},
+								"elements": [
+									{
+										"id": "000006e",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Book an appointment",
+											"link": {
+												"url": "ofss://page/appointment",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "#FFFFFF",
+											"button_text_color": "#0A3F42",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#BFE5DE"
+										},
+										"elements": []
+									},
+									{
+										"id": "000006f",
+										"elType": "widget",
+										"widgetType": "button",
+										"settings": {
+											"text": "Call us",
+											"link": {
+												"url": "tel:+15550100191",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											},
+											"background_color": "transparent",
+											"button_text_color": "#FFFFFF",
+											"border_border": "solid",
+											"border_width": {
+												"unit": "px",
+												"top": "1.5",
+												"right": "1.5",
+												"bottom": "1.5",
+												"left": "1.5",
+												"isLinked": true
+											},
+											"border_color": "#CFE6E1",
+											"hover_color": "#0A3F42",
+											"button_background_hover_color": "#FFFFFF",
+											"button_hover_border_color": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

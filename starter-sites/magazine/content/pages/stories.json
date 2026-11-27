@@ -1,0 +1,6 @@
+{
+	"uid": "magazine:pages:stories",
+	"title": "All Stories",
+	"slug": "stories",
+	"template": "default"
+}

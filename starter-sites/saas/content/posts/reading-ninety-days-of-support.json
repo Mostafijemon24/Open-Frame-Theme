@@ -1,0 +1,12 @@
+{
+	"uid": "saas:posts:reading-ninety-days-of-support",
+	"title": "What we learned reading ninety days of our own support inbox",
+	"slug": "reading-ninety-days-of-support",
+	"excerpt": "Before building Loop we read 4,100 messages by hand. Four things surprised us.",
+	"featured": "ofss://media/blog-2",
+	"categories": [
+		"Company"
+	],
+	"days_ago": 19,
+	"content": "<!-- wp:paragraph -->\n<p>Before building Loop we read 4,100 of our own support messages by hand, with a spreadsheet and too much coffee. It took two people three weeks.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What surprised us</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>A third of all messages were about four things. Customers rarely named a feature; they described a morning that went wrong. And the loudest requests in our planning meetings barely appeared at all.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>Nobody asked for a dashboard. Forty people asked how to answer their manager's question by Monday.</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Why this became a product</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Reading everything worked, and nobody can afford to do it every quarter. Loop is the reading, done every day.</p>\n<!-- /wp:paragraph -->"
+}

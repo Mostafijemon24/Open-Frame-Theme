@@ -1,0 +1,15 @@
+{
+	"open_frame_follow_elementor": true,
+	"open_frame_color_primary": "#111111",
+	"open_frame_color_primary_hover": "#b5121b",
+	"open_frame_color_heading": "#111111",
+	"open_frame_color_text": "#3d3d3d",
+	"open_frame_color_link": "#111111",
+	"open_frame_color_link_hover": "#b5121b",
+	"open_frame_color_accent": "#b5121b",
+	"open_frame_color_border": "#d8d4ca",
+	"open_frame_color_bg": "#ffffff",
+	"open_frame_container_width": 1200,
+	"open_frame_single_layout": "no-sidebar",
+	"open_frame_page_layout": "no-sidebar"
+}

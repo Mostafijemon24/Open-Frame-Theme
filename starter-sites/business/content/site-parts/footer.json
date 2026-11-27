@@ -1,0 +1,600 @@
+{
+	"uid": "business:site-parts:footer",
+	"title": "Footer",
+	"location": "footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-post",
+		"page_settings": {},
+		"content": [
+			{
+				"id": "000020c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 48,
+						"column": "48",
+						"row": "48",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "32",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "22",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "32",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#0B1F3A"
+				},
+				"elements": [
+					{
+						"id": "0000209",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 48,
+								"column": "48",
+								"row": "48",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							},
+							"flex_wrap_tablet": "wrap"
+						},
+						"elements": [
+							{
+								"id": "00001f5",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 16,
+										"column": "16",
+										"row": "16",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 40,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00001f3",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Halden",
+											"header_size": "p",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 26,
+												"sizes": []
+											},
+											"typography_font_weight": "800"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001f4",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Independent advisory for mid-sized companies. Strategy, operations and finance, from people who stay until it works.</p>",
+											"text_color": "#B7C4D8"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "00001fc",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 18,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00001f6",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Company",
+											"header_size": "h2",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"typography_font_weight": "700"
+										},
+										"elements": []
+									},
+									{
+										"id": "00001fb",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "00001f7",
+													"text": "About",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/about",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "00001f8",
+													"text": "Team",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/team",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "00001f9",
+													"text": "Projects",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/projects",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "00001fa",
+													"text": "Insights",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/insights",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_color": "#B7C4D8",
+											"view": "traditional",
+											"text_color_hover": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000202",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 18,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "00001fd",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Services",
+											"header_size": "h2",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"typography_font_weight": "700"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000201",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "00001fe",
+													"text": "Strategy",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/service-details",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "00001ff",
+													"text": "All services",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/services",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "0000200",
+													"text": "Pricing",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/pricing",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_color": "#B7C4D8",
+											"view": "traditional",
+											"text_color_hover": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000208",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 14,
+										"column": "14",
+										"row": "14",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 18,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 30,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000203",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Contact",
+											"header_size": "h2",
+											"title_color": "#FFFFFF",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 15,
+												"sizes": []
+											},
+											"typography_font_weight": "700"
+										},
+										"elements": []
+									},
+									{
+										"id": "0000207",
+										"elType": "widget",
+										"widgetType": "icon-list",
+										"settings": {
+											"icon_list": [
+												{
+													"_id": "0000204",
+													"text": "hello@example.com",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "mailto:hello@example.com",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "0000205",
+													"text": "+1 (555) 010-0142",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "tel:+15550100142",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												{
+													"_id": "0000206",
+													"text": "Get in touch",
+													"selected_icon": {
+														"value": "fas fa-check",
+														"library": "fa-solid"
+													},
+													"link": {
+														"url": "ofss://page/contact",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												}
+											],
+											"space_between": {
+												"unit": "px",
+												"size": 12,
+												"sizes": []
+											},
+											"icon_size": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_indent": {
+												"unit": "px",
+												"size": 0,
+												"sizes": []
+											},
+											"text_color": "#B7C4D8",
+											"view": "traditional",
+											"text_color_hover": "#FFFFFF"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": "000020a",
+						"elType": "widget",
+						"widgetType": "divider",
+						"settings": {
+							"color": "#23395B",
+							"weight": {
+								"unit": "px",
+								"size": 1,
+								"sizes": []
+							},
+							"gap": {
+								"unit": "px",
+								"size": 2,
+								"sizes": []
+							}
+						},
+						"elements": []
+					},
+					{
+						"id": "000020b",
+						"elType": "widget",
+						"widgetType": "text-editor",
+						"settings": {
+							"editor": "<p>Sample content: Halden Advisory is a fictional company made for the Open Frame Business starter site. The clients, figures and quotes are examples to replace with your own.</p>",
+							"text_color": "#B7C4D8",
+							"typography_typography": "custom",
+							"typography_font_size": {
+								"unit": "px",
+								"size": 14,
+								"sizes": []
+							}
+						},
+						"elements": []
+					}
+				]
+			}
+		]
+	}
+}

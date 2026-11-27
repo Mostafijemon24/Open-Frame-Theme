@@ -1,0 +1,210 @@
+[
+	{
+		"uid": "hero",
+		"title": "File:Taking notes at a coffee table (Unsplash).jpg",
+		"width": 1400,
+		"height": 1200,
+		"focal": [
+			47,
+			50
+		],
+		"section": "Home: hero panel",
+		"subject": "A woman with glasses at a round wooden table, a pen in her hand, working at a laptop; a plant, two phones and a bookshelf around her",
+		"alt": "A woman with glasses working at a laptop on a round wooden table, a pen in her hand and a plant beside her"
+	},
+	{
+		"uid": "course-code",
+		"title": "File:Macro laptop coding (Unsplash).jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			60,
+			50
+		],
+		"section": "Course card and course details: Web development fundamentals",
+		"subject": "A close view of a laptop screen with JavaScript in a code editor",
+		"alt": "JavaScript code in an editor on a laptop screen"
+	},
+	{
+		"uid": "course-data",
+		"title": "File:Statistics on a laptop (Unsplash).jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			45,
+			50
+		],
+		"section": "Course card: Data analysis with spreadsheets and SQL",
+		"subject": "An open laptop on a glass table showing a dashboard with figures, an area chart, bar charts and a ring chart",
+		"alt": "A laptop showing a dashboard with figures and charts"
+	},
+	{
+		"uid": "course-design",
+		"title": "File:Designer sketching Wireframes (Unsplash).jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			35,
+			50
+		],
+		"section": "Course card: Interface design",
+		"subject": "A hand in a grey jumper drawing screen layouts on paper with a blue pen, a mug behind",
+		"alt": "A hand sketching screen layouts on paper with a pen, a mug on the table behind"
+	},
+	{
+		"uid": "course-language",
+		"title": "File:Two people meeting with iphone and ipad (Unsplash).jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"section": "Course card: Spanish for work",
+		"subject": "The hands of two people facing each other across a wooden table: one writes in a small notebook; a coffee cup, a glass of water, two phones, a tablet and a leather bag",
+		"alt": "Two people talking across a wooden table, one writing in a small notebook beside a cup of coffee"
+	},
+	{
+		"uid": "course-photo",
+		"title": "File:Fall photographer (Unsplash).jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Course card: Photography weekends",
+		"subject": "A woman in a white jumper holding a camera to her eye on a country road lined with autumn trees",
+		"alt": "A woman holding a camera to her eye on a road lined with autumn trees"
+	},
+	{
+		"uid": "course-writing",
+		"title": "File:Left-handed writing with wristwatch.jpg",
+		"width": 1200,
+		"height": 900,
+		"focal": [
+			60,
+			55
+		],
+		"section": "Course card: Writing clearly at work",
+		"subject": "A hand with a wristwatch writing in a notebook with a pen, a laptop beside it on a wooden desk",
+		"alt": "A hand writing in a notebook with a pen, next to a laptop on a wooden desk"
+	},
+	{
+		"uid": "campus",
+		"title": "File:153 W 27th St, New York, United States (Unsplash).jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"section": "About: beside “Why evenings, and why small”; Contact: under the cards",
+		"subject": "A bright, empty white room with long tables, dark chairs and a screen on the wall",
+		"alt": "A bright white room with long tables, dark chairs and a screen on the wall"
+	},
+	{
+		"uid": "group",
+		"title": "File:Students learning together (Unsplash).jpg",
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Courses and About: wide picture near the end",
+		"subject": "Three people studying at a dark wooden table outdoors, seen from above: one reads a book, one writes in a notebook, one holds a book with highlighted lines",
+		"alt": "Three people studying at a wooden table, seen from above: one reads, one writes in a notebook, one holds a book with highlighted lines"
+	},
+	{
+		"uid": "teacher-1",
+		"title": "File:Outdoor portrait (Unsplash).jpg",
+		"width": 800,
+		"height": 800,
+		"focal": [
+			45,
+			50
+		],
+		"section": "Instructors: Dana Whitlock",
+		"subject": "A woman of about thirty with curly red-blonde hair, a denim shirt and a backpack, smiling over her shoulder in a city street after dark, a phone in her hand",
+		"alt": "Portrait of a woman with curly red-blonde hair and a denim shirt, smiling"
+	},
+	{
+		"uid": "teacher-2",
+		"title": "File:Stockholm man with headphones (Unsplash).jpg",
+		"width": 800,
+		"height": 800,
+		"focal": [
+			40,
+			50
+		],
+		"section": "Instructors and course details: Samuel Okoye",
+		"subject": "A young Black man with short dreadlocks, a beanie, a denim jacket and earphones, smiling broadly in a city street in daylight",
+		"alt": "Portrait of a man with short dreadlocks and a denim jacket, smiling broadly"
+	},
+	{
+		"uid": "teacher-3",
+		"title": "File:Smiling in a cornfield (Unsplash).jpg",
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Instructors: Lucía Fernández",
+		"subject": "A young woman with long brown hair and a checked shirt, smiling, among tall maize plants",
+		"alt": "Portrait of a woman with long brown hair and a checked shirt, smiling"
+	},
+	{
+		"uid": "teacher-4",
+		"title": "File:I Love Portraits (Unsplash).jpg",
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			43
+		],
+		"section": "Instructors: Maya Lind",
+		"subject": "A smiling woman with long brown hair in a pink top, outdoors in front of a hedge",
+		"alt": "Portrait of a smiling woman with long brown hair in a pink top"
+	},
+	{
+		"uid": "news-1",
+		"title": "File:White library tall windows (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			55
+		],
+		"section": "Article cover: Open day on 18 January",
+		"subject": "A bright white library with tall arched windows, desks and a round counter",
+		"alt": "A bright white library with tall arched windows and study desks"
+	},
+	{
+		"uid": "news-2",
+		"title": "File:Tattooed woman with laptop (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			45
+		],
+		"section": "Article cover: Ten weeks of evenings",
+		"subject": "A woman with wavy red hair and a tattooed arm, smiling down at a laptop in a café with a neon sign behind her",
+		"alt": "A woman with wavy red hair smiling at her laptop in a café"
+	},
+	{
+		"uid": "news-3",
+		"title": "File:Man at a laptop in an office (Unsplash).jpg",
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"section": "Article cover: From night classes to a first job in data",
+		"subject": "A man seen from behind his shoulder, typing at a laptop that shows a table of entries, at a wooden table by a window with flowers and a small plant",
+		"alt": "A man typing at a laptop that shows a table of figures, at a wooden table by a window"
+	}
+]

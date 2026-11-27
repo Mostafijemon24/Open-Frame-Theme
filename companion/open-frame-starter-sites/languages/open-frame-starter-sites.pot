@@ -1,0 +1,987 @@
+# Copyright (C) 2026 Mostafij Emon
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Frame Starter Sites 0.6.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/open-frame-starter-sites\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-27T09:59:39+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: open-frame-starter-sites\n"
+
+#. Plugin Name of the plugin
+#: open-frame-starter-sites.php
+msgid "Open Frame Starter Sites"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: open-frame-starter-sites.php
+msgid "https://github.com/Mostafijemon24/Open-Frame-Theme"
+msgstr ""
+
+#. Description of the plugin
+#: open-frame-starter-sites.php
+msgid "Complete starter websites for the Open Frame theme, made with Elementor: preview each design, see what it needs, install the required plugins, import it, and roll the import back if you change your mind."
+msgstr ""
+
+#. Author of the plugin
+#: open-frame-starter-sites.php
+msgid "Mostafij Emon"
+msgstr ""
+
+#. Author URI of the plugin
+#: open-frame-starter-sites.php
+msgid "https://github.com/Mostafijemon24"
+msgstr ""
+
+#: src/Admin/Page.php:72
+#: src/Admin/Page.php:73
+#: src/Admin/Page.php:89
+#: src/Admin/Page.php:139
+msgid "Starter Sites"
+msgstr ""
+
+#: src/Admin/Page.php:140
+msgid "Complete websites made for the Open Frame theme. Pick a design to see its pages and what it needs."
+msgstr ""
+
+#: src/Admin/Page.php:143
+msgid "Starter Sites needs JavaScript. Please turn it on in your browser and reload this page."
+msgstr ""
+
+#: src/Cloud/Catalog.php:108
+msgid "The library sent an older list of designs than the one this site already has, so it was not used."
+msgstr ""
+
+#: src/Cloud/Catalog.php:174
+msgid "That starter site is not in the library."
+msgstr ""
+
+#: src/Cloud/CatalogValidator.php:51
+msgid "The starter site library sent a list that this plugin cannot read."
+msgstr ""
+
+#: src/Cloud/CatalogValidator.php:58
+msgid "The starter site library uses a newer format. Update the Open Frame Starter Sites plugin to see the list."
+msgstr ""
+
+#: src/Cloud/Client.php:65
+#: src/Cloud/Client.php:146
+msgid "The starter site library sent an answer that could not be read."
+msgstr ""
+
+#: src/Cloud/Client.php:91
+msgid "The starter site library pointed to an address that is not its own, so it was not used."
+msgstr ""
+
+#: src/Cloud/Client.php:99
+msgid "The starter site library could not be reached."
+msgstr ""
+
+#: src/Cloud/Client.php:120
+msgid "The starter site library could not be reached. Check that your server can make outgoing HTTPS requests."
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: src/Cloud/Client.php:135
+#, php-format
+msgid "The starter site library is having trouble right now (error %d). Please try again in a few minutes."
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: src/Cloud/Client.php:141
+#, php-format
+msgid "The starter site library answered with an unexpected error (%d)."
+msgstr ""
+
+#: src/Cloud/Manifest.php:54
+msgid "The download for this design is damaged or was altered, so it was not used. Please try again later."
+msgstr ""
+
+#: src/Cloud/Manifest.php:57
+msgid "This design cannot be imported yet."
+msgstr ""
+
+#: src/Cloud/Manifest.php:82
+#: src/Requirements/Checker.php:135
+#: assets/admin/app.js:32
+msgid "This design needs a newer version of the Open Frame Starter Sites plugin. Update the plugin, then come back."
+msgstr ""
+
+#: src/Cloud/Signature.php:48
+msgid "The list of designs could not be verified, so it was not used. Please try again later."
+msgstr ""
+
+#: src/Elementor/Adapter.php:79
+msgid "Elementor could not create the Site Settings for this design."
+msgstr ""
+
+#: src/Elementor/Adapter.php:122
+msgid "Elementor could not open a page of this design."
+msgstr ""
+
+#: src/Elementor/Adapter.php:133
+msgid "Elementor could not save a page of this design."
+msgstr ""
+
+#: src/Elementor/Adapter.php:159
+msgid "This design needs Elementor Pro for its header, footer and blog templates."
+msgstr ""
+
+#: src/Elementor/Adapter.php:170
+msgid "Elementor Pro could not create a template of this design."
+msgstr ""
+
+#: src/Fonts/Fonts.php:194
+msgid "Starter site fonts"
+msgstr ""
+
+#: src/Import/Package.php:53
+#: src/Import/Runner.php:526
+msgid "The uploads folder cannot be written to. Ask your hosting company to make wp-content/uploads writable."
+msgstr ""
+
+#: src/Import/Package.php:93
+msgid "A download for this design is damaged or was altered, so it was not used. Please try again."
+msgstr ""
+
+#: src/Import/Package.php:119
+msgid "A download for this design did not finish. Check your connection and try again."
+msgstr ""
+
+#: src/Import/Package.php:125
+msgid "The starter site library is having trouble right now. Please try again in a few minutes."
+msgstr ""
+
+#: src/Import/Package.php:149
+#: src/Import/Package.php:176
+#: src/Import/Runner.php:533
+#: src/Import/Runner.php:589
+msgid "The package of this design is damaged or was altered, so it was not used. Please try again."
+msgstr ""
+
+#: src/Import/Rollback.php:74
+msgid "The import is still running in another window. Give it a moment."
+msgstr ""
+
+#: src/Import/Runner.php:130
+msgid "An earlier import did not finish. Continue it or roll it back first."
+msgstr ""
+
+#: src/Import/Runner.php:184
+#: src/Rest/ImportsController.php:167
+msgid "That import no longer exists."
+msgstr ""
+
+#: src/Import/Runner.php:192
+msgid "The import is already running in another window. Give it a moment."
+msgstr ""
+
+#: src/Import/Runner.php:248
+msgid "Checking your site"
+msgstr ""
+
+#: src/Import/Runner.php:249
+msgid "Saving your current settings"
+msgstr ""
+
+#: src/Import/Runner.php:250
+msgid "Downloading the design"
+msgstr ""
+
+#: src/Import/Runner.php:251
+msgid "Importing images"
+msgstr ""
+
+#: src/Import/Runner.php:252
+msgid "Importing fonts"
+msgstr ""
+
+#: src/Import/Runner.php:253
+msgid "Creating pages"
+msgstr ""
+
+#: src/Import/Runner.php:254
+msgid "Setting colors and fonts"
+msgstr ""
+
+#: src/Import/Runner.php:255
+msgid "Building the pages in Elementor"
+msgstr ""
+
+#: src/Import/Runner.php:256
+msgid "Creating menus"
+msgstr ""
+
+#: src/Import/Runner.php:257
+msgid "Applying settings"
+msgstr ""
+
+#: src/Import/Runner.php:258
+msgid "Finishing"
+msgstr ""
+
+#: src/Import/Runner.php:311
+msgid "Your site does not have everything this design needs yet. Close this and look at the list under \"What it needs\"."
+msgstr ""
+
+#: src/Import/Runner.php:315
+msgid "Elementor is not active."
+msgstr ""
+
+#: src/Import/Runner.php:318
+msgid "This design is built with Elementor containers. Turn on \"Container\" under Elementor > Settings > Features, then try again."
+msgstr ""
+
+#. translators: %s: comma-separated list of Elementor widget names.
+#: src/Import/Runner.php:332
+#, php-format
+msgid "This design uses Elementor widgets that are not available on your site: %s. Update Elementor, then try again."
+msgstr ""
+
+#. translators: %s: what was found, in technical words.
+#: src/Import/Runner.php:407
+#, php-format
+msgid "This design was not imported, because it contains something the plugin does not accept (%s). No page was created. Please report this to the makers of the design."
+msgstr ""
+
+#: src/Import/Runner.php:472
+msgid "An image of this design is not a valid image, so the import was stopped."
+msgstr ""
+
+#: src/Import/Runner.php:493
+msgid "An image could not be added to the media library. Check that the uploads folder can be written to."
+msgstr ""
+
+#: src/Import/Runner.php:545
+msgid "A font of this design is not a valid font file, so the import was stopped."
+msgstr ""
+
+#: src/Import/Runner.php:610
+msgid "A page of this design could not be created."
+msgstr ""
+
+#: src/Import/Runner.php:692
+msgid "A blog post of this design could not be created."
+msgstr ""
+
+#: src/Import/Runner.php:742
+msgid "This design has products, and WooCommerce is not active. Activate WooCommerce and try again."
+msgstr ""
+
+#: src/Import/Runner.php:791
+msgid "A product of this design could not be created."
+msgstr ""
+
+#. translators: 1: page title, 2: reference inside the package.
+#: src/Import/Runner.php:908
+#, php-format
+msgid "\"%1$s\": a link or image (%2$s) could not be connected."
+msgstr ""
+
+#: src/Import/Runner.php:975
+msgid "A menu of this design could not be created."
+msgstr ""
+
+#: src/Import/Runner.php:1090
+msgid "The home page was not set. Choose it under Settings > Reading."
+msgstr ""
+
+#. translators: %s: page title.
+#: src/Import/Runner.php:1095
+#, php-format
+msgid "\"%s\" contains a link or image that could not be connected."
+msgstr ""
+
+#: src/Requirements/Checker.php:97
+msgid "Update WordPress under Dashboard > Updates."
+msgstr ""
+
+#: src/Requirements/Checker.php:108
+msgid "Ask your hosting company to switch the site to a newer PHP version."
+msgstr ""
+
+#: src/Requirements/Checker.php:117
+msgid "Open Frame theme"
+msgstr ""
+
+#: src/Requirements/Checker.php:119
+msgid "not active"
+msgstr ""
+
+#: src/Requirements/Checker.php:122
+msgid "Update the Open Frame theme under Dashboard > Updates."
+msgstr ""
+
+#: src/Requirements/Checker.php:123
+msgid "Activate the Open Frame theme (or a child theme of it) under Appearance > Themes."
+msgstr ""
+
+#: src/Requirements/Checker.php:131
+msgid "Open Frame Starter Sites plugin"
+msgstr ""
+
+#: src/Requirements/Checker.php:141
+msgid "ZIP support on the server"
+msgstr ""
+
+#: src/Requirements/Checker.php:145
+msgid "Ask your hosting company to enable the PHP \"zip\" extension."
+msgstr ""
+
+#: src/Requirements/Checker.php:151
+msgid "Uploads folder can be written to"
+msgstr ""
+
+#: src/Requirements/Checker.php:155
+msgid "Ask your hosting company to make the wp-content/uploads folder writable."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:37
+msgid "On a network of sites, plugins are installed by the network administrator. Ask them to install this plugin."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:38
+msgid "Your account, or this site, is not allowed to install or change plugins. Install the plugin by hand under Plugins > Add New."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:48
+#: src/Rest/RequirementsController.php:120
+msgid "This plugin is not available from WordPress.org and has to be installed by hand."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:58
+msgid "This server asks for FTP details before it installs plugins. Install the plugin under Plugins > Add New, then come back."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:70
+msgid "The plugin was downloaded but could not be found afterwards. Install it under Plugins > Add New."
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:91
+msgid "WordPress.org could not be reached to download the plugin. Try again, or install it under Plugins > Add New."
+msgstr ""
+
+#. translators: 1: plugin name, 2: WordPress version the plugin needs, 3: WordPress version of this site.
+#: src/Requirements/PluginInstaller.php:103
+#, php-format
+msgid "The current version of %1$s needs WordPress %2$s or newer, and this site has WordPress %3$s. Update WordPress under Dashboard > Updates, then try again."
+msgstr ""
+
+#. translators: 1: plugin name, 2: PHP version the plugin needs, 3: PHP version of this site.
+#: src/Requirements/PluginInstaller.php:115
+#, php-format
+msgid "The current version of %1$s needs PHP %2$s or newer, and this site runs PHP %3$s. Your hosting company can change the PHP version."
+msgstr ""
+
+#. translators: %s: reason reported by WordPress.
+#: src/Requirements/PluginInstaller.php:167
+#, php-format
+msgid "WordPress could not install the plugin: %s"
+msgstr ""
+
+#: src/Requirements/PluginInstaller.php:168
+msgid "the plugins folder could not be written to."
+msgstr ""
+
+#. translators: %s: reason reported by WordPress.
+#: src/Requirements/PluginInstaller.php:191
+#, php-format
+msgid "The plugin could not be activated: %s"
+msgstr ""
+
+#: src/Rest/Controller.php:49
+msgid "You are not allowed to use Starter Sites on this site."
+msgstr ""
+
+#: src/Rest/ImportsController.php:127
+msgid "The import was not confirmed."
+msgstr ""
+
+#: src/Rest/RequirementsController.php:115
+msgid "That plugin is not required by this starter site."
+msgstr ""
+
+#: src/SiteParts/SiteParts.php:82
+msgid "Site Parts"
+msgstr ""
+
+#: src/SiteParts/SiteParts.php:83
+msgid "Site Part"
+msgstr ""
+
+#: src/SiteParts/SiteParts.php:84
+msgid "Edit Site Part"
+msgstr ""
+
+#: src/SiteParts/SiteParts.php:85
+msgid "Search Site Parts"
+msgstr ""
+
+#: src/SiteParts/SiteParts.php:86
+msgid "No site parts yet. They are created when you import a starter site."
+msgstr ""
+
+#: src/Widgets/NavMenu.php:41
+msgid "Navigation Menu (Open Frame)"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:79
+#: src/Widgets/NavMenu.php:125
+msgid "Menu"
+msgstr ""
+
+#. translators: %s: link to the Menus screen.
+#: src/Widgets/NavMenu.php:88
+#, php-format
+msgid "Shows the menu assigned to the \"Primary Menu\" location. Change its items under %s."
+msgstr ""
+
+#: src/Widgets/NavMenu.php:89
+msgid "Appearance > Menus"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:98
+msgid "Alignment"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:102
+msgid "Start"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:106
+msgid "Center"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:110
+msgid "End"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:141
+msgid "Text Color"
+msgstr ""
+
+#: src/Widgets/NavMenu.php:152
+msgid "Hover and Current Color"
+msgstr ""
+
+#: assets/admin/app.js:23
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: assets/admin/app.js:26
+msgid "Free"
+msgstr ""
+
+#: assets/admin/app.js:27
+#: assets/admin/app.js:840
+msgid "Needs Elementor Pro"
+msgstr ""
+
+#: assets/admin/app.js:31
+msgid "This design is on its way and cannot be imported yet. You can already see what it will need."
+msgstr ""
+
+#: assets/admin/app.js:33
+msgid "Your site does not meet the requirements marked below yet."
+msgstr ""
+
+#: assets/admin/app.js:34
+msgid "This design is built with Elementor Pro, which is sold by Elementor. Install and activate Elementor Pro, then come back."
+msgstr ""
+
+#: assets/admin/app.js:35
+msgid "This design needs the plugins marked below. You can install them here."
+msgstr ""
+
+#: assets/admin/app.js:36
+msgid "Your site has everything this design needs."
+msgstr ""
+
+#: assets/admin/app.js:40
+msgid "Pages"
+msgstr ""
+
+#: assets/admin/app.js:41
+msgid "Header"
+msgstr ""
+
+#: assets/admin/app.js:42
+msgid "Footer"
+msgstr ""
+
+#: assets/admin/app.js:43
+msgid "\"Page not found\" page"
+msgstr ""
+
+#: assets/admin/app.js:44
+msgid "Blog and archives"
+msgstr ""
+
+#: assets/admin/app.js:45
+msgid "Single post"
+msgstr ""
+
+#: assets/admin/app.js:46
+msgid "Shop and product pages"
+msgstr ""
+
+#: assets/admin/app.js:50
+msgid "Edit with Elementor"
+msgstr ""
+
+#: assets/admin/app.js:51
+msgid "Set in the Customizer"
+msgstr ""
+
+#: assets/admin/app.js:55
+msgid "Active"
+msgstr ""
+
+#: assets/admin/app.js:56
+msgid "Installed, not active"
+msgstr ""
+
+#: assets/admin/app.js:57
+msgid "Not installed"
+msgstr ""
+
+#: assets/admin/app.js:58
+msgid "Needs an update"
+msgstr ""
+
+#: assets/admin/app.js:62
+msgid "Install and activate"
+msgstr ""
+
+#: assets/admin/app.js:63
+msgid "Activate"
+msgstr ""
+
+#: assets/admin/app.js:64
+msgid "Update"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: assets/admin/app.js:69
+#, js-format
+msgid "Installing %s…"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: assets/admin/app.js:71
+#, js-format
+msgid "Activating %s…"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: assets/admin/app.js:73
+#, js-format
+msgid "Updating %s…"
+msgstr ""
+
+#: assets/admin/app.js:86
+msgid "Coming soon"
+msgstr ""
+
+#: assets/admin/app.js:87
+msgid "Update available"
+msgstr ""
+
+#: assets/admin/app.js:88
+#: assets/admin/app.js:360
+#: assets/admin/app.js:601
+msgid "Imported"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: assets/admin/app.js:119
+#: assets/admin/app.js:351
+#, js-format
+msgid "%d page"
+msgid_plural "%d pages"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: starter site name.
+#: assets/admin/app.js:129
+#, js-format
+msgid "View details: %s"
+msgstr ""
+
+#: assets/admin/app.js:131
+msgid "View details"
+msgstr ""
+
+#: assets/admin/app.js:148
+msgid "(met)"
+msgstr ""
+
+#: assets/admin/app.js:148
+msgid "(not met)"
+msgstr ""
+
+#. translators: 1: required version, 2: installed version.
+#: assets/admin/app.js:157
+#, js-format
+msgid "needs %1$s or newer, you have %2$s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: assets/admin/app.js:173
+#, js-format
+msgid "Get %s"
+msgstr ""
+
+#: assets/admin/app.js:175
+msgid "Install this plugin by hand under Plugins > Add New."
+msgstr ""
+
+#: assets/admin/app.js:192
+msgid "Your account cannot install plugins on this site. Ask an administrator to do it."
+msgstr ""
+
+#. translators: %s: version number.
+#: assets/admin/app.js:197
+#, js-format
+msgid "version %s or newer"
+msgstr ""
+
+#: assets/admin/app.js:208
+msgid "(optional)"
+msgstr ""
+
+#. translators: %s: starter site name.
+#: assets/admin/app.js:250
+#, js-format
+msgid "%s was imported."
+msgstr ""
+
+#: assets/admin/app.js:289
+msgid "The import was rolled back."
+msgstr ""
+
+#: assets/admin/app.js:301
+msgid "Roll back the import"
+msgstr ""
+
+#: assets/admin/app.js:302
+msgid "This removes the pages, images, menus and settings the import added and puts your earlier home page and settings back. Changes you made to the imported pages are lost."
+msgstr ""
+
+#: assets/admin/app.js:303
+msgid "Yes, roll back"
+msgstr ""
+
+#: assets/admin/app.js:304
+msgid "Keep the import"
+msgstr ""
+
+#: assets/admin/app.js:306
+msgid "Rolling back…"
+msgstr ""
+
+#: assets/admin/app.js:306
+msgid "Roll back this import"
+msgstr ""
+
+#: assets/admin/app.js:313
+msgid "Importing"
+msgstr ""
+
+#: assets/admin/app.js:316
+msgid "Import progress"
+msgstr ""
+
+#: assets/admin/app.js:325
+msgid "Continue the import"
+msgstr ""
+
+#: assets/admin/app.js:328
+msgid "Keep this window open. If it closes, you can continue or roll back from this screen."
+msgstr ""
+
+#: assets/admin/app.js:336
+msgid "The import stopped"
+msgstr ""
+
+#. translators: 1: name of the step, 2: what went wrong.
+#: assets/admin/app.js:341
+#, js-format
+msgid "While \"%1$s\": %2$s"
+msgstr ""
+
+#: assets/admin/app.js:344
+#: assets/admin/app.js:766
+msgid "Try again"
+msgstr ""
+
+#. translators: %d: number of images.
+#: assets/admin/app.js:353
+#, js-format
+msgid "%d image"
+msgid_plural "%d images"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of menus.
+#: assets/admin/app.js:355
+#, js-format
+msgid "%d menu"
+msgid_plural "%d menus"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: what was imported, for example "2 pages, 1 image, 1 menu".
+#: assets/admin/app.js:365
+#, js-format
+msgid "Your site now has this design: %s."
+msgstr ""
+
+#: assets/admin/app.js:371
+msgid "A few things need your attention:"
+msgstr ""
+
+#: assets/admin/app.js:378
+msgid "View your site"
+msgstr ""
+
+#: assets/admin/app.js:379
+msgid "Edit the home page with Elementor"
+msgstr ""
+
+#: assets/admin/app.js:380
+msgid "Customize"
+msgstr ""
+
+#. translators: %s: starter site name.
+#: assets/admin/app.js:396
+#, js-format
+msgid "An import of \"%s\" did not finish. Open that design to continue it or roll it back first."
+msgstr ""
+
+#: assets/admin/app.js:405
+msgid "Import this design"
+msgstr ""
+
+#: assets/admin/app.js:411
+msgid "Confirm the import"
+msgstr ""
+
+#: assets/admin/app.js:412
+msgid "Before you import"
+msgstr ""
+
+#: assets/admin/app.js:421
+msgid "The pages of this design and their images are added to your site. Nothing you already have is deleted."
+msgstr ""
+
+#: assets/admin/app.js:423
+msgid "Your home page changes to the home page of this design."
+msgstr ""
+
+#: assets/admin/app.js:424
+msgid "Site-wide colors and fonts (Elementor Site Settings), theme settings, the header and the menu change to those of this design."
+msgstr ""
+
+#: assets/admin/app.js:425
+msgid "You can undo all of it afterwards with \"Roll back this import\"."
+msgstr ""
+
+#: assets/admin/app.js:427
+msgid "If this site already has visitors or content you care about, make a backup first."
+msgstr ""
+
+#: assets/admin/app.js:433
+msgid "I understand that my home page and site-wide settings will change."
+msgstr ""
+
+#: assets/admin/app.js:438
+msgid "Start the import"
+msgstr ""
+
+#: assets/admin/app.js:440
+msgid "Cancel"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: assets/admin/app.js:473
+#, js-format
+msgid "%s is now active."
+msgstr ""
+
+#: assets/admin/app.js:486
+msgid "Overview"
+msgstr ""
+
+#. translators: 1: starter site name, 2: page name.
+#: assets/admin/app.js:503
+#, js-format
+msgid "Preview of %1$s: %2$s"
+msgstr ""
+
+#: assets/admin/app.js:510
+msgid "Page previews"
+msgstr ""
+
+#: assets/admin/app.js:525
+msgid "Checking what this design needs…"
+msgstr ""
+
+#: assets/admin/app.js:532
+msgid "Open the live demo"
+msgstr ""
+
+#: assets/admin/app.js:535
+msgid "What it needs"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: assets/admin/app.js:554
+#, js-format
+msgid "%d page included"
+msgid_plural "%d pages included"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/admin/app.js:563
+msgid "Where you edit each part"
+msgstr ""
+
+#: assets/admin/app.js:597
+msgid "Loading…"
+msgstr ""
+
+#: assets/admin/app.js:602
+msgid "Failed"
+msgstr ""
+
+#: assets/admin/app.js:603
+msgid "Rolled back"
+msgstr ""
+
+#: assets/admin/app.js:609
+msgid "Past imports, newest first"
+msgstr ""
+
+#: assets/admin/app.js:616
+msgid "Design"
+msgstr ""
+
+#: assets/admin/app.js:617
+msgid "Date"
+msgstr ""
+
+#: assets/admin/app.js:618
+msgid "Result"
+msgstr ""
+
+#: assets/admin/app.js:619
+msgid "Notes"
+msgstr ""
+
+#: assets/admin/app.js:662
+msgid "The list is up to date."
+msgstr ""
+
+#. translators: %d: number of starter sites.
+#: assets/admin/app.js:731
+#, js-format
+msgid "%d design shown."
+msgid_plural "%d designs shown."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/admin/app.js:747
+msgid "These designs are made for the Open Frame theme, which is not active on this site."
+msgstr ""
+
+#: assets/admin/app.js:749
+msgid "Go to Themes"
+msgstr ""
+
+#: assets/admin/app.js:753
+msgid "Loading the designs…"
+msgstr ""
+
+#: assets/admin/app.js:764
+msgid "The designs could not be loaded"
+msgstr ""
+
+#: assets/admin/app.js:781
+msgid "Showing the list saved earlier."
+msgstr ""
+
+#. translators: %s: starter site name.
+#: assets/admin/app.js:793
+#, js-format
+msgid "An import of \"%s\" did not finish."
+msgstr ""
+
+#: assets/admin/app.js:795
+msgid "Continue or roll back"
+msgstr ""
+
+#: assets/admin/app.js:801
+msgid "Sections"
+msgstr ""
+
+#: assets/admin/app.js:802
+msgid "Designs"
+msgstr ""
+
+#: assets/admin/app.js:803
+msgid "Import history"
+msgstr ""
+
+#: assets/admin/app.js:817
+#: assets/admin/app.js:818
+msgid "Search designs"
+msgstr ""
+
+#: assets/admin/app.js:825
+msgid "Category"
+msgstr ""
+
+#: assets/admin/app.js:828
+msgid "All categories"
+msgstr ""
+
+#: assets/admin/app.js:834
+msgid "Elementor version"
+msgstr ""
+
+#: assets/admin/app.js:838
+msgid "Free and Pro"
+msgstr ""
+
+#: assets/admin/app.js:839
+msgid "Works with free Elementor"
+msgstr ""
+
+#: assets/admin/app.js:848
+msgid "Check for new designs"
+msgstr ""
+
+#. translators: %s: date and time.
+#: assets/admin/app.js:853
+#, js-format
+msgid "Last checked: %s"
+msgstr ""
+
+#: assets/admin/app.js:862
+msgid "No designs are available yet"
+msgstr ""
+
+#: assets/admin/app.js:862
+msgid "No designs match your search"
+msgstr ""
+
+#: assets/admin/app.js:874
+msgid "Show all designs"
+msgstr ""

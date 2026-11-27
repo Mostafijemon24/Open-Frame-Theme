@@ -1,0 +1,37 @@
+[
+	{
+		"uid": "primary",
+		"name": "Primary",
+		"location": "primary",
+		"items": [
+			{
+				"title": "Courses",
+				"url": "ofss://page/courses"
+			},
+			{
+				"title": "Instructors",
+				"url": "ofss://page/instructors"
+			},
+			{
+				"title": "Admissions",
+				"url": "ofss://page/admissions"
+			},
+			{
+				"title": "Events",
+				"url": "ofss://page/events"
+			},
+			{
+				"title": "About",
+				"url": "ofss://page/about"
+			},
+			{
+				"title": "News",
+				"url": "ofss://page/news"
+			},
+			{
+				"title": "Contact",
+				"url": "ofss://page/contact"
+			}
+		]
+	}
+]

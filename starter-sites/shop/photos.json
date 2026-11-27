@@ -1,0 +1,444 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero",
+		"subject": "A bright white room with a white wire chair, a wooden side table with a small plant, a radiator and a window",
+		"alt": "A bright white room with a wire chair and a wooden side table",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:White_room_decoration_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/White_room_decoration_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Breather (@breather on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5760,
+			3840
+		],
+		"width": 1800,
+		"height": 1000,
+		"focal": [
+			50,
+			60
+		],
+		"bytes": 115562,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-1",
+		"file": "product-1.webp",
+		"section": "Product 1",
+		"subject": "A terracotta-coloured ceramic mug on a slate coaster, beside a laptop",
+		"alt": "A terracotta ceramic mug on a slate coaster",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Artem_Sapegin_2017_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Artem_Sapegin_2017_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Artem Sapegin (@sapegin on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			78,
+			58
+		],
+		"bytes": 27628,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-2",
+		"file": "product-2.webp",
+		"section": "Product 2",
+		"subject": "A green succulent in a rough concrete pot against a pale wall",
+		"alt": "A succulent in a concrete pot",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Potted_Succulent_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Potted_Succulent_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Scott Webb (@scottwebb on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			78,
+			70
+		],
+		"bytes": 24646,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-3",
+		"file": "product-3.webp",
+		"section": "Product 3",
+		"subject": "A white ceramic jug holding pink tulips, more tulips lying beside it",
+		"alt": "A white ceramic jug holding pink tulips",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:A_Kiss_of_Pink_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/A_Kiss_of_Pink_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Lark (@brookelark on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5664,
+			3776
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			42,
+			50
+		],
+		"bytes": 45908,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-4",
+		"file": "product-4.webp",
+		"section": "Product 4",
+		"subject": "A wooden serving board with a handle, a small white bowl of blueberries on it",
+		"alt": "A wooden serving board with a small bowl of blueberries",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:NotRedBerries_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/NotRedBerries_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eduard Militaru (@eduardmilitaru on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4608,
+			3072
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			54,
+			50
+		],
+		"bytes": 159644,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-5",
+		"file": "product-5.webp",
+		"section": "Product 5",
+		"subject": "A small tan leather notebook with a pen and a binder clip on a pale background",
+		"alt": "A small tan leather notebook with a pen",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Leather_notebook_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Leather_notebook_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Kelly Jean (@kellyjean on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5616,
+			3744
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			62,
+			45
+		],
+		"bytes": 40850,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-6",
+		"file": "product-6.webp",
+		"section": "Product 6",
+		"subject": "Five woven baskets of different shapes on white boards, seen from above",
+		"alt": "Five woven baskets seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Gasworks_Plaza,_Newstead,_Australia_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gasworks_Plaza%2C_Newstead%2C_Australia_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Zachary Staines (@antibodies on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4847,
+			3625
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 160532,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-7",
+		"file": "product-7.webp",
+		"section": "Product 7",
+		"subject": "A black floor lamp with a round shade against a sage green wall",
+		"alt": "A black floor lamp against a sage green wall",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Floor_lamp_near_a_wall_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Floor_lamp_near_a_wall_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "David van Dijk (@dvandijk on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3828,
+			2563
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			72,
+			50
+		],
+		"bytes": 145758,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "product-8",
+		"file": "product-8.webp",
+		"section": "Product 8",
+		"subject": "A white shell chair with wooden legs beside a woven belly basket holding a grey blanket",
+		"alt": "A white shell chair with wooden legs beside a woven basket",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Minimalist_Basket_Chair_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Minimalist_Basket_Chair_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Sarah Dorweiler (@sarahdorweiler on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			2309,
+			3200
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			55,
+			85
+		],
+		"bytes": 93514,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "lookbook-1",
+		"file": "lookbook-1.webp",
+		"section": "Lookbook 1",
+		"subject": "A white wall shelf with a snake plant in a pale pot and a black cat figure",
+		"alt": "A white shelf with a snake plant and a black cat figure",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Lucky_Cat_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Lucky_Cat_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Charles Deluvio (@charlesdeluvio on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4251,
+			2834
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			52,
+			50
+		],
+		"bytes": 65554,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "lookbook-2",
+		"file": "lookbook-2.webp",
+		"section": "Lookbook 2",
+		"subject": "A breakfast table with a plate of fruit, glasses of juice and a wooden chair",
+		"alt": "A breakfast table with a plate of fruit and glasses of juice",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Brooke_Lark_2016_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Brooke_Lark_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Lark (@brookelark on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5707,
+			3805
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 151654,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "lookbook-3",
+		"file": "lookbook-3.webp",
+		"section": "Lookbook 3",
+		"subject": "A wooden armchair with a patterned cushion by a window with white curtains",
+		"alt": "A wooden armchair with a patterned cushion by a window",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Kari_Shea_2016-06-06_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Kari_Shea_2016-06-06_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Kari Shea (@karishea on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4272,
+			2848
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			55,
+			50
+		],
+		"bytes": 55316,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "lookbook-4",
+		"file": "lookbook-4.webp",
+		"section": "Lookbook 4",
+		"subject": "Two small trees in white lace-patterned pots on a window sill",
+		"alt": "Two small trees in white pots on a window sill",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bright_windowsill_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Bright_windowsill_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Lucas Alexander (@lucasalexander on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3648,
+			5472
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			50,
+			60
+		],
+		"bytes": 92372,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "about",
+		"file": "about.webp",
+		"section": "About",
+		"subject": "Two clay-covered hands shaping a pot on a wheel, seen from above",
+		"alt": "Hands shaping a pot on a wheel, seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Making_pottery_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Making_pottery_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jared Sluyter (@jaredsluyter on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5519,
+			3679
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 98248,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-1",
+		"file": "journal-1.webp",
+		"section": "Journal 1",
+		"subject": "Potted herbs and plants on a wooden table, seen from above",
+		"alt": "Potted herbs on a wooden table, seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Gardening_Supplies_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Gardening_Supplies_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Giulia Bertelli (@unpeusauvage on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			2976,
+			1984
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 143638,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-2",
+		"file": "journal-2.webp",
+		"section": "Journal 2",
+		"subject": "A wooden table laid for six with plates, greenery and a runner, seen from above",
+		"alt": "A table laid for six with greenery, seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Rawpixel.com_2017-04-27_(Unsplash_FWOGqSKq_Cs).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Rawpixel.com_2017-04-27_%28Unsplash_FWOGqSKq_Cs%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com rawpixel",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6951,
+			4912
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 286714,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "journal-3",
+		"file": "journal-3.webp",
+		"section": "Journal 3",
+		"subject": "A round crusty loaf on a wooden board with a knife",
+		"alt": "A round loaf on a wooden board",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Ben_Garratt_2016_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Ben_Garratt_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Ben Garratt (@wstn on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4800,
+			3204
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 201080,
+		"checked": "2026-11-26"
+	}
+]

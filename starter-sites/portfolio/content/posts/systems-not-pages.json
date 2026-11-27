@@ -1,0 +1,12 @@
+{
+	"uid": "portfolio:posts:systems-not-pages",
+	"title": "Design the system first, the pages second",
+	"slug": "systems-not-pages",
+	"excerpt": "Most identity projects fail quietly, a year later, when the tenth person has to make the hundredth thing. How I plan for that person.",
+	"featured": "ofss://media/note-2",
+	"categories": [
+		"Process"
+	],
+	"days_ago": 24,
+	"content": "<!-- wp:paragraph -->\n<p>Most identity projects fail quietly, a year after launch, when the tenth person has to make the hundredth thing and the guidelines have no answer. The logo was never the problem. The system was.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Start with the awkward formats</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>I begin with the pieces nobody puts in a case study: the invoice, the delivery label, the job advert, the slide with too much text. If the idea survives those, the hero image will take care of itself.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>One typeface that does the work of three</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>A grid that still holds when the text doubles</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Colour rules short enough to remember</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Hand over less</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>A forty-page guideline is a sign that the system is too complicated. The ones that get used fit on a poster by the printer. I aim for six rules and a folder of real examples.</p>\n<!-- /wp:paragraph -->"
+}

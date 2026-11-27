@@ -1,0 +1,101 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://github.com/Mostafijemon24/Open-Frame-Theme/schemas/manifest.schema.json",
+	"title": "Starter site manifest",
+	"description": "What one version of a starter site consists of. The catalog holds the SHA-256 of this file; this file holds the SHA-256 and size of the package and of every media and font file.",
+	"type": "object",
+	"required": [ "format", "id", "name", "version", "requires", "pages", "files", "package", "media", "fonts" ],
+	"properties": {
+		"format": { "type": "integer", "minimum": 1 },
+		"id": { "$ref": "#/$defs/slug" },
+		"name": { "type": "string", "minLength": 1, "maxLength": 60 },
+		"version": { "type": "string", "pattern": "^\\d+(?:\\.\\d+){0,3}$" },
+		"requires": {
+			"type": "object",
+			"properties": {
+				"elementor": {
+					"type": "object",
+					"properties": {
+						"widgets": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9_-]+$" }, "description": "Every Elementor widget type the package uses. The importer refuses a package when one is not registered on the site." }
+					}
+				}
+			}
+		},
+		"editable": { "type": "object" },
+		"pages": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"required": [ "uid", "title" ],
+				"properties": {
+					"uid": { "$ref": "#/$defs/uid" },
+					"title": { "type": "string" },
+					"front_page": { "type": "boolean" }
+				}
+			}
+		},
+		"files": {
+			"type": "object",
+			"description": "Every file inside package.zip.",
+			"propertyNames": { "pattern": "^[A-Za-z0-9._/-]+\\.(json|md)$" },
+			"additionalProperties": { "$ref": "#/$defs/file" }
+		},
+		"package": {
+			"type": "object",
+			"required": [ "url", "sha256", "bytes" ],
+			"properties": {
+				"url": { "type": "string", "format": "uri" },
+				"sha256": { "$ref": "#/$defs/sha256" },
+				"bytes": { "type": "integer", "minimum": 1, "maximum": 2097152 }
+			}
+		},
+		"media": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [ "uid", "sha256", "bytes", "mime", "width", "height", "alt", "licence", "url" ],
+				"properties": {
+					"uid": { "$ref": "#/$defs/slug" },
+					"sha256": { "$ref": "#/$defs/sha256" },
+					"bytes": { "type": "integer", "minimum": 1, "maximum": 409600 },
+					"mime": { "enum": [ "image/jpeg", "image/png", "image/webp", "image/avif", "image/gif" ] },
+					"width": { "type": "integer", "minimum": 1 },
+					"height": { "type": "integer", "minimum": 1 },
+					"alt": { "type": "string" },
+					"licence": { "type": "string", "minLength": 1 },
+					"url": { "type": "string", "format": "uri" }
+				}
+			}
+		},
+		"fonts": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [ "family", "weight", "style", "sha256", "bytes", "licence", "url" ],
+				"properties": {
+					"family": { "type": "string", "minLength": 1 },
+					"weight": { "type": "string" },
+					"style": { "enum": [ "normal", "italic" ] },
+					"sha256": { "$ref": "#/$defs/sha256" },
+					"bytes": { "type": "integer", "minimum": 1 },
+					"licence": { "type": "string", "minLength": 1 },
+					"url": { "type": "string", "format": "uri" }
+				}
+			}
+		}
+	},
+	"$defs": {
+		"slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+		"uid": { "type": "string", "pattern": "^[a-z0-9-]+:[a-z-]+:[a-z0-9-]+$", "description": "Stable identity of an object: <site>:<kind>:<name>." },
+		"sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+		"file": {
+			"type": "object",
+			"required": [ "sha256", "bytes" ],
+			"properties": {
+				"sha256": { "$ref": "#/$defs/sha256" },
+				"bytes": { "type": "integer", "minimum": 0 }
+			}
+		}
+	}
+}

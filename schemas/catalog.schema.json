@@ -1,0 +1,115 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://github.com/Mostafijemon24/Open-Frame-Theme/schemas/catalog.schema.json",
+	"title": "Open Frame starter site catalog",
+	"description": "The list of starter sites served by the library at /v1/catalog.json. The plugin (CatalogValidator) and the publishing tools check a catalog against this shape.",
+	"type": "object",
+	"required": [ "format", "sites" ],
+	"properties": {
+		"format": { "type": "integer", "minimum": 1, "description": "Format of the catalog. The plugin refuses a number higher than it knows." },
+		"generated": { "type": "string", "maxLength": 40 },
+		"categories": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [ "slug", "name" ],
+				"properties": {
+					"slug": { "$ref": "#/$defs/slug" },
+					"name": { "type": "string", "minLength": 1, "maxLength": 60 }
+				}
+			}
+		},
+		"sites": { "type": "array", "items": { "$ref": "#/$defs/site" } }
+	},
+	"$defs": {
+		"slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 60 },
+		"version": { "type": "string", "pattern": "^\\d+(?:\\.\\d+){0,3}$", "maxLength": 20 },
+		"assetUrl": { "type": "string", "format": "uri", "description": "HTTPS, on one of the library's own hosts." },
+		"how": { "enum": [ "elementor", "theme" ] },
+		"site": {
+			"type": "object",
+			"required": [ "id", "name", "category", "tier", "status", "version", "preview", "requires" ],
+			"properties": {
+				"id": { "$ref": "#/$defs/slug" },
+				"name": { "type": "string", "minLength": 1, "maxLength": 60 },
+				"summary": { "type": "string", "maxLength": 300 },
+				"category": { "$ref": "#/$defs/slug" },
+				"tags": { "type": "array", "maxItems": 12, "items": { "type": "string", "maxLength": 30 } },
+				"tier": { "enum": [ "free", "pro" ], "description": "free: works with Elementor free. pro: requires Elementor Pro." },
+				"status": { "enum": [ "available", "coming_soon" ] },
+				"version": { "$ref": "#/$defs/version" },
+				"preview": {
+					"type": "object",
+					"required": [ "thumbnail" ],
+					"properties": {
+						"thumbnail": { "$ref": "#/$defs/assetUrl" },
+						"screenshots": {
+							"type": "array",
+							"maxItems": 30,
+							"items": {
+								"type": "object",
+								"required": [ "title", "url" ],
+								"properties": {
+									"title": { "type": "string", "minLength": 1, "maxLength": 60 },
+									"url": { "$ref": "#/$defs/assetUrl" }
+								}
+							}
+						},
+						"demo_url": { "type": "string", "description": "Any HTTPS address, or empty. Only ever opened in the browser." }
+					}
+				},
+				"pages": { "type": "array", "maxItems": 40, "items": { "type": "string", "maxLength": 60 } },
+				"requires": {
+					"type": "object",
+					"properties": {
+						"format": { "type": "integer", "minimum": 1 },
+						"wordpress": { "$ref": "#/$defs/version" },
+						"php": { "$ref": "#/$defs/version" },
+						"theme": { "$ref": "#/$defs/version" },
+						"importer": { "$ref": "#/$defs/version", "description": "Lowest version of the Starter Sites plugin that can import the site." },
+						"plugins": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"required": [ "slug", "name", "file", "source" ],
+								"properties": {
+									"slug": { "$ref": "#/$defs/slug" },
+									"name": { "type": "string", "minLength": 1, "maxLength": 60 },
+									"file": { "type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9._-]+\\.php$", "description": "Main file, inside the folder named like the slug." },
+									"version": { "$ref": "#/$defs/version" },
+									"source": { "enum": [ "wordpress.org", "external" ], "description": "Only wordpress.org plugins are ever installed by the plugin." },
+									"required": { "type": "boolean", "default": true },
+									"url": { "type": "string", "description": "Where to get an external plugin. HTTPS." }
+								}
+							}
+						}
+					}
+				},
+				"editable": {
+					"type": "object",
+					"description": "Where the user edits each part of the site.",
+					"properties": {
+						"pages": { "$ref": "#/$defs/how" },
+						"header": { "$ref": "#/$defs/how" },
+						"footer": { "$ref": "#/$defs/how" },
+						"404": { "$ref": "#/$defs/how" },
+						"blog": { "$ref": "#/$defs/how" },
+						"single": { "$ref": "#/$defs/how" },
+						"shop": { "$ref": "#/$defs/how" }
+					}
+				},
+				"manifest": {
+					"type": "object",
+					"description": "Required when status is available.",
+					"required": [ "url", "sha256" ],
+					"properties": {
+						"url": { "$ref": "#/$defs/assetUrl" },
+						"sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+					}
+				}
+			},
+			"if": { "properties": { "status": { "const": "available" } } },
+			"then": { "required": [ "manifest" ] }
+		}
+	}
+}

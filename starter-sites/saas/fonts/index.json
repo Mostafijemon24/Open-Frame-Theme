@@ -1,0 +1,16 @@
+[
+	{
+		"family": "Sora",
+		"weight": "100 800",
+		"style": "normal",
+		"file": "sora-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2019 The Sora Project Authors."
+	},
+	{
+		"family": "DM Sans",
+		"weight": "100 900",
+		"style": "normal",
+		"file": "dm-sans-latin.woff2",
+		"licence": "OFL-1.1. Copyright 2014 The DM Sans Project Authors."
+	}
+]

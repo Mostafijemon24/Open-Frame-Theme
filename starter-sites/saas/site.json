@@ -1,0 +1,107 @@
+{
+	"id": "saas",
+	"order": 3,
+	"name": "SaaS",
+	"summary": "A crisp site for a software product: features, a feature page, pricing tables, integrations, customer stories, a demo form, legal pages and a blog. Header, footer and blog are Theme Builder templates.",
+	"category": "technology",
+	"tags": [
+		"software",
+		"app",
+		"startup",
+		"technology",
+		"ai"
+	],
+	"tier": "pro",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#0e1320",
+		"#ff4d8d",
+		"#ff8a3d"
+	],
+	"pages": [
+		"Home",
+		"Features",
+		"Feature Details",
+		"Pricing",
+		"Integrations",
+		"Customers",
+		"About",
+		"Blog",
+		"Single Post",
+		"Book a Demo",
+		"Privacy",
+		"Terms",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.5.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			},
+			{
+				"slug": "elementor-pro",
+				"name": "Elementor Pro",
+				"file": "elementor-pro/elementor-pro.php",
+				"version": "4.0",
+				"source": "external",
+				"required": true,
+				"url": "https://elementor.com/pro/"
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"archive-posts",
+				"button",
+				"counter",
+				"form",
+				"heading",
+				"icon-list",
+				"image",
+				"nav-menu",
+				"post-info",
+				"post-navigation",
+				"posts",
+				"price-table",
+				"text-editor",
+				"theme-archive-title",
+				"theme-post-content",
+				"theme-post-featured-image",
+				"theme-post-title"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "elementor",
+		"single": "elementor"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Features",
+			"file": "features.png"
+		},
+		{
+			"title": "Pricing",
+			"file": "pricing.png"
+		},
+		{
+			"title": "Book a demo",
+			"file": "demo.png"
+		}
+	]
+}

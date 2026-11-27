@@ -27,6 +27,11 @@ a:hover { color: var(--primary-dark); }
 .sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
 .sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
 .sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
 main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
 .doc { max-width: 860px; margin: 0 auto; }
 h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
@@ -81,7 +86,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
 		Open Frame
 	</a>
-	<p class="version">Documentation · v1.0.1</p>
+	<p class="version">Documentation · v1.1.0</p>
 	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
 	<nav id="toc" aria-label="Documentation sections">
 		<ol>
@@ -102,20 +107,29 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 				<li><a href="#15-page-templates">Page templates</a></li>
 				<li><a href="#16-blog-and-posts">Blog and posts</a></li>
 				<li><a href="#17-block-editor-features">Block editor features</a></li>
-				<li><a href="#18-fonts">Fonts</a></li>
-				<li><a href="#19-customization-recipes">Customization recipes</a></li>
-				<li><a href="#20-accessibility-rtl-and-translation">Accessibility, RTL and translation</a></li>
-				<li><a href="#21-child-themes-and-developer-reference">Child themes and developer reference</a></li>
-				<li><a href="#22-privacy-and-performance">Privacy and performance</a></li>
-				<li><a href="#23-troubleshooting-and-faq">Troubleshooting and FAQ</a></li>
-				<li><a href="#24-changelog-credits-and-support">Changelog, credits and support</a></li>
+				<li><a href="#18-elementor">Elementor</a></li>
+				<li><a href="#19-woocommerce">WooCommerce</a></li>
+				<li><a href="#20-fonts">Fonts</a></li>
+				<li><a href="#21-customization-recipes">Customization recipes</a></li>
+				<li><a href="#22-accessibility-rtl-and-translation">Accessibility, RTL and translation</a></li>
+				<li><a href="#23-child-themes-and-developer-reference">Child themes and developer reference</a></li>
+				<li><a href="#24-privacy-and-performance">Privacy and performance</a></li>
+				<li><a href="#25-troubleshooting-and-faq">Troubleshooting and FAQ</a></li>
+				<li><a href="#26-changelog-credits-and-support">Changelog, credits and support</a></li>
 		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			<li><a href="index.html" aria-current="page">Theme guide</a></li>
+			<li><a href="starter-sites.html">Starter Sites guide</a></li>
+			<li><a href="install.html">Installation</a></li>
+			<li><a href="support.html">Support and updates</a></li>
+		</ul>
 	</nav>
 </aside>
 <main id="content">
 	<article class="doc">
 <h1 id="open-frame-theme-documentation">Open Frame — Theme Documentation</h1>
-<p><strong>Version 1.0.1</strong> · Requires WordPress 6.4+ and PHP 7.4+ · Tested up to WordPress 7.1 · GPL-2.0-or-later</p>
+<p><strong>Version 1.1.0</strong> · Requires WordPress 6.4+ and PHP 7.4+ · Tested up to WordPress 7.1 · GPL-2.0-or-later</p>
 <figure><a href="images/banner.png"><img src="images/banner.png" alt="Open Frame: a flexible frame for every website" loading="lazy"></a><figcaption>Open Frame: a flexible frame for every website</figcaption></figure>
 <p>Open Frame is a lightweight, accessibility-minded multipurpose WordPress theme for business sites, blogs and portfolios. Everything is controlled from the Customizer, no plugin is required, and the fonts are bundled so the theme never calls a remote server.</p>
 <p><strong>How to read this guide.</strong> Many screenshots carry red numbered markers. The table under each screenshot explains every number, so you can match what you see on screen with the explanation.</p>
@@ -206,7 +220,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <tr><td>5</td><td>Menus</td><td>Create menus and assign them to locations</td></tr>
 <tr><td>6</td><td>Widgets</td><td>Edit the sidebar and footer widget areas with a live preview</td></tr>
 <tr><td>7</td><td>Homepage Settings</td><td>Choose a static home page and the posts page</td></tr>
-<tr><td>8</td><td>Additional CSS</td><td>Your own CSS, see <a href="#19-customization-recipes">Customization recipes</a></td></tr>
+<tr><td>8</td><td>Additional CSS</td><td>Your own CSS, see <a href="#21-customization-recipes">Customization recipes</a></td></tr>
 <tr><td>9</td><td>Publish</td><td>Saves your changes and makes them live</td></tr></tbody></table></div>
 <p>Use the three device buttons at the bottom of the panel to preview the site on desktop, tablet and phone widths.</p>
 <p>Click <strong>Open Frame Options</strong> to see the five theme sections:</p>
@@ -467,12 +481,49 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <tr><td>Font sizes</td><td>Small, Medium, Large, Extra large, Huge, Display</td></tr>
 <tr><td>Spacing</td><td>Seven steps, from 0.5 rem to a fluid 4 to 6 rem</td></tr>
 <tr><td>Content width</td><td>The editor canvas uses your <em>Content width</em> and <em>Container width</em> settings</td></tr></tbody></table></div>
-<h2 id="18-fonts">18. Fonts</h2>
+<h2 id="18-elementor">18. Elementor</h2>
+<p>Open Frame works with the free version of Elementor and with Elementor Pro. Elementor is optional; nothing in the theme depends on it.</p>
+<h3 id="building-a-page-with-elementor">Building a page with Elementor</h3>
+<p>Create a page and choose <strong>Edit with Elementor</strong>. The content fills the full width of the window, with no page card around it, so full-width sections reach the edges of the screen. Three page layouts are available under <strong>Page Settings → Page Layout</strong> in the Elementor panel:</p>
+<div class="table-wrap"><table><thead><tr><th>Page layout</th><th>Header and footer</th><th>Page title</th><th>Use it for</th></tr></thead><tbody><tr><td><strong>Default</strong></td><td>Theme header and footer</td><td>Shown above the content. Turn on <strong>Hide Title</strong> in Elementor&#39;s page settings to remove it</td><td>Ordinary pages</td></tr>
+<tr><td><strong>Elementor Full Width</strong></td><td>Theme header and footer</td><td>Not shown</td><td>Home pages and landing pages</td></tr>
+<tr><td><strong>Elementor Canvas</strong></td><td>None</td><td>Not shown</td><td>Stand-alone pages such as &quot;coming soon&quot; or campaign pages</td></tr></tbody></table></div>
+<figure><a href="images/elementor-page-layout.png"><img src="images/elementor-page-layout.png" alt="The page settings of a page in the Elementor editor" loading="lazy"></a><figcaption>The page settings of a page in the Elementor editor</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What you do with it</th></tr></thead><tbody><tr><td>1</td><td><strong>Page Settings</strong></td><td>Opens the settings of the page you are editing</td></tr>
+<tr><td>2</td><td><strong>Page Layout</strong></td><td>Choose Default, Elementor Full Width or Elementor Canvas (see the table above)</td></tr>
+<tr><td>3</td><td><strong>Hide Title</strong></td><td>With the Default layout, removes the page title that the theme shows above the content</td></tr></tbody></table></div>
+<p>A page that uses a sidebar layout (see <a href="#7-layout-settings">Layout settings</a>) keeps its sidebar and its card, with the Elementor content inside it.</p>
+<h3 id="starting-from-a-complete-design">Starting from a complete design</h3>
+<p>The companion plugin <strong>Open Frame Starter Sites</strong> adds ten complete websites made with Elementor for this theme: Business, Portfolio, Restaurant, Education and Medical for the free version of Elementor, and Creative Agency, SaaS, Real Estate, Magazine and Shop for Elementor Pro. You choose one under <strong>Appearance → Starter Sites</strong>, import it, and replace the sample content with your own. The plugin is optional and separate from the theme. Its own guide explains every step: <a href="starter-sites.html">Open Frame Starter Sites — User Guide</a>.</p>
+<h3 id="elementor-pro-theme-builder">Elementor Pro Theme Builder</h3>
+<p>With Elementor Pro, templates created under <strong>Templates → Theme Builder</strong> replace the matching part of the theme: Header, Footer, Single Post or Page, Archive (including the blog and search results) and 404. When a template&#39;s display conditions do not match a page, the theme&#39;s own template is used. No setting is needed.</p>
+<h3 id="using-elementors-colors-and-fonts-on-the-whole-site">Using Elementor&#39;s colors and fonts on the whole site</h3>
+<p>By default the blog, single posts, search results and the other theme templates use the colors and fonts from the Customizer, while Elementor pages use Elementor&#39;s <strong>Site Settings</strong>. To keep both in step, go to <strong>Customize → Open Frame Options → Elementor</strong> and tick <strong>Use Elementor global colors and fonts</strong>. The section is only visible while Elementor is active.</p>
+<div class="table-wrap"><table><thead><tr><th>Elementor Site Settings</th><th>Used by the theme for</th></tr></thead><tbody><tr><td>Global color <strong>Primary</strong></td><td>Buttons, links, focus outline</td></tr>
+<tr><td>Global color <strong>Secondary</strong></td><td>Headings</td></tr>
+<tr><td>Global color <strong>Text</strong></td><td>Body text</td></tr>
+<tr><td>Global color <strong>Accent</strong></td><td>Highlights</td></tr>
+<tr><td>Global font <strong>Primary</strong></td><td>Headings</td></tr>
+<tr><td>Global font <strong>Text</strong></td><td>Body text</td></tr></tbody></table></div>
+<p>While the option is on, the matching Customizer colors and fonts act only as a fallback. Fonts chosen in Elementor are loaded the way Elementor loads them; if you select a Google font there, Elementor requests it from Google (see <a href="#24-privacy-and-performance">Privacy and performance</a>).</p>
+<h2 id="19-woocommerce">19. WooCommerce</h2>
+<p>Activate WooCommerce and the store uses the theme&#39;s design; there is nothing to configure in the theme.</p>
+<div class="table-wrap"><table><thead><tr><th>Page</th><th>What the theme does</th></tr></thead><tbody><tr><td>Shop and product categories</td><td>Products are shown as cards in a grid: two per row on phones, three on tablets, and the number of columns set under <strong>Customize → WooCommerce → Product Catalog</strong> on larger screens. Cards in a row share one height. The blog sidebar is not shown</td></tr>
+<tr><td>Single product</td><td>Gallery and details side by side on wide screens, stacked on phones; zoom, lightbox and gallery slider are enabled</td></tr>
+<tr><td>Cart and checkout</td><td>Shown inside the page card at the full container width; buttons use the Primary color</td></tr>
+<tr><td>My account</td><td>Navigation styled as a list of links</td></tr></tbody></table></div>
+<figure><a href="images/woocommerce-shop.png"><img src="images/woocommerce-shop.png" alt="The shop page with product cards" loading="lazy"></a><figcaption>The shop page with product cards</figcaption></figure>
+<p>The shop page: products as cards of one height, three in a row at this width, with the sale badge and the buttons in the Primary color.</p>
+<figure><a href="images/woocommerce-product.png"><img src="images/woocommerce-product.png" alt="A single product" loading="lazy"></a><figcaption>A single product</figcaption></figure>
+<p>A single product: the gallery on the left with the zoom button, the details on the right.</p>
+<p>Buttons, prices, sale badges, notices, tabs and pagination follow the colors from <a href="#8-global-colors">Global Colors</a>. Products inserted on any other page (with blocks, shortcodes or a page builder) are styled the same way.</p>
+<p>The theme styles the store; it does not set it up. Payments, shipping and taxes are WooCommerce&#39;s own settings under <strong>WooCommerce → Settings</strong>. For a ready-made store design, see the Shop design of the <a href="starter-sites.html#11-the-shop-design">Starter Sites plugin</a>, which needs Elementor Pro.</p>
+<h2 id="20-fonts">20. Fonts</h2>
 <p>Open Frame bundles two open-source typefaces as variable fonts, loaded from your own server:</p>
 <div class="table-wrap"><table><thead><tr><th>Font</th><th>Used for</th><th>License</th></tr></thead><tbody><tr><td>Hanken Grotesk</td><td>Text and headings</td><td>SIL Open Font License 1.1</td></tr>
 <tr><td>JetBrains Mono</td><td>Code, small labels and the Monospace choice</td><td>SIL Open Font License 1.1</td></tr></tbody></table></div>
 <p>The files cover the Latin and Latin Extended character sets. The browser only downloads a font file when the page actually uses it. Choose <strong>System UI</strong> for both fonts in Typography if you prefer to load no font files at all.</p>
-<h2 id="19-customization-recipes">19. Customization recipes</h2>
+<h2 id="21-customization-recipes">21. Customization recipes</h2>
 <p>Small changes that have no Customizer setting can be made with CSS under <strong>Customize → Additional CSS</strong> (marker 8 on the Customizer home screen). The theme is built on CSS variables, so most changes are one line.</p>
 <h3 id="squarer-or-rounder-corners">Squarer or rounder corners</h3>
 <pre><code class="language-css">:root {
@@ -507,8 +558,8 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 	--of-card-padding: clamp(1rem, 0.5rem + 2vw, 2rem); /* Padding inside content cards */
 }
 </code></pre>
-<p>The full list of variables is in the <a href="#21-child-themes-and-developer-reference">developer reference</a>.</p>
-<h2 id="20-accessibility-rtl-and-translation">20. Accessibility, RTL and translation</h2>
+<p>The full list of variables is in the <a href="#23-child-themes-and-developer-reference">developer reference</a>.</p>
+<h2 id="22-accessibility-rtl-and-translation">22. Accessibility, RTL and translation</h2>
 <p><strong>Accessibility</strong></p>
 <ul>
 <li>A <em>Skip to content</em> link is the first stop for keyboard users.</li>
@@ -526,7 +577,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <li>Template file: <code>languages/open-frame.pot</code></li>
 </ul>
 <p>Translate the theme with a tool such as Poedit or Loco Translate, and save the files as <code>open-frame-{locale}.po</code> and <code>.mo</code> (for example <code>open-frame-de_DE.mo</code>) in <code>wp-content/languages/themes/</code>.</p>
-<h2 id="21-child-themes-and-developer-reference">21. Child themes and developer reference</h2>
+<h2 id="23-child-themes-and-developer-reference">23. Child themes and developer reference</h2>
 <h3 id="creating-a-child-theme">Creating a child theme</h3>
 <p>Create a folder <code>wp-content/themes/open-frame-child</code> containing <code>style.css</code>:</p>
 <pre><code class="language-css">/*
@@ -540,7 +591,10 @@ Version: 1.0.0
 <p>Open Frame loads its own stylesheet first and then the child theme&#39;s <code>style.css</code> automatically. You do not need to enqueue either of them.</p>
 <h3 id="filters">Filters</h3>
 <div class="table-wrap"><table><thead><tr><th>Filter</th><th>Arguments</th><th>Purpose</th></tr></thead><tbody><tr><td><code>open_frame_layout</code></td><td><code>string $layout</code></td><td>Change the layout for the current view. Return <code>right-sidebar</code>, <code>left-sidebar</code>, <code>no-sidebar</code> or <code>full-width</code></td></tr>
-<tr><td><code>open_frame_content_width</code></td><td><code>int $width</code></td><td>Change the global <code>$content_width</code> used for embeds and images</td></tr></tbody></table></div>
+<tr><td><code>open_frame_content_width</code></td><td><code>int $width</code></td><td>Change the global <code>$content_width</code> used for embeds and images</td></tr>
+<tr><td><code>open_frame_do_location</code></td><td><code>bool $done</code>, <code>string $location</code></td><td>Replace the <code>header</code>, <code>footer</code>, <code>single</code>, <code>archive</code> or <code>404</code> output. Print your markup and return <code>true</code>; the theme then skips its own template</td></tr>
+<tr><td><code>open_frame_has_location</code></td><td><code>bool $has</code>, <code>string $location</code></td><td>Return <code>true</code> when your code will replace a location, so the theme can drop the classes that belong to its own header</td></tr>
+<tr><td><code>open_frame_is_builder_page</code></td><td><code>bool $is_builder</code>, <code>int $post_id</code></td><td>Return <code>true</code> for a page whose content is laid out by a page builder: it loses the page card and spans the full width</td></tr></tbody></table></div>
 <pre><code class="language-php">// Use the full-width layout on a custom post type.
 add_filter(
 	&#39;open_frame_layout&#39;,
@@ -549,6 +603,23 @@ add_filter(
 	}
 );
 </code></pre>
+<pre><code class="language-php">// Replace the footer on landing pages.
+add_filter( &#39;open_frame_has_location&#39;, &#39;my_has_location&#39;, 10, 2 );
+add_filter( &#39;open_frame_do_location&#39;, &#39;my_do_location&#39;, 10, 2 );
+
+function my_has_location( $has, $location ) {
+	return $has || ( &#39;footer&#39; === $location &amp;&amp; is_page_template( &#39;page-templates/landing.php&#39; ) );
+}
+
+function my_do_location( $done, $location ) {
+	if ( $done || ! my_has_location( false, $location ) ) {
+		return $done;
+	}
+	get_template_part( &#39;template-parts/footer/minimal&#39; );
+	return true;
+}
+</code></pre>
+<p>The header and footer markup live in <code>template-parts/header/site-header.php</code> and <code>template-parts/footer/site-footer.php</code>; a child theme can override either file.</p>
 <h3 id="pluggable-template-tags">Pluggable template tags</h3>
 <p>These functions are wrapped in <code>function_exists()</code> and can be replaced in a child theme: <code>open_frame_posted_on()</code>, <code>open_frame_posted_by()</code>, <code>open_frame_entry_meta()</code>, <code>open_frame_entry_footer()</code>, <code>open_frame_post_thumbnail()</code> and <code>open_frame_comment()</code>.</p>
 <h3 id="design-tokens">Design tokens</h3>
@@ -582,13 +653,16 @@ add_filter(
 <tr><td><code>open_frame_footer_visible</code></td><td>boolean</td><td><code>true</code></td></tr>
 <tr><td><code>open_frame_footer_layout</code></td><td><code>1-col</code> to <code>4-col</code></td><td><code>4-col</code></td></tr>
 <tr><td><code>open_frame_footer_bg</code>, <code>open_frame_footer_text</code>, <code>open_frame_footer_heading</code></td><td>hex color</td><td><code>#0f172a</code>, <code>#cbd5e1</code>, <code>#ffffff</code></td></tr>
-<tr><td><code>open_frame_copyright_text</code></td><td>HTML</td><td><em>(empty)</em></td></tr></tbody></table></div>
+<tr><td><code>open_frame_copyright_text</code></td><td>HTML</td><td><em>(empty)</em></td></tr>
+<tr><td><code>open_frame_follow_elementor</code></td><td>boolean</td><td><code>false</code></td></tr></tbody></table></div>
 <h3 id="body-classes">Body classes</h3>
 <div class="table-wrap"><table><thead><tr><th>Class</th><th>When</th></tr></thead><tbody><tr><td><code>layout-right-sidebar</code>, <code>layout-left-sidebar</code>, <code>layout-no-sidebar</code>, <code>layout-full-width</code></td><td>The layout that is actually rendered</td></tr>
 <tr><td><code>no-sidebar</code></td><td>No sidebar is displayed</td></tr>
 <tr><td><code>boxed-layout</code></td><td>Site layout is Boxed</td></tr>
 <tr><td><code>has-sticky-header</code></td><td>Sticky header is on</td></tr>
-<tr><td><code>has-transparent-header</code></td><td>Transparent header applies to this view</td></tr></tbody></table></div>
+<tr><td><code>has-transparent-header</code></td><td>Transparent header applies to this view</td></tr>
+<tr><td><code>of-builder-page</code></td><td>The page is laid out by a page builder (full width, no card)</td></tr>
+<tr><td><code>of-follow-elementor</code></td><td>The theme follows Elementor&#39;s global colors and fonts</td></tr></tbody></table></div>
 <h3 id="image-sizes">Image sizes</h3>
 <div class="table-wrap"><table><thead><tr><th>Name</th><th>Size</th><th>Used for</th></tr></thead><tbody><tr><td><code>open-frame-card</code></td><td>720 × 480, cropped</td><td>Post cards in listings</td></tr>
 <tr><td><code>open-frame-wide</code></td><td>1200 × 630, cropped</td><td>Featured image on single posts and pages</td></tr></tbody></table></div>
@@ -600,9 +674,12 @@ add_filter(
 ├── header.php, footer.php, sidebar.php, searchform.php, comments.php
 ├── index.php, single.php, page.php, archive.php, search.php, 404.php
 ├── page-templates/         full-width.php, landing.php
-├── template-parts/         content.php, -single, -page, -search, -none
+├── template-parts/         content.php, -single, -page, -search, -none, -builder
+│   ├── header/site-header.php   The header markup
+│   └── footer/site-footer.php   The footer markup
 ├── patterns/               Block patterns (registered automatically)
 ├── inc/
+│   ├── hooks.php           Replaceable locations (header, footer, content)
 │   ├── setup.php           Theme supports, menus, widget areas, image sizes
 │   ├── enqueue.php         Styles and scripts
 │   ├── template-tags.php   Post meta, thumbnail and comment output
@@ -611,22 +688,25 @@ add_filter(
 │   ├── footer-builder.php  Footer settings and output
 │   ├── blocks.php          Block styles, pattern category, palette sync
 │   ├── class-open-frame-walker-nav-menu.php   Menu arrow buttons
+│   ├── integrations/       elementor.php, woocommerce.php
 │   └── customizer/         customizer.php, dynamic-css.php, sanitize.php
 ├── assets/
 │   ├── css/editor.css      Block editor styles
+│   ├── css/woocommerce.css Store styles, loaded only with WooCommerce
 │   ├── js/navigation.js    Menu behavior
 │   ├── js/customize-preview.js   Customizer live preview
 │   ├── fonts/              Bundled fonts and their licenses
 │   └── images/             Hero illustration
 └── languages/open-frame.pot
 </code></pre>
-<h2 id="22-privacy-and-performance">22. Privacy and performance</h2>
+<h2 id="24-privacy-and-performance">24. Privacy and performance</h2>
 <ul>
 <li><strong>No remote requests.</strong> Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.</li>
 <li><strong>Small footprint.</strong> One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.</li>
 <li><strong>No stored personal data.</strong> The theme itself stores and sends no visitor data.</li>
+<li><strong>Plugins are separate.</strong> Elementor and WooCommerce load their own files and may contact their own services (Elementor, for example, requests Google fonts when one is selected in its Site Settings). The theme adds one small stylesheet for WooCommerce, and only while WooCommerce is active.</li>
 </ul>
-<h2 id="23-troubleshooting-and-faq">23. Troubleshooting and FAQ</h2>
+<h2 id="25-troubleshooting-and-faq">25. Troubleshooting and FAQ</h2>
 <p><strong>My menu does not appear.</strong>
 Assign a menu to the <strong>Primary Menu</strong> location under <strong>Appearance → Menus → Manage Locations</strong>, and make sure the menu contains items.</p>
 <p><strong>The sidebar is missing.</strong>
@@ -646,8 +726,8 @@ Open <strong>Customize → Open Frame Options → Footer Builder → Copyright t
 <p><strong>Does Open Frame need a plugin?</strong>
 No. Every feature described here is part of the theme.</p>
 <p><strong>Can I use a page builder?</strong>
-Yes. Use the <strong>Landing Page</strong> or <strong>Full Width</strong> template for builder-made pages.</p>
-<h2 id="24-changelog-credits-and-support">24. Changelog, credits and support</h2>
+Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>. For other page builders, use the <strong>Landing Page</strong> or <strong>Full Width</strong> template.</p>
+<h2 id="26-changelog-credits-and-support">26. Changelog, credits and support</h2>
 <h3 id="changelog">Changelog</h3>
 <p>See the <code>== Changelog ==</code> section of <a href="../readme.txt"><code>readme.txt</code></a> for the full history.</p>
 <h3 id="credits-and-licenses">Credits and licenses</h3>
@@ -660,17 +740,19 @@ Yes. Use the <strong>Landing Page</strong> or <strong>Full Width</strong> templa
 <h3 id="support">Support</h3>
 <ul>
 <li>Source code and issue tracker: <a href="https://github.com/Mostafijemon24/Open-Frame-Theme">https://github.com/Mostafijemon24/Open-Frame-Theme</a></li>
+<li>What is supported, for how long, and how updates are published: <a href="support.html">support and update policy</a></li>
+<li>Installing the theme and the Starter Sites plugin step by step: <a href="install.html">installation guide</a></li>
 <li>Author: <a href="https://github.com/Mostafijemon24">Mostafij Emon</a></li>
 </ul>
 
 	</article>
-	<footer>Open Frame 1.0.1 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+	<footer>Open Frame 1.1.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
 </main>
 <script>
 ( function () {
 	var sidebar = document.getElementById( 'sidebar' );
 	var toggle = sidebar.querySelector( '.menu-toggle' );
-	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav a' ) );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
 
 	toggle.addEventListener( 'click', function () {
 		var open = sidebar.classList.toggle( 'is-open' );

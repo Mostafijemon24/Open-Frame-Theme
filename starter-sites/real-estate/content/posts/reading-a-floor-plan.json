@@ -1,0 +1,12 @@
+{
+	"uid": "real-estate:posts:reading-a-floor-plan",
+	"title": "How to read a floor plan in five minutes",
+	"slug": "reading-a-floor-plan",
+	"excerpt": "Photographs are chosen to flatter. A floor plan cannot lie about where the bathroom is. What to look for before you book a viewing.",
+	"featured": "ofss://media/post-2",
+	"categories": [
+		"Buying"
+	],
+	"days_ago": 21,
+	"content": "<!-- wp:paragraph -->\n<p>Photographs are chosen to flatter. A floor plan cannot lie about where the bathroom is, how far the kitchen is from the table, or whether the third bedroom is a cupboard.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Three things to check</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Which way the main rooms face</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>How you walk from the front door to the kitchen</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Whether any room is only reached through another</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>A good plan is one you can walk through in your head without getting lost.</p>\n<!-- /wp:paragraph --></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Every home we list has a measured plan. If something on it is unclear, ask before the viewing rather than during it.</p>\n<!-- /wp:paragraph -->"
+}

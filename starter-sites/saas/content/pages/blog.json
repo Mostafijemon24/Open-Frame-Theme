@@ -1,0 +1,6 @@
+{
+	"uid": "saas:pages:blog",
+	"title": "Blog",
+	"slug": "blog",
+	"template": "default"
+}

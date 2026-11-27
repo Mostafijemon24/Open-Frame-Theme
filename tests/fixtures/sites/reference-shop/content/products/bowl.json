@@ -1,0 +1,12 @@
+{
+	"uid": "reference-shop:products:bowl",
+	"title": "Blue bowl",
+	"slug": "blue-bowl",
+	"excerpt": "A bowl in the same blue.",
+	"content": "<p>Fifteen centimetres across. It goes with the <a href=\"ofss://product/mug\">mug</a>.</p>",
+	"price": "24",
+	"image": "ofss://media/hero",
+	"categories": [
+		"Tableware"
+	]
+}

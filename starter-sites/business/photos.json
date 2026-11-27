@@ -1,0 +1,392 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero, right half",
+		"subject": "Two people at a table with laptops; one points at a sheet of notes with a pen",
+		"alt": "Two people at a table with laptops, one pointing at a sheet of notes with a pen",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Brainstorming_over_paper_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Brainstorming_over_paper_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Helloquence (@helloquence on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			7360,
+			4912
+		],
+		"width": 1600,
+		"height": 1200,
+		"focal": [
+			60,
+			50
+		],
+		"bytes": 143810,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "about",
+		"file": "about.webp",
+		"section": "Home: how we work",
+		"subject": "A bearded man in a suit and a woman in a jacket talking across an outdoor table with a laptop",
+		"alt": "A man in a suit and a woman in a jacket talking across a table with a laptop",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Discussing_business_strategy_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Discussing_business_strategy_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com (@rawpixel on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4004
+		],
+		"width": 1400,
+		"height": 1050,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 110916,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "approach",
+		"file": "approach.webp",
+		"section": "About: we stay until it works",
+		"subject": "The hands of a man in a light blue shirt holding a pen over a notebook, beside an open laptop on a white desk with a small plant",
+		"alt": "A man in a light blue shirt holding a pen over a notebook beside an open laptop",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Businessman_working_and_writing_notes_in_office_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Businessman_working_and_writing_notes_in_office_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "JESHOOTS.COM (@jeshoots on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4200,
+			2800
+		],
+		"width": 1400,
+		"height": 1050,
+		"focal": [
+			40,
+			45
+		],
+		"bytes": 70204,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "office",
+		"file": "office.webp",
+		"section": "Contact: wide picture under the details",
+		"subject": "A bright white room with long tables, black chairs and tall windows",
+		"alt": "A bright room with long tables, black chairs and tall windows",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Large_meeting_room_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Large_meeting_room_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Breather (@breather on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4920,
+			3280
+		],
+		"width": 1800,
+		"height": 630,
+		"focal": [
+			50,
+			62
+		],
+		"bytes": 94624,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "project-harbor",
+		"file": "project-harbor.webp",
+		"section": "Case study: Harbor Freight Lines (logistics)",
+		"subject": "A container terminal seen from directly above: rows of stacked containers, gantry cranes and lorries",
+		"alt": "A container terminal seen from above, with rows of stacked containers and cranes",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Container_terminal_from_above_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Container_terminal_from_above_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "chuttersnap (@chuttersnap on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3936,
+			2624
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 280798,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "project-alder",
+		"file": "project-alder.webp",
+		"section": "Case study: Alder Health Group (healthcare)",
+		"subject": "A long, bright hospital corridor with a wall clock and a few people far away",
+		"alt": "A long, bright hospital corridor",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Corridor_at_point_A_-_N%C3%84L_hospital.jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Corridor_at_point_A_-_N%C3%84L_hospital.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "W.carter",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3914,
+			3082
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			45,
+			55
+		],
+		"bytes": 54538,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "project-kestrel",
+		"file": "project-kestrel.webp",
+		"section": "Case study: Kestrel Components (manufacturing)",
+		"subject": "A works yard seen from above, with racks of materials, pallets and machinery",
+		"alt": "A works yard seen from above, with racks of materials and pallets",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Industrial_storage_area_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Industrial_storage_area_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Charly Birdsinger (@charlize on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5824,
+			3883
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 317848,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "project-lumen",
+		"file": "project-lumen.webp",
+		"section": "Case study: Lumen Mutual (financial services)",
+		"subject": "Hands holding a tablet that shows a line chart, on a wooden table with a coffee",
+		"alt": "Hands holding a tablet that shows a line chart, beside a coffee",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Finance_analytics_over_coffee_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Finance_analytics_over_coffee_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com (@rawpixel on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4004
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			45,
+			45
+		],
+		"bytes": 81490,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-1",
+		"file": "team-1.webp",
+		"section": "Team: Marit Halden",
+		"subject": "A smiling woman with short auburn hair in a light blue shirt, seated by a window",
+		"alt": "Portrait of a smiling woman with short auburn hair in a light blue shirt",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Smiling_woman_by_a_window_(Unsplash_NoRsyXmHGpI).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Smiling_woman_by_a_window_%28Unsplash_NoRsyXmHGpI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Cagle brookecagle",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5309,
+			3539
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			55,
+			40
+		],
+		"bytes": 41904,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-2",
+		"file": "team-2.webp",
+		"section": "Team: Tomas Okafor",
+		"subject": "A man in a white jumper looking down at a book, outdoors",
+		"alt": "Portrait of a man in a white jumper, reading outdoors",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Reading_in_Atlanta_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Reading_in_Atlanta_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Tamarcus Brown (@tamarcusbrown on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3500,
+			2333
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			62,
+			35
+		],
+		"bytes": 50766,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-3",
+		"file": "team-3.webp",
+		"section": "Team: Ines Carvalho",
+		"subject": "A woman with long black hair in a white top, outdoors under trees",
+		"alt": "Portrait of a woman with long black hair in a white top, outdoors",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Woman_beneath_trees_and_sun_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Woman_beneath_trees_and_sun_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Jimmy Chang (@photohunter on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3888
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			45
+		],
+		"bytes": 80964,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "team-4",
+		"file": "team-4.webp",
+		"section": "Team: Daniel Reyes",
+		"subject": "A smiling man with short dark hair in a cream jumper against a pale yellow wall",
+		"alt": "Portrait of a smiling man with short dark hair in a cream jumper",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Always_smile_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Always_smile_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "michael (@m_minimal on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3746,
+			3746
+		],
+		"width": 800,
+		"height": 800,
+		"focal": [
+			50,
+			35
+		],
+		"bytes": 11966,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-1",
+		"file": "post-1.webp",
+		"section": "Article cover: Your best customer may be your least profitable",
+		"subject": "A hand writing figures and a small bar chart in a leather-bound notebook",
+		"alt": "A hand writing figures and a small bar chart in a notebook",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Marketing_plan_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Marketing_plan_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "rawpixel.com (@rawpixel on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5837,
+			3896
+		],
+		"width": 1600,
+		"height": 840,
+		"focal": [
+			55,
+			45
+		],
+		"bytes": 93934,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-2",
+		"file": "post-2.webp",
+		"section": "Article cover: If the strategy does not fit on a page, nobody will use it",
+		"subject": "A nearly empty white desk with a mug of coffee, a pencil, an eraser and paper clips",
+		"alt": "A white desk with a mug of coffee, a pencil, an eraser and paper clips",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Office_supplies_and_coffee_(Unsplash_xxeAftHHq6E).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Office_supplies_and_coffee_%28Unsplash_xxeAftHHq6E%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Bench Accounting benchaccounting",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3499,
+			2333
+		],
+		"width": 1600,
+		"height": 840,
+		"focal": [
+			60,
+			30
+		],
+		"bytes": 22406,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "post-3",
+		"file": "post-3.webp",
+		"section": "Article cover: Cancel a third of your recurring meetings and see what breaks",
+		"subject": "An empty boardroom with a long table, office chairs and windows on two sides",
+		"alt": "An empty boardroom with a long table and windows on two sides",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Benjamin_Child_2015_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Benjamin_Child_2015_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Benjamin Child (@bchild311 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3456
+		],
+		"width": 1600,
+		"height": 840,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 116334,
+		"checked": "2026-11-26"
+	}
+]

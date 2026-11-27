@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ruleset name="Open Frame Starter Sites">
+	<description>WordPress Coding Standards for the Open Frame Starter Sites plugin.</description>
+
+	<file>.</file>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="."/>
+	<arg value="sp"/>
+
+	<config name="minimum_wp_version" value="6.4"/>
+	<config name="testVersion" value="7.4-"/>
+
+	<rule ref="WordPress">
+		<!-- Classes are loaded by namespace: OpenFrame\StarterSites\Cloud\Client lives in src/Cloud/Client.php. -->
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="open-frame-starter-sites"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="ofss"/>
+				<element value="OFSS"/>
+				<element value="OpenFrame\StarterSites"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

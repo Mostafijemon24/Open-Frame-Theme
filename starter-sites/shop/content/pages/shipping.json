@@ -1,0 +1,835 @@
+{
+	"uid": "shop:pages:shipping",
+	"title": "Shipping and Returns",
+	"slug": "shipping-and-returns",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000085",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "80",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F0E8DB"
+				},
+				"elements": [
+					{
+						"id": "0000084",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 12,
+								"column": "12",
+								"row": "12",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 64,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000081",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "Shipping and returns",
+									"header_size": "p",
+									"title_color": "#9A4526",
+									"typography_typography": "custom",
+									"typography_font_family": "Work Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 14,
+										"sizes": []
+									},
+									"typography_font_weight": "600",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.55,
+										"sizes": []
+									},
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 0.6,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000082",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "How it reaches you, and how it comes back",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000083",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Sample terms for a starter site: replace them with the terms of your own shop.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 18,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000096",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "96",
+						"right": "24",
+						"bottom": "96",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "67",
+						"right": "24",
+						"bottom": "67",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000095",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 0,
+								"column": "0",
+								"row": "0",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 72,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000088",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "28",
+										"right": "0",
+										"bottom": "28",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#E3DACB"
+								},
+								"elements": [
+									{
+										"id": "0000086",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "When will my order be sent?",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000087",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Within two working days. Plants are sent on Mondays and Tuesdays only, so that they do not spend a weekend in a depot.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000008b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "28",
+										"right": "0",
+										"bottom": "28",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#E3DACB"
+								},
+								"elements": [
+									{
+										"id": "0000089",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What does delivery cost?",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000008a",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>A flat price per order, shown in the basket before you pay. Orders over a certain amount are sent free.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000008e",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "28",
+										"right": "0",
+										"bottom": "28",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#E3DACB"
+								},
+								"elements": [
+									{
+										"id": "000008c",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Can I send something back?",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000008d",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Yes, within thirty days, in the state it arrived in. Write to us first and we will send a label.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000091",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "28",
+										"right": "0",
+										"bottom": "28",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#E3DACB"
+								},
+								"elements": [
+									{
+										"id": "000008f",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "What about plants?",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000090",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Plants cannot be returned, but if one arrives damaged, send a photograph within three days and we will replace it.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000094",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 8,
+										"column": "8",
+										"row": "8",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "28",
+										"right": "0",
+										"bottom": "28",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_border": "solid",
+									"border_width": {
+										"unit": "px",
+										"top": "1",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": false
+									},
+									"border_color": "#E3DACB"
+								},
+								"elements": [
+									{
+										"id": "0000092",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Something arrived broken",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 22,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000093",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Send a photograph of the box and the object. We send a replacement the same week and do not ask for the pieces.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "00000a1",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "56",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "39",
+						"right": "24",
+						"bottom": "39",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"border_border": "solid",
+					"border_width": {
+						"unit": "px",
+						"top": "1",
+						"right": "0",
+						"bottom": "0",
+						"left": "0",
+						"isLinked": false
+					},
+					"border_color": "#E3DACB"
+				},
+				"elements": [
+					{
+						"id": "00000a0",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000099",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000097",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Sent within two working days",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000098",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>In boxes we reuse, with paper instead of plastic.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000009c",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000009a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Thirty days to change your mind",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000009b",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Send it back as it came and we return what you paid.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000009f",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 6,
+										"column": "6",
+										"row": "6",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000009d",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Made in small batches",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 19,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000009e",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>When a thing is gone, the next batch is a few weeks away.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 16,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

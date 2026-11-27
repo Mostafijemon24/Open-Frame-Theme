@@ -1,0 +1,12 @@
+{
+	"uid": "real-estate:posts:the-market-this-autumn",
+	"title": "The market this autumn, in four numbers",
+	"slug": "the-market-this-autumn",
+	"excerpt": "How long homes took to sell, how close to the asking price, and which streets moved fastest. Our own figures, not a headline.",
+	"featured": "ofss://media/post-3",
+	"categories": [
+		"Market"
+	],
+	"days_ago": 35,
+	"content": "<!-- wp:paragraph -->\n<p>Headlines about the housing market describe a country. You are selling one house on one street. These are our own figures for the homes we sold between September and November.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Seven weeks, on average, from listing to an accepted offer</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>97% of the asking price achieved</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Four viewings before an offer, on average</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>One sale in five agreed before the first open day</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">What it means if you are selling</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Price it honestly and the first three weeks do most of the work. The homes that took longest were the ones that started too high and came down.</p>\n<!-- /wp:paragraph -->"
+}

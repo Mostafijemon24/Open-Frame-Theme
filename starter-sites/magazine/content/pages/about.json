@@ -1,0 +1,1169 @@
+{
+	"uid": "magazine:pages:about",
+	"title": "About",
+	"slug": "about",
+	"template": "elementor_header_footer",
+	"elementor": {
+		"version": "4.4.2",
+		"type": "wp-page",
+		"page_settings": {
+			"hide_title": "yes"
+		},
+		"content": [
+			{
+				"id": "0000026",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "64",
+						"right": "24",
+						"bottom": "40",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "45",
+						"right": "24",
+						"bottom": "28",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "40",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000025",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "column",
+							"flex_gap": {
+								"unit": "px",
+								"size": 14,
+								"column": "14",
+								"row": "14",
+								"isLinked": true
+							},
+							"width": {
+								"unit": "%",
+								"size": 72,
+								"sizes": []
+							},
+							"width_mobile": {
+								"unit": "%",
+								"size": 100,
+								"sizes": []
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000022",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "About",
+									"header_size": "p",
+									"title_color": "#B5121B",
+									"typography_typography": "custom",
+									"typography_font_family": "Public Sans",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 13,
+										"sizes": []
+									},
+									"typography_font_weight": "800",
+									"typography_line_height": {
+										"unit": "em",
+										"size": 1.5,
+										"sizes": []
+									},
+									"typography_text_transform": "uppercase",
+									"typography_letter_spacing": {
+										"unit": "px",
+										"size": 2.2,
+										"sizes": []
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000023",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "A magazine about places, food and people who make things",
+									"header_size": "h1",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									}
+								},
+								"elements": []
+							},
+							{
+								"id": "0000024",
+								"elType": "widget",
+								"widgetType": "text-editor",
+								"settings": {
+									"editor": "<p>Common Ground is written by three people and printed four times a year. This is how it is made, and who makes it.</p>",
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "px",
+										"size": 20,
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000028",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "56",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "39",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000027",
+						"elType": "widget",
+						"widgetType": "image",
+						"settings": {
+							"image": {
+								"id": "ofss://media/about",
+								"url": "ofss://media/about"
+							},
+							"image_size": "full",
+							"image_border_radius": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": []
+					}
+				]
+			},
+			{
+				"id": "000002f",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "000002e",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "column",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "flex-start",
+							"flex_align_items_mobile": "stretch",
+							"flex_gap": {
+								"unit": "px",
+								"size": 64,
+								"column": "64",
+								"row": "64",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "000002b",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 36,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "0000029",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "How it is made",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000002a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Every page is read aloud before it is printed",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000002d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 20,
+										"column": "20",
+										"row": "20",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 64,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									},
+									"width_tablet": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									}
+								},
+								"elements": [
+									{
+										"id": "000002c",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>We go to one place, one kitchen and one workshop for each issue, and we stay longer than is sensible. Nothing is written from a press release, and nobody we write about pays to be in the magazine.</p><p>When the stories are set, we spread the proofs over the big table and mark them by hand, as in the picture above. A sentence that cannot be read aloud without stumbling is rewritten.</p><p>There is no advertising. The magazine is paid for by the people who read it, which is the only arrangement we have found that lets us write what we saw.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "0000045",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 36,
+						"column": "36",
+						"row": "36",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 32,
+						"column": "32",
+						"row": "32",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "0",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "0",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					}
+				},
+				"elements": [
+					{
+						"id": "0000031",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_mobile": "row",
+							"flex_align_items": "baseline",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 16,
+								"column": "16",
+								"row": "16",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "14",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": false
+							},
+							"border_border": "solid",
+							"border_width": {
+								"unit": "px",
+								"top": "3",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": false
+							},
+							"border_color": "#111111"
+						},
+						"elements": [
+							{
+								"id": "0000030",
+								"elType": "widget",
+								"widgetType": "heading",
+								"settings": {
+									"title": "The writers",
+									"header_size": "h2",
+									"__globals__": {
+										"title_color": "globals/colors?id=secondary"
+									},
+									"typography_typography": "custom",
+									"typography_font_size": {
+										"unit": "custom",
+										"size": "clamp(1.5rem, 1.25rem + 1.1vw, 2rem)",
+										"sizes": []
+									}
+								},
+								"elements": []
+							}
+						]
+					},
+					{
+						"id": "0000044",
+						"elType": "container",
+						"settings": {
+							"container_type": "grid",
+							"content_width": "full",
+							"grid_columns_grid": {
+								"unit": "fr",
+								"size": 3,
+								"sizes": []
+							},
+							"grid_columns_grid_tablet": {
+								"unit": "fr",
+								"size": 2,
+								"sizes": []
+							},
+							"grid_columns_grid_mobile": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_rows_grid": {
+								"unit": "fr",
+								"size": 1,
+								"sizes": []
+							},
+							"grid_gaps": {
+								"unit": "px",
+								"size": 40,
+								"column": "40",
+								"row": "40",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000037",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000033",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"width": {
+												"unit": "px",
+												"size": 140,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000032",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/author-1",
+														"url": "ofss://media/author-1"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "200",
+														"right": "200",
+														"bottom": "200",
+														"left": "200",
+														"isLinked": true
+													},
+													"link_to": "custom",
+													"link": {
+														"url": "ofss://page/author",
+														"is_external": "",
+														"nofollow": "",
+														"custom_attributes": ""
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000034",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Places",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000035",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Marta Lind",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											},
+											"link": {
+												"url": "ofss://page/author",
+												"is_external": "",
+												"nofollow": "",
+												"custom_attributes": ""
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000036",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Writes about places at the edge of the map and the people who stay there. Travels by ferry when there is one.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000003d",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000039",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"width": {
+												"unit": "px",
+												"size": 140,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "0000038",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/author-2",
+														"url": "ofss://media/author-2"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "200",
+														"right": "200",
+														"bottom": "200",
+														"left": "200",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "000003a",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Craft",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000003b",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Elias Okoro",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "000003c",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Trained as a cabinetmaker before he wrote a word. Visits one workshop for every issue and sweeps up before he leaves.</p>"
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "0000043",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 12,
+										"column": "12",
+										"row": "12",
+										"isLinked": true
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "000003f",
+										"elType": "container",
+										"settings": {
+											"content_width": "full",
+											"width": {
+												"unit": "px",
+												"size": 140,
+												"sizes": []
+											},
+											"padding": {
+												"unit": "px",
+												"top": "0",
+												"right": "0",
+												"bottom": "0",
+												"left": "0",
+												"isLinked": true
+											}
+										},
+										"elements": [
+											{
+												"id": "000003e",
+												"elType": "widget",
+												"widgetType": "image",
+												"settings": {
+													"image": {
+														"id": "ofss://media/author-3",
+														"url": "ofss://media/author-3"
+													},
+													"image_size": "full",
+													"image_border_radius": {
+														"unit": "px",
+														"top": "200",
+														"right": "200",
+														"bottom": "200",
+														"left": "200",
+														"isLinked": true
+													}
+												},
+												"elements": []
+											}
+										]
+									},
+									{
+										"id": "0000040",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Table",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000041",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Tomás Rey",
+											"header_size": "h3",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000042",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Cooked in other people's kitchens for ten years. Now writes about food that takes time, and bread above all.</p>"
+										},
+										"elements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "000004c",
+				"elType": "container",
+				"settings": {
+					"content_width": "boxed",
+					"flex_direction": "column",
+					"flex_gap": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"flex_gap_mobile": {
+						"unit": "px",
+						"size": 0,
+						"column": "0",
+						"row": "0",
+						"isLinked": true
+					},
+					"padding": {
+						"unit": "px",
+						"top": "72",
+						"right": "24",
+						"bottom": "72",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_tablet": {
+						"unit": "px",
+						"top": "50",
+						"right": "24",
+						"bottom": "50",
+						"left": "24",
+						"isLinked": false
+					},
+					"padding_mobile": {
+						"unit": "px",
+						"top": "56",
+						"right": "20",
+						"bottom": "56",
+						"left": "20",
+						"isLinked": false
+					},
+					"background_background": "classic",
+					"background_color": "#F5F2EB"
+				},
+				"elements": [
+					{
+						"id": "000004b",
+						"elType": "container",
+						"settings": {
+							"content_width": "full",
+							"flex_direction": "row",
+							"flex_direction_tablet": "row",
+							"flex_direction_mobile": "column",
+							"flex_align_items": "center",
+							"flex_align_items_mobile": "stretch",
+							"flex_justify_content": "space-between",
+							"flex_gap": {
+								"unit": "px",
+								"size": 48,
+								"column": "48",
+								"row": "48",
+								"isLinked": true
+							},
+							"flex_gap_mobile": {
+								"unit": "px",
+								"size": 32,
+								"column": "32",
+								"row": "32",
+								"isLinked": true
+							},
+							"padding": {
+								"unit": "px",
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0",
+								"isLinked": true
+							}
+						},
+						"elements": [
+							{
+								"id": "0000049",
+								"elType": "container",
+								"settings": {
+									"content_width": "full",
+									"flex_direction": "column",
+									"flex_gap": {
+										"unit": "px",
+										"size": 10,
+										"column": "10",
+										"row": "10",
+										"isLinked": true
+									},
+									"width": {
+										"unit": "%",
+										"size": 60,
+										"sizes": []
+									},
+									"width_mobile": {
+										"unit": "%",
+										"size": 100,
+										"sizes": []
+									},
+									"padding": {
+										"unit": "px",
+										"top": "0",
+										"right": "0",
+										"bottom": "0",
+										"left": "0",
+										"isLinked": true
+									}
+								},
+								"elements": [
+									{
+										"id": "0000046",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Four issues a year",
+											"header_size": "p",
+											"title_color": "#B5121B",
+											"typography_typography": "custom",
+											"typography_font_family": "Public Sans",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 13,
+												"sizes": []
+											},
+											"typography_font_weight": "800",
+											"typography_line_height": {
+												"unit": "em",
+												"size": 1.5,
+												"sizes": []
+											},
+											"typography_text_transform": "uppercase",
+											"typography_letter_spacing": {
+												"unit": "px",
+												"size": 2.2,
+												"sizes": []
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000047",
+										"elType": "widget",
+										"widgetType": "heading",
+										"settings": {
+											"title": "Printed slowly, read slowly",
+											"header_size": "h2",
+											"__globals__": {
+												"title_color": "globals/colors?id=secondary"
+											}
+										},
+										"elements": []
+									},
+									{
+										"id": "0000048",
+										"elType": "widget",
+										"widgetType": "text-editor",
+										"settings": {
+											"editor": "<p>Common Ground comes out with the seasons: nine stories, no advertising, on paper worth keeping. A year costs less than a dinner.</p>",
+											"typography_typography": "custom",
+											"typography_font_size": {
+												"unit": "px",
+												"size": 18,
+												"sizes": []
+											}
+										},
+										"elements": []
+									}
+								]
+							},
+							{
+								"id": "000004a",
+								"elType": "widget",
+								"widgetType": "button",
+								"settings": {
+									"text": "Subscribe",
+									"link": {
+										"url": "ofss://page/subscribe",
+										"is_external": "",
+										"nofollow": "",
+										"custom_attributes": ""
+									},
+									"__globals__": {
+										"background_color": "globals/colors?id=primary"
+									},
+									"_flex_size": "none"
+								},
+								"elements": []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

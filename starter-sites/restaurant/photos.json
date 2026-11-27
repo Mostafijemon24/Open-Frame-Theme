@@ -1,0 +1,418 @@
+[
+	{
+		"uid": "hero",
+		"file": "hero.webp",
+		"section": "Home: hero, behind the heading under a dark veil",
+		"subject": "Logs burning on iron firedogs in a dark stone hearth; tall flames in the middle, darkness on the left",
+		"alt": "A wood fire burning in a dark stone hearth",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fire_in_the_Winter_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Fire_in_the_Winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Sweet Ice Cream Photography (@sweeticecreamphotography on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5707,
+			3805
+		],
+		"width": 1800,
+		"height": 1080,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 131392,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-leeks",
+		"file": "dish-leeks.webp",
+		"section": "Home: first pictured dish; gallery",
+		"subject": "A stone bowl with a starter of orange cured fish (it looks like salmon or trout), shaved fennel, dill and crisp dark leaves; behind it a second bowl of beetroot, sprouts and peas, a glass of white wine and wild flowers on a bare wooden table",
+		"alt": "A stone bowl of cured fish with shaved fennel and dill on a wooden table, with a bowl of vegetables and a glass of white wine behind",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Vintage_wine_dinner_for_two_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Vintage_wine_dinner_for_two_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Stefan Johnson (@stefanjonhson on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5760,
+			3840
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			52,
+			60
+		],
+		"bytes": 60818,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-flatbread",
+		"file": "dish-flatbread.webp",
+		"section": "Home: second pictured dish; gallery",
+		"subject": "A blistered flatbread (a pizza) topped with rocket, tomato, black olives and ham, on a wooden peel, seen from the side",
+		"alt": "A blistered flatbread topped with rocket, tomato and olives on a wooden peel",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:A_well_garnished_pizza_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/A_well_garnished_pizza_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "David Nuescheler (@uncled on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4928,
+			3280
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			45,
+			50
+		],
+		"bytes": 67978,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-steak",
+		"file": "dish-steak.webp",
+		"section": "Home: third pictured dish; gallery",
+		"subject": "A white plate held in one hand against a black background: a grilled piece of beef with a sprig of rosemary, a halved soft-boiled egg, chopped tomato and a yellow sauce, seen from above",
+		"alt": "Grilled beef with rosemary, a soft-boiled egg and chopped tomato on a white plate, seen from above",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Steak_Dinner_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Steak_Dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eduardo Roda Lopes (@eduroda on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5184,
+			3374
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			58,
+			50
+		],
+		"bytes": 62448,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "dish-cheesecake",
+		"file": "dish-cheesecake.webp",
+		"section": "Home: fourth pictured dish; gallery",
+		"subject": "A small round sponge pudding with a crumble top in a white bowl, with berries, and a cream sauce being poured over it from a jug; strawberries on a dark wooden table",
+		"alt": "A small pudding with a crumble top in a white bowl, with berries and cream sauce being poured over it",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Alto_Pasti_Trattoria_-_Cocina_Italiana_Moderna_en_Manizales,_Colombia_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Alto_Pasti_Trattoria_-_Cocina_Italiana_Moderna_en_Manizales%2C_Colombia_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Pablo Merchán Montes (@pablomerchanm on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3072
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			68,
+			45
+		],
+		"bytes": 33128,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "room",
+		"file": "room.webp",
+		"section": "Home: reservations band under a dark veil; About; Contact; gallery",
+		"subject": "A dark dining room with rough whitewashed walls, a sash window on the left, one wall lamp, and wooden tables laid with wine glasses",
+		"alt": "A dark dining room with whitewashed walls, a window and wooden tables laid with wine glasses",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:In_a_vintage_tavern_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/In_a_vintage_tavern_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Todd Diemer (@todd_diemer on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4718,
+			2982
+		],
+		"width": 1600,
+		"height": 1100,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 312492,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "oven",
+		"file": "oven.webp",
+		"section": "Home and About: the oven; gallery",
+		"subject": "A brick wood-fired oven with a fire inside",
+		"alt": "A brick wood-fired oven with a fire inside",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Cathal_Mac_an_Bheatha_2017-03-15_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Cathal_Mac_an_Bheatha_2017-03-15_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Cathal Mac an Bheatha (@cathalmacan on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3165,
+			2110
+		],
+		"width": 1200,
+		"height": 1500,
+		"focal": [
+			36,
+			50
+		],
+		"bytes": 181578,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "long-table",
+		"file": "long-table.webp",
+		"section": "Home and Private dining: the long table; gallery",
+		"subject": "A long table laid for a group: rows of wine glasses, plates with napkins, vases of white tulips and a dark checked cloth, in a room with wooden walls",
+		"alt": "A long table laid for a group with wine glasses, plates and vases of white tulips",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Preparing_the_dinner_(Unsplash_qkcR-gjt3_g).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Preparing_the_dinner_%28Unsplash_qkcR-gjt3_g%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Leon Christopher arvtd",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			6000,
+			4000
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			55
+		],
+		"bytes": 255300,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "bar",
+		"file": "bar.webp",
+		"section": "Private dining: the bar; gallery",
+		"subject": "The back of a bar: a marble counter crowded with spirit bottles, more bottles on shelves on the left, small lamps above",
+		"alt": "Rows of bottles on the counter and shelves behind a bar",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Busy_bar_shelf_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Busy_bar_shelf_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Eaters Collective (@eaterscollective on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4592,
+			3448
+		],
+		"width": 1600,
+		"height": 1000,
+		"focal": [
+			50,
+			40
+		],
+		"bytes": 252294,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "cocktail",
+		"file": "cocktail.webp",
+		"section": "Gallery",
+		"subject": "An amber cocktail in a coupe glass with a slice of orange floating on it, in front of a bowl of oranges with leaves, dark background",
+		"alt": "An amber cocktail in a coupe glass with a slice of orange, in front of a bowl of oranges",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Cocktail_orange_drink_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Cocktail_orange_drink_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Adam Jaime (@arobj on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4008,
+			6000
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			50,
+			35
+		],
+		"bytes": 56074,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "bread",
+		"file": "bread.webp",
+		"section": "Gallery",
+		"subject": "A whole white crusty loaf on a linen cloth on a dark wooden table, with a small glass dish of butter behind it (not rye, not sliced)",
+		"alt": "A crusty loaf on a linen cloth with a dish of butter behind it",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fresh_Bread_and_Butter_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Fresh_Bread_and_Butter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Brooke Cagle (@brookecagle on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3648
+		],
+		"width": 1000,
+		"height": 1000,
+		"focal": [
+			40,
+			55
+		],
+		"bytes": 73424,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "chef",
+		"file": "chef.webp",
+		"section": "About: the chef (Ines Marlow)",
+		"subject": "A cook in a linen apron slicing an onion on a wooden board; only the hands and apron are in the picture, no face",
+		"alt": "A cook in a linen apron slicing an onion on a wooden board",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Caroline_Attwood_2017_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Caroline_Attwood_2017_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Caroline Attwood (@carolineattwood on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5472,
+			3078
+		],
+		"width": 900,
+		"height": 1080,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 60028,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "host",
+		"file": "host.webp",
+		"section": "About: front of house (Tobias Reyes)",
+		"subject": "A man with a beard and glasses in a white shirt and black tie standing behind a bar, lit shelves of bottles behind him, glasses on the counter in front",
+		"alt": "A man with a beard and glasses in a white shirt and black tie behind a bar",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Bartenders_serving_in_a_bar_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Bartenders_serving_in_a_bar_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Taylor Davidson (@tdavidson on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			3264,
+			2448
+		],
+		"width": 900,
+		"height": 1080,
+		"focal": [
+			60,
+			45
+		],
+		"bytes": 136956,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-1",
+		"file": "note-1.webp",
+		"section": "Article cover: What the first frost does to a leek",
+		"subject": "Leeks with their roots on and a pile of carrots on a market stall",
+		"alt": "Leeks with their roots on beside a pile of carrots on a market stall",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Fresh_Veggies_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fresh_Veggies_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Peter Wendt (@peterwendt on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5961,
+			3974
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			40,
+			50
+		],
+		"bytes": 257244,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-2",
+		"file": "note-2.webp",
+		"section": "Article cover: A short guide to our wine list",
+		"subject": "A row of tasting glasses with a little amber wine in each, close up, against a dark background",
+		"alt": "A row of glasses with a little amber wine in each, against a dark background",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Row_of_wine_glasses_in_close-up_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Row_of_wine_glasses_in_close-up_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "henry fournier (@henryatpull on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			5360,
+			3560
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 140730,
+		"checked": "2026-11-26"
+	},
+	{
+		"uid": "note-3",
+		"file": "note-3.webp",
+		"section": "Article cover: Why we bake our bread at four in the afternoon",
+		"subject": "Three shelves of baked tin loaves in an old wooden rack, in low light",
+		"alt": "Baked loaves on the shelves of an old wooden rack",
+		"source": "Wikimedia Commons",
+		"source_url": "https://commons.wikimedia.org/wiki/File:Loaves_of_Bread_(Unsplash).jpg",
+		"original_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Loaves_of_Bread_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+		"author": "Clark Young (@clark1 on Unsplash)",
+		"licence": "CC0",
+		"licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+		"restrictions": "",
+		"original_size": [
+			4256,
+			2832
+		],
+		"width": 1600,
+		"height": 900,
+		"focal": [
+			50,
+			50
+		],
+		"bytes": 87620,
+		"checked": "2026-11-26"
+	}
+]

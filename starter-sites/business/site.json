@@ -1,0 +1,87 @@
+{
+	"id": "business",
+	"order": 1,
+	"name": "Business",
+	"summary": "A clear, confident site for service companies: services, projects, team, pricing, insights and a contact page.",
+	"category": "business",
+	"tags": [
+		"corporate",
+		"company",
+		"services",
+		"consulting"
+	],
+	"tier": "free",
+	"status": "available",
+	"version": "1.0.0",
+	"colors": [
+		"#0f2a47",
+		"#2f6fed",
+		"#ffffff"
+	],
+	"pages": [
+		"Home",
+		"About",
+		"Services",
+		"Service Details",
+		"Projects",
+		"Project Details",
+		"Team",
+		"Pricing",
+		"Insights (blog)",
+		"Single Post",
+		"Contact",
+		"404"
+	],
+	"requires": {
+		"format": 1,
+		"wordpress": "6.8",
+		"php": "7.4",
+		"theme": "1.1.0",
+		"importer": "0.3.0",
+		"plugins": [
+			{
+				"slug": "elementor",
+				"name": "Elementor",
+				"file": "elementor/elementor.php",
+				"version": "4.0.3",
+				"source": "wordpress.org",
+				"required": true
+			}
+		],
+		"elementor": {
+			"widgets": [
+				"button",
+				"counter",
+				"divider",
+				"heading",
+				"icon-list",
+				"image",
+				"of-nav-menu",
+				"text-editor"
+			]
+		}
+	},
+	"editable": {
+		"404": "elementor",
+		"pages": "elementor",
+		"header": "elementor",
+		"footer": "elementor",
+		"blog": "theme",
+		"single": "theme"
+	},
+	"demo_url": "",
+	"screenshots": [
+		{
+			"title": "Services",
+			"file": "services.png"
+		},
+		{
+			"title": "Projects",
+			"file": "projects.png"
+		},
+		{
+			"title": "Pricing",
+			"file": "pricing.png"
+		}
+	]
+}

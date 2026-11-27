@@ -1,0 +1,29 @@
+{
+	"name": "mostafijemon24/open-frame",
+	"description": "Development tooling for the Open Frame theme. Not part of the installable theme.",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "^3.1"
+	},
+	"scripts": {
+		"lint": [
+			"@lint:theme",
+			"@lint:plugin"
+		],
+		"lint:theme": "phpcs",
+		"lint:plugin": "phpcs --standard=companion/open-frame-starter-sites/phpcs.xml.dist companion/open-frame-starter-sites",
+		"lint:fix": [
+			"phpcbf",
+			"phpcbf --standard=companion/open-frame-starter-sites/phpcs.xml.dist companion/open-frame-starter-sites"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	}
+}

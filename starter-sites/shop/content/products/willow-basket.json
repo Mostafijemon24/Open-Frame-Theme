@@ -1,0 +1,13 @@
+{
+	"uid": "shop:products:willow-basket",
+	"title": "Willow basket",
+	"slug": "willow-basket",
+	"excerpt": "Hand-woven baskets in five shapes, from a bread basket to a deep round one. The price is for the small round basket.",
+	"content": "<p>Woven from unpeeled and peeled willow, which gives the two colours. No two are the same; the picture shows five from one week.</p><p>Tell us in the order note which shape you would like, and we will send the nearest we have.</p>",
+	"price": "28",
+	"image": "ofss://media/product-6",
+	"gallery": [],
+	"categories": [
+		"Storage"
+	]
+}

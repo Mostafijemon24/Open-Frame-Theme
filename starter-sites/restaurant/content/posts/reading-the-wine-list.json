@@ -1,0 +1,12 @@
+{
+	"uid": "restaurant:posts:reading-the-wine-list",
+	"title": "A short guide to our wine list",
+	"slug": "reading-the-wine-list",
+	"excerpt": "Sixty bottles, most of them from growers we have visited. How the list is arranged, and what to ask for if you do not want to read it.",
+	"featured": "ofss://media/note-2",
+	"categories": [
+		"Cellar"
+	],
+	"days_ago": 33,
+	"content": "<!-- wp:paragraph -->\n<p>Our list has sixty bottles, most of them from growers we have visited. It is arranged by weight rather than by country, from the lightest white to the fullest red, because that is how people actually choose.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">If you do not want to read it</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Tell us what you are eating and what you usually enjoy. We will bring two bottles to the table and you can taste both. There is no wrong answer and no pressure to go up the page.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">By the glass</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Twelve wines are open every evening, and the list changes weekly. Half-glasses are always available, which is the best way to drink through a five-course menu.</p>\n<!-- /wp:paragraph -->"
+}
