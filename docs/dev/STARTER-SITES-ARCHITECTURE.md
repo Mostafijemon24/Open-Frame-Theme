@@ -245,7 +245,7 @@ The browser never calls the cloud API. It loads only preview images from the CDN
 
 ### 3.3 Import flow
 
-The import is a **resumable state machine driven by the client**: one REST call starts a run, then the dashboard calls `advance` repeatedly. Each call does as much work as fits in a time budget (the lower of 20 seconds and half of `max_execution_time`), saves state and returns progress. This survives shared-hosting timeouts without depending on WP-Cron, and the same runner is driven synchronously by WP-CLI for tests.
+The import is a **resumable state machine driven by the client**: one REST call starts a run, then the dashboard calls `advance` repeatedly. Each call does as much work as fits in a time budget (four seconds, or half of `max_execution_time` where that is less, so that the progress bar moves on a fast server too), saves state and returns progress. This survives shared-hosting timeouts without depending on WP-Cron, and the same runner is driven synchronously by WP-CLI for tests.
 
 ```
 POST /imports {site, options, confirmed}

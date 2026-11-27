@@ -1,17 +1,35 @@
 name: Release
 
-# Builds the installable theme ZIP and publishes a GitHub release.
+# Builds an installable ZIP with its checksum and publishes a GitHub release.
+# The theme and the Starter Sites plugin are released separately, each with
+# its own version number and its own tag:
 #
-# Runs when a version tag (for example v1.0.0) is pushed, or when started by
-# hand from the Actions tab ("Run workflow"). A manual run releases the version
-# found in style.css and creates the matching tag on the selected commit. Tick
-# "replace" to publish that version again in place of an existing release.
+#   theme    tag v1.1.0                 package open-frame-1.1.0.zip
+#   plugin   tag starter-sites-v0.6.1   package open-frame-starter-sites-0.6.1.zip
+#
+# It runs when such a tag is pushed, or when started by hand from the Actions
+# tab ("Run workflow"), where you choose the product. A manual run releases the
+# version found in the files and creates the matching tag on the selected
+# commit. Tick "replace" to publish that version again in place of an existing
+# release.
+#
+# bin/release-package.sh does the checking and packaging; run it on your own
+# machine to see what a release would contain. docs/dev/RELEASE.md is the
+# checklist to go through before starting this workflow.
 on:
   push:
     tags:
       - 'v*'
+      - 'starter-sites-v*'
   workflow_dispatch:
     inputs:
+      product:
+        description: 'What to release'
+        type: choice
+        options:
+          - theme
+          - plugin
+        default: theme
       replace:
         description: 'Replace the existing release and tag of this version'
         type: boolean
@@ -30,21 +48,32 @@ jobs:
       - name: Lint PHP
         run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l > /dev/null
 
-      - name: Work out the version and tag
+      - name: Check and build the package
+        env:
+          PRODUCT_INPUT: ${{ inputs.product }}
+        run: |
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            case "$GITHUB_REF_NAME" in
+              starter-sites-v*) PRODUCT=plugin ;;
+              *) PRODUCT=theme ;;
+            esac
+          else
+            PRODUCT="${PRODUCT_INPUT:-theme}"
+          fi
+          read -r TAG VERSION SLUG <<< "$(bash bin/release-package.sh "$PRODUCT" | tail -n 1)"
+          [ -n "$TAG" ] && [ -n "$VERSION" ] && [ -n "$SLUG" ]
+          {
+            echo "TAG=$TAG"
+            echo "VERSION=$VERSION"
+            echo "SLUG=$SLUG"
+            echo "PRODUCT=$PRODUCT"
+          } >> "$GITHUB_ENV"
+
+      - name: Make room for the release
         env:
           GH_TOKEN: ${{ github.token }}
           REPLACE: ${{ inputs.replace }}
         run: |
-          VERSION="$(sed -n 's/^Version:[[:space:]]*//p' style.css | head -n 1)"
-          TAG="v$VERSION"
-          if [ "$GITHUB_REF_TYPE" = "tag" ] && [ "$GITHUB_REF_NAME" != "$TAG" ]; then
-            echo "Tag $GITHUB_REF_NAME does not match style.css version $VERSION" >&2
-            exit 1
-          fi
-          if ! grep -q "^Stable tag: $VERSION$" readme.txt; then
-            echo "readme.txt Stable tag does not match style.css version $VERSION" >&2
-            exit 1
-          fi
           if gh release view "$TAG" > /dev/null 2>&1; then
             if [ "$REPLACE" = "true" ]; then
               echo "Replacing the existing release $TAG."
@@ -54,34 +83,18 @@ jobs:
               exit 1
             fi
           fi
-          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
-          echo "TAG=$TAG" >> "$GITHUB_ENV"
-
-      - name: Build the theme ZIP
-        run: |
-          bash bin/build-zip.sh
-          cp dist/open-frame.zip "dist/open-frame-$VERSION.zip"
-          ( cd dist && sha256sum "open-frame-$VERSION.zip" > "open-frame-$VERSION.zip.sha256" )
-
-      - name: Collect the release notes from readme.txt
-        run: |
-          {
-            echo "## Open Frame $VERSION"
-            echo
-            awk -v ver="= $VERSION =" '$0 == ver { found = 1; next } found && /^= .* =$/ { exit } found { print }' readme.txt
-            echo
-            echo "**Install:** download \`open-frame-$VERSION.zip\` below and upload it under *Appearance → Themes → Add Theme → Upload Theme*."
-            echo
-            echo "**Documentation:** [docs/README.md](https://github.com/${GITHUB_REPOSITORY}/blob/${TAG}/docs/README.md)"
-          } > release-notes.md
 
       - name: Publish the release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "$PRODUCT" = "plugin" ]; then TITLE="Open Frame Starter Sites v$VERSION"; else TITLE="Open Frame v$VERSION"; fi
+          # The newest theme release stays the one GitHub shows as "Latest".
+          if [ "$PRODUCT" = "plugin" ]; then LATEST="--latest=false"; else LATEST="--latest"; fi
           gh release create "$TAG" \
-            "dist/open-frame-$VERSION.zip" \
-            "dist/open-frame-$VERSION.zip.sha256" \
+            "dist/$SLUG-$VERSION.zip" \
+            "dist/$SLUG-$VERSION.zip.sha256" \
             --target "$GITHUB_SHA" \
-            --title "Open Frame v$VERSION" \
-            --notes-file release-notes.md
+            --title "$TITLE" \
+            --notes-file "dist/$SLUG-release-notes.md" \
+            $LATEST

@@ -1,0 +1,112 @@
+# Release Checklist
+
+What has to be true before a version of the Open Frame theme or of the Open Frame Starter Sites plugin is published, who confirms it, and how the release is made.
+
+A line is **signed off** when the person named has confirmed it, with the date. The automated checks are confirmed by their output, which is recorded in [TESTING.md](TESTING.md). Everything that needs a person, an account or a decision is confirmed by the owner. Nobody else signs for the owner.
+
+## Status on 27 November 2026
+
+| Product | Version | State |
+| --- | --- | --- |
+| **Open Frame** (theme) | 1.1.0 (released so far: 1.0.1, on 25 November 2026) | **Ready.** Every automated check passes and the package is built. Waiting for the owner's checks in part C and the owner's decision to publish |
+| **Open Frame Starter Sites** (plugin) | 0.6.1 | **Not releasable yet.** The plugin itself passes every automated check, but the library it reads from is not online, so a released plugin would show an empty screen. `bin/release-package.sh plugin` refuses to build a release for that reason |
+| **Starter site library** | ten designs, each 1.0.0 | **Built, signed with a test key, publication rehearsed.** Not on Cloudflare: the saved token lacks permission for R2 storage |
+
+**The checklist is not signed off.** Parts A and B are complete. Parts C and D are open and belong to the owner.
+
+## A. What a release consists of
+
+| Deliverable | Where | State |
+| --- | --- | --- |
+| Theme ZIP with checksum | `dist/open-frame-1.1.0.zip`, built by `bash bin/release-package.sh theme` | Done. 408 KB |
+| Plugin ZIP with checksum | `dist/open-frame-starter-sites-0.6.1.zip`, built by `bash bin/release-package.sh plugin` | Builds (80 KB) only with `RELEASE_ALLOW_UNPUBLISHED=1`, for trying out. See part D |
+| Theme user guide with screenshots | [docs/README.md](../README.md), 26 chapters, 46 pictures; HTML in `docs/index.html` | Done. Elementor and WooCommerce chapters now have pictures |
+| Plugin user guide with screenshots | [docs/STARTER-SITES.md](../STARTER-SITES.md), 17 chapters, 11 pictures; HTML in `docs/starter-sites.html` | Done |
+| Installation guide | [docs/INSTALL.md](../INSTALL.md); HTML in `docs/install.html` | Done |
+| Support and update policy | [docs/SUPPORT.md](../SUPPORT.md); HTML in `docs/support.html` | Written. **The owner has to read it and agree**: it makes promises in the owner's name (C7) |
+| Developer documentation | Theme: [chapter 23 of the theme guide](../README.md#23-child-themes-and-developer-reference) and [ARCHITECTURE.md](ARCHITECTURE.md). Plugin: [PLUGIN.md](PLUGIN.md), [STARTER-SITES-ARCHITECTURE.md](STARTER-SITES-ARCHITECTURE.md). Library: [LIBRARY.md](LIBRARY.md). Tests: [TESTING.md](TESTING.md) | Done |
+| Changelogs | `readme.txt` of the theme and of the plugin (what WordPress reads), gathered with the versions of the designs in [CHANGELOG.md](../../CHANGELOG.md) | Done |
+| Pictures for the plugin's page on WordPress.org | `companion/open-frame-starter-sites/.wordpress-org/screenshot-1.png` to `-5.png`, matching `== Screenshots ==` in its readme | Done. No banner or icon yet (C9) |
+| Release workflow | `.github/workflows/release.yml`: one release per product, each with ZIP, checksum and notes taken from the changelog | Written. The packaging script was run on this machine; **the workflow itself has not run** since it was changed, because running it publishes a release |
+
+## B. Checked by machine
+
+Signed off by the output of the checks on 27 November 2026, after the last change to the plugin. Details and earlier runs are in [TESTING.md](TESTING.md).
+
+| # | Check | Result |
+| --- | --- | --- |
+| B1 | Version numbers agree: `style.css`, `functions.php` and the theme's `readme.txt`; the plugin's main file, `OFSS_VERSION`, its `readme.txt` and its translation template | Pass (checked by `bin/release-package.sh`) |
+| B2 | Each `readme.txt` has a changelog entry for its version | Pass |
+| B3 | The packages contain no development files, keys, archives or environment files | Pass (checked by `bin/release-package.sh`); file lists read |
+| B4 | The checksums match the packages | Pass |
+| B5 | WordPress coding standards, theme and plugin (`composer lint`) | Exit code 0 |
+| B6 | Plugin checks on PHP 7.4, 8.1 and 8.3 | 145 of 145 on each |
+| B7 | Import engine: plain, with WooCommerce, with Elementor Pro (PHP 8.3); plain on PHP 7.4 and 8.1 | 102, 115 and 114 of their totals; 102 of 102 on each |
+| B8 | Library tools | 74 of 74 |
+| B9 | Browser checks in Chromium: every page of every design at nine widths, import, rollback, editor, accessibility rules | See TESTING.md, Phase 10 |
+| B10 | Theme Check and Plugin Check on the packages | See TESTING.md, Phase 10 |
+| B11 | Every link and picture in the guides leads somewhere (`bin/check-docs.js`) | 522 checked, 0 broken |
+| B12 | Browser checks in Firefox and WebKit, the version matrix, performance and the security review | Done in Phase 9 on plugin 0.6.1 before two small changes (the wording of the confirmation, and how often an import reports back). Not repeated for those |
+
+## C. For the owner to confirm
+
+None of these is signed off.
+
+| # | What | How | Signed off |
+| --- | --- | --- | --- |
+| C1 | **The manual checks**: real phones, Safari, a screen reader, a real shared host | [QA-CHECKLIST.md](QA-CHECKLIST.md), about two hours. Write the results into TESTING.md | Open |
+| C2 | **The Cloudflare password that was pasted into a chat has been changed** | Cloudflare dashboard → My Profile → Authentication | Open |
+| C3 | **A Cloudflare token that can use R2**, and R2 switched on for the account | Token from the template "Edit Cloudflare Workers", with the account and the zone `buildbetters.com` selected, plus Zone → DNS → Edit. Saved in the secure credential form, never in a chat or a file | Open |
+| C4 | **The signing key of the library exists and is kept safe**: one copy in a password manager, one offline | `node tools/library.mjs keygen`, described in [LIBRARY.md](LIBRARY.md). It never enters the repository | Open |
+| C5 | **Forms on the five free designs**: stay with email and telephone links, or name a free forms plugin | A decision. Today they have no form | Open |
+| C6 | **Version number of the first public plugin release**: 0.6.1 as it is, or 1.0.0 | A decision. Recommended: 1.0.0 once the library is online and C1 is done, because the update promise in SUPPORT.md starts at 1.0.0 | Open |
+| C7 | **The support and update policy is the owner's own**: no guaranteed response time, security reports through GitHub's private reporting, 90 days' notice before the library would end | Read [docs/SUPPORT.md](../SUPPORT.md) and change what you do not want to promise. Switch on "Private vulnerability reporting" under the repository's Settings → Security | Open |
+| C8 | **The work is on the default branch** | The links in the readme files and release notes point at `main`. Merge the branch `development` (a pull request can be opened on request) | Open |
+| C9 | **WordPress.org**: accounts, and for the plugin a banner (1544×500 and 772×250) and an icon (256×256) | See part E | Open |
+| C10 | **Known issues are acceptable for a first release** | The list under "Open issues" in TESTING.md: page-speed target missed on phones (81 to 93 of 100), importing a design again overwrites edits, RTL and Multisite untested, Medical has no portraits | Open |
+
+## D. Blocked: what the plugin needs before it can be released
+
+In this order. Each step depends on the one before.
+
+1. **C3**, then publish the Worker and the library: `publish-library.yml`, or the commands in [LIBRARY.md](LIBRARY.md). The publication was rehearsed on one machine with the real Worker code (`tests/library/rehearsal.sh`).
+2. **C4**, then put the key ID and the public key into `Config::PUBLIC_KEYS` in `companion/open-frame-starter-sites/src/Config.php`.
+3. Check the live library: `node tools/library.mjs check-live --api https://api.buildbetters.com/v1 --public <public key>`.
+4. On a clean WordPress site with the two packages installed and nothing else changed, import one free and one Pro design from the live library through the screen.
+5. Run parts B and C again for the plugin, then release it (below).
+
+Until then the theme can be released on its own. It does not depend on the plugin.
+
+## Making a release
+
+Only after the part of this list that concerns the product is signed off.
+
+1. Raise the version where it is written (theme: `style.css`, `OPEN_FRAME_VERSION` in `functions.php` and `Stable tag` in `readme.txt`; plugin: the header of its main file, `OFSS_VERSION`, `Stable tag` in its `readme.txt`), add the changelog entry, regenerate the plugin's translation template, run `node bin/build-docs.js`, commit.
+2. Try the packaging: `bash bin/release-package.sh theme` or `plugin`. It names what is missing.
+3. On GitHub: **Actions → Release → Run workflow**, choose the branch and the product. Or push the tag: `v1.1.0` for the theme, `starter-sites-v0.6.1` for the plugin.
+4. Open the release page. Download the ZIP, check it against its checksum, and install it on a test site.
+
+A release that turned out wrong is replaced by running the workflow again with "replace" ticked. A version that people may already have installed is not replaced: fix it and release the next patch version.
+
+## E. WordPress.org
+
+Both products were written to the directory's rules: GPL, no bundled plugins, no remote code, the external service declared in the plugin's readme, Theme Check and Plugin Check clean. Submitting is the owner's step, because it is done from the owner's WordPress.org account.
+
+**Theme:** upload `open-frame-1.1.0.zip` at <https://wordpress.org/themes/upload/>. A reviewer answers in the theme's ticket, usually with requests for changes. After approval, later versions are uploaded the same way.
+
+**Plugin:** only after part D. Submit `open-frame-starter-sites-<version>.zip` at <https://wordpress.org/plugins/developers/add/>. After approval the plugin gets a Subversion repository: the contents of the ZIP go into `trunk` and a tag, the files of `.wordpress-org/` into `assets`.
+
+Points a reviewer is likely to raise, and the answers:
+
+- *The plugin downloads content from the author's server.* It downloads data only (texts, pictures, fonts, Elementor settings), never code; the list is signed and every file is checked; the service, what is sent and its privacy terms are declared under "External services" in the readme.
+- *The plugin installs other plugins.* Only from WordPress.org, with WordPress's own installer, only when the user clicks the button, and only plugins a design names.
+- *Elementor Pro.* It is detected and linked to. It is never installed, bundled or unlocked.
+- *Trademarks.* The plugin's name does not start with another product's name; "Elementor" and "WooCommerce" appear only to say what a design needs.
+
+When a product is listed, change "How updates reach you" in [docs/SUPPORT.md](../SUPPORT.md) and the download instructions in [docs/INSTALL.md](../INSTALL.md).
+
+## After a release
+
+- Watch the issue tracker for the first days.
+- Add the release to "Status" at the top of this file, with the date and who signed off.
+- Start the next version's changelog entry with the first change, not at the end.

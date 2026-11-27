@@ -14,7 +14,16 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 | **Text domain** | `open-frame` |
 | **Author** | [Mostafij Emon](https://github.com/Mostafijemon24) |
 
-**[Read the full documentation →](docs/README.md)** · 24 chapters with numbered, annotated screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
+**[Read the full documentation →](docs/README.md)** · 26 chapters with numbered, annotated screenshots. A standalone HTML copy is in [`docs/index.html`](docs/index.html).
+
+| Guide | For |
+| --- | --- |
+| [Theme guide](docs/README.md) | Every setting of the theme |
+| [Starter Sites guide](docs/STARTER-SITES.md) | The companion plugin: choosing, importing, editing and rolling back one of the ten ready-made websites |
+| [Installation guide](docs/INSTALL.md) | Installing, checking, updating and removing the theme and the plugin |
+| [Support and update policy](docs/SUPPORT.md) | Where to get help, what is supported, how updates are published |
+| [Changelog](CHANGELOG.md) | What changed in each version |
+| [Developer documents](docs/dev/) | Architecture, the plugin's hooks and REST routes, the library, tests, the release checklist |
 
 ## Contents
 
@@ -69,6 +78,16 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 3. Upload the ZIP, click **Install**, then **Activate**.
 
 > Download the release ZIP rather than GitHub's "Source code" archive: the release package contains only the files the theme needs.
+
+The [installation guide](docs/INSTALL.md) covers checking the download, updating and removing.
+
+### Starter sites (optional)
+
+The companion plugin **Open Frame Starter Sites** adds ten complete websites made with Elementor for this theme, five for free Elementor and five for Elementor Pro. It is a separate download, `open-frame-starter-sites-<version>.zip`, installed under **Plugins → Add Plugin → Upload Plugin**. See the [Starter Sites guide](docs/STARTER-SITES.md).
+
+![The ten starter sites](docs/images/starter-sites-designs.png)
+
+> The plugin has not been released yet: the library it reads the designs from is not online. The state of the release is in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
 ![The Themes screen with Open Frame active](docs/images/admin-themes.png)
 
@@ -298,21 +317,27 @@ bash tests/env/theme-check.sh
 bash bin/build-zip.sh
 ```
 
-**Companion plugin.** [Open Frame Starter Sites](companion/open-frame-starter-sites) is a separate plugin, in early development, that will let users import complete starter websites. It is not part of the theme ZIP. Build it with:
+**Companion plugin.** [Open Frame Starter Sites](companion/open-frame-starter-sites) is a separate plugin that imports complete starter websites. It is not part of the theme ZIP. Its hooks, constants and REST routes are in [docs/dev/PLUGIN.md](docs/dev/PLUGIN.md). Build it with:
 
 ```bash
 bash bin/build-plugin-zip.sh
 ```
 
-**Rebuild the HTML documentation** after editing `docs/README.md`:
+**Rebuild the HTML documentation and `CHANGELOG.md`** after editing one of the guides in `docs/` or a changelog in a `readme.txt`:
 
 ```bash
-npm install marked && node bin/build-docs.js
+npm install --no-save marked@18.3.0 && node bin/build-docs.js
 ```
 
-**Release.** Update the version in `style.css`, `functions.php` and `readme.txt`, add the changelog entry and push to `main`. Then either push a tag such as `v1.0.2`, or open **Actions → Release → Run workflow**. The [release workflow](.github/workflows/release.yml) builds the ZIP, creates the tag when needed and publishes the GitHub release.
+**Retake the screenshots of the guides** on a test site (see the head of the file for what the site needs):
 
-Architecture notes and the test report are in [`docs/dev/`](docs/dev/). The changelog is in [`readme.txt`](readme.txt).
+```bash
+node bin/docs-shots.js http://localhost:8890
+```
+
+**Release.** The theme and the plugin are released separately, each with its own version and tag (`v1.1.0`, `starter-sites-v0.6.1`). Go through the [release checklist](docs/dev/RELEASE.md), try the packaging with `bash bin/release-package.sh theme` (or `plugin`), then open **Actions → Release → Run workflow** or push the tag. The [release workflow](.github/workflows/release.yml) checks the version numbers and the changelog, builds the ZIP with its checksum and publishes a GitHub release.
+
+Architecture notes, the test reports and the release checklist are in [`docs/dev/`](docs/dev/). The changelogs are in the two `readme.txt` files and, gathered, in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## License
 

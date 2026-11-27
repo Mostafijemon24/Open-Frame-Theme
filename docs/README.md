@@ -609,7 +609,19 @@ Create a page and choose **Edit with Elementor**. The content fills the full wid
 | **Elementor Full Width** | Theme header and footer | Not shown | Home pages and landing pages |
 | **Elementor Canvas** | None | Not shown | Stand-alone pages such as "coming soon" or campaign pages |
 
+![The page settings of a page in the Elementor editor](images/elementor-page-layout.png)
+
+| # | What it is | What you do with it |
+| --- | --- | --- |
+| 1 | **Page Settings** | Opens the settings of the page you are editing |
+| 2 | **Page Layout** | Choose Default, Elementor Full Width or Elementor Canvas (see the table above) |
+| 3 | **Hide Title** | With the Default layout, removes the page title that the theme shows above the content |
+
 A page that uses a sidebar layout (see [Layout settings](#7-layout-settings)) keeps its sidebar and its card, with the Elementor content inside it.
+
+### Starting from a complete design
+
+The companion plugin **Open Frame Starter Sites** adds ten complete websites made with Elementor for this theme: Business, Portfolio, Restaurant, Education and Medical for the free version of Elementor, and Creative Agency, SaaS, Real Estate, Magazine and Shop for Elementor Pro. You choose one under **Appearance → Starter Sites**, import it, and replace the sample content with your own. The plugin is optional and separate from the theme. Its own guide explains every step: [Open Frame Starter Sites — User Guide](STARTER-SITES.md).
 
 ### Elementor Pro Theme Builder
 
@@ -641,7 +653,17 @@ Activate WooCommerce and the store uses the theme's design; there is nothing to 
 | Cart and checkout | Shown inside the page card at the full container width; buttons use the Primary color |
 | My account | Navigation styled as a list of links |
 
+![The shop page with product cards](images/woocommerce-shop.png)
+
+The shop page: products as cards of one height, three in a row at this width, with the sale badge and the buttons in the Primary color.
+
+![A single product](images/woocommerce-product.png)
+
+A single product: the gallery on the left with the zoom button, the details on the right.
+
 Buttons, prices, sale badges, notices, tabs and pagination follow the colors from [Global Colors](#8-global-colors). Products inserted on any other page (with blocks, shortcodes or a page builder) are styled the same way.
+
+The theme styles the store; it does not set it up. Payments, shipping and taxes are WooCommerce's own settings under **WooCommerce → Settings**. For a ready-made store design, see the Shop design of the [Starter Sites plugin](STARTER-SITES.md#11-the-shop-design), which needs Elementor Pro.
 
 ## 20. Fonts
 
@@ -950,4 +972,6 @@ See the `== Changelog ==` section of [`readme.txt`](../readme.txt) for the full 
 ### Support
 
 - Source code and issue tracker: <https://github.com/Mostafijemon24/Open-Frame-Theme>
+- What is supported, for how long, and how updates are published: [support and update policy](SUPPORT.md)
+- Installing the theme and the Starter Sites plugin step by step: [installation guide](INSTALL.md)
 - Author: [Mostafij Emon](https://github.com/Mostafijemon24)

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T07:18:50+00:00\n"
+"POT-Creation-Date: 2026-11-27T09:59:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: open-frame-starter-sites\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. Description of the plugin
 #: open-frame-starter-sites.php
-msgid "Browse the starter website library for the Open Frame theme and prepare your site for an import: preview each design, see what it needs and install the required plugins."
+msgid "Complete starter websites for the Open Frame theme, made with Elementor: preview each design, see what it needs, install the required plugins, import it, and roll the import back if you change your mind."
 msgstr ""
 
 #. Author of the plugin
@@ -142,7 +142,7 @@ msgid "Starter site fonts"
 msgstr ""
 
 #: src/Import/Package.php:53
-#: src/Import/Runner.php:525
+#: src/Import/Runner.php:526
 msgid "The uploads folder cannot be written to. Ask your hosting company to make wp-content/uploads writable."
 msgstr ""
 
@@ -160,8 +160,8 @@ msgstr ""
 
 #: src/Import/Package.php:149
 #: src/Import/Package.php:176
-#: src/Import/Runner.php:532
-#: src/Import/Runner.php:588
+#: src/Import/Runner.php:533
+#: src/Import/Runner.php:589
 msgid "The package of this design is damaged or was altered, so it was not used. Please try again."
 msgstr ""
 
@@ -182,118 +182,118 @@ msgstr ""
 msgid "The import is already running in another window. Give it a moment."
 msgstr ""
 
-#: src/Import/Runner.php:247
+#: src/Import/Runner.php:248
 msgid "Checking your site"
 msgstr ""
 
-#: src/Import/Runner.php:248
+#: src/Import/Runner.php:249
 msgid "Saving your current settings"
 msgstr ""
 
-#: src/Import/Runner.php:249
+#: src/Import/Runner.php:250
 msgid "Downloading the design"
 msgstr ""
 
-#: src/Import/Runner.php:250
+#: src/Import/Runner.php:251
 msgid "Importing images"
 msgstr ""
 
-#: src/Import/Runner.php:251
+#: src/Import/Runner.php:252
 msgid "Importing fonts"
 msgstr ""
 
-#: src/Import/Runner.php:252
+#: src/Import/Runner.php:253
 msgid "Creating pages"
 msgstr ""
 
-#: src/Import/Runner.php:253
+#: src/Import/Runner.php:254
 msgid "Setting colors and fonts"
 msgstr ""
 
-#: src/Import/Runner.php:254
+#: src/Import/Runner.php:255
 msgid "Building the pages in Elementor"
 msgstr ""
 
-#: src/Import/Runner.php:255
+#: src/Import/Runner.php:256
 msgid "Creating menus"
 msgstr ""
 
-#: src/Import/Runner.php:256
+#: src/Import/Runner.php:257
 msgid "Applying settings"
 msgstr ""
 
-#: src/Import/Runner.php:257
+#: src/Import/Runner.php:258
 msgid "Finishing"
 msgstr ""
 
-#: src/Import/Runner.php:310
+#: src/Import/Runner.php:311
 msgid "Your site does not have everything this design needs yet. Close this and look at the list under \"What it needs\"."
 msgstr ""
 
-#: src/Import/Runner.php:314
+#: src/Import/Runner.php:315
 msgid "Elementor is not active."
 msgstr ""
 
-#: src/Import/Runner.php:317
+#: src/Import/Runner.php:318
 msgid "This design is built with Elementor containers. Turn on \"Container\" under Elementor > Settings > Features, then try again."
 msgstr ""
 
 #. translators: %s: comma-separated list of Elementor widget names.
-#: src/Import/Runner.php:331
+#: src/Import/Runner.php:332
 #, php-format
 msgid "This design uses Elementor widgets that are not available on your site: %s. Update Elementor, then try again."
 msgstr ""
 
 #. translators: %s: what was found, in technical words.
-#: src/Import/Runner.php:406
+#: src/Import/Runner.php:407
 #, php-format
 msgid "This design was not imported, because it contains something the plugin does not accept (%s). No page was created. Please report this to the makers of the design."
 msgstr ""
 
-#: src/Import/Runner.php:471
+#: src/Import/Runner.php:472
 msgid "An image of this design is not a valid image, so the import was stopped."
 msgstr ""
 
-#: src/Import/Runner.php:492
+#: src/Import/Runner.php:493
 msgid "An image could not be added to the media library. Check that the uploads folder can be written to."
 msgstr ""
 
-#: src/Import/Runner.php:544
+#: src/Import/Runner.php:545
 msgid "A font of this design is not a valid font file, so the import was stopped."
 msgstr ""
 
-#: src/Import/Runner.php:609
+#: src/Import/Runner.php:610
 msgid "A page of this design could not be created."
 msgstr ""
 
-#: src/Import/Runner.php:691
+#: src/Import/Runner.php:692
 msgid "A blog post of this design could not be created."
 msgstr ""
 
-#: src/Import/Runner.php:741
+#: src/Import/Runner.php:742
 msgid "This design has products, and WooCommerce is not active. Activate WooCommerce and try again."
 msgstr ""
 
-#: src/Import/Runner.php:790
+#: src/Import/Runner.php:791
 msgid "A product of this design could not be created."
 msgstr ""
 
 #. translators: 1: page title, 2: reference inside the package.
-#: src/Import/Runner.php:907
+#: src/Import/Runner.php:908
 #, php-format
 msgid "\"%1$s\": a link or image (%2$s) could not be connected."
 msgstr ""
 
-#: src/Import/Runner.php:974
+#: src/Import/Runner.php:975
 msgid "A menu of this design could not be created."
 msgstr ""
 
-#: src/Import/Runner.php:1089
+#: src/Import/Runner.php:1090
 msgid "The home page was not set. Choose it under Settings > Reading."
 msgstr ""
 
 #. translators: %s: page title.
-#: src/Import/Runner.php:1094
+#: src/Import/Runner.php:1095
 #, php-format
 msgid "\"%s\" contains a link or image that could not be connected."
 msgstr ""
@@ -479,7 +479,7 @@ msgid "Free"
 msgstr ""
 
 #: assets/admin/app.js:27
-#: assets/admin/app.js:839
+#: assets/admin/app.js:840
 msgid "Needs Elementor Pro"
 msgstr ""
 
@@ -595,7 +595,7 @@ msgstr ""
 
 #: assets/admin/app.js:88
 #: assets/admin/app.js:360
-#: assets/admin/app.js:600
+#: assets/admin/app.js:601
 msgid "Imported"
 msgstr ""
 
@@ -717,7 +717,7 @@ msgid "While \"%1$s\": %2$s"
 msgstr ""
 
 #: assets/admin/app.js:344
-#: assets/admin/app.js:765
+#: assets/admin/app.js:766
 msgid "Try again"
 msgstr ""
 
@@ -777,215 +777,211 @@ msgstr ""
 msgid "Before you import"
 msgstr ""
 
-#. translators: %d: number of pages.
-#: assets/admin/app.js:420
-#, js-format
-msgid "%d page and its images are added to your site. Nothing you already have is deleted."
-msgid_plural "%d pages and their images are added to your site. Nothing you already have is deleted."
-msgstr[0] ""
-msgstr[1] ""
-
-#: assets/admin/app.js:422
-msgid "Your home page changes to the home page of this design."
+#: assets/admin/app.js:421
+msgid "The pages of this design and their images are added to your site. Nothing you already have is deleted."
 msgstr ""
 
 #: assets/admin/app.js:423
-msgid "Site-wide colors and fonts (Elementor Site Settings), theme settings, the header and the menu change to those of this design."
+msgid "Your home page changes to the home page of this design."
 msgstr ""
 
 #: assets/admin/app.js:424
+msgid "Site-wide colors and fonts (Elementor Site Settings), theme settings, the header and the menu change to those of this design."
+msgstr ""
+
+#: assets/admin/app.js:425
 msgid "You can undo all of it afterwards with \"Roll back this import\"."
 msgstr ""
 
-#: assets/admin/app.js:426
+#: assets/admin/app.js:427
 msgid "If this site already has visitors or content you care about, make a backup first."
 msgstr ""
 
-#: assets/admin/app.js:432
+#: assets/admin/app.js:433
 msgid "I understand that my home page and site-wide settings will change."
 msgstr ""
 
-#: assets/admin/app.js:437
+#: assets/admin/app.js:438
 msgid "Start the import"
 msgstr ""
 
-#: assets/admin/app.js:439
+#: assets/admin/app.js:440
 msgid "Cancel"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: assets/admin/app.js:472
+#: assets/admin/app.js:473
 #, js-format
 msgid "%s is now active."
 msgstr ""
 
-#: assets/admin/app.js:485
+#: assets/admin/app.js:486
 msgid "Overview"
 msgstr ""
 
 #. translators: 1: starter site name, 2: page name.
-#: assets/admin/app.js:502
+#: assets/admin/app.js:503
 #, js-format
 msgid "Preview of %1$s: %2$s"
 msgstr ""
 
-#: assets/admin/app.js:509
+#: assets/admin/app.js:510
 msgid "Page previews"
 msgstr ""
 
-#: assets/admin/app.js:524
+#: assets/admin/app.js:525
 msgid "Checking what this design needs…"
 msgstr ""
 
-#: assets/admin/app.js:531
+#: assets/admin/app.js:532
 msgid "Open the live demo"
 msgstr ""
 
-#: assets/admin/app.js:534
+#: assets/admin/app.js:535
 msgid "What it needs"
 msgstr ""
 
 #. translators: %d: number of pages.
-#: assets/admin/app.js:553
+#: assets/admin/app.js:554
 #, js-format
 msgid "%d page included"
 msgid_plural "%d pages included"
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/admin/app.js:562
+#: assets/admin/app.js:563
 msgid "Where you edit each part"
 msgstr ""
 
-#: assets/admin/app.js:596
+#: assets/admin/app.js:597
 msgid "Loading…"
 msgstr ""
 
-#: assets/admin/app.js:601
+#: assets/admin/app.js:602
 msgid "Failed"
 msgstr ""
 
-#: assets/admin/app.js:602
+#: assets/admin/app.js:603
 msgid "Rolled back"
 msgstr ""
 
-#: assets/admin/app.js:608
+#: assets/admin/app.js:609
 msgid "Past imports, newest first"
 msgstr ""
 
-#: assets/admin/app.js:615
+#: assets/admin/app.js:616
 msgid "Design"
 msgstr ""
 
-#: assets/admin/app.js:616
+#: assets/admin/app.js:617
 msgid "Date"
 msgstr ""
 
-#: assets/admin/app.js:617
+#: assets/admin/app.js:618
 msgid "Result"
 msgstr ""
 
-#: assets/admin/app.js:618
+#: assets/admin/app.js:619
 msgid "Notes"
 msgstr ""
 
-#: assets/admin/app.js:661
+#: assets/admin/app.js:662
 msgid "The list is up to date."
 msgstr ""
 
 #. translators: %d: number of starter sites.
-#: assets/admin/app.js:730
+#: assets/admin/app.js:731
 #, js-format
 msgid "%d design shown."
 msgid_plural "%d designs shown."
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/admin/app.js:746
+#: assets/admin/app.js:747
 msgid "These designs are made for the Open Frame theme, which is not active on this site."
 msgstr ""
 
-#: assets/admin/app.js:748
+#: assets/admin/app.js:749
 msgid "Go to Themes"
 msgstr ""
 
-#: assets/admin/app.js:752
+#: assets/admin/app.js:753
 msgid "Loading the designs…"
 msgstr ""
 
-#: assets/admin/app.js:763
+#: assets/admin/app.js:764
 msgid "The designs could not be loaded"
 msgstr ""
 
-#: assets/admin/app.js:780
+#: assets/admin/app.js:781
 msgid "Showing the list saved earlier."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: assets/admin/app.js:792
+#: assets/admin/app.js:793
 #, js-format
 msgid "An import of \"%s\" did not finish."
 msgstr ""
 
-#: assets/admin/app.js:794
+#: assets/admin/app.js:795
 msgid "Continue or roll back"
 msgstr ""
 
-#: assets/admin/app.js:800
+#: assets/admin/app.js:801
 msgid "Sections"
 msgstr ""
 
-#: assets/admin/app.js:801
+#: assets/admin/app.js:802
 msgid "Designs"
 msgstr ""
 
-#: assets/admin/app.js:802
+#: assets/admin/app.js:803
 msgid "Import history"
 msgstr ""
 
-#: assets/admin/app.js:816
 #: assets/admin/app.js:817
+#: assets/admin/app.js:818
 msgid "Search designs"
 msgstr ""
 
-#: assets/admin/app.js:824
+#: assets/admin/app.js:825
 msgid "Category"
 msgstr ""
 
-#: assets/admin/app.js:827
+#: assets/admin/app.js:828
 msgid "All categories"
 msgstr ""
 
-#: assets/admin/app.js:833
+#: assets/admin/app.js:834
 msgid "Elementor version"
 msgstr ""
 
-#: assets/admin/app.js:837
+#: assets/admin/app.js:838
 msgid "Free and Pro"
 msgstr ""
 
-#: assets/admin/app.js:838
+#: assets/admin/app.js:839
 msgid "Works with free Elementor"
 msgstr ""
 
-#: assets/admin/app.js:847
+#: assets/admin/app.js:848
 msgid "Check for new designs"
 msgstr ""
 
 #. translators: %s: date and time.
-#: assets/admin/app.js:852
+#: assets/admin/app.js:853
 #, js-format
 msgid "Last checked: %s"
 msgstr ""
 
-#: assets/admin/app.js:861
+#: assets/admin/app.js:862
 msgid "No designs are available yet"
 msgstr ""
 
-#: assets/admin/app.js:861
+#: assets/admin/app.js:862
 msgid "No designs match your search"
 msgstr ""
 
-#: assets/admin/app.js:873
+#: assets/admin/app.js:874
 msgid "Show all designs"
 msgstr ""

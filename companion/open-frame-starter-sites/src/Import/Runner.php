@@ -193,9 +193,10 @@ class Runner {
 		}
 		set_transient( self::LOCK, array( 'expires' => time() + 90 ), 120 );
 
-		// Half of what the server allows, and never more than twenty seconds.
+		// A few seconds of work, then an answer: the screen shows where the import is, and no
+		// request comes near what the server allows. Half of that at most, where it allows little.
 		$allowed  = (int) ini_get( 'max_execution_time' );
-		$deadline = microtime( true ) + min( 20, $allowed > 0 ? max( 5, $allowed / 2 ) : 20 );
+		$deadline = microtime( true ) + min( 4, $allowed > 0 ? max( 2, $allowed / 2 ) : 4 );
 		$units    = 0;
 
 		$state['status'] = 'running';

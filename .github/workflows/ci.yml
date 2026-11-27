@@ -63,6 +63,26 @@ jobs:
       - name: Worker
         run: node --test cloud/worker/test/*.test.mjs
 
+  docs:
+    name: Guides and release packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: The HTML guides and CHANGELOG.md are built from their current sources
+        run: |
+          npm install --no-save --no-audit --no-fund marked@18.3.0
+          node bin/build-docs.js
+          git diff --exit-code -- docs/index.html docs/starter-sites.html docs/install.html docs/support.html CHANGELOG.md
+      - name: Every link and picture in the guides leads somewhere
+        run: node bin/check-docs.js
+      - name: The theme can be packaged for a release
+        run: bash bin/release-package.sh theme
+      - name: The plugin can be packaged (trial package while the library is not published)
+        run: RELEASE_ALLOW_UNPUBLISHED=1 bash bin/release-package.sh plugin
+
   rehearsal:
     name: Library rehearsal (publish and import on a clean site)
     runs-on: ubuntu-latest

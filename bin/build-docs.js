@@ -1,57 +1,90 @@
 #!/usr/bin/env node
 /**
- * Builds docs/index.html from docs/README.md.
+ * Builds the HTML pages of the user documentation from their Markdown sources:
  *
- * Development tool only (not part of the distributed theme).
- * Usage: npm install marked && node bin/build-docs.js
+ *   docs/README.md          ->  docs/index.html          (theme guide)
+ *   docs/STARTER-SITES.md   ->  docs/starter-sites.html  (plugin guide)
+ *   docs/INSTALL.md         ->  docs/install.html
+ *   docs/SUPPORT.md         ->  docs/support.html
+ *
+ * and CHANGELOG.md from the changelogs in the two readme.txt files and the
+ * versions of the starter sites.
+ *
+ * Development tool only (not part of the distributed theme or plugin).
+ * Usage: npm install --no-save marked@18.3.0 && node bin/build-docs.js (CI builds with this version and compares)
  */
 const fs = require( 'fs' );
 const path = require( 'path' );
 const { marked } = require( 'marked' );
 
 const root = path.resolve( __dirname, '..' );
-const source = fs.readFileSync( path.join( root, 'docs/README.md' ), 'utf8' );
-
 const slug = ( text ) => text.toLowerCase().replace( /<[^>]+>/g, '' ).replace( /[^a-z0-9 -]/g, '' ).trim().replace( /\s+/g, '-' );
 
-const toc = [];
-const renderer = new marked.Renderer();
-renderer.heading = function ( token ) {
-	const text = this.parser.parseInline( token.tokens );
-	const id = slug( token.text );
-	if ( token.depth === 2 && id !== 'contents' ) {
-		toc.push( { id, text: token.text } );
+const themeVersion = ( fs.readFileSync( path.join( root, 'style.css' ), 'utf8' ).match( /^Version:\s*(.+)$/m ) || [] )[ 1 ] || '';
+const pluginVersion = ( fs.readFileSync( path.join( root, 'companion/open-frame-starter-sites/open-frame-starter-sites.php' ), 'utf8' ).match( /^ \* Version:\s*(.+)$/m ) || [] )[ 1 ] || '';
+
+const PAGES = [
+	{ source: 'README.md', out: 'index.html', nav: 'Theme guide', title: 'Open Frame — Theme Documentation', description: 'Installation, setup and reference guide for the Open Frame WordPress theme.', label: 'Documentation · v' + themeVersion, footer: 'Open Frame ' + themeVersion },
+	{ source: 'STARTER-SITES.md', out: 'starter-sites.html', nav: 'Starter Sites guide', title: 'Open Frame Starter Sites — User Guide', description: 'How to choose, import, edit and roll back the starter sites of the Open Frame theme.', label: 'Starter Sites · v' + pluginVersion, footer: 'Open Frame Starter Sites ' + pluginVersion },
+	{ source: 'INSTALL.md', out: 'install.html', nav: 'Installation', title: 'Open Frame — Installation Guide', description: 'Installing, checking, updating and removing the Open Frame theme and the Starter Sites plugin.', label: 'Installation', footer: 'Open Frame ' + themeVersion },
+	{ source: 'SUPPORT.md', out: 'support.html', nav: 'Support and updates', title: 'Open Frame — Support and Update Policy', description: 'Where to get help, what is supported, and how updates of Open Frame are published.', label: 'Support and updates', footer: 'Open Frame ' + themeVersion },
+];
+
+// Links between the Markdown files become links between the HTML pages.
+const toHtml = ( href ) => {
+	for ( const page of PAGES ) {
+		if ( href === page.source || href.startsWith( page.source + '#' ) ) {
+			return page.out + href.slice( page.source.length );
+		}
 	}
-	return `<h${ token.depth } id="${ id }">${ text }</h${ token.depth }>\n`;
-};
-renderer.image = function ( token ) {
-	const alt = token.text || '';
-	return `<figure><a href="${ token.href }"><img src="${ token.href }" alt="${ alt }" loading="lazy"></a><figcaption>${ alt }</figcaption></figure>`;
-};
-renderer.table = function ( token ) {
-	const cell = ( c, tag ) => `<${ tag }>${ this.parser.parseInline( c.tokens ) }</${ tag }>`;
-	const head = '<tr>' + token.header.map( ( c ) => cell( c, 'th' ) ).join( '' ) + '</tr>';
-	const body = token.rows.map( ( r ) => '<tr>' + r.map( ( c ) => cell( c, 'td' ) ).join( '' ) + '</tr>' ).join( '\n' );
-	return `<div class="table-wrap"><table><thead>${ head }</thead><tbody>${ body }</tbody></table></div>\n`;
+	return href;
 };
 
-// The "Contents" list is replaced by the sidebar navigation.
-const withoutContents = source.replace( /## Contents[\s\S]*?\n---\n/, '' );
-let html = marked.parse( withoutContents, { renderer, gfm: true } );
+function build( doc ) {
+	const source = fs.readFileSync( path.join( root, 'docs', doc.source ), 'utf8' );
 
-// Paragraphs that only hold a figure do not need the wrapping <p>.
-html = html.replace( /<p>(<figure>[\s\S]*?<\/figure>)<\/p>/g, '$1' );
+	const toc = [];
+	const renderer = new marked.Renderer();
+	renderer.heading = function ( token ) {
+		const text = this.parser.parseInline( token.tokens );
+		const id = slug( token.text );
+		if ( token.depth === 2 && id !== 'contents' ) {
+			toc.push( { id, text: token.text } );
+		}
+		return `<h${ token.depth } id="${ id }">${ text }</h${ token.depth }>\n`;
+	};
+	renderer.image = function ( token ) {
+		const alt = token.text || '';
+		return `<figure><a href="${ token.href }"><img src="${ token.href }" alt="${ alt }" loading="lazy"></a><figcaption>${ alt }</figcaption></figure>`;
+	};
+	renderer.link = function ( token ) {
+		const text = this.parser.parseInline( token.tokens );
+		return `<a href="${ toHtml( token.href ) }"${ token.title ? ` title="${ token.title }"` : '' }>${ text }</a>`;
+	};
+	renderer.table = function ( token ) {
+		const cell = ( c, tag ) => `<${ tag }>${ this.parser.parseInline( c.tokens ) }</${ tag }>`;
+		const head = '<tr>' + token.header.map( ( c ) => cell( c, 'th' ) ).join( '' ) + '</tr>';
+		const body = token.rows.map( ( r ) => '<tr>' + r.map( ( c ) => cell( c, 'td' ) ).join( '' ) + '</tr>' ).join( '\n' );
+		return `<div class="table-wrap"><table><thead>${ head }</thead><tbody>${ body }</tbody></table></div>\n`;
+	};
 
-const nav = toc.map( ( item ) => `<li><a href="#${ item.id }">${ item.text.replace( /^\d+\.\s*/, '' ) }</a></li>` ).join( '\n\t\t\t\t' );
-const version = ( fs.readFileSync( path.join( root, 'style.css' ), 'utf8' ).match( /^Version:\s*(.+)$/m ) || [] )[ 1 ] || '';
+	// The "Contents" list is replaced by the sidebar navigation.
+	const withoutContents = source.replace( /## Contents[\s\S]*?\n---\n/, '' );
+	let html = marked.parse( withoutContents, { renderer, gfm: true } );
 
-const page = `<!doctype html>
+	// Paragraphs that only hold a figure do not need the wrapping <p>.
+	html = html.replace( /<p>(<figure>[\s\S]*?<\/figure>)<\/p>/g, '$1' );
+
+	const guides = PAGES.map( ( page ) => `<li><a href="${ page.out }"${ page === doc ? ' aria-current="page"' : '' }>${ page.nav }</a></li>` ).join( '\n\t\t\t' );
+	const nav = toc.map( ( item ) => `<li><a href="#${ item.id }">${ item.text.replace( /^\d+\.\s*/, '' ) }</a></li>` ).join( '\n\t\t\t\t' );
+
+	const page = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Frame — Theme Documentation</title>
-<meta name="description" content="Installation, setup and reference guide for the Open Frame WordPress theme.">
+<title>${ doc.title }</title>
+<meta name="description" content="${ doc.description }">
 <style>
 @font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); }
 @font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
@@ -74,6 +107,11 @@ a:hover { color: var(--primary-dark); }
 .sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
 .sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
 .sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
 main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
 .doc { max-width: 860px; margin: 0 auto; }
 h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
@@ -128,25 +166,29 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
 		Open Frame
 	</a>
-	<p class="version">Documentation · v${ version }</p>
+	<p class="version">${ doc.label }</p>
 	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
 	<nav id="toc" aria-label="Documentation sections">
 		<ol>
 				${ nav }
 		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			${ guides }
+		</ul>
 	</nav>
 </aside>
 <main id="content">
 	<article class="doc">
 ${ html }
 	</article>
-	<footer>Open Frame ${ version } · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+	<footer>${ doc.footer } · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
 </main>
 <script>
 ( function () {
 	var sidebar = document.getElementById( 'sidebar' );
 	var toggle = sidebar.querySelector( '.menu-toggle' );
-	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav a' ) );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
 
 	toggle.addEventListener( 'click', function () {
 		var open = sidebar.classList.toggle( 'is-open' );
@@ -182,5 +224,46 @@ ${ html }
 </html>
 `;
 
-fs.writeFileSync( path.join( root, 'docs/index.html' ), page );
-console.log( 'docs/index.html written (' + toc.length + ' sections)' );
+	fs.writeFileSync( path.join( root, 'docs', doc.out ), page );
+	console.log( 'docs/' + doc.out + ' written (' + toc.length + ' sections)' );
+}
+
+PAGES.forEach( build );
+
+/* ------------------------------------------------------------------ CHANGELOG.md */
+
+const entries = ( file ) => {
+	const text = fs.readFileSync( path.join( root, file ), 'utf8' );
+	const log = text.slice( text.indexOf( '== Changelog ==' ) );
+	return [ ...log.matchAll( /^= ([0-9.]+) =\n([\s\S]*?)(?=^= [0-9.]+ =$|^== |(?![\s\S]))/gm ) ].map( ( match ) => `### ${ match[ 1 ] }\n\n${ match[ 2 ].trim().replace( /^\* /gm, '- ' ) }\n` ).join( '\n' );
+};
+const sites = fs.readdirSync( path.join( root, 'starter-sites' ) )
+	.filter( ( name ) => fs.existsSync( path.join( root, 'starter-sites', name, 'site.json' ) ) )
+	.map( ( name ) => JSON.parse( fs.readFileSync( path.join( root, 'starter-sites', name, 'site.json' ), 'utf8' ) ) )
+	.sort( ( a, b ) => a.order - b.order );
+
+fs.writeFileSync( path.join( root, 'CHANGELOG.md' ), `# Changelog
+
+What changed in each version of the Open Frame theme, of the Open Frame Starter Sites plugin, and of the starter sites. The newest version comes first in each part.
+
+This file is put together by \`node bin/build-docs.js\` from the \`== Changelog ==\` sections of the two \`readme.txt\` files, which are what WordPress reads, and from the version of each starter site. Do not edit it by hand.
+
+How version numbers are chosen, and what each kind of update means for a site, is in the [support and update policy](docs/SUPPORT.md#versions).
+
+## Open Frame (theme)
+
+${ entries( 'readme.txt' ) }
+## Open Frame Starter Sites (plugin)
+
+${ entries( 'companion/open-frame-starter-sites/readme.txt' ) }
+## Starter sites
+
+A published version of a design is never changed afterwards; a correction gets a new version number.
+
+| Design | Version | Needs |
+| --- | --- | --- |
+${ sites.map( ( site ) => `| ${ site.name } | ${ site.version } | ${ site.requires.plugins.map( ( plugin ) => `${ plugin.name } ${ plugin.version }` ).join( ', ' ) } |` ).join( '\n' ) }
+
+Version 1.0.0 is the first version of each design.
+` );
+console.log( 'CHANGELOG.md written' );

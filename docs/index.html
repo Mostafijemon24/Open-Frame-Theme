@@ -27,6 +27,11 @@ a:hover { color: var(--primary-dark); }
 .sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
 .sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
 .sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
 main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
 .doc { max-width: 860px; margin: 0 auto; }
 h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
@@ -112,6 +117,13 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 				<li><a href="#25-troubleshooting-and-faq">Troubleshooting and FAQ</a></li>
 				<li><a href="#26-changelog-credits-and-support">Changelog, credits and support</a></li>
 		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			<li><a href="index.html" aria-current="page">Theme guide</a></li>
+			<li><a href="starter-sites.html">Starter Sites guide</a></li>
+			<li><a href="install.html">Installation</a></li>
+			<li><a href="support.html">Support and updates</a></li>
+		</ul>
 	</nav>
 </aside>
 <main id="content">
@@ -476,7 +488,13 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <div class="table-wrap"><table><thead><tr><th>Page layout</th><th>Header and footer</th><th>Page title</th><th>Use it for</th></tr></thead><tbody><tr><td><strong>Default</strong></td><td>Theme header and footer</td><td>Shown above the content. Turn on <strong>Hide Title</strong> in Elementor&#39;s page settings to remove it</td><td>Ordinary pages</td></tr>
 <tr><td><strong>Elementor Full Width</strong></td><td>Theme header and footer</td><td>Not shown</td><td>Home pages and landing pages</td></tr>
 <tr><td><strong>Elementor Canvas</strong></td><td>None</td><td>Not shown</td><td>Stand-alone pages such as &quot;coming soon&quot; or campaign pages</td></tr></tbody></table></div>
+<figure><a href="images/elementor-page-layout.png"><img src="images/elementor-page-layout.png" alt="The page settings of a page in the Elementor editor" loading="lazy"></a><figcaption>The page settings of a page in the Elementor editor</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>What it is</th><th>What you do with it</th></tr></thead><tbody><tr><td>1</td><td><strong>Page Settings</strong></td><td>Opens the settings of the page you are editing</td></tr>
+<tr><td>2</td><td><strong>Page Layout</strong></td><td>Choose Default, Elementor Full Width or Elementor Canvas (see the table above)</td></tr>
+<tr><td>3</td><td><strong>Hide Title</strong></td><td>With the Default layout, removes the page title that the theme shows above the content</td></tr></tbody></table></div>
 <p>A page that uses a sidebar layout (see <a href="#7-layout-settings">Layout settings</a>) keeps its sidebar and its card, with the Elementor content inside it.</p>
+<h3 id="starting-from-a-complete-design">Starting from a complete design</h3>
+<p>The companion plugin <strong>Open Frame Starter Sites</strong> adds ten complete websites made with Elementor for this theme: Business, Portfolio, Restaurant, Education and Medical for the free version of Elementor, and Creative Agency, SaaS, Real Estate, Magazine and Shop for Elementor Pro. You choose one under <strong>Appearance → Starter Sites</strong>, import it, and replace the sample content with your own. The plugin is optional and separate from the theme. Its own guide explains every step: <a href="starter-sites.html">Open Frame Starter Sites — User Guide</a>.</p>
 <h3 id="elementor-pro-theme-builder">Elementor Pro Theme Builder</h3>
 <p>With Elementor Pro, templates created under <strong>Templates → Theme Builder</strong> replace the matching part of the theme: Header, Footer, Single Post or Page, Archive (including the blog and search results) and 404. When a template&#39;s display conditions do not match a page, the theme&#39;s own template is used. No setting is needed.</p>
 <h3 id="using-elementors-colors-and-fonts-on-the-whole-site">Using Elementor&#39;s colors and fonts on the whole site</h3>
@@ -494,7 +512,12 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <tr><td>Single product</td><td>Gallery and details side by side on wide screens, stacked on phones; zoom, lightbox and gallery slider are enabled</td></tr>
 <tr><td>Cart and checkout</td><td>Shown inside the page card at the full container width; buttons use the Primary color</td></tr>
 <tr><td>My account</td><td>Navigation styled as a list of links</td></tr></tbody></table></div>
+<figure><a href="images/woocommerce-shop.png"><img src="images/woocommerce-shop.png" alt="The shop page with product cards" loading="lazy"></a><figcaption>The shop page with product cards</figcaption></figure>
+<p>The shop page: products as cards of one height, three in a row at this width, with the sale badge and the buttons in the Primary color.</p>
+<figure><a href="images/woocommerce-product.png"><img src="images/woocommerce-product.png" alt="A single product" loading="lazy"></a><figcaption>A single product</figcaption></figure>
+<p>A single product: the gallery on the left with the zoom button, the details on the right.</p>
 <p>Buttons, prices, sale badges, notices, tabs and pagination follow the colors from <a href="#8-global-colors">Global Colors</a>. Products inserted on any other page (with blocks, shortcodes or a page builder) are styled the same way.</p>
+<p>The theme styles the store; it does not set it up. Payments, shipping and taxes are WooCommerce&#39;s own settings under <strong>WooCommerce → Settings</strong>. For a ready-made store design, see the Shop design of the <a href="starter-sites.html#11-the-shop-design">Starter Sites plugin</a>, which needs Elementor Pro.</p>
 <h2 id="20-fonts">20. Fonts</h2>
 <p>Open Frame bundles two open-source typefaces as variable fonts, loaded from your own server:</p>
 <div class="table-wrap"><table><thead><tr><th>Font</th><th>Used for</th><th>License</th></tr></thead><tbody><tr><td>Hanken Grotesk</td><td>Text and headings</td><td>SIL Open Font License 1.1</td></tr>
@@ -717,6 +740,8 @@ Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>.
 <h3 id="support">Support</h3>
 <ul>
 <li>Source code and issue tracker: <a href="https://github.com/Mostafijemon24/Open-Frame-Theme">https://github.com/Mostafijemon24/Open-Frame-Theme</a></li>
+<li>What is supported, for how long, and how updates are published: <a href="support.html">support and update policy</a></li>
+<li>Installing the theme and the Starter Sites plugin step by step: <a href="install.html">installation guide</a></li>
 <li>Author: <a href="https://github.com/Mostafijemon24">Mostafij Emon</a></li>
 </ul>
 
@@ -727,7 +752,7 @@ Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>.
 ( function () {
 	var sidebar = document.getElementById( 'sidebar' );
 	var toggle = sidebar.querySelector( '.menu-toggle' );
-	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav a' ) );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
 
 	toggle.addEventListener( 'click', function () {
 		var open = sidebar.classList.toggle( 'is-open' );

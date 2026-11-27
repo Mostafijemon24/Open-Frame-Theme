@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Open Frame Starter Sites
  * Plugin URI:        https://github.com/Mostafijemon24/Open-Frame-Theme
- * Description:       Browse the starter website library for the Open Frame theme and prepare your site for an import: preview each design, see what it needs and install the required plugins.
+ * Description:       Complete starter websites for the Open Frame theme, made with Elementor: preview each design, see what it needs, install the required plugins, import it, and roll the import back if you change your mind.
  * Version:           0.6.1
  * Requires at least: 6.4
  * Requires PHP:      7.4

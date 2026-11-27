@@ -26,9 +26,17 @@ Required plugins that are available on WordPress.org can be installed and activa
 
 A design that is available can be imported from the same screen. The import adds the design's pages, images, menu, header and site-wide colors and fonts, and makes its home page your home page. Nothing you already have is deleted. Every import can be undone with "Roll back this import", which removes what was added and restores the settings that were changed. If the browser is closed while an import runs, the screen offers to continue it or roll it back.
 
-**This is an early version.** The designs in the library are still marked "Coming soon"; they become importable as they are published.
+**The library holds ten designs.** Business, Portfolio, Restaurant, Education and Medical work with the free version of Elementor. Creative Agency, SaaS, Real Estate, Magazine and Shop need Elementor Pro; Shop also needs WooCommerce. Texts, names and prices in the designs are samples to replace with your own. The photographs are in the public domain or under CC0 and may stay on your site.
+
+A design never contains program code. It is data: texts, pictures, fonts and Elementor settings. The list of designs is digitally signed, every download is checked against it, and the plugin refuses a package that contains script.
 
 The plugin needs the Open Frame theme (or a child theme of it) to be active.
+
+= Documentation =
+
+The user guide with screenshots: https://github.com/Mostafijemon24/Open-Frame-Theme/blob/main/docs/STARTER-SITES.md
+
+Support and update policy: https://github.com/Mostafijemon24/Open-Frame-Theme/blob/main/docs/SUPPORT.md
 
 == External services ==
 
@@ -44,8 +52,11 @@ When you choose to install a required plugin, WordPress downloads it from WordPr
 == Installation ==
 
 1. Install and activate the Open Frame theme.
-2. Upload the plugin under Plugins > Add New > Upload Plugin and activate it.
+2. Upload the plugin under Plugins > Add Plugin > Upload Plugin and activate it.
 3. Go to Appearance > Starter Sites.
+4. Open a design with "View details". Install what it needs with the buttons in the list, then click "Import this design".
+
+There is no account to create and no key to enter.
 
 == Frequently Asked Questions ==
 
@@ -55,7 +66,19 @@ Only for the designs marked "Needs Elementor Pro". The others work with the free
 
 = Why can't I import a design? =
 
-A design can be imported when it is no longer marked "Coming soon" and everything under "What it needs" is met. The screen shows what is missing.
+A design can be imported when everything under "What it needs" has a green tick. The screen shows what is missing, and installs Elementor and WooCommerce for you. Elementor Pro has to be bought from Elementor and installed by you.
+
+= Can I use the texts and pictures of a design on my site? =
+
+Yes. The texts are samples for you to replace: the companies, people and prices in them are invented. The photographs are in the public domain or under the CC0 licence, so you may keep them, also on a commercial site.
+
+= I imported a design and changed its pages. What happens if I import it again? =
+
+The pages of that design are put back the way they came from the library, so your changes to them are overwritten. Pages you created yourself are not touched. Import a design again only when you want a fresh copy.
+
+= Can I remove the plugin after importing? =
+
+For the designs made with free Elementor, keep it active: the plugin shows their header, footer and "page not found" page, and serves their fonts. For the designs made with Elementor Pro only the fonts depend on it.
 
 = What does an import change, and can I undo it? =
 
@@ -77,6 +100,14 @@ Only when you click a button that says it will: "Install and activate", "Activat
 
 A copy of the list of designs, the record of the last import, a short import history and the list of fonts a design brought (options starting with `ofss_`), plus those font files in `wp-content/uploads/open-frame-fonts`. All of this is removed when you delete the plugin. Imported pages and images are your content and stay.
 
+== Screenshots ==
+
+1. The Starter Sites screen: ten designs, with search and filters by category and Elementor version.
+2. The details of a design: preview pictures, what it needs with one-click installation, its pages, and where each part is edited.
+3. The confirmation before an import says what will be added and what will change.
+4. A finished import, with links to the site and the editor and the button to roll it back.
+5. The home page of the Business design, edited with Elementor.
+
 == Changelog ==
 
 = 0.6.1 =
@@ -85,6 +116,8 @@ A copy of the list of designs, the record of the last import, a short import his
 * Security: a list of designs that is older than the one the site already has is not accepted, even with a valid signature.
 * Security: values of a design's Site Settings are reduced to what a color, a font name or a size can contain.
 * Fixed: when a plugin a design needs cannot be installed because its current version needs a newer WordPress or PHP, the screen says so instead of "The package could not be installed".
+* Changed: an import reports back every few seconds, so the progress bar moves on a fast server too instead of waiting at 0% and jumping to the end.
+* Fixed: the confirmation before an import named a number of pages that counted a design's post layout and "not found" page as pages.
 * Changed: the smaller sizes of a design's pictures are saved at the quality of the picture itself, which makes pages lighter.
 * Changed: removing the plugin also removes what an unfinished import left in the uploads folder.
 * Changed: the designs need Elementor 4.0.3 or newer. Elementor 4.0.0 to 4.0.2 with Elementor Pro load a font from Google on every page.

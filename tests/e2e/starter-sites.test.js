@@ -399,7 +399,7 @@ test( 'a design is imported from the screen, can be edited in Elementor, and is 
 
 	// Nothing starts until the user has read what will change and agreed.
 	const confirm = dialog().getByRole( 'group', { name: 'Confirm the import' } );
-	assert.match( await confirm.textContent(), /2 pages and their images are added.*Nothing you already have is deleted.*home page changes.*Roll back/s );
+	assert.match( await confirm.textContent(), /The pages of this design and their images are added.*Nothing you already have is deleted.*home page changes.*Roll back/s );
 	const startButton = confirm.getByRole( 'button', { name: 'Start the import' } );
 	assert.equal( await startButton.getAttribute( 'aria-disabled' ), 'true' );
 	assert.deepEqual( await axe( page, '[role="dialog"]' ), [], 'the confirmation is accessible' );

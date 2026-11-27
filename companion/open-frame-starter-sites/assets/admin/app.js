@@ -417,7 +417,8 @@
 					'li',
 					null,
 					/* translators: %d: number of pages. */
-					sprintf( _n( '%d page and its images are added to your site. Nothing you already have is deleted.', '%d pages and their images are added to your site. Nothing you already have is deleted.', site.pages.length, 'open-frame-starter-sites' ), site.pages.length )
+					// No number here: the list of a design also names what is not a page of its own (a post layout, the "not found" page, a store's pages).
+					__( 'The pages of this design and their images are added to your site. Nothing you already have is deleted.', 'open-frame-starter-sites' )
 				),
 				h( 'li', null, __( 'Your home page changes to the home page of this design.', 'open-frame-starter-sites' ) ),
 				h( 'li', null, __( 'Site-wide colors and fonts (Elementor Site Settings), theme settings, the header and the menu change to those of this design.', 'open-frame-starter-sites' ) ),

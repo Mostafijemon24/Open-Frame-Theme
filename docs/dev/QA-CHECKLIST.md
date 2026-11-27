@@ -12,11 +12,14 @@ Write the result next to each line: **OK**, or what was wrong, with the device a
 
 ## 1. Installing and importing (15 minutes)
 
+Do this section with the [installation guide](../INSTALL.md) and the [Starter Sites guide](../STARTER-SITES.md) open beside the screen, as someone would who sees the product for the first time. Note every place where the guide and the screen do not agree, where a step is missing, or where you had to guess.
+
+- [ ] The guides match the screen, picture by picture, from installing to "Imported".
 - [ ] The theme ZIP installs and activates without a warning.
 - [ ] The plugin ZIP installs and activates without a warning. **Appearance > Starter Sites** appears.
 - [ ] The screen shows ten designs, each with a picture. Search, the category filter and the Free / Pro filter each narrow the list.
 - [ ] Open **Business**. The list "What it needs" offers to install or activate Elementor. Press the button; the line turns green without leaving the page.
-- [ ] **Import this design** asks for confirmation first, then shows a progress bar with named steps, then "Imported" with the number of pages and images.
+- [ ] **Import this design** asks for confirmation first, then shows a progress bar that moves through named steps, then "Imported" with the number of pages and images.
 - [ ] **View your site** opens the new home page.
 - [ ] **Roll back this import**, confirm: the site is as it was before (your old home page, no leftover pages or images under Pages and Media).
 - [ ] Close the browser tab in the middle of an import. Open the screen again: a notice offers to continue or roll back, and both work.

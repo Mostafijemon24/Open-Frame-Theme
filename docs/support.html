@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Frame — Support and Update Policy</title>
+<meta name="description" content="Where to get help, what is supported, and how updates of Open Frame are published.">
+<style>
+@font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+:root { --primary: #3f4cd6; --primary-dark: #2b36b8; --tint: #e8eafc; --heading: #0f172a; --text: #334155; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --surface: #ffffff; --code: #f1f5f9; --sidebar: 280px; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body { margin: 0; font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.65; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+a { color: var(--primary); text-underline-offset: 2px; }
+a:hover { color: var(--primary-dark); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 0.75rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 0.75rem; }
+.sidebar { position: fixed; inset: 0 auto 0 0; width: var(--sidebar); overflow-y: auto; padding: 2rem 1.5rem; background: var(--surface); border-right: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; color: var(--heading); text-decoration: none; }
+.brand svg { flex: 0 0 auto; }
+.version { margin: 0 0 1.75rem; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.sidebar li { counter-increment: toc; }
+.sidebar li a { display: flex; gap: 0.6rem; padding: 0.42rem 0.7rem; border-radius: 8px; color: var(--text); font-size: 0.94rem; font-weight: 500; line-height: 1.35; text-decoration: none; }
+.sidebar li a::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; line-height: 1.8; color: var(--muted); }
+.sidebar li a:hover, .sidebar li a.is-active { background: var(--tint); color: var(--primary); }
+.sidebar li a.is-active::before { color: var(--primary); }
+.guides-title { margin: 1.75rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sidebar .guides { list-style: none; margin: 0; padding: 0; }
+.sidebar .guides li { counter-increment: none; }
+.sidebar .guides li a::before { content: none; }
+.sidebar .guides li a[aria-current="page"] { color: var(--primary); font-weight: 700; }
+main { margin-left: var(--sidebar); padding: 3rem clamp(1.25rem, 4vw, 4rem) 5rem; }
+.doc { max-width: 860px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; }
+h1 { margin: 0 0 1rem; font-size: clamp(2rem, 1.5rem + 2.2vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { margin: 4rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 1.75rem; }
+h3 { margin: 2.5rem 0 0.75rem; font-size: 1.25rem; }
+h4 { margin: 2rem 0 0.5rem; font-size: 1.05rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+li > p { margin-bottom: 0.5rem; }
+hr { display: none; }
+code, kbd { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 0.86em; }
+:not(pre) > code { padding: 0.15em 0.4em; background: var(--code); border-radius: 6px; color: var(--heading); overflow-wrap: anywhere; }
+kbd { padding: 0.15em 0.45em; background: var(--surface); border: 1px solid #cbd5e1; border-bottom-width: 2px; border-radius: 6px; color: var(--heading); }
+pre { margin: 0 0 1.5rem; padding: 1.1rem 1.25rem; overflow: auto; background: #0f172a; color: #f1f5f9; border-radius: 12px; font-size: 0.86rem; line-height: 1.6; }
+pre code { font-size: inherit; }
+blockquote { margin: 0 0 1.5rem; padding: 0.9rem 1.25rem; background: var(--tint); border-left: 4px solid var(--primary); border-radius: 10px; color: var(--heading); }
+blockquote p:last-child { margin-bottom: 0; }
+figure { margin: 1.5rem 0 2rem; }
+figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+figcaption { margin-top: 0.6rem; font-size: 0.875rem; color: var(--muted); text-align: center; }
+.table-wrap { margin: 0 0 1.5rem; overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+th, td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code); color: var(--heading); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.menu-toggle { display: none; }
+footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+@media (max-width: 900px) {
+	.sidebar { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 1.25rem; }
+	.version { margin-bottom: 1rem; }
+	.menu-toggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; font: inherit; font-weight: 600; color: var(--primary); background: var(--tint); border: 0; border-radius: 8px; cursor: pointer; }
+	.sidebar nav { display: none; margin-top: 1rem; }
+	.sidebar.is-open nav { display: block; }
+	main { margin-left: 0; padding-top: 2rem; }
+}
+@media print {
+	.sidebar { display: none; }
+	main { margin: 0; padding: 0; }
+	body { background: #fff; }
+	h2 { break-after: avoid; }
+	figure, table, pre { break-inside: avoid; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<aside class="sidebar" id="sidebar">
+	<a class="brand" href="#content">
+		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
+		Open Frame
+	</a>
+	<p class="version">Support and updates</p>
+	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
+	<nav id="toc" aria-label="Documentation sections">
+		<ol>
+				<li><a href="#where-to-get-help">Where to get help</a></li>
+				<li><a href="#what-is-supported">What is supported</a></li>
+				<li><a href="#versions">Versions</a></li>
+				<li><a href="#how-updates-reach-you">How updates reach you</a></li>
+				<li><a href="#what-an-update-never-does">What an update never does</a></li>
+				<li><a href="#compatibility">Compatibility</a></li>
+				<li><a href="#security">Security</a></li>
+				<li><a href="#the-library-service">The library service</a></li>
+				<li><a href="#if-the-project-ends">If the project ends</a></li>
+				<li><a href="#licences">Licences</a></li>
+		</ol>
+		<p class="guides-title">All guides</p>
+		<ul class="guides">
+			<li><a href="index.html">Theme guide</a></li>
+			<li><a href="starter-sites.html">Starter Sites guide</a></li>
+			<li><a href="install.html">Installation</a></li>
+			<li><a href="support.html" aria-current="page">Support and updates</a></li>
+		</ul>
+	</nav>
+</aside>
+<main id="content">
+	<article class="doc">
+<h1 id="support-and-update-policy">Support and Update Policy</h1>
+<p>This page says what you can expect from the Open Frame theme, the Open Frame Starter Sites plugin and the library of starter sites: where to get help, what is supported, how updates reach you, and what happens when something has to end.</p>
+<p>Open Frame is free software under the GNU GPL, version 2 or later. It is maintained by its author, Mostafij Emon, as an open-source project. There is no paid tier and no paid support.</p>
+<h2 id="where-to-get-help">Where to get help</h2>
+<div class="table-wrap"><table><thead><tr><th>You want to</th><th>Go to</th></tr></thead><tbody><tr><td>Learn how something works</td><td>The <a href="index.html">theme guide</a>, the <a href="starter-sites.html">Starter Sites guide</a>, the <a href="install.html">installation guide</a></td></tr>
+<tr><td>Report a bug or ask a question</td><td><a href="https://github.com/Mostafijemon24/Open-Frame-Theme/issues">https://github.com/Mostafijemon24/Open-Frame-Theme/issues</a></td></tr>
+<tr><td>Report a security problem</td><td>See <a href="#security">Security</a> below. Please do not open a public issue</td></tr></tbody></table></div>
+<h3 id="a-report-that-can-be-answered-quickly">A report that can be answered quickly</h3>
+<p>Please include:</p>
+<ol>
+<li>what you did, step by step, and what happened instead of what you expected;</li>
+<li>the versions of Open Frame, Open Frame Starter Sites, WordPress and PHP (<strong>Tools → Site Health → Info</strong>);</li>
+<li>the versions of Elementor, Elementor Pro and WooCommerce, if the problem involves them;</li>
+<li>for an import: the name of the design, and the line from <strong>Appearance → Starter Sites → Import history</strong>;</li>
+<li>a screenshot, and the exact words of any error message.</li>
+</ol>
+<p>Do not post passwords, licence keys or other secrets.</p>
+<p>Reports are read and answered as time allows. There is no guaranteed response time.</p>
+<h2 id="what-is-supported">What is supported</h2>
+<div class="table-wrap"><table><thead><tr><th>Supported</th><th>Not supported</th></tr></thead><tbody><tr><td>The current version of the theme and of the plugin</td><td>Older versions. The first answer to a report about an old version is &quot;please update&quot;</td></tr>
+<tr><td>The versions of WordPress and PHP named under &quot;Requirements&quot; in each guide, up to the WordPress version named as &quot;Tested up to&quot;</td><td>Versions of WordPress or PHP below the requirements</td></tr>
+<tr><td>The ten starter sites as imported, on the versions of Elementor, Elementor Pro and WooCommerce they name</td><td>Problems inside Elementor, Elementor Pro or WooCommerce themselves. Those go to their makers. Elementor Pro&#39;s support comes with its licence</td></tr>
+<tr><td>Use on a single site, with the block editor or Elementor</td><td>Changes you made to the files of the theme or plugin. Use a child theme and the documented hooks</td></tr>
+<tr><td></td><td>Conflicts caused by another plugin or by custom code, beyond pointing out where the conflict is</td></tr>
+<tr><td></td><td>Building or customizing a site for you; hosting, email delivery and server setup</td></tr></tbody></table></div>
+<p>Not yet checked, and therefore without a promise: WordPress Multisite, right-to-left languages in the starter sites (the theme itself supports them), and servers with less than 128 MB of PHP memory.</p>
+<h2 id="versions">Versions</h2>
+<p>Theme and plugin use version numbers of the form <strong>major.minor.patch</strong>, each product on its own.</p>
+<div class="table-wrap"><table><thead><tr><th>Part</th><th>Changes when</th><th>What it means for your site</th></tr></thead><tbody><tr><td><strong>Patch</strong> (1.1.0 → 1.1.1)</td><td>A bug or security problem is fixed</td><td>Safe to install at once. Nothing looks or works differently, apart from the fix</td></tr>
+<tr><td><strong>Minor</strong> (1.1.0 → 1.2.0)</td><td>Something is added</td><td>Existing settings and content keep working. New options start switched off or with the old behaviour</td></tr>
+<tr><td><strong>Major</strong> (1.x → 2.0.0)</td><td>Something had to change in a way that is not compatible</td><td>The release notes say what to check, and how to carry your settings over</td></tr></tbody></table></div>
+<p>While the plugin&#39;s version starts with 0 (0.6.1), it is still before its first stable release: details may change from one version to the next. The promise above applies from 1.0.0.</p>
+<p><strong>Starter sites</strong> have version numbers of their own (for example Business 1.0.0). A published version of a design is never changed afterwards; a correction gets a new number. Your site is not touched when a design is updated: a new version only arrives if you import the design again (see <a href="starter-sites.html#13-history-and-updates-of-a-design">History and updates of a design</a>).</p>
+<h2 id="how-updates-reach-you">How updates reach you</h2>
+<p><strong>Today:</strong> new versions are published as releases at <a href="https://github.com/Mostafijemon24/Open-Frame-Theme/releases">https://github.com/Mostafijemon24/Open-Frame-Theme/releases</a>, each with its ZIP files, checksums and a list of changes. WordPress does not announce these by itself. To be told, open the repository on GitHub and choose <strong>Watch → Custom → Releases</strong>. You install an update by uploading the new ZIP file (<a href="install.html#updating">Updating</a>).</p>
+<p><strong>After acceptance on WordPress.org:</strong> theme and plugin have been prepared for the WordPress.org directories. From the moment they are listed there, updates appear in your dashboard under <strong>Dashboard → Updates</strong> like those of any other theme or plugin, and nothing has to be downloaded by hand. This page will say so when it is the case.</p>
+<p>The theme and the plugin contain no update mechanism of their own, and never contact a server to look for updates.</p>
+<p><strong>The list of starter sites</strong> is the one thing that updates by itself: the plugin fetches it from the library at most every twelve hours while an administrator has the Starter Sites screen open.</p>
+<h2 id="what-an-update-never-does">What an update never does</h2>
+<ul>
+<li>It never deletes or changes your pages, posts, products or pictures.</li>
+<li>It never changes your settings without the release notes saying so.</li>
+<li>It never adds tracking, advertising, or a request to another server on the public side of your site.</li>
+<li>The plugin never downloads or runs program code from the library. A starter site is data: texts, pictures, fonts and Elementor settings. The list of designs is digitally signed, and every file is checked against it.</li>
+</ul>
+<h2 id="compatibility">Compatibility</h2>
+<ul>
+<li><strong>WordPress:</strong> each release is tested with the current WordPress version and with the oldest one it supports. When a new WordPress version appears, the theme and plugin are tested with it and &quot;Tested up to&quot; is raised, with a patch release if anything needs fixing.</li>
+<li><strong>PHP:</strong> 7.4 is the oldest supported version. It will be raised only in a minor or major release, announced in the release notes of the version before.</li>
+<li><strong>Elementor, Elementor Pro, WooCommerce:</strong> each starter site names the oldest version it works with, and the Starter Sites screen checks it before an import. New major versions of these plugins are tested when they appear. If one of them breaks a design, the design gets a corrected version.</li>
+<li><strong>Browsers:</strong> the current versions of Chrome, Edge, Firefox and Safari.</li>
+</ul>
+<h2 id="security">Security</h2>
+<p>If you find a security problem, please report it privately: on the repository&#39;s page choose <strong>Security → Report a vulnerability</strong>. If that is not available to you, open an issue that says only &quot;security report, please contact me&quot;, without details.</p>
+<p>You get an answer as soon as the report has been read. A confirmed problem is fixed in a patch release, and the release notes credit you unless you prefer otherwise. Please give a reasonable time for the fix before you publish details.</p>
+<h2 id="the-library-service">The library service</h2>
+<p>The list of starter sites, their preview pictures and their packages are served from <code>api.buildbetters.com</code> and <code>cdn.buildbetters.com</code>, run by the author through Cloudflare.</p>
+<ul>
+<li><strong>If the service cannot be reached</strong>, the Starter Sites screen shows the list it saved last, and says that the library could not be reached. Importing needs the service. <strong>Sites that were already built keep working without it</strong>: an imported design lives entirely on your own site, with its pages, pictures and fonts.</li>
+<li><strong>If the service ever has to end</strong>, this will be announced on the releases page at least 90 days before, and the packages of all designs will stay available for download from the repository.</li>
+<li>The source of every design is in the repository, in the folder <code>starter-sites</code>, together with the tools that build the library. Anyone can build the library themselves; what a self-hosted library needs is described in the <a href="dev/PLUGIN.md#running-your-own-library">developer reference</a>.</li>
+</ul>
+<p>What the service receives, and what it does not, is described under <a href="starter-sites.html#14-privacy">Privacy in the Starter Sites guide</a>.</p>
+<h2 id="if-the-project-ends">If the project ends</h2>
+<p>Open Frame is free software. Whatever happens to the project, you keep the right to use, study, change and share the versions you have. If maintenance ever stops, this will be said clearly at the top of the repository&#39;s front page, and the last versions stay available there.</p>
+<h2 id="licences">Licences</h2>
+<ul>
+<li>Theme and plugin: GNU General Public License, version 2 or later.</li>
+<li>Bundled fonts: SIL Open Font License 1.1.</li>
+<li>Starter sites: texts and layouts under the GPL, version 2 or later. Photographs are in the public domain or under CC0; every source is listed in <a href="../starter-sites/LICENSES.md"><code>starter-sites/LICENSES.md</code></a>.</li>
+<li>Elementor Pro is a commercial product of Elementor Ltd. and is not part of this project. Elementor and WooCommerce are separate free plugins from WordPress.org.</li>
+</ul>
+
+	</article>
+	<footer>Open Frame 1.1.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+</main>
+<script>
+( function () {
+	var sidebar = document.getElementById( 'sidebar' );
+	var toggle = sidebar.querySelector( '.menu-toggle' );
+	var links = Array.prototype.slice.call( sidebar.querySelectorAll( 'nav ol a' ) );
+
+	toggle.addEventListener( 'click', function () {
+		var open = sidebar.classList.toggle( 'is-open' );
+		toggle.setAttribute( 'aria-expanded', String( open ) );
+	} );
+	links.forEach( function ( link ) {
+		link.addEventListener( 'click', function () {
+			sidebar.classList.remove( 'is-open' );
+			toggle.setAttribute( 'aria-expanded', 'false' );
+		} );
+	} );
+
+	// Highlight the section currently being read.
+	if ( 'IntersectionObserver' in window ) {
+		var byId = {};
+		links.forEach( function ( link ) { byId[ link.getAttribute( 'href' ).slice( 1 ) ] = link; } );
+		var observer = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting && byId[ entry.target.id ] ) {
+					links.forEach( function ( link ) { link.classList.remove( 'is-active' ); } );
+					byId[ entry.target.id ].classList.add( 'is-active' );
+				}
+			} );
+		}, { rootMargin: '0px 0px -75% 0px' } );
+		Object.keys( byId ).forEach( function ( id ) {
+			var heading = document.getElementById( id );
+			if ( heading ) { observer.observe( heading ); }
+		} );
+	}
+}() );
+</script>
+</body>
+</html>

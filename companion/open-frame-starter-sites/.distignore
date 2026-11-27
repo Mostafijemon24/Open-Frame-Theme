@@ -4,3 +4,4 @@
 phpcs.xml.dist
 node_modules
 vendor
+.wordpress-org
