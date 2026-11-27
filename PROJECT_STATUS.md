@@ -329,7 +329,7 @@ From Phase 8 (2026-11-26), not repeated:
 
 ## Needed from the owner
 
-1. **Keep the production signing key safe.** It was made on 2026-11-27 (key ID `135200d7`) and handed to the owner as a file, at the owner's choice. The owner has to: save it in a password manager; add its text as the repository secret `OFSS_SIGNING_KEY` (Settings > Secrets and variables > Actions), together with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, if the "Publish library" workflow is to be used; and confirm, so that the copy on the development machine is deleted. Whoever has this file can sign a list of designs that every installed plugin accepts. If it is lost, a new key has to be introduced with a plugin release before the library can change again. On the owner's Cloudflare account there are now: the R2 buckets `open-frame-library` and `open-frame-library-staging`, the Workers of the same names, and the addresses `api.`, `cdn.` and `library-staging.buildbetters.com` that lead to them. Nothing else on the domain was changed.
+1. **The production signing key is with the owner, and only there.** It was made on 2026-11-27 (key ID `135200d7`) and handed over as a file, at the owner's choice; the owner confirmed the same day that it is stored, and the copy on the development machine was deleted. Whoever has this file can sign a list of designs that every installed plugin accepts. If it is lost, a new key has to be introduced with a plugin release before the library can change again. **To publish a change to the library** the key is needed again: either as the repository secret `OFSS_SIGNING_KEY` (Settings > Secrets and variables > Actions, together with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`) for the "Publish library" workflow, or handed over for that one publication. On the owner's Cloudflare account there are: the R2 buckets `open-frame-library` and `open-frame-library-staging`, the Workers of the same names, and the addresses `api.`, `cdn.` and `library-staging.buildbetters.com` that lead to them. Nothing else on the domain was changed.
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
 3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
@@ -344,7 +344,6 @@ From Phase 8 (2026-11-26), not repeated:
 
 The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
 
-1. **The owner stores the signing key** and confirms (see "Needed from the owner").
 1. **The theme can be released now**, on the owner's word: merge the branch into `main`, run the Release workflow for the theme, and upload the ZIP to WordPress.org. The manual checklist should come first.
 3. The manual checklist, and fixes for what it finds.
 4. Raise the plugin to 1.0.0, release it, then submit it to WordPress.org (its banner, icon and screenshots are ready).
