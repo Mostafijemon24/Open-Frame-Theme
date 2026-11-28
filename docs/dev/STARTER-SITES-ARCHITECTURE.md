@@ -218,7 +218,7 @@ No custom tables. Everything uses core storage, so uninstalling is clean and bac
 | Post meta | `_ofss_site`, `_ofss_uid`, `_ofss_run`, `_ofss_hash` | On every imported post, page, site part, menu item, product and attachment | n/a |
 | Post meta | `_ofss_source_hash` | On attachments: SHA-256 of the source file, used to reuse media | n/a |
 | Term meta | `_ofss_site`, `_ofss_uid`, `_ofss_run` | On imported terms and menus | n/a |
-| Post type | `of_site_part` | Header, footer and 404 documents edited in Elementor (see 5.3) | n/a |
+| Post type | `ofss_site_part` | Header, footer and 404 documents edited in Elementor (see 5.3) | n/a |
 | Uploads | `uploads/open-frame/fonts/{site}/` | Font files of the imported site | n/a |
 
 `_ofss_uid` is the stable identity of an object inside a package (for example `business:page:home`). It is what makes imports idempotent, re-imports safe and rollback exact. `_ofss_hash` is the hash of the content as imported, so a re-import can tell "untouched" from "edited by the user".
@@ -366,7 +366,7 @@ The split puts the sites that gain most from Theme Builder in the Pro tier: the 
 | Part of a site | Elementor free + companion plugin | With Elementor Pro |
 | --- | --- | --- |
 | All content pages (home, about, services, …) | Editable in Elementor | Same |
-| Header, footer | Editable in Elementor as **Site Parts** (`of_site_part`, rendered through the theme hooks) | Theme Builder templates take priority if the user creates them |
+| Header, footer | Editable in Elementor as **Site Parts** (`ofss_site_part`, rendered through the theme hooks) | Theme Builder templates take priority if the user creates them |
 | 404 page | Editable in Elementor as a Site Part | Theme Builder 404 takes priority |
 | Navigation menu | The "Navigation Menu (Open Frame)" widget of the companion plugin (`of-nav-menu`): it prints the theme's primary menu, with the theme's mobile menu and keyboard support, and has Elementor controls for alignment, typography and colors | Pro's Nav Menu widget can replace it |
 | Site logo, post grid, search form | Planned widgets, not built yet. Business uses a heading for its wordmark and the theme's blog templates | Pro widgets can replace them |

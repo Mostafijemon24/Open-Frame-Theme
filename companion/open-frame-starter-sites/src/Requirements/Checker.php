@@ -238,7 +238,8 @@ class Checker {
 			case 'install':
 				return current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) && wp_is_file_mod_allowed( 'ofss_install_plugin' );
 			case 'update':
-				return current_user_can( 'update_plugins' ) && wp_is_file_mod_allowed( 'ofss_update_plugin' );
+				// An update ends with the plugin active, as an installation does.
+				return current_user_can( 'update_plugins' ) && current_user_can( 'activate_plugin', $file ) && wp_is_file_mod_allowed( 'ofss_update_plugin' );
 			case 'activate':
 				return current_user_can( 'activate_plugin', $file );
 			default:

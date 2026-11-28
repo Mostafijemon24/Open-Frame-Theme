@@ -590,6 +590,30 @@ ofss_check( 'the current imported version shows no update', false === $sites['bu
 delete_option( 'ofss_active_site' );
 
 /* ---------------------------------------------------------------------- */
+ofss_section( 'Site parts of version 1.0.0' );
+
+// Version 1.0.0 stored a design's header, footer and "not found" page under a
+// post type with a two-letter prefix. 1.0.1 renames them once, the trashed ones too.
+$ofss_parts = new OpenFrame\StarterSites\SiteParts\SiteParts( new OpenFrame\StarterSites\Elementor\Adapter() );
+$ofss_old   = wp_insert_post( array( 'post_type' => 'of_site_part', 'post_status' => 'publish', 'post_title' => 'Old header' ) );
+$ofss_bin   = wp_insert_post( array( 'post_type' => 'of_site_part', 'post_status' => 'trash', 'post_title' => 'Old footer in the trash' ) );
+$ofss_page  = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'A page of the site' ) );
+update_post_meta( $ofss_old, '_ofss_location', 'header' );
+delete_option( 'ofss_site_part_type' );
+$ofss_parts->rename_old_parts();
+ofss_check( 'a site part of 1.0.0 gets the new post type and keeps its content and its place', 'ofss_site_part' === get_post_type( $ofss_old ) && 'Old header' === get_post( $ofss_old )->post_title && 'header' === get_post_meta( $ofss_old, '_ofss_location', true ) );
+ofss_check( 'a site part in the trash is renamed too, and stays in the trash', 'ofss_site_part' === get_post_type( $ofss_bin ) && 'trash' === get_post_status( $ofss_bin ) );
+ofss_check( 'other content is not touched', 'page' === get_post_type( $ofss_page ) );
+ofss_check( 'the renaming is remembered and not repeated', 'ofss_site_part' === get_option( 'ofss_site_part_type' ) );
+$ofss_late = wp_insert_post( array( 'post_type' => 'of_site_part', 'post_status' => 'publish', 'post_title' => 'Made by hand afterwards' ) );
+$ofss_parts->rename_old_parts();
+ofss_check( 'a second run does nothing', 'of_site_part' === get_post_type( $ofss_late ) );
+ofss_check( 'site parts stay out of the XML sitemap', ! isset( $ofss_parts->keep_out_of_sitemap( array( 'page' => 1, 'ofss_site_part' => 1 ) )['ofss_site_part'] ) );
+foreach ( array( $ofss_old, $ofss_bin, $ofss_page, $ofss_late ) as $ofss_id ) {
+	wp_delete_post( $ofss_id, true );
+}
+
+/* ---------------------------------------------------------------------- */
 require_once ABSPATH . 'wp-admin/includes/user.php';
 wp_delete_user( $subscriber );
 delete_option( Catalog::OPTION );

@@ -362,6 +362,7 @@ class Runner {
 				'elementor_active_kit'   => get_option( 'elementor_active_kit' ),
 				'elementor_previous_kit' => get_option( 'elementor_previous_kit' ),
 				'theme_mods'             => get_option( 'theme_mods_' . get_stylesheet() ),
+				'stylesheet'             => get_stylesheet(),
 				'active_site'            => get_option( 'ofss_active_site' ),
 			),
 			false
@@ -894,6 +895,20 @@ class Runner {
 		$elements = $resolver->resolve( (array) ( $data['elementor']['content'] ?? array() ) );
 		$settings = $resolver->resolve( (array) ( $data['elementor']['page_settings'] ?? array() ) );
 
+		// Checked once more as it will be stored: a reference that resolves to
+		// nothing must not join two harmless halves into something that runs.
+		$problems = ( new ContentGuard() )->problems( $elements, $settings );
+		if ( $problems ) {
+			return new WP_Error(
+				'ofss_refused_content',
+				sprintf(
+					/* translators: %s: what was found, in technical words. */
+					__( 'The import was stopped, because a page of this design contains something the plugin does not accept (%s). Roll the import back to remove what was added, and please report this to the makers of the design.', 'open-frame-starter-sites' ),
+					implode( ', ', $problems )
+				)
+			);
+		}
+
 		if ( 'templates' !== $match[1] ) {
 			$settings['template'] = get_post_meta( $post_id, '_wp_page_template', true );
 		}
@@ -1040,6 +1055,9 @@ class Runner {
 					continue;
 				}
 				$value = $mods[ $key ];
+				if ( ! is_scalar( $value ) ) {
+					continue;
+				}
 				if ( is_bool( $default ) ) {
 					$value = (bool) $value;
 				} elseif ( is_int( $default ) ) {

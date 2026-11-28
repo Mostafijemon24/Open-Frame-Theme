@@ -139,6 +139,16 @@ class Package {
 	}
 
 	/**
+	 * Flag that opens an archive for reading only, where the server knows it
+	 * (PHP 7.4.3 with libzip 1.0). The archive is only ever read either way.
+	 *
+	 * @return int
+	 */
+	private static function read_only() {
+		return defined( 'ZipArchive::RDONLY' ) ? ZipArchive::RDONLY : 0;
+	}
+
+	/**
 	 * Check that a downloaded package holds exactly the files the manifest lists.
 	 *
 	 * @param string $zip_path Package file.
@@ -149,7 +159,7 @@ class Package {
 		$damaged = new WP_Error( 'ofss_damaged_download', __( 'The package of this design is damaged or was altered, so it was not used. Please try again.', 'open-frame-starter-sites' ) );
 
 		$zip = new ZipArchive();
-		if ( true !== $zip->open( $zip_path, ZipArchive::RDONLY ) ) {
+		if ( true !== $zip->open( $zip_path, self::read_only() ) ) {
 			return $damaged;
 		}
 
@@ -180,7 +190,7 @@ class Package {
 		}
 
 		$zip = new ZipArchive();
-		if ( true !== $zip->open( $zip_path, ZipArchive::RDONLY ) ) {
+		if ( true !== $zip->open( $zip_path, self::read_only() ) ) {
 			return $damaged;
 		}
 		$body = $zip->getFromName( $name, $files[ $name ]['bytes'] + 1 );

@@ -40,7 +40,18 @@ class ContentGuard {
 	/**
 	 * Markup and addresses that run script, load another document or restyle the page.
 	 */
-	const SCRIPT = '/<\s*(script|iframe|object|embed|style|link|meta|base)\b|javascript:|vbscript:|data:text\/html|\son[a-z]+\s*=/i';
+	const SCRIPT = '/<\s*(script|iframe|object|embed|style|link|meta|base|form|svg|math)\b|javascript:|vbscript:|data:text\/html|[\s\/"\'`]on[a-z]+\s*=/i';
+
+	/**
+	 * Addresses that run script, looked for once more with the spaces and control
+	 * characters removed that a browser ignores inside them.
+	 */
+	const SCHEME = '/(?:javascript|vbscript):|data:text\/html/i';
+
+	/**
+	 * Elementor's dynamic tag that runs a shortcode: the "shortcode" widget by another door.
+	 */
+	const DYNAMIC_SHORTCODE = '/\[elementor-tag\b[^\]]*\bname=["\']?shortcode\b/i';
 
 	/**
 	 * What is wrong with the content of one document; empty when it can be stored.
@@ -101,7 +112,7 @@ class ContentGuard {
 	 */
 	private function scan( $value, array &$problems ) {
 		if ( is_string( $value ) ) {
-			if ( preg_match( self::SCRIPT, $value ) ) {
+			if ( $this->carries_script( $value ) ) {
 				$problems[] = 'script or embedded markup in a text';
 			}
 			return;
@@ -117,6 +128,36 @@ class ContentGuard {
 			}
 			$this->scan( $item, $problems );
 		}
+	}
+
+	/**
+	 * Whether a text carries script, in any of the spellings a browser accepts.
+	 *
+	 * The text is checked as written, with its character references resolved
+	 * ("&#x6a;avascript:"), and, where it holds a dynamic tag, with the tag's
+	 * URL-encoded settings decoded.
+	 *
+	 * @param string $value Text.
+	 * @return bool
+	 */
+	private function carries_script( $value ) {
+		$readings = array( $value, html_entity_decode( $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+
+		if ( false !== strpos( $value, '[elementor-tag' ) ) {
+			if ( preg_match( self::DYNAMIC_SHORTCODE, $value ) ) {
+				return true;
+			}
+			$readings[] = rawurldecode( $value );
+			$readings[] = html_entity_decode( rawurldecode( $value ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+		}
+
+		foreach ( array_unique( $readings ) as $reading ) {
+			if ( preg_match( self::SCRIPT, $reading ) || preg_match( self::SCHEME, (string) preg_replace( '/[\x00-\x20]+/', '', $reading ) ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

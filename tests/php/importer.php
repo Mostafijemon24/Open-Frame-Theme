@@ -495,10 +495,41 @@ $hostile = array(
 	'CSS written by hand for the page' => array( $widget( 'heading', array( 'title' => 'Hi' ) ), array( 'custom_css' => 'body{display:none}' ) ),
 	'an element of an unknown kind'    => array( array( array( 'elType' => 'e-code', 'settings' => array() ) ), array() ),
 	'a widget without a proper name'   => array( $widget( '../html' ), array() ),
+	// Spellings a browser accepts and a simple search misses.
+	'an event handler with no space before it' => array( $widget( 'text-editor', array( 'editor' => '<img src="x"onerror="go()">' ) ), array() ),
+	'an event handler after a slash'   => array( $widget( 'text-editor', array( 'editor' => '<img/onerror=go() src=x>' ) ), array() ),
+	'a javascript: link written with a numeric character reference' => array( $widget( 'button', array( 'link' => array( 'url' => 'jav&#x61;script:alert(1)' ) ) ), array() ),
+	'a javascript: link written with a named character reference' => array( $widget( 'button', array( 'link' => array( 'url' => 'javascript&colon;alert(1)' ) ) ), array() ),
+	'a javascript: link with a tab inside the word' => array( $widget( 'button', array( 'link' => array( 'url' => "java\tscript:alert(1)" ) ) ), array() ),
+	'a form that sends what is typed elsewhere' => array( $widget( 'text-editor', array( 'editor' => '<form action="https://x.example/"><input name="q"></form>' ) ), array() ),
+	'an inline SVG'                    => array( $widget( 'text-editor', array( 'editor' => '<svg><a href="#">x</a></svg>' ) ), array() ),
+	'a dynamic tag that runs a shortcode' => array( $widget( 'heading', array( 'title' => 'Hi', '__dynamic__' => array( 'title' => '[elementor-tag id="a1b2c3d" name="shortcode" settings="%7B%22shortcode%22%3A%22%5Bx%5D%22%7D"]' ) ) ), array() ),
+	'script in the settings of a dynamic tag' => array( $widget( 'heading', array( 'title' => 'Hi', '__dynamic__' => array( 'title' => '[elementor-tag id="a1b2c3d" name="post-title" settings="%7B%22before%22%3A%22%3Cscript%3Ego()%3C%2Fscript%3E%22%7D"]' ) ) ), array() ),
 );
 foreach ( $hostile as $label => $content ) {
 	ofss_check( "$label is refused", array() !== $guard->problems( $content[0], $content[1] ) );
 }
+// Two harmless halves around a reference that resolves to nothing: the content is
+// checked again after the references are filled in, which is how it is stored.
+$joined = ( new OpenFrame\StarterSites\Import\TokenResolver( array(), array(), '', array() ) )->resolve(
+	$widget( 'text-editor', array( 'editor' => '<scrofss://page/zIPT src="//x.example/a.js"></scrofss://page/zIPT><img src=x onofss://page/zERROR=go()>' ) )
+);
+ofss_check( 'script joined together by a reference that resolves to nothing is refused once the references are filled in', array() !== $guard->problems( $joined, array() ) );
+
+// The stricter search must not refuse what the designs really contain.
+$guard_refused   = array();
+$guard_documents = 0;
+foreach ( glob( dirname( __DIR__, 2 ) . '/starter-sites/*/content/{pages,site-parts,templates}/*.json', GLOB_BRACE ) as $guard_source ) {
+	$guard_document  = json_decode( file_get_contents( $guard_source ), true );
+	$guard_elementor = is_array( $guard_document['elementor'] ?? null ) ? $guard_document['elementor'] : array();
+	$guard_found     = $guard->problems( (array) ( $guard_elementor['content'] ?? array() ), (array) ( $guard_elementor['page_settings'] ?? array() ) );
+	if ( $guard_found ) {
+		$guard_refused[] = basename( dirname( $guard_source, 3 ) ) . '/' . basename( $guard_source ) . ': ' . implode( ', ', $guard_found );
+	}
+	++$guard_documents;
+}
+ofss_check( "every page, site part and template of the ten designs is accepted ($guard_documents documents)" . ( $guard_refused ? ': ' . implode( '; ', array_slice( $guard_refused, 0, 5 ) ) : '' ), $guard_documents > 100 && array() === $guard_refused );
+
 ofss_check( 'an ordinary page is accepted, with an empty attributes field as Elementor writes it', array() === $guard->problems( $widget( 'button', array( 'text' => 'Go on, then = fine', 'link' => array( 'url' => 'https://example.com/', 'custom_attributes' => '' ) ) ), array( 'hide_title' => 'yes' ) ) );
 
 // The same from the outside: an import of such a package stops before a single page exists.

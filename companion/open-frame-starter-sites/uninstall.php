@@ -51,6 +51,6 @@ if ( is_dir( $ofss_work ) ) {
 	}
 }
 
-foreach ( array( 'ofss_catalog', 'ofss_history', 'ofss_active_site', 'ofss_settings', 'ofss_import_state' ) as $ofss_option ) {
+foreach ( array( 'ofss_catalog', 'ofss_history', 'ofss_active_site', 'ofss_settings', 'ofss_import_state', 'ofss_site_part_type' ) as $ofss_option ) {
 	delete_option( $ofss_option );
 }

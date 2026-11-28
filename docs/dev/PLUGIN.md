@@ -11,7 +11,7 @@ Related documents: the design of the whole system and the reasons behind it are 
 | Folder | `companion/open-frame-starter-sites` |
 | Namespace | `OpenFrame\StarterSites`, PSR-4 under `src/`, loaded by the plugin's own autoloader (no Composer at run time) |
 | Text domain | `open-frame-starter-sites`, template in `languages/open-frame-starter-sites.pot` |
-| Prefixes | Options, transients, hooks and error codes `ofss_`; post and term meta `_ofss_`; post type `of_site_part` |
+| Prefixes | Options, transients, hooks and error codes `ofss_`; post and term meta `_ofss_`; post type `ofss_site_part` |
 | Requires | WordPress 6.4, PHP 7.4, the Open Frame theme as the active (parent) theme |
 | JavaScript | One file, `assets/admin/app.js`, written against `wp.element`, `wp.components`, `wp.apiFetch` and `wp.i18n`. No build step |
 | Custom tables | None |
@@ -171,7 +171,7 @@ The routes exist for the plugin's own screen. They are stable enough to script a
 | Post meta | `_ofss_source_hash` | On attachments: the SHA-256 of the source file, so that a picture is not downloaded twice |
 | Post meta | `_ofss_location` | On a Site Part: `header`, `footer` or `404` |
 | Term meta | `_ofss_site`, `_ofss_uid`, `_ofss_run` | On imported categories and menus |
-| Post type | `of_site_part` | Site Parts |
+| Post type | `ofss_site_part` | Site Parts |
 | Files | `wp-content/uploads/open-frame-fonts/` | Font files, named by their SHA-256 |
 | Files | `wp-content/uploads/open-frame-starter-sites/` | Working folder of a run that is in progress; removed when it ends |
 
@@ -181,7 +181,7 @@ Settings of WordPress, the theme and Elementor that an import changes, and a rol
 
 ## Site Parts and the theme
 
-For designs made with free Elementor, the header, footer and 404 page are posts of the type `of_site_part`, edited in Elementor. The plugin shows them through two filters of the theme (since Open Frame 1.1.0):
+For designs made with free Elementor, the header, footer and 404 page are posts of the type `ofss_site_part`, edited in Elementor. The plugin shows them through two filters of the theme (since Open Frame 1.1.0):
 
 - `open_frame_has_location` — whether something replaces a location (`header`, `footer`, `single`, `archive`, `404`);
 - `open_frame_do_location` — prints the replacement and returns `true`.

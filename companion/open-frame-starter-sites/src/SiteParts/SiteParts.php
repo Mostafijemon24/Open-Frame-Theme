@@ -23,7 +23,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class SiteParts {
 
-	const POST_TYPE     = 'of_site_part';
+	const POST_TYPE     = 'ofss_site_part';
+	const OLD_POST_TYPE = 'of_site_part'; // Its name in version 1.0.0.
 	const LOCATION_META = '_ofss_location';
 	const LOCATIONS     = array( 'header', 'footer', '404' );
 
@@ -57,6 +58,8 @@ class SiteParts {
 	 */
 	public function register() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
+		add_action( 'init', array( $this, 'rename_old_parts' ), 11 );
+		add_filter( 'wp_sitemaps_post_types', array( $this, 'keep_out_of_sitemap' ) );
 		add_action( 'template_redirect', array( $this, 'hide_from_visitors' ) );
 		add_filter( 'open_frame_has_location', array( $this, 'has_location' ), 20, 2 );
 		add_filter( 'open_frame_do_location', array( $this, 'do_location' ), 20, 2 );
@@ -99,6 +102,56 @@ class SiteParts {
 				'supports'            => array( 'title', 'elementor' ),
 			)
 		);
+	}
+
+	/**
+	 * Give the site parts of version 1.0.0 the name the post type has now.
+	 *
+	 * Runs once: the option remembers that it was done.
+	 *
+	 * @return void
+	 */
+	public function rename_old_parts() {
+		if ( self::POST_TYPE === get_option( 'ofss_site_part_type' ) ) {
+			return;
+		}
+
+		$old = get_posts(
+			array(
+				'post_type'   => self::OLD_POST_TYPE,
+				'post_status' => 'any',
+				'numberposts' => -1,
+				'fields'      => 'ids',
+			)
+		);
+		// "any" leaves out the trash, and a site part in the trash can be restored.
+		$trashed = get_posts(
+			array(
+				'post_type'   => self::OLD_POST_TYPE,
+				'post_status' => 'trash',
+				'numberposts' => -1,
+				'fields'      => 'ids',
+			)
+		);
+
+		foreach ( array_merge( $old, $trashed ) as $post_id ) {
+			set_post_type( $post_id, self::POST_TYPE );
+		}
+
+		$this->forget();
+		update_option( 'ofss_site_part_type', self::POST_TYPE );
+	}
+
+	/**
+	 * Leave the site parts out of the XML sitemap: they have no page of their own.
+	 *
+	 * @param \WP_Post_Type[] $post_types Post types of the sitemap, by name.
+	 * @return \WP_Post_Type[]
+	 */
+	public function keep_out_of_sitemap( $post_types ) {
+		unset( $post_types[ self::POST_TYPE ] );
+
+		return $post_types;
 	}
 
 	/**

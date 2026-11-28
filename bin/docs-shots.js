@@ -197,7 +197,7 @@ const wanted = ( name ) => ! only.length || only.includes( name );
 	}
 
 	if ( wanted( 'starter-sites-site-parts' ) ) {
-		await page.goto( BASE + '/wp-admin/edit.php?post_type=of_site_part' );
+		await page.goto( BASE + '/wp-admin/edit.php?post_type=ofss_site_part' );
 		await page.locator( '#the-list tr' ).first().hover();
 		await shoot( page, 'starter-sites-site-parts', [
 			[ '#adminmenu .wp-submenu li.current a', 1, 'tr' ],

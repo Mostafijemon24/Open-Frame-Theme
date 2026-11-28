@@ -141,10 +141,13 @@ class Rollback {
 		if ( is_array( $snapshot ) ) {
 			$this->restore( $snapshot, array( 'show_on_front', 'page_on_front', 'page_for_posts' ) );
 
+			// To the theme they were taken from, which need not be the active one
+			// any more (a child theme activated since). Snapshots of 1.0.0 do not name it.
+			$stylesheet = isset( $snapshot['stylesheet'] ) && is_string( $snapshot['stylesheet'] ) && '' !== $snapshot['stylesheet'] ? $snapshot['stylesheet'] : get_stylesheet();
 			if ( is_array( $snapshot['theme_mods'] ) ) {
-				update_option( 'theme_mods_' . get_stylesheet(), $snapshot['theme_mods'] );
+				update_option( 'theme_mods_' . $stylesheet, $snapshot['theme_mods'] );
 			} else {
-				delete_option( 'theme_mods_' . get_stylesheet() );
+				delete_option( 'theme_mods_' . $stylesheet );
 			}
 
 			if ( is_array( $snapshot['active_site'] ) ) {
