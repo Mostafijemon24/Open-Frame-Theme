@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Frame 1.1.0\n"
+"Project-Id-Version: Open Frame 1.2.0\n"
 "POT-Creation-Date: 2026-11-26T09:00:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -749,4 +749,501 @@ msgstr ""
 
 #: inc/integrations/elementor.php
 msgid "Open Frame (bundled)"
+msgstr ""
+
+#: inc/integrations/starter-sites.php
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Starter Sites is ready"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Open Starter Sites"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Look through the designs, see what each one needs and import the one you like. Every import can be rolled back."
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "The designs are made with Elementor, which is not active on this site. Starter Sites shows what each design needs and installs it only when you ask it to."
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Start with a complete website"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Activate Starter Sites"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/integrations/starter-sites-notice.php
+#, php-format
+msgid "%s is installed but not active. Activate it to look through professionally designed websites made with Elementor and import one in a few clicks."
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Install Starter Sites"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/integrations/starter-sites-notice.php
+#, php-format
+msgid "%s is a free, optional plugin with professionally designed websites made with Elementor. Preview a design, import the complete website in a few clicks, and roll the import back if you change your mind."
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Dismiss"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Installing…"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Installed. Reloading the page…"
+msgstr ""
+
+#: inc/integrations/starter-sites-notice.php
+msgid "Try again"
+msgstr ""
+
+#. translators: %s: the reason WordPress gave.
+#: inc/integrations/starter-sites-notice.php
+#, php-format
+msgid "The plugin could not be installed: %s"
+msgstr ""
+
+#. translators: %s: the reason WordPress gave.
+#: inc/integrations/starter-sites-notice.php
+msgid "The plugin could not be installed. Check the connection of your site and try again."
+msgstr ""
+
+#. translators: %s: the reason WordPress gave.
+#: inc/integrations/starter-sites-notice.php
+msgid "WordPress could not get this plugin from the WordPress.org Plugin Directory. It may not be published there yet, or WordPress.org cannot be reached from this site at the moment. Nothing was installed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Dismiss this notice"
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Update Required"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Required"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Recommended"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "External Source"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Not Installed"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Active"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Requires Update"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Installed version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Available version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Plugin"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Source"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Type"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Version"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Install"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Update"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Activate"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Show Details"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "Hide Details"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/tgmpa/class-tgm-plugin-activation.php
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""

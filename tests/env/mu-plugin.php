@@ -60,6 +60,61 @@ if ( defined( 'OFT_CA_BUNDLE' ) && OFT_CA_BUNDLE && is_readable( OFT_CA_BUNDLE )
 		2
 	);
 }
+// The theme's recommendation of the companion plugin (tests/e2e/recommendation.test.js).
+// The option `oft_starter_slug` plays the part of the line in functions.php that names
+// the plugin's slug in the WordPress.org Plugin Directory; without it the placeholder stands.
+$open_frame_starter_slug = (string) get_option( 'oft_starter_slug', '' );
+if ( '' !== $open_frame_starter_slug ) {
+	define( 'OPEN_FRAME_STARTER_PLUGIN_SLUG', $open_frame_starter_slug );
+}
+
+// Whether the plugin installer was loaded for a visitor, as a comment at the end of the page.
+add_action(
+	'wp_footer',
+	function () {
+		echo '<!-- oft-installer:', class_exists( 'TGM_Plugin_Activation', false ) ? 'loaded' : 'absent', ' -->';
+	}
+);
+
+// What the directory answers for that slug. Empty: whatever WordPress.org really says.
+//   "zip:<path>"  the plugin is listed and this file is its download, for trying the
+//                 whole journey before the plugin is published
+//   "down"        WordPress.org cannot be reached
+$open_frame_directory = (string) get_option( 'oft_directory', '' );
+if ( 0 === strpos( $open_frame_directory, 'zip:' ) ) {
+	add_filter(
+		'plugins_api',
+		function ( $result, $action, $args ) use ( $open_frame_directory, $open_frame_starter_slug ) {
+			if ( 'plugin_information' !== $action || ! isset( $args->slug ) || $args->slug !== $open_frame_starter_slug ) {
+				return $result;
+			}
+			return (object) array(
+				'name'          => 'Open Frame Starter Sites',
+				'slug'          => $args->slug,
+				'version'       => '0.0.0-test',
+				'requires'      => '6.4',
+				'requires_php'  => '7.4',
+				'download_link' => substr( $open_frame_directory, 4 ),
+			);
+		},
+		10,
+		3
+	);
+} elseif ( 'down' === $open_frame_directory ) {
+	add_filter(
+		'pre_http_request',
+		function ( $response, $args, $url ) {
+			if ( 'api.wordpress.org' === wp_parse_url( $url, PHP_URL_HOST ) ) {
+				return new WP_Error( 'http_request_failed', 'Could not resolve host: api.wordpress.org' );
+			}
+			return $response;
+		},
+		10,
+		3
+	);
+}
+
+
 $open_frame_fake = (string) get_option( 'oft_fake_locations', '' );
 if ( '' === $open_frame_fake ) {
 	return;

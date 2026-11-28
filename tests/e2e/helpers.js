@@ -169,14 +169,14 @@ function engineNoise( message ) {
 		|| ( engine === 'firefox' && /^can't convert undefined to object$|frontendIndex is undefined/.test( message ) );
 }
 
-/** Log in as the administrator. */
-async function login( page ) {
+/** Log in as the administrator, or as another user of the test site (password "password"). */
+async function login( page, user = 'admin' ) {
 	// Tried twice: the test site answers one request at a time, and now and then the login
 	// waits behind a request the page before it left unfinished (seen in Firefox only).
 	for ( let attempt = 1; ; attempt++ ) {
 		try {
 			await page.goto( BASE + '/wp-login.php' );
-			await page.fill( '#user_login', 'admin' );
+			await page.fill( '#user_login', user );
 			await page.fill( '#user_pass', 'password' );
 			// Until the dashboard's own markup is there, not until its last picture has loaded: the
 			// dashboard asks another site for the user's avatar, and where that site cannot be reached

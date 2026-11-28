@@ -1,0 +1,30 @@
+/*
+ * Open Frame: the notice that recommends the Starter Sites plugin.
+ * Loaded only on the admin screens that show it.
+ */
+.open-frame-starter-notice .open-frame-starter-notice__title {
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.open-frame-starter-notice .open-frame-starter-notice__title + p {
+	margin-top: 2px;
+	max-width: 80ch;
+}
+
+.open-frame-starter-notice .open-frame-starter-notice__result {
+	max-width: 80ch;
+	font-weight: 600;
+}
+
+.open-frame-starter-notice .open-frame-starter-notice__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+}
+
+.open-frame-starter-notice .open-frame-starter-notice__main[aria-disabled="true"] {
+	pointer-events: none;
+	opacity: 0.8;
+}
