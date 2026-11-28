@@ -74,7 +74,7 @@ An independent review read every file of the plugin against the directory's guid
 
 | Found | Done |
 | --- | --- |
-| The readme named Cloudflare's terms and privacy policy but none for your own library service | "External services" rewritten: who runs the service, what goes to which host, and a link to its terms of use and privacy policy. **That text is new and is published in your name: please read it** ([docs/SUPPORT.md](docs/SUPPORT.md#the-library-service)) |
+| The readme named Cloudflare's terms and privacy policy but none for your own library service | "External services" rewritten: who runs the service, what goes to which host, and a link to its terms of use and privacy policy. That text is new and is published in your name ([docs/SUPPORT.md](docs/SUPPORT.md#the-library-service)). **You read and agreed it on 28 November 2026** |
 | The readme said the site's address is never sent, but a browser tells the image server which page asked | Preview pictures are now requested without a referrer, so the sentence is true |
 | The check that refuses script in a design could be passed by a correctly signed package, with script written in unusual spellings | The check is stricter (character references, handlers without a space, forms, inline SVG, shortcode dynamic tags) and runs a second time just before each page is stored. All 133 documents of the ten designs still pass it |
 | The post type `of_site_part` has a two-letter prefix; reviewers ask for four | Renamed to `ofss_site_part`. Site parts made by 1.0.0 are renamed once, automatically |
@@ -123,7 +123,7 @@ The full report is in [docs/dev/TESTING.md](docs/dev/TESTING.md#the-theme-recomm
 
 | Question | Answer |
 | --- | --- |
-| Is the plugin ready to be submitted? | **Yes**, once you have read the library's terms and privacy text and confirmed your WordPress.org user name |
+| Is the plugin ready to be submitted? | **Yes.** On 28 November 2026 you read and agreed the library's terms and privacy text, and confirmed that `mostafijemon` is your WordPress.org user name |
 | Is the plugin approved or published? | **No.** Not submitted. Approval is a manual review by WordPress.org and usually takes days to weeks, often with questions |
 | What is the plugin's official slug? | **Unknown, pending.** It will probably be `open-frame-starter-sites`, but WordPress.org decides, and I did not put a guess into the code |
 | Is the theme integration ready? | **Yes, and switched off.** It was tested with the slug set; it ships with the placeholder |
@@ -132,11 +132,11 @@ The full report is in [docs/dev/TESTING.md](docs/dev/TESTING.md#the-theme-recomm
 
 ## 6. What you need to do next
 
-In this order. Only steps 4, 5 and 7 need your WordPress.org account; I cannot do them.
+In this order. Steps 1 and 2 are done. Only steps 4, 5 and 7 need your WordPress.org account; I cannot do them.
 
-1. **Read the library's terms of use and privacy policy**: the two short sections under "The library service" in [docs/SUPPORT.md](docs/SUPPORT.md#the-library-service). They are promises in your name. Tell me what to change, or that they are fine.
-2. **Confirm your WordPress.org user name.** Both readme files say `mostafijemon`. If your user name there is different, tell me.
-3. **Tell me to open a pull request** for this branch, look at it, and merge it into `main`. The readme of the plugin links to documents on `main`, so this comes before submitting. If you want GitHub releases of theme 1.2.0 and plugin 1.0.1 as well, say so.
+1. ~~Read the library's terms of use and privacy policy~~ **Done, 28 November 2026:** you read the two sections under "The library service" in [docs/SUPPORT.md](docs/SUPPORT.md#the-library-service) and agreed to them.
+2. ~~Confirm your WordPress.org user name~~ **Done, 28 November 2026:** `mostafijemon`, as both readme files say.
+3. **Merge the pull request** for this branch, [Mostafijemon24/Open-Frame-Theme#1](https://github.com/Mostafijemon24/Open-Frame-Theme/pull/1), into `main`, once its checks are green. The readme of the plugin links to documents on `main`, so this comes before submitting. If you want GitHub releases of theme 1.2.0 and plugin 1.0.1 as well, say so.
 4. **Submit the plugin**: sign in at <https://wordpress.org/plugins/developers/add/> and upload `open-frame-starter-sites-1.0.1.zip`. WordPress.org answers by email.
 5. **Submit the theme**: sign in at <https://wordpress.org/themes/upload/> and upload `open-frame-1.2.0.zip`. It can go at the same time as the plugin.
 6. **Answer the reviewers.** Send me what they write; I prepare the changes and the replies. Likely questions and their answers are in [docs/dev/RELEASE.md](docs/dev/RELEASE.md#e-wordpressorg). One to expect: the plugin needs a theme that is not in the directory yet.
@@ -171,7 +171,7 @@ Both packages were listed and read: no `.git`, no tests, no tools, no keys, no e
 
 ## 8. Commits and branch
 
-Branch `claude/quirky-hawking-lhqgg4`, on top of `49accd8`. `main` was not touched. No pull request was opened, no release was made, nothing was tagged.
+Branch `claude/quirky-hawking-lhqgg4`, on top of `49accd8`. `main` was not touched, no release was made and nothing was tagged. A pull request into `main` was opened on your word on 28 November 2026: [Mostafijemon24/Open-Frame-Theme#1](https://github.com/Mostafijemon24/Open-Frame-Theme/pull/1).
 
 | Commit | What |
 | --- | --- |
@@ -179,6 +179,7 @@ Branch `claude/quirky-hawking-lhqgg4`, on top of `49accd8`. `main` was not touch
 | `e994e8d` | Plugin 1.0.1: prepared for submission to the WordPress.org Plugin Directory |
 | `6e4cb7b` | Theme 1.2.0: the Starter Sites plugin as a recommended plugin, through TGM Plugin Activation |
 | `26a232f` | Theme: one dismissible notice that offers to install, activate or open Starter Sites |
-| the commit that adds this file | Guides, integration document, checklists, test report and this report |
+| `6e6df23` | Guides, integration document, checklists, test report and this report |
+| the commit after it | Your two confirmations of 28 November 2026, recorded in the documents |
 
 No credentials, keys or tokens are in any of them. The library's signing key was never on this machine.

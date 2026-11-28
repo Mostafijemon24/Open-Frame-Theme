@@ -11,7 +11,7 @@ Prepared on the branch `claude/quirky-hawking-lhqgg4`, **not released and not me
 | Product | Version | State |
 | --- | --- | --- |
 | **Open Frame** (theme) | 1.2.0 | Recommends the Starter Sites plugin through TGM Plugin Activation and one notice. **The plugin's WordPress.org slug is a placeholder**, so this version recommends nothing yet. How it works and what switches it on: [INTEGRATION.md](INTEGRATION.md) |
-| **Open Frame Starter Sites** (plugin) | 1.0.1 | What an independent review for WordPress.org found is fixed: the check for script in a design is stricter, the post type has a four-letter prefix, the readme names the library's terms and privacy policy. Ready to be submitted once the owner has read those terms |
+| **Open Frame Starter Sites** (plugin) | 1.0.1 | What an independent review for WordPress.org found is fixed: the check for script in a design is stricter, the post type has a four-letter prefix, the readme names the library's terms and privacy policy. **Owner, 28 November 2026:** the library's terms of use and privacy policy are read and agreed, and `mostafijemon` is the WordPress.org user name. Ready to be submitted once the branch is merged |
 
 Checklists for both submissions are in [INTEGRATION.md](INTEGRATION.md); what was tested is in [TESTING.md](TESTING.md); the summary for the owner is [FINAL_INTEGRATION_REPORT.md](../../FINAL_INTEGRATION_REPORT.md).
 

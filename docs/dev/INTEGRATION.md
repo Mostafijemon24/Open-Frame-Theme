@@ -134,14 +134,14 @@ Submit at <https://wordpress.org/plugins/developers/add/> from the owner's accou
 | P1 | GPL-compatible licence, stated in the header and the readme; `LICENSE` in the package | Done |
 | P2 | Stable tag, header version and `OFSS_VERSION` agree | Done (checked by `bin/release-package.sh`) |
 | P3 | readme.txt: at most five tags, short description under 150 characters, "Tested up to" current | Done |
-| P4 | "External services": what, when, what is sent, where, and the service's own terms and privacy policy | Done; the terms and privacy text is in [docs/SUPPORT.md](../SUPPORT.md#the-library-service) and **has to be read and agreed by the owner**, and be on `main`, before submitting |
+| P4 | "External services": what, when, what is sent, where, and the service's own terms and privacy policy | Done; the terms and privacy text is in [docs/SUPPORT.md](../SUPPORT.md#the-library-service) **Owner, 28 November 2026:** read and agreed. It has to be on `main` before submitting, because the readme links to it there |
 | P5 | Nothing downloaded is executed: a design is data, the catalog is signed, every file is checked, the ZIP is never extracted, script in a page is refused | Done, with tests |
 | P6 | Every REST route checks a capability; requests carry WordPress's nonce; output is escaped | Done (independent review, 28 November 2026) |
 | P7 | Other plugins are installed only from WordPress.org, only on a click, with capability checks | Done |
 | P8 | Unique prefixes of four characters or more (`ofss_`, `OFSS_`, namespace `OpenFrame\StarterSites`) | Done; the post type was renamed to `ofss_site_part` in 1.0.1 |
 | P9 | No tracking, no account, no licence check, no upsell | Done |
 | P10 | Plugin Check on the package | See the test report |
-| P11 | The WordPress.org user name in `Contributors:` is the owner's real user name there | **Owner to confirm** (`mostafijemon`) |
+| P11 | The WordPress.org user name in `Contributors:` is the owner's real user name there | **Owner, 28 November 2026:** confirmed, `mostafijemon` |
 | P12 | Banner, icon and screenshots (`.wordpress-org/`) | Done; they go into the `assets` folder of the SVN repository after approval |
 | P13 | The plugin needs a theme that is not in the directory yet | Open: the readme says where to get the theme. A reviewer may still ask. Submitting the theme at the same time helps |
 
