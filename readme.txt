@@ -4,7 +4,7 @@ Contributors: mostafijemon
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, portfolio, e-commerce, one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, sticky-post, block-patterns, block-styles, wide-blocks
@@ -48,9 +48,13 @@ The theme is fully functional on its own: it needs no plugin, bundles its fonts 
 
 No. Every feature is part of the theme.
 
+The theme recommends one optional plugin, Open Frame Starter Sites, which adds complete websites made with Elementor that you can import. The recommendation is a single notice on the Dashboard, Themes and Plugins screens, shown once that plugin is listed in the WordPress.org Plugin Directory. It can be dismissed and then stays away. Nothing is installed or activated unless you click the button, and the theme works the same without the plugin.
+
 = Does Open Frame make remote requests? =
 
 No. The fonts are bundled with the theme and served from your own site. The theme contains no tracking and calls no external service.
+
+If you choose to install the recommended plugin with the button in the theme's notice, WordPress itself downloads it from WordPress.org, exactly as it does under Plugins > Add Plugin. Nothing is requested before you click.
 
 = How do I build a home page? =
 
@@ -85,6 +89,13 @@ Yes. Activate WooCommerce and the shop, product, cart, checkout and account page
 The full documentation, with screenshots, is available at https://github.com/Mostafijemon24/Open-Frame-Theme/tree/main/docs
 
 == Changelog ==
+
+= 1.2.0 =
+* New: the theme can recommend its optional companion plugin, Open Frame Starter Sites, which adds complete websites made with Elementor. One notice on the Dashboard, Themes and Plugins screens offers the step that fits the site: install the plugin, activate it, or open it. The notice can be dismissed, for good, by each user.
+* New: Appearance > Recommended Plugins, a screen provided by the bundled TGM Plugin Activation library, lists the plugin while it is not installed or not active.
+* The plugin is recommended, never required. It is installed from the WordPress.org Plugin Directory by WordPress's own installer, and only when you click; it is not activated until you click again. No plugin file is bundled with the theme, and the theme does not redirect you after activation.
+* The recommendation is switched on by naming the plugin's WordPress.org slug in functions.php. In this version the slug is still a placeholder, because the plugin is waiting for its review at WordPress.org: no notice and no installer screen are shown, and the installer library is not loaded.
+* The theme still needs no plugin and makes no remote requests of its own.
 
 = 1.1.0 =
 * New: Elementor support. A page built with Elementor on the default template now spans the full width of the window instead of sitting inside the page card. Elementor's "Canvas" and "Full Width" templates are supported, and "Full Width" keeps the main landmark the skip link points to.
@@ -191,6 +202,12 @@ Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/
 License: SIL Open Font License, Version 1.1 — https://openfontlicense.org/open-font-license-official-text/
 Source: https://fonts.google.com/specimen/JetBrains+Mono
 Files: assets/fonts/jetbrains-mono-*.woff2 (license text in assets/fonts/jetbrains-mono-OFL.txt)
+
+TGM Plugin Activation 2.6.1
+Copyright (c) 2011 Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+License: GNU General Public License v2 or later — https://www.gnu.org/licenses/gpl-2.0.html
+Source: https://github.com/TGMPA/TGM-Plugin-Activation
+File: inc/tgmpa/class-tgm-plugin-activation.php (the text domain was changed to the theme's and the library's own translation loader removed, as noted at the top of the file)
 
 Images
 

@@ -9,6 +9,8 @@
 	<exclude-pattern>*/dist/*</exclude-pattern>
 	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/companion/*</exclude-pattern>
+	<!-- TGM Plugin Activation: a bundled library, kept as its authors released it. -->
+	<exclude-pattern>*/inc/tgmpa/*</exclude-pattern>
 
 	<arg name="extensions" value="php"/>
 	<arg name="basepath" value="."/>
