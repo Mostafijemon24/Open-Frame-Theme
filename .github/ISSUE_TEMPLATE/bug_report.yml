@@ -1,0 +1,49 @@
+name: Report a problem
+description: Something in the theme, the Starter Sites plugin or a starter site does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. **Do not report security problems here**: see the Security tab of this repository.
+  - type: dropdown
+    id: product
+    attributes:
+      label: What is it about?
+      options:
+        - Open Frame (theme)
+        - Open Frame Starter Sites (plugin)
+        - A starter site
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead? Screenshots help.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: WordPress, PHP, the theme and, if you use it, the plugin. Elementor and Elementor Pro where they matter.
+      placeholder: WordPress 7.1, PHP 8.3, Open Frame 1.2.0, Starter Sites 1.0.1, Elementor 4.4
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Browser, other active plugins, messages from the PHP error log or the browser console.

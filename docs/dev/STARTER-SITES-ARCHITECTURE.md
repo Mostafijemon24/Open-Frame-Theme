@@ -22,7 +22,7 @@ Contents
 
 ## 0. Repository findings
 
-What exists today (inspected at commit `a2af51f`, 106 tracked files):
+What exists today (inspected on 26 November 2026, at the commit "Release workflow: optional replace of an existing release", 106 tracked files):
 
 | Area | Finding |
 | --- | --- |

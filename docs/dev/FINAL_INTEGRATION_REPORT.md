@@ -1,6 +1,6 @@
 # Final Integration Report
 
-Open Frame (theme) and Open Frame Starter Sites (plugin) · 28 November 2026 · branch `claude/quirky-hawking-lhqgg4`
+Open Frame (theme) and Open Frame Starter Sites (plugin) · 28 November 2026
 
 ## সংক্ষেপে (বাংলায়)
 
@@ -22,8 +22,8 @@ Nothing was rebuilt. The theme now recommends the plugin the way WordPress.org a
 | At the start | |
 | --- | --- |
 | Remote | `https://github.com/Mostafijemon24/Open-Frame-Theme` |
-| Branches | `main` and `claude/quirky-hawking-lhqgg4`, both at the same commit |
-| Original commit | `49accd8759d6d591008ee7dd6691a3a2f94a2223` ("Note that the repository was created anew and the releases published again", 27 November 2026) |
+| Branches | `main` and one working branch, both at the same commit |
+| Last commit before this work | "Note that the repository was created anew and the releases published again", 27 November 2026 |
 | Uncommitted changes | None |
 | History | 60 commits; untouched. Nothing was rewritten, force-pushed or deleted |
 
@@ -62,7 +62,7 @@ Nothing was rebuilt. The theme now recommends the plugin the way WordPress.org a
 | `assets/js/admin-starter-notice.js`, `assets/css/admin-starter-notice.css` | **New.** Install in place, show errors, remember a dismissal |
 | `style.css`, `readme.txt`, `languages/open-frame.pot`, `phpcs.xml.dist`, `.distignore` | Version, changelog, two answers in the FAQ, the library's credit and licence, 102 new translatable strings, tooling |
 
-How it behaves is described, with pictures, in [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md) and in chapter 2 of the [theme guide](docs/README.md#the-recommended-plugin-optional).
+How it behaves is described, with pictures, in [docs/dev/INTEGRATION.md](INTEGRATION.md) and in chapter 2 of the [theme guide](../README.md#the-recommended-plugin-optional).
 
 **A decision I made for you: while the slug is the placeholder, the theme shows nothing.** No notice, no "coming soon". A theme in the WordPress.org directory must only recommend plugins that are in the directory, and a notice about a plugin nobody can install would be noise for users and a likely objection from a reviewer. The status "not available on WordPress.org" (your status E) exists and is tested: it is what the notice says when the slug is set and the directory does not list the plugin or cannot be reached. Say so if you would rather have a visible "coming soon" notice in the meantime.
 
@@ -74,7 +74,7 @@ An independent review read every file of the plugin against the directory's guid
 
 | Found | Done |
 | --- | --- |
-| The readme named Cloudflare's terms and privacy policy but none for your own library service | "External services" rewritten: who runs the service, what goes to which host, and a link to its terms of use and privacy policy. That text is new and is published in your name ([docs/SUPPORT.md](docs/SUPPORT.md#the-library-service)). **You read and agreed it on 28 November 2026** |
+| The readme named Cloudflare's terms and privacy policy but none for your own library service | "External services" rewritten: who runs the service, what goes to which host, and a link to its terms of use and privacy policy. That text is new and is published in your name ([docs/SUPPORT.md](../SUPPORT.md#the-library-service)). **You read and agreed it on 28 November 2026** |
 | The readme said the site's address is never sent, but a browser tells the image server which page asked | Preview pictures are now requested without a referrer, so the sentence is true |
 | The check that refuses script in a design could be passed by a correctly signed package, with script written in unusual spellings | The check is stricter (character references, handlers without a space, forms, inline SVG, shortcode dynamic tags) and runs a second time just before each page is stored. All 133 documents of the ten designs still pass it |
 | The post type `of_site_part` has a two-letter prefix; reviewers ask for four | Renamed to `ofss_site_part`. Site parts made by 1.0.0 are renamed once, automatically |
@@ -92,11 +92,11 @@ Not changed, on purpose: forcing every page through WordPress's HTML filter on i
 - `tests/e2e/recommendation.test.js`: **new**, 15 browser checks of the notice.
 - `tests/env/mu-plugin.php`, `tests/env/state.php`, `tests/e2e/helpers.js`: the test site can answer in the directory's place, so the journey can be rehearsed before the plugin is published.
 - `tests/php/importer.php`, `tests/php/starter-sites.php`, `tests/e2e/starter-sites.test.js`: 18 new checks for the plugin's changes.
-- Documents: this report, [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md) (new, with both submission checklists), [docs/dev/TESTING.md](docs/dev/TESTING.md) (new report at the top), the guides, `CHANGELOG.md`, `README.md`, `PROJECT_STATUS.md`, [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
+- Documents: this report, [docs/dev/INTEGRATION.md](INTEGRATION.md) (new, with both submission checklists), [docs/dev/TESTING.md](TESTING.md) (new report at the top), the guides, `CHANGELOG.md`, `README.md`, `PROJECT_STATUS.md`, [docs/dev/RELEASE.md](RELEASE.md).
 
 ## 4. What was tested
 
-The full report is in [docs/dev/TESTING.md](docs/dev/TESTING.md#the-theme-recommends-the-plugin--test-report). On WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Chromium:
+The full report is in [docs/dev/TESTING.md](TESTING.md#the-theme-recommends-the-plugin--test-report). On WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2, Chromium:
 
 | Check | Result |
 | --- | --- |
@@ -134,12 +134,12 @@ The full report is in [docs/dev/TESTING.md](docs/dev/TESTING.md#the-theme-recomm
 
 In this order. Steps 1 and 2 are done. Only steps 4, 5 and 7 need your WordPress.org account; I cannot do them.
 
-1. ~~Read the library's terms of use and privacy policy~~ **Done, 28 November 2026:** you read the two sections under "The library service" in [docs/SUPPORT.md](docs/SUPPORT.md#the-library-service) and agreed to them.
+1. ~~Read the library's terms of use and privacy policy~~ **Done, 28 November 2026:** you read the two sections under "The library service" in [docs/SUPPORT.md](../SUPPORT.md#the-library-service) and agreed to them.
 2. ~~Confirm your WordPress.org user name~~ **Done, 28 November 2026:** `mostafijemon`, as both readme files say.
-3. **Merge the pull request** for this branch, [Mostafijemon24/Open-Frame-Theme#1](https://github.com/Mostafijemon24/Open-Frame-Theme/pull/1), into `main`, once its checks are green. The readme of the plugin links to documents on `main`, so this comes before submitting. If you want GitHub releases of theme 1.2.0 and plugin 1.0.1 as well, say so.
+3. ~~Put the work on `main`~~ **Done, 28 November 2026**, on your word.
 4. **Submit the plugin**: sign in at <https://wordpress.org/plugins/developers/add/> and upload `open-frame-starter-sites-1.0.1.zip`. WordPress.org answers by email.
 5. **Submit the theme**: sign in at <https://wordpress.org/themes/upload/> and upload `open-frame-1.2.0.zip`. It can go at the same time as the plugin.
-6. **Answer the reviewers.** Send me what they write; I prepare the changes and the replies. Likely questions and their answers are in [docs/dev/RELEASE.md](docs/dev/RELEASE.md#e-wordpressorg). One to expect: the plugin needs a theme that is not in the directory yet.
+6. **Answer the reviewers.** Send me what they write; I prepare the changes and the replies. Likely questions and their answers are in [docs/dev/RELEASE.md](RELEASE.md#e-wordpressorg). One to expect: the plugin needs a theme that is not in the directory yet.
 7. **When the plugin is approved**, WordPress.org sends you its address and an SVN repository. Tell me the slug (the last part of `https://wordpress.org/plugins/<slug>/`). I then put it into `functions.php`, test the real installation from the real directory, and prepare the theme update. Uploading the plugin's files to SVN needs your WordPress.org password; I prepare the folder and the exact commands.
 8. **Upload that theme update** to WordPress.org. From then on your goal is reached: a user activates the theme, sees the recommendation, clicks Install, and imports a website.
 
@@ -152,12 +152,12 @@ Still open from before, unchanged: the manual checks on real devices, changing t
 | A, B | Updated theme and plugin | This branch. One repository holds both |
 | C | Plugin ZIP for WordPress.org | `open-frame-starter-sites-1.0.1.zip`, sent with this report. Built by `bash bin/release-package.sh plugin` |
 | D | Theme ZIP for WordPress.org | `open-frame-1.2.0.zip`, sent with this report. Built by `bash bin/release-package.sh theme` |
-| E | Integration documentation | [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md) |
-| F | Changelogs | [CHANGELOG.md](CHANGELOG.md), and the `== Changelog ==` of both readme files |
+| E | Integration documentation | [docs/dev/INTEGRATION.md](INTEGRATION.md) |
+| F | Changelogs | [CHANGELOG.md](../../CHANGELOG.md), and the `== Changelog ==` of both readme files |
 | G | Commits and branch | Section 8 |
-| H | Plugin submission checklist | [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md#checklist-submitting-the-plugin) |
-| I | Theme submission checklist | [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md#checklist-submitting-the-theme) |
-| J | Test report | [docs/dev/TESTING.md](docs/dev/TESTING.md#the-theme-recommends-the-plugin--test-report) |
+| H | Plugin submission checklist | [docs/dev/INTEGRATION.md](INTEGRATION.md#checklist-submitting-the-plugin) |
+| I | Theme submission checklist | [docs/dev/INTEGRATION.md](INTEGRATION.md#checklist-submitting-the-theme) |
+| J | Test report | [docs/dev/TESTING.md](TESTING.md#the-theme-recommends-the-plugin--test-report) |
 | K | Remaining manual actions | Section 6 |
 
 The ZIP files are not in the repository (it keeps no build results); anyone can rebuild them with the two commands above. Their SHA-256 checksums:
@@ -169,17 +169,17 @@ f5f04f47352e16e0840f7dfd95dad8c775baea67a10f6b87c97eb221e9a53c06  open-frame-sta
 
 Both packages were listed and read: no `.git`, no tests, no tools, no keys, no environment files, no archives inside. The plugin package leaves out its `.wordpress-org/` folder: the banner, icon and screenshots go into the SVN `assets` folder after approval.
 
-## 8. Commits and branch
+## 8. Commits
 
-Branch `claude/quirky-hawking-lhqgg4`, on top of `49accd8`. `main` was not touched, no release was made and nothing was tagged. A pull request into `main` was opened on your word on 28 November 2026: [Mostafijemon24/Open-Frame-Theme#1](https://github.com/Mostafijemon24/Open-Frame-Theme/pull/1).
+The work is six commits on top of the last commit of 27 November 2026, now on `main`:
 
-| Commit | What |
-| --- | --- |
-| `4e23bea` | Plugin: a stricter check for script in a design, and fixes from a review for WordPress.org |
-| `e994e8d` | Plugin 1.0.1: prepared for submission to the WordPress.org Plugin Directory |
-| `6e4cb7b` | Theme 1.2.0: the Starter Sites plugin as a recommended plugin, through TGM Plugin Activation |
-| `26a232f` | Theme: one dismissible notice that offers to install, activate or open Starter Sites |
-| `6e6df23` | Guides, integration document, checklists, test report and this report |
-| the commit after it | Your two confirmations of 28 November 2026, recorded in the documents |
+| What |
+| --- |
+| Plugin: a stricter check for script in a design, and fixes from a review for WordPress.org |
+| Plugin 1.0.1: prepared for submission to the WordPress.org Plugin Directory |
+| Theme 1.2.0: the Starter Sites plugin as a recommended plugin, through TGM Plugin Activation |
+| Theme: one dismissible notice that offers to install, activate or open Starter Sites |
+| Guides, integration document, checklists, test report and this report |
+| Your two confirmations of 28 November 2026, recorded in the documents |
 
-No credentials, keys or tokens are in any of them. The library's signing key was never on this machine.
+No credentials, keys or tokens are in any of them. The library's signing key was never on the machine the work was done on.

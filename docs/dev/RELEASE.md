@@ -6,14 +6,22 @@ A line is **signed off** when the person named has confirmed it, with the date. 
 
 ## Status on 28 November 2026
 
-Prepared on the branch `claude/quirky-hawking-lhqgg4`, **not released and not merged**:
+On 28 November 2026 the owner deleted the repository and created it anew at the same address, for the second time, and asked for everything to be pushed and released again with the owner as the only author. What that means:
+
+- **Every commit carries the owner's name.** The history was written again for it, so the commit numbers differ from those of the earlier repositories.
+- **A few early commits are missing.** The theme's history from 0.5.0 to 1.0.1 is complete. Of the work on theme 1.1.0, the commits before the first version of the Starter Sites plugin (26 November 2026) existed only in the deleted repository; what they changed is contained in the first commit of that work that was kept. Every file is complete.
+- The pull requests, CI runs and releases of the earlier repositories are gone with them. Numbers and links in these documents that name them lead nowhere now.
+- **Every release is now a complete set**: the theme, the plugin and one archive for each starter site (`bin/release-bundle.sh`).
+- Settings do not carry over: "Private vulnerability reporting" has to be switched on again, and the repository's description and topics set.
+
+Prepared on 28 November 2026:
 
 | Product | Version | State |
 | --- | --- | --- |
 | **Open Frame** (theme) | 1.2.0 | Recommends the Starter Sites plugin through TGM Plugin Activation and one notice. **The plugin's WordPress.org slug is a placeholder**, so this version recommends nothing yet. How it works and what switches it on: [INTEGRATION.md](INTEGRATION.md) |
 | **Open Frame Starter Sites** (plugin) | 1.0.1 | What an independent review for WordPress.org found is fixed: the check for script in a design is stricter, the post type has a four-letter prefix, the readme names the library's terms and privacy policy. **Owner, 28 November 2026:** the library's terms of use and privacy policy are read and agreed, and `mostafijemon` is the WordPress.org user name. Ready to be submitted once the branch is merged |
 
-Checklists for both submissions are in [INTEGRATION.md](INTEGRATION.md); what was tested is in [TESTING.md](TESTING.md); the summary for the owner is [FINAL_INTEGRATION_REPORT.md](../../FINAL_INTEGRATION_REPORT.md).
+Checklists for both submissions are in [INTEGRATION.md](INTEGRATION.md); what was tested is in [TESTING.md](TESTING.md); the summary for the owner is [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md).
 
 ## Status on 27 November 2026
 
@@ -41,7 +49,9 @@ On 27 November 2026 the owner created the repository anew at the same address, a
 | Changelogs | `readme.txt` of the theme and of the plugin (what WordPress reads), gathered with the versions of the designs in [CHANGELOG.md](../../CHANGELOG.md) | Done |
 | Pictures for the plugin's page on WordPress.org | `companion/open-frame-starter-sites/.wordpress-org/screenshot-1.png` to `-5.png`, matching `== Screenshots ==` in its readme | Done |
 | Banner and icon for the plugin's page on WordPress.org | `.wordpress-org/banner-1544x500.png`, `banner-772x250.png`, `icon-256x256.png`, `icon-128x128.png`, `icon.svg`, drawn by `node bin/wporg-assets.js` | Done, at the owner's request |
-| Release workflow | `.github/workflows/release.yml`: one release per product, each with ZIP, checksum and notes taken from the changelog | Written. The packaging script was run on this machine; **the workflow itself has not run** since it was changed, because running it publishes a release |
+| Starter site archives | `dist/starter-sites/open-frame-starter-site-<id>-<version>.zip`, one for each of the ten designs, with `SHA256SUMS.txt`; built by `bash bin/build-starter-site-zips.sh`. The source of each design, for keeping and for building a library; a site does not need them | Done. 27 MB together |
+| The complete set | `bash bin/release-bundle.sh theme` or `plugin`, after `release-package.sh`: adds the other product and the starter site archives, lists the files in the release notes | Done |
+| Release workflow | `.github/workflows/release.yml`: one release per product, each a complete set with checksums and notes taken from the changelog | Written. The packaging script was run on this machine; **the workflow itself has not run** since it was changed, because running it publishes a release |
 
 ## B. Checked by machine
 
@@ -97,7 +107,7 @@ The theme can be released on its own at any time. It does not depend on the plug
 Only after the part of this list that concerns the product is signed off.
 
 1. Raise the version where it is written (theme: `style.css`, `OPEN_FRAME_VERSION` in `functions.php` and `Stable tag` in `readme.txt`; plugin: the header of its main file, `OFSS_VERSION`, `Stable tag` in its `readme.txt`), add the changelog entry, regenerate the plugin's translation template, run `node bin/build-docs.js`, commit.
-2. Try the packaging: `bash bin/release-package.sh theme` or `plugin`. It names what is missing.
+2. Try the packaging: `bash bin/release-package.sh theme` or `plugin`, then `bash bin/release-bundle.sh` with the same word. They name what is missing.
 3. On GitHub: **Actions → Release → Run workflow**, choose the branch and the product. Or push the tag: `v1.1.0` for the theme, `starter-sites-v1.0.0` for the plugin.
 4. Open the release page. Download the ZIP, check it against its checksum, and install it on a test site.
 

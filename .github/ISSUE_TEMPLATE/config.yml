@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/Mostafijemon24/Open-Frame-Theme/blob/main/docs/README.md
+    about: The theme guide, the Starter Sites guide and the installation guide.
+  - name: Support and update policy
+    url: https://github.com/Mostafijemon24/Open-Frame-Theme/blob/main/docs/SUPPORT.md
+    about: Where to get help, what is supported, and how updates are published.

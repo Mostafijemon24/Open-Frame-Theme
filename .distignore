@@ -11,7 +11,6 @@ docs
 dist
 node_modules
 vendor
-PROJECT_STATUS.md
 tests
 composer.json
 composer.lock
@@ -21,4 +20,6 @@ starter-sites
 tools
 cloud
 CHANGELOG.md
-FINAL_INTEGRATION_REPORT.md
+CONTRIBUTING.md
+SECURITY.md
+CODE_OF_CONDUCT.md

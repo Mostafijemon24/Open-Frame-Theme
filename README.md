@@ -4,6 +4,12 @@
 
 # Open Frame
 
+[![CI](https://github.com/Mostafijemon24/Open-Frame-Theme/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Mostafijemon24/Open-Frame-Theme/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/Mostafijemon24/Open-Frame-Theme?label=release)](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/latest)
+[![License: GPL v2 or later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](LICENSE)
+[![WordPress 6.4+](https://img.shields.io/badge/WordPress-6.4%2B-21759b.svg)](https://wordpress.org/)
+[![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-777bb4.svg)](https://www.php.net/)
+
 A lightweight, accessibility-minded **multipurpose WordPress theme** built on a token-driven design system. Open Frame is controlled entirely from the Customizer, bundles its fonts locally, needs **no plugin** and makes **no remote requests**.
 
 | | |
@@ -24,6 +30,7 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 | [Support and update policy](docs/SUPPORT.md) | Where to get help, what is supported, how updates are published |
 | [Changelog](CHANGELOG.md) | What changed in each version |
 | [Developer documents](docs/dev/) | Architecture, the plugin's hooks and REST routes, the library, tests, the release checklist |
+| [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Code of conduct](CODE_OF_CONDUCT.md) | How to report a problem, propose a change or report a vulnerability |
 
 ## Contents
 
@@ -79,6 +86,8 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 
 > Download the release ZIP rather than GitHub's "Source code" archive: the release package contains only the files the theme needs.
 
+Every [release](../../releases) is a complete set: the theme, the Starter Sites plugin, and one archive with the source of each of the ten starter sites, with checksums. To build a website you need only the theme and, if you want a starter site, the plugin.
+
 The [installation guide](docs/INSTALL.md) covers checking the download, updating and removing.
 
 ### Starter sites (optional)
@@ -87,7 +96,7 @@ The companion plugin **Open Frame Starter Sites** adds ten complete websites mad
 
 ![The ten starter sites](docs/images/starter-sites-designs.png)
 
-> The plugin is released on this repository's [releases page](../../releases). It is not in the WordPress.org Plugin Directory yet. Once it is, the theme offers to install it with one click: see [Integration with the Starter Sites plugin](docs/dev/INTEGRATION.md). The state of both submissions is in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md).
+> The plugin is released on this repository's [releases page](../../releases). It is not in the WordPress.org Plugin Directory yet. Once it is, the theme offers to install it with one click: see [Integration with the Starter Sites plugin](docs/dev/INTEGRATION.md). The state of both submissions is in [FINAL_INTEGRATION_REPORT.md](docs/dev/FINAL_INTEGRATION_REPORT.md).
 
 ![The Themes screen with Open Frame active](docs/images/admin-themes.png)
 

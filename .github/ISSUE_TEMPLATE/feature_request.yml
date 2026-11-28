@@ -1,0 +1,19 @@
+name: Suggest an improvement
+description: An idea for the theme, the Starter Sites plugin or a starter site.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to be able to do?
+      description: Describe the situation, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could it work?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What do you do today instead?

@@ -2,7 +2,7 @@
 
 How the Open Frame theme recommends the Open Frame Starter Sites plugin, what has to be true before that works for the public, and the checklists for the two submissions to WordPress.org.
 
-The state of the work, with test results and what is left for the owner, is in [FINAL_INTEGRATION_REPORT.md](../../FINAL_INTEGRATION_REPORT.md).
+The state of the work, with test results and what is left for the owner, is in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md).
 
 ## The two products
 

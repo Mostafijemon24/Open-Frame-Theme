@@ -26,7 +26,7 @@
 
 # The theme recommends the plugin — Test Report
 
-Executed on 28 November 2026 on the branch `claude/quirky-hawking-lhqgg4`, with WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Chromium. Theme 1.2.0, plugin 1.0.1. Nothing was released.
+Executed on 28 November 2026, before the work was put on `main`, with WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Chromium. Theme 1.2.0, plugin 1.0.1. Nothing was released.
 
 **What could not be tested as it will be for the public:** the plugin is not in the WordPress.org Plugin Directory, so nobody can install *it* from there yet. Where a check needs the directory to list the plugin, the test site answers in the directory's place and hands WordPress the package built from this repository; the installer, the unpacking and the activation are WordPress's own. That the button reaches the real directory was checked with a plugin that is listed there (Hello Dolly). This is a rehearsal of the journey, not the journey.
 

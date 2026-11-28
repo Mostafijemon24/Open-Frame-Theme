@@ -2,11 +2,11 @@
 
 Last updated: 2026-11-28
 
-Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](docs/dev/TESTING.md) · Release checklist: [docs/dev/RELEASE.md](docs/dev/RELEASE.md)
+Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](TESTING.md) · Release checklist: [docs/dev/RELEASE.md](RELEASE.md)
 
 ## Current state
 
-**28 November 2026: the theme and the plugin are joined, on the branch `claude/quirky-hawking-lhqgg4`.** Theme 1.2.0 recommends the plugin through TGM Plugin Activation and one dismissible notice (install, activate, open). The plugin's slug at WordPress.org is still a placeholder, because the plugin is not in the directory yet, so the theme recommends nothing until that one line in `functions.php` is filled in. Plugin 1.0.1 fixes what an independent review for WordPress.org found. Nothing is released, merged or submitted. The summary, the test results and what the owner has to do are in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md); how the integration works is in [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md).
+**28 November 2026: the theme and the plugin are joined.** Theme 1.2.0 recommends the plugin through TGM Plugin Activation and one dismissible notice (install, activate, open). The plugin's slug at WordPress.org is still a placeholder, because the plugin is not in the directory yet, so the theme recommends nothing until that one line in `functions.php` is filled in. Plugin 1.0.1 fixes what an independent review for WordPress.org found. Nothing is released, merged or submitted. The summary, the test results and what the owner has to do are in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md); how the integration works is in [docs/dev/INTEGRATION.md](INTEGRATION.md).
 
 **All ten designs exist, each illustrated with real photographs.** On 2026-11-26 the owner asked for real photographs instead of drawn pictures, words written for the business shown, and a record of source and licence for every picture, and approved the Real Estate design as the benchmark. The seven designs made before that were then redone, and Magazine and Shop were made that way from the start.
 
@@ -27,7 +27,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 | 7c. Photographs and matching words for every design | **Done.** The owner approved the Real Estate benchmark on 2026-11-26; Business, Education, Portfolio, Medical, Restaurant, SaaS and Agency were then redone, and Magazine was made that way from the start. Only the five screens of SaaS's invented product are still drawn |
 | 8. Package, validate, publish | **Done.** Published to production; 10 of 10 designs imported from production on a clean install (2026-11-27). Live demo sites not built |
 | 9. QA | **Automated part done** (plugin 0.6.1): three browser engines, three PHP versions, the oldest supported versions, performance, a security review. Open issues are listed with their severity in the test report. **The manual checklist is not done** |
-| 10. Documentation and release | **Theme 1.1.0 and plugin 1.0.0 released on GitHub on 2026-11-27.** Open: the manual checks, which were not done before the releases, and the submissions to WordPress.org ([docs/dev/RELEASE.md](docs/dev/RELEASE.md)) |
+| 10. Documentation and release | **Theme 1.1.0 and plugin 1.0.0 released on GitHub on 2026-11-27.** Open: the manual checks, which were not done before the releases, and the submissions to WordPress.org ([docs/dev/RELEASE.md](RELEASE.md)) |
 
 ## Decisions (owner, 2026-11-26)
 
@@ -39,7 +39,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 
 ## Decisions (owner, 2026-11-27)
 
-1. **The support and update policy** ([docs/SUPPORT.md](docs/SUPPORT.md)) is read and agreed.
+1. **The support and update policy** ([docs/SUPPORT.md](../SUPPORT.md)) is read and agreed.
 2. **The first public release of the plugin is 1.0.0**, made once the library is online and the manual checks are done. Until then it stays 0.6.1, unreleased.
 3. **A banner and an icon** for the plugin's WordPress.org page were asked for and made (`companion/open-frame-starter-sites/.wordpress-org/`, drawn by `bin/wporg-assets.js`).
 
@@ -72,7 +72,7 @@ Business, Portfolio, Restaurant, Education and Medical (free), Agency, SaaS, Rea
 - **Worker** (`cloud/worker`): read-only API over an R2 bucket for both host names, with caching headers, ETags and readable errors.
 - **Plugin:** the catalog is used only with a valid signature from a known key; a manifest only when it is the exact file the signed catalog names. `Config::PUBLIC_KEYS` is empty until the production key exists, so the plugin accepts nothing from the real library yet.
 - **Workflows:** a CI job for the tools and the Worker; a manual "Publish library" workflow (not yet run).
-- **Manual:** [docs/dev/LIBRARY.md](docs/dev/LIBRARY.md).
+- **Manual:** [docs/dev/LIBRARY.md](LIBRARY.md).
 
 ### Phase 6: the import engine (plugin 0.2.0)
 
@@ -231,20 +231,20 @@ Each is built with the first design that needs it, rather than against invented 
 - **Found and fixed, compatibility:** Elementor 4.0.0 to 4.0.2 with Elementor Pro load a font from Google on every page, so the designs now need Elementor 4.0.3; on WordPress 6.8 the screen could not install WooCommerce (its current version needs WordPress 7.0) and did not say why.
 - **Security review** by a second reviewer: nothing of high or critical severity. The plugin now checks a design's pages again before storing them (no raw HTML or shortcode widgets, script, frames, style blocks, hand-written CSS or attributes), refuses a catalog older than the one it has, and cleans the values of a design's Site Settings. Removing the plugin also removes what an unfinished import left.
 - **Performance measured** with Lighthouse (mobile, slow 4G): eight of ten home pages score 85 or more, all stay under 0.1 layout shift and under 1.2 MB. The 2.5-second target for the largest paint is met by none in that simulation.
-- **A manual checklist** for what a machine cannot check: [docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md).
+- **A manual checklist** for what a machine cannot check: [docs/dev/QA-CHECKLIST.md](QA-CHECKLIST.md).
 
 ### Phase 10: documentation and release (as far as it goes without a release)
 
-- **User guide for the plugin**, [docs/STARTER-SITES.md](docs/STARTER-SITES.md): 17 chapters from installing to removing, with 11 screenshots, 9 of them with numbered markers explained in a table. Its statements were checked against the code and the designs' sources.
+- **User guide for the plugin**, [docs/STARTER-SITES.md](../STARTER-SITES.md): 17 chapters from installing to removing, with 11 screenshots, 9 of them with numbered markers explained in a table. Its statements were checked against the code and the designs' sources.
 - **Theme guide**: the Elementor and WooCommerce chapters have pictures now, and a section that leads to the starter sites.
-- **Installation guide**, [docs/INSTALL.md](docs/INSTALL.md): what to download, installing, checking a download against its checksum, updating, removing, and what the usual error messages mean.
-- **Support and update policy**, [docs/SUPPORT.md](docs/SUPPORT.md): where to get help, what is and is not supported, how version numbers are chosen, how updates reach a site today and after WordPress.org, security reports, what happens if the library or the project ends. It makes promises in the owner's name and waits for the owner's agreement.
-- **Developer reference for the plugin**, [docs/dev/PLUGIN.md](docs/dev/PLUGIN.md): the three hooks, the two constants, the REST routes, what is stored, how an import runs, how to run a library of one's own.
-- **Changelogs**: [CHANGELOG.md](CHANGELOG.md) gathers the two `readme.txt` changelogs and the versions of the designs; it is generated, so it cannot drift.
+- **Installation guide**, [docs/INSTALL.md](../INSTALL.md): what to download, installing, checking a download against its checksum, updating, removing, and what the usual error messages mean.
+- **Support and update policy**, [docs/SUPPORT.md](../SUPPORT.md): where to get help, what is and is not supported, how version numbers are chosen, how updates reach a site today and after WordPress.org, security reports, what happens if the library or the project ends. It makes promises in the owner's name and waits for the owner's agreement.
+- **Developer reference for the plugin**, [docs/dev/PLUGIN.md](PLUGIN.md): the three hooks, the two constants, the REST routes, what is stored, how an import runs, how to run a library of one's own.
+- **Changelogs**: [CHANGELOG.md](../../CHANGELOG.md) gathers the two `readme.txt` changelogs and the versions of the designs; it is generated, so it cannot drift.
 - **All four guides as HTML pages** (`docs/*.html`) with links between them, built by `bin/build-docs.js`.
 - **Screenshots by script**: `bin/docs-shots.js` takes every picture of the plugin guide from a running test site and draws the markers, so the pictures can be retaken when the screen changes.
 - **Release tooling**: `bin/release-package.sh` checks that version numbers agree and a changelog entry exists, builds the ZIP with its checksum and the text of the release page, and refuses a package with development files in it. The Release workflow publishes the theme and the plugin separately (`v1.1.0`, `starter-sites-v0.6.1`). The script refuses to release the plugin while it has no public key of the library.
-- **Release checklist**, [docs/dev/RELEASE.md](docs/dev/RELEASE.md): what is done, what the machine confirmed, the ten points only the owner can confirm, the order of the steps that unblock the plugin, how a release is made, and what to expect from WordPress.org.
+- **Release checklist**, [docs/dev/RELEASE.md](RELEASE.md): what is done, what the machine confirmed, the ten points only the owner can confirm, the order of the steps that unblock the plugin, how a release is made, and what to expect from WordPress.org.
 - **CI**: a new job builds the guides and compares them with what is committed, checks every link and picture, and packages both products.
 - **The plugin's readme** describes the ten designs instead of "an early version", answers four more questions and lists its screenshots; five unmarked screenshots for its WordPress.org page are in `.wordpress-org/`.
 - **Found while taking the screenshots, and fixed (plugin 0.6.1, unreleased):** the confirmation before an import named a wrong number of pages (12 for Business, which has 10); on a fast server the progress bar stood at 0% for ten seconds and jumped to the end.
@@ -347,12 +347,12 @@ From Phase 8 (2026-11-26), not repeated:
 
 1. **The production signing key is with the owner, and only there.** It was made on 2026-11-27 (key ID `135200d7`) and handed over as a file, at the owner's choice; the owner confirmed the same day that it is stored, and the copy on the development machine was deleted. Whoever has this file can sign a list of designs that every installed plugin accepts. If it is lost, a new key has to be introduced with a plugin release before the library can change again. **To publish a change to the library** the key is needed again: either as the repository secret `OFSS_SIGNING_KEY` (Settings > Secrets and variables > Actions, together with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`) for the "Publish library" workflow, or handed over for that one publication. On the owner's Cloudflare account there are: the R2 buckets `open-frame-library` and `open-frame-library-staging`, the Workers of the same names, and the addresses `api.`, `cdn.` and `library-staging.buildbetters.com` that lead to them. Further changes to the domain, asked for by the owner on 2026-11-27 and unrelated to this project: the three DKIM records of the domain's email (`hostingermail-a`, `-b`, `-c._domainkey`), which gave mail servers no answer while proxied, and the records `autoconfig`, `autodiscover` and `ftp` were switched from "Proxied" to "DNS only".
 2. **Change the Cloudflare account password.** It was written in chat. It was not used and is not stored anywhere in this project.
-3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](docs/dev/LIBRARY.md) explains how).
+3. **Keep the signing key.** When the library is first published a signing key is generated. The owner has to store it as a GitHub secret and keep an offline copy ([docs/dev/LIBRARY.md](LIBRARY.md) explains how).
 4. **A look at the nine designs the owner has not seen in full.** Preview pictures were sent for each; the pictures and words of Business, Portfolio, Restaurant, Education, Medical, Agency, SaaS, Magazine and Shop were chosen without the owner. Anything that does not fit can be swapped: one photograph is one line in `photo-sources.json`.
 5. **Optional: a Pexels API key** (free, from pexels.com/api), entered in the secure form, if the owner wants a wider choice of photographs than CC0 offers, above all for portraits and healthcare.
 6. **Optional: a decision on Medical's doctors.** They are shown without portraits. If the owner has photographs of people who agree to be shown, or prefers stock portraits in plain clothes, they can be added.
 7. **A decision on live demos.** A working demo of each design needs a WordPress host (one site with ten sub-sites would do), and an Elementor Pro licence that covers it for the five Pro designs. Without it the designs are shown through their preview pictures only.
-8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](docs/dev/QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
+8. **The manual checklist** ([docs/dev/QA-CHECKLIST.md](QA-CHECKLIST.md)): about two hours with a throw-away WordPress site, a phone, Safari and Firefox, and Elementor Pro with a licence for the five Pro designs. It is the part of QA only a person can do.
 9. **Switch on "Private vulnerability reporting" again** (Settings → Security). It was on in the earlier repository; the repository was created anew on 2026-11-27, and settings do not carry over. The support policy sends security reports there.
 10. **The word to release the theme**, and later the plugin. Nothing is tagged, published or submitted without it. For WordPress.org the owner's account is needed, and for the plugin's page a banner and an icon.
 
@@ -360,7 +360,7 @@ From Phase 8 (2026-11-26), not repeated:
 
 On 27 November 2026 the owner created the repository anew at the same address, and the history was pushed to it again. The three releases (theme 1.0.1 and 1.1.0, plugin 1.0.0) were published again from the same commits, and the packages of theme 1.1.0 and plugin 1.0.0 were compared with the first ones: identical, file for file. The pull request numbers and CI run numbers named in these documents are those of the earlier repository and lead nowhere now.
 
-The order is the one in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
+The order is the one in [docs/dev/RELEASE.md](RELEASE.md).
 
 1. **Done on 2026-11-27:** pull requests 1 and 2 merged into `main`, theme 1.1.0 and plugin 1.0.0 released on GitHub.
 2. The manual checklist, by the owner. It was not done before the releases; what it finds goes into patch releases (theme 1.1.1, plugin 1.0.1).
