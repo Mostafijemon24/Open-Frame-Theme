@@ -8,12 +8,13 @@ Open Frame (theme) and Open Frame Starter Sites (plugin) · 28 November 2026
 - **Theme 1.2.0:** Theme এখন Plugin-টিকে "Recommended" হিসেবে দেখাতে পারে (TGMPA + একটি notice: Install → Activate → Open)। কিন্তু Plugin এখনো WordPress.org-এ নেই, তাই তার official slug জানা নেই। সেই কারণে এই সুবিধাটি এখন **বন্ধ অবস্থায়** আছে: `functions.php`-এর একটি লাইনে slug বসালেই চালু হবে।
 - **Plugin 1.0.1:** WordPress.org-এ জমা দেওয়ার জন্য প্রস্তুত। একটি স্বাধীন security ও guideline review-তে যা পাওয়া গিয়েছিল, তা ঠিক করা হয়েছে।
 - **পরীক্ষা:** সব automated test পাস করেছে। Production cloud library থেকে পাঁচটি free design পরিষ্কার site-এ import হয়েছে। Elementor Pro-র পাঁচটি design এখানে পরীক্ষা করা যায়নি।
-- **যা আমি করতে পারিনি, করা সম্ভবও নয়:** WordPress.org-এ জমা দেওয়া ও অনুমোদন। এগুলো আপনার WordPress.org account থেকে করতে হবে। আসল Plugin-টি আসল WordPress.org থেকে install হওয়াও অনুমোদনের আগে পরীক্ষা করা সম্ভব নয়।
+- **GitHub-এ release করা হয়েছে (২৮ নভেম্বর ২০২৬):** Theme 1.2.0 ও Plugin 1.0.1। প্রতিটি release-এ Theme, Plugin এবং দশটি starter template-এর archive আছে।
+- **যা করা যায়নি, করা সম্ভবও নয়:** WordPress.org-এ জমা দেওয়া ও অনুমোদন। এগুলো আপনার WordPress.org account থেকে করতে হবে। আসল Plugin-টি আসল WordPress.org থেকে install হওয়াও অনুমোদনের আগে পরীক্ষা করা সম্ভব নয়।
 - **আপনার করণীয়** নিচে "What you need to do next" অংশে ধাপে ধাপে লেখা আছে।
 
 ## 1. In one paragraph
 
-Nothing was rebuilt. The theme now recommends the plugin the way WordPress.org asks themes to: as an optional plugin from the WordPress.org Plugin Directory, through TGM Plugin Activation, with one dismissible notice that offers to install, activate or open it. Because the plugin is not in the directory yet, its slug there does not exist, so the recommendation ships **switched off** behind a placeholder; one line switches it on after approval. The plugin was reviewed against the directory's guidelines and what the review found is fixed. Both packages are built and checked. Submitting them, and the approval, are yours.
+Nothing was rebuilt. The theme now recommends the plugin the way WordPress.org asks themes to: as an optional plugin from the WordPress.org Plugin Directory, through TGM Plugin Activation, with one dismissible notice that offers to install, activate or open it. Because the plugin is not in the directory yet, its slug there does not exist, so the recommendation ships **switched off** behind a placeholder; one line switches it on after approval. The plugin was reviewed against the directory's guidelines and what the review found is fixed. Both are released on GitHub. Submitting them to WordPress.org, and the approval, are yours.
 
 ## 2. What was already there
 
@@ -111,7 +112,7 @@ The full report is in [docs/dev/TESTING.md](TESTING.md#the-theme-recommends-the-
 | **Theme Check** on `open-frame-1.2.0.zip` | **0 required, 0 warnings** |
 | **Plugin Check** on `open-frame-starter-sites-1.0.1.zip` | **No errors found** |
 | **Import from your production library**, on a clean site built from the two packages | **5 of 5 free designs**, every page and picture looked at, each rolled back |
-| CI on GitHub | Starts when this branch is pushed: coding standards, PHP syntax on 7.4, 8.1 and 8.3, the library tools, the guides and packages, a rehearsal of publishing and importing, and every browser check. Its result is on the repository's [Actions page](https://github.com/Mostafijemon24/Open-Frame-Theme/actions), not in this file, which was written before the push |
+| CI on GitHub | Passed on the finished work before the repository was created anew: coding standards, PHP syntax on 7.4, 8.1 and 8.3, the library tools, the guides and packages, a rehearsal of publishing and importing, and every browser check. It runs again on every push to the new repository: see its [Actions page](https://github.com/Mostafijemon24/Open-Frame-Theme/actions) |
 
 **What these tests are not:**
 
@@ -124,7 +125,8 @@ The full report is in [docs/dev/TESTING.md](TESTING.md#the-theme-recommends-the-
 | Question | Answer |
 | --- | --- |
 | Is the plugin ready to be submitted? | **Yes.** On 28 November 2026 you read and agreed the library's terms and privacy text, and confirmed that `mostafijemon` is your WordPress.org user name |
-| Is the plugin approved or published? | **No.** Not submitted. Approval is a manual review by WordPress.org and usually takes days to weeks, often with questions |
+| Are the two products released? | **Yes, on GitHub**, on 28 November 2026: [theme 1.2.0](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/tag/v1.2.0) and [plugin 1.0.1](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/tag/starter-sites-v1.0.1). Each release carries the theme, the plugin and the ten starter site archives |
+| Is the plugin approved or published at WordPress.org? | **No.** Not submitted. Approval is a manual review by WordPress.org and usually takes days to weeks, often with questions |
 | What is the plugin's official slug? | **Unknown, pending.** It will probably be `open-frame-starter-sites`, but WordPress.org decides, and I did not put a guess into the code |
 | Is the theme integration ready? | **Yes, and switched off.** It was tested with the slug set; it ships with the placeholder |
 | Does one-click installation from WordPress.org work today? | **No.** It cannot before the plugin is approved |
@@ -137,8 +139,8 @@ In this order. Steps 1 and 2 are done. Only steps 4, 5 and 7 need your WordPress
 1. ~~Read the library's terms of use and privacy policy~~ **Done, 28 November 2026:** you read the two sections under "The library service" in [docs/SUPPORT.md](../SUPPORT.md#the-library-service) and agreed to them.
 2. ~~Confirm your WordPress.org user name~~ **Done, 28 November 2026:** `mostafijemon`, as both readme files say.
 3. ~~Put the work on `main`~~ **Done, 28 November 2026**, on your word.
-4. **Submit the plugin**: sign in at <https://wordpress.org/plugins/developers/add/> and upload `open-frame-starter-sites-1.0.1.zip`. WordPress.org answers by email.
-5. **Submit the theme**: sign in at <https://wordpress.org/themes/upload/> and upload `open-frame-1.2.0.zip`. It can go at the same time as the plugin.
+4. **Submit the plugin**: sign in at <https://wordpress.org/plugins/developers/add/> and upload `open-frame-starter-sites-1.0.1.zip` from the [release page](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/latest). WordPress.org answers by email.
+5. **Submit the theme**: sign in at <https://wordpress.org/themes/upload/> and upload `open-frame-1.2.0.zip` from the same page. It can go at the same time as the plugin.
 6. **Answer the reviewers.** Send me what they write; I prepare the changes and the replies. Likely questions and their answers are in [docs/dev/RELEASE.md](RELEASE.md#e-wordpressorg). One to expect: the plugin needs a theme that is not in the directory yet.
 7. **When the plugin is approved**, WordPress.org sends you its address and an SVN repository. Tell me the slug (the last part of `https://wordpress.org/plugins/<slug>/`). I then put it into `functions.php`, test the real installation from the real directory, and prepare the theme update. Uploading the plugin's files to SVN needs your WordPress.org password; I prepare the folder and the exact commands.
 8. **Upload that theme update** to WordPress.org. From then on your goal is reached: a user activates the theme, sees the recommendation, clicks Install, and imports a website.
@@ -150,8 +152,8 @@ Still open from before, unchanged: the manual checks on real devices, changing t
 | | Deliverable | Where |
 | --- | --- | --- |
 | A, B | Updated theme and plugin | This branch. One repository holds both |
-| C | Plugin ZIP for WordPress.org | `open-frame-starter-sites-1.0.1.zip`, sent with this report. Built by `bash bin/release-package.sh plugin` |
-| D | Theme ZIP for WordPress.org | `open-frame-1.2.0.zip`, sent with this report. Built by `bash bin/release-package.sh theme` |
+| C | Plugin ZIP for WordPress.org | `open-frame-starter-sites-1.0.1.zip` on the [release page](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/tag/starter-sites-v1.0.1). Built by `bash bin/release-package.sh plugin` |
+| D | Theme ZIP for WordPress.org | `open-frame-1.2.0.zip` on the [release page](https://github.com/Mostafijemon24/Open-Frame-Theme/releases/tag/v1.2.0). Built by `bash bin/release-package.sh theme` |
 | E | Integration documentation | [docs/dev/INTEGRATION.md](INTEGRATION.md) |
 | F | Changelogs | [CHANGELOG.md](../../CHANGELOG.md), and the `== Changelog ==` of both readme files |
 | G | Commits and branch | Section 8 |
@@ -160,18 +162,13 @@ Still open from before, unchanged: the manual checks on real devices, changing t
 | J | Test report | [docs/dev/TESTING.md](TESTING.md#the-theme-recommends-the-plugin--test-report) |
 | K | Remaining manual actions | Section 6 |
 
-The ZIP files are not in the repository (it keeps no build results); anyone can rebuild them with the two commands above. Their SHA-256 checksums:
-
-```
-d3f75c037e90e2dcbccdee69d1bf0dccf96763440cdc9b74ecaaf73515a4c574  open-frame-1.2.0.zip
-f5f04f47352e16e0840f7dfd95dad8c775baea67a10f6b87c97eb221e9a53c06  open-frame-starter-sites-1.0.1.zip
-```
+The ZIP files are not in the repository (it keeps no build results). They are on the release pages, each with a checksum file beside it, and anyone can rebuild them with the two commands above. Every release also carries one archive with the source of each starter site; a site does not need those.
 
 Both packages were listed and read: no `.git`, no tests, no tools, no keys, no environment files, no archives inside. The plugin package leaves out its `.wordpress-org/` folder: the banner, icon and screenshots go into the SVN `assets` folder after approval.
 
 ## 8. Commits
 
-The work is six commits on top of the last commit of 27 November 2026, now on `main`:
+The work is six commits on top of the last commit of 27 November 2026, now on `main`. On 28 November 2026 the repository was created anew and every commit was written again with the owner as its only author; [RELEASE.md](RELEASE.md) says what that changed.
 
 | What |
 | --- |
