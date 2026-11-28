@@ -8,6 +8,14 @@ How version numbers are chosen, and what each kind of update means for a site, i
 
 ## Open Frame (theme)
 
+### 1.2.0
+
+- New: the theme can recommend its optional companion plugin, Open Frame Starter Sites, which adds complete websites made with Elementor. One notice on the Dashboard, Themes and Plugins screens offers the step that fits the site: install the plugin, activate it, or open it. The notice can be dismissed, for good, by each user.
+- New: Appearance > Recommended Plugins, a screen provided by the bundled TGM Plugin Activation library, lists the plugin while it is not installed or not active.
+- The plugin is recommended, never required. It is installed from the WordPress.org Plugin Directory by WordPress's own installer, and only when you click; it is not activated until you click again. No plugin file is bundled with the theme, and the theme does not redirect you after activation.
+- The recommendation is switched on by naming the plugin's WordPress.org slug in functions.php. In this version the slug is still a placeholder, because the plugin is waiting for its review at WordPress.org: no notice and no installer screen are shown, and the installer library is not loaded.
+- The theme still needs no plugin and makes no remote requests of its own.
+
 ### 1.1.0
 
 - New: Elementor support. A page built with Elementor on the default template now spans the full width of the window instead of sitting inside the page card. Elementor's "Canvas" and "Full Width" templates are supported, and "Full Width" keeps the main landmark the skip link points to.
@@ -95,6 +103,17 @@ How version numbers are chosen, and what each kind of update means for a site, i
 - Initial foundation: design system, Customizer, header and footer builders, navigation, core templates, theme.json.
 
 ## Open Frame Starter Sites (plugin)
+
+### 1.0.1
+
+- New: when Elementor is not active, the Starter Sites screen says so above the designs and explains where to install it.
+- Security: the check that refuses script in a design also recognizes it when it is written with character references, without a space before an event handler, inside a dynamic tag or as a form or inline SVG, and it is repeated on each page just before the page is stored.
+- Security: updating a plugin a design needs, which ends with that plugin active, now also asks for the right to activate plugins.
+- Privacy: preview pictures are requested without a referrer, so the library does not learn the address of your site from your browser either.
+- Changed: the post type of the Site Parts is now named `ofss_site_part`. Site parts made by version 1.0.0 are renamed once, automatically, and stay out of the XML sitemap.
+- Fixed: rolling back an import after switching to a child theme restored the theme settings to the wrong theme.
+- Fixed: on PHP 7.4.0 to 7.4.2 a design's package could not be opened.
+- The description of the library service now names its terms of use and privacy policy.
 
 ### 1.0.0
 

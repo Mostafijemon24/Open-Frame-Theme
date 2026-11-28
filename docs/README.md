@@ -75,6 +75,35 @@ Open Frame is a lightweight, accessibility-minded multipurpose WordPress theme f
 
 > The theme works immediately after activation. With no menu, no widgets and no settings changed it shows a clean header with your site title, your posts, and a simple copyright bar.
 
+### The recommended plugin (optional)
+
+Open Frame recommends one plugin, **Open Frame Starter Sites**: complete websites made with Elementor that you import and then make your own. The theme does not need it.
+
+Once the plugin is listed in the WordPress.org Plugin Directory, a notice appears on the Dashboard, Themes and Plugins screens after you activate the theme. It offers the step that fits your site:
+
+![The notice that recommends the Starter Sites plugin](images/starter-notice-install.png)
+
+| What the button says | When | What a click does |
+| --- | --- | --- |
+| **Install Starter Sites** | The plugin is not installed | WordPress downloads it from WordPress.org and installs it. It is not activated yet |
+| **Activate Starter Sites** | The plugin is installed but not active | WordPress activates it |
+| **Open Starter Sites** | The plugin is active | Opens **Appearance → Starter Sites**. The notice has done its work and does not come back |
+| **Try again** | The installation did not work | The notice says why, in WordPress's own words, and the button tries once more. Nothing is left half-installed |
+
+![The notice after the plugin was installed](images/starter-notice-activate.png)
+
+- **Learn more** opens the plugin's page on WordPress.org in a new tab.
+- **Dismiss**, or the cross in the corner, removes the notice for you for good. Other administrators decide for themselves.
+- Nothing is installed or activated unless you click, and the theme never sends you to another screen by itself.
+- The same plugin is listed under **Appearance → Recommended Plugins** while it is not installed or not active.
+- Only users who may install or activate plugins see the notice.
+
+![The notice once the plugin is active](images/starter-notice-open.png)
+
+The designs of the plugin are made with Elementor. Neither the theme nor the plugin installs Elementor by itself: each design lists what it needs, and installs it from WordPress.org when you click the button beside it. See the [Starter Sites guide](STARTER-SITES.md).
+
+> Until the plugin is listed on WordPress.org, the theme shows no notice. The plugin can be installed from its ZIP file in the meantime: see the [installation guide](INSTALL.md#2-install-the-plugin-optional).
+
 ## 3. Quick start
 
 Six steps take a fresh install to a finished site. Each step links to its full chapter.
@@ -920,6 +949,7 @@ open-frame/
 ## 24. Privacy and performance
 
 - **No remote requests.** Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.
+- **The recommended plugin is your choice.** When you click **Install Starter Sites** in the theme's notice, WordPress itself downloads the plugin from WordPress.org. Nothing is requested before the click.
 - **Small footprint.** One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.
 - **No stored personal data.** The theme itself stores and sends no visitor data.
 - **Plugins are separate.** Elementor and WooCommerce load their own files and may contact their own services (Elementor, for example, requests Google fonts when one is selected in its Site Settings). The theme adds one small stylesheet for WooCommerce, and only while WooCommerce is active.
@@ -967,6 +997,7 @@ See the `== Changelog ==` section of [`readme.txt`](../readme.txt) for the full 
 - **Open Frame** — © 2026 Mostafij Emon, GPL-2.0-or-later.
 - **Hanken Grotesk** — © 2021 The Hanken Grotesk Project Authors, SIL Open Font License 1.1.
 - **JetBrains Mono** — © 2020 The JetBrains Mono Project Authors, SIL Open Font License 1.1.
+- **TGM Plugin Activation 2.6.1** — © 2011 Thomas Griffin, Gary Jones, Juliette Reinders Folmer, GPL-2.0-or-later. Provides the Recommended Plugins screen.
 - **Hero illustration and screenshot artwork** — original work by the theme author, GPL-2.0-or-later.
 
 ### Support

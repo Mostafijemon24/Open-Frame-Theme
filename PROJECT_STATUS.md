@@ -1,10 +1,12 @@
 # Project Status — Open Frame Starter Sites
 
-Last updated: 2026-11-27
+Last updated: 2026-11-28
 
 Architecture: [docs/dev/STARTER-SITES-ARCHITECTURE.md](docs/dev/STARTER-SITES-ARCHITECTURE.md) · Test reports: [docs/dev/TESTING.md](docs/dev/TESTING.md) · Release checklist: [docs/dev/RELEASE.md](docs/dev/RELEASE.md)
 
 ## Current state
+
+**28 November 2026: the theme and the plugin are joined, on the branch `claude/quirky-hawking-lhqgg4`.** Theme 1.2.0 recommends the plugin through TGM Plugin Activation and one dismissible notice (install, activate, open). The plugin's slug at WordPress.org is still a placeholder, because the plugin is not in the directory yet, so the theme recommends nothing until that one line in `functions.php` is filled in. Plugin 1.0.1 fixes what an independent review for WordPress.org found. Nothing is released, merged or submitted. The summary, the test results and what the owner has to do are in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md); how the integration works is in [docs/dev/INTEGRATION.md](docs/dev/INTEGRATION.md).
 
 **All ten designs exist, each illustrated with real photographs.** On 2026-11-26 the owner asked for real photographs instead of drawn pictures, words written for the business shown, and a record of source and licence for every picture, and approved the Real Estate design as the benchmark. The seven designs made before that were then redone, and Magazine and Shop were made that way from the start.
 

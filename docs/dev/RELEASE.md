@@ -4,6 +4,17 @@ What has to be true before a version of the Open Frame theme or of the Open Fram
 
 A line is **signed off** when the person named has confirmed it, with the date. The automated checks are confirmed by their output, which is recorded in [TESTING.md](TESTING.md). Everything that needs a person, an account or a decision is confirmed by the owner. Nobody else signs for the owner.
 
+## Status on 28 November 2026
+
+Prepared on the branch `claude/quirky-hawking-lhqgg4`, **not released and not merged**:
+
+| Product | Version | State |
+| --- | --- | --- |
+| **Open Frame** (theme) | 1.2.0 | Recommends the Starter Sites plugin through TGM Plugin Activation and one notice. **The plugin's WordPress.org slug is a placeholder**, so this version recommends nothing yet. How it works and what switches it on: [INTEGRATION.md](INTEGRATION.md) |
+| **Open Frame Starter Sites** (plugin) | 1.0.1 | What an independent review for WordPress.org found is fixed: the check for script in a design is stricter, the post type has a four-letter prefix, the readme names the library's terms and privacy policy. Ready to be submitted once the owner has read those terms |
+
+Checklists for both submissions are in [INTEGRATION.md](INTEGRATION.md); what was tested is in [TESTING.md](TESTING.md); the summary for the owner is [FINAL_INTEGRATION_REPORT.md](../../FINAL_INTEGRATION_REPORT.md).
+
 ## Status on 27 November 2026
 
 On 27 November 2026 the owner created the repository anew at the same address, and the history was pushed to it again. The three releases (theme 1.0.1 and 1.1.0, plugin 1.0.0) were published again from the same commits, and the packages of theme 1.1.0 and plugin 1.0.0 were compared with the first ones: identical, file for file. The pull request numbers and CI run numbers named in these documents are those of the earlier repository and lead nowhere now.
@@ -96,7 +107,9 @@ A release that turned out wrong is replaced by running the workflow again with "
 
 Both products were written to the directory's rules: GPL, no bundled plugins, no remote code, the external service declared in the plugin's readme, Theme Check and Plugin Check clean. Submitting is the owner's step, because it is done from the owner's WordPress.org account.
 
-**Theme:** upload `open-frame-1.1.0.zip` at <https://wordpress.org/themes/upload/>. A reviewer answers in the theme's ticket, usually with requests for changes. After approval, later versions are uploaded the same way.
+The checklists for both submissions, and the order to make them in, are in [INTEGRATION.md](INTEGRATION.md). From theme 1.2.0 the theme recommends the plugin once the plugin's slug is set in `functions.php`; that slug exists only after the plugin is approved.
+
+**Theme:** upload `open-frame-<version>.zip` at <https://wordpress.org/themes/upload/>. A reviewer answers in the theme's ticket, usually with requests for changes. After approval, later versions are uploaded the same way.
 
 **Plugin:** only after part D. Submit `open-frame-starter-sites-<version>.zip` at <https://wordpress.org/plugins/developers/add/>. After approval the plugin gets a Subversion repository: the contents of the ZIP go into `trunk` and a tag, the files of `.wordpress-org/` into `assets`.
 

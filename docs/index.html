@@ -86,7 +86,7 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 		<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3f4cd6"/><rect x="8" y="8" width="16" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#f5a623"/></svg>
 		Open Frame
 	</a>
-	<p class="version">Documentation · v1.1.0</p>
+	<p class="version">Documentation · v1.2.0</p>
 	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toc">Contents</button>
 	<nav id="toc" aria-label="Documentation sections">
 		<ol>
@@ -159,6 +159,27 @@ footer { max-width: 860px; margin: 4rem auto 0; padding-top: 1.5rem; border-top:
 <figure><a href="images/admin-theme-details.png"><img src="images/admin-theme-details.png" alt="Theme details" loading="lazy"></a><figcaption>Theme details</figcaption></figure>
 <blockquote>
 <p>The theme works immediately after activation. With no menu, no widgets and no settings changed it shows a clean header with your site title, your posts, and a simple copyright bar.</p>
+</blockquote>
+<h3 id="the-recommended-plugin-optional">The recommended plugin (optional)</h3>
+<p>Open Frame recommends one plugin, <strong>Open Frame Starter Sites</strong>: complete websites made with Elementor that you import and then make your own. The theme does not need it.</p>
+<p>Once the plugin is listed in the WordPress.org Plugin Directory, a notice appears on the Dashboard, Themes and Plugins screens after you activate the theme. It offers the step that fits your site:</p>
+<figure><a href="images/starter-notice-install.png"><img src="images/starter-notice-install.png" alt="The notice that recommends the Starter Sites plugin" loading="lazy"></a><figcaption>The notice that recommends the Starter Sites plugin</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>What the button says</th><th>When</th><th>What a click does</th></tr></thead><tbody><tr><td><strong>Install Starter Sites</strong></td><td>The plugin is not installed</td><td>WordPress downloads it from WordPress.org and installs it. It is not activated yet</td></tr>
+<tr><td><strong>Activate Starter Sites</strong></td><td>The plugin is installed but not active</td><td>WordPress activates it</td></tr>
+<tr><td><strong>Open Starter Sites</strong></td><td>The plugin is active</td><td>Opens <strong>Appearance → Starter Sites</strong>. The notice has done its work and does not come back</td></tr>
+<tr><td><strong>Try again</strong></td><td>The installation did not work</td><td>The notice says why, in WordPress&#39;s own words, and the button tries once more. Nothing is left half-installed</td></tr></tbody></table></div>
+<figure><a href="images/starter-notice-activate.png"><img src="images/starter-notice-activate.png" alt="The notice after the plugin was installed" loading="lazy"></a><figcaption>The notice after the plugin was installed</figcaption></figure>
+<ul>
+<li><strong>Learn more</strong> opens the plugin&#39;s page on WordPress.org in a new tab.</li>
+<li><strong>Dismiss</strong>, or the cross in the corner, removes the notice for you for good. Other administrators decide for themselves.</li>
+<li>Nothing is installed or activated unless you click, and the theme never sends you to another screen by itself.</li>
+<li>The same plugin is listed under <strong>Appearance → Recommended Plugins</strong> while it is not installed or not active.</li>
+<li>Only users who may install or activate plugins see the notice.</li>
+</ul>
+<figure><a href="images/starter-notice-open.png"><img src="images/starter-notice-open.png" alt="The notice once the plugin is active" loading="lazy"></a><figcaption>The notice once the plugin is active</figcaption></figure>
+<p>The designs of the plugin are made with Elementor. Neither the theme nor the plugin installs Elementor by itself: each design lists what it needs, and installs it from WordPress.org when you click the button beside it. See the <a href="starter-sites.html">Starter Sites guide</a>.</p>
+<blockquote>
+<p>Until the plugin is listed on WordPress.org, the theme shows no notice. The plugin can be installed from its ZIP file in the meantime: see the <a href="install.html#2-install-the-plugin-optional">installation guide</a>.</p>
 </blockquote>
 <h2 id="3-quick-start">3. Quick start</h2>
 <p>Six steps take a fresh install to a finished site. Each step links to its full chapter.</p>
@@ -702,6 +723,7 @@ function my_do_location( $done, $location ) {
 <h2 id="24-privacy-and-performance">24. Privacy and performance</h2>
 <ul>
 <li><strong>No remote requests.</strong> Fonts, scripts and styles are served from your own site. The theme contains no tracking, analytics or external services.</li>
+<li><strong>The recommended plugin is your choice.</strong> When you click <strong>Install Starter Sites</strong> in the theme&#39;s notice, WordPress itself downloads the plugin from WordPress.org. Nothing is requested before the click.</li>
 <li><strong>Small footprint.</strong> One stylesheet, one small script for the menu (about 6 KB, no jQuery) and the font files the page uses.</li>
 <li><strong>No stored personal data.</strong> The theme itself stores and sends no visitor data.</li>
 <li><strong>Plugins are separate.</strong> Elementor and WooCommerce load their own files and may contact their own services (Elementor, for example, requests Google fonts when one is selected in its Site Settings). The theme adds one small stylesheet for WooCommerce, and only while WooCommerce is active.</li>
@@ -735,6 +757,7 @@ Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>.
 <li><strong>Open Frame</strong> — © 2026 Mostafij Emon, GPL-2.0-or-later.</li>
 <li><strong>Hanken Grotesk</strong> — © 2021 The Hanken Grotesk Project Authors, SIL Open Font License 1.1.</li>
 <li><strong>JetBrains Mono</strong> — © 2020 The JetBrains Mono Project Authors, SIL Open Font License 1.1.</li>
+<li><strong>TGM Plugin Activation 2.6.1</strong> — © 2011 Thomas Griffin, Gary Jones, Juliette Reinders Folmer, GPL-2.0-or-later. Provides the Recommended Plugins screen.</li>
 <li><strong>Hero illustration and screenshot artwork</strong> — original work by the theme author, GPL-2.0-or-later.</li>
 </ul>
 <h3 id="support">Support</h3>
@@ -746,7 +769,7 @@ Yes. Elementor is supported directly, see <a href="#18-elementor">Elementor</a>.
 </ul>
 
 	</article>
-	<footer>Open Frame 1.1.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
+	<footer>Open Frame 1.2.0 · © 2026 Mostafij Emon · Distributed under the GNU GPL v2 or later.</footer>
 </main>
 <script>
 ( function () {

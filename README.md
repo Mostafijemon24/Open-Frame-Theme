@@ -8,7 +8,7 @@ A lightweight, accessibility-minded **multipurpose WordPress theme** built on a 
 
 | | |
 | --- | --- |
-| **Version** | 1.1.0 |
+| **Version** | 1.2.0 |
 | **Requires** | WordPress 6.4+, PHP 7.4+ (tested up to WordPress 7.1) |
 | **License** | GPL-2.0-or-later |
 | **Text domain** | `open-frame` |
@@ -87,7 +87,7 @@ The companion plugin **Open Frame Starter Sites** adds ten complete websites mad
 
 ![The ten starter sites](docs/images/starter-sites-designs.png)
 
-> The plugin has not been released yet: the library it reads the designs from is not online. The state of the release is in [docs/dev/RELEASE.md](docs/dev/RELEASE.md).
+> The plugin is released on this repository's [releases page](../../releases). It is not in the WordPress.org Plugin Directory yet. Once it is, the theme offers to install it with one click: see [Integration with the Starter Sites plugin](docs/dev/INTEGRATION.md). The state of both submissions is in [FINAL_INTEGRATION_REPORT.md](FINAL_INTEGRATION_REPORT.md).
 
 ![The Themes screen with Open Frame active](docs/images/admin-themes.png)
 

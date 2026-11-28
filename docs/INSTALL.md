@@ -40,6 +40,10 @@ The theme works at once, with a plain header showing your site title, your posts
 
 ## 2. Install the plugin (optional)
 
+**Once the plugin is listed on WordPress.org**, the theme (version 1.2.0 or newer, with the plugin's slug set) offers it by itself: after you activate the theme, a notice on the Dashboard, Themes and Plugins screens says "Start with a complete website". Click **Install Starter Sites**, then **Activate Starter Sites**, then **Open Starter Sites**. The same can be done under **Appearance → Recommended Plugins**. The notice can be dismissed and does not come back.
+
+**Until then**, install the plugin from its ZIP file:
+
 1. Go to **Plugins → Add Plugin** and click **Upload Plugin**.
 2. Click **Choose File** and select `open-frame-starter-sites-<version>.zip`.
 3. Click **Install Now**, then **Activate Plugin**.

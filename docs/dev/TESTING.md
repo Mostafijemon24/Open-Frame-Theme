@@ -1,5 +1,6 @@
 # Open Frame — Test Reports
 
+- [The theme recommends the plugin](#the-theme-recommends-the-plugin--test-report): theme 1.2.0 and plugin 1.0.1, the notice in every status, and an import from the production library
 - [Theme 1.1.0 and plugin 1.0.0 released](#theme-110-and-plugin-100-released--test-report): the two releases, and the checks on the plugin's first public version
 - [Emulated phones](#emulated-phones--test-report): every design on an emulated iPhone and Android phone, from the production library
 - [The library on Cloudflare](#the-library-on-cloudflare--test-report): published to staging and to production, and every design imported from each
@@ -22,6 +23,86 @@
 - [Starter Sites plugin 0.1.0](#open-frame-starter-sites-010--test-report): the companion plugin's dashboard
 - [Version 1.1.0](#open-frame-110--test-report): Elementor, WooCommerce and replaceable locations
 - [Version 1.0.1](#open-frame-101--test-report): the full theme
+
+# The theme recommends the plugin — Test Report
+
+Executed on 28 November 2026 on the branch `claude/quirky-hawking-lhqgg4`, with WordPress 7.1.5, PHP 8.3.6, Elementor 4.4.2 and Chromium. Theme 1.2.0, plugin 1.0.1. Nothing was released.
+
+**What could not be tested as it will be for the public:** the plugin is not in the WordPress.org Plugin Directory, so nobody can install *it* from there yet. Where a check needs the directory to list the plugin, the test site answers in the directory's place and hands WordPress the package built from this repository; the installer, the unpacking and the activation are WordPress's own. That the button reaches the real directory was checked with a plugin that is listed there (Hello Dolly). This is a rehearsal of the journey, not the journey.
+
+## The journey, step by step
+
+| # | Step | How it was checked | Result |
+| --- | --- | --- | --- |
+| 1 | A fresh WordPress site | Built by `tests/env/setup.sh` from WordPress 7.1.5 | Done |
+| 2, 3 | Install and activate the theme | From the package `open-frame-1.2.0.zip` on the clean site; activation through the Themes screen in the browser checks | Pass. Activating installs nothing, activates nothing and stays on the Themes screen |
+| 4 | The recommendation appears | Browser check | Pass, with the slug set. **With the placeholder that is in the code today, nothing appears, by design** |
+| 5, 6 | Install Now, from WordPress.org | Browser check, with the test site answering for the directory | Pass as a rehearsal. **Not possible for real until the plugin is published** |
+| 7 | Activate | Browser check, WordPress's own activation link | Pass. A separate click |
+| 8 | Open Starter Sites | Browser check | Pass |
+| 9 | Connect to the cloud library | Clean site built from the two packages, reading `api.buildbetters.com` and `cdn.buildbetters.com` | Pass: the signed list of ten designs was accepted |
+| 10, 11 | Choose a design and import it | `tests/library/import-all.js`, through the Starter Sites screen | **5 of 5 free designs** imported from the production library: Business, Portfolio, Restaurant, Education, Medical |
+| 12 | Pages, pictures, global styles, menus, header, footer | The same run opens every page of each design (17 to 19 per design) and checks every picture | Pass: 0 problems. Each import was then rolled back |
+| 13, 14 | Open an imported page in Elementor and edit | `tests/e2e/starter-sites.test.js` (import, edit in Elementor, roll back) and `tests/e2e/business.test.js`, against the copy of the library built from the same sources | Pass |
+
+**Not tested: the five designs for Elementor Pro** (Agency, SaaS, Real Estate, Magazine, Shop). Elementor Pro is a commercial plugin and is not on this machine; the run skipped them and said so. They were imported from the production library on 27 November with plugin 1.0.0 (below). The stricter check for script in a design was run over the source of every page, site part and template of all ten designs: all 133 are accepted.
+
+## The notice in every status (`tests/e2e/recommendation.test.js`, 15 of 15)
+
+| Case | Result |
+| --- | --- |
+| Placeholder slug: no notice on the Dashboard, Themes or Plugins screen, no installer screen (403), installer library not loaded | Pass |
+| Not installed: exactly one notice on those three screens, none on Posts, Settings, the Customizer, the installer screen or Add Plugins; three choices; "Learn more" leads to the plugin's directory page | Pass |
+| The Recommended Plugins screen lists the plugin as "Recommended", source "WordPress Repository" | Pass |
+| Activating the theme: nothing installed, nothing activated, no redirect | Pass |
+| Install, then activate, then open: three separate clicks; installing does not activate | Pass |
+| Already active: "Open Starter Sites"; the notice says when Elementor is not active | Pass |
+| Deactivated: "Activate Starter Sites" again | Pass |
+| Dismissed with the link, with the close button and without JavaScript: gone at once and on every screen afterwards | Pass |
+| WordPress.org cannot be reached: an understandable message, nothing installed, "Try again" works once it can | Pass |
+| The download is broken: WordPress's reason shown as plain text, no half-installed folder, "Try again" | Pass |
+| The plugin is not in the directory (asked of the real WordPress.org with a slug that does not exist) | Pass: "It may not be published there yet", nothing installed |
+| A plugin that is in the directory is installed from the real WordPress.org and not activated (Hello Dolly) | Pass |
+| Without JavaScript the button installs through the Recommended Plugins screen, and does not activate | Pass |
+| An Editor sees no notice; the install request, the dismiss request and the installer screen answer 403; a dismiss request without its nonce is refused for the administrator too | Pass |
+| Nothing of the recommendation is loaded on the public side; the installer library is not loaded for visitors; nothing in the PHP error log | Pass |
+| Accessibility (axe-core) of the notice in the "install", "activate" and error states | 0 problems |
+
+## The plugin
+
+| Suite | Result |
+| --- | --- |
+| Plugin PHP checks (`tests/php/starter-sites.php`) | **152 of 152** (146 before, 6 new for the renamed post type) |
+| Import engine (`tests/php/importer.php`) | **113 of 113**; with WooCommerce active **126 of 126** (11 new for the stricter content check) |
+| Browser checks of the Starter Sites screen (`tests/e2e/starter-sites.test.js`) | **22 of 22** (21 before; new: the message when Elementor is not active, and that it installs nothing) |
+| Browser checks of the theme's integrations (`tests/e2e/integrations.test.js`) | **17 passed**, 1 skipped (it needs Elementor Pro) |
+| Browser checks of the Business design (`tests/e2e/business.test.js`): every page at nine widths, the Elementor editor, import and rollback | **11 of 11** |
+| PHPCS, theme and plugin | **Exit code 0** each |
+| Plugin Check 2.2.0 on the package `open-frame-starter-sites-1.0.1.zip`, all five categories, errors and warnings | **No errors found.** A first run reported two errors in code added that day (a `suppress_filters` argument); it was removed and the check repeated |
+| Theme Check on the package `open-frame-1.2.0.zip` | **Required: 0, warnings: 0**, recommended: 1 (no custom header, as before), info: 2 (the bundled library uses `WP_Filesystem`; one text domain) |
+| Links and pictures in the guides (`bin/check-docs.js`) | 547 checked, 0 broken |
+| Packages (`bin/release-package.sh theme` and `plugin`) | Version numbers agree, changelog entries present, no development file, no key, no archive inside |
+
+Plugin Check was run through its own screen under Tools, because WP-CLI is not on this machine. Elementor and WooCommerce were switched off for it: with Elementor active, Plugin Check stopped with an error raised inside Elementor ("Invalid post").
+
+## Other cases asked for
+
+| Case | Result |
+| --- | --- |
+| Elementor missing | The theme works unchanged (`integrations.test.js`, "theme alone"). The plugin's screen lists the designs, says that Elementor is not active, and installs it only from the button beside a design |
+| Cloud library cannot be reached, answers with something else, or its list is not signed | Pass (`starter-sites.test.js`): the screen explains, shows the list it saved, and recovers |
+| An import that was interrupted | Pass: it can be continued or rolled back |
+| Importing a design again | Pass (`importer.php`): the pages of that design are put back as the library has them. Edits to them are overwritten, as the plugin's readme says |
+| PHP warnings and errors | None from the theme, the installer library or the plugin in any of the runs above |
+
+## Not done
+
+- Installing the real plugin from the real WordPress.org: not possible before it is published.
+- The five designs for Elementor Pro (no Elementor Pro here).
+- Firefox and WebKit, PHP 7.4 and 8.1, and the other nine designs' own browser checks: not run on this machine. CI runs the PHP syntax check on 7.4, 8.1 and 8.3 and every browser check in Chromium when the branch is pushed; its result is on the repository's Actions page.
+- Multisite and right-to-left languages: not tested, as before.
+- The manual checklist ([QA-CHECKLIST.md](QA-CHECKLIST.md)): still open.
+- The translation templates were updated without WP-CLI: the theme's by a script that reads the code, the plugin's by adding its two new strings by hand. Regenerate both with `wp i18n make-pot` before a release.
 
 # Theme 1.1.0 and plugin 1.0.0 released — Test Report
 
