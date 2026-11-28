@@ -91,7 +91,23 @@ The list of starter sites, their preview pictures and their packages are served 
 - **If the service ever has to end**, this will be announced on the releases page at least 90 days before, and the packages of all designs will stay available for download from the repository.
 - The source of every design is in the repository, in the folder `starter-sites`, together with the tools that build the library. Anyone can build the library themselves; what a self-hosted library needs is described in the [developer reference](dev/PLUGIN.md#running-your-own-library).
 
-What the service receives, and what it does not, is described under [Privacy in the Starter Sites guide](STARTER-SITES.md#14-privacy).
+### Terms of use
+
+- The library is run by the author of the theme and the plugin, Mostafij Emon. It is free to use with the Open Frame Starter Sites plugin, without an account, a key or a payment.
+- It is provided as it is, without a guarantee that it is always reachable. What happens when it is not is said above.
+- Please use it through the plugin, or at a similar pace: the list of designs is saved for twelve hours, and a design is downloaded when someone imports it. Requests that load the service far beyond that may be slowed down or refused.
+- What you download you may use on your own sites and on your clients' sites, also commercially. The texts of a design are samples under the GPL, version 2 or later, like the plugin. The photographs are in the public domain or under CC0, and the typefaces under the SIL Open Font License; the file `CREDITS.md` of each design in the repository names the source of every picture.
+- These terms can change. A change that takes something away is announced on the releases page at least 90 days before.
+
+### Privacy
+
+- **What the service receives** is what every web request contains: the IP address of the server or browser that asks, the time, the address of the file asked for, and the name and version of the plugin. It receives nothing about your site: not its address, its content, its users or its visitors. The preview pictures are requested by your browser without a referrer.
+- **What is kept:** the service's own program stores nothing about a request and sets no cookie. It runs on Cloudflare's network, and Cloudflare processes each request in order to deliver it, as described in [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/). From Cloudflare the author sees statistics that name no one, such as the number of requests per day and per country.
+- **What it is used for:** delivering the files, and keeping the service running. Nothing is sold, shared for advertising or combined with other data.
+- **No account, no tracking, no licence check.**
+- Questions about this go to the author through the [issue tracker](https://github.com/Mostafijemon24/Open-Frame-Theme/issues), or privately through the security reporting form named above.
+
+The same is said from the point of view of your site under [Privacy in the Starter Sites guide](STARTER-SITES.md#14-privacy).
 
 ## If the project ends
 

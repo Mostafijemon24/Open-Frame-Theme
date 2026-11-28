@@ -104,7 +104,7 @@
 					tabIndex: -1,
 					'aria-hidden': 'true',
 				},
-				h( 'img', { src: site.thumbnail, alt: '', width: 1200, height: 900, loading: 'lazy', decoding: 'async' } )
+				h( 'img', { src: site.thumbnail, alt: '', width: 1200, height: 900, loading: 'lazy', decoding: 'async', referrerPolicy: 'no-referrer' } )
 			),
 			h(
 				'div',
@@ -503,6 +503,7 @@
 						alt: sprintf( __( 'Preview of %1$s: %2$s', 'open-frame-starter-sites' ), summary.name, image.title ),
 						width: 1200,
 						height: 900,
+						referrerPolicy: 'no-referrer',
 					} ),
 					images.length > 1 &&
 						h(
@@ -749,6 +750,18 @@
 				h( 'a', { href: settings.themesUrl }, __( 'Go to Themes', 'open-frame-starter-sites' ) )
 			);
 
+		// Every design is made with Elementor. Say so once, above the designs, when it
+		// is not active; each design then installs or activates it on request.
+		const elementorNotice =
+			settings.themeActive &&
+			catalog &&
+			false === catalog.elementor_active &&
+			h(
+				Notice,
+				{ status: 'info', isDismissible: false, className: 'ofss-notice ofss-notice--elementor' },
+				__( 'The designs are made with Elementor, which is not active on this site. Open a design with "View details": under "What it needs" you can install or activate Elementor with one button. Nothing is installed before you click.', 'open-frame-starter-sites' )
+			);
+
 		if ( status === 'loading' ) {
 			return h( 'p', { className: 'ofss-loading', role: 'status' }, h( Spinner ), ' ', __( 'Loading the designs…', 'open-frame-starter-sites' ) );
 		}
@@ -774,6 +787,7 @@
 			Fragment,
 			null,
 			themeNotice,
+			elementorNotice,
 			catalog.stale &&
 				h(
 					Notice,

@@ -17,6 +17,10 @@
  *   ofss:rollback            roll back the current import, if there is one
  *   ofss:ids                 print the IDs of imported posts, keyed by their name in the package
  *   remove-plugin:<slug>     deactivate and delete a plugin the tests installed
+ *   starter:reset            forget the recommended plugin's slug, the stand-in directory and every dismissal
+ *   starter:status           print what the theme knows about the recommended plugin, as JSON
+ *   plugins                  print which of the test site's plugins are active, as JSON
+ *   user:<login>=<role>      make sure a user with that role exists (password "password")
  *   ids                      print the IDs of the fixture pages as JSON
  *
  * @package Open_Frame
@@ -143,6 +147,54 @@ foreach ( $open_frame_args as $open_frame_arg ) {
 
 	if ( 0 === strpos( $open_frame_arg, 'theme:' ) ) {
 		switch_theme( substr( $open_frame_arg, 6 ) );
+		continue;
+	}
+
+	if ( 'starter:reset' === $open_frame_arg ) {
+		delete_option( 'oft_starter_slug' );
+		delete_option( 'oft_directory' );
+		delete_metadata( 'user', 0, 'open_frame_starter_notice_dismissed', '', true );
+		continue;
+	}
+
+	if ( 'plugins' === $open_frame_arg ) {
+		$open_frame_states = array();
+		foreach ( $open_frame_plugins as $open_frame_name => $open_frame_file ) {
+			$open_frame_states[ $open_frame_name ] = ! file_exists( WP_PLUGIN_DIR . '/' . $open_frame_file ) ? 'missing' : ( is_plugin_active( $open_frame_file ) ? 'active' : 'inactive' );
+		}
+		echo wp_json_encode( $open_frame_states ), "\n";
+		continue;
+	}
+
+	if ( 'starter:status' === $open_frame_arg ) {
+		$open_frame_companion = 'open-frame-starter-sites/open-frame-starter-sites.php';
+		wp_clean_plugins_cache();
+		echo wp_json_encode(
+			array(
+				'slug'      => open_frame_starter_plugin_slug(),
+				'status'    => open_frame_starter_plugin_status(),
+				'tgmpa'     => class_exists( 'TGM_Plugin_Activation', false ),
+				'file'      => open_frame_starter_plugin_file(),
+				'starter'   => ! file_exists( WP_PLUGIN_DIR . '/' . $open_frame_companion ) ? 'missing' : ( is_plugin_active( $open_frame_companion ) ? 'active' : 'inactive' ),
+				'dismissed' => (bool) get_user_meta( 1, 'open_frame_starter_notice_dismissed', true ),
+			)
+		), "\n";
+		continue;
+	}
+
+	if ( 0 === strpos( $open_frame_arg, 'user:' ) ) {
+		list( $open_frame_login, $open_frame_role ) = array_pad( explode( '=', substr( $open_frame_arg, 5 ), 2 ), 2, 'subscriber' );
+		$open_frame_user = get_user_by( 'login', $open_frame_login );
+		if ( ! $open_frame_user ) {
+			wp_insert_user(
+				array(
+					'user_login' => $open_frame_login,
+					'user_pass'  => 'password',
+					'user_email' => $open_frame_login . '@example.org',
+					'role'       => $open_frame_role,
+				)
+			);
+		}
 		continue;
 	}
 

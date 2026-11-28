@@ -98,6 +98,25 @@ test( 'the screen lists the ten designs', async () => {
 	assert.deepEqual( errors, [] );
 } );
 
+test( 'without Elementor the screen says so above the designs, installs nothing, and the message goes once it is active', async () => {
+	state( 'plugin:elementor=off' );
+	await open();
+	const notice = page.locator( '.ofss-notice--elementor' );
+	assert.equal( await notice.count(), 1 );
+	assert.match( await notice.innerText(), /made with Elementor, which is not active on this site.*Nothing is installed before you click/s );
+	assert.equal( await cards().count(), 10, 'the designs are still listed' );
+	assert.deepEqual( await axe( page, '#ofss-root' ), [], 'accessibility with the message' );
+	assert.doesNotMatch( state( 'plugins' ), /"elementor":"active"/, 'opening the screen activated nothing' );
+
+	// Images of the library are asked for without telling it which site asks.
+	assert.equal( await page.locator( '.ofss-card img' ).first().getAttribute( 'referrerpolicy' ), 'no-referrer' );
+
+	state( 'plugin:elementor=on' );
+	await open();
+	assert.equal( await page.locator( '.ofss-notice--elementor' ).count(), 0 );
+	assert.deepEqual( errors, [] );
+} );
+
 test( 'the screen fits phones, tablets and desktops', async () => {
 	for ( const width of [ 360, 390, 782, 1024, 1440, 1920 ] ) {
 		await page.setViewportSize( { width, height: 900 } );
@@ -434,7 +453,7 @@ test( 'a design is imported from the screen, can be edited in Elementor, and is 
 	await visitor.getByRole( 'link', { name: 'about us' } ).click();
 	await visitor.waitForURL( BASE + '/about/' );
 	assert.equal( await visitor.getByRole( 'heading', { name: 'About', level: 1 } ).count(), 1 );
-	assert.equal( ( await visitor.goto( BASE + '/?of_site_part=header' ) ).status(), 404, 'a site part has no page of its own for visitors' );
+	assert.equal( ( await visitor.goto( BASE + '/?ofss_site_part=header' ) ).status(), 404, 'a site part has no page of its own for visitors' );
 	assert.deepEqual( visitorErrors, [] );
 	await visitor.context().close();
 
@@ -446,7 +465,7 @@ test( 'a design is imported from the screen, can be edited in Elementor, and is 
 	await frame.locator( '.elementor-widget-image img' ).first().waitFor( { timeout: 60000 } );
 	assert.equal( await frame.locator( '.elementor-widget-image img' ).count(), 1 );
 
-	await page.goto( BASE + '/wp-admin/edit.php?post_type=of_site_part' );
+	await page.goto( BASE + '/wp-admin/edit.php?post_type=ofss_site_part' );
 	const partId = ( await page.locator( '#the-list tr' ).first().getAttribute( 'id' ) ).replace( 'post-', '' );
 	await page.goto( `${ BASE }/wp-admin/post.php?post=${ partId }&action=elementor` );
 	frame = page.frameLocator( '#elementor-preview-iframe' );

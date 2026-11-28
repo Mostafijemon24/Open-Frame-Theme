@@ -5,7 +5,7 @@ Tags: starter sites, elementor, templates, demo, open frame
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,25 +40,37 @@ Support and update policy: https://github.com/Mostafijemon24/Open-Frame-Theme/bl
 
 == External services ==
 
-This plugin connects to the Open Frame starter site library, a service run by the author of the plugin, to download the list of available designs and their preview images.
+This plugin connects to the Open Frame starter site library to download the list of available designs, their preview images and the design you choose to import. The library is a service run by the author of this plugin, Mostafij Emon, on Cloudflare's network.
 
 * **What it is used for:** showing the designs on the Starter Sites screen and downloading the design you choose to import. Without it there is nothing to show or import.
-* **When requests are made:** when an administrator opens the Starter Sites screen and the saved list is older than 12 hours, when they click "Check for new designs", and when they import a design (its package and images are downloaded). Preview images are loaded by the administrator's browser while the screen is open. Nothing is requested on the public side of your site.
-* **What is sent:** the request itself, which like any web request includes the IP address of your server (for the list) or of your browser (for the images), and the name and version of this plugin. No information about your site, its address, its content or its users is sent.
-* **Where it goes:** `api.buildbetters.com` (the list) and `cdn.buildbetters.com` (images), both served through Cloudflare. Cloudflare's privacy policy: https://www.cloudflare.com/privacypolicy/ and terms: https://www.cloudflare.com/website-terms/
+* **When requests are made:** when an administrator opens the Starter Sites screen and the saved list is older than 12 hours, when they click "Check for new designs", and when they import a design. Preview images are loaded by the administrator's browser while the screen is open. Nothing is requested on the public side of your site, and nothing is requested in the background.
+* **What is sent:** the request itself, which like any web request includes the IP address of your server (for the list and the files of a design) or of your browser (for the preview images), and the name and version of this plugin. No information about your site, its address, its content or its users is sent, and the preview images are requested without a referrer.
+* **Where it goes:** `api.buildbetters.com` (the list of designs and the file list of each design) and `cdn.buildbetters.com` (preview images and, when you import a design, its package, images and font files).
+* **Terms of use and privacy policy of the library:** https://github.com/Mostafijemon24/Open-Frame-Theme/blob/main/docs/SUPPORT.md#the-library-service
+* The library is delivered by Cloudflare, which processes the requests on the author's behalf. Cloudflare's privacy policy: https://www.cloudflare.com/privacypolicy/ and terms: https://www.cloudflare.com/website-terms/
 
 When you choose to install a required plugin, WordPress downloads it from WordPress.org with its own installer, exactly as it does under Plugins > Add New. WordPress.org's privacy policy: https://wordpress.org/about/privacy/
 
 == Installation ==
 
-1. Install and activate the Open Frame theme.
-2. Upload the plugin under Plugins > Add Plugin > Upload Plugin and activate it.
+1. Install and activate the Open Frame theme. Its installable ZIP file is on the theme's release page: https://github.com/Mostafijemon24/Open-Frame-Theme/releases
+2. In your WordPress dashboard go to Plugins > Add Plugin, search for "Open Frame Starter Sites", click Install Now and then Activate. (Or download the plugin's ZIP file and use Upload Plugin on the same screen.)
 3. Go to Appearance > Starter Sites.
 4. Open a design with "View details". Install what it needs with the buttons in the list, then click "Import this design".
+
+The designs are made with Elementor. The plugin does not install it by itself: each design lists what it needs, and installs Elementor from WordPress.org when you click the button next to it.
 
 There is no account to create and no key to enter.
 
 == Frequently Asked Questions ==
+
+= Where do I get the Open Frame theme? =
+
+From its release page, https://github.com/Mostafijemon24/Open-Frame-Theme/releases, as an installable ZIP file. The designs are made for this theme: the Starter Sites screen works with any theme, but a design can only be imported while Open Frame or a child theme of it is active.
+
+= Do I need Elementor? =
+
+Yes, the free version: every design is built with it. You do not have to install it beforehand. Open a design, and under "What it needs" install or activate Elementor with one button. Nothing is installed before you click.
 
 = Do I need Elementor Pro? =
 
@@ -109,6 +121,16 @@ A copy of the list of designs, the record of the last import, a short import his
 5. The home page of the Business design, edited with Elementor.
 
 == Changelog ==
+
+= 1.0.1 =
+* New: when Elementor is not active, the Starter Sites screen says so above the designs and explains where to install it.
+* Security: the check that refuses script in a design also recognizes it when it is written with character references, without a space before an event handler, inside a dynamic tag or as a form or inline SVG, and it is repeated on each page just before the page is stored.
+* Security: updating a plugin a design needs, which ends with that plugin active, now also asks for the right to activate plugins.
+* Privacy: preview pictures are requested without a referrer, so the library does not learn the address of your site from your browser either.
+* Changed: the post type of the Site Parts is now named `ofss_site_part`. Site parts made by version 1.0.0 are renamed once, automatically, and stay out of the XML sitemap.
+* Fixed: rolling back an import after switching to a child theme restored the theme settings to the wrong theme.
+* Fixed: on PHP 7.4.0 to 7.4.2 a design's package could not be opened.
+* The description of the library service now names its terms of use and privacy policy.
 
 = 1.0.0 =
 * The first public release. The versions below were development versions and were not published.

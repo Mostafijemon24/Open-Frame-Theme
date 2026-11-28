@@ -118,11 +118,13 @@ class SitesController extends Controller {
 
 		return rest_ensure_response(
 			array(
-				'sites'      => $sites,
-				'categories' => $result['catalog']['categories'],
-				'fetched_at' => $result['fetched_at'],
-				'stale'      => $result['stale'],
-				'notice'     => $result['stale'] ? $result['error']->get_error_message() : '',
+				'sites'            => $sites,
+				'categories'       => $result['catalog']['categories'],
+				// Every design is made with Elementor; the screen says so when it is not active.
+				'elementor_active' => (bool) did_action( 'elementor/loaded' ),
+				'fetched_at'       => $result['fetched_at'],
+				'stale'            => $result['stale'],
+				'notice'           => $result['stale'] ? $result['error']->get_error_message() : '',
 			)
 		);
 	}
