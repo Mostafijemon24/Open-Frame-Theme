@@ -82,6 +82,10 @@ jobs:
         run: bash bin/release-package.sh theme
       - name: The plugin can be packaged (trial package while the library is not published)
         run: RELEASE_ALLOW_UNPUBLISHED=1 bash bin/release-package.sh plugin
+      - name: A release can be completed with the other product and the starter site archives
+        run: |
+          bash bin/release-bundle.sh plugin
+          test "$(wc -l < dist/open-frame-starter-sites-release-assets.txt)" -eq 15
 
   rehearsal:
     name: Library rehearsal (publish and import on a clean site)

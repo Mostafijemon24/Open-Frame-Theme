@@ -4,8 +4,12 @@ name: Release
 # The theme and the Starter Sites plugin are released separately, each with
 # its own version number and its own tag:
 #
-#   theme    tag v1.1.0                 package open-frame-1.1.0.zip
-#   plugin   tag starter-sites-v1.0.0   package open-frame-starter-sites-1.0.0.zip
+#   theme    tag v1.2.0                 package open-frame-1.2.0.zip
+#   plugin   tag starter-sites-v1.0.1   package open-frame-starter-sites-1.0.1.zip
+#
+# Every release is a complete set: besides the product being released it
+# carries the other product in the version of the same commit, and one archive
+# for each of the starter sites (bin/release-bundle.sh).
 #
 # It runs when such a tag is pushed, or when started by hand from the Actions
 # tab ("Run workflow"), where you choose the product. A manual run releases the
@@ -13,8 +17,9 @@ name: Release
 # commit. Tick "replace" to publish that version again in place of an existing
 # release.
 #
-# bin/release-package.sh does the checking and packaging; run it on your own
-# machine to see what a release would contain. docs/dev/RELEASE.md is the
+# bin/release-package.sh does the checking and packaging, bin/release-bundle.sh
+# adds the rest of the set; run them on your own machine to see what a release
+# would contain. docs/dev/RELEASE.md is the
 # checklist to go through before starting this workflow.
 on:
   push:
@@ -62,6 +67,8 @@ jobs:
           fi
           read -r TAG VERSION SLUG <<< "$(bash bin/release-package.sh "$PRODUCT" | tail -n 1)"
           [ -n "$TAG" ] && [ -n "$VERSION" ] && [ -n "$SLUG" ]
+          # The other product and the starter sites, so that the release is a complete set.
+          bash bin/release-bundle.sh "$PRODUCT"
           {
             echo "TAG=$TAG"
             echo "VERSION=$VERSION"
@@ -91,9 +98,9 @@ jobs:
           if [ "$PRODUCT" = "plugin" ]; then TITLE="Open Frame Starter Sites v$VERSION"; else TITLE="Open Frame v$VERSION"; fi
           # The newest theme release stays the one GitHub shows as "Latest".
           if [ "$PRODUCT" = "plugin" ]; then LATEST="--latest=false"; else LATEST="--latest"; fi
+          mapfile -t ASSETS < "dist/$SLUG-release-assets.txt"
           gh release create "$TAG" \
-            "dist/$SLUG-$VERSION.zip" \
-            "dist/$SLUG-$VERSION.zip.sha256" \
+            "${ASSETS[@]}" \
             --target "$GITHUB_SHA" \
             --title "$TITLE" \
             --notes-file "dist/$SLUG-release-notes.md" \
